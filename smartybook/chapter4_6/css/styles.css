@@ -1,0 +1,78 @@
+@charset "utf-8";
+
+body {
+	background: #fff;
+	color: #000000;
+	font-family: "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", sans-serif;
+	font-size: 13px;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+a {
+	color: #09f;
+	text-decoration: none;
+}
+a img { border: none; }
+#wrapper {
+	margin: 0 auto;
+	padding: 60px 15px 40px;
+	text-align: left;
+	width: 690px !important;
+	width /**/: 720px;
+}
+h1 {
+	color: #000000;
+	font-size: 16px;
+	margin: 0 0 50px;
+	padding: 0;
+}
+
+#info, #navi {
+	padding: 10px 15px;
+	background: #ececec;
+	font-size: 13px;
+	color: #666;
+}
+#info {
+	border-top: 3px solid #345;
+}
+#navi {
+	border-bottom: 1px solid #9ab;
+	border-top: 3px solid #345;
+}
+form {
+	margin: 0;
+}
+table {
+	margin: 0;
+	width: 100%;
+}
+th, td {
+	padding: 15px 10px 15px 15px;
+	vertical-align: top;
+}
+th {
+	border-top: 1px solid #9ab;
+	background-color: #e0e9ef;
+	padding-right: 10px;
+	vertical-align: top;
+	white-space: nowrap;
+}
+th.comment {
+	width:  35%;
+}
+td {
+	border-top: 1px solid #ddd;
+	text-align: left;
+}
+tr.tr2_1 td {
+	background-color: #fff;
+}
+tr.tr2_2 td {
+	background-color: #f0f9ff;
+}
+tr.tr5_5 td {
+	border-bottom: 3px solid #999999;
+}

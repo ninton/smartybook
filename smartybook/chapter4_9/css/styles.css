@@ -1,0 +1,121 @@
+@charset "utf-8";
+
+body {
+	background: #000/* url(../images/bg.gif) left 10px repeat-x*/;
+	color: #fff;
+	font-family: Verdana, "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", sans-serif;
+	font-size: 13px;
+	line-height: 1.5;
+	margin: 0;
+	padding: 0;
+	/*text-align: center;*/
+}
+a {
+	color: #09f;
+	text-decoration: none;
+}
+a img { border: none; }
+p { margin: 0 0 10px; }
+
+h1 {
+	margin: 0;
+	padding: 130px 0 0;
+	height: 0px !important;
+	height /**/: 130px;
+	width: 301px;
+	color: #888;
+	text-align: left;
+	font-size: 32px;
+	background: transparent url(../images/title.gif) left top no-repeat;
+	font-weight: normal;
+	overflow: hidden;
+}
+h2.moduleHeader {
+	margin: 0 0 10px;
+	border-bottom: 1px dashed #666;
+	padding: 5px 0;
+	color: #eeee22;
+	font-size: 18px;
+	font-weight: normal;
+}
+
+h3.entryTitle {
+	margin-bottom: 8px;
+	padding-left: 20px;
+	background: transparent url(../images/icon_memo.gif) left top no-repeat;
+	font-size: 14px;
+}
+
+#wrapper {
+	width: 900px;
+	text-align: left;
+	background: transparent url(../images/bg_paint.gif) right 30px no-repeat;
+}
+#header {
+	margin: 0 0 0 200px;
+	padding: 50px 0 0;
+	width: 301px;
+}
+#gNavi {
+	text-align: left;
+	margin-bottom: 18px;
+	padding: 10px 0 10px 200px;
+	height: 20px !important;
+	height /**/: 40px;
+	background: transparent url(../images/bg_gnavi.gif) -240px 0 repeat-y;
+}
+#contents {
+	margin: 0 0 0 200px;
+	width: 301px;
+}
+#footer {
+	margin: 0;
+	padding: 30px 0 100px 200px;;
+	color: #fff;
+	text-align: left;
+}
+#footer address {
+	margin: 0;
+	border-top: 1px dashed #666;
+	padding: 10px 0 0;
+	width: 301px;
+	color: #999;
+	font-style: normal;
+}
+#gNavi ul {
+	list-style: none;
+	margin: 0;
+	border-left: 1px dotted #fff;
+	padding: 0;
+	width: 301px;
+	height: 20px;
+	text-align: left;
+	font-weight: bold;
+}
+#gNavi ul li {
+	float: left;
+	border-right: 1px dotted #fff;
+	padding: 0;
+	width: 99px;
+	line-height: 20px;
+	text-align: center;
+}
+#gNavi ul li a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	
+	color: #000;
+}
+#gNavi ul li a:hover {
+	color: #ff0;
+	background: #000;
+}
+.contentsBody p {
+	border: 5px solid #fff;
+	background: #333;
+	text-align: center;
+}
+.entryDate {
+	font-size: 10px;
+}

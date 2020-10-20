@@ -1,0 +1,301 @@
+@charset "utf-8";
+
+#intro h1#siteTitle {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	position: absolute;
+	left: 45px;
+	top: 209px;
+	/*bottom: 133px;*/
+	font-size: 100%;
+	font-style: normal;
+	font-weight: normal;
+	height: 86px;
+}
+
+/* 追加 04_02 */
+#toppage #header h1 {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	text-align: left;
+	font-size: 100%;
+	font-style: normal;
+	font-weight: normal;
+}
+/* 追加 04_02 */
+
+#entrypage #header h1 {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	text-align: left;
+	font-size: 100%;
+	font-style: normal;
+	font-weight: normal;
+}
+
+
+#index {
+	margin: 0px 0px 0px 0px;
+	padding: 232px 20px 20px 469px;
+	height: 157px !important;
+	height /**/: 399px;
+}
+
+#index p{
+	line-height: 135%;
+}
+
+#index h2{
+	margin: 0px 0px 20px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+#menus {
+
+}
+
+#categories {
+
+}
+
+.indexMenuArea {
+
+}
+
+.menuName {
+
+}
+
+.menuLists {
+
+}
+
+.menuLists ul{
+
+}
+
+.menuLists ul li{
+
+}
+
+#topicPath {
+
+}
+
+.entryTitle {
+	/* 変更 04_02 */
+	margin: 0px 20px 20px 0px;
+	/* 変更 04_02 */
+	padding: 0px 0px 2px 0px;
+	font-size: 120%;
+	font-style: normal;
+	font-weight: bold;
+	color: #990000;
+	border-bottom: 1px solid #cccccc;
+	/* 変更 04_02 */
+	/* width: 720px; */
+	/* 変更 04_02 */
+}
+
+.contentsBody {
+	/* 変更 04_02 */
+	margin: 0px 20px 0px 0px;
+	/* 変更 04_02 */
+	padding: 0px 0px 0px 0px;
+	/* 変更 04_02 */
+	/* width: 720px; */
+	/* 変更 04_02 */
+}
+
+.contentsBody p {
+	font-size: 100%;
+	color: #333333;
+	line-height: 130%;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 20px 0px;
+}
+
+.pageNav {
+	border-top: 1px solid #999999;
+	/* 変更 04_02 */
+	margin: 4px 20px 0px 0px;
+	/* 変更 04_02 */
+	padding: 4px 0px 0px 0px;
+	color: #333333;
+	text-align: right;
+	/* 変更 04_02 */
+	/*
+	width: 720px;
+	*/
+	/* 変更 04_02 */
+}
+
+.pageNav a{
+	padding: 0px 14px 0px 0px;
+	background-image: url(../images/pagetop_nav.gif);
+	background-repeat: no-repeat;
+	background-position: right 50%;
+}
+
+/* 追加 04_02 */
+.sideArea1Title {
+	margin: 0px 20px 20px 0px;
+	padding: 0px 0px 2px 0px;
+	font-size: 120%;
+	font-style: normal;
+	font-weight: bold;
+	color: #990000;
+	border-bottom: 1px solid #cccccc;
+	width: 100%;
+}
+/* 追加 04_02 */
+
+/*
+------------------------------- form css
+*/
+
+#cmsForm {
+	margin: 0px 0px 20px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+#cmsForm fieldset {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	border: none;
+}
+
+#cmsForm table {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+#cmsForm table th, #cmsForm table td{
+	margin: 0px 0px 0px 0px;
+	padding: 8px 16px 8px 0px;
+	text-align: left;
+	border-top: 1px solid #ffffff;
+}
+
+#cmsForm table th{
+	width: 130px;
+	vertical-align: top;
+}
+
+#cmsForm table td{
+	vertical-align: top;
+	width: 470px;
+}
+
+#cmsForm label{
+	font-weight: bold;
+}
+
+#cmsForm select{
+
+}
+
+#cmsForm input.oneLineInput{
+	width: 400px;
+}
+
+#cmsForm textarea{
+	width: 400px;
+}
+#cmsForm .submitBtn {
+	margin: 0px 20px 0px 0px;
+	padding: 0px 0px 0px 0px;
+
+}
+
+
+/*
+------------------------------- panel css
+*/
+
+.panel {
+	margin: 0px 0px 10px 0px;
+	padding: 0px 0px 19px 0px;
+	background-image: url(../images/window_L_footer.gif);
+	background-repeat: no-repeat;
+	background-position: 0% 100%;
+}
+
+.panel .header {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	background-image: url(../images/window_L_header.gif);
+	background-repeat: no-repeat;
+	background-position: 0% 0%;
+}
+
+.panel h2 {
+	margin: 0px 0px 0px 0px;
+	padding: 10px 0px 8px 40px;
+	background-image: url(../images/icons_write.gif);
+	background-repeat: no-repeat;
+	background-position: 12px 50%;
+	font-size: 130%;
+	color: #ffffff;
+}
+
+.panel .contents {
+	background-image: url(../images/window_L_middle.gif);
+	background-repeat: repeat-y;
+	margin: 0px 0px 0px 0px;
+	padding: 30px 20px 20px 40px;
+}
+
+.contents .message {
+	color: #663333;
+	font-weight: bold;
+	font-size: 110%;
+	line-height: 140%;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 30px 0px;
+}
+
+.entryDate {
+	margin: 0px 20px 30px 0px;
+	text-align: right;
+	font-size: 80%;
+	color: #996666;
+}
+
+.entryDate p {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+.attention {
+	color: #ff0000;
+}
+/* 追加 04_03_01 */
+/*
+------------------------------- notice css
+*/
+
+#notice {
+	border:1px solid #cccccc;
+	background-color:#FFFFFF;
+	margin: 0 20px 20px 0;
+	padding: 0 0 0 0;
+}
+
+#notice h2 {
+	background-color:#CCCCCC;
+	margin: 0 0 0 0;
+	padding: 2px 8px 2px 8px;
+	font-size: 110%;
+	font-weight:bold;
+	color:#330000;
+}
+
+#notice p {
+	padding: 4px 8px 4px 8px;
+	font-size: 100%;
+	color:#660000;
+	margin: 0 0 0 0;
+}
+
+/* 追加 04_03_01 */

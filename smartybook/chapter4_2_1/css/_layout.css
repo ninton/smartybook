@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+
+#toppage {
+	background-color: #ffffff;
+	padding: 0px 0px 0px 0px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: left;
+	width: 760px !important;
+	width /**/: 760px;
+}
+
+#entrypage {
+	background-color: #ffffff;
+	padding: 0px 0px 0px 0px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: left;
+	width: 760px !important;
+	width /**/: 760px;
+}
+
+#page {
+	background-color: #ffffff;
+	padding: 0px 0px 0px 0px;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	text-align: left;
+	width: 760px !important;
+	width /**/: 760px;
+}
+
+
+#toppage #header {
+	/* 追加 04_02 */
+	margin: 0px 0px 0px 0px;
+	padding: 7px 0px 15px 11px;
+	background-image: url(../images/page_title_bk.gif);
+	/* 追加 04_02 */
+	background-repeat: y-repeat;
+	background-position: 0px 0px;
+}
+
+#entrypage #header {
+	margin: 0px 0px 0px 0px;
+	padding: 7px 0px 15px 11px;
+	background-image: url(../images/page_title_bk.gif);
+	background-repeat: y-repeat;
+	background-position: 0px 0px;
+}
+
+#intro {
+	position: relative;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 20px 0px;
+	background-image: url(../images/top_main_img.gif);
+	background-repeat: no-repeat;
+	background-position: bottom left;
+}
+
+#main {
+	position: relative;
+	background-color: #eeeeee;
+	margin: 0px 0px 0px 0px;
+	padding: 10px 0px 20px 20px;
+	background-image: url(../images/page_footer.gif);
+	background-repeat: no-repeat;
+	background-position: bottom left;
+}
+
+#sideArea1{
+	/* 追加 04_02 */
+	width: 170px;
+	float: left;
+	/* 追加 04_02 */
+}
+
+#contents {
+	/* 変更 04_02 */
+	width: 550px;
+	float: left;
+	/* 変更 04_02 */
+}
+
+
+
+#footer {
+
+}
+
+/* 追加 04_02 */
+/*  clearfix  */
+.clearfix:after {
+     content: "."; 
+     display: block; 
+     height: 0; 
+     clear: both; 
+     visibility: hidden;
+}
+
+.clearfix {
+    display: inline-table;
+    min-height: 1%;
+}
+
+/* Hides from IE-mac \*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+/* 追加 04_02 */
+
+

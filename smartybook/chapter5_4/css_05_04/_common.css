@@ -1,0 +1,65 @@
+@charset "utf-8";
+
+body {
+	font-family: "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3";
+	font-size: small;
+	line-height: 1.3em;
+	color: #333333;
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	text-align: center;
+	/* background-color: #124a65;*/
+	background: #333333 url(../images/bk.jpg) repeat-x;
+	width: 100%;
+}
+
+a:link { border: 0; color: #3399cc; background-color: transparent; text-decoration: underline; }
+a:active { border: 0; color: #3399cc; background-color: transparent; text-decoration: underline; }
+a:visited { border: 0; color: #3399cc; background-color: transparent; text-decoration: underline; }
+a:hover { border: 0; color: #3399cc; background-color: transparent; text-decoration: underline; }
+
+
+p {
+	margin: 0px 0px 10px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+a img {
+	border: none;
+}
+
+img.pic {
+	float: left;
+	margin-right: 16px;
+	margin-bottom: 4px;
+	clear: both;
+}
+
+img.picRight {
+	float: right;
+	margin-left: 16px;
+	margin-bottom: 4px;
+	clear: both;
+}
+
+hr {
+	display: none;
+	margin: 0px 0px 0px 0px;
+	padding: 50px 0px 0px 0px;
+	height: 0px !important;
+	height /**/: 0px;
+	clear: both;
+}
+
+#footer address {
+	color: #ffffff;
+	font-style: normal;
+	margin: 0px 0px 0px 0px;
+	padding: 4px 0px 0px 8px;
+	font-size: 10pt;
+}
+
+strong {
+	color: #ff3300;
+}
+

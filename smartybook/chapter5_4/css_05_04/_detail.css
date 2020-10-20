@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+/*
+------------------------------- #header
+*/
+
+#portalPage #header h1#siteTitle {
+	margin: 0px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	text-align: left;
+	font-size: 30px;
+	font-style: normal;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+#portalPage #header h1#siteTitle a {
+
+}
+
+#portalPage #header h2#siteDescription {
+	margin: 13px 0px 0px 0px;
+	padding: 0px 0px 0px 0px;
+	text-align: left;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+#header a:link { border: 0; color: #ffffff; background-color: transparent; text-decoration: underline; }
+#header a:active { border: 0; color: #ffffff; background-color: transparent; text-decoration: underline; }
+#header a:visited { border: 0; color: #ffffff; background-color: transparent; text-decoration: underline; }
+#header a:hover { border: 0; color: #ffffff; background-color: transparent; text-decoration: underline; }
+
+/*--------------------------------------------------------------ここまで*/
+
+/*
+------------------------------- #main
+*/
+
+#portalPage #main h3.cornerTitle {
+	border-bottom:#9ea8b1 solid 1px;
+	font-weight:bold;
+	color:808d99;
+	margin: 0 16px 0 0;
+}
+
+/*
+------------------------------- #main #twitter1
+*/
+
+#portalPage #main #twitter1 #prof {
+	border: solid 1px #dde6ed;
+	padding: 16px 0 6px 0;
+	margin: 8px 24px 0 0;
+	text-align:center;
+}
+
+#portalPage #main #twitter1 #prof p {
+	
+}
+
+
+/*
+------------------------------- #main #twitter2
+*/
+
+#portalPage #main #twitter2 .status {
+	background-color:#dcf5fb;
+	padding: 8px 8px 8px 8px;
+	margin: 8px 16px 0 0;
+}
+
+#portalPage #main #twitter2 .status .statusBody {
+	margin: 0 0 8px 0;
+	border-bottom: 1px solid #b1c6cd;
+	padding: 0 0 4px 0;
+	
+}
+
+#portalPage #main #twitter2 .status .statusBody p {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+
+/*
+------------------------------- #main #photo
+*/
+
+#portalPage #main #photo .entry {
+	padding: 0 0 0 0;
+	margin: 8px 16px 0 0;
+}
+
+#portalPage #main #photo .entry h4 {
+	padding: 0 0 0 0;
+	margin: 0 0 4px 0;
+	color:#666666;
+}
+
+#portalPage #main #photo .entry .entryBody {
+	margin: 0px 0px 8px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+#portalPage #main #photo .entry p {
+	font-size: 100%;
+	color: #666666;
+	line-height: 130%;
+	margin: 0px 0px 4px 0px;
+	padding: 0px 0px 0px 0px;
+}
+
+#portalPage #main #photo .entry .entryDate p{
+	margin: 0 0 16px 0px;
+	padding: 0 0 0 0;
+	border-bottom: 1px solid #cccccc;
+	text-align: right;
+	font-size: 85%;
+	color:#e96969;
+}
+
+/*
+------------------------------- #main #link
+*/
+
+#portalPage #main #link ul {
+	padding: 0 0 0 0;
+	margin: 8px 16px 0 0;
+	list-style-type : none; 
+}
+
+#portalPage #main #link li {
+	padding :0; 
+	margin:0; 
+	background-image:url(../images/arrow.gif);
+	text-decoration:none;
+	background-repeat:no-repeat;
+	padding-left:20px; 
+	font-size:small;
+	margin:1px 0px;
+	height:1.5em;
+}

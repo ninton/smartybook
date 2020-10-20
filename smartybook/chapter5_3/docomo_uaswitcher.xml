@@ -1,0 +1,284 @@
+<useragentswitcher>
+<useragent description="(DoCoMo 501i) D501i" useragent="DoCoMo/1.0/D501i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 501i) F501i" useragent="DoCoMo/1.0/F501i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 501i) N501i" useragent="DoCoMo/1.0/N501i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 501i) P501i" useragent="DoCoMo/1.0/P501i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 209i) D209i" useragent="DoCoMo/1.0/D209i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 209i) ER209i" useragent="DoCoMo/1.0/ER209i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 209i) F209i" useragent="DoCoMo/1.0/F209i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 209i) KO209i" useragent="DoCoMo/1.0/KO209i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 209i) N209i" useragent="DoCoMo/1.0/N209i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 209i) P209i" useragent="DoCoMo/1.0/P209i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 209i) P209iS" useragent="DoCoMo/1.0/P209is" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 209i) R209i" useragent="DoCoMo/1.0/R209i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 210i) F210i" useragent="DoCoMo/1.0/F210i/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 210i) KO210i" useragent="DoCoMo/1.0/KO210i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 210i) N210i" useragent="DoCoMo/1.0/N210i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 210i) P210i" useragent="DoCoMo/1.0/P210i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 502i) D502i" useragent="DoCoMo/1.0/D502i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 502i) F502i" useragent="DoCoMo/1.0/F502i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 502i) F502it" useragent="DoCoMo/1.0/F502it" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 502i) N502i" useragent="DoCoMo/1.0/N502i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 502i) N502it" useragent="DoCoMo/1.0/N502it" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 502i) NM502i" useragent="DoCoMo/1.0/NM502i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 502i) P502i" useragent="DoCoMo/1.0/P502i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 502i) SO502i" useragent="DoCoMo/1.0/SO502i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 502i) SO502iWM" useragent="DoCoMo/1.0/SO502iWM/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 651) P651ps" useragent="DoCoMo/1.0/P651ps" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 671i) F671i" useragent="DoCoMo/1.0/F671i/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 691i) R691i" useragent="DoCoMo/1.0/R691i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 821i) N821i" useragent="DoCoMo/1.0/N821i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 821i) P821i" useragent="DoCoMo/1.0/P821i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 821i) SH821i" useragent="DoCoMo/1.0/SH821i" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 210i) D210i" useragent="DoCoMo/1.0/D210i/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 210i) SO210i" useragent="DoCoMo/1.0/SO210i/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 211i) D211i" useragent="DoCoMo/1.0/D211i/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 211i) F211i" useragent="DoCoMo/1.0/F211i/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 211i) N211i" useragent="DoCoMo/1.0/N211i/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 211i) N211iS" useragent="DoCoMo/1.0/N211iS/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 211i) P211i" useragent="DoCoMo/1.0/P211i/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 211i) P211iS" useragent="DoCoMo/1.0/P211iS/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 211i) R211i" useragent="DoCoMo/1.0/R211i/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 211i) SO211i" useragent="DoCoMo/1.0/SO211i/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 251i) SH251i" useragent="DoCoMo/1.0/SH251i/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 251i) SH251iS" useragent="DoCoMo/1.0/SH251iS/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 503i) D503i" useragent="DoCoMo/1.0/D503i/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 503i) D503iS" useragent="DoCoMo/1.0/D503iS/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 503i) F503i" useragent="DoCoMo/1.0/F503i/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 503i) F503iS" useragent="DoCoMo/1.0/F503iS/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 503i) N503i" useragent="DoCoMo/1.0/N503i/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 503i) N503iS" useragent="DoCoMo/1.0/N503iS/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 503i) P503i" useragent="DoCoMo/1.0/P503i/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 503i) P503iS" useragent="DoCoMo/1.0/P503iS/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 503i) SO503i" useragent="DoCoMo/1.0/SO503i/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 503i) SO503iS" useragent="DoCoMo/1.0/SO503iS/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 692i) R692i" useragent="DoCoMo/1.0/R692i/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo FOMA 2001) N2001" useragent="DoCoMo/2.0 N2001(c10)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo FOMA 2002) N2002" useragent="DoCoMo/2.0 N2002(c100)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo FOMA 2002) P2002" useragent="DoCoMo/2.0 P2002(c100)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo FOMA 2101V) D2101V" useragent="DoCoMo/2.0 D2101V(c100)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo FOMA 2101V) P2101V" useragent="DoCoMo/2.0 P2101V(c100)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo FOMA 2101V) SH2101V" useragent="DoCoMo/2.0 MST_v_SH2101V(c100)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo FOMA 2101V) T2101V" useragent="DoCoMo/2.0 T2101V(c100)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 212i) F212i" useragent="DoCoMo/1.0/F212i/c10/TB" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 212i) SO212i" useragent="DoCoMo/1.0/SO212i/c10/TB" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 213i) SO213i" useragent="DoCoMo/1.0/SO213i/c10/TB" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 213i) SO213iS" useragent="DoCoMo/1.0/SO213iS/c10/TB" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 213i) SO213iWR" useragent="DoCoMo/1.0/SO213iWR/c10/TB" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 251i) D251i" useragent="DoCoMo/1.0/D251i/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 251i) D251iS" useragent="DoCoMo/1.0/D251iS/c10/TB" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 251i) F251i" useragent="DoCoMo/1.0/F251i/c10/TB" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 251i) N251i" useragent="DoCoMo/1.0/N251i/c10/TB" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 251i) N251iS" useragent="DoCoMo/1.0/N251iS/c10/TB" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 251i) P251iS" useragent="DoCoMo/1.0/P251iS/c10/TB" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 504i) D504i" useragent="DoCoMo/1.0/D504i/c10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 504i) F504i" useragent="DoCoMo/1.0/F504i/c10/TB" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 504i) F504iS" useragent="DoCoMo/1.0/F504iS/c10/TB" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 504i) N504i" useragent="DoCoMo/1.0/N504i/c10/TB" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 504i) N504iS" useragent="DoCoMo/1.0/N504iS/c10/TB" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 504i) P504i" useragent="DoCoMo/1.0/P504i/c10/TB" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 504i) P504iS" useragent="DoCoMo/1.0/P504iS/c10/TB" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 504i) SO504i" useragent="DoCoMo/1.0/SO504i/c10/TB" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 661i) F661i" useragent="DoCoMo/1.0/F661i/c10/TB" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 671i) F671iS" useragent="DoCoMo/1.0/F671iS/c10/TB" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 672i) F672i" useragent="DoCoMo/1.0/F672i/c10/TB" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 705i) NM705i" useragent="DoCoMo/2.0 NM705i(c100;TB;W15H13)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 850i) NM850iG" useragent="DoCoMo/2.0 NM850iG(c100;TB;W22H10)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo FOMA 2051) F2051" useragent="DoCoMo/2.0 F2051(c100;TB)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo FOMA 2051) N2051" useragent="DoCoMo/2.0 N2051(c100;TB)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo FOMA 2102V) F2102V" useragent="DoCoMo/2.0 F2102V(c100;TB)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo FOMA 2102V) N2102V" useragent="DoCoMo/2.0 N2102V(c100;TB)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo FOMA 2102V) P2102V" useragent="DoCoMo/2.0 P2102V(c100;TB)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo FOMA 2701) N2701" useragent="DoCoMo/2.0 N2701(c100;TB)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 213i) P213i" useragent="DoCoMo/1.0/P213i/c10/TB/W22H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 252i) D252i" useragent="DoCoMo/1.0/D252i/c10/TB/W25H12" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 252i) N252i" useragent="DoCoMo/1.0/N252i/c10/TB/W22H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 252i) P252i" useragent="DoCoMo/1.0/P252i/c10/TB/W22H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 252i) P252iS" useragent="DoCoMo/1.0/P252iS/c10/TB/W22H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 252i) SH252i" useragent="DoCoMo/1.0/SH252i/c20/TB/W24H12" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 253i) D253i" useragent="DoCoMo/1.0/D253i/c10/TB/W17H09" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 253i) D253iWM" useragent="DoCoMo/1.0/D253iWM/c10/TB/W27H08" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 253i) N253i" useragent="DoCoMo/1.0/N253i/c10/TB/W20H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 253i) P253i" useragent="DoCoMo/1.0/P253i/c10/TB/W22H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 253i) P253iS" useragent="DoCoMo/1.0/P253iS/c10/TB/W22H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 505i) D505i" useragent="DoCoMo/1.0/D505i/c20/TB/W20H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 505i) D505iS" useragent="DoCoMo/1.0/D505iS/c20/TB/W20H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 505i) F505i" useragent="DoCoMo/1.0/F505i/c20/TB/W20H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 505i) F505iGPS" useragent="DoCoMo/1.0/F505iGPS/c20/TB/W20H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 505i) N505i" useragent="DoCoMo/1.0/N505i/c20/TB/W20H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 505i) N505iS" useragent="DoCoMo/1.0/N505iS/c20/TB/W20H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 505i) P505i" useragent="DoCoMo/1.0/P505i/c20/TB/W20H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 505i) P505iS" useragent="DoCoMo/1.0/P505iS/c20/TB/W20H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 505i) SH505i" useragent="DoCoMo/1.0/SH505i/c20/TB/W24H12" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 505i) SH505iS" useragent="DoCoMo/1.0/SH505iS/c20/TB/W24H12" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 505i) SO505i" useragent="DoCoMo/1.0/SO505i/c20/TB/W21H09" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 505i) SO505iS" useragent="DoCoMo/1.0/SO505iS/c20/TB/W20H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 506i) D506i" useragent="DoCoMo/1.0/D506i/c20/TB/W20H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 506i) F506i" useragent="DoCoMo/1.0/F506i/c20/TB/W20H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 506i) N506i" useragent="DoCoMo/1.0/N506i/c20/TB/W20H11" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 506i) N506iS" useragent="DoCoMo/1.0/N506iS/c20/TB/W20H11" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 506i) N506iSII" useragent="DoCoMo/1.0/N506iS2/c20/TB/W20H11" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 506i) P506iC" useragent="DoCoMo/1.0/P506iC/c20/TB/W20H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 506i) P506iCII" useragent="DoCoMo/1.0/P506iC/c20/TB/W20H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 506i) SH506iC" useragent="DoCoMo/1.0/SH506iC/c20/TB/W24H12" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 506i) SO506i" useragent="DoCoMo/1.0/SO506i/c20/TB/W20H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 506i) SO506iC" useragent="DoCoMo/1.0/SO506iC/c20/TB/W20H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 506i) SO506iS" useragent="DoCoMo/1.0/SO506iS/c20/TB/W20H10" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 600i) L600i" useragent="DoCoMo/2.0 L600i(c100;TB;W21H11)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 600i) N600i" useragent="DoCoMo/2.0 N600i(c100;TB;W21H11)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 601i) L601i" useragent="DoCoMo/2.0 L601i(c100;TB;W21H11)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 602i) L602i" useragent="DoCoMo/2.0 L602i(c100;TB;W21H11)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 700i) F700i" useragent="DoCoMo/2.0 F700i(c100;TB;W23H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 700i) F700iS" useragent="DoCoMo/2.0 F700iS(c100;TB;W23H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 700i) N700i" useragent="DoCoMo/2.0 N700i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 700i) P700i" useragent="DoCoMo/2.0 P700i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 700i) SA700iS" useragent="DoCoMo/2.0 SA700iS(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 700i) SH700i" useragent="DoCoMo/2.0 SH700i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 700i) SH700iS" useragent="DoCoMo/2.0 SH700iS(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 701i) D701i" useragent="DoCoMo/2.0 D701i(c100;TB;W23H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 701i) D701iWM" useragent="DoCoMo/2.0 D701iWM(c100;TB;W23H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 701i) N701i" useragent="DoCoMo/2.0 N701i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 701i) N701iECO" useragent="DoCoMo/2.0 N701iECO(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 701i) P701iD" useragent="DoCoMo/2.0 P701iD(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 702i) M702iG" useragent="DoCoMo/2.0 M702iG(c100;TB;W24H13)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 702i) M702iS" useragent="DoCoMo/2.0 M702iS(c100;TB;W24H13)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 800i) SA800i" useragent="DoCoMo/2.0 SA800i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 851i) P851i" useragent="DoCoMo/2.0 P851i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 851i) SH851i" useragent="DoCoMo/2.0 SH851i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 880i) F880iES" useragent="DoCoMo/2.0 F880iES(c100;TB;W20H08)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 881i) F881iES" useragent="DoCoMo/2.0 F881iES(c100;TB;W20H08)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 900i) D900i" useragent="DoCoMo/2.0 D900i(c100;TB;W20H10)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 900i) F900i" useragent="DoCoMo/2.0 F900i(c100;TB;W22H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 900i) F900iC" useragent="DoCoMo/2.0 F900iC(c100;TB;W22H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 900i) F900iT" useragent="DoCoMo/2.0 F900iT(c100;TB;W22H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 900i) N900i" useragent="DoCoMo/2.0 N900i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 900i) N900iG" useragent="DoCoMo/2.0 N900iG(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 900i) N900iL" useragent="DoCoMo/2.0 N900iL(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 900i) N900iS" useragent="DoCoMo/2.0 N900iS(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 900i) P900i" useragent="DoCoMo/2.0 P900i(c100;TB;W24H11)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 900i) P900iV" useragent="DoCoMo/2.0 P900iV(c100;TB;W24H11)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 900i) SH900i" useragent="DoCoMo/2.0 SH900i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 901i) D901i" useragent="DoCoMo/2.0 D901i(c100;TB;W23H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 901i) D901iS" useragent="DoCoMo/2.0 D901iS(c100;TB;W23H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 901i) F901iC" useragent="DoCoMo/2.0 F901iC(c100;TB;W23H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 901i) F901iS" useragent="DoCoMo/2.0 F901iS(c100;TB;W23H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 901i) N901iC" useragent="DoCoMo/2.0 N901iC(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 901i) N901iS" useragent="DoCoMo/2.0 N901iS(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 901i) P901i" useragent="DoCoMo/2.0 P901i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 901i) P901iS" useragent="DoCoMo/2.0 P901iS(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 901i) P901iTV" useragent="DoCoMo/2.0 P901iTV(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 901i) SH901iC" useragent="DoCoMo/2.0 SH901iC(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 901i) SH901iS" useragent="DoCoMo/2.0 SH901iS(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 601i) N601i" useragent="DoCoMo/2.0 N601i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 702i) D702i" useragent="DoCoMo/2.0 D702i(c100;TB;W23H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 702i) D702iBCL" useragent="DoCoMo/2.0 D702iBCL(c100;TB;W23H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 702i) D702iF" useragent="DoCoMo/2.0 D702iF(c100;TB;W23H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 702i) F702iD" useragent="DoCoMo/2.0 F702iD(c100;TB;W23H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 702i) N702iD" useragent="DoCoMo/2.0 N702iD(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 702i) N702iS" useragent="DoCoMo/2.0 N702iS(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 702i) P702i" useragent="DoCoMo/2.0 P702i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 702i) P702iD" useragent="DoCoMo/2.0 P702iD(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 702i) SA702i" useragent="DoCoMo/2.0 SA702i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 702i) SH702iD" useragent="DoCoMo/2.0 SH702iD(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 702i) SH702iS" useragent="DoCoMo/2.0 SH702iS(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 702i) SO702i" useragent="DoCoMo/2.0 SO702i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 703i) P703imyu" useragent="DoCoMo/2.0 P703imyu(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 704i) L704i" useragent="DoCoMo/2.0 L704i(c100;TB;W24H14)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 704i) P704imyu" useragent="DoCoMo/2.0 P704imyu(c100;TB;W20H10)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 705i) L705i" useragent="DoCoMo/2.0 L705i(c100;TB;W16H09)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 705i) L705iX" useragent="DoCoMo/2.0 L705iX(c100;TB;W24H14)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 706i) L706ie" useragent="DoCoMo/2.0 L706ie(c100;TB;W16H09)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 800i) D800iDS" useragent="DoCoMo/2.0 D800iDS(c100;TB;W23H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 851i) D851iWM" useragent="DoCoMo/2.0 D851iWM(c100;TB;W23H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 852i) L852i" useragent="DoCoMo/2.0 L852i(c100;TB;W24H14)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 882i) F882iES" useragent="DoCoMo/2.0 F882iES(c100;TB;W20H08)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 883i) F883i" useragent="DoCoMo/2.0 F883i(c100;TB;W20H08)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 883i) F883iS" useragent="DoCoMo/2.0 F883iS(c100;TB;W20H08)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 902i) D902i" useragent="DoCoMo/2.0 D902i(c100;TB;W23H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 902i) D902iS" useragent="DoCoMo/2.0 D902iS(c100;TB;W23H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 902i) F902i" useragent="DoCoMo/2.0 F902i(c100;TB;W23H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 902i) F902iS" useragent="DoCoMo/2.0 F902iS(c100;TB;W23H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 902i) N902i" useragent="DoCoMo/2.0 N902i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 902i) N902iL" useragent="DoCoMo/2.0 N902iL(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 902i) N902iS" useragent="DoCoMo/2.0 N902iS(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 902i) N902iX" useragent="DoCoMo/2.0 N902iX(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 902i) P902i" useragent="DoCoMo/2.0 P902i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 902i) P902iS" useragent="DoCoMo/2.0 P902iS(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 902i) SH902i" useragent="DoCoMo/2.0 SH902i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 902i) SH902iS" useragent="DoCoMo/2.0 SH902iS(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 902i) SH902iSL" useragent="DoCoMo/2.0 SH902iSL(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 902i) SO902i" useragent="DoCoMo/2.0 SO902i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 902i) SO902iWP+" useragent="DoCoMo/2.0 SO902iWP+(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 703i) D703i" useragent="DoCoMo/2.0 D703i(c100;TB;W23H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 703i) F703i" useragent="DoCoMo/2.0 F703i(c100;TB;W23H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 703i) N703iD" useragent="DoCoMo/2.0 N703iD(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 703i) N703imyu" useragent="DoCoMo/2.0 N703imyu(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 703i) P703i" useragent="DoCoMo/2.0 P703i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 703i) SH703i" useragent="DoCoMo/2.0 SH703i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 703i) SO703i" useragent="DoCoMo/2.0 SO703i(c100;TB;W24H18)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 704i) D704i" useragent="DoCoMo/2.0 D704i(c100;TB;W23H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 704i) F704i" useragent="DoCoMo/2.0 F704i(c100;TB;W23H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 704i) N704imyu" useragent="DoCoMo/2.0 N704imyu(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 704i) P704i" useragent="DoCoMo/2.0 P704i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 704i) SH704i" useragent="DoCoMo/2.0 SH704i(c100;TB;W24H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 704i) SO704i" useragent="DoCoMo/2.0 SO704i(c100;TB;W24H18)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 705i) D705i" useragent="DoCoMo/2.0 D705i(c100;TB;W24H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 705i) D705imyu" useragent="DoCoMo/2.0 D705imyu(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 705i) F705i" useragent="DoCoMo/2.0 F705i(c100;TB;W24H17)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 705i) SH705i" useragent="DoCoMo/2.0 SH705i(c100;TB;W24H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 705i) SH705iII" useragent="DoCoMo/2.0 SH705i2(c100;TB;W20H13)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 801i) F801i" useragent="DoCoMo/2.0 F801i(c100;TB;W24H17)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 883i) F883iES" useragent="DoCoMo/2.0 F883iES(c100;TB;W20H08)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 883i) F883iESS" useragent="DoCoMo/2.0 F883iESS(c100;TB;W20H08)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 903i) D903i" useragent="DoCoMo/2.0 D903i(c100;TB;W23H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 903i) D903iTV" useragent="DoCoMo/2.0 D903iTV(c100;TB;W23H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 903i) F903i" useragent="DoCoMo/2.0 F903i(c100;TB;W23H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 903i) F903iBSC" useragent="DoCoMo/2.0 F903iBSC(c100;TB;W23H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 903i) F903iX" useragent="DoCoMo/2.0 F903iX(c100;TB;W23H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 903i) N903i" useragent="DoCoMo/2.0 N903i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 903i) P903i" useragent="DoCoMo/2.0 P903i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 903i) P903iTV" useragent="DoCoMo/2.0 P903iTV(c100;TB;W24H15)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 903i) P903iX" useragent="DoCoMo/2.0 P903iX(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 903i) SH903i" useragent="DoCoMo/2.0 SH903i(c100;TB;W24H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 903i) SH903iTV" useragent="DoCoMo/2.0 SH903iTV(c100;TB;W24H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 903i) SO903i" useragent="DoCoMo/2.0 SO903i(c100;TB;W24H18)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 903i) SO903iTV" useragent="DoCoMo/2.0 SO903iTV(c100;TB;W24H18)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 904i) D904i" useragent="DoCoMo/2.0 D904i(c100;TB;W24H12)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 904i) F904i" useragent="DoCoMo/2.0 F904i(c100;TB;W24H17)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 904i) N904i" useragent="DoCoMo/2.0 N904i(c100;TB;W24H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 904i) P904i" useragent="DoCoMo/2.0 P904i(c100;TB;W24H15)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 904i) SH904i" useragent="DoCoMo/2.0 SH904i(c100;TB;W24H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 705i) N705i" useragent="DoCoMo/2.0 N705i(c100;TB;W24H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 705i) N705imyu" useragent="DoCoMo/2.0 N705imyu(c100;TB;W24H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 705i) P705i" useragent="DoCoMo/2.0 P705i(c100;TB;W24H15)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 705i) P705iCL" useragent="DoCoMo/2.0 P705iCL(c100;TB;W16H10)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 705i) P705imyu" useragent="DoCoMo/2.0 P705imyu(c100;TB;W24H15)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 705i) SO705i" useragent="DoCoMo/2.0 SO705i(c100;TB;W24H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 706i) N706i" useragent="DoCoMo/2.0 N706i(c100;TB;W24H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 706i) P706imyu" useragent="DoCoMo/2.0 P706imyu(c100;TB;W24H15)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 706i) SO706i" useragent="DoCoMo/2.0 SO706i(c100;TB;W24H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 884i) F884i" useragent="DoCoMo/2.0 F884i(c100;TB;W20H11)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 884i) F884iES" useragent="DoCoMo/2.0 F884iES(c100;TB;W20H8)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 905i) D905i" useragent="DoCoMo/2.0 D905i(c100;TB;W24H17)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 905i) F905i" useragent="DoCoMo/2.0 F905i(c100;TB;W24H17)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 905i) F905iBiz" useragent="DoCoMo/2.0 F905iBiz(c100;TB;W24H17)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 905i) N905i" useragent="DoCoMo/2.0 N905i(c100;TB;W24H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 905i) N905iBiz" useragent="DoCoMo/2.0 N905iBiz(c100;TB;W24H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 905i) N905imyu" useragent="DoCoMo/2.0 N905imyu(c100;TB;W24H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 905i) P905i" useragent="DoCoMo/2.0 P905i(c100;TB;W24H15)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 905i) P905iTV" useragent="DoCoMo/2.0 P905iTV(c100;TB;W24H15)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 905i) SH905i" useragent="DoCoMo/2.0 SH905i(c100;TB;W24H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 905i) SH905iTV" useragent="DoCoMo/2.0 SH905iTV(c100;TB;W24H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 905i) SO905i" useragent="DoCoMo/2.0 SO905i(c100;TB;W24H18)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 905i) SO905iCS" useragent="DoCoMo/2.0 SO905iCS(c100;TB;W24H18)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 906i) N906iL" useragent="DoCoMo/2.0 N906iL(c100;TB;W24H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 706i) F706i" useragent="DoCoMo/2.0 F706i(c100;TB;W24H17)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 706i) SH706i" useragent="DoCoMo/2.0 SH706i(c100;TB;W24H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 906i) F906i" useragent="DoCoMo/2.0 F906i(c100;TB;W24H17)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 906i) N906i" useragent="DoCoMo/2.0 N906i(c100;TB;W24H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 906i) N906imyu" useragent="DoCoMo/2.0 N906imyu(c100;TB;W24H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 906i) P906i" useragent="DoCoMo/2.0 P906i(c100;TB;W24H15)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 906i) SH906i" useragent="DoCoMo/2.0 SH906i(c100;TB;W24H16)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 906i) SH906iTV" useragent="DoCoMo/2.0 SH906iTV(c100;TB;W20H13)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+<useragent description="(DoCoMo 906i) SO906i" useragent="DoCoMo/2.0 SO906i(c100;TB;W24H18)" appname="" appversion="" platform="" vendor="" vendorsub=""/>
+</useragentswitcher>
