@@ -1,4 +1,4 @@
 <?php
-// MySQL‚ÌÚ‘±î•ñ
+// MySQLã®æŽ¥ç¶šæƒ…å ±
 $CONFIG['dsn'] = 'mysql://root@localhost/smartybook';
 ?>

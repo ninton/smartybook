@@ -42,15 +42,15 @@ class MyListManager {
 	}
 
 	function create( &$io_MyList ) {
-		// –¢ŽÀ‘•
+		// æœªå®Ÿè£…
 	}
 
 	function readList( $i_offset, $i_length ) {
-		// –¢ŽÀ‘•
+		// æœªå®Ÿè£…
 	}
 	
 	function delete( $i_ListId ) {
-		// –¢ŽÀ‘•
+		// æœªå®Ÿè£…
 	}
 }
 

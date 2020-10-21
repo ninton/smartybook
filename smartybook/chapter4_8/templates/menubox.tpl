@@ -1,7 +1,7 @@
-{* ���j���[���ڂ��A�N�e�B�u�̂Ƃ��̃X�^�C�� *}
+{* メニュー項目がアクティブのときのスタイル *}
 {capture assign=active}class="active"{/capture}
 
-{* �y�[�W�ƃ��j���[ID�̑Ή��\�A���j���[ID�͊K�w�\���𔽉f���Ă��� *}
+{* ページとメニューIDの対応表、メニューIDは階層構造を反映している *}
 {assign var=u value=$smarty.server.REQUEST_URI}
 {if     preg_match('/\bindex\.php\b/',$u)}{assign var=menu_id value='1'	}
 {elseif preg_match('/\/$/'           ,$u)}{assign var=menu_id value='1'	}
@@ -16,7 +16,7 @@
 <div id="menuBox">
 <h4>MENU</h4>
 
-{* ���j���[html�B���݃A�N�Z�X���Ă��郁�j���[ID�ɂ���āA�A�N�e�B�u�\����T�u���j���[�W�J���� *}
+{* メニューhtml。現在アクセスしているメニューIDによって、アクティブ表示やサブメニュー展開する *}
 {capture name=menubox}
 <ul>
 <li><a href="index.php" {if $menu_id == '1'}{$active}{/if}>INDEX</a>

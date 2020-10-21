@@ -20,7 +20,7 @@ default:
 exit();
 
 
-// ���݃A�N�Z�X����URL
+// 現在アクセス中のURL
 function get_current_url() {
 	$shceme = empty($_SERVER['HTTPS']) ? 'http' : 'https';
 	$host = $_SERVER['HTTP_HOST'];
@@ -30,7 +30,7 @@ function get_current_url() {
 	return $url;
 }
 
-//	�摜�ꗗ�f�[�^
+//	画像一覧データ
 //	$rcd_arr[]['fname']
 //
 //	$rcd_arr[]['src']['path'  ]
@@ -80,7 +80,7 @@ function proc_image_list() {
 	return $rcd_arr;
 }
 
-// ���摜����咆���̉摜�����
+// 元画像から大中小の画像を作る
 function proc_image_resize( $i_fname ) {
 	global	$CFG;
 	

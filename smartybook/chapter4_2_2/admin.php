@@ -6,6 +6,6 @@ $smarty->assign("siteName", $siteName);
 $smarty->assign("home", $home);
 $smarty->assign("admin", $admin);
 $smarty->assign("categories", $categories);
-//o—Í
+//å‡ºåŠ›
 $smarty->display("admin.tpl");
 ?>

@@ -1,7 +1,7 @@
 <?php
 /*
 
-	—á
+	ä¾‹
 	----------	----------	----------	----------	----------
 		emoji_output_setting( 'i_uni16', 's_webcode' );
 		emoji_output_setting( 's_uni16', 's_webcode' );

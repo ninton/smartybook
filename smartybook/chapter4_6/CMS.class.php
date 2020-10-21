@@ -2,7 +2,7 @@
 require_once( 'DB.php' );
 
 /**
- *	ƒe[ƒuƒ‹CMS‚Ì“Ç‚İo‚µ‘€ì
+ *	ãƒ†ãƒ¼ãƒ–ãƒ«CMSã®èª­ã¿å‡ºã—æ“ä½œ
  */
 class CMS {
 	var	$db;
@@ -36,7 +36,7 @@ class CMS {
 	 *	@return	array
 	 */
 	function getAll ( $i_offset, $i_limit, $i_sort, $i_order ) {
-		// ˆÀ‘S‚È’l‚©‚Ç‚¤‚©‚ğƒ`ƒFƒbƒN‚·‚é
+		// å®‰å…¨ãªå€¤ã‹ã©ã†ã‹ã‚’ãƒã‚§ãƒƒã‚¯ã™ã‚‹
 		switch( $i_sort ){
 		case 'id':
 		case 'category':
