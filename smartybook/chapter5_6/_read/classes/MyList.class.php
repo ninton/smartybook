@@ -22,7 +22,7 @@ class MyList {
 	}
 	
 	function getASINs() {
-		// ASIN�̏d���v�f�Ƌ�v�f����菜���āA�J���}��؂�ɂ���
+		// ASINの重複要素と空要素を取り除いて、カンマ区切りにする
 		$map = array();
 		
 		foreach ( $this->detail_arr as $detail ) {

@@ -1,9 +1,9 @@
 <?php
 require_once( './fetch_ini.php' );
 
-// ƒƒjƒ…[
+// ãƒ¡ãƒ‹ãƒ¥ãƒ¼
 $menu_arr = get_menu_arr($categories);
-// ’–Ú‹L–
+// æ³¨ç›®è¨˜äº‹
 $featured_arr = get_featured_arr(BAT_SRC_DIR . "/$csv");
 
 $smarty = new Smarty();
@@ -19,7 +19,7 @@ file_put_contents( './html/featured.html', $buf );
 print $buf;
 
 
-// ƒƒjƒ…[‚ğì‚é
+// ãƒ¡ãƒ‹ãƒ¥ãƒ¼ã‚’ä½œã‚‹
 function get_menu_arr( $i_categories ) {
 	$menu_arr = array();
 	foreach ( $i_categories as $i => $category ) {
@@ -31,7 +31,7 @@ function get_menu_arr( $i_categories ) {
 	return $menu_arr;
 }
 
-// ’–Ú‹L–‚ğ1Œ‘I‚Ô
+// æ³¨ç›®è¨˜äº‹ã‚’1ä»¶é¸ã¶
 function get_featured_arr( $i_csv ) {
 	$cms_arr = array();
 	$fp = fopen( $i_csv, 'r' );
@@ -56,7 +56,7 @@ function get_featured_arr( $i_csv ) {
 	}
 	fclose( $fp );
 
-	//ƒ‰ƒ“ƒ_ƒ€‚É1Œ‘I‚Ô
+	//ãƒ©ãƒ³ãƒ€ãƒ ã«1ä»¶é¸ã¶
 	$i = array_rand($cms_arr, 1);
 	$featured_arr = array_slice($cms_arr, $i, 1);
 
@@ -71,7 +71,7 @@ function get_image_url( $i_image ) {
 	return sprintf("%s/%s", get_url(), $i_image);
 }
 
-// chapter4_1/ ‚ÌURL‚ğ‹‚ß‚é
+// chapter4_1/ ã®URLã‚’æ±‚ã‚ã‚‹
 function get_url() {
 	static	$url;
 	

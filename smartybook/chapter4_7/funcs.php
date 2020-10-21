@@ -36,11 +36,11 @@ function assoc_load( $i_path ) {
 function makeTimeStamp( &$io_vars, $i_params = null ) {
 /*
 {html_select_date prefix="" field_array="startDate" time=$t}
-«
+â†“
 makeTimeStamp( $_POST, array('field_array' => 'startDate') );
 
 {html_select_date prefix="endDate_" time=$t}
-«
+â†“
 makeTimeStamp( $_POST, array('prefix' => 'endDate_') );
 
 */

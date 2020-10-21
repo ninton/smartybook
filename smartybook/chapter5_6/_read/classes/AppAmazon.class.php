@@ -33,14 +33,14 @@ class AppAmazon {
 	$errmsg = $amazon->ItemLookup( $ASINs, $options, &$Item_arr ) {
 	print_r( $Item_arr );
 
-	$Item_arr[0]	ASINu12345v‚ÌItemî•ñ
-	$Item_arr[2]	ASINu23456v‚ÌItemî•ñ
-	$Item_arr[3]	ASINu34567v‚ÌItemî•ñ
+	$Item_arr[0]	ASINã€Œ12345ã€ã®Itemæƒ…å ±
+	$Item_arr[2]	ASINã€Œ23456ã€ã®Itemæƒ…å ±
+	$Item_arr[3]	ASINã€Œ34567ã€ã®Itemæƒ…å ±
 	*/
 	function ItemLookup( $i_ASINs, $i_options, &$o_Item_arr ) {
 		$ASIN_arr = split(',', $i_ASINs);
 
-		// $ASIN_arr‚©‚ç10ŒÂ‚Ã‚Â–â‡‚í‚¹‚µ‚ÄA$o_Item_arr‚É’~Ï‚·‚é
+		// $ASIN_arrã‹ã‚‰10å€‹ã¥ã¤å•åˆã‚ã›ã—ã¦ã€$o_Item_arrã«è“„ç©ã™ã‚‹
 		$o_Item_arr = array();
 		for ( $i = 0; $i < count($ASIN_arr); $i += 10 ) {
 			$ASINs = join(',', array_slice($ASIN_arr, $i, 10));

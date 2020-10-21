@@ -7,7 +7,7 @@ $smarty->assign("siteName", $siteName);
 $smarty->assign("home", $home);
 $smarty->assign("categories", $categories);
 //$smarty->assign("notice", $notice);
-// CSVƒf[ƒ^‚ð”z—ñ‚ÉŠi”[
+// CSVãƒ‡ãƒ¼ã‚¿ã‚’é…åˆ—ã«æ ¼ç´
 $fp = fopen($csv, "r");
 $i = 0;
 while($array = fgetcsv($fp, 5000, ",")){
@@ -24,7 +24,7 @@ while($array = fgetcsv($fp, 5000, ",")){
     $i++;
 }
 fclose($fp);
-//ƒf[ƒ^‚ðsmarty‚Ì•Ï”‚Æ‚µ‚ÄŠi”[
+//ãƒ‡ãƒ¼ã‚¿ã‚’smartyã®å¤‰æ•°ã¨ã—ã¦æ ¼ç´
 $smarty->assign("data", $data);
 $smarty->display("xml.tpl");
 function insert_noticeText () {

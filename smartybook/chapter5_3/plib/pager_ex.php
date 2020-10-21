@@ -1,6 +1,6 @@
 <?php
-// PagerƒNƒ‰ƒX‚ðŠg’£‚·‚é
-// Žg‚¢•ûA•K—v‚È‰ÓŠ‚Å require/include ‚·‚é
+// Pagerã‚¯ãƒ©ã‚¹ã‚’æ‹¡å¼µã™ã‚‹
+// ä½¿ã„æ–¹ã€å¿…è¦ãªç®‡æ‰€ã§ require/include ã™ã‚‹
 $links = $pager->getLinks();
 
 $pager->ExOffsetFrom   = $from;

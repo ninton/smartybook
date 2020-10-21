@@ -1,9 +1,9 @@
 <?php
 
 /**
- *	$_SERVERïœêîÇãUëïÇµÇƒÅA
- *	PEAR::Net_UserAgent_MobileÇ≈ÅA
- *	softbankÇÃÉEÉFÉuÉRÉìÉeÉìÉcÉrÉÖÅ[ÉAÇÃí[ññèÓïÒÇàµÇ¶ÇÈÇÊÇ§Ç…Ç∑ÇÈ
+ *	$_SERVERÂ§âÊï∞„ÇíÂÅΩË£Ö„Åó„Å¶„ÄÅ
+ *	PEAR::Net_UserAgent_Mobile„Åß„ÄÅ
+ *	softbank„ÅÆ„Ç¶„Çß„Éñ„Ç≥„É≥„ÉÜ„É≥„ÉÑ„Éì„É•„Éº„Ç¢„ÅÆÁ´ØÊú´ÊÉÖÂ†±„ÇíÊâ±„Åà„Çã„Çà„ÅÜ„Å´„Åô„Çã
  */
 foreach ( $_SERVER as $key => $value ) {
 	if ( preg_match('/^HTTP_X_EMULATOR_/', $key) ) {
@@ -12,7 +12,7 @@ foreach ( $_SERVER as $key => $value ) {
 	}
 }
 
-// Net_UserAgent_Mobile-0.31.0 Ç©ÇÁïsóv
+// Net_UserAgent_Mobile-0.31.0 „Åã„Çâ‰∏çË¶Å
 // if ( preg_match('/^Vemulator/', $_SERVER['HTTP_USER_AGENT']) ) {
 //	$_SERVER['HTTP_USER_AGENT'] = preg_replace('/^Vemulator/', 'Vodafone', $_SERVER['HTTP_USER_AGENT']);
 // }

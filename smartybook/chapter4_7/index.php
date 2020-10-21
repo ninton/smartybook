@@ -3,12 +3,12 @@ require_once( '../smarty/libs/Smarty.class.php' );
 require_once( './funcs.php' );
 require_once( './config.php' );
 
-// “s“¹•{Œ§‚È‚Ç‚Ìƒƒ^ƒf[ƒ^‚ðƒtƒ@ƒCƒ‹‚©‚ç“Ç‚Ýž‚Þ
+// éƒ½é“åºœçœŒãªã©ã®ãƒ¡ã‚¿ãƒ‡ãƒ¼ã‚¿ã‚’ãƒ•ã‚¡ã‚¤ãƒ«ã‹ã‚‰èª­ã¿è¾¼ã‚€
 $META['prefecture'] = array_load( "prefecture.txt" );
 $META['rating'    ] = assoc_load( "rating.txt"     );
 $META['where'     ] = array_load( "where.txt"      );
 
-// ƒZƒbƒVƒ‡ƒ“‚ðŠJŽnAƒZƒbƒVƒ‡ƒ“ƒg[ƒNƒ“‚ðƒ`ƒFƒbƒN‚·‚é
+// ã‚»ãƒƒã‚·ãƒ§ãƒ³ã‚’é–‹å§‹ã€ã‚»ãƒƒã‚·ãƒ§ãƒ³ãƒˆãƒ¼ã‚¯ãƒ³ã‚’ãƒã‚§ãƒƒã‚¯ã™ã‚‹
 session_start();
 $token = md5( TOKEN_SALT . $_SERVER['HTTP_USER_AGENT'] . $_SERVER['REMOTE_ADDR']);
 if ( @$_SESSION[APPID]['token'] != $token ) {
@@ -17,7 +17,7 @@ if ( @$_SESSION[APPID]['token'] != $token ) {
 	$_SESSION[APPID]['token'] = $token;
 }
 
-// action‚ð’²‚×‚ÄA•\Ž¦‚·‚éƒeƒ“ƒvƒŒ[ƒg‚ðØ‚è‘Ö‚¦‚é
+// actionã‚’èª¿ã¹ã¦ã€è¡¨ç¤ºã™ã‚‹ãƒ†ãƒ³ãƒ—ãƒ¬ãƒ¼ãƒˆã‚’åˆ‡ã‚Šæ›¿ãˆã‚‹
 switch ( strtoupper($_SERVER['REQUEST_METHOD']) ) {
 case 'POST':
 	switch ( @$_REQUEST['action'] ) {
@@ -47,7 +47,7 @@ default:
 	break;
 }
 
-// {html_select_date/time}—pƒ^ƒCƒ€ƒXƒ^ƒ“ƒv‚ðŒvŽZ‚·‚é
+// {html_select_date/time}ç”¨ã‚¿ã‚¤ãƒ ã‚¹ã‚¿ãƒ³ãƒ—ã‚’è¨ˆç®—ã™ã‚‹
 $now = time();
 if ( ! empty($_SESSION[APPID]['form']['startDate']) ) {
 	makeTimeStamp( $_SESSION[APPID]['form'], array('field_array' => 'startDate') );
@@ -64,7 +64,7 @@ $smarty->assign( "META", $META );
 $smarty->assign( "form" , $_SESSION[APPID]['form'] );
 $smarty->display( $tpl );
 
-// ‘—MŠ®—¹ŒãAƒZƒbƒVƒ‡ƒ“•Ï”‚ðƒNƒŠƒA‚·‚é
+// é€ä¿¡å®Œäº†å¾Œã€ã‚»ãƒƒã‚·ãƒ§ãƒ³å¤‰æ•°ã‚’ã‚¯ãƒªã‚¢ã™ã‚‹
 switch ( $_REQUEST['action'] ) {
 case 'submit':
 	$_SESSION[APPID]['form'] = array();

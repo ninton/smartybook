@@ -8,7 +8,7 @@ $_SERVER['DOCOMO_MAP'] = dirname(__FILE__) . "/docomo_netuamobile.xml";
 $agent = &Net_UserAgent_Mobile::factory();
 $display = $agent->getDisplay();
 
-// ƒLƒƒƒŠƒA–¼Ì‚Ì’²®
+// ã‚­ãƒ£ãƒªã‚¢åç§°ã®èª¿æ•´
 switch ( strtolower($agent->getCarrierLongName()) ) {
 case 'docomo':
 	header( 'Content-Type: application/xhtml+xml; charset=UTF-8' );
@@ -29,7 +29,7 @@ default:
 	break;
 }
 
-// ŠG•¶š•ÏŠ·ˆ—
+// çµµæ–‡å­—å¤‰æ›å‡¦ç†
 switch ( $_SERVER['carrier_ua'] ) {
 case 'imode':
 	break;
