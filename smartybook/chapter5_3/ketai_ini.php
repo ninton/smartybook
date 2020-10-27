@@ -3,8 +3,6 @@ require_once( 'Net/UserAgent/Mobile.php' );
 require_once( dirname(__FILE__) . '/plib/emoji/Emoji.class.php' );
 require_once( dirname(__FILE__) . '/plib/semulator.php' );
 
-// Net_UserAgent_Mobile
-$_SERVER['DOCOMO_MAP'] = dirname(__FILE__) . "/docomo_netuamobile.xml";
 $agent = &Net_UserAgent_Mobile::factory();
 $display = $agent->getDisplay();
 
@@ -44,5 +42,3 @@ case 'softbank':
 	ob_start( 'emoji_output_handler' );
 	break;
 }
-
-?>
