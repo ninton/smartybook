@@ -1,3 +1,6 @@
 .idea
 Thumbs.db
 .DS_STORE
+smartybook/smarty
+xampp-linux/lampp
+xampp-linux/xampp-*.tar.gz

@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  centos6:
+    tty: true
+    container_name: centos6.smartybook.docker
+    build: centos6
+    ports:
+      - 5402:80
+    volumes:
+      - ./xampp-linux/lampp:/opt/lampp:cached
+      - ./smartybook:/opt/lampp/htdocs/smartybook:cached
+    command: /bin/sh
+
