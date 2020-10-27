@@ -18,7 +18,7 @@
     </ul>
 </div>
 <div id="diary">
-    <h3>STUFF DIARY</h3>
+    <h3>STAFF DIARY</h3>
     <ul>
     {foreach from=$data item=item}
         {if $item.category == "diary"}
