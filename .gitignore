@@ -1,6 +1,8 @@
 .idea
 Thumbs.db
 .DS_STORE
-smartybook/smarty
+smartybook/smarty/
+smartybook/chapter5_4/JSON.php
 xampp-linux/lampp
-xampp-linux/xampp-*.tar.gz
+xampp-linux/*.tar.gz*
+xampp-linux/pear

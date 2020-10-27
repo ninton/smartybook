@@ -8,6 +8,7 @@ chmod o+r lampp/phpmyadmin/config.inc.php
 cat lampp/etc/php.ini \
   | sed "s/magic_quotes_gpc = On/magic_quotes_gpc = Off/" \
   | sed "s/;mbstring.internal_encoding = EUC-JP/mbstring.internal_encoding = utf-8/" \
+  | sed "s#;include_path = \".*\"#include_path = \".:/opt/lampp/lib/php\"#" \
   >lampp/etc/php.ini.tmp
 
 cp lampp/etc/php.ini.tmp lampp/etc/php.ini
