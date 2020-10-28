@@ -14,6 +14,8 @@ $smarty->assign("home", $home);
 $smarty->assign("categories", $categories);
 
 if(!$smarty->is_cached('index.tpl')) {
+	$picture = array();
+	$data = array();
 
 	// CSVデータを配列に格納
 	$fp = fopen($csv, "r");
@@ -66,4 +68,3 @@ function insert_noticeText () {
 function insert_noticeText2 ($siteName) {
 	return '<img src="./images/banner.gif" /><br />' . $siteName["siteName"];
 }
-?>
