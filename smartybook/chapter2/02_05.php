@@ -55,10 +55,10 @@ print '</tr>';
 </tr>
 </table>
 <?php
-print '<input type="hidden" name="category" value="'.$_POST[category].'" />';
-print '<input type="hidden" name="title" value="'.$_POST[title].'" />';
-print '<input type="hidden" name="contents" value="'.$_POST[contents].'" />';
-print '<input type="hidden" name="date" value="'.$_POST[date].'" />';
+print '<input type="hidden" name="category" value="'.$_POST['category'].'" />';
+print '<input type="hidden" name="title" value="'.$_POST['title'].'" />';
+print '<input type="hidden" name="contents" value="'.$_POST['contents'].'" />';
+print '<input type="hidden" name="date" value="'.$_POST['date'].'" />';
 print '<input type="hidden" name="image" value="'.$imageFile.'" />';
 ?>
 </form>
