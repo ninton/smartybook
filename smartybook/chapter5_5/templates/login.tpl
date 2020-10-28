@@ -24,7 +24,7 @@
 			{if $errormsg neq ""}
 			<p class="message">{$errormsg}</p>
 			{/if}
-			{login_form self="$self"}
+			{login_form self="$self" username=$username}
 		</div>
 	</div>
 	<!-- 情報パネルおわり -->

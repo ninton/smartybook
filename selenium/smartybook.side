@@ -1,0 +1,3579 @@
+{
+  "id": "f6ed33c8-8166-44fb-aa9f-bb2c1c8a1752",
+  "version": "2.0",
+  "name": "smartybook",
+  "url": "http://localhost:5402/",
+  "tests": [{
+    "id": "f92b0c6a-3d1d-40c6-ac54-c5a37381b6c9",
+    "name": "chapter2",
+    "commands": [{
+      "id": "e63cadf8-4ea6-4333-b665-1b09b1980267",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter2/02_01.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c7042779-cc57-48f4-92e4-f3d22c0aa43c",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "0ba2bdbb-80c7-4eef-ae07-33461269f2a2",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter2/02_01_a.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6489ecfe-421a-40ed-8f27-7d397b6d1ccc",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "20f4749d-774d-4bd9-9074-9d2f6fbca28f",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter2/02_02.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "49da385d-90f4-46fd-9354-86b16f989ee0",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "b5abcb71-f043-4185-8cd0-e74c4b6f4c79",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter2/02_02_a.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "071946ae-1a45-4796-99bf-f46d35a05f02",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "b60cb8a5-af10-4264-834d-095c329f27af",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Study",
+      "targets": [
+        ["linkText=Study", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Study')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '02_03.php?category=Study')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Study')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "69a155e5-d9a1-40c1-80cf-739139729314",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "d15980ce-fce9-470c-93c4-fc4002c0824c",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter2/02_04.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8e9de111-5de7-42d1-92df-7fe84bde8fdf",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "67de3dfb-8d24-4b22-927c-fbcce5baf26c",
+      "comment": "",
+      "command": "click",
+      "target": "name=title",
+      "targets": [
+        ["name=title", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='title']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6771a4eb-1e15-44ab-9c6a-1bfb53e455ab",
+      "comment": "",
+      "command": "type",
+      "target": "name=title",
+      "targets": [
+        ["name=title", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='title']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "テストイタイトル1"
+    }, {
+      "id": "bc614a9c-9743-408c-8d37-c3c272f3d443",
+      "comment": "",
+      "command": "type",
+      "target": "name=contents",
+      "targets": [
+        ["name=contents", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='contents']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "テスト本文1"
+    }, {
+      "id": "5f56463a-f859-4710-9836-d8ac1f7160c7",
+      "comment": "",
+      "command": "type",
+      "target": "name=image",
+      "targets": [
+        ["id=image", "id"],
+        ["name=image", "name"],
+        ["css=#image", "css:finder"],
+        ["xpath=//input[@id='image']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/input", "xpath:position"]
+      ],
+      "value": "/home/aoki/Pictures/smartybook/007.jpg"
+    }, {
+      "id": "721880c6-1be6-4381-8f1b-f38caad8abcc",
+      "comment": "",
+      "command": "click",
+      "target": "name=submit",
+      "targets": [
+        ["name=submit", "name"],
+        ["css=tr:nth-child(6) input", "css:finder"],
+        ["xpath=//input[@name='submit']", "xpath:attributes"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f1eb7ffb-7b80-4515-a8ba-46ae46d9a210",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "b4b7d601-fb71-46c5-b4dc-bf546feebd5f",
+      "comment": "",
+      "command": "click",
+      "target": "name=submit",
+      "targets": [
+        ["name=submit", "name"],
+        ["css=tr:nth-child(6) input", "css:finder"],
+        ["xpath=//input[@name='submit']", "xpath:attributes"],
+        ["xpath=//tr[6]/td[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "78ded3f5-6139-463d-a957-e12efa8ced23",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "a46315f5-299e-417d-bb6d-d423c7cf12e7",
+    "name": "chapter3",
+    "commands": [{
+      "id": "0e0c868e-0bae-487f-bc1d-2cba6320ae15",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter3/03_01.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3619e732-6390-4534-b5bb-17484de30125",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "ce43417b-f136-472c-a5fe-6e829123c281",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter3/03_02.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8a0e7b16-d9a2-43e4-9803-a550b0e327c7",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "874cb98d-a80d-4335-8c4f-16ca449ff1d9",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter3/03_03.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "67a93db2-4823-4967-9179-a5b58efb8855",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "434b6d30-2779-4286-9448-9c4b820f909a",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter3/03_04.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e89afdf3-f26d-49b9-a7bc-1da8c16c0c54",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "4fcb21ea-9377-4fce-ba2a-01eb4048bea1",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter3/03_05.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "23fc1580-9caa-4180-81d6-61d4afc0e7b2",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "c66b93b7-bace-4d32-9904-34452a84f383",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter3/03_06.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7a4934ea-101b-41ee-9356-96c50eb20276",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "f2239449-0569-4c91-a6ee-5a3aaa70f8a8",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter3/03_07.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "35250795-8ee3-407d-8211-bbc9f6297aa5",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "0eb1b087-dbcc-470c-90a3-22d6cad3361e",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter3/03_08.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "55cb8691-cc9a-41eb-9965-914fd491b5e1",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "f2264ce8-904e-436b-8e8c-8447f2f5b87b",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter3/03_09.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a16f8aa5-d762-4d71-82f1-be930e503343",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "8cccaaec-f4b6-4bc1-9fea-cfd91336cc03",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter3/03_10.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "13477114-267a-41e5-aa4e-70a7f899d89b",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "e2ed6890-7902-4b8d-802d-6c53230e6a93",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter3/03_11.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "eb5969b3-e1bd-46fb-bf73-fc8f27128791",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "6d5de011-2f41-420f-be39-e213d8706ae7",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter3/03_12.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d32cdb45-66c0-4cab-b429-a100f060c837",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "967a150a-8ae7-4c14-8173-cf0020994887",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter3/03_13.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2faa266a-0b71-4cf4-a37e-84d185145c0f",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "21bf3ba9-ec39-4985-b560-48975bc14c13",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter3/03_14.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "962fcdc4-df39-4362-b966-4c339530e468",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "ab635fcf-1096-44a9-9b8d-9c7da6cdab56",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter3/03_15.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2c74e861-ca94-44eb-826e-a57d7532da8e",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "59769025-7440-4ec6-9922-81528c2726ea",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter3/03_16.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6b274992-369b-4c8b-b570-2cf8c468a97c",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "30d5916d-5600-49a2-a02e-04acd25476d5",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter3/03_17.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "612becb5-748d-481f-a1b8-85866c4598d4",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "742fa6b9-1597-45d1-acfa-b28532128bcf",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter3/03_18.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4b62b678-bb3a-4ae7-80c9-69987b214e0f",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "d56ee55d-278e-4cdc-b481-41e6dd534442",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter3/03_19.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ea18df45-7018-4560-8036-6d5b2ebcc6ba",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "06381028-c123-4cd3-bc81-bd2d909efff3",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter3/03_20.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5b9b0d05-1c98-42e7-bbd8-2676e2d8e941",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "4fe80d99-5ba8-41f4-a11a-897710cd4d18",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter3/03_21.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "974bf394-b054-435a-9b7a-9f25d5a0732d",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "93179682-450f-4add-80fe-1b40881366df",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter3/03_22.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1518eb86-dd91-4eb7-970d-efbbed59ee86",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "b2a8cefd-bf65-4454-a28d-05f9eea8c70e",
+    "name": "chapter4_1",
+    "commands": [{
+      "id": "98ba89fd-a190-4363-98f9-0a07a270dcd8",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_1/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1a238c11-15b3-4c10-888a-7327351b38f5",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "8e5b4a73-c155-415b-bd71-c4d80ba4a8cf",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_1/contents.php?category=Study",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8b218a0b-8cdf-488e-bfb2-35246e67ed0f",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "d0876930-9f15-43da-8840-4dafd6c4292a",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_1/contents.php?category=Eating",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c78cf7d0-2280-40af-afd1-19a4aba494b7",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "159286c0-1221-495f-8d8c-caff8e9fbd57",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_1/contents.php?category=Work",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cc9501d1-e5e5-4392-9f8d-8b92348e567e",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "f9af3039-fbce-4a2c-acdb-84c548f1e825",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_1/admin.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "703ba7ea-fba5-4d33-9f38-ad7699cba5e0",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "91dd27ac-1da5-489e-8be6-d35e68632bd5",
+      "comment": "",
+      "command": "type",
+      "target": "name=title",
+      "targets": [
+        ["name=title", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='title']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "テストイタイトル1"
+    }, {
+      "id": "a265aeda-8673-4da4-a32f-135fbdb95fc6",
+      "comment": "",
+      "command": "type",
+      "target": "name=contents",
+      "targets": [
+        ["name=contents", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='contents']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "テスト本文1"
+    }, {
+      "id": "6388075e-2732-47c1-b79e-fd6095ab460d",
+      "comment": "",
+      "command": "type",
+      "target": "id=image",
+      "targets": [
+        ["id=image", "id"],
+        ["name=image", "name"],
+        ["css=#image", "css:finder"],
+        ["xpath=//input[@id='image']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/input", "xpath:position"]
+      ],
+      "value": "/home/aoki/Pictures/smartybook/007.jpg"
+    }, {
+      "id": "8da5092c-9032-4913-bea8-b94d0a18c7e2",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(6) input",
+      "targets": [
+        ["css=tr:nth-child(6) input", "css:finder"],
+        ["xpath=//input[@value='send']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd79dffc-e652-4853-8962-4b64b25bc3ea",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "163008ec-37e1-40cc-9d09-50690adf08af",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submitBtn",
+      "targets": [
+        ["css=.submitBtn", "css:finder"],
+        ["xpath=//input[@value='send']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5435f8c0-a6bc-4727-95b0-8c1d0a9a23c4",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "5a268a1e-d8e2-4a55-9fc6-081c0714de8c",
+    "name": "chapter4_2_1",
+    "commands": [{
+      "id": "b1cae759-b187-4b0e-8bbd-53bd790282ca",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_2_1/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ebff1c9a-0b92-4b30-aed5-7de79ffd5b62",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "d3c529f3-2c9e-4ce0-9ec4-2e69df260a77",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_2_1/contents.php?category=Study",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5a94c5ae-ab96-426d-a409-d7f6fd1fb756",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "0fc9bd98-021b-4b6f-8b87-f5aa3a9df538",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_2_1/contents.php?category=Eating",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "99687ba1-f0f2-4fb2-a892-fc856faf463c",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "a1cce3fd-5c52-4572-b84b-b4d41999197f",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_2_1/contents.php?category=Work",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bddf4215-9c23-44f2-a3e6-3712b9873751",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "e4d01efb-b260-47d3-86c0-f306809e7da2",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_2_1/admin.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9aa7c488-5d39-46e6-a528-d2f7948c1617",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "e8955487-c243-440e-b2c2-407c72f7be01",
+      "comment": "",
+      "command": "type",
+      "target": "name=title",
+      "targets": [
+        ["name=title", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='title']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "テストイタイトル1"
+    }, {
+      "id": "b1ed7698-e369-4061-8727-6508e90d4555",
+      "comment": "",
+      "command": "type",
+      "target": "name=contents",
+      "targets": [
+        ["name=contents", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='contents']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "テスト本文1"
+    }, {
+      "id": "34a19cdf-1451-43d2-a81a-c2ad4e094626",
+      "comment": "",
+      "command": "type",
+      "target": "id=image",
+      "targets": [
+        ["id=image", "id"],
+        ["name=image", "name"],
+        ["css=#image", "css:finder"],
+        ["xpath=//input[@id='image']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/input", "xpath:position"]
+      ],
+      "value": "/home/aoki/Pictures/smartybook/007.jpg"
+    }, {
+      "id": "3d87cda8-03df-4405-baff-6816ab3e8d92",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(6) input",
+      "targets": [
+        ["css=tr:nth-child(6) input", "css:finder"],
+        ["xpath=//input[@value='send']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "59198004-bf13-4566-a61e-142e3df490b9",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "abb27b78-6368-40cb-827f-73f9eaefbf28",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submitBtn",
+      "targets": [
+        ["css=.submitBtn", "css:finder"],
+        ["xpath=//input[@value='send']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "86710e12-0a1b-45f2-a3d8-acfe89c45535",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "f55e2d4d-a249-47c2-be40-638321a6125e",
+    "name": "chapter4_2_2",
+    "commands": [{
+      "id": "29e16792-a111-41cc-a55f-3db458f14aea",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_2_2/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "26c6dc6f-5189-4f4c-98ce-0954d3ebc195",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "ba5b5874-5080-4dd3-86b6-91db8d381c07",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_2_2/contents.php?category=Study",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c823204e-1a68-444d-9dac-cf7b772010d5",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "8ffce4db-3223-41b9-a7cf-84680ba4ac16",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_2_2/contents.php?category=Eating",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ef08f1fa-6d7d-4bd7-85aa-6348c2a9e0bd",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "24fc6c44-17fa-4e3a-98c1-597ab1a225be",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_2_2/contents.php?category=Work",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5d0d9f66-23ac-4a3e-8296-ab5e7b16e08f",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "c47331a1-3920-4920-83ce-460041cc4ff4",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_2_2/admin.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "97e9294b-f751-4602-99ba-66cd76290da1",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "c6731cec-1d7a-4371-9218-6be543666002",
+      "comment": "",
+      "command": "type",
+      "target": "name=title",
+      "targets": [
+        ["name=title", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='title']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "テストイタイトル1"
+    }, {
+      "id": "c29c9ff4-32d3-4f73-b508-cad22e1a72d9",
+      "comment": "",
+      "command": "type",
+      "target": "name=contents",
+      "targets": [
+        ["name=contents", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='contents']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "テスト本文1"
+    }, {
+      "id": "86103ddc-b982-4e45-a3c4-04f20500f772",
+      "comment": "",
+      "command": "type",
+      "target": "id=image",
+      "targets": [
+        ["id=image", "id"],
+        ["name=image", "name"],
+        ["css=#image", "css:finder"],
+        ["xpath=//input[@id='image']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/input", "xpath:position"]
+      ],
+      "value": "/home/aoki/Pictures/smartybook/007.jpg"
+    }, {
+      "id": "086985a0-d0a3-4738-a3ff-50377b53612b",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(6) input",
+      "targets": [
+        ["css=tr:nth-child(6) input", "css:finder"],
+        ["xpath=//input[@value='send']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "24b432d7-bc52-47a1-9a3b-41bbbd7f124d",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "bcffc4d3-ba71-4c7b-a34b-ed2d8fa58735",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submitBtn",
+      "targets": [
+        ["css=.submitBtn", "css:finder"],
+        ["xpath=//input[@value='send']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "981cd657-7feb-4b31-ac03-a88717f7304f",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "7d8ba106-7043-421c-9ef6-c800d588637f",
+    "name": "chapter4_2_3",
+    "commands": [{
+      "id": "cd2c8e2e-9e03-4a9e-97d5-d5cc1319d344",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_2_3/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "932e9394-6c3e-401e-bf2a-d761ddac6d3e",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "b5cbc16e-28de-4571-b992-523330fb3b0f",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_2_3/contents.php?category=Study",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2dfbfb86-8fb7-4d7d-a6ea-bdc5e60fa18f",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "69164ab7-dc8f-4b8e-86ed-ceeae2b9fe39",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_2_3/contents.php?category=Eating",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b3e72303-cb4e-45e9-9622-d4cb6cf25d9d",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "ac4dfc7f-c564-4326-aad3-fae282aa8e5d",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_2_3/contents.php?category=Work",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "063c7656-0e10-4b6c-896e-06d8620868f0",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "ced9cae2-c2e8-44e7-8293-cb0ef9c73f6e",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_2_3/admin.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b42543c7-7b87-463d-8d98-be9aab70bc67",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "4b1b12df-50ed-45e0-8adf-b40cdca02970",
+      "comment": "",
+      "command": "type",
+      "target": "name=title",
+      "targets": [
+        ["name=title", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='title']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "テストイタイトル1"
+    }, {
+      "id": "c4ddb073-12d1-4fcd-962a-7ff22b9a7c7f",
+      "comment": "",
+      "command": "type",
+      "target": "name=contents",
+      "targets": [
+        ["name=contents", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='contents']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "テスト本文1"
+    }, {
+      "id": "14af8609-201c-4b5c-8696-8662a36d2798",
+      "comment": "",
+      "command": "type",
+      "target": "id=image",
+      "targets": [
+        ["id=image", "id"],
+        ["name=image", "name"],
+        ["css=#image", "css:finder"],
+        ["xpath=//input[@id='image']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/input", "xpath:position"]
+      ],
+      "value": "/home/aoki/Pictures/smartybook/007.jpg"
+    }, {
+      "id": "039a42b8-9802-4e5d-9281-293e1b4f681b",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(6) input",
+      "targets": [
+        ["css=tr:nth-child(6) input", "css:finder"],
+        ["xpath=//input[@value='send']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "53fa7629-6b73-46ad-a107-4e362b71ad72",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "7279e2a7-a2c3-455d-ac75-9b998a834296",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submitBtn",
+      "targets": [
+        ["css=.submitBtn", "css:finder"],
+        ["xpath=//input[@value='send']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c3bf2fe-0c78-4dec-8232-ecdeed52b5c4",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "b893be1b-b615-45ef-8827-b4bc775f8d0a",
+    "name": "chapter4_2_4",
+    "commands": [{
+      "id": "1c35729a-ca66-416e-a67e-c9497b0901d0",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_2_4/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "49c40392-cc4b-4a73-a6ea-eaad2feeaaef",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "854a14e5-04a8-4315-bd7b-e9ee23dfac16",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_2_4/contents.php?category=Study",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cc0e4050-beb3-40f9-98f3-eb854ff08f11",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "66af7e16-9d90-428b-9f1d-8a0ba2196761",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_2_4/contents.php?category=Eating",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "896b7841-2a66-4cbe-bbb4-6dfd61468269",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "57a26c1c-0b6e-437d-9e0b-bc475f073a1c",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_2_4/contents.php?category=Work",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "89c1bfad-9385-406c-bd39-4d80ec020d71",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "12f237e8-d49a-4cf7-bcb6-300674c6cab5",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_2_4/admin.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "de9b6e1e-e541-4727-b210-bdd90e0f6609",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "f20426c0-db19-42e5-972b-e16591bd0a07",
+      "comment": "",
+      "command": "type",
+      "target": "name=title",
+      "targets": [
+        ["name=title", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='title']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "テストイタイトル1"
+    }, {
+      "id": "066ad3c9-571a-489e-a126-6946e27a90b9",
+      "comment": "",
+      "command": "type",
+      "target": "name=contents",
+      "targets": [
+        ["name=contents", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='contents']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "テスト本文1"
+    }, {
+      "id": "22919955-e777-4ce1-93fd-248099f160cf",
+      "comment": "",
+      "command": "type",
+      "target": "id=image",
+      "targets": [
+        ["id=image", "id"],
+        ["name=image", "name"],
+        ["css=#image", "css:finder"],
+        ["xpath=//input[@id='image']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/input", "xpath:position"]
+      ],
+      "value": "/home/aoki/Pictures/smartybook/007.jpg"
+    }, {
+      "id": "bd96babf-86b5-4754-905b-a3584dc5a36d",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(6) input",
+      "targets": [
+        ["css=tr:nth-child(6) input", "css:finder"],
+        ["xpath=//input[@value='send']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "475833c1-f3ea-4e7f-9521-eb914a829dfd",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "32c33916-31dc-4bf3-aeb1-ff85c16ac220",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submitBtn",
+      "targets": [
+        ["css=.submitBtn", "css:finder"],
+        ["xpath=//input[@value='send']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4b92e9f3-d9f0-45b4-99e9-b51557a7ffff",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "c03fa3a1-6d75-4fc5-abc8-9fe93a588fa5",
+    "name": "chapter4_3_1",
+    "commands": [{
+      "id": "fcdb3a6f-4e9e-48db-9056-532b6d9a7894",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_3_1/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3ec1056c-0c45-40b6-99d9-194777694b86",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "43f10fd4-50e6-4511-8d82-c13197b47c64",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_3_1/contents.php?category=Study",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4ddcc4c5-feb7-4150-82a6-aec7bc4d4532",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "438f43f8-63bb-4fbe-8300-d8e8861b348f",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_3_1/contents.php?category=Eating",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "57fc7670-e1d0-4bfa-ae2c-0cdc0dd3c1d4",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "c681133b-e415-42eb-94af-96bd4fcf5ef5",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_3_1/contents.php?category=Work",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ef076dd8-c9b2-4bcd-b52c-5cdcc234474d",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "8ccb23e0-44bf-4614-870b-8ecac804d058",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_3_1/admin.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "69cfd4aa-0e22-432b-a87a-1b9402a6db20",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "1ab727c1-956e-4466-a07e-b5879d54989a",
+      "comment": "",
+      "command": "type",
+      "target": "name=title",
+      "targets": [
+        ["name=title", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='title']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "テストイタイトル1"
+    }, {
+      "id": "2f281175-26be-4c93-a3b9-8f8e1f7fed47",
+      "comment": "",
+      "command": "type",
+      "target": "name=contents",
+      "targets": [
+        ["name=contents", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='contents']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "テスト本文1"
+    }, {
+      "id": "3eef4532-808d-42ad-8ff4-503e864bbc4a",
+      "comment": "",
+      "command": "type",
+      "target": "id=image",
+      "targets": [
+        ["id=image", "id"],
+        ["name=image", "name"],
+        ["css=#image", "css:finder"],
+        ["xpath=//input[@id='image']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/input", "xpath:position"]
+      ],
+      "value": "/home/aoki/Pictures/smartybook/007.jpg"
+    }, {
+      "id": "876bbef9-be0b-42e2-931c-55471056c697",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(6) input",
+      "targets": [
+        ["css=tr:nth-child(6) input", "css:finder"],
+        ["xpath=//input[@value='send']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c2d3d96b-93d9-4293-804d-f31de5e8c037",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "c37c9ded-03d5-45a0-9f41-93c9f803891d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submitBtn",
+      "targets": [
+        ["css=.submitBtn", "css:finder"],
+        ["xpath=//input[@value='send']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "87f4b256-1f03-4763-852a-618beb77bf4a",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "9579a6af-480d-4c2c-bce4-2b984abcf7b8",
+    "name": "chapter4_3_2",
+    "commands": [{
+      "id": "a71b3277-0d4c-44b1-995d-c93009f107d4",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_3_2/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e0d3d1fb-782f-4278-a96d-d21a0c4cc5e0",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "4d0d2349-bd72-4382-b38c-9f8cfcd480c1",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_3_2/contents.php?category=Study",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ada04bae-4ff7-45a6-8d6e-c0d5e799b2e4",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "82dd2055-d85e-4818-8fdf-fd6074893847",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_3_2/contents.php?category=Eating",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1e9d768c-80ce-44b6-9f8b-e0ab334f8eb2",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "7be41709-7e73-4fb9-9288-e48d8aedeb37",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_3_2/contents.php?category=Work",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "707bba6e-0daa-4ed2-b9c1-5399399722bf",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "863359c2-86d3-471b-8336-944a75ea8fff",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_3_2/admin.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3cc14876-43f1-417d-80fc-9169d9cd736e",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "6fbfa87c-829a-4b35-a8bd-2e775ca944e0",
+      "comment": "",
+      "command": "type",
+      "target": "name=title",
+      "targets": [
+        ["name=title", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='title']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "テストイタイトル1"
+    }, {
+      "id": "51928992-1aaa-4445-a918-a305bb27453b",
+      "comment": "",
+      "command": "type",
+      "target": "name=contents",
+      "targets": [
+        ["name=contents", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='contents']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "テスト本文1"
+    }, {
+      "id": "389dc3e3-39b6-449d-88bc-872d1d8960b7",
+      "comment": "",
+      "command": "type",
+      "target": "id=image",
+      "targets": [
+        ["id=image", "id"],
+        ["name=image", "name"],
+        ["css=#image", "css:finder"],
+        ["xpath=//input[@id='image']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/input", "xpath:position"]
+      ],
+      "value": "/home/aoki/Pictures/smartybook/007.jpg"
+    }, {
+      "id": "9e3962cd-05dd-49a5-974e-7f414ad7a458",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(6) input",
+      "targets": [
+        ["css=tr:nth-child(6) input", "css:finder"],
+        ["xpath=//input[@value='send']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fbd168fa-e36f-4abf-8899-ba391d4f8cfd",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "aef6957d-2027-4bb5-9230-0c645c502bab",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submitBtn",
+      "targets": [
+        ["css=.submitBtn", "css:finder"],
+        ["xpath=//input[@value='send']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "358c503c-bfab-49ec-9376-57e6c87e8482",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "549b487d-e2bf-4b75-a0d3-c5da82cb55da",
+    "name": "chapter4_3_3",
+    "commands": [{
+      "id": "4435f273-77b8-44e4-aaa6-49a8b514b901",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_3_3/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce1fb150-9154-40f2-9686-f110b3305953",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "807c2f55-dba1-4601-a1cd-8490c8885532",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_3_3/contents.php?category=Study",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "31c8d28f-8a7e-4dfe-9f59-1584d56de792",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "e210f4c0-dcf3-4a55-893c-1a486967dd8a",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_3_3/contents.php?category=Eating",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "90b11eb6-a025-47bc-ac6c-5a3258e144ef",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "a76bbc95-ee8d-43d6-a2fc-69743111a5ba",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_3_3/contents.php?category=Work",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f74ef37d-9aa2-455a-9281-7b9cccfd4b94",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "613c71f7-f532-413b-bdbc-066d0b6cbb0d",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_3_3/admin.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "38fd5545-613f-4be7-898d-ed6e2142036e",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "ff9298d2-d286-4e35-a36f-94e6e012c083",
+      "comment": "",
+      "command": "type",
+      "target": "name=title",
+      "targets": [
+        ["name=title", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='title']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "テストイタイトル1"
+    }, {
+      "id": "58dadfeb-5a26-40e0-8877-aad30a3a1869",
+      "comment": "",
+      "command": "type",
+      "target": "name=contents",
+      "targets": [
+        ["name=contents", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='contents']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "テスト本文1"
+    }, {
+      "id": "d88e67da-c3a9-4e59-9a51-65a178dc6e53",
+      "comment": "",
+      "command": "type",
+      "target": "id=image",
+      "targets": [
+        ["id=image", "id"],
+        ["name=image", "name"],
+        ["css=#image", "css:finder"],
+        ["xpath=//input[@id='image']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/input", "xpath:position"]
+      ],
+      "value": "/home/aoki/Pictures/smartybook/007.jpg"
+    }, {
+      "id": "37d71c8e-1cb3-4ee3-ad29-0bfecee53301",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(6) input",
+      "targets": [
+        ["css=tr:nth-child(6) input", "css:finder"],
+        ["xpath=//input[@value='send']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a9ff7813-baf3-407f-8936-4d8d9ad43f8f",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "e5b532d0-6a4e-4bf8-9586-5e5877d45fea",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submitBtn",
+      "targets": [
+        ["css=.submitBtn", "css:finder"],
+        ["xpath=//input[@value='send']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "421b624b-cf5c-4d0a-a278-a6f1c863a334",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "57bbd6db-355d-4a88-a97d-e564aed91788",
+    "name": "chapter4_4",
+    "commands": [{
+      "id": "8087de15-3ff1-4ede-8474-8a9b9262c1eb",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_4/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0ccf7861-7a84-47cc-a366-4690d91582a9",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "a222a5a8-f7e5-4f72-a5a9-e4c3d561a484",
+    "name": "chapter4_5",
+    "commands": [{
+      "id": "b90887bc-ac43-44e6-bc93-5329f352de65",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_5/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "13a9ddb7-6f74-48e2-a336-26c2074de69f",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "935703f2-4d91-4668-98be-576b1fba2b09",
+    "name": "chapter4_6",
+    "commands": [{
+      "id": "62468ce7-b77f-468c-a667-c9ea93673c53",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_6/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "37f957ce-4826-4781-bb95-44751b448aa6",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "e1b5dc95-dcf4-40bc-bce0-a3f9dc977dd0",
+      "comment": "",
+      "command": "click",
+      "target": "css=th:nth-child(1) > a > img",
+      "targets": [
+        ["css=th:nth-child(1) > a > img", "css:finder"],
+        ["xpath=//div[@id='wrapper']/table/tbody/tr/th/a/img", "xpath:idRelative"],
+        ["xpath=//a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b37bbe5-ccca-4ebb-acdb-9d6fb6661d7b",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "b7e66864-0927-4d0b-ab45-c70e347a5f4f",
+      "comment": "",
+      "command": "click",
+      "target": "css=th:nth-child(2) > a:nth-child(2) > img",
+      "targets": [
+        ["css=th:nth-child(2) > a:nth-child(2) > img", "css:finder"],
+        ["xpath=//div[@id='wrapper']/table/tbody/tr/th[2]/a/img", "xpath:idRelative"],
+        ["xpath=//th[2]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ea2389e5-6ad8-439e-b89e-01e8dfb1719c",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "a5c28dc2-a792-404b-af3e-e3117b6cca65",
+      "comment": "",
+      "command": "click",
+      "target": "css=th:nth-child(3) > a:nth-child(2) > img",
+      "targets": [
+        ["css=th:nth-child(3) > a:nth-child(2) > img", "css:finder"],
+        ["xpath=//div[@id='wrapper']/table/tbody/tr/th[3]/a/img", "xpath:idRelative"],
+        ["xpath=//th[3]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c8875bbf-8e16-4697-9c44-43f14f232936",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "83ff4b62-35b7-4e85-a963-0bb4d422a7e1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.comment > a:nth-child(2) > img",
+      "targets": [
+        ["css=.comment > a:nth-child(2) > img", "css:finder"],
+        ["xpath=//div[@id='wrapper']/table/tbody/tr/th[4]/a/img", "xpath:idRelative"],
+        ["xpath=//th[4]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "adbc6a98-ce9a-4d50-a66b-78788a524bd9",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "0d7e50b2-10b3-46f9-bd64-12035de9ea86",
+      "comment": "",
+      "command": "click",
+      "target": "css=th:nth-child(5) > a:nth-child(2) > img",
+      "targets": [
+        ["css=th:nth-child(5) > a:nth-child(2) > img", "css:finder"],
+        ["xpath=//div[@id='wrapper']/table/tbody/tr/th[5]/a/img", "xpath:idRelative"],
+        ["xpath=//th[5]/a/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7566d6b4-6a16-4ccd-910e-eca45c0dadba",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "cab2bd32-4d0a-42bb-966c-c161d3185d34",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=次へ>",
+      "targets": [
+        ["linkText=次へ>", "linkText"],
+        ["css=a:nth-child(4)", "css:finder"],
+        ["xpath=//a[contains(text(),'次へ>')]", "xpath:link"],
+        ["xpath=//div[@id='navi']/a[2]", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/smartybook/chapter4_6/index.php?sort=time&order=asc&pageID=2')])[2]", "xpath:href"],
+        ["xpath=//div[2]/a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'次へ>')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3dba2eb5-2741-49b6-a705-84f4221b381c",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "f7d8a142-57f2-4ccf-b5c4-0f83fa2ad5c7",
+    "name": "chapter4_7",
+    "commands": [{
+      "id": "deb016fe-39f5-4b88-bf75-6ed0cc331e63",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_7/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "860b73ea-5d79-422e-9a51-5d280ded326d",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "9940f48a-2bd9-42b2-99f7-7092dc451589",
+      "comment": "",
+      "command": "select",
+      "target": "name=prefecture",
+      "targets": [],
+      "value": "label=東京都"
+    }, {
+      "id": "886ba9da-3eee-47fa-a330-58c652aab5cb",
+      "comment": "",
+      "command": "mouseDownAt",
+      "target": "name=prefecture",
+      "targets": [
+        ["name=prefecture", "name"],
+        ["css=tr:nth-child(1) select", "css:finder"],
+        ["xpath=//select[@name='prefecture']", "xpath:attributes"],
+        ["xpath=//div[@id='wrapper']/form/table/tbody/tr/td/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "-376,-189"
+    }, {
+      "id": "279183ef-5e31-4038-9bec-9ee655687b96",
+      "comment": "",
+      "command": "mouseMoveAt",
+      "target": "name=prefecture",
+      "targets": [
+        ["name=prefecture", "name"],
+        ["css=tr:nth-child(1) select", "css:finder"],
+        ["xpath=//select[@name='prefecture']", "xpath:attributes"],
+        ["xpath=//div[@id='wrapper']/form/table/tbody/tr/td/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "-376,-189"
+    }, {
+      "id": "23d631ec-bcdb-40fc-96df-c352f3b624dc",
+      "comment": "",
+      "command": "mouseUpAt",
+      "target": "name=prefecture",
+      "targets": [
+        ["name=prefecture", "name"],
+        ["css=tr:nth-child(1) select", "css:finder"],
+        ["xpath=//select[@name='prefecture']", "xpath:attributes"],
+        ["xpath=//div[@id='wrapper']/form/table/tbody/tr/td/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": "-376,-189"
+    }, {
+      "id": "24426fe8-a906-4c28-a4b0-3d73ac4f5d20",
+      "comment": "",
+      "command": "click",
+      "target": "name=prefecture",
+      "targets": [
+        ["name=prefecture", "name"],
+        ["css=tr:nth-child(1) select", "css:finder"],
+        ["xpath=//select[@name='prefecture']", "xpath:attributes"],
+        ["xpath=//div[@id='wrapper']/form/table/tbody/tr/td/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "19aeba6f-17bf-422a-8ea8-24cae6575c14",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(2) label:nth-child(1)",
+      "targets": [
+        ["css=tr:nth-child(2) label:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='wrapper']/form/table/tbody/tr[2]/td/label", "xpath:idRelative"],
+        ["xpath=//label", "xpath:position"],
+        ["xpath=//label[contains(.,'5 非常に良い')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6e8b6722-cff3-4f69-8360-b702be8bd4c5",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(3) label:nth-child(1)",
+      "targets": [
+        ["css=tr:nth-child(3) label:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='wrapper']/form/table/tbody/tr[3]/td/label", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/label", "xpath:position"],
+        ["xpath=//label[contains(.,'インターネット')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f9c28001-0f48-40df-8f0a-9f009efb66da",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(3) label:nth-child(9)",
+      "targets": [
+        ["css=tr:nth-child(3) label:nth-child(9)", "css:finder"],
+        ["xpath=//div[@id='wrapper']/form/table/tbody/tr[3]/td/label[5]", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/label[5]", "xpath:position"],
+        ["xpath=//label[contains(.,'ラジオ')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "119dfb68-ed18-4990-a21c-2021c4d7b73e",
+      "comment": "",
+      "command": "click",
+      "target": "css=#button > input",
+      "targets": [
+        ["css=#button > input", "css:finder"],
+        ["xpath=//input[@value='確認']", "xpath:attributes"],
+        ["xpath=//div[@id='button']/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7d05267a-ef2c-4e21-9338-286011f25b61",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "066ad27a-2401-41f9-822b-737fa248e9fa",
+      "comment": "",
+      "command": "click",
+      "target": "css=input:nth-child(3)",
+      "targets": [
+        ["css=input:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='送信']", "xpath:attributes"],
+        ["xpath=//div[@id='button']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f66748e7-3fd7-4226-8c7f-d31686ea130d",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "c2db8bb5-22b0-4e9f-954f-a65396785bf1",
+    "name": "chapter4_8",
+    "commands": [{
+      "id": "dc5349c3-e429-40a1-a832-47969d0018de",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_8/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2cdcce2d-0511-4841-9a11-d593ad161ef4",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "d9e02e22-9310-4461-83fc-81702cd605aa",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=PRESS TRICK",
+      "targets": [
+        ["linkText=PRESS TRICK", "linkText"],
+        ["css=li li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'PRESS TRICK')]", "xpath:link"],
+        ["xpath=//div[@id='menuBox']/ul/li/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'cate1.php')]", "xpath:href"],
+        ["xpath=//li/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'PRESS TRICK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9fa793ad-f7ba-4ccb-80fd-08c91f8bab6b",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "1904b83b-e610-4c87-ade4-f6f567d458b5",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=NOSE PRESS",
+      "targets": [
+        ["linkText=NOSE PRESS", "linkText"],
+        ["css=li li li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'NOSE PRESS')]", "xpath:link"],
+        ["xpath=//div[@id='menuBox']/ul/li/ul/li/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'page1.php')]", "xpath:href"],
+        ["xpath=//li/ul/li/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'NOSE PRESS')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "187197e8-9085-4ced-beb2-8084e871496e",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "4240317e-dca7-4fa1-9219-46a09f12211f",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=TAIL PRESS",
+      "targets": [
+        ["linkText=TAIL PRESS", "linkText"],
+        ["css=li li li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'TAIL PRESS')]", "xpath:link"],
+        ["xpath=//div[@id='menuBox']/ul/li/ul/li/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'page2.php')]", "xpath:href"],
+        ["xpath=//li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'TAIL PRESS')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9e80976f-44bc-4084-811f-bad185b84075",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "cad7130d-08df-4f5d-bb37-9700cbd7ca31",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=SPIN TRICK",
+      "targets": [
+        ["linkText=SPIN TRICK", "linkText"],
+        ["css=#menuBox > ul > li > ul > li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'SPIN TRICK')]", "xpath:link"],
+        ["xpath=//div[@id='menuBox']/ul/li/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'cate2.php')]", "xpath:href"],
+        ["xpath=//div/ul/li/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'SPIN TRICK')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4329a7fe-b7db-44b6-b25a-1aea95a89570",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "19d54aef-effa-46b9-9d36-2d71851e1cd9",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=FRONTSIDE 180",
+      "targets": [
+        ["linkText=FRONTSIDE 180", "linkText"],
+        ["css=li:nth-child(2) li:nth-child(1) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'FRONTSIDE 180')]", "xpath:link"],
+        ["xpath=//div[@id='menuBox']/ul/li/ul/li[2]/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'page3.php')]", "xpath:href"],
+        ["xpath=//li[2]/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'FRONTSIDE 180')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6b7befe1-f304-4a8d-af7b-358723c680ac",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "6693d35f-b267-4e1e-8f39-7a76477100d6",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=BACKSIDE 180",
+      "targets": [
+        ["linkText=BACKSIDE 180", "linkText"],
+        ["css=li:nth-child(2) li:nth-child(2) > a", "css:finder"],
+        ["xpath=//a[contains(text(),'BACKSIDE 180')]", "xpath:link"],
+        ["xpath=//div[@id='menuBox']/ul/li/ul/li[2]/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'page4.php')]", "xpath:href"],
+        ["xpath=//li[2]/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'BACKSIDE 180')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "00df8103-9fac-42a2-969d-29ab9789b262",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "6069325c-25fc-46c5-865e-e5c6ea3f8afb",
+    "name": "chapter4_9",
+    "commands": [{
+      "id": "b2a77896-4a99-4b67-9f56-a7a894485c81",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_9/fetch.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a0fbdf0a-dcd4-4030-a001-0d358fd296a7",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "0568af9e-3856-4dbe-beb7-b1f8a7ca3e86",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter4_9/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bba86cb2-3c77-47f2-9fb9-abd8b14343da",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "35a367eb-59d0-4925-8d53-86bb0f03d5d1",
+    "name": "chapter5_2",
+    "commands": [{
+      "id": "fe57baa9-d254-4ec0-aee0-3a37c555ed2f",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter5_2/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "293937b1-52ad-4f17-b1d5-72fc42bf57e8",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "d95d88f2-4fb9-4138-bff4-c9575ce47062",
+    "name": "chapter5_3",
+    "commands": [{
+      "id": "387816b3-bdae-4918-9a1b-7859019aced4",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter5_3/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "01dd4d91-312d-47a9-ae16-6a0f58a383a9",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "7fb37e91-cc19-4c7f-93fb-2914be7f3192",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Study",
+      "targets": [
+        ["linkText=Study", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Study')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'contents.php?category=Study')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Study')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "02709779-ed14-4c83-adaf-e7e93587fcaf",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "5579183f-3f6f-46a0-8135-ea8134a3f3b1",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=次≫",
+      "targets": [
+        ["linkText=次≫", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'次≫')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/smartybook/chapter5_3/contents.php?category=Study&pageID=2')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'次≫')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5907a586-2cf9-4abd-9fe9-f424ead4447c",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "98f29ab3-8c73-4c0e-8d42-abc91e1e4f63",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Home",
+      "targets": [
+        ["linkText=Home", "linkText"],
+        ["css=a:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'Home')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'index.php')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Home')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "19cd4a14-f74c-4b1f-a70c-5e78b37fdf99",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "9a5b2307-4dc5-483f-8a6f-fb6b19a9b95d",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Eating",
+      "targets": [
+        ["linkText=Eating", "linkText"],
+        ["css=a:nth-child(4)", "css:finder"],
+        ["xpath=//a[contains(text(),'Eating')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'contents.php?category=Eating')]", "xpath:href"],
+        ["xpath=//a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Eating')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8647bd8a-3828-4445-ad72-beb3cca089e4",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "8bbfdc57-34a6-4dad-9fb5-48e697ea5bbd",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=次≫",
+      "targets": [
+        ["linkText=次≫", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'次≫')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/smartybook/chapter5_3/contents.php?category=Eating&pageID=2')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'次≫')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b1c17003-e197-4ba2-ba09-7bf997a02157",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "51bbd473-2378-4698-a9ac-96f11c19c6c6",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Home",
+      "targets": [
+        ["linkText=Home", "linkText"],
+        ["css=a:nth-child(5)", "css:finder"],
+        ["xpath=//a[contains(text(),'Home')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'index.php')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Home')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "31110965-afb2-4a1a-8d97-0559940a7987",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "77721194-0fc6-46b5-b8ba-3dcbde68ec68",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Work",
+      "targets": [
+        ["linkText=Work", "linkText"],
+        ["css=a:nth-child(6)", "css:finder"],
+        ["xpath=//a[contains(text(),'Work')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'contents.php?category=Work')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Work')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "044bbacf-3a28-447c-9cbb-fbe70549e5e4",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "c91cb285-292c-4631-80be-5e911afd2460",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=次≫",
+      "targets": [
+        ["linkText=次≫", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'次≫')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/smartybook/chapter5_3/contents.php?category=Work&pageID=2')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'次≫')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fad2677a-498d-4acd-a76f-35cbdbea4221",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "161f242c-abcf-40d9-bd14-80998d204c68",
+    "name": "chapter5_6",
+    "commands": [{
+      "id": "3c5d691f-23e5-46f8-a669-5ca45966aab2",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter5_6/view.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b02a724d-7e82-43c6-9401-bb5ddbf122ca",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "5a39a417-f9d5-4e51-a3c8-89f92239164c",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter5_6/admin.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2c37dac7-2145-4f6f-8fbe-672daeac84e4",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "8cf0f579-8a28-44ca-9c7c-5aa1e8bdf88a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.button:nth-child(3)",
+      "targets": [
+        ["css=.button:nth-child(3)", "css:finder"],
+        ["xpath=//input[@value='編集']", "xpath:attributes"],
+        ["xpath=//div[@id='btn']/form/input[3]", "xpath:idRelative"],
+        ["xpath=//input[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e926c0d0-663d-4175-9d43-2c035c133ab7",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "a2d7476a-204a-4eab-a5bf-7fb22264c1eb",
+      "comment": "",
+      "command": "click",
+      "target": "name=cmdSave",
+      "targets": [
+        ["name=cmdSave", "name"],
+        ["css=.button:nth-child(1)", "css:finder"],
+        ["xpath=//input[@name='cmdSave']", "xpath:attributes"],
+        ["xpath=//div[@id='btn']/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1b6f4692-05bf-428a-aae5-07ff204cbd94",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "6fd1e038-c870-452d-ae9c-feb1eafa6bd6",
+    "name": "chapter5_1",
+    "commands": [{
+      "id": "25610954-97ff-4b35-8c4c-4fae5e0d3a5b",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter5_1/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "12dacd3d-b666-417a-8444-48f1a96212aa",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "e00c7742-e2a5-438f-bce3-6d6071d8dc1d",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter5_1/contents.php?category=Study",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f20f6066-a3fd-4262-a1ff-c8f5e3439552",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "d3d494aa-b04f-4950-9081-d478aa04bd97",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter5_1/contents.php?category=Eating",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "619f34d2-5a3e-4a69-ac4e-8df7c8a69fa2",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "672afd70-928c-484f-84a4-44a240899c74",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter5_1/contents.php?category=Work",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9a6cad7f-74dc-461c-8134-ccf4fd039d42",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "0b0ae059-1108-42d2-8257-71886c581519",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter5_1/admin.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "66e52682-77f3-43ad-9514-f1512225d395",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "b92ca48f-a365-4136-9072-154579082b4e",
+      "comment": "",
+      "command": "type",
+      "target": "name=title",
+      "targets": [
+        ["name=title", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='title']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "テストイタイトル1"
+    }, {
+      "id": "70970db2-7de6-40b8-b380-fe55bfba21a3",
+      "comment": "",
+      "command": "type",
+      "target": "name=contents",
+      "targets": [
+        ["name=contents", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='contents']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "テスト本文1"
+    }, {
+      "id": "60b0bbb2-f2e6-480f-8254-5d8ef5197793",
+      "comment": "",
+      "command": "type",
+      "target": "id=image",
+      "targets": [
+        ["id=image", "id"],
+        ["name=image", "name"],
+        ["css=#image", "css:finder"],
+        ["xpath=//input[@id='image']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/input", "xpath:position"]
+      ],
+      "value": "/home/aoki/Pictures/smartybook/007.jpg"
+    }, {
+      "id": "fdfb95d3-cc50-46c3-94fa-4d419fed3603",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(6) input",
+      "targets": [
+        ["css=tr:nth-child(6) input", "css:finder"],
+        ["xpath=//input[@value='send']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8729f151-87d9-47e4-999b-1547f8c49e06",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "3729fe75-a804-499f-9b75-54d92e0a1739",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submitBtn",
+      "targets": [
+        ["css=.submitBtn", "css:finder"],
+        ["xpath=//input[@value='send']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "026084bf-7d10-4224-bb65-77d81bb0848a",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "fa782a55-c0df-4b9d-ae27-c3e4a0bf8a91",
+    "name": "chapter5_4",
+    "commands": [{
+      "id": "b99460da-67b4-49e3-bf4a-8bf215b7f887",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter5_4/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d42ad127-f652-4949-8d09-e19dd25e8319",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "207bbaaa-22c3-4832-8f8c-b32dd6e44bd8",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter5_4/contents.php?category=Study",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "468fa8e3-7fb3-4c2b-b133-3c61283fd408",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "dafbd1d6-f963-4117-bd2b-015155f960ba",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter5_4/contents.php?category=Eating",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "28a6eba6-e84c-4b60-923c-6de5395ba909",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "40137fa5-21ac-413a-9044-d43f92ec4644",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter5_4/contents.php?category=Work",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2db66f8e-76fa-41d2-bc03-ae1b23fba6ce",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "9d106f96-6e34-4c7a-a091-a9ef0d0ddae9",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter5_4/admin.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4afc5527-ab69-4e0a-863f-a3f4f45d9b0d",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "7f6b5e76-3d9e-40cf-b003-33446855db2b",
+      "comment": "",
+      "command": "type",
+      "target": "name=title",
+      "targets": [
+        ["name=title", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='title']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "テストイタイトル1"
+    }, {
+      "id": "076de44a-8b5a-45f2-be55-a1ac4fcc3fda",
+      "comment": "",
+      "command": "type",
+      "target": "name=contents",
+      "targets": [
+        ["name=contents", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='contents']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "テスト本文1"
+    }, {
+      "id": "9f0e9732-6245-4f1b-a4a7-937482d2ac7f",
+      "comment": "",
+      "command": "type",
+      "target": "id=image",
+      "targets": [
+        ["id=image", "id"],
+        ["name=image", "name"],
+        ["css=#image", "css:finder"],
+        ["xpath=//input[@id='image']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/input", "xpath:position"]
+      ],
+      "value": "/home/aoki/Pictures/smartybook/007.jpg"
+    }, {
+      "id": "f19f4ca2-9fdd-4f69-8972-552e18a202c1",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(6) input",
+      "targets": [
+        ["css=tr:nth-child(6) input", "css:finder"],
+        ["xpath=//input[@value='send']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ea5dfaab-71ac-4d8e-ae24-c8d0d5bfe02d",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "6016d714-bc6c-4ea5-8e24-37240c4d80dc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submitBtn",
+      "targets": [
+        ["css=.submitBtn", "css:finder"],
+        ["xpath=//input[@value='send']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cfa7662f-5047-43a0-baeb-d536df2b6b2f",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }, {
+    "id": "aa760d3d-7411-4c12-83d0-8fd15a0d8821",
+    "name": "chapter5_5",
+    "commands": [{
+      "id": "15332418-b0aa-4840-836b-f7fe6ce94146",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter5_5/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "479823c7-df8a-4fc6-bb52-8f96fb5d983d",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "165ad40a-77e6-469f-9780-fa305d75dc5e",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter5_5/contents.php?category=Study",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "baaef8e3-edb5-47f2-8dc6-dec56e31b281",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "dbdd0387-b4b1-4d4f-a671-025af7b5b1e3",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter5_5/contents.php?category=Eating",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f748f6f2-470d-49a5-9e39-bd565b31e831",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "100f7ca2-baeb-488f-b7e8-2af3b406d3ca",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter5_5/contents.php?category=Work",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4b61d933-a762-4812-bf3b-2103b58729d4",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "915af745-8740-4d67-9dcf-5f27ce1f2b42",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter5_5/admin.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c6c9f8ef-dbe1-4fcd-99c1-c2b72234c921",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "a837b457-d56e-49a2-a332-212869acc197",
+      "comment": "",
+      "command": "type",
+      "target": "name=username",
+      "targets": [
+        ["name=username", "name"],
+        ["css=tr:nth-child(1) input", "css:finder"],
+        ["xpath=//input[@name='username']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr/td/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "guest"
+    }, {
+      "id": "4e1bd7d7-34ce-45b0-b320-d78d65a4ed2e",
+      "comment": "",
+      "command": "type",
+      "target": "name=password",
+      "targets": [
+        ["name=password", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='password']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[2]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[2]/td/input", "xpath:position"]
+      ],
+      "value": "guest"
+    }, {
+      "id": "7044099a-3651-4585-8755-6178f4d6d7e3",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(3) input",
+      "targets": [
+        ["css=tr:nth-child(3) input", "css:finder"],
+        ["xpath=//input[@type='image']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[3]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[3]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "52824147-0c58-4a6b-a7dd-b8621e40047b",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "def376a3-dc7a-40f5-952e-a5524c060d42",
+      "comment": "",
+      "command": "type",
+      "target": "name=title",
+      "targets": [
+        ["name=title", "name"],
+        ["css=tr:nth-child(2) input", "css:finder"],
+        ["xpath=//input[@name='title']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "テストイタイトル1"
+    }, {
+      "id": "4dcf2344-e55c-4ad7-a617-83dc492e99de",
+      "comment": "",
+      "command": "type",
+      "target": "name=contents",
+      "targets": [
+        ["name=contents", "name"],
+        ["css=textarea", "css:finder"],
+        ["xpath=//textarea[@name='contents']", "xpath:attributes"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "テスト本文1"
+    }, {
+      "id": "3ee7dc0a-fcca-4742-9bbe-d9e9aa2df34f",
+      "comment": "",
+      "command": "type",
+      "target": "id=image",
+      "targets": [
+        ["id=image", "id"],
+        ["name=image", "name"],
+        ["css=#image", "css:finder"],
+        ["xpath=//input[@id='image']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[5]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[5]/td/input", "xpath:position"]
+      ],
+      "value": "/home/aoki/Pictures/smartybook/007.jpg"
+    }, {
+      "id": "295c388e-2d22-4a3b-9937-7f02de20e26c",
+      "comment": "",
+      "command": "click",
+      "target": "css=tr:nth-child(6) input",
+      "targets": [
+        ["css=tr:nth-child(6) input", "css:finder"],
+        ["xpath=//input[@value='send']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//tr[6]/td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c2031379-aee2-4360-b48b-d54efe20ea7f",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "ba94107b-da3b-4c09-84b3-37d23daafedd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.submitBtn",
+      "targets": [
+        ["css=.submitBtn", "css:finder"],
+        ["xpath=//input[@value='send']", "xpath:attributes"],
+        ["xpath=//form[@id='cmsForm']/fieldset/table/tbody/tr[6]/td/input", "xpath:idRelative"],
+        ["xpath=//td/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7e3291ae-2854-4f59-84bc-debbaf8a450c",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "870e189f-20f5-4555-89e8-22d1e12d3168",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=ログアウトする",
+      "targets": [
+        ["linkText=ログアウトする", "linkText"],
+        ["css=a:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'ログアウトする')]", "xpath:link"],
+        ["xpath=//div[@id='main']/div[2]/div[2]/p/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'admin.php?lo=ok')]", "xpath:href"],
+        ["xpath=//div[2]/p/a", "xpath:position"],
+        ["xpath=//a[contains(.,'ログアウトする')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4c0085f-bd8e-49e6-9bfe-011f104f65cd",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }]
+  }],
+  "suites": [{
+    "id": "a1bd0469-8322-4c56-adb4-ae5683aa7ca6",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["f92b0c6a-3d1d-40c6-ac54-c5a37381b6c9", "a46315f5-299e-417d-bb6d-d423c7cf12e7", "b2a8cefd-bf65-4454-a28d-05f9eea8c70e", "5a268a1e-d8e2-4a55-9fc6-081c0714de8c", "f55e2d4d-a249-47c2-be40-638321a6125e", "7d8ba106-7043-421c-9ef6-c800d588637f", "b893be1b-b615-45ef-8827-b4bc775f8d0a", "c03fa3a1-6d75-4fc5-abc8-9fe93a588fa5", "9579a6af-480d-4c2c-bce4-2b984abcf7b8", "549b487d-e2bf-4b75-a0d3-c5da82cb55da", "57bbd6db-355d-4a88-a97d-e564aed91788", "a222a5a8-f7e5-4f72-a5a9-e4c3d561a484", "935703f2-4d91-4668-98be-576b1fba2b09", "f7d8a142-57f2-4ccf-b5c4-0f83fa2ad5c7", "c2db8bb5-22b0-4e9f-954f-a65396785bf1", "6069325c-25fc-46c5-865e-e5c6ea3f8afb", "6fd1e038-c870-452d-ae9c-feb1eafa6bd6", "35a367eb-59d0-4925-8d53-86bb0f03d5d1", "d95d88f2-4fb9-4138-bff4-c9575ce47062", "fa782a55-c0df-4b9d-ae27-c3e4a0bf8a91", "aa760d3d-7411-4c12-83d0-8fd15a0d8821", "161f242c-abcf-40d9-bd14-80998d204c68"]
+  }],
+  "urls": ["http://localhost:5402/"],
+  "plugins": []
+}

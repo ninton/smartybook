@@ -8,9 +8,14 @@
 //	POST cmdLoad=
 require_once( './_read/inc.php' );
 
+$show = '';
+if (isset($_GET['show'])) {
+    $show = $_GET['show'];
+}
+
 switch ( strtolower($_SERVER['REQUEST_METHOD']) ) {
 case 'get':
-	switch ( $_GET['show'] ) {
+	switch ( $show ) {
 	case '':
 	case 'preview':
 		if ( empty($_REQUEST['ListId']) ) {
@@ -32,6 +37,7 @@ case 'get':
 		break;
 		
 	case 'form':
+	    $message = '';
 		$mylistmgr =& new MyListManager( $CFG['max_items'], $CFG['mylist_dir'] );
 		$mylist =& $mylistmgr->read($_REQUEST['ListId']);
 
@@ -83,5 +89,3 @@ case 'post':
 default:
 	break;
 }
-
-?>

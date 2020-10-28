@@ -9,18 +9,16 @@
  */
 
 function smarty_function_login_form($params, &$smarty){
-	//$result = "<p>TEST</p>" . $params["aaa"];
 	$self = $params["self"];
-//	$username = $params["usersname"];
-	//echo $self;
-	//echo $usersname;
+	$username = htmlspecialchars($params["username"]);
+
 	$result = <<<LOGIN
 <form method="post" action="$self" class="message" id="cmsForm" name="cmsForm">
 	<fieldset>
 		<table cellspacing="0">
 			<tr>
 				<th><label for="username">ユーザー名</label></th>
-				<td><input type="text" name="username" value="" /></td>
+				<td><input type="text" name="username" value="$username" /></td>
 			</tr>
 			<tr>
 				<th><label for="password">パスワード</label></th>
@@ -36,4 +34,3 @@ function smarty_function_login_form($params, &$smarty){
 LOGIN;
 	return $result;
 }
-?>

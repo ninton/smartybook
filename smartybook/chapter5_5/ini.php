@@ -23,7 +23,7 @@ $params = array(
 //認証方法を決定
 $oAuth = new Auth("Array", $params, "displayLogin");
 //ログアウトのスタイルを決定
-if($_GET["lo"] == "ok"){
+if(isset($_GET["lo"]) && $_GET["lo"] == "ok"){
 	$oAuth->logout();
 }
 //認証時に実行する関数
@@ -34,8 +34,7 @@ function displayLogin ($username, $status){
 		$smarty->assign("errormsg", "ユーザー名もしくはパスワードが違います");
 	}
 	$smarty->assign("self", $self);
-	$smarty->assign("usersname", $usersname);
+	$smarty->assign("username", $username);
 	// 出力
 	$smarty->display("login.tpl");
 }
-?>
