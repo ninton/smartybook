@@ -34,8 +34,7 @@ function displayLogin ($username, $status){
 		$smarty->assign("errormsg", "ユーザー名もしくはパスワードが違います");
 	}
 	$smarty->assign("self", $self);
-	$smarty->assign("usersname", $usersname);
+	$smarty->assign("username", $username);
 	// 出力
 	$smarty->display("login.tpl");
 }
-?>
