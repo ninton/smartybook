@@ -21,12 +21,18 @@ $params = array();
 $params['perPage'] = 1;
 $params['totalItems'] = count($entry_arr);
 $pager =& Pager::factory($params);
+
+
+$pageID = 0;
+if (isset($_REQUEST['pageID'])) {
+    $pageID = $_REQUEST['pageID'];
+}
 // ページ番号の調整
-if ( $pager->numPages() < $_REQUEST['pageID'] ) {
-	$_REQUEST['pageID'] = $pager->numPages();
+if ( $pager->numPages() < $pageID ) {
+	$pageID = $pager->numPages();
 }
 // 表示開始位置と終了位置
-list($from, $to) = $pager->getOffsetByPageId($_REQUEST['pageID']);
+list($from, $to) = $pager->getOffsetByPageId($pageID);
 
 $entry = array();
 if ( (0 < $from) && (0 < $to) ) {
@@ -73,4 +79,3 @@ function replace_entry_image( &$io_rcd, $i_key, $i_imageSizeGroup ) {
 		$io_rcd['image'] = sprintf('images/%s/%s', $i_imageSizeGroup, $fname );
 	}
 }
-?>
