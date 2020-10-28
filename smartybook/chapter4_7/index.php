@@ -11,16 +11,20 @@ $META['where'     ] = array_load( "where.txt"      );
 // セッションを開始、セッショントークンをチェックする
 session_start();
 $token = md5( TOKEN_SALT . $_SERVER['HTTP_USER_AGENT'] . $_SERVER['REMOTE_ADDR']);
-if ( @$_SESSION[APPID]['token'] != $token ) {
+if (!isset($_SESSION[APPID]['token']) || $_SESSION[APPID]['token'] != $token) {
 	session_regenerate_id();
 	$_SESSION[APPID] = array();
 	$_SESSION[APPID]['token'] = $token;
 }
 
+$action = '';
+if (isset($_REQUEST['action'])) {
+	$action = $_REQUEST['action'];
+}
 // actionを調べて、表示するテンプレートを切り替える
 switch ( strtoupper($_SERVER['REQUEST_METHOD']) ) {
 case 'POST':
-	switch ( @$_REQUEST['action'] ) {
+	switch ($action) {
 	case 'confirm':
 		$_SESSION[APPID]['form'] = $_POST;
 		$tpl = "confirm.tpl";
@@ -33,7 +37,7 @@ case 'POST':
 	}
 	break;
 default:
-	switch ( @$_REQUEST['action'] ) {
+	switch ($action) {
 	case '':
 		$_SESSION[APPID]['form'] = array();
 		$tpl = "form.tpl";
@@ -65,11 +69,10 @@ $smarty->assign( "form" , $_SESSION[APPID]['form'] );
 $smarty->display( $tpl );
 
 // 送信完了後、セッション変数をクリアする
-switch ( $_REQUEST['action'] ) {
+switch ($action) {
 case 'submit':
 	$_SESSION[APPID]['form'] = array();
 	break;
 default:
 	break;
 }
-?>
