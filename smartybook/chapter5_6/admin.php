@@ -21,10 +21,10 @@ case 'get':
 		if ( empty($_REQUEST['ListId']) ) {
 			$_REQUEST['ListId'] = 1;
 		}
-		$mylistmgr =& new MyListManager( $CFG['max_items'], $CFG['mylist_dir'] );
-		$mylist =& $mylistmgr->read($_REQUEST['ListId']);
+		$mylistmgr = new MyListManager( $CFG['max_items'], $CFG['mylist_dir'] );
+		$mylist = $mylistmgr->read($_REQUEST['ListId']);
 		
-		$appAmazon = &new AppAmazon( $CFG['access_key_id'], $CFG['associate_id'], $CFG['aws_cache_dir'] );
+		$appAmazon = new AppAmazon( $CFG['access_key_id'], $CFG['associate_id'], $CFG['aws_cache_dir'] );
 		$options['ResponseGroup'] = 'Medium';
 		$message = $appAmazon->ItemLookup( $mylist->getASINs(), $options, $Item_arr );
 		$mylist->setItems( $Item_arr );
@@ -38,8 +38,8 @@ case 'get':
 		
 	case 'form':
 	    $message = '';
-		$mylistmgr =& new MyListManager( $CFG['max_items'], $CFG['mylist_dir'] );
-		$mylist =& $mylistmgr->read($_REQUEST['ListId']);
+		$mylistmgr = new MyListManager( $CFG['max_items'], $CFG['mylist_dir'] );
+		$mylist = $mylistmgr->read($_REQUEST['ListId']);
 
 		$smarty = new AppSmarty();
 		$smarty->assign( "CFG"    ,  $CFG     );
@@ -56,11 +56,11 @@ case 'get':
 case 'post':
 	switch ( App::get_cmd() ) {
 	case 'cmdSave':
-		$mylistmgr =& new MyListManager( $CFG['max_items'], $CFG['mylist_dir'] );
-		$mylist =& $mylistmgr->read($_REQUEST['ListId']);
+		$mylistmgr = new MyListManager( $CFG['max_items'], $CFG['mylist_dir'] );
+		$mylist = $mylistmgr->read($_REQUEST['ListId']);
 		$mylist->input( $_POST );
 
-		$appAmazon = &new AppAmazon( $CFG['access_key_id'], $CFG['associate_id'], $CFG['aws_cache_dir'] );
+		$appAmazon = new AppAmazon( $CFG['access_key_id'], $CFG['associate_id'], $CFG['aws_cache_dir'] );
 		$options['ResponseGroup'] = 'Small';
 		$message = $appAmazon->ItemLookup( $mylist->getASINs(), $options, $item_arr );
 		$mylist->setItems( $item_arr );
