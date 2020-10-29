@@ -21,24 +21,23 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                 if (empty($_REQUEST['ListId'])) {
                     $_REQUEST['ListId'] = 1;
                 }
-                                                                                      $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
-                                                                                      $mylist = $mylistmgr->read($_REQUEST['ListId']);
+                $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
+                $mylist = $mylistmgr->read($_REQUEST['ListId']);
 
-                                                                                      $appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['associate_id'], $CFG['aws_cache_dir']);
-                                                                                      $options['ResponseGroup'] = 'Medium';
-                                                                                      $message = $appAmazon->ItemLookup($mylist->getASINs(), $options, $Item_arr);
-                                                                                      $mylist->setItems($Item_arr);
+                $appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['associate_id'], $CFG['aws_cache_dir']);
+                $options['ResponseGroup'] = 'Medium';
+                $message = $appAmazon->ItemLookup($mylist->getASINs(), $options, $Item_arr);
+                $mylist->setItems($Item_arr);
 
-                                                                                      $smarty = new AppSmarty();
-                                                                                      $smarty->assign("CFG", $CFG);
-                                                                                      $smarty->assign("message", $message);
-                                                                                      $smarty->assign("mylist", $mylist);
-                                                                                      $smarty->display('admin_preview.tpl');
-
+                $smarty = new AppSmarty();
+                $smarty->assign("CFG", $CFG);
+                $smarty->assign("message", $message);
+                $smarty->assign("mylist", $mylist);
+                $smarty->display('admin_preview.tpl');
                 break;
 
             case 'form':
-                                                                                                                                                                                                                                                                                                                            $message = '';
+                $message = '';
                 $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
                 $mylist = $mylistmgr->read($_REQUEST['ListId']);
                 $smarty = new AppSmarty();
@@ -46,8 +45,8 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                 $smarty->assign("message", $message);
                 $smarty->assign("mylist", $mylist);
                 $smarty->display('admin_form.tpl');
-
                 break;
+
             default:
                 break;
         }
@@ -58,7 +57,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
     case 'post':
         switch (App::getCmd()) {
             case 'cmdSave':
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
+                $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
                 $mylist = $mylistmgr->read($_REQUEST['ListId']);
                 $mylist->input($_POST);
                 $appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['associate_id'], $CFG['aws_cache_dir']);
@@ -76,11 +75,10 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                     $mylistmgr->write($mylist);
                     App::redirect('?show=preview&ListId=' . $_REQUEST['ListId']);
                 }
-
                 break;
-            case 'cmdCancel':
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   App::redirect('?show=preview&ListId=' . $_REQUEST['ListId']);
 
+            case 'cmdCancel':
+                App::redirect('?show=preview&ListId=' . $_REQUEST['ListId']);
                 break;
 
             default:

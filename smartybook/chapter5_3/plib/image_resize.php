@@ -45,27 +45,24 @@ function image_resize($i_src_path, $i_dst_path, $i_maxW = 640, $i_maxH = 640, $i
 
     switch ($type) {
         case 0:
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     $dstW = $srcW;
+            $dstW = $srcW;
             $dstH = $srcH;
-
             break;
+
         case 1:
         case 3:
             $dstW = $i_maxW;
             $dstH = $srcH * $dstW / $srcW;
-
             break;
 
         case 2:
         case 4:
             $dstH = $i_maxH;
             $dstW = $srcW * $dstH / $srcH;
-
             break;
 
         default:
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     assert(0);
-
+            assert(0);
             exit();
     }
     // printf( "type: %d\n", $type );
@@ -74,17 +71,17 @@ function image_resize($i_src_path, $i_dst_path, $i_maxW = 640, $i_maxH = 640, $i
     $pi = pathinfo($i_src_path);
     switch (strtolower($pi['extension'])) {
         case 'jpg':
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  $src_im = imagecreatefromjpeg($i_src_path);
-
+            $src_im = imagecreatefromjpeg($i_src_path);
             break;
+
         case 'gif':
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  $src_im = imagecreatefromgif($i_src_path);
-
+            $src_im = imagecreatefromgif($i_src_path);
             break;
+
         case 'png':
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  $src_im = imagecreatefrompng($i_src_path);
-
+            $src_im = imagecreatefrompng($i_src_path);
             break;
+
         default:
             die();
     }

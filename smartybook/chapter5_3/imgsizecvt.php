@@ -2,20 +2,19 @@
 
 require_once('./plib/image_resize.php');
 require_once('./ini.php');
+
 switch (strtolower($_SERVER['REQUEST_METHOD'])) {
     case 'post':
-                                                                             proc_image_resize(basename($_POST['fname']));
+        proc_image_resize(basename($_POST['fname']));
         $url = get_current_url();
         header("Location: $url");
-
         break;
 
     default:
-                                                                             $rcd_arr = proc_image_list();
+        $rcd_arr = proc_image_list();
         $smarty = new Smarty();
         $smarty->assign('rcd_arr', $rcd_arr);
         $smarty->display('imgsizecvt.tpl');
-
         break;
 }
 exit();
@@ -53,7 +52,6 @@ function get_current_url()
 // $rcd_arr[]['dst'][480]['height']
 function proc_image_list()
 {
-
     global  $CFG;
     $rcd_arr = array();
     $arr = glob($CFG['SRCIMG_DIR'] . '*.jpg');
@@ -86,7 +84,6 @@ function proc_image_list()
 // 元画像から大中小の画像を作る
 function proc_image_resize($i_fname)
 {
-
     global  $CFG;
 
     $fname = basename($i_fname);
