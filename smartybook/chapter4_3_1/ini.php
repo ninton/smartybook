@@ -1,4 +1,5 @@
 <?php
+
 // ウェブサイト名
 $siteName = "Smarty for Designers";
 // CSVファイル名
@@ -12,4 +13,3 @@ $admin = "admin.php";
 // カテゴリ一覧
 $categories = array("Study", "Eating", "Work");
 $notice = "あいさつです。あいさつです。";
-?>

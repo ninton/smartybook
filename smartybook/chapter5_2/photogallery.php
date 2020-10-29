@@ -1,4 +1,5 @@
 <?php
+
 // 初期設定
 $imgDir = "./images/";
 $slideFlag = "on";
@@ -21,5 +22,3 @@ $smarty->assign("slideFlag", $slideFlag);
 $smarty->assign("slideTerm", $slideTerm);
 // 出力
 $smarty->display("photogallery.tpl");
-
-?>

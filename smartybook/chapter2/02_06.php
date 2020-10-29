@@ -12,16 +12,18 @@ require_once('02_01_b.php');
 <body>
 <?php
 // csvデータの最終行のIDをチェックする関数
-function lastIdCheck($file){
-    while($arr = fgetcsv($file, 5000, ',')) {
+function lastIdCheck($file)
+{
+    while ($arr = fgetcsv($file, 5000, ',')) {
         $lastId = $arr[0];
     }
-	if($lastId == ''){
-	    $lastId = 0;
-	}
-	return $lastId;
+    if ($lastId == '') {
+        $lastId = 0;
+    }
+    return $lastId;
 }
-function convertNl($str){
+function convertNl($str)
+{
     $str = str_replace("\\", "", $str);
     $str = str_replace('"', '""', $str);
     $str = '"' . $str . '"';
@@ -50,18 +52,18 @@ $string = "$id,$_POST[category],$title,$contents,$_POST[date],$_POST[image]\n";
 $check = fwrite($fp, $string);
 
 // 書き込みできたかチェック
-if($check == FALSE){
+if ($check == false) {
     print '登録に失敗しました。<br />';
-}else if(is_int($check)){
+} elseif (is_int($check)) {
     print '正常に登録できました。<br />';
-}else{
+} else {
     print '登録に失敗しました。<br />';
 }
 
 // CSVファイルのロックを解除
 flock($fp, LOCK_UN);
 fclose($fp);
-print '<a href="'.$admin.'">登録フォームに戻る</a>';
+print '<a href="' . $admin . '">登録フォームに戻る</a>';
 ?>
 </body>
 </html>

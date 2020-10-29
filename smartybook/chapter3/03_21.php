@@ -1,4 +1,5 @@
 <?php
+
 require_once("../smarty/libs/Smarty.class.php");
 $smarty = new Smarty();
 $id = array("001", "002", "003");
@@ -8,4 +9,3 @@ $smarty->assign("id", $id);
 $smarty->assign("location", $location);
 $smarty->assign("address", $address);
 $smarty->display("03_21.tpl");
-?>

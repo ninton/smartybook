@@ -16,7 +16,7 @@ require_once('02_01_b.php');
 <td>カテゴリ</td>
 <td>
     <select name="category">
-	<option value="Study">Study</option>
+    <option value="Study">Study</option>
         <option value="Eating">Eating</option>
         <option value="Work">Work</option>
     </select>

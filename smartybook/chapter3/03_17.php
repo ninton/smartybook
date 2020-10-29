@@ -1,4 +1,5 @@
 <?php
+
 require_once("../smarty/libs/Smarty.class.php");
 $smarty = new Smarty();
 $person = array(
@@ -8,4 +9,3 @@ $person = array(
         );
 $smarty->assign("person", $person);
 $smarty->display("03_17.tpl");
-?>
