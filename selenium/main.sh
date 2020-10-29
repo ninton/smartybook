@@ -1,6 +1,8 @@
 #!/bin/bash -u
 
-error_log=../xampp-linux/lampp/logs/error_log
+#error_log="../xampp-linux/lampp/logs/error_log"
+error_log="../xampp-linux/lampp/logs/php_error_log"
+
 sudo truncate --size=0 $error_log
 
 selenium-side-runner \
@@ -10,14 +12,8 @@ selenium-side-runner \
   --output-format=junit \
   smartybook.side
 
-echo "PHP Error:"
-grep "PHP Error:"   $error_log
+grep "] PHP " $error_log
 
-echo "PHP Warning:"
-grep "PHP Warning:" $error_log
-
-echo "PHP Notice:"
-grep "PHP Notice:"  $error_log
 
 echo
 wc   $error_log
