@@ -16,16 +16,14 @@ $emoji_output_setting_arr = array();
 
 function emoji_convert_variables(&$io_vars, $i_from_encode, $i_to_encode)
 {
-
-
     $emoji = Emoji::singleton($i_from_encode, $i_to_encode);
     $emoji->convert_variables($io_vars);
 }
 
 function emoji_output_setting($i_from_encode = '', $i_to_encode = '')
 {
-
     global  $emoji_output_setting_arr;
+
     if ('' == $i_from_encode) {
         $emoji_output_setting_arr = array();
     } else {
@@ -39,8 +37,8 @@ function emoji_output_setting($i_from_encode = '', $i_to_encode = '')
 
 function emoji_output_handler($i_buf)
 {
-
     global  $emoji_output_setting_arr;
+
     $buf = $i_buf;
     foreach ($emoji_output_setting_arr as $i => $setting) {
         $buf = emoji_convert($buf, $setting['from'], $setting['to']);
@@ -51,7 +49,6 @@ function emoji_output_handler($i_buf)
 
 function emoji_convert($i_buf, $i_from_encode, $i_to_encode)
 {
-
     $emoji = Emoji::singleton($i_from_encode, $i_to_encode);
     $buf = $emoji->convert($i_buf);
     return $buf;
@@ -59,24 +56,22 @@ function emoji_convert($i_buf, $i_from_encode, $i_to_encode)
 
 class Emoji
 {
+    private $from_encode;
+    private $to_encode;
+    private $regex;
+    private $map;
 
-
-    var $from_encode;
-    var $to_encode;
-    var $regex;
-    var $map;
-
-    function Emoji($i_from_encode, $i_to_encode)
+    private function __construct($i_from_encode, $i_to_encode)
     {
         $this->from_encode  = $i_from_encode;
         $this->to_encode    = $i_to_encode;
-        $regex_arr = $this->get_regex_arr();
+        $regex_arr = $this->getRegexArr();
         $this->regex = $regex_arr[$i_from_encode];
 
         $this->load();
     }
 
-    function singleton($i_from_encode, $i_to_encode)
+    public function singleton($i_from_encode, $i_to_encode)
     {
         static $instance;
         if (! isset($instance[$i_from_encode][$i_to_encode])) {
@@ -85,7 +80,7 @@ class Emoji
         return $instance[$i_from_encode][$i_to_encode];
     }
 
-    function get_regex_arr()
+    public function getRegexArr()
     {
         return array(
             'i_sjisbin'     => '/(\xF8[\x90-\xFF]|\xF9[\x40-\xFF])/e'           ,
@@ -116,22 +111,22 @@ class Emoji
         );
     }
 
-    function get_encode_arr()
+    public function getEncodeArr()
     {
-        $arr = Emoji::get_regex_arr();
+        $arr = Emoji::getRegexArr();
         return array_keys($arr);
     }
 
-    function clear()
+    public function clear()
     {
         $this->map = array();
     }
 
-    function load()
+    public function load()
     {
-        $path = $this->map_path();
+        $path = $this->mapPath();
         $this->map = array();
-        $buf = @file_get_contents($path);
+        $buf = file_get_contents($path);
         if ('' == $buf) {
             return;
         }
@@ -145,7 +140,7 @@ class Emoji
         }
     }
 
-    function save()
+    public function save()
     {
         if (0) {
             $arr = array();
@@ -155,19 +150,19 @@ class Emoji
             $buf = join("", $arr);
         }
         $buf = serialize($this->map);
-        $path = $this->map_path();
+        $path = $this->mapPath();
 
         file_put_contents($path, $buf);
     }
 
-    function map_path()
+    public function mapPath()
     {
         $fname = "{$this->from_encode}.{$this->to_encode}.dat";
         $path = dirname(__FILE__) . "/map/$fname";
         return $path;
     }
 
-    function add($i_from, $i_to, $i_text = '')
+    public function add($i_from, $i_to, $i_text = '')
     {
         switch ($i_from) {
             case '':
@@ -183,20 +178,18 @@ class Emoji
             case 'x':
             case '-':
                 $to = $i_text;
-
                 break;
 
             default:
-                                                                                                                                                                                                                             $to   = $this->modifier($i_to, $this->to_encode);
-
+                $to = $this->modifier($i_to, $this->to_encode);
                 break;
         }
 
         $this->map[ $from ] = $to;
-//var_dump( $this->map );
+        //var_dump( $this->map );
     }
 
-    function modifier($i_buf, $i_encode)
+    public function modifier($i_buf, $i_encode)
     {
         switch ($i_encode) {
             case 'i_uni16':
@@ -205,12 +198,12 @@ class Emoji
             case 'e_uni16':
             case 's_uni16':
                 $buf = sprintf('&#x%s;', $i_buf);
-
                 break;
+
             case 'i_sjis10':
-                  $buf = sprintf('&#%s;', $i_buf);
-
+                $buf = sprintf('&#%s;', $i_buf);
                 break;
+
             case 'i_unibin':
             case 'i_sjisbin':
             case 'e_sjisbin':
@@ -218,89 +211,82 @@ class Emoji
             case 'e_email_jisbin':
             case 'e_email_sjisbin':
             case 's_unibin':
-                $buf = $this->pack_16_bin($i_buf);
-
+                $buf = $this->pack16bin($i_buf);
                 break;
 
             case 'i_utf8':
             case 'e_utf8':
             case 's_utf8':
-                $buf = $this->pack_16_bin($i_buf);
+                $buf = $this->pack16bin($i_buf);
                 $buf = mb_convert_encoding($buf, 'UTF-8', 'UCS2');
-
                 break;
 
             case 's_webcode':
-                  $buf = sprintf("\x1B\$%s\x0F", $i_buf);
-
+                $buf = sprintf("\x1B\$%s\x0F", $i_buf);
                 break;
 
             case 'e_icon_num':
             case 'e_icon_name':
                 $buf = sprintf('<img icon="%s">', $i_buf);
-
                 break;
+
             case 'e_img_name':
             case 'e_img_num':
                 $buf = sprintf('<img localsrc="%s" />', $i_buf);
-
                 break;
 
             default:
-                  $buf = $i_buf;
-
+                $buf = $i_buf;
                 break;
         }
 
         return $buf;
     }
 
-    function convert($i_buf)
+    public function convert($i_buf)
     {
         $_GLOBALS['Emoji'] = $this;
         $buf = preg_replace($this->regex, "\$_GLOBALS['Emoji']->mapping('\\1')", $i_buf);
         return $buf;
     }
 
-    function mapping($i_buf)
+    public function mapping($i_buf)
     {
         switch ($this->from_encode) {
             case 'e_img_num':
             case 'e_img_name':
-                $buf = $this->modifier($i_buf, $this->from_encode);
-
-                break;
-
             case 'e_icon_num':
             case 'e_icon_name':
                 $buf = $this->modifier($i_buf, $this->from_encode);
-
                 break;
 
             default:
-                  $buf = $i_buf;
+                $buf = $i_buf;
+                break;
         }
 
         if (isset($this->map[ $buf ])) {
             $buf = $this->map[ $buf ];
         }
+
         return "$buf";
     }
 
-    function pack_16_bin($i_buf)
+    public function pack16bin($i_buf)
     {
         $buf = '';
         if (preg_match('/^[0-9A-F]{4}$/i', $i_buf)) {
             $buf = pack('H4', $i_buf);
         }
+
         return $buf;
     }
 
-    function convert_variables(&$io_vars)
+    public function convertVariables(&$io_vars)
     {
         foreach ($io_vars as $key => $val) {
             if (is_array($val)) {
-                $this->convert_variables($val);
+                $this->convertVariables($val);
             } else {
                 $val = $this->convert($val);
             }
