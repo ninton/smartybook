@@ -2,13 +2,14 @@
 
 class BookMark
 {
-    function BookMark($title, $url, $date)
+    public function __construct($title, $url, $date)
     {
         $this->title = $title; //サイト名
         $this->url = $url; //サイトURL
         $this->date = $date; //ブックマークした日付
     }
-    function getAgo()
+
+    public function getAgo()
     {
         //現在日時からどのくらい時間が経っているか（単位:秒）
         $span = time() - strtotime($this->date);

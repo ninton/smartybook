@@ -25,14 +25,14 @@ switch (strtoupper($_SERVER['REQUEST_METHOD'])) {
     case 'POST':
         switch ($action) {
             case 'confirm':
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           $_SESSION[APPID]['form'] = $_POST;
+                $_SESSION[APPID]['form'] = $_POST;
                 $tpl = "confirm.tpl";
-
                 break;
+
             case 'submit':
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           $tpl = "thanks.tpl";
-
+                $tpl = "thanks.tpl";
                 break;
+
             default:
                 die();
         }
@@ -41,14 +41,14 @@ switch (strtoupper($_SERVER['REQUEST_METHOD'])) {
     default:
         switch ($action) {
             case '':
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   $_SESSION[APPID]['form'] = array();
+                $_SESSION[APPID]['form'] = array();
                 $tpl = "form.tpl";
-
                 break;
+
             case 'form':
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   $tpl = "form.tpl";
-
+                $tpl = "form.tpl";
                 break;
+
             default:
                 die();
         }
@@ -76,9 +76,9 @@ $smarty->display($tpl);
 // 送信完了後、セッション変数をクリアする
 switch ($action) {
     case 'submit':
-                                                                                                                                                                                                                                                                                                                                                                                                 $_SESSION[APPID]['form'] = array();
-
+        $_SESSION[APPID]['form'] = array();
         break;
+
     default:
         break;
 }
