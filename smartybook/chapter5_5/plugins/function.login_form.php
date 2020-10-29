@@ -1,18 +1,19 @@
 <?php
+
 /**
  * プラグイン
  *
- * @description		プラグインです
- * @author			kara_d
- * @version			0.1[2008/01/24]
- * @see            
+ * @description     プラグインです
+ * @author          kara_d
+ * @version         0.1[2008/01/24]
+ * @see
  */
 
-function smarty_function_login_form($params, &$smarty){
-	$self = $params["self"];
-	$username = htmlspecialchars($params["username"]);
-
-	$result = <<<LOGIN
+function smarty_function_login_form($params, &$smarty)
+{
+    $self = $params["self"];
+    $username = htmlspecialchars($params["username"]);
+    $result = <<<LOGIN
 <form method="post" action="$self" class="message" id="cmsForm" name="cmsForm">
 	<fieldset>
 		<table cellspacing="0">
@@ -32,5 +33,5 @@ function smarty_function_login_form($params, &$smarty){
 	</fieldset>
 </form>
 LOGIN;
-	return $result;
+    return $result;
 }

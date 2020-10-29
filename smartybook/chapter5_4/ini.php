@@ -1,4 +1,5 @@
 <?php
+
 // ウェブサイト名
 $siteName = "Smarty for Designers";
 // サイトの説明
@@ -13,4 +14,3 @@ $home = "index.php";
 $admin = "admin.php";
 // カテゴリ一覧
 $categories = array("Study", "Eating", "Work", "Picture", "Link");
-?>

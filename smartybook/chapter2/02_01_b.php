@@ -1,22 +1,17 @@
 <?php
+
 // ウェブサイト名
 $siteName = 'Smarty for Designers';
-
 // バージョン番号
 $revision = 1;
-
 // CSVファイル名
 $csv = 'data.csv';
-
 // 画像ディレクトリ
 $imageDir = './images/';
-
 //トップページ
 $home = '02_02.php';
-
 //管理ページ
 $admin = '02_04.php';
-
 // カテゴリ一覧
 $category[0] = 'Study';
 $category[1] = 'Eating';

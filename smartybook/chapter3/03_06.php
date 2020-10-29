@@ -1,15 +1,20 @@
 <?php
-Class BookMark {
-    function BookMark($title, $url, $date) {
+
+class BookMark
+{
+    public function __construct($title, $url, $date)
+    {
         $this->title = $title; //サイト名
-        $this->url = $url; //サイトURL
-        $this->date = $date; //ブックマークした日付
+        $this->url   = $url; //サイトURL
+        $this->date  = $date; //ブックマークした日付
     }
-    function getAgo() {
+
+    public function getAgo()
+    {
         //現在日時からどのくらい時間が経っているか（単位:秒）
         $span = time() - strtotime($this->date);
         //単位を日数に換算して値を返す
-        return floor($span / (60*60*24));
+        return floor($span / (60 * 60 * 24));
     }
 }
 
@@ -21,4 +26,3 @@ $smarty->compile_dir = "templates_c";
 $bookmark = new BookMark("Google", "http://www.google.com/", "2006/11/01");
 $smarty->assign("bookmark", $bookmark);
 $smarty->display("03_06.tpl");
-?>

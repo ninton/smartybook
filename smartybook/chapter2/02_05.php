@@ -1,5 +1,5 @@
 <?php
-// 設定ファイルの読み込み 
+// 設定ファイルの読み込み
 require_once('02_01_b.php');
 ?>
 
@@ -17,34 +17,34 @@ $contents = nl2br($_POST['contents']);
 // 入力データを確認
 print '<tr>';
 print '<td>カテゴリ</td>';
-print '<td>'.$_POST['category'].'</td>';
+print '<td>' . $_POST['category'] . '</td>';
 print '</tr>';
 print '<tr>';
 print '<td>タイトル</td>';
-print '<td>'.$_POST['title'].'</td>';
+print '<td>' . $_POST['title'] . '</td>';
 print '</tr>';
 print '<tr>';
 print '<td>本文</td>';
-print '<td>'.$contents.'</td>';
+print '<td>' . $contents . '</td>';
 print '</tr>';
 print '<tr>';
 print '<td>日時</td>';
-print '<td>'.date("Y-m-d H:i:s", $_POST['date']).'</td>';
+print '<td>' . date("Y-m-d H:i:s", $_POST['date']) . '</td>';
 print '</tr>';
 print '<tr>';
 print '<td>画像</td>';
 
 //画像ディレクトリがあるか調べ、無ければ作成する
-if(!is_dir($imageDir)){
+if (!is_dir($imageDir)) {
     mkdir($imageDir);
 }
 
 // ファイルをアップロードする
-if(is_uploaded_file($_FILES['image']['tmp_name'])){
-    copy($_FILES['image']['tmp_name'], $imageDir.$_FILES['image']['name']);
-    $imageFile = $imageDir.$_FILES['image']['name'];
-    print '<td><img src="'.$imageFile.'" /></td>';
-}else {
+if (is_uploaded_file($_FILES['image']['tmp_name'])) {
+    copy($_FILES['image']['tmp_name'], $imageDir . $_FILES['image']['name']);
+    $imageFile = $imageDir . $_FILES['image']['name'];
+    print '<td><img src="' . $imageFile . '" /></td>';
+} else {
     print '<td>ファイルは指定されていません。</td>';
 }
 print '</tr>';
@@ -55,11 +55,11 @@ print '</tr>';
 </tr>
 </table>
 <?php
-print '<input type="hidden" name="category" value="'.$_POST['category'].'" />';
-print '<input type="hidden" name="title" value="'.$_POST['title'].'" />';
-print '<input type="hidden" name="contents" value="'.$_POST['contents'].'" />';
-print '<input type="hidden" name="date" value="'.$_POST['date'].'" />';
-print '<input type="hidden" name="image" value="'.$imageFile.'" />';
+print '<input type="hidden" name="category" value="' . $_POST['category'] . '" />';
+print '<input type="hidden" name="title" value="' . $_POST['title'] . '" />';
+print '<input type="hidden" name="contents" value="' . $_POST['contents'] . '" />';
+print '<input type="hidden" name="date" value="' . $_POST['date'] . '" />';
+print '<input type="hidden" name="image" value="' . $imageFile . '" />';
 ?>
 </form>
 </body>
