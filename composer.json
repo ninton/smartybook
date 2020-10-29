@@ -2,10 +2,24 @@
     "name": "ninton/smartybook",
     "description": "Smarty動的Webサイト構築入門のCDROM",
     "type": "project",
+    "config": {
+        "vendor-dir": "smartybook/vendor",
+        "platform": {
+            "php": "5.3.8"
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:ninton/smartybook.git"
+        }
+    ],
     "require": {
+        "php": "=5.3.8",
         "ext-json": "*",
         "ext-PDO": "*",
-        "ext-mbstring": "*"
+        "ext-mbstring": "*",
+        "smarty/smarty": "v2.6.31"
     },
     "authors": [
         {
@@ -14,8 +28,8 @@
         }
     ],
     "require-dev": {
-        "squizlabs/php_codesniffer": "^3.5",
-        "friendsofphp/php-cs-fixer": "^2.16"
+        "squizlabs/php_codesniffer": "3.5.0",
+        "friendsofphp/php-cs-fixer": "v2.16.0"
     },
     "scripts": {
         "dry-fix": [

@@ -8,4 +8,5 @@ xampp-linux/*.tar.gz*
 xampp-linux/pear
 selenium/results
 
-/vendor/
+/smartybook/vendor/
+.php_cs.cache
