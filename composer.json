@@ -28,15 +28,11 @@
         }
     ],
     "require-dev": {
-        "squizlabs/php_codesniffer": "3.5.0",
-        "friendsofphp/php-cs-fixer": "v2.16.0"
     },
     "scripts": {
         "dry-fix": [
-            "php-cs-fixer fix --dry-run --diff --config=.php_cs.dist"
         ],
         "fix": [
-            "php-cs-fixer fix --config=.php_cs.dist"
         ]
     }
 }
