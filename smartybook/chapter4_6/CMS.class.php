@@ -13,7 +13,7 @@ class CMS {
 	 *	@return void
 	 */
 	function CMS ($i_dsn, $i_options = null) {
-		$this->db =& DB::connect($i_dsn, $i_options);
+		$this->db = DB::connect($i_dsn, $i_options);
 		if ( PEAR::isError($this->db) ) {
 			die( $this->db->getMessage() );
 		}
