@@ -63,8 +63,8 @@ class Emoji
 
     private function __construct($i_from_encode, $i_to_encode)
     {
-        $this->from_encode  = $i_from_encode;
-        $this->to_encode    = $i_to_encode;
+        $this->from_encode = $i_from_encode;
+        $this->to_encode   = $i_to_encode;
         $regex_arr = $this->getRegexArr();
         $this->regex = $regex_arr[$i_from_encode];
 

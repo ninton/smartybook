@@ -12,17 +12,17 @@ class MyList
 
     public function __construct()
     {
-        $this->ListId    = '';
-        $this->ListName  = '';
-        $this->NickName  = '';
+        $this->ListId     = '';
+        $this->ListName   = '';
+        $this->NickName   = '';
         $this->detail_arr = array();
     }
 
     public function input($i_vars)
     {
-        $this->ListName    = $i_vars['ListName'];
-        $this->NickName    = $i_vars['NickName'];
-        $this->detail_arr  = $i_vars['detail_arr'];
+        $this->ListName   = $i_vars['ListName'];
+        $this->NickName   = $i_vars['NickName'];
+        $this->detail_arr = $i_vars['detail_arr'];
     }
 
     public function getASINs()

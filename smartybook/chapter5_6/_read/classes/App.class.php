@@ -5,8 +5,6 @@
  */
 class App
 {
-
-
     public static function sessionStart()
     {
         session_start();

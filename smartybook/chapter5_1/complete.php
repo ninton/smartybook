@@ -9,7 +9,6 @@ $smarty->assign("admin", $admin);
 // 最新記事IDを取得する関数
 function lastIdCheck($file)
 {
-
     while ($array = fgetcsv($file, 5000, ",")) {
         $lastId = $array[0];
     }
@@ -21,7 +20,6 @@ function lastIdCheck($file)
 // 改行文字,カンマ,クォートを処理する関数
 function convertNl($str)
 {
-
     $str = stripslashes($str);
     $str = str_replace('"', '""', $str);
     $str = '"' . $str . '"';

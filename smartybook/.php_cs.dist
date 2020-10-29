@@ -2,10 +2,8 @@
 
 return PhpCsFixer\Config::create()
     ->setRiskyAllowed(true)
-    ->setIndent("\t")
     ->setRules([
         '@PSR2'                    => true,
-        'array_syntax'             => ['syntax' => 'short'],
         'blank_line_before_return' => false,
         'function_typehint_space'  => true,
         'method_separation'        => true,
@@ -16,5 +14,8 @@ return PhpCsFixer\Config::create()
     ])
     ->setFinder(PhpCsFixer\Finder::create()
         ->exclude('vendor')
+        ->exclude('smarty')
+        ->exclude('simpletest')
+        ->exclude('%%*.php')
         ->in(__DIR__)
     );

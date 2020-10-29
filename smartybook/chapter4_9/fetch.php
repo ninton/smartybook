@@ -19,7 +19,6 @@ print $buf;
 // メニューを作る
 function get_menu_arr($i_categories)
 {
-
     $menu_arr = array();
     foreach ($i_categories as $i => $category) {
         $rcd = array();
@@ -33,7 +32,6 @@ function get_menu_arr($i_categories)
 // 注目記事を1件選ぶ
 function get_featured_arr($i_csv)
 {
-
     $cms_arr = array();
     $fp = fopen($i_csv, 'r');
     while ($arr = fgetcsv($fp, 10000)) {
@@ -63,20 +61,17 @@ function get_featured_arr($i_csv)
 
 function get_contents_url($i_category)
 {
-
     return sprintf("%s/contents.php?category=%s", get_url(), $i_category);
 }
 
 function get_image_url($i_image)
 {
-
     return sprintf("%s/%s", get_url(), $i_image);
 }
 
 // chapter4_1/ のURLを求める
 function get_url()
 {
-
     static $url;
 
     if (empty($url)) {

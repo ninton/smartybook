@@ -11,7 +11,6 @@
 
 function smarty_function_login_form($params, &$smarty)
 {
-
     $self = $params["self"];
     $username = htmlspecialchars($params["username"]);
     $result = <<<LOGIN

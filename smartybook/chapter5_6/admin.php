@@ -50,9 +50,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
             default:
                 break;
         }
-
         break;
-// case 'get':
 
     case 'post':
         switch (App::getCmd()) {
@@ -84,9 +82,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
             default:
                 break;
         }
-
         break;
-// case 'post':
 
     default:
         break;

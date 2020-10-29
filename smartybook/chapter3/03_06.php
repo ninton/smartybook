@@ -5,8 +5,8 @@ class BookMark
     public function __construct($title, $url, $date)
     {
         $this->title = $title; //サイト名
-        $this->url = $url; //サイトURL
-        $this->date = $date; //ブックマークした日付
+        $this->url   = $url; //サイトURL
+        $this->date  = $date; //ブックマークした日付
     }
 
     public function getAgo()

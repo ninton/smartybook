@@ -23,7 +23,6 @@ exit();
 // 現在アクセス中のURL
 function get_current_url()
 {
-
     $shceme = empty($_SERVER['HTTPS']) ? 'http' : 'https';
     $host = $_SERVER['HTTP_HOST'];
     $path = $_SERVER['REQUEST_URI'];

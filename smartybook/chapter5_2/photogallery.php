@@ -10,7 +10,7 @@ require_once("../smarty/libs/Smarty.class.php");
 // Smartyオブジェクトの作成
 $smarty = new Smarty();
 // デリミタタグの変更
-$smarty->left_delimiter = "{{";
+$smarty->left_delimiter  = "{{";
 $smarty->right_delimiter = "}}";
 
 // 画像ファイルパスを取得（配列）

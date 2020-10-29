@@ -32,7 +32,6 @@ if (isset($_GET["lo"]) && $_GET["lo"] == "ok") {
 //認証時に実行する関数
 function displayLogin($username, $status)
 {
-
     $self = $_SERVER["PHP_SELF"];
     global $smarty;
     if ($status == -3) {
