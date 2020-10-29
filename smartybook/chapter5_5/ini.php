@@ -1,4 +1,7 @@
 <?php
+// PEAR内の PHP Strict Standards: PHP Deprecated: を抑制する
+error_reporting( error_reporting() & ~E_STRICT & ~E_DEPRECATED);
+
 // ウェブサイト名
 $siteName = "Smarty for Designers";
 // CSVファイル名
