@@ -5,16 +5,16 @@
  */
 class SortNavigator
 {
-    var $Sort;
-    var $Order;
-    var $vars;
+    private $sort;
+    private $order;
+    private $vars;
 
     /**
      *  @param  string
      *  @param  string
      *  @return void
      */
-    function SortNavigator($i_sort, $i_order)
+    public function __construct($i_sort, $i_order)
     {
         $this->vars['asc_current' ] = '△';
         $this->vars['asc_link'    ] = '▲';
@@ -27,8 +27,8 @@ class SortNavigator
 //      $this->vars['sortDefVal' ] = '';
 //      $this->vars['orderDefVal'] = 'asc';
 
-        $this->Sort  = $i_sort;
-        $this->Order = $i_order;
+        $this->sort  = $i_sort;
+        $this->order = $i_order;
     }
 
     /**
@@ -36,7 +36,7 @@ class SortNavigator
      *  @param  string
      *  @return void
      */
-    function setOption($i_key, $i_value)
+    public function setOption($i_key, $i_value)
     {
         if (isset($this->vars[$i_key])) {
             $this->vars[$i_key] = $i_value;
@@ -47,7 +47,7 @@ class SortNavigator
      *  @param  string
      *  @return string
      */
-    function show($i_sort)
+    public function show($i_sort)
     {
         $asc_navi  = $this->showLink($i_sort, "asc");
         $desc_navi = $this->showLink($i_sort, "desc");
@@ -61,9 +61,9 @@ class SortNavigator
      *  @param  string
      *  @return string
      */
-    function showLink($i_sort, $i_order)
+    public function showLink($i_sort, $i_order)
     {
-        if (($i_sort == $this->Sort) && ($i_order == $this->Order)) {
+        if (($i_sort == $this->sort) && ($i_order == $this->order)) {
             if ($i_order == 'asc') {
                 $text  = $this->vars['asc_current'];
             } else {
@@ -84,7 +84,7 @@ class SortNavigator
                 $this->vars['orderUrlVar'] => $i_order,
                 'pageID' => 1
                 );
-            $html['href' ] = $_SERVER['SCRIPT_NAME'] . '?' . $this->replace_query($_SERVER['QUERY_STRING'], $vars);
+            $html['href' ] = $_SERVER['SCRIPT_NAME'] . '?' . $this->replaceQuery($_SERVER['QUERY_STRING'], $vars);
             $html['title'] = $title;
             $html['text' ] = $text;
 
@@ -102,7 +102,7 @@ EOT;
      *  @param  array
      *  @return string
      */
-    function replace_query($i_query, $i_vars)
+    public function replaceQuery($i_query, $i_vars)
     {
         parse_str($i_query, $vars);
 

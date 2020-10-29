@@ -5,16 +5,17 @@
  */
 class CMS
 {
-
-
-    var $db;
+    /**
+     * @var PDO
+     */
+    private $db;
 
     /**
      *  @param  string
      *  @param  array
      *  @return void
      */
-    function CMS($i_dsn, $i_dbuser)
+    public function __construct($i_dsn, $i_dbuser)
     {
         try {
             $this->db = new PDO($i_dsn, $i_dbuser);
@@ -28,7 +29,7 @@ class CMS
     /**
      *  @return integer
      */
-    function getCount()
+    public function getCount()
     {
         $stmt = $this->db->query('SELECT COUNT(id) FROM cms');
         $row = $stmt->fetch(PDO::FETCH_NUM);
@@ -42,7 +43,7 @@ class CMS
      *  @param  string
      *  @return array
      */
-    function getAll($i_offset, $i_limit, $i_sort, $i_order)
+    public function getAll($i_offset, $i_limit, $i_sort, $i_order)
     {
         // 安全な値かどうかをチェックする
         switch ($i_sort) {
