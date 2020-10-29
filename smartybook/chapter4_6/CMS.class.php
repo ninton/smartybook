@@ -1,6 +1,4 @@
 <?php
-require_once( 'DB.php' );
-
 /**
  *	テーブルCMSの読み出し操作
  */
@@ -12,11 +10,13 @@ class CMS {
 	 *	@param	array
 	 *	@return void
 	 */
-	function CMS ($i_dsn, $i_options = null) {
-		$this->db = DB::connect($i_dsn, $i_options);
-		if ( PEAR::isError($this->db) ) {
-			die( $this->db->getMessage() );
+	function CMS ($i_dsn, $i_dbuser) {
+		try {
+			$this->db = new PDO($i_dsn, $i_dbuser);
+		} catch (Exception $e) {
+			die($e->getMessage());
 		}
+
 		$this->db->query( 'SET NAMES UTF8' );
 	}
 
@@ -24,7 +24,8 @@ class CMS {
 	 *	@return	integer
 	 */
 	function getCount () {
-		$row = $this->db->getOne('SELECT COUNT(id) FROM cms');
+		$stmt = $this->db->query('SELECT COUNT(id) FROM cms');
+		$row = $stmt->fetch(PDO::FETCH_NUM);
 		return $row[0];
 	}
 
@@ -61,11 +62,9 @@ class CMS {
 		$offset= 0 + (int)$i_offset;
 		$limit = 0 + (int)$i_limit;
 
-		$data = array();
 		$query = "SELECT * FROM cms ORDER BY $sort $order LIMIT $offset, $limit";
-		$rcd_arr = $this->db->getAll($query, $data, DB_FETCHMODE_ASSOC);
+		$stmt = $this->db->query($query);
+		$rcd_arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
 		return $rcd_arr;
 	}
 }
-
-?>
