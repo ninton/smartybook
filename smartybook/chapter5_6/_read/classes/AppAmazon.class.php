@@ -14,7 +14,7 @@ class AppAmazon {
 	 *	@return	void
 	 */
 	function AppAmazon( $i_access_key_id, $i_associate_id, $i_cache_dir ) {
-		$amazon = &new Services_AmazonECS4( $i_access_key_id, $i_associate_id );
+		$amazon = new Services_AmazonECS4( $i_access_key_id, $i_associate_id );
 		$amazon->setLocale( 'JP' );
 		$amazon->setCache( 'file', array('cache_dir' => $i_cache_dir) );
 		$amazon->setCacheExpire( 24 * 3600 );
@@ -38,7 +38,7 @@ class AppAmazon {
 	$Item_arr[3]	ASIN「34567」のItem情報
 	*/
 	function ItemLookup( $i_ASINs, $i_options, &$o_Item_arr ) {
-		$ASIN_arr = split(',', $i_ASINs);
+		$ASIN_arr = explode(',', $i_ASINs);
 
 		// $ASIN_arrから10個づつ問合わせして、$o_Item_arrに蓄積する
 		$o_Item_arr = array();
@@ -56,4 +56,3 @@ class AppAmazon {
 		return '';
 	}
 }
-?>
