@@ -20,7 +20,7 @@ array_walk( $entry_arr, 'replace_entry_image', $imageSizeGroup );
 $params = array();
 $params['perPage'] = 1;
 $params['totalItems'] = count($entry_arr);
-$pager =& Pager::factory($params);
+$pager = Pager::factory($params);
 
 
 $pageID = 0;

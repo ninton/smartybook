@@ -3,7 +3,7 @@ require_once( 'Net/UserAgent/Mobile.php' );
 require_once( dirname(__FILE__) . '/plib/emoji/Emoji.class.php' );
 require_once( dirname(__FILE__) . '/plib/semulator.php' );
 
-$agent = &Net_UserAgent_Mobile::factory();
+$agent = Net_UserAgent_Mobile::factory();
 $display = $agent->getDisplay();
 
 // キャリア名称の調整
