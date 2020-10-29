@@ -7,3 +7,5 @@ xampp-linux/lampp*
 xampp-linux/*.tar.gz*
 xampp-linux/pear
 selenium/results
+
+/vendor/
