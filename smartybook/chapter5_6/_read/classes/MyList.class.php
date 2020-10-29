@@ -5,12 +5,12 @@
  */
 class MyList
 {
-    var $ListId;
-    var $ListName;
-    var $NickName;
-    var $detail_arr;
+    public $ListId;
+    public $ListName;
+    public $NickName;
+    public $detail_arr;
 
-    function MyList()
+    public function __construct()
     {
         $this->ListId    = '';
         $this->ListName  = '';
@@ -18,14 +18,14 @@ class MyList
         $this->detail_arr = array();
     }
 
-    function input($i_vars)
+    public function input($i_vars)
     {
         $this->ListName    = $i_vars['ListName'];
         $this->NickName    = $i_vars['NickName'];
         $this->detail_arr  = $i_vars['detail_arr'];
     }
 
-    function getASINs()
+    public function getASINs()
     {
         // ASINの重複要素と空要素を取り除いて、カンマ区切りにする
         $map = array();
@@ -39,7 +39,7 @@ class MyList
         return join(',', array_keys($map));
     }
 
-    function setItems($i_Item_arr)
+    public function setItems($i_Item_arr)
     {
         $map = array();
         foreach ($this->detail_arr as $i => $detail) {

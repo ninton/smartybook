@@ -2,16 +2,16 @@
 
 class MyListManager
 {
-    var $max_items;
-    var $dir;
+    private $max_items;
+    private $dir;
 
-    function MyListManager($i_max_items, $i_dir)
+    public function __construct($i_max_items, $i_dir)
     {
         $this->max_items = $i_max_items;
         $this->dir = $i_dir;
     }
 
-    function read($i_ListId)
+    public function read($i_ListId)
     {
         $path = $this->getPath($i_ListId);
 
@@ -31,13 +31,13 @@ class MyListManager
         return $mylist;
     }
 
-    function write($i_MyList)
+    public function write($i_MyList)
     {
         $buf = serialize($i_MyList);
         file_put_contents($this->getPath($i_MyList->ListId), $buf);
     }
 
-    function getPath($i_ListId)
+    public function getPath($i_ListId)
     {
         if (preg_match('/[^0-9A-Za-z]/', $i_ListId)) {
             die();
@@ -46,17 +46,17 @@ class MyListManager
         return sprintf('%s%s.txt', $this->dir, $i_ListId);
     }
 
-    function create(&$io_MyList)
+    public function create(&$io_MyList)
     {
         // 未実装
     }
 
-    function readList($i_offset, $i_length)
+    public function readList($i_offset, $i_length)
     {
         // 未実装
     }
 
-    function delete($i_ListId)
+    public function delete($i_ListId)
     {
         // 未実装
     }

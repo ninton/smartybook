@@ -7,11 +7,11 @@ class App
 {
 
 
-    public static function session_start()
+    public static function sessionStart()
     {
         session_start();
         $token = md5(TOKEN_SALT . $_SERVER['HTTP_USER_AGENT'] . $_SERVER['REMOTE_ADDR']);
-        if (@$_SESSION[APPID]['token'] != $token) {
+        if ($_SESSION[APPID]['token'] != $token) {
             session_regenerate_id();
             $_SESSION[APPID] = array();
             $_SESSION[APPID]['token'] = $token;
@@ -27,7 +27,7 @@ class App
         header("Location: $url");
     }
 
-    public static function get_cmd()
+    public static function getCmd()
     {
         $cmd_arr = preg_grep('/^cmd.*/', array_keys($_POST));
         $cmd_arr = array_values($cmd_arr);
