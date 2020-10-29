@@ -19,11 +19,11 @@ wget http://download.pear.php.net/package/Pager-2.5.1.tgz
 tar xzf Pager-2.5.1.tgz
 cd ../..
 
-mkdir -p pear/json
-cd pear/json
-wget http://download.pear.php.net/package/Services_JSON-1.0.3.tgz
-tar xzf Services_JSON-1.0.3.tgz
-cd ../..
+#mkdir -p pear/json
+#cd pear/json
+#wget http://download.pear.php.net/package/Services_JSON-1.0.3.tgz
+#tar xzf Services_JSON-1.0.3.tgz
+#cd ../..
 
 mkdir -p pear/amazon
 cd pear/amazon
@@ -49,7 +49,7 @@ cp -r  pear/net/Net_UserAgent_Mobile-1.0.0/Net $dst_dir
 cp     pear/pager/Pager-2.5.1/Pager.php $dst_dir
 cp -r  pear/pager/Pager-2.5.1/Pager     $dst_dir
 
-cp     pear/json/Services_JSON-1.0.3/JSON.php ../smartybook/chapter5_4/
+#cp     pear/json/Services_JSON-1.0.3/JSON.php ../smartybook/chapter5_4/
 
 
 cp  -r  pear/amazon/Services_Amazon-0.9.0/Services $dst_dir

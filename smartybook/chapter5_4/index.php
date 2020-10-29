@@ -49,11 +49,9 @@ if(!$smarty->is_cached('index.tpl')) {
 	$smarty->assign("data", $data);
 	$smarty->assign("picture", $picture);
 	//Twitter APIからのコンテンツ読み込み
-	require_once "JSON.php";
 	$twitterUrl =  'http://twitter.com/statuses/user_timeline/kara_d.json';
 	$jTwitter = file_get_contents($twitterUrl);
-	$oServiceJson = new Services_JSON();
-	$aTwitter = $oServiceJson->decode($jTwitter);
+	$aTwitter = json_decode($jTwitter);
 	$smarty->assign("aTwitter", $aTwitter);
 
 }
