@@ -1,7 +1,4 @@
 <?php
-// PHP Strict Standards:  Non-static method DB::connect should not be called statically
-error_reporting( error_reporting() & ~E_STRICT & ~E_DEPRECATED );
-
 require_once( 'Pager.php' );
 require_once( '../smarty/libs/Smarty.class.php' );
 require_once( './CMS.class.php' );
@@ -30,7 +27,7 @@ if ( empty($_REQUEST['setPerPage']) ) {
 }
 
 // 全件数を調べて、Pagerを初期化する
-$cms = new CMS($CONFIG['dsn']);
+$cms = new CMS($CONFIG['dsn'], $CONFIG['db_user']);
 
 $params = array();
 $params['totalItems'] = $cms->getCount();
