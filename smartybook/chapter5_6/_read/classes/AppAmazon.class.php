@@ -33,6 +33,8 @@ class AppAmazon
      *  @param  assoc
      *  @param  array
      *  @return string  error message
+     *
+     * @SuppressWarnings(PHPMD.StaticAccess)
      */
     /*
         $ASINs = '12345,23456,34567';
