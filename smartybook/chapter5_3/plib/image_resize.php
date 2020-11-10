@@ -18,16 +18,32 @@
 
 function image_resize($i_src_path, $i_dst_path, $i_maxW = 640, $i_maxH = 640, $i_quality = 75)
 {
-    $srcW   = 0;
-    $srcH   = 0;
-    $type   = 0;
-    $dstW   = 0;
-    $dstH   = 0;
     $src_im = null;
     $dst_im = null;
-    $rc     = 0;
 
     list($srcW, $srcH) = getimagesize($i_src_path);
+    $scaleType = get_scale_type($srcW, $srcH, $i_maxW, $i_maxH);
+    list($dstW, $dstH) = scale($scaleType, $srcW, $srcH, $i_maxW, $i_maxH);
+
+    $src_im = image_from_file($i_src_path);
+    if ($src_im == null) {
+        return false;
+    }
+    $dst_im = imagecreatetruecolor($dstW, $dstH);
+
+    $retcode = imagecopyresized($dst_im, $src_im, 0, 0, 0, 0, $dstW, $dstH, $srcW, $srcH);
+    imagejpeg($dst_im, $i_dst_path, $i_quality);
+
+    imagedestroy($dst_im);
+    imagedestroy($src_im);
+
+    return $retcode;
+}
+
+function get_scale_type($srcW, $srcH, $i_maxW, $i_maxH)
+{
+    $type = -1;
+
     if (($srcW <= $i_maxW) && ($srcH <= $i_maxH)) {
         $type = 0;
     } elseif (($i_maxW < $srcW) && ($srcH <= $i_maxH)) {
@@ -38,13 +54,16 @@ function image_resize($i_src_path, $i_dst_path, $i_maxW = 640, $i_maxH = 640, $i
         $type = 3;
     } elseif ($srcW / $i_maxW <  $srcH / $i_maxH) {
         $type = 4;
-    } else {
-        assert(0);
-        exit();
     }
 
+    return $type;
+}
+
+function scale($type, $srcW, $srcH, $i_maxW, $i_maxH)
+{
     switch ($type) {
         case 0:
+        default:
             $dstW = $srcW;
             $dstH = $srcH;
             break;
@@ -60,16 +79,18 @@ function image_resize($i_src_path, $i_dst_path, $i_maxW = 640, $i_maxH = 640, $i
             $dstH = $i_maxH;
             $dstW = $srcW * $dstH / $srcH;
             break;
-
-        default:
-            assert(0);
-            exit();
     }
-    // printf( "type: %d\n", $type );
-    // printf( "dstW: %d, dstH: %d\n", $dstW, $dstH );
 
-    $pi = pathinfo($i_src_path);
-    switch (strtolower($pi['extension'])) {
+    return array($dstW, $dstH);
+
+}
+
+function image_from_file($i_src_path)
+{
+    $path_parts = pathinfo($i_src_path);
+
+    $src_im = null;
+    switch (strtolower($path_parts['extension'])) {
         case 'jpg':
             $src_im = imagecreatefromjpeg($i_src_path);
             break;
@@ -81,18 +102,7 @@ function image_resize($i_src_path, $i_dst_path, $i_maxW = 640, $i_maxH = 640, $i
         case 'png':
             $src_im = imagecreatefrompng($i_src_path);
             break;
-
-        default:
-            die();
     }
 
-    $dst_im = imagecreatetruecolor($dstW, $dstH);
-
-    $rc = imagecopyresized($dst_im, $src_im, 0, 0, 0, 0, $dstW, $dstH, $srcW, $srcH);
-    imagejpeg($dst_im, $i_dst_path, $i_quality);
-
-    imagedestroy($dst_im);
-    imagedestroy($src_im);
-
-    return $rc;
+    return $src_im;
 }
