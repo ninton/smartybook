@@ -21,7 +21,7 @@ print $buf;
 function get_menu_arr($i_categories)
 {
     $menu_arr = array();
-    foreach ($i_categories as $i => $category) {
+    foreach ($i_categories as $category) {
         $rcd = array();
         $rcd['title'] = $category;
         $rcd['url'  ] = get_contents_url($category);
@@ -34,8 +34,8 @@ function get_menu_arr($i_categories)
 function get_featured_arr($i_csv)
 {
     $cms_arr = array();
-    $fp = fopen($i_csv, 'r');
-    while ($arr = fgetcsv($fp, 10000)) {
+    $handle = fopen($i_csv, 'r');
+    while ($arr = fgetcsv($handle, 10000)) {
         $rcd = array();
         $rcd['id'      ] = $arr[0];
         $rcd['category'] = $arr[1];
@@ -53,10 +53,10 @@ function get_featured_arr($i_csv)
         }
         $cms_arr[] = $rcd;
     }
-    fclose($fp);
+    fclose($handle);
 //ランダムに1件選ぶ
-    $i = array_rand($cms_arr, 1);
-    $featured_arr = array_slice($cms_arr, $i, 1);
+    $offset = array_rand($cms_arr, 1);
+    $featured_arr = array_slice($cms_arr, $offset, 1);
     return $featured_arr;
 }
 
