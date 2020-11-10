@@ -12,41 +12,56 @@
   ----------  ----------  ----------  ----------  ----------
 
 */
-$emoji_output_setting_arr = array();
-
+/**
+ * @param $io_vars
+ * @param $i_from_encode
+ * @param $i_to_encode
+ *
+ * @SuppressWarnings(PHPMD.StaticAccess)
+ */
 function emoji_convert_variables(&$io_vars, $i_from_encode, $i_to_encode)
 {
     $emoji = Emoji::singleton($i_from_encode, $i_to_encode);
     $emoji->convert_variables($io_vars);
 }
 
+/**
+ * @param string $i_from_encode
+ * @param string $i_to_encode
+ *
+ * @SuppressWarnings(PHPMD.ElseExpression)
+ */
 function emoji_output_setting($i_from_encode = '', $i_to_encode = '')
 {
-    global  $emoji_output_setting_arr;
-
     if ('' == $i_from_encode) {
-        $emoji_output_setting_arr = array();
+        Emoji::$output_setting_arr = array();
     } else {
         $setting = array(
             'from' => $i_from_encode,
             'to'   => $i_to_encode
             );
-        $emoji_output_setting_arr[] = $setting;
+        Emoji::$output_setting_arr[] = $setting;
     }
 }
 
 function emoji_output_handler($i_buf)
 {
-    global  $emoji_output_setting_arr;
-
     $buf = $i_buf;
-    foreach ($emoji_output_setting_arr as $i => $setting) {
+    foreach (Emoji::$output_setting_arr as $setting) {
         $buf = emoji_convert($buf, $setting['from'], $setting['to']);
     }
 
     return $buf;
 }
 
+/**
+ * @param $i_buf
+ * @param $i_from_encode
+ * @param $i_to_encode
+ * @return mixed
+ *
+ * @SuppressWarnings(PHPMD.StaticAccess)
+ */
 function emoji_convert($i_buf, $i_from_encode, $i_to_encode)
 {
     $emoji = Emoji::singleton($i_from_encode, $i_to_encode);
@@ -54,8 +69,14 @@ function emoji_convert($i_buf, $i_from_encode, $i_to_encode)
     return $buf;
 }
 
+/**
+ * Class Emoji
+ *
+ * @SuppressWarnings(PHPMD.TooManyPublicMethods)
+ */
 class Emoji
 {
+    public static $output_setting_arr = array();
     private $from_encode;
     private $to_encode;
     private $regex;
@@ -113,7 +134,7 @@ class Emoji
 
     public function getEncodeArr()
     {
-        $arr = Emoji::getRegexArr();
+        $arr = self::getRegexArr();
         return array_keys($arr);
     }
 
@@ -133,7 +154,7 @@ class Emoji
         $this->map = unserialize($buf);
         if (0) {
             $arr = explode("\n", $buf);
-            foreach ($arr as $i => $line) {
+            foreach ($arr as $line) {
                 list($from, $to) = explode("\t", $line);
                 $this->map[$from] = $to;
             }
@@ -162,6 +183,13 @@ class Emoji
         return $path;
     }
 
+    /**
+     * @param $i_from
+     * @param $i_to
+     * @param string $i_text
+     *
+     * @SuppressWarnings(PHPMD.ShortVariable)
+     */
     public function add($i_from, $i_to, $i_text = '')
     {
         switch ($i_from) {
@@ -191,47 +219,34 @@ class Emoji
 
     public function modifier($i_buf, $i_encode)
     {
-        switch ($i_encode) {
-            case 'i_uni16':
-            case 'i_sjis16':
-            case 'e_sjis16':
-            case 'e_uni16':
-            case 's_uni16':
+        $method = $this->encodeMethod($i_encode);
+        switch ($method) {
+            case 1:
                 $buf = sprintf('&#x%s;', $i_buf);
                 break;
 
-            case 'i_sjis10':
+            case 2:
                 $buf = sprintf('&#%s;', $i_buf);
                 break;
 
-            case 'i_unibin':
-            case 'i_sjisbin':
-            case 'e_sjisbin':
-            case 'e_unibin':
-            case 'e_email_jisbin':
-            case 'e_email_sjisbin':
-            case 's_unibin':
+            case 3:
                 $buf = $this->pack16bin($i_buf);
                 break;
 
-            case 'i_utf8':
-            case 'e_utf8':
-            case 's_utf8':
+            case 4:
                 $buf = $this->pack16bin($i_buf);
                 $buf = mb_convert_encoding($buf, 'UTF-8', 'UCS2');
                 break;
 
-            case 's_webcode':
+            case 5:
                 $buf = sprintf("\x1B\$%s\x0F", $i_buf);
                 break;
 
-            case 'e_icon_num':
-            case 'e_icon_name':
+            case 6:
                 $buf = sprintf('<img icon="%s">', $i_buf);
                 break;
 
-            case 'e_img_name':
-            case 'e_img_num':
+            case 7:
                 $buf = sprintf('<img localsrc="%s" />', $i_buf);
                 break;
 
@@ -243,10 +258,61 @@ class Emoji
         return $buf;
     }
 
+    public function encodeMethod($encode)
+    {
+        $method = array(
+            'i_uni16'  => 1,
+            'i_sjis16' => 1,
+            'e_sjis16' => 1,
+            'e_uni16'  => 1,
+            's_uni16'  => 1,
+
+            'i_sjis10' => 2,
+
+            'i_unibin'        => 3,
+            'i_sjisbin'       => 3,
+            'e_sjisbin'       => 3,
+            'e_unibin'        => 3,
+            'e_email_jisbin'  => 3,
+            'e_email_sjisbin' => 3,
+            's_unibin'        => 3,
+
+            'i_utf8' => 4,
+            'e_utf8' => 4,
+            's_utf8' => 4,
+
+            's_webcode' => 5,
+
+            'e_icon_num'  => 6,
+            'e_icon_name' => 6,
+
+            'e_img_name' => 7,
+            'e_img_num'  => 7,
+        );
+
+        if (isset($method[$encode])) {
+            return $method[$encode];
+        }
+
+        return 0;
+    }
+
+    /**
+     * @param $i_buf
+     * @return string|string[]|null
+     *
+     * @SuppressWarnings(PHPMD.Superglobals)
+     */
     public function convert($i_buf)
     {
-        $_GLOBALS['Emoji'] = $this;
-        $buf = preg_replace($this->regex, "\$_GLOBALS['Emoji']->mapping('\\1')", $i_buf);
+        $GLOBALS['Emoji'] = $this;
+        $buf = preg_replace($this->regex, "\$GLOBALS['Emoji']->mapping('\\1')", $i_buf);
+
+//      クロージャー内で、$thisが使えるのは、PHP5.4+
+//        $buf = preg_replace_callback($this->regex, function ($mathes) {
+//            return $this->mappping($mathes[1]);
+//        }, $i_buf);
+
         return $buf;
     }
 
@@ -282,6 +348,11 @@ class Emoji
         return $buf;
     }
 
+    /**
+     * @param $io_vars
+     *
+     * @SuppressWarnings(PHPMD.ElseExpression)
+     */
     public function convertVariables(&$io_vars)
     {
         foreach ($io_vars as $key => $val) {
