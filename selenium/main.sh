@@ -5,7 +5,7 @@ error_log="../xampp-linux/lampp/logs/php_error_log"
 
 sudo truncate --size=0 $error_log
 
-selenium-side-runner \
+npx selenium-side-runner \
   -c "browserName=chrome goog:chromeOptions.args=[--headless,--nogpu]" \
   --debug \
   --output-directory=./results \

@@ -1,6 +1,5 @@
 #!/bin/bash -uex
 
-composer update
 composer install
 
 npm install
