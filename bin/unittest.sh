@@ -1,6 +1,6 @@
 #!/bin/bash -uex
 
-#./bin/mysqlimport.sh
+./bin/db_init.sh
 
 rm -f smartybook/tests/simpletest.xml
 
