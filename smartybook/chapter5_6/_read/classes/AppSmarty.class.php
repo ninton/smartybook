@@ -1,6 +1,6 @@
 <?php
 
-require_once(dirname(__FILE__) . '/../../../smarty/libs/Smarty.class.php');
+require_once(dirname(__FILE__) . '/../../../vendor/autoload.php');
 
 class AppSmarty extends Smarty
 {

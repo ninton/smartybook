@@ -1,6 +1,6 @@
 <?php
 
-require_once("../smarty/libs/Smarty.class.php");
+require_once("../vendor/autoload.php");
 $smarty = new Smarty();
 $name = array("八代", "国枝", "大石");
 $height = array("167", "156", "182", "200");

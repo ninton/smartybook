@@ -6,7 +6,7 @@ $slideFlag = "on";
 $slideTerm = "5000";
 
 // Smartyの読み込み
-require_once("../smarty/libs/Smarty.class.php");
+require_once("../vendor/autoload.php");
 // Smartyオブジェクトの作成
 $smarty = new Smarty();
 // デリミタタグの変更

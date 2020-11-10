@@ -1,6 +1,6 @@
 <?php
 
-require_once("../smarty/libs/Smarty.class.php");
+require_once("../vendor/autoload.php");
 $smarty = new Smarty();
 $group = array(
     array("森永", "国枝"),

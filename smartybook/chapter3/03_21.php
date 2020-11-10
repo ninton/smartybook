@@ -1,6 +1,6 @@
 <?php
 
-require_once("../smarty/libs/Smarty.class.php");
+require_once("../vendor/autoload.php");
 $smarty = new Smarty();
 $id = array("001", "002", "003");
 $location = array("北海道", "青森", "岩手");

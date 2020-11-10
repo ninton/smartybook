@@ -2,7 +2,7 @@
 
 //CSVファイルパス
 $csv = "data.csv";
-require_once('../smarty/libs/Smarty.class.php');
+require_once('../vendor/autoload.php');
 $smarty = new Smarty();
 // CSVデータを配列に格納
 $fp = fopen($csv, "r");
