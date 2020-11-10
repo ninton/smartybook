@@ -1,6 +1,5 @@
 <?php
 
-require_once dirname(__FILE__) . '/../simpletest/autorun.php';
 require_once 'Net/UserAgent/Mobile.php';
 
 class NetUserAgentMobileTest extends UnitTestCase
