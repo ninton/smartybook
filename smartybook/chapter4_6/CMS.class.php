@@ -8,7 +8,7 @@ class CMS
     /**
      * @var PDO
      */
-    private $db;
+    private $dbh;
 
     /**
      *  @param  string
@@ -17,13 +17,8 @@ class CMS
      */
     public function __construct($i_dsn, $i_dbuser)
     {
-        try {
-            $this->db = new PDO($i_dsn, $i_dbuser);
-        } catch (Exception $e) {
-            die($e->getMessage());
-        }
-
-        $this->db->query('SET NAMES UTF8');
+        $this->dbh = new PDO($i_dsn, $i_dbuser);
+        $this->dbh->query('SET NAMES UTF8');
     }
 
     /**
@@ -31,7 +26,7 @@ class CMS
      */
     public function getCount()
     {
-        $stmt = $this->db->query('SELECT COUNT(id) FROM cms');
+        $stmt = $this->dbh->query('SELECT COUNT(id) FROM cms');
         $row = $stmt->fetch(PDO::FETCH_NUM);
         return $row[0];
     }
@@ -54,7 +49,7 @@ class CMS
             case 'time':
                 break;
             default:
-                die();
+                return array();
         }
 
         switch ($i_order) {
@@ -62,7 +57,7 @@ class CMS
             case 'desc':
                 break;
             default:
-                die();
+                return array();
         }
 
         $sort  = addslashes($i_sort);
@@ -70,7 +65,7 @@ class CMS
         $offset = 0 + (int)$i_offset;
         $limit = 0 + (int)$i_limit;
         $query = "SELECT * FROM cms ORDER BY $sort $order LIMIT $offset, $limit";
-        $stmt = $this->db->query($query);
+        $stmt = $this->dbh->query($query);
         $rcd_arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $rcd_arr;
     }
