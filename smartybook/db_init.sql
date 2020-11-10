@@ -8,6 +8,8 @@
 -- 3 SQL欄に以下をコピペ
 -- 4 Goボタン
 
+DROP DATABASE IF EXISTS smartybook;
+
 CREATE DATABASE IF NOT EXISTS smartybook COLLATE utf8_unicode_ci;
 USE smartybook;
 

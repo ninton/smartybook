@@ -2108,6 +2108,25 @@
       ],
       "value": "30000"
     }, {
+      "id": "b944d216-b0a2-47d5-b330-939f5bdee91b",
+      "comment": "",
+      "command": "//DBにUTF8でインポートされていれば、UTF8で表示されているはず",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2a667a0c-2c45-4a69-ac50-2b98ba210a58",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.tr2_1:nth-child(2) > td:nth-child(3)",
+      "targets": [
+        ["css=.tr2_1:nth-child(2) > td:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='wrapper']/table/tbody/tr[2]/td[3]", "xpath:idRelative"],
+        ["xpath=//td[3]", "xpath:position"],
+        ["xpath=//td[contains(.,'勉強初日')]", "xpath:innerText"]
+      ],
+      "value": "勉強初日"
+    }, {
       "id": "e1b5dc95-dcf4-40bc-bce0-a3f9dc977dd0",
       "comment": "",
       "command": "click",

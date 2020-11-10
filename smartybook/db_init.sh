@@ -8,4 +8,4 @@ DB_USER=root
 DB_PASS=
 sql=$(dirname $0)/db_init.sql
 
-mysql --user=$DB_USER --port=$DB_PORT --host=$DB_HOST <$sql
+mysql --default-character-set=utf8 --user=$DB_USER --port=$DB_PORT --host=$DB_HOST <$sql
