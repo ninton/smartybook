@@ -10,3 +10,4 @@ selenium/results
 /smartybook/vendor/
 .php_cs.cache
 */*/images/007.jpg
+node_modules

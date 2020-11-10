@@ -3,7 +3,7 @@
 composer update
 composer install
 
-#npm install
+npm install
 
 chmod +x chmod.sh
 ./chmod.sh || true
