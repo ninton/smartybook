@@ -32,9 +32,8 @@
         "simpletest/simpletest": "v1.1.7"
     },
     "scripts": {
-        "dry-fix": [
-        ],
-        "fix": [
+        "phpmd": [
+            "./smartybook/vendor/bin/phpmd  smartybook  text cleancode,codesize,controversial,design,naming,unusedcode  --exclude \"*/smarty/*,*/vendor/*,*/templates_c/*,*/autorun.php\""
         ]
     }
 }
