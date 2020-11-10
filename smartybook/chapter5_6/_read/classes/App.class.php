@@ -25,6 +25,11 @@ class App
         header("Location: $url");
     }
 
+    /**
+     * @return string
+     *
+     * @SuppressWarnings(PHPMD.ElseExpression)
+     */
     public static function getCmd()
     {
         $cmd_arr = preg_grep('/^cmd.*/', array_keys($_POST));
