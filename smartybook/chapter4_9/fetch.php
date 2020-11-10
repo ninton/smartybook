@@ -6,6 +6,7 @@ $menu_arr = get_menu_arr($categories);
 // 注目記事
 $featured_arr = get_featured_arr(BAT_SRC_DIR . "/$csv");
 $smarty = new Smarty();
+$smarty->plugins_dir[] = __DIR__;
 $smarty->assign('menu_arr', $menu_arr);
 $smarty->assign('featured_arr', $featured_arr);
 $buf = $smarty->fetch('menu.tpl');
