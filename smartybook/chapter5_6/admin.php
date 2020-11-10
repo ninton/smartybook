@@ -23,6 +23,9 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                 }
                 $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
                 $mylist = $mylistmgr->read($_REQUEST['ListId']);
+                if ($mylist === null) {
+                    die('file read error');
+                }
 
                 $appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['associate_id'], $CFG['aws_cache_dir']);
                 $options['ResponseGroup'] = 'Medium';
@@ -40,6 +43,9 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                 $message = '';
                 $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
                 $mylist = $mylistmgr->read($_REQUEST['ListId']);
+                if ($mylist === null) {
+                    die('file read error');
+                }
                 $smarty = new AppSmarty();
                 $smarty->assign("CFG", $CFG);
                 $smarty->assign("message", $message);
@@ -62,6 +68,9 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                 $options['ResponseGroup'] = 'Small';
                 $message = $appAmazon->ItemLookup($mylist->getASINs(), $options, $item_arr);
                 $mylist->setItems($item_arr);
+                if ($mylist === null) {
+                    die('file read error');
+                }
 
                 if ($message != '') {
                     $smarty = new AppSmarty();
