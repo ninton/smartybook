@@ -8,7 +8,13 @@
  * @version         0.1[2008/01/24]
  * @see
  */
-
+/**
+ * @param $params
+ * @param $smarty
+ * @return string
+ *
+ * @SuppressWarnings(PHPMD.UnusedFormalParameter)
+ */
 function smarty_function_login_form($params, &$smarty)
 {
     $self = $params["self"];
