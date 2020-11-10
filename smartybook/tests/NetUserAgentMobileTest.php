@@ -23,6 +23,8 @@ class NetUserAgentMobileTest extends UnitTestCase
 
     /**
      * @test
+     *
+     * @SuppressWarnings(PHPMD.StaticAccess)
      */
     public function test_1()
     {
