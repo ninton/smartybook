@@ -10,6 +10,8 @@ sudo docker-compose up -d
 sudo docker-compose ps
 ./bin/xampp_start.sh
 
+./bin/db_init.sh
+
 ./bin/unittest.sh
 
 

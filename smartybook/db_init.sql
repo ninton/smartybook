@@ -8,10 +8,10 @@
 -- 3 SQL欄に以下をコピペ
 -- 4 Goボタン
 
-CREATE DATABASE smartybook COLLATE utf8_unicode_ci;
+CREATE DATABASE IF NOT EXISTS smartybook COLLATE utf8_unicode_ci;
 USE smartybook;
 
-CREATE TABLE `cms` (
+CREATE TABLE IF NOT EXISTS `cms` (
   `id` int(11) NOT NULL,
   `category` varchar(200) NOT NULL,
   `title` varchar(200) NOT NULL,
@@ -21,6 +21,7 @@ CREATE TABLE `cms` (
   PRIMARY KEY  (`id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
+TRUNCATE TABLE `cms`;
 
 --
 -- Dumping data for table `cms`
