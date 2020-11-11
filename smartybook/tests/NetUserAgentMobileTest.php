@@ -1,8 +1,10 @@
 <?php
 
-require_once 'Net/UserAgent/Mobile.php';
+namespace SmartyBook\Tests;
 
-class NetUserAgentMobileTest extends UnitTestCase
+use \Net_UserAgent_Mobile;
+
+class NetUserAgentMobileTest extends \UnitTestCase
 {
     private $level;
 

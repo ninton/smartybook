@@ -3,6 +3,10 @@
 require_once('./ini.php');
 require_once('./ketai_ini.php');
 
+/**
+ * @var $CFG init.phpで設定
+ * @var $display ketai_init,phpで設定
+ */
 // 画面幅から画像サイズを判断する
 if ($display->getWidth() < 180) {
     $imageSizeGroup = "120";

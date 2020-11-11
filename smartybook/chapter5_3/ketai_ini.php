@@ -1,8 +1,10 @@
 <?php
 
-require_once('Net/UserAgent/Mobile.php');
-require_once(dirname(__FILE__) . '/plib/emoji/Emoji.class.php');
 require_once(dirname(__FILE__) . '/plib/semulator.php');
+
+use \Net_UserAgent_Mobile;
+use SmartyBook\emoji\Emoji;
+
 $agent = Net_UserAgent_Mobile::factory();
 $display = $agent->getDisplay();
 // キャリア名称の調整
@@ -32,12 +34,12 @@ switch ($_SERVER['carrier_ua']) {
         break;
 
     case 'ezweb':
-        emoji_output_setting('i_uni16', 'e_img_num');
+        Emoji::output_setting('i_uni16', 'e_img_num');
         ob_start('emoji_output_handler');
         break;
 
     case 'softbank':
-        emoji_output_setting('i_uni16', 's_uni16');
+        Emoji::output_setting('i_uni16', 's_uni16');
         ob_start('emoji_output_handler');
         break;
 }

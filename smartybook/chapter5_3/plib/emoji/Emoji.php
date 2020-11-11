@@ -1,5 +1,7 @@
 <?php
 
+namespace SmartyBook\emoji;
+
 /*
 
     例
@@ -23,25 +25,6 @@ function emoji_convert_variables(&$io_vars, $i_from_encode, $i_to_encode)
 {
     $emoji = Emoji::singleton($i_from_encode, $i_to_encode);
     $emoji->convert_variables($io_vars);
-}
-
-/**
- * @param string $i_from_encode
- * @param string $i_to_encode
- *
- * @SuppressWarnings(PHPMD.ElseExpression)
- */
-function emoji_output_setting($i_from_encode = '', $i_to_encode = '')
-{
-    if ('' == $i_from_encode) {
-        Emoji::$output_setting_arr = array();
-    } else {
-        $setting = array(
-            'from' => $i_from_encode,
-            'to'   => $i_to_encode
-            );
-        Emoji::$output_setting_arr[] = $setting;
-    }
 }
 
 function emoji_output_handler($i_buf)
@@ -92,13 +75,33 @@ class Emoji
         $this->load();
     }
 
-    public function singleton($i_from_encode, $i_to_encode)
+    public static function singleton($i_from_encode, $i_to_encode)
     {
         static $instance;
         if (! isset($instance[$i_from_encode][$i_to_encode])) {
             $instance[$i_from_encode][$i_to_encode] = new Emoji($i_from_encode, $i_to_encode);
         }
         return $instance[$i_from_encode][$i_to_encode];
+    }
+
+
+    /**
+     * @param string $i_from_encode
+     * @param string $i_to_encode
+     *
+     * @SuppressWarnings(PHPMD.ElseExpression)
+     */
+    public function output_setting($i_from_encode = '', $i_to_encode = '')
+    {
+        if ('' == $i_from_encode) {
+            self::$output_setting_arr = array();
+        } else {
+            $setting = array(
+                'from' => $i_from_encode,
+                'to'   => $i_to_encode
+            );
+            self::$output_setting_arr[] = $setting;
+        }
     }
 
     public function getRegexArr()
