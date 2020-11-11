@@ -1,7 +1,7 @@
 <?php
 
 require_once("ini.php");
-require_once("../smarty/libs/Smarty.class.php");
+require_once("../vendor/autoload.php");
 $smarty = new Smarty();
 /*//キャッシュの設定
 $smarty->caching = 2;

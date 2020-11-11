@@ -60,6 +60,8 @@ class SortNavigator
      *  @param  string
      *  @param  string
      *  @return string
+     *
+     * @SuppressWarnings(PHPMD.ElseExpression)
      */
     public function showLink($i_sort, $i_order)
     {

@@ -19,13 +19,13 @@ function assoc_load($i_path)
 {
     $arr = array();
 
-    $fp = fopen($i_path, "r");
-    while ($rcd = fgetcsv($fp, 10000)) {
+    $handle = fopen($i_path, "r");
+    while ($rcd = fgetcsv($handle, 10000)) {
         $key = $rcd[0];
         $val = $rcd[1];
         $arr[$key] = $val;
     }
-    fclose($fp);
+    fclose($handle);
 
     return $arr;
 }
@@ -34,6 +34,8 @@ function assoc_load($i_path)
  *  @param  string
  *  @param  array
  *  @return array
+ *
+ * @SuppressWarnings(PHPMD.ElseExpression)
  */
 function makeTimeStamp(&$io_vars, $i_params = null)
 {
@@ -47,8 +49,15 @@ makeTimeStamp( $_POST, array('field_array' => 'startDate') );
 makeTimeStamp( $_POST, array('prefix' => 'endDate_') );
 
 */
-    $prefix      = '' . @$i_params['prefix'];
-    $field_array = '' . @$i_params['field_array'];
+    $prefix = '';
+    if (isset($i_params['prefix'])) {
+        $prefix = $i_params['prefix'];
+    }
+
+    $field_array = '';
+    if (isset($i_params['field_array'])) {
+        $field_array = $i_params['field_array'];
+    }
 
     if ($field_array != '') {
         $vars =& $io_vars[$field_array];
@@ -56,7 +65,7 @@ makeTimeStamp( $_POST, array('prefix' => 'endDate_') );
         $vars =& $io_vars;
     }
 
-    $t = mktime(
+    $t_sec = mktime(
         $vars[$prefix . 'Hour'  ],
         $vars[$prefix . 'Minute'],
         $vars[$prefix . 'Second'],
@@ -64,7 +73,7 @@ makeTimeStamp( $_POST, array('prefix' => 'endDate_') );
         $vars[$prefix . 'Day'   ],
         $vars[$prefix . 'Year'  ]
     );
-    $vars[$prefix . 'TimeStamp'] = $t;
+    $vars[$prefix . 'TimeStamp'] = $t_sec;
 
-    return $t;
+    return $t_sec;
 }

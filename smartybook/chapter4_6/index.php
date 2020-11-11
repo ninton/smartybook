@@ -1,7 +1,7 @@
 <?php
 
 require_once('Pager.php');
-require_once('../smarty/libs/Smarty.class.php');
+require_once('../vendor/autoload.php');
 require_once('./CMS.class.php');
 require_once('./SortNavigator.class.php');
 require_once('./config.php');

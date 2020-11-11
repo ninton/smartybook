@@ -7,8 +7,8 @@ services:
     build: centos6
     ports:
       - 5402:80
+      - 5403:3306
     volumes:
       - ./xampp-linux/lampp:/opt/lampp:cached
       - ./smartybook:/opt/lampp/htdocs/smartybook:cached
     command: /bin/sh
-

@@ -1,0 +1,24 @@
+{
+  "name": "smartybook",
+  "version": "1.0.0",
+  "description": "Smarty動的Webサイト構築入門のCDROM",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ninton/smartybook.git"
+  },
+  "keywords": [],
+  "author": "aoki_makoto@ninton.co.jp",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/ninton/smartybook/issues"
+  },
+  "homepage": "https://github.com/ninton/smartybook#readme",
+  "dependencies": {
+    "chromedriver": "^86.0.0",
+    "selenium-side-runner": "^3.17.0"
+  }
+}

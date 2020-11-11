@@ -1,11 +1,13 @@
 .idea
 Thumbs.db
 .DS_STORE
-smartybook/smarty/
 smartybook/chapter5_4/JSON.php
 xampp-linux/lampp*
 xampp-linux/*.tar.gz*
 xampp-linux/pear
 selenium/results
 
-/vendor/
+/smartybook/vendor/
+.php_cs.cache
+*/*/images/007.jpg
+node_modules

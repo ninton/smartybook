@@ -1,9 +1,10 @@
 <?php
 
-require_once dirname(__FILE__) . '/../simpletest/autorun.php';
-require_once 'Net/UserAgent/Mobile.php';
+namespace SmartyBook\Tests;
 
-class NetUserAgentMobileTest extends UnitTestCase
+use \Net_UserAgent_Mobile;
+
+class NetUserAgentMobileTest extends \UnitTestCase
 {
     private $level;
 
@@ -24,6 +25,8 @@ class NetUserAgentMobileTest extends UnitTestCase
 
     /**
      * @test
+     *
+     * @SuppressWarnings(PHPMD.StaticAccess)
      */
     public function test_1()
     {

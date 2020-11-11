@@ -11,22 +11,29 @@ class MyListManager
         $this->dir = $i_dir;
     }
 
+    /**
+     * @param string $i_ListId
+     * @return MyList|null
+     */
     public function read($i_ListId)
     {
         $path = $this->getPath($i_ListId);
-
-        if (! file_exists($path)) {
-            die();
+        if ($path === '') {
+            return null;
+        }
+        if (!file_exists($path)) {
+            return null;
         }
 
         $buf = file_get_contents($path);
-        if ($buf) {
-            $mylist = unserialize($buf);
-            $mylist->item_arr    = array_slice($mylist->item_arr, 0, $this->max_items);
-        } else {
+        if (!$buf) {
             $mylist = new MyList();
             $mylist->ListId = $i_ListId;
+            return $mylist;
         }
+
+        $mylist = unserialize($buf);
+        $mylist->item_arr    = array_slice($mylist->item_arr, 0, $this->max_items);
 
         return $mylist;
     }
@@ -34,30 +41,22 @@ class MyListManager
     public function write($i_MyList)
     {
         $buf = serialize($i_MyList);
-        file_put_contents($this->getPath($i_MyList->ListId), $buf);
+        $path = $this->getPath($i_MyList->ListId);
+        if ($path !== '') {
+            file_put_contents($path, $buf);
+        }
     }
 
+    /**
+     * @param string $i_ListId
+     * @return string
+     */
     public function getPath($i_ListId)
     {
         if (preg_match('/[^0-9A-Za-z]/', $i_ListId)) {
-            die();
+            return '';
         }
 
         return sprintf('%s%s.txt', $this->dir, $i_ListId);
-    }
-
-    public function create(&$io_MyList)
-    {
-        // 未実装
-    }
-
-    public function readList($i_offset, $i_length)
-    {
-        // 未実装
-    }
-
-    public function delete($i_ListId)
-    {
-        // 未実装
     }
 }

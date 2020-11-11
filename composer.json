@@ -1,0 +1,80 @@
+{
+    "name": "ninton/smartybook",
+    "description": "Smarty動的Webサイト構築入門のCDROM",
+    "type": "project",
+    "version": "2.0.0",
+    "config": {
+        "vendor-dir": "smartybook/vendor",
+        "platform": {
+            "php": "5.3.8"
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "git@github.com:ninton/smartybook.git"
+        },
+        {
+            "type": "pear",
+            "url": "https://pear.php.net/"
+        }
+    ],
+    "require": {
+        "php": "5.3.8",
+        "ext-json": "*",
+        "ext-PDO": "*",
+        "ext-mbstring": "*",
+        "smarty/smarty": "v2.6.31",
+        "pear-pear.php.net/Net_UserAgent_Mobile": "^1.0"
+    },
+    "authors": [
+        {
+            "name": "aoki.makoto",
+            "email": "aoki_makoto@ninton.co.jp"
+        }
+    ],
+    "require-dev": {
+        "phpmd/phpmd": "^2.4",
+        "simpletest/simpletest": "v1.1.7"
+    },
+    "scripts": {
+        "phpmd": [
+            "./smartybook/vendor/bin/phpmd  smartybook  text cleancode,codesize,design,naming,unusedcode  --exclude \"*/smarty/*,*/vendor/*,*/templates_c/*,*/autorun.php\""
+        ],
+        "xampp-start": [
+            "sudo docker-compose down",
+            "sudo docker-compose build",
+            "sudo docker-compose up -d",
+            "sudo docker-compose ps",
+            "./bin/xampp_start.sh",
+            "./bin/db_init.sh"
+        ],
+        "xampp-stop": [
+            "./bin/xampp_stop.sh",
+            "sudo docker-compose down",
+            "sudo docker-compose ps"
+        ],
+        "test": [
+            "composer phpmd",
+            "composer unittest",
+            "composer e2etest"
+        ],
+        "unittest": [
+            "./bin/unittest.sh"
+        ],
+        "e2etest": [
+            "./bin/e2etest.sh"
+        ]
+    },
+    "autoload": {
+        "psr-4": {
+            "SmartyBook\\emoji\\": "smartybook/chapter5_3/plib/emoji/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SmartyBook\\tests\\": "smartybook/tests/"
+        }
+    }
+
+}

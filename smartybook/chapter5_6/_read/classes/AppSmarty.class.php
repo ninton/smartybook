@@ -1,6 +1,6 @@
 <?php
 
-require_once(dirname(__FILE__) . '/../../../smarty/libs/Smarty.class.php');
+require_once(dirname(__FILE__) . '/../../../vendor/autoload.php');
 
 class AppSmarty extends Smarty
 {
@@ -10,5 +10,6 @@ class AppSmarty extends Smarty
         $this->template_dir = dirname(__FILE__) . '/../../_read/templates';
         $this->compile_dir  = dirname(__FILE__) . '/../../_temp/templates_c';
         $this->cache_dir    = dirname(__FILE__) . '/../../_temp/cahce';
+        $this->plugins_dir[] = dirname(__FILE__) . '/../../';
     }
 }

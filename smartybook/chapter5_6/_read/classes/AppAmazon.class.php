@@ -18,12 +18,14 @@ class AppAmazon
      *  @param  string
      *  @param  string
      *  @return void
+     *
+     *  @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function __construct($i_access_key_id, $i_associate_id, $i_cache_dir)
     {
         $amazon = new Services_AmazonECS4($i_access_key_id, $i_associate_id);
         $amazon->setLocale('JP');
-        $amazon->setCache('file', array('cache_dir' => $i_cache_dir));
+        //$amazon->setCache('file', array('cache_dir' => $i_cache_dir));
         $amazon->setCacheExpire(24 * 3600);
         $this->amazon = $amazon;
     }
@@ -33,6 +35,8 @@ class AppAmazon
      *  @param  assoc
      *  @param  array
      *  @return string  error message
+     *
+     * @SuppressWarnings(PHPMD.StaticAccess)
      */
     /*
         $ASINs = '12345,23456,34567';

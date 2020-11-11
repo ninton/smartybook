@@ -6,6 +6,9 @@ if (empty($_REQUEST['ListId'])) {
 }
 $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
 $mylist = $mylistmgr->read($_REQUEST['ListId']);
+if ($mylist === null) {
+    die('read error');
+}
 $appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['associate_id'], $CFG['aws_cache_dir']);
 $options['ResponseGroup'] = 'Medium';
 $message = $appAmazon->ItemLookup($mylist->getASINs(), $options, $Item_arr);
