@@ -12,6 +12,10 @@
         {
             "type": "vcs",
             "url": "git@github.com:ninton/smartybook.git"
+        },
+        {
+            "type": "pear",
+            "url": "https://pear.php.net/"
         }
     ],
     "require": {
@@ -19,7 +23,8 @@
         "ext-json": "*",
         "ext-PDO": "*",
         "ext-mbstring": "*",
-        "smarty/smarty": "v2.6.31"
+        "smarty/smarty": "v2.6.31",
+        "pear-pear.php.net/Net_UserAgent_Mobile": "^1.0"
     },
     "authors": [
         {
@@ -59,5 +64,16 @@
         "e2etest": [
             "./bin/e2etest.sh"
         ]
+    },
+    "autoload": {
+        "psr-4": {
+            "SmartyBook\\emoji\\": "smartybook/chapter5_3/plib/emoji/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "SmartyBook\\tests\\": "smartybook/tests/"
+        }
     }
+
 }

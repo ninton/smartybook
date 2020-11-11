@@ -7,11 +7,11 @@ tar xzf Auth-1.6.4.tgz
 cd ../..
 
 
-mkdir -p pear/net
-cd pear/net
-wget --timestamping  --no-if-modified-since  http://download.pear.php.net/package/Net_UserAgent_Mobile-1.0.0.tgz
-tar xzf Net_UserAgent_Mobile-1.0.0.tgz
-cd ../..
+#mkdir -p pear/net
+#cd pear/net
+#wget --timestamping  --no-if-modified-since  http://download.pear.php.net/package/Net_UserAgent_Mobile-1.0.0.tgz
+#tar xzf Net_UserAgent_Mobile-1.0.0.tgz
+#cd ../..
 
 mkdir -p pear/pager
 cd pear/pager
@@ -44,7 +44,7 @@ cp     pear/auth/Auth-1.6.4/Auth.php $dst_dir
 cp -r  pear/auth/Auth-1.6.4/Auth     $dst_dir
 chmod g+r,o+r $dst_dir/Auth/Container/*.php
 
-cp -r  pear/net/Net_UserAgent_Mobile-1.0.0/Net $dst_dir
+#cp -r  pear/net/Net_UserAgent_Mobile-1.0.0/Net $dst_dir
 
 cp     pear/pager/Pager-2.5.1/Pager.php $dst_dir
 cp -r  pear/pager/Pager-2.5.1/Pager     $dst_dir
