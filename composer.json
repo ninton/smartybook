@@ -2,7 +2,7 @@
     "name": "ninton/smartybook",
     "description": "Smarty動的Webサイト構築入門のCDROM",
     "type": "project",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "config": {
         "vendor-dir": "smartybook/vendor",
         "platform": {
