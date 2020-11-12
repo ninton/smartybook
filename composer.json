@@ -68,7 +68,7 @@
     },
     "autoload": {
         "psr-4": {
-            "SmartyBook\\emoji\\": "smartybook/chapter5_3/plib/emoji/"
+            "SmartyBook\\": "smartybook/"
         }
     },
     "autoload-dev": {
