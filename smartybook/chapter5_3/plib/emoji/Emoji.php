@@ -77,7 +77,7 @@ class Emoji
 
     public static function singleton($i_from_encode, $i_to_encode)
     {
-        static $instance;
+        static $instance = [];
         if (! isset($instance[$i_from_encode][$i_to_encode])) {
             $instance[$i_from_encode][$i_to_encode] = new Emoji($i_from_encode, $i_to_encode);
         }
@@ -146,6 +146,9 @@ class Emoji
         $this->map = array();
     }
 
+    /**
+     * @SuppressWarnings(PHPMD.ShortVariable)
+     */
     public function load()
     {
         $path = $this->mapPath();
