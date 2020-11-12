@@ -86,6 +86,7 @@ class SortNavigator
                 $this->vars['orderUrlVar'] => $i_order,
                 'pageID'                   => 1
             );
+            $html = [];
             $html['href' ] = $_SERVER['SCRIPT_NAME'] . '?' . $this->replaceQuery($_SERVER['QUERY_STRING'], $vars);
             $html['title'] = $title;
             $html['text' ] = $text;
