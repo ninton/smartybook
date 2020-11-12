@@ -63,7 +63,7 @@ class AppAmazon
             $ASINs = join(',', array_slice($ASIN_arr, $i, 10));
             if ($ASINs != '') {
                 $result = $this->amazon->ItemLookup($ASINs, $i_options);
-                if (PEAR::isError($result)) {
+                if (\PEAR::isError($result)) {
                     return $result->message;
                 }
 
