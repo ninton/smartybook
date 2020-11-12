@@ -1,15 +1,14 @@
 <?php
 
+//use Services_Amazon;
+
 /**
  *  @author MW web studio, Aoki Makoto, 2007-12
  */
-
-require_once('Services/AmazonECS4.php');
-
 class AppAmazon
 {
     /**
-     * @var Services_AmazonECS4
+     * @var Services_Amazon
      */
     private $amazon;
 
@@ -23,7 +22,9 @@ class AppAmazon
      */
     public function __construct($i_access_key_id, $i_associate_id, $i_cache_dir)
     {
-        $amazon = new Services_AmazonECS4($i_access_key_id, $i_associate_id);
+        // Services_AmazonECS4は非推奨となり、Services_Amazon(を使うようにとのこと
+        // https://wiki.php.net/pear/packages/services_amazon
+        $amazon = new Services_Amazon($i_access_key_id, $i_associate_id);
         $amazon->setLocale('JP');
         //$amazon->setCache('file', array('cache_dir' => $i_cache_dir));
         $amazon->setCacheExpire(24 * 3600);
