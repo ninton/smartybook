@@ -56,7 +56,8 @@ class AppAmazon
 
         // $ASIN_arrから10個づつ問合わせして、$o_Item_arrに蓄積する
         $o_Item_arr = array();
-        for ($i = 0; $i < count($ASIN_arr); $i += 10) {
+        $asin_arr_cnt = count($ASIN_arr);
+        for ($i = 0; $i < $asin_arr_cnt; $i += 10) {
             $ASINs = join(',', array_slice($ASIN_arr, $i, 10));
             if ($ASINs != '') {
                 $result = $this->amazon->ItemLookup($ASINs, $i_options);
