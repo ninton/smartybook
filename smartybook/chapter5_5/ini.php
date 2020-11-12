@@ -1,5 +1,7 @@
 <?php
 
+require_once __DIR__ . '/../vendor/autoload.php';
+
 // PEAR内の PHP Strict Standards: PHP Deprecated: を抑制する
 error_reporting(error_reporting() & ~E_STRICT & ~E_DEPRECATED);
 // ウェブサイト名
@@ -14,8 +16,7 @@ $home = "index.php";
 $admin = "admin.php";
 // カテゴリ一覧
 $categories = array("Study", "Eating", "Work");
-//Authライブラリの呼び出し
-require_once 'Auth/Auth.php';
+
 //暗号化形式とIDとパスワードを設定
 $params = array(
     "cryptType" => "MD5",
