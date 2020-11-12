@@ -25,17 +25,17 @@ cd ../..
 #tar xzf Services_JSON-1.0.3.tgz
 #cd ../..
 
-mkdir -p pear/amazon
-cd pear/amazon
-wget --timestamping  --no-if-modified-since  http://download.pear.php.net/package/Services_Amazon-0.9.0.tgz
-tar xzf Services_Amazon-0.9.0.tgz
-cd ../..
-
-mkdir -p pear/xml
-cd pear/xml
-wget --timestamping  --no-if-modified-since  http://download.pear.php.net/package/XML_Serializer-0.21.0.tgz
-tar xzf XML_Serializer-0.21.0.tgz
-cd ../..
+#mkdir -p pear/amazon
+#cd pear/amazon
+#wget --timestamping  --no-if-modified-since  http://download.pear.php.net/package/Services_Amazon-0.9.0.tgz
+#tar xzf Services_Amazon-0.9.0.tgz
+#cd ../..
+#
+#mkdir -p pear/xml
+#cd pear/xml
+#wget --timestamping  --no-if-modified-since  http://download.pear.php.net/package/XML_Serializer-0.21.0.tgz
+#tar xzf XML_Serializer-0.21.0.tgz
+#cd ../..
 
 
 
@@ -53,5 +53,5 @@ cp -r  pear/pager/Pager-2.5.1/Pager     $dst_dir
 #cp     pear/json/Services_JSON-1.0.3/JSON.php ../smartybook/chapter5_4/
 
 
-cp  -r  pear/amazon/Services_Amazon-0.9.0/Services $dst_dir
-cp  -r  pear/xml/XML_Serializer-0.21.0/XML $dst_dir
+#cp  -r  pear/amazon/Services_Amazon-0.9.0/Services $dst_dir
+#cp  -r  pear/xml/XML_Serializer-0.21.0/XML $dst_dir
