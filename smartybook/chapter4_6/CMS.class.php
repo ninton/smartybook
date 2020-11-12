@@ -1,7 +1,5 @@
 <?php
 
-use PDO;
-
 /**
  *  テーブルCMSの読み出し操作
  */
@@ -17,7 +15,7 @@ class CMS
      *  @param  array
      *  @return void
      *
-     * @SuppressWarnings (PHPMD.MissingImport)
+     * @SuppressWarnings(PHPMD.MissingImport)
      */
     public function __construct($i_dsn, $i_dbuser)
     {
