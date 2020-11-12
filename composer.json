@@ -2,11 +2,11 @@
     "name": "ninton/smartybook",
     "description": "Smarty動的Webサイト構築入門のCDROM",
     "type": "project",
-    "version": "2.0.1",
+    "version": "2.0.3",
     "config": {
         "vendor-dir": "smartybook/vendor",
         "platform": {
-            "php": "5.3.8"
+            "php": "5.4.7"
         }
     },
     "repositories": [
@@ -20,12 +20,14 @@
         }
     ],
     "require": {
-        "php": "5.3.8",
+        "php": "5.4.7",
         "ext-json": "*",
         "ext-PDO": "*",
         "ext-mbstring": "*",
         "smarty/smarty": "v2.6.31",
-        "pear-pear.php.net/Net_UserAgent_Mobile": "^1.0"
+        "pear-pear.php.net/Net_UserAgent_Mobile": "^1.0",
+        "pear-pear.php.net/Auth": "^1.6",
+        "pear-pear.php.net/Services_Amazon": "^0.9.0"
     },
     "authors": [
         {
