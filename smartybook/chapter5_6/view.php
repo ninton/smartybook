@@ -1,6 +1,11 @@
 <?php
 
 require_once('./_read/inc.php');
+
+use SmartyBook\chapter5_6\_read\classes\AppAmazon;
+use SmartyBook\chapter5_6\_read\classes\AppSmarty;
+use SmartyBook\chapter5_6\_read\classes\MyListManager;
+
 if (empty($_REQUEST['ListId'])) {
     $_REQUEST['ListId'] = 1;
 }

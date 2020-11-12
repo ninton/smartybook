@@ -8,6 +8,12 @@
 // POST cmdForm=
 //    POST cmdLoad=
 require_once('./_read/inc.php');
+
+use SmartyBook\chapter5_6\_read\classes\App;
+use SmartyBook\chapter5_6\_read\classes\AppAmazon;
+use SmartyBook\chapter5_6\_read\classes\AppSmarty;
+use SmartyBook\chapter5_6\_read\classes\MyListManager;
+
 $show = '';
 if (isset($_GET['show'])) {
     $show = $_GET['show'];

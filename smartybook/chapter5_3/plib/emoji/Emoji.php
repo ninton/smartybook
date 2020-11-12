@@ -75,6 +75,13 @@ class Emoji
         $this->load();
     }
 
+    /**
+     * @param string $i_from_encode
+     * @param string $i_to_encode
+     * @return Emoji
+     *
+     * @SuppressWarnings(PHPMD.UndefinedVariable)
+     */
     public static function singleton($i_from_encode, $i_to_encode)
     {
         static $instance = [];

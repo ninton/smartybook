@@ -1,5 +1,9 @@
 <?php
 
+namespace SmartyBook\chapter5_6\_read\classes;
+
+use \Smarty;
+
 class AppSmarty extends Smarty
 {
     public function __construct()
