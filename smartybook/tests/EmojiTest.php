@@ -2,7 +2,7 @@
 
 namespace SmartyBook\Tests;
 
-use SmartyBook\emoji\Emoji;
+use SmartyBook\chapter5_3\plib\emoji\Emoji;
 
 class EmojiTest extends \UnitTestCase
 {

@@ -1,7 +1,8 @@
 <?php
 
-require_once('./plib/image_resize.php');
 require_once('./ini.php');
+
+use SmartyBook\chapter5_3\plib\ImageResizer;
 
 switch (strtolower($_SERVER['REQUEST_METHOD'])) {
     case 'post':
@@ -80,7 +81,12 @@ function proc_image_list()
     return $rcd_arr;
 }
 
-// 元画像から大中小の画像を作る
+/**
+ * 元画像から大中小の画像を作る
+ * @param $i_fname
+ *
+ * @SuppressWarnings(PHPMD.StaticAccess)
+ */
 function proc_image_resize($i_fname)
 {
     global  $CFG;
@@ -90,7 +96,7 @@ function proc_image_resize($i_fname)
     if (file_exists($src_path)) {
         foreach (array(120, 240, 480) as $width) {
             $dst_path = $CFG['DSTIMG_DIR'] . "$width/$fname";
-            image_resize($src_path, $dst_path, $width, $width * 1.5);
+            ImageResizer::image_resize($src_path, $dst_path, $width, $width * 1.5);
         }
     }
 }

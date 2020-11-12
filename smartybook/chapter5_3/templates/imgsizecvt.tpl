@@ -42,13 +42,13 @@ function viewer_show( i_path ) {
 {assign var=h value=48}
 
 {foreach name=f from=$rcd_arr key=i item=rcd}
-<tr>
+<tr class="row-{$i}">
   <td align="center">{$smarty.foreach.f.iteration|escape:html}</td>
 
   <td>{$rcd.fname|escape:html}</td>
 
   {strip}
-  <td align="center" valign="top">
+  <td align="center" valign="top"  class="width-original">
     <a href="{$rcd.src.path|escape:html}"
       onclick="viewer_open('{$rcd.src.path|escape:javascript|escape:html}'); return false;"
       onmouseover="viewer_show('{$rcd.src.path|escape:javascript|escape:html}')">
@@ -60,7 +60,7 @@ function viewer_show( i_path ) {
 
   {foreach from=$rcd.dst key=width item=dst}
   {strip}
-  <td align="center" valign="top">
+  <td align="center" valign="top" class="width-{$width}">
     <a href="{$dst.path|escape:html}"
       onclick="viewer_open('{$dst.path|escape:javascript|escape:html}'); return false;"
       onmouseover="viewer_show('{$dst.path|escape:javascript|escape:html}')">

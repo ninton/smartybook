@@ -2,7 +2,7 @@
     "name": "ninton/smartybook",
     "description": "Smarty動的Webサイト構築入門のCDROM",
     "type": "project",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "config": {
         "vendor-dir": "smartybook/vendor",
         "platform": {
@@ -68,7 +68,7 @@
     },
     "autoload": {
         "psr-4": {
-            "SmartyBook\\emoji\\": "smartybook/chapter5_3/plib/emoji/"
+            "SmartyBook\\": "smartybook/"
         }
     },
     "autoload-dev": {

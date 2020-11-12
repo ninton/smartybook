@@ -2887,6 +2887,133 @@
         ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
       ],
       "value": "30000"
+    }, {
+      "id": "7db88efb-f6ab-4cb2-bea0-5d4139505f51",
+      "comment": "",
+      "command": "//imgsizecvt.php",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34c82cdb-46bc-43b0-9c62-bae9db97182c",
+      "comment": "",
+      "command": "open",
+      "target": "/smartybook/chapter5_3/imgsizecvt.php",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1ae5d73f-3f30-4dc6-9955-779e2311a979",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "d64a00cb-08fe-481c-be63-f8f4b2b0d6f8",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(8) > td:nth-child(2)",
+      "targets": [
+        ["css=tr:nth-child(8) > td:nth-child(2)", "css:finder"],
+        ["xpath=//tr[8]/td[2]", "xpath:position"],
+        ["xpath=//td[contains(.,'007.jpg')]", "xpath:innerText"]
+      ],
+      "value": "007.jpg"
+    }, {
+      "id": "307952e3-7c63-4cfd-a672-15754c94d723",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=tr:nth-child(8) > td:nth-child(3) > small",
+      "targets": [
+        ["css=tr:nth-child(8) > td:nth-child(3) > small", "css:finder"],
+        ["xpath=//tr[8]/td[3]/small", "xpath:position"]
+      ],
+      "value": "230 x 153"
+    }, {
+      "id": "15dfe041-1e72-4f46-8d09-07c9c0e06945",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return document.getElementsByClassName('row-6')[0].getElementsByClassName('width-original')[0].getElementsByTagName('img')[0].naturalWidth",
+      "targets": [],
+      "value": "230"
+    }, {
+      "id": "9ecce867-5322-4788-ae6b-db82ce6c5347",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=(//input[@value='Convert'])[7]",
+      "targets": [
+        ["css=.row-6 input:nth-child(2)", "css:finder"],
+        ["xpath=(//input[@value='Convert'])[7]", "xpath:attributes"],
+        ["xpath=//tr[8]/td[7]/form/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "41ec3736-1493-4fb2-abad-f097c143b809",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=body",
+      "targets": [
+        ["css=body", "css:finder"],
+        ["xpath=//body", "xpath:position"],
+        ["xpath=//body[contains(.,'Smarty for Designers1data.csv./images/02_02.php02_04.php')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "1efc7a91-affd-486c-aa55-34e1bdb9fbb4",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.row-6 > .width-120 > small",
+      "targets": [
+        ["css=.row-6 > .width-120 > small", "css:finder"],
+        ["xpath=//tr[8]/td[4]/small", "xpath:position"],
+        ["xpath=//small[contains(.,'120 x 79')]", "xpath:innerText"]
+      ],
+      "value": "120 x 79"
+    }, {
+      "id": "131caee9-cd71-4e79-82ec-bc1d06a6f028",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return document.getElementsByClassName('row-6')[0].getElementsByClassName('width-120')[0].getElementsByTagName('img')[0].naturalWidth",
+      "targets": [],
+      "value": "120"
+    }, {
+      "id": "6ae5baf7-3546-4fe8-901f-e8783ac8d8f2",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.row-6 > .width-240 > small",
+      "targets": [
+        ["css=.row-6 > .width-240 > small", "css:finder"],
+        ["xpath=//tr[8]/td[5]/small", "xpath:position"]
+      ],
+      "value": "230 x 153"
+    }, {
+      "id": "b706eaa3-5043-40c6-a5d2-5c60f44c8eed",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return document.getElementsByClassName('row-6')[0].getElementsByClassName('width-240')[0].getElementsByTagName('img')[0].naturalWidth",
+      "targets": [],
+      "value": "230"
+    }, {
+      "id": "33ddb1c8-3c6c-4572-9092-d6d5db69635e",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.row-6 > .width-480 > small",
+      "targets": [
+        ["css=.row-6 > .width-480 > small", "css:finder"],
+        ["xpath=//tr[8]/td[6]/small", "xpath:position"]
+      ],
+      "value": "230 x 153"
+    }, {
+      "id": "4166e9c8-7146-4a7b-bc1a-2d5e901ad913",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return document.getElementsByClassName('row-6')[0].getElementsByClassName('width-480')[0].getElementsByTagName('img')[0].naturalWidth",
+      "targets": [],
+      "value": "230"
     }]
   }, {
     "id": "161f242c-abcf-40d9-bd14-80998d204c68",
