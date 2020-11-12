@@ -86,7 +86,6 @@ class ImageResizer
         }
 
         return array($dstW, $dstH);
-
     }
 
     public static function image_from_file($i_src_path)

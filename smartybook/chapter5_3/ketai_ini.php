@@ -2,7 +2,6 @@
 
 require_once(dirname(__FILE__) . '/plib/semulator.php');
 
-use \Net_UserAgent_Mobile;
 use SmartyBook\chapter5_3\plib\emoji\Emoji;
 
 $agent = Net_UserAgent_Mobile::factory();

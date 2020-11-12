@@ -2,7 +2,7 @@
 
 namespace SmartyBook\Tests;
 
-use \Net_UserAgent_Mobile;
+use Net_UserAgent_Mobile;
 
 class NetUserAgentMobileTest extends \UnitTestCase
 {

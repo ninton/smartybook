@@ -2,7 +2,7 @@
 
 namespace SmartyBook\chapter5_6\_read\classes;
 
-use \Smarty;
+use Smarty;
 
 class AppSmarty extends Smarty
 {
