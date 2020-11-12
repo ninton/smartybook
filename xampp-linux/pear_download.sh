@@ -1,10 +1,10 @@
 #!/bin/bash -uex
 
-mkdir -p pear/auth
-cd pear/auth
-wget --timestamping  --no-if-modified-since  http://download.pear.php.net/package/Auth-1.6.4.tgz
-tar xzf Auth-1.6.4.tgz
-cd ../..
+#mkdir -p pear/auth
+#cd pear/auth
+#wget --timestamping  --no-if-modified-since  http://download.pear.php.net/package/Auth-1.6.4.tgz
+#tar xzf Auth-1.6.4.tgz
+#cd ../..
 
 
 #mkdir -p pear/net
@@ -40,9 +40,10 @@ cd ../..
 
 
 dst_dir=lampp/lib/php/
-cp     pear/auth/Auth-1.6.4/Auth.php $dst_dir
-cp -r  pear/auth/Auth-1.6.4/Auth     $dst_dir
-chmod g+r,o+r $dst_dir/Auth/Container/*.php
+
+#cp     pear/auth/Auth-1.6.4/Auth.php $dst_dir
+#cp -r  pear/auth/Auth-1.6.4/Auth     $dst_dir
+#chmod g+r,o+r $dst_dir/Auth/Container/*.php
 
 #cp -r  pear/net/Net_UserAgent_Mobile-1.0.0/Net $dst_dir
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "a9b81b9968b40b287f6a666b0bf415bd",
+    "content-hash": "ddfa50c3c30b52bd8867f38f235f10d7",
     "packages": [
         {
             "name": "pear-pear.php.net/Archive_Tar",
@@ -34,6 +34,35 @@
                 "New BSD License"
             ],
             "description": "This class provides handling of tar files in PHP.\nIt supports creating, listing, extracting and adding to tar files.\nGzip support is available if PHP has the zlib extension built-in or\nloaded. Bz2 compression is also supported with the bz2 extension loaded.\nAlso Lzma2 compressed archives are supported with xz extension."
+        },
+        {
+            "name": "pear-pear.php.net/Auth",
+            "version": "1.6.4",
+            "dist": {
+                "type": "file",
+                "url": "https://pear.php.net/get/Auth-1.6.4.tgz",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "php": ">=4.3.3.0"
+            },
+            "replace": {
+                "pear-pear/auth": "== 1.6.4.0"
+            },
+            "type": "pear-library",
+            "autoload": {
+                "classmap": [
+                    ""
+                ]
+            },
+            "include-path": [
+                "/"
+            ],
+            "license": [
+                "PHP License"
+            ],
+            "description": "The PEAR::Auth package provides methods for creating an authentication\nsystem using PHP.\n\nCurrently it supports the following storage containers to read/write\nthe login data:\n\n* All databases supported by the PEAR database layer\n* All databases supported by the MDB database layer\n* All databases supported by the MDB2 database layer\n* Plaintext files\n* LDAP servers\n* POP3 servers\n* IMAP servers\n* vpopmail accounts (Using either PECL vpopmail or PEAR Net_Vpopmaild)\n* RADIUS\n* SAMBA password files\n* SOAP (Using either PEAR SOAP package or PHP5 SOAP extension)\n* PEAR website\n* Kerberos V servers\n* SAP servers"
         },
         {
             "name": "pear-pear.php.net/Console_Getopt",

@@ -25,7 +25,8 @@
         "ext-PDO": "*",
         "ext-mbstring": "*",
         "smarty/smarty": "v2.6.31",
-        "pear-pear.php.net/Net_UserAgent_Mobile": "^1.0"
+        "pear-pear.php.net/Net_UserAgent_Mobile": "^1.0",
+        "pear-pear.php.net/Auth": "^1.6"
     },
     "authors": [
         {
