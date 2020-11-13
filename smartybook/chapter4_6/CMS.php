@@ -2,6 +2,8 @@
 
 namespace SmartyBook\chapter4_6;
 
+use PDO;
+
 /**
  *  テーブルCMSの読み出し操作
  */
