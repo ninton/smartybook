@@ -1,6 +1,6 @@
 #!/bin/bash -eu
 
-fileList=/tmp/smartybook.phpcs.lst
+fileList=smartybook.phpcs.lst.tmp
 
 find smartybook/ -name "*.php"  \
   | grep -v "/vendor/"          \
@@ -16,3 +16,5 @@ find smartybook/ -name "*.php"  \
   --standard=PSR1,PSR2,PSR12  \
   --file-list=$fileList       \
   --exclude=PSR1.Methods.CamelCapsMethodName,PSR1.Files.SideEffects,PSR1.Classes.ClassDeclaration
+
+rm $fileList
