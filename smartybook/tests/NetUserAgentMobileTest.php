@@ -13,7 +13,8 @@ class NetUserAgentMobileTest extends \UnitTestCase
         parent::setUp();
 
         // PHP Strict Standards:  Non-static method Net_UserAgent_Mobile::factory() should not be called statically
-        // PHP Deprecated: Assigning the return value of new by reference is deprecated in Net/UserAgent/Mobile/DoCoMo/ScreenInfo.php line 2088
+        // PHP Deprecated: Assigning the return value of new by reference is deprecated in
+        //      Net/UserAgent/Mobile/DoCoMo/ScreenInfo.php line 2088
         $this->level = error_reporting(error_reporting() & ~E_STRICT & ~E_DEPRECATED);
     }
 

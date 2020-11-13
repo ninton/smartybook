@@ -33,7 +33,14 @@ $id = sprintf("%04d", $lastId + 1);
 // 本文の改行文字,カンマ,ダブルクォートの処理
 $title = convertNl($_POST["title"]);
 $contents = convertNl($_POST["contents"]);
-$string = $id . "," . $_POST["category"] . "," . $title . "," . $contents . "," . $_POST["date"] . "," . $_POST["image"] . "\n";
+
+$string = $id . ","
+    . $_POST["category"] . ","
+    . $title . ","
+    . $contents . ","
+    . $_POST["date"] . ","
+    . $_POST["image"] . "\n";
+
 $check = fwrite($fp, $string);
 if ($check == false) {
     $smarty->assign("flag", "FALSE");
