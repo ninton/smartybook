@@ -11,10 +11,11 @@ find smartybook/ -name "*.php"  \
 
 # Generic.Files.LineLength
 # PSR1.Files.SideEffects,
+# PSR1.Classes.ClassDeclaration
 
 ./smartybook/vendor/bin/phpcs \
   --standard=PSR1,PSR2,PSR12  \
   --file-list=$fileList       \
-  --exclude=PSR1.Methods.CamelCapsMethodName,PSR1.Files.SideEffects,PSR1.Classes.ClassDeclaration
+  --exclude=PSR1.Methods.CamelCapsMethodName,PSR1.Files.SideEffects
 
 rm $fileList
