@@ -1,5 +1,7 @@
 <?php
 
+namespace SmartyBook\chapter4_6;
+
 /**
  *  昇順・降順ボタンを表示する
  */

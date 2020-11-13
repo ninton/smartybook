@@ -1,5 +1,7 @@
 <?php
 
+namespace SmartyBook\chapter4_6;
+
 /**
  *  テーブルCMSの読み出し操作
  */

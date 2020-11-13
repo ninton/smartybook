@@ -2,9 +2,10 @@
 
 require_once('Pager.php');
 require_once('../vendor/autoload.php');
-require_once('./CMS.class.php');
-require_once('./SortNavigator.class.php');
 require_once('./config.php');
+
+use SmartyBook\chapter4_6\CMS;
+use SmartyBook\chapter4_6\SortNavigator;
 
 $smarty   = new Smarty();
 $smarty->config_load("index.conf");
