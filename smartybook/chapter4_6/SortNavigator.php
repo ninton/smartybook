@@ -109,6 +109,7 @@ EOT;
      */
     public function replaceQuery($i_query, $i_vars)
     {
+        $vars = [];
         parse_str($i_query, $vars);
 
         foreach ($i_vars as $key => $val) {
