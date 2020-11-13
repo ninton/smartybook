@@ -1,5 +1,7 @@
 <?php
 
+// phpcs:disable PSR1.Files.SideEffects
+
 require_once __DIR__ . '/../vendor/autoload.php';
 
 // PEAR内の PHP Strict Standards: PHP Deprecated: を抑制する
