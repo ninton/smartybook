@@ -1,5 +1,8 @@
 <?php
 
+// phpcs:disable PSR1.Classes.ClassDeclaration
+// phpcs:disable PSR1.Files.SideEffects
+
 class BookMark
 {
     public function __construct($title, $url, $date)

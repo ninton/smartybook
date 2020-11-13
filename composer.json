@@ -2,7 +2,7 @@
     "name": "ninton/smartybook",
     "description": "Smarty動的Webサイト構築入門のCDROM",
     "type": "project",
-    "version": "2.0.3",
+    "version": "2.0.6",
     "config": {
         "vendor-dir": "smartybook/vendor",
         "platform": {
@@ -37,11 +37,15 @@
     ],
     "require-dev": {
         "phpmd/phpmd": "^2.4",
-        "simpletest/simpletest": "v1.1.7"
+        "simpletest/simpletest": "v1.1.7",
+        "squizlabs/php_codesniffer": "^3.5"
     },
     "scripts": {
         "phpmd": [
             "./smartybook/vendor/bin/phpmd  smartybook  text cleancode,codesize,design,naming,unusedcode  --exclude \"*/smarty/*,*/vendor/*,*/templates_c/*,*/autorun.php\""
+        ],
+        "phpcs": [
+            "./bin/phpcs.sh"
         ],
         "xampp-start": [
             "sudo docker-compose down",
@@ -58,6 +62,7 @@
         ],
         "test": [
             "composer phpmd",
+            "composer phpcs",
             "composer unittest",
             "composer e2etest"
         ],

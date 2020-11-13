@@ -1,5 +1,9 @@
 <?php
 
+namespace SmartyBook\chapter4_6;
+
+use PDO;
+
 /**
  *  テーブルCMSの読み出し操作
  */
@@ -14,6 +18,8 @@ class CMS
      *  @param  string
      *  @param  array
      *  @return void
+     *
+     * @SuppressWarnings(PHPMD.MissingImport)
      */
     public function __construct($i_dsn, $i_dbuser)
     {

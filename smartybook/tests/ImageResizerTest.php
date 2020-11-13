@@ -2,6 +2,7 @@
 
 namespace SmartyBook\Tests;
 
+use UnitTestCase;
 use SmartyBook\chapter5_3\plib\ImageResizer;
 
 /**
@@ -10,7 +11,7 @@ use SmartyBook\chapter5_3\plib\ImageResizer;
  *
  * @SuppressWarnings(PHPMD.StaticAccess)
  */
-class ImageResizerTest extends \UnitTestCase
+class ImageResizerTest extends UnitTestCase
 {
     /**
      * @test

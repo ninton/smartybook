@@ -1,5 +1,7 @@
 <?php
 
+namespace SmartyBook\chapter4_6;
+
 /**
  *  昇順・降順ボタンを表示する
  */
@@ -86,6 +88,7 @@ class SortNavigator
                 $this->vars['orderUrlVar'] => $i_order,
                 'pageID'                   => 1
             );
+            $html = [];
             $html['href' ] = $_SERVER['SCRIPT_NAME'] . '?' . $this->replaceQuery($_SERVER['QUERY_STRING'], $vars);
             $html['title'] = $title;
             $html['text' ] = $text;
@@ -106,6 +109,7 @@ EOT;
      */
     public function replaceQuery($i_query, $i_vars)
     {
+        $vars = [];
         parse_str($i_query, $vars);
 
         foreach ($i_vars as $key => $val) {

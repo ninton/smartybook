@@ -2,9 +2,10 @@
 
 namespace SmartyBook\Tests;
 
+use UnitTestCase;
 use SmartyBook\chapter5_3\plib\emoji\Emoji;
 
-class EmojiTest extends \UnitTestCase
+class EmojiTest extends UnitTestCase
 {
     public function setUp()
     {

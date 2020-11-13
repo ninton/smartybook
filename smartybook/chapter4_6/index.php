@@ -2,9 +2,10 @@
 
 require_once('Pager.php');
 require_once('../vendor/autoload.php');
-require_once('./CMS.class.php');
-require_once('./SortNavigator.class.php');
 require_once('./config.php');
+
+use SmartyBook\chapter4_6\CMS;
+use SmartyBook\chapter4_6\SortNavigator;
 
 $smarty   = new Smarty();
 $smarty->config_load("index.conf");
@@ -73,10 +74,14 @@ if (preg_match('/href="(.*?)"/', $links['next'], $matches)) {
 
 // 並替えの△▽を表示するクラス
 $sortnavi = new SortNavigator($_REQUEST['sort'], $_REQUEST['order']);
+$perpage_params = [
+    'optionText' => '%d件/ページ',
+    'attributes' => "onchange='document.forms[\"perPage\"].submit()'"
+];
 
 $smarty->assign("SortNavi", $sortnavi);
 $smarty->assign("Pager", $pager);
 $smarty->assign('popup_params', array('autoSubmit' => true));
-$smarty->assign('perpage_params', array('optionText' => '%d件/ページ', 'attributes' => "onchange='document.forms[\"perPage\"].submit()'"));
+$smarty->assign('perpage_params', $perpage_params);
 $smarty->assign("rcd_arr", $rcd_arr);
 $smarty->display("index.tpl");
