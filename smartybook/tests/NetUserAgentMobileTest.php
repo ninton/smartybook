@@ -2,9 +2,10 @@
 
 namespace SmartyBook\Tests;
 
+use UnitTestCase;
 use Net_UserAgent_Mobile;
 
-class NetUserAgentMobileTest extends \UnitTestCase
+class NetUserAgentMobileTest extends UnitTestCase
 {
     private $level;
 

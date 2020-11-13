@@ -1,6 +1,8 @@
 <?php
 
-//use TestSuite;
+namespace SmartyBook\Tests;
+
+use TestSuite;
 
 class AllTests extends TestSuite
 {
