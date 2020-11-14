@@ -13,11 +13,11 @@ require_once('02_01_b.php');
 <body>
 <h1>カテゴリ一覧</h1>
 <?php
-$count = count($category);
+$count = count($categories);
 
 // 配列データを表示
 for ($i = 0; $i < $count; $i++) {
-    print '<a href="02_03.php?category=' . $category[$i] . '">' . $category[$i] . '</a><br />';
+    print '<a href="02_03.php?category=' . $categories[$i] . '">' . $categories[$i] . '</a><br />';
 }
 ?>
 </body>
