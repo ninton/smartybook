@@ -4,7 +4,7 @@
 
 require_once("ini.php");
 require_once("../vendor/autoload.php");
-$smarty = new Smarty();
+$smarty = new SmartyBC();
 $smarty->assign("siteName", $siteName);
 $smarty->assign("home", $home);
 $smarty->assign("categories", $categories);
@@ -39,7 +39,7 @@ function insert_noticeText()
     return $noticeText;
 }
 
-function insert_noticeText2($siteName)
+function smarty_insert_noticeText2($siteName)
 {
     return '<img src="./images/banner.gif" /><br />' . $siteName["siteName"];
 }
