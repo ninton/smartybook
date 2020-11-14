@@ -7,7 +7,10 @@
     <p id="siteTitle">Smarty for Designers</p>
 </div>
 <div id="beta">
-    <h1>マイリスト(編集)</h1>
+    <h1>
+        （2020年3月で本プログラムが使っているAmazon_ECSのAPIは廃止となりました。常に410エラーです）<br>
+        マイリスト(編集)
+    </h1>
 
     {if $message }
     <div class="message">{$message|escape:html}</div>
