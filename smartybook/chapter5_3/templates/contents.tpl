@@ -1,6 +1,6 @@
 {include file="head_`$smarty.server.carrier_ua`.tpl"}
-{config_load file=style.conf}
-{config_load file=emoji.conf}
+{config_load file="style.conf"}
+{config_load file="emoji.conf"}
 {assign var=category value=$smarty.get.category}
 {assign var=cate_icon value="icon_$category"}
 <title>{$category|escape:html} | {$siteName|escape:html}</title>
