@@ -6,7 +6,7 @@ require_once('./config.php');
 use SmartyBook\chapter4_6\CMS;
 use SmartyBook\chapter4_6\SortNavigator;
 
-$smarty   = new Smarty();
+$smarty   = new SmartyBC();
 $smarty->config_load("index.conf");
 
 // リクエスト変数を調べて、なければデフォルト値を設定する
