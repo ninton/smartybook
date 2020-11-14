@@ -1,8 +1,8 @@
-{include file=header.tpl}
+{include file="header.tpl"}
 
 <h2>SPIN TRICK</h2>
 
-{include file=menubox.tpl}
+{include file="menubox.tpl"}
 
 <div id="contents">
 <h4>180度スピンが重要</h4>
@@ -13,4 +13,4 @@
 <p>ただただ回転するといっても突き詰めると非常に奥が深いことが分かってきます。高さを出したり、わざと遅く回したり、回転軸をずらしたり。。自分がかっこいいと思うスタイルを出すには相当な練習が必要です。最初のうちはグラウンドで180や360を何度も練習してスピンを体感しましょう。</p>
 </div>
 
-{include file=footer.tpl}
+{include file="footer.tpl"}

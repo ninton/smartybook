@@ -39,8 +39,8 @@
       <tr>
         <th>終了日時</th>
         <td>
-{include file=select_date.tpl prefix="endDate_" field_array="" time=$form.endDate_TimeStamp end_year="+3"}
-{include file=select_time.tpl prefix="endDate_" field_array="" time=$form.endDate_TimeStamp}<br />
+{include file="select_date.tpl" prefix="endDate_" field_array="" time=$form.endDate_TimeStamp start_year="" end_year="+3"}
+{include file="select_time.tpl" prefix="endDate_" field_array="" time=$form.endDate_TimeStamp start_year="" end_year="" }<br />
         </td>
       </tr>
     </table>

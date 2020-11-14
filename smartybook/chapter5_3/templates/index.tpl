@@ -1,6 +1,6 @@
 {include file="head_`$smarty.server.carrier_ua`.tpl"}
-{config_load file=style.conf}
-{config_load file=emoji.conf}
+{config_load file="style.conf"}
+{config_load file="emoji.conf"}
 <title>{$siteName|escape:html}</title>
 </head>
 <body style="{#BODY_STYLE#}">

@@ -3,7 +3,7 @@
 //CSVファイルパス
 $csv = "data.csv";
 require_once('../vendor/autoload.php');
-$smarty = new Smarty();
+$smarty = new SmartyBC();
 // CSVデータを配列に格納
 $fp = fopen($csv, "r");
 $i = 0;

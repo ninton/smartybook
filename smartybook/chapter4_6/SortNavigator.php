@@ -20,8 +20,10 @@ class SortNavigator
     {
         $this->vars['asc_current' ] = '△';
         $this->vars['asc_link'    ] = '▲';
+        $this->vars['asc_title'   ] = '昇順';
         $this->vars['desc_current'] = '▽';
         $this->vars['desc_link'   ] = '▼';
+        $this->vars['desc_title'  ] = '降順';
         $this->vars['separator'   ] = '';
 
         $this->vars['sortUrlVar' ] = 'sort';

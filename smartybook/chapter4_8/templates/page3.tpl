@@ -1,8 +1,8 @@
-{include file=header.tpl}
+{include file="header.tpl"}
 
 <h3>FRONTSIDE 180</h3>
 
-{include file=menubox.tpl}
+{include file="menubox.tpl"}
 
 <div id="contents">
 <h4>進行方向に腹を向ける</h4>
@@ -13,4 +13,4 @@
 <p>フロンとサイド180には２種類のやり方があります。トゥ側で踏み切る「トゥ抜き」とヒール側で踏み切る「ヒール抜き」があります。どちらもできるのが理想ですが、まずはやりやすい方を体得しましょう。</p>
 </div>
 
-{include file=footer.tpl}
+{include file="footer.tpl"}

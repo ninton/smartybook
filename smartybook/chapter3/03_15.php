@@ -1,7 +1,7 @@
 <?php
 
 require_once("../vendor/autoload.php");
-$smarty = new Smarty();
+$smarty = new SmartyBC();
 $name = array("八代", "国枝", "大石");
 $height = array("167", "156", "182", "200");
 $smarty->assign("name", $name);
