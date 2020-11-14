@@ -1,5 +1,8 @@
 <?php
 
+// 2020年3月で、本プログラムで使っているAmazon_ECSのAPIは廃止となりました。
+// 常に410エラーです
+
 //  GET show=
 //    GET show=form
 //    GET show=preview
@@ -33,7 +36,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                     die('file read error');
                 }
 
-                $appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['associate_id'], $CFG['aws_cache_dir']);
+                $appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['secret_access_key'], $CFG['associate_tag']);
                 $options['ResponseGroup'] = 'Medium';
                 $message = $appAmazon->ItemLookup($mylist->getASINs(), $options, $Item_arr);
                 $mylist->setItems($Item_arr);
@@ -70,7 +73,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                 $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
                 $mylist = $mylistmgr->read($_REQUEST['ListId']);
                 $mylist->input($_POST);
-                $appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['associate_id'], $CFG['aws_cache_dir']);
+                $appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['secret_access_key'], $CFG['associate_tag']);
                 $options['ResponseGroup'] = 'Small';
                 $message = $appAmazon->ItemLookup($mylist->getASINs(), $options, $item_arr);
                 $mylist->setItems($item_arr);

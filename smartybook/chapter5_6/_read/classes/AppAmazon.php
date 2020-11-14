@@ -1,5 +1,8 @@
 <?php
 
+// 2020年3月で、本プログラムで使っているAmazon_ECSのAPIは廃止となりました。
+// 常に410エラーです
+
 namespace SmartyBook\chapter5_6\_read\classes;
 
 use Services_Amazon;
@@ -22,14 +25,13 @@ class AppAmazon
      *
      *  @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
-    public function __construct($i_access_key_id, $i_associate_id, $i_cache_dir)
+    public function __construct($access_key_id, $secret_access_key, $associate_tag)
     {
         // Services_AmazonECS4は非推奨となり、Services_Amazon(を使うようにとのこと
         // https://wiki.php.net/pear/packages/services_amazon
-        $amazon = new Services_Amazon($i_access_key_id, $i_associate_id);
+        $amazon = new Services_Amazon($access_key_id, $secret_access_key, $associate_tag);
         $amazon->setLocale('JP');
         //$amazon->setCache('file', array('cache_dir' => $i_cache_dir));
-        $amazon->setCacheExpire(24 * 3600);
         $this->amazon = $amazon;
     }
 

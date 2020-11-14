@@ -7,8 +7,11 @@
     <p id="siteTitle">Smarty for Designers</p>
 </div>
 <div id="beta">
-    <h1>{$mylist->ListName|escape:html} - {$mylist->NickName|escape:html}</h1>
-    
+    <h1>
+        （2020年3月で本プログラムが使っているAmazon_ECSのAPIは廃止となりました。常に410エラーです）<br>
+        {$mylist->ListName|escape:html} - {$mylist->NickName|escape:html}
+    </h1>
+
     <table class="list" cellspacing="0">
         {foreach name=f from=$mylist->detail_arr key=i item=detail}
             {if $detail.ASIN != '' || $detail.comment != ''}

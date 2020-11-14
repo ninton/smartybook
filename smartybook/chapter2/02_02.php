@@ -14,9 +14,9 @@ require_once('02_01_b.php');
 <h1>カテゴリ一覧</h1>
 <?php
 // 配列データを表示
-print '<a href="02_03.php?category=' . $category[0] . '">' . $category[0] . '</a><br />';
-print '<a href="02_03.php?category=' . $category[1] . '">' . $category[1] . '</a><br />';
-print '<a href="02_03.php?category=' . $category[2] . '">' . $category[2] . '</a><br />';
+print '<a href="02_03.php?category=' . $categories[0] . '">' . $categories[0] . '</a><br />';
+print '<a href="02_03.php?category=' . $categories[1] . '">' . $categories[1] . '</a><br />';
+print '<a href="02_03.php?category=' . $categories[2] . '">' . $categories[2] . '</a><br />';
 ?>
 </body>
 </html>

@@ -1,5 +1,8 @@
 <?php
 
+// 2020年3月で、本プログラムで使っているAmazon_ECSのAPIは廃止となりました。
+// 常に410エラーです
+
 require_once('./_read/inc.php');
 
 use SmartyBook\chapter5_6\_read\classes\AppAmazon;
@@ -15,7 +18,7 @@ if ($mylist === null) {
     die('read error');
 }
 
-$appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['associate_id'], $CFG['aws_cache_dir']);
+$appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['secret_access_key'], $CFG['associate_tag']);
 
 $options['ResponseGroup'] = 'Medium';
 $Item_arr = [];
