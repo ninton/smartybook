@@ -8,26 +8,6 @@
 <body>
 <div id="toppage">
 
-	<!-- ヘッダーはじまり
-	<div id="header">
-		<div id="intro">
-			<h1 id="siteTitle"><a href="{$home}"><img src="images/top_title.gif" alt="{$siteName}" border="0" /></a></h1>
-			<div id="index">
-				<h2 class="categories"><img alt="カテゴリー" src="images/top_menu_categories.gif" /></h2>
-{section name="menu" loop=$category}
-    {if $smarty.section.menu.first}<p class="indexMenuArea">{/if}
-    <a href="contents.php?category={$category[menu]}">{$category[menu]}</a>
-    {if !$smarty.section.menu.last}
-         / 
-    {else}
-        </p>
-    {/if}
-{/section}
-			</div>
-		</div>
-	</div>
-	ヘッダーおわり -->
-
 	<!-- ヘッダーはじまり -->
 	<div id="header">
 		<h1 id="siteTitle"><a href="{$home}"><img src="images/page_title.gif" alt="{$siteName}" border="0" /></a></h1>
@@ -71,8 +51,8 @@
 			<h2 class="sideArea1Title">メニュー</h2>
 			<ul>
 			{section name="menu" loop=$categories}
-				{if $category[menu] neq "Notice"}
-    			<li><a href="contents.php?category={$category[menu]}">{$categories[menu]}</a></li>
+				{if $categories[menu] neq "Notice"}
+    			<li><a href="contents.php?category={$categories[menu]}">{$categories[menu]}</a></li>
 				{/if}
 			{/section}
 			</ul>
