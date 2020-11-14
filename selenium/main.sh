@@ -1,7 +1,7 @@
 #!/bin/bash -ux
 
-#error_log="../xampp-linux/lampp/logs/error_log"
-error_log="../xampp-linux/lampp/logs/php_error_log"
+error_log="../xampp-linux/lampp/logs/error_log"
+#error_log="../xampp-linux/lampp/logs/php_error_log"
 
 sudo truncate --size=0 $error_log
 

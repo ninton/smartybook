@@ -114,31 +114,31 @@ class Emoji
     public function getRegexArr()
     {
         return array(
-            'i_sjisbin'     => '/(\xF8[\x90-\xFF]|\xF9[\x40-\xFF])/e'           ,
-            'i_sjis10'      => '/(&#63[678][0-9][0-9];)/ie'                     ,
-            'i_sjis16'      => '/(&#x(F8[9A-F]|F9[4-9A-F])[0-9A-F];)/ie'        ,
-            'i_uni16'       => '/(&#x(E6|E7)[0-9A-F]{2};)/ie'           ,
-            'i_unibin'      => '/([\xE6\xE7].;)/e'          ,
-            'i_utf8'        => '/\xEE[\x98-\x9D][\x80-\xBF]/e'                  ,
+            'i_sjisbin'     => '/(\xF8[\x90-\xFF]|\xF9[\x40-\xFF])/'           ,
+            'i_sjis10'      => '/(&#63[678][0-9][0-9];)/i'                     ,
+            'i_sjis16'      => '/(&#x(F8[9A-F]|F9[4-9A-F])[0-9A-F];)/i'        ,
+            'i_uni16'       => '/(&#x(E6|E7)[0-9A-F]{2};)/i'           ,
+            'i_unibin'      => '/([\xE6\xE7].;)/'          ,
+            'i_utf8'        => '/\xEE[\x98-\x9D][\x80-\xBF]/'                  ,
 
-            'e_img_num'     => '/<img .*?localsrc=[\"]?([0-9]+)".*?>/ie'        ,
-            'e_img_name'    => '/<img .*?localsrc=[\"]?([0-9A-Z]+)[\"]?.*?>/ie' ,
-            'e_icon_num'    => '/<img .*?icon=[\"]?([0-9]+)[\"]?.*?>/ie'        ,
-            'e_icon_name'   => '/<img .*?icon=[\"]?([0-9A-Z]+)[\"]?.*?>/ie'     ,
-            'e_sjis16'      => '/(&#x(F3|F4|F6|F7)[0-9A-F]{2};)/ie'             ,
-            'e_sjisbin'     => '/([\xF3\xF4\xF6\xF7].)/e'                       ,
-            'e_uni16'       => '/(&#x(E4|E5|EA|EB)[0-9A-F]{2};)/ie'             ,
+            'e_img_num'     => '/<img .*?localsrc=[\"]?([0-9]+)".*?>/i'        ,
+            'e_img_name'    => '/<img .*?localsrc=[\"]?([0-9A-Z]+)[\"]?.*?>/i' ,
+            'e_icon_num'    => '/<img .*?icon=[\"]?([0-9]+)[\"]?.*?>/i'        ,
+            'e_icon_name'   => '/<img .*?icon=[\"]?([0-9A-Z]+)[\"]?.*?>/i'     ,
+            'e_sjis16'      => '/(&#x(F3|F4|F6|F7)[0-9A-F]{2};)/i'             ,
+            'e_sjisbin'     => '/([\xF3\xF4\xF6\xF7].)/'                       ,
+            'e_uni16'       => '/(&#x(E4|E5|EA|EB)[0-9A-F]{2};)/i'             ,
             'e_unibin'      => '/([\xE4\xE5\xEA\xEB].)/'                        ,
-            'e_utf8'        => '/\xEE[\x91-\x97\xA0-\xAD][\x80-\xBF]/e'         ,
-            'e_email_jis16' => '/(&#x7[56789AB][0-9A-F]{2};)/ie'                ,
-            'e_email_sjis16' => '/(&#x(EB|EC|ED|EE)[0-9A-F]{2};)/ie'             ,
-            'e_email_jisbin' => '/([\x75-\x7B].)/e'                              ,
-            'e_email_sjisbin' => '/([\xEB-\xEE].)/e'                              ,
+            'e_utf8'        => '/\xEE[\x91-\x97\xA0-\xAD][\x80-\xBF]/'         ,
+            'e_email_jis16' => '/(&#x7[56789AB][0-9A-F]{2};)/i'                ,
+            'e_email_sjis16' => '/(&#x(EB|EC|ED|EE)[0-9A-F]{2};)/i'             ,
+            'e_email_jisbin' => '/([\x75-\x7B].)/'                              ,
+            'e_email_sjisbin' => '/([\xEB-\xEE].)/'                              ,
 
-            's_uni16'       => '/(&#x(E[0-5][0-9A-F]{2};)/ie'                   ,
-            's_unibin'      => '/([\xE0-\xE5].)/e'                              ,
-            's_utf8'        => '/\xEE[\x80-\x94][\x80-\xBF]/e'                  ,
-            's_webcode'     => '/\x1B\$[A-Z].\x0F/ie'
+            's_uni16'       => '/(&#x(E[0-5][0-9A-F]{2};)/i'                   ,
+            's_unibin'      => '/([\xE0-\xE5].)/'                              ,
+            's_utf8'        => '/\xEE[\x80-\x94][\x80-\xBF]/'                  ,
+            's_webcode'     => '/\x1B\$[A-Z].\x0F/i'
         );
     }
 
@@ -318,13 +318,9 @@ class Emoji
      */
     public function convert($i_buf)
     {
-        $GLOBALS['Emoji'] = $this;
-        $buf = preg_replace($this->regex, "\$GLOBALS['Emoji']->mapping('\\1')", $i_buf);
-
-//      クロージャー内で、$thisが使えるのは、PHP5.4+
-//        $buf = preg_replace_callback($this->regex, function ($mathes) {
-//            return $this->mappping($mathes[1]);
-//        }, $i_buf);
+        $buf = preg_replace_callback($this->regex, function ($mathes) {
+            return $this->mapping($mathes[1]);
+        }, $i_buf);
 
         return $buf;
     }
