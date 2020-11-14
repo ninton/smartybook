@@ -12,8 +12,12 @@ $menu_arr = get_menu_arr($categories);
 // 注目記事
 $featured_arr = get_featured_arr(BAT_SRC_DIR . "/$csv");
 
-$smarty = new Smarty();
-$smarty->plugins_dir[] = __DIR__;
+$smarty = new SmartyBC();
+
+$plugins_dir = $smarty->plugins_dir;
+$plugins_dir[] = __DIR__;
+$smarty->plugins_dir = $plugins_dir;
+
 $smarty->assign('menu_arr', $menu_arr);
 $smarty->assign('featured_arr', $featured_arr);
 
