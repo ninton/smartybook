@@ -37,11 +37,16 @@ function displayLogin($username, $status)
 {
     $self = $_SERVER["PHP_SELF"];
     global $smarty;
+
+    $errmsg = "";
     if ($status == -3) {
-        $smarty->assign("errormsg", "ユーザー名もしくはパスワードが違います");
+        $errmsg = "ユーザー名もしくはパスワードが違います";
     }
+
     $smarty->assign("self", $self);
     $smarty->assign("username", $username);
-// 出力
+    $smarty->assign("errormsg", $errmsg);
+
+    // 出力
     $smarty->display("login.tpl");
 }

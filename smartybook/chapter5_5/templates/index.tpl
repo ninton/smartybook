@@ -71,8 +71,8 @@
 			<h2 class="sideArea1Title">メニュー</h2>
 			<ul>
 			{section name="menu" loop=$categories}
-				{if $category[menu] neq "Notice"}
-    			<li><a href="contents.php?category={$category[menu]}">{$categories[menu]}</a></li>
+				{if $categories[menu] neq "Notice"}
+    			<li><a href="contents.php?category={$categories[menu]}">{$categories[menu]}</a></li>
 				{/if}
 			{/section}
 			</ul>
