@@ -14,10 +14,15 @@ $mylist = $mylistmgr->read($_REQUEST['ListId']);
 if ($mylist === null) {
     die('read error');
 }
+
 $appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['associate_id'], $CFG['aws_cache_dir']);
+
 $options['ResponseGroup'] = 'Medium';
+$Item_arr = [];
 $message = $appAmazon->ItemLookup($mylist->getASINs(), $options, $Item_arr);
+
 $mylist->setItems($Item_arr);
+
 $smarty = new AppSmarty();
 $smarty->assign("CFG", $CFG);
 $smarty->assign("message", $message);
