@@ -1,8 +1,8 @@
-{include file=header.tpl}
+{include file="header.tpl"}
 
 <h3>TAIL PRESS</h3>
 
-{include file=menubox.tpl}
+{include file="menubox.tpl"}
 
 <div id="contents">
 <h4>簡単に言えばウイリー</h4>
@@ -13,4 +13,4 @@
 <p>プレスする前に一旦ノーリー（ノーズのしなりを利用してポップ）すると、トリックのきっかけを掴みやすいです。バランスをとるコツはノーズプレスと同様です。テールプレスの場合は後ろ手を広げるのがポイントです。</p>
 </div>
 
-{include file=footer.tpl}
+{include file="footer.tpl"}

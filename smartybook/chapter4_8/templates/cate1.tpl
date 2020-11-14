@@ -1,8 +1,8 @@
-{include file=header.tpl}
+{include file="header.tpl"}
 
 <h2>PRESS TRICK</h2>
 
-{include file=menubox.tpl}
+{include file="menubox.tpl"}
 
 <div id="contents">
 <h4>しならせて浮かせる！それがプレス</h4>
@@ -13,4 +13,4 @@
 <p>はじめのうちは中々ボードが浮いてくれないと思います。が、ノーズ、またはテールを「引き上げ」ようとしてはいけません。浮かない人はきちんと重心移動ができていないのです。肩のラインは水平に保ったまま、腰元からノーズ（テール）側にスライドさせるように体重移動しましょう！</p>
 </div>
 
-{include file=footer.tpl}
+{include file="footer.tpl"}
