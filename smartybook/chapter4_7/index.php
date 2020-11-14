@@ -41,10 +41,7 @@ switch (strtoupper($_SERVER['REQUEST_METHOD'])) {
     default:
         switch ($action) {
             case '':
-                $_SESSION[APPID]['form'] = [
-                    'rating'     => '',
-                    'where_arr'  => [],
-                ];
+                $_SESSION[APPID]['form'] = array();
                 $tpl = "form.tpl";
                 break;
 
@@ -59,23 +56,37 @@ switch (strtoupper($_SERVER['REQUEST_METHOD'])) {
         break;
 }
 
+if (!isset($_SESSION[APPID]['form']['prefecture'])) {
+    $_SESSION[APPID]['form']['prefecture'] = '';
+}
+
+if (!isset($_SESSION[APPID]['form']['rating'])) {
+    $_SESSION[APPID]['form']['rating'] = '';
+}
+
+if (!isset($_SESSION[APPID]['form']['where_arr'])) {
+    $_SESSION[APPID]['form']['where_arr'] = [];
+}
+
 // {html_select_date/time}用タイムスタンプを計算する
 $now = time();
-if (! empty($_SESSION[APPID]['form']['startDate'])) {
+if (isset($_SESSION[APPID]['form']['startDate'])) {
     makeTimeStamp($_SESSION[APPID]['form'], array('field_array' => 'startDate'));
 } else {
     $_SESSION[APPID]['form']['startDate']['TimeStamp'] = $now;
-    ;
 }
-if (! empty($_SESSION[APPID]['form']['endDate_Year'])) {
+
+if (isset($_SESSION[APPID]['form']['endDate_Year'])) {
     makeTimeStamp($_SESSION[APPID]['form'], array('prefix' => 'endDate_'));
 } else {
     $_SESSION[APPID]['form']['endDate_TimeStamp'] = $now + 7 * 24 * 3600;
 }
+
 $smarty = new SmartyBC();
 $smarty->assign("META", $META);
 $smarty->assign("form", $_SESSION[APPID]['form']);
 $smarty->display($tpl);
+
 // 送信完了後、セッション変数をクリアする
 switch ($action) {
     case 'submit':
