@@ -41,7 +41,10 @@ switch (strtoupper($_SERVER['REQUEST_METHOD'])) {
     default:
         switch ($action) {
             case '':
-                $_SESSION[APPID]['form'] = array();
+                $_SESSION[APPID]['form'] = [
+                    'rating'     => '',
+                    'where_arr'  => [],
+                ];
                 $tpl = "form.tpl";
                 break;
 
