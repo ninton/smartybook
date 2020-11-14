@@ -4,7 +4,7 @@
 
 require_once("ini.php");
 require_once("../vendor/autoload.php");
-$smarty = new Smarty();
+$smarty = new SmartyBC();
 /*//キャッシュの設定
 $smarty->caching = 2;
 $smarty->cache_dir = "cache";
@@ -51,6 +51,7 @@ if (!$smarty->is_cached('index.tpl')) {
     $smarty->assign("picture", $picture);
 //Twitter APIからのコンテンツ読み込み
     $twitterUrl =  'http://twitter.com/statuses/user_timeline/kara_d.json';
+    $twitterUrl =  'kara_d.json';
     $jTwitter = file_get_contents($twitterUrl);
     $aTwitter = json_decode($jTwitter);
     $smarty->assign("aTwitter", $aTwitter);
@@ -64,7 +65,7 @@ function insert_noticeText()
     $noticeText = '<img src="./images/banner.gif" />';
     return $noticeText;
 }
-function insert_noticeText2($siteName)
+function smarty_insert_noticeText2($siteName)
 {
     return '<img src="./images/banner.gif" /><br />' . $siteName["siteName"];
 }

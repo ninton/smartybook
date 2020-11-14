@@ -4,12 +4,13 @@
 
 require_once("ini.php");
 require_once("../vendor/autoload.php");
-$smarty = new Smarty();
+$smarty = new SmartyBC();
 $smarty->assign("siteName", $siteName);
 $smarty->assign("home", $home);
 $smarty->assign("categories", $categories);
 //$smarty->assign("notice", $notice);
 // CSVデータを配列に格納
+$data = [];
 $fp = fopen($csv, "r");
 $i = 0;
 while ($array = fgetcsv($fp, 5000, ",")) {
@@ -39,7 +40,7 @@ function insert_noticeText()
     return $noticeText;
 }
 
-function insert_noticeText2($siteName)
+function smarty_insert_noticeText2($siteName)
 {
     return '<img src="./images/banner.gif" /><br />' . $siteName["siteName"];
 }
