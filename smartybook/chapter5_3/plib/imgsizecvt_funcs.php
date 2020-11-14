@@ -51,6 +51,8 @@ function proc_image_list()
             $path = $CFG['DSTIMG_DIR'] . "$width/$fname";
             $img = array();
             $img['path'] = $path;
+            $img['width'] = '';
+            $img['height'] = '';
             if (file_exists($path)) {
                 list($img['width'], $img['height']) = getimagesize($path);
             }

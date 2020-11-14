@@ -30,7 +30,7 @@ $params['totalItems'] = count($entry_arr);
 $pager = Pager::factory($params);
 
 
-$pageID = 0;
+$pageID = 1;
 if (isset($_REQUEST['pageID'])) {
     $pageID = $_REQUEST['pageID'];
 }
