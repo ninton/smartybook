@@ -22,7 +22,7 @@ class BookMark
 }
 
 require_once("../vendor/autoload.php");
-$smarty = new Smarty();
+$smarty = new SmartyBC();
 $smarty->template_dir = "templates";
 $smarty->compile_dir = "templates_c";
 //BookMarkオブジェクトの作成

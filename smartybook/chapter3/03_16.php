@@ -1,7 +1,7 @@
 <?php
 
 require_once("../vendor/autoload.php");
-$smarty = new Smarty();
+$smarty = new SmartyBC();
 $group = array(
     array("森永", "国枝"),
     array("水村", "渋谷", "原田"),

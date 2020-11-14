@@ -1,7 +1,7 @@
 <?php
 
 require_once("../vendor/autoload.php");
-$smarty = new Smarty();
+$smarty = new SmartyBC();
 $siteName = "スノーボード関連本";
 $bookList = array("ボードの選び方", "ゲレンデマップ", "ウエア・カタログ");
 $newBook = "スノーボード・テクニック";
