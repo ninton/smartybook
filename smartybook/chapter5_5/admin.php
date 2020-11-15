@@ -3,11 +3,8 @@
 require_once("ini.php");
 require_once("../vendor/autoload.php");
 
-$smarty = new SmartyBC();
-
-$plugins_dir = $smarty->plugins_dir;
-$plugins_dir[] = __DIR__ . '/plugins';
-$smarty->plugins_dir = $plugins_dir;
+$smarty = new Smarty();
+$smarty->addPluginsDir(__DIR__ . '/plugins');
 
 $smarty->assign("siteName", $siteName);
 $smarty->assign("home", $home);

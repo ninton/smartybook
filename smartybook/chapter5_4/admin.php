@@ -2,7 +2,7 @@
 
 require_once("ini.php");
 
-$smarty = new SmartyBC();
+$smarty = new Smarty();
 $smarty->assign("siteName", $siteName);
 $smarty->assign("home", $home);
 $smarty->assign("admin", $admin);

@@ -1,7 +1,7 @@
 <?php
 
 require_once("../vendor/autoload.php");
-$smarty = new SmartyBC();
+$smarty = new Smarty();
 $siteName = "Smarty for Designers";
 $body = "コンテンツ本文です。";
 $smarty->assign("siteName", $siteName);

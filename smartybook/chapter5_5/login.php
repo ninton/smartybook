@@ -3,7 +3,7 @@
 require_once("ini.php");
 require_once("../vendor/autoload.php");
 
-$smarty = new SmartyBC();
+$smarty = new Smarty();
 
 $plugins_dir = $smarty->plugins_dir;
 $plugins_dir[] = __DIR__ . '/plugins';

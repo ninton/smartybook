@@ -48,7 +48,7 @@ if ((0 < $from) && (0 < $to)) {
 
 $page = pager_ex($pager, $from, $to);
 
-$smarty = new SmartyBC();
+$smarty = new Smarty();
 $smarty->assign("Pager", $pager);
 $smarty->assign("siteName", $siteName);
 $smarty->assign("home", $home);

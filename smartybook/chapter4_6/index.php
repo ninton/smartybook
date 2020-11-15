@@ -6,8 +6,8 @@ require_once('./config.php');
 use SmartyBook\chapter4_6\CMS;
 use SmartyBook\chapter4_6\SortNavigator;
 
-$smarty   = new SmartyBC();
-$smarty->config_load("index.conf");
+$smarty = new Smarty();
+$smarty->configLoad("index.conf");
 
 // リクエスト変数を調べて、なければデフォルト値を設定する
 //  pageID      ページ番号
@@ -18,13 +18,13 @@ if (empty($_REQUEST['pageID'])) {
     $_REQUEST['pageID'] = 1;
 }
 if (empty($_REQUEST['sort'])) {
-    $_REQUEST['sort'] = $smarty->get_config_vars('sort');
+    $_REQUEST['sort'] = $smarty->getConfigVars('sort');
 }
 if (empty($_REQUEST['order'])) {
-    $_REQUEST['order'] = $smarty->get_config_vars('order');
+    $_REQUEST['order'] = $smarty->getConfigVars('order');
 }
 if (empty($_REQUEST['setPerPage'])) {
-    $_REQUEST['setPerPage'] = $smarty->get_config_vars('perPage');
+    $_REQUEST['setPerPage'] = $smarty->getConfigVars('perPage');
 }
 
 // 全件数を調べて、Pagerを初期化する

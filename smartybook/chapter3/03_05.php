@@ -1,9 +1,9 @@
 <?php
 
 require_once("../vendor/autoload.php");
-$smarty = new SmartyBC();
-$smarty->template_dir = "templates";
-$smarty->compile_dir = "templates_c";
+$smarty = new Smarty();
+$smarty->setTemplateDir("templates");
+$smarty->setCompileDir("templates_c");
 // 連想配列
 $sites = array("name" => "Google", "url" => "http://www.google.com/");
 $smarty->assign("sites", $sites);

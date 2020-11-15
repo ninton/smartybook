@@ -9,7 +9,7 @@ require_once('./ketai_ini.php');
  * @var $home
  * @var $categories
  */
-$smarty = new SmartyBC();
+$smarty = new Smarty();
 $smarty->assign("siteName", $siteName);
 $smarty->assign("home", $home);
 $smarty->assign("categories", $categories);

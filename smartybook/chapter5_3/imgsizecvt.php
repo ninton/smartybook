@@ -12,7 +12,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
 
     default:
         $rcd_arr = proc_image_list();
-        $smarty = new SmartyBC();
+        $smarty = new Smarty();
         $smarty->assign('rcd_arr', $rcd_arr);
         $smarty->display('imgsizecvt.tpl');
         break;
