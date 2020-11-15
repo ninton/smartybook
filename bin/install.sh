@@ -2,7 +2,7 @@
 
 composer install
 
-./bin/pear_patch.sh
+./bin/patch_pear.sh
 
 npm install
 
