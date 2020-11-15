@@ -13,10 +13,22 @@ services:
 #      - ./smartybook:/opt/lampp/htdocs/smartybook:cached
 #    command: /bin/sh
 #
-  centos7_php56:
+#  centos7_php56:
+#    tty: true
+#    container_name: centos7.smartybook.docker
+#    build: centos7_php56
+#    ports:
+#      - 5402:80
+#      - 5403:3306
+#    volumes:
+#      - ./smartybook:/opt/lampp/htdocs/smartybook:cached
+#      - ./xampp-linux/lampp/logs:/opt/lampp/logs:cached
+#    command: /bin/sh
+
+  centos7_php74:
     tty: true
     container_name: centos7.smartybook.docker
-    build: centos7_php56
+    build: centos7_php74
     ports:
       - 5402:80
       - 5403:3306
