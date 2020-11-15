@@ -1,6 +1,10 @@
 <?php
 
+// phpcs:disable PSR1.Files.SideEffects
+
 namespace SmartyBook\Tests;
+
+require_once __DIR__ . '/../vendor/simpletest/simpletest/autorun.php';
 
 use TestSuite;
 
