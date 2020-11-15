@@ -29,3 +29,8 @@ twitterからJSONをダウンロードする箇所がエラーです。
 
 ■ chapter5_6
 2020年3月で、Amazon_ECSのAPIは廃止されて、常に410エラーです。
+
+■PHP7+で、PEAR内の = & new xxx()がエラー
+PHP7+でPEARを使うことはないと思いますが、
+= & new を = new に置換したところ、本スクリプトは動きました。
+./bin/patch_pear.sh
