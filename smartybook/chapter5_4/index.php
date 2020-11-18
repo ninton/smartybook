@@ -1,28 +1,23 @@
 <?php
 
-// phpcs:disable PSR1.Files.SideEffects
-
 require_once("ini.php");
 require_once("../vendor/autoload.php");
-$smarty = new SmartyBC();
-/*//キャッシュの設定
-$smarty->caching = 2;
-$smarty->cache_dir = "cache";
-$smarty->cache_lifetime = 1800;
-//*/
-//Smarty変数への代入
+
+$smarty = new Smarty();
 $smarty->assign("siteName", $siteName);
 $smarty->assign("siteDescription", $siteDescription);
 $smarty->assign("home", $home);
 $smarty->assign("categories", $categories);
-if (!$smarty->is_cached('index.tpl')) {
+
+if (!$smarty->isCached('index.tpl')) {
     $picture = array();
     $data = array();
-// CSVデータを配列に格納
+
+    // CSVデータを配列に格納
     $fp = fopen($csv, "r");
     $i = 0;
     $p = 0;
-//
+
     while ($array = fgetcsv($fp, 5000, ",")) {
         if ($array[1] == "Picture") {
             $picture[$p]["id"]       = $array[0];
@@ -46,10 +41,12 @@ if (!$smarty->is_cached('index.tpl')) {
         }
     }
     fclose($fp);
-//データをsmartyの変数として格納
+
+    //データをsmartyの変数として格納
     $smarty->assign("data", $data);
     $smarty->assign("picture", $picture);
-//Twitter APIからのコンテンツ読み込み
+
+    //Twitter APIからのコンテンツ読み込み
     $twitterUrl =  'http://twitter.com/statuses/user_timeline/kara_d.json';
     $twitterUrl =  'kara_d.json';
     $jTwitter = file_get_contents($twitterUrl);
@@ -59,13 +56,3 @@ if (!$smarty->is_cached('index.tpl')) {
 
 //出力
 $smarty->display("index.tpl");
-
-function insert_noticeText()
-{
-    $noticeText = '<img src="./images/banner.gif" />';
-    return $noticeText;
-}
-function smarty_insert_noticeText2($siteName)
-{
-    return '<img src="./images/banner.gif" /><br />' . $siteName["siteName"];
-}

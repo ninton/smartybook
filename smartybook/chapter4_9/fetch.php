@@ -12,7 +12,7 @@ $menu_arr = get_menu_arr($categories);
 // 注目記事
 $featured_arr = get_featured_arr(BAT_SRC_DIR . "/$csv");
 
-$smarty = new SmartyBC();
+$smarty = new Smarty();
 
 $plugins_dir = $smarty->plugins_dir;
 $plugins_dir[] = __DIR__;

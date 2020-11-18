@@ -1,7 +1,7 @@
 <?php
 
 require_once("../vendor/autoload.php");
-$smarty = new SmartyBC();
+$smarty = new Smarty();
 $person = array(
     array("name" => "国枝", "height" => "156"),
     array("name" => "大沢", "height" => "165"),

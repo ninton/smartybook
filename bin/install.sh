@@ -2,6 +2,8 @@
 
 composer install
 
+./bin/patch_pear.sh
+
 npm install
 
 chmod +x chmod.sh

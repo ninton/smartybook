@@ -22,9 +22,9 @@ class BookMark
 }
 
 require_once("../vendor/autoload.php");
-$smarty = new SmartyBC();
-$smarty->template_dir = "templates";
-$smarty->compile_dir = "templates_c";
+$smarty = new Smarty();
+$smarty->setTemplateDir("templates");
+$smarty->setCompileDir("templates_c");
 //BookMarkオブジェクトの作成
 $bookmark = new BookMark("Google", "http://www.google.com/", "2006/11/01");
 $smarty->assign("bookmark", $bookmark);

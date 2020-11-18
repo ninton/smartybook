@@ -1,9 +1,9 @@
 <?php
 
 require_once("../vendor/autoload.php");
-$smarty = new SmartyBC();
-$smarty->template_dir = "templates";
-$smarty->compile_dir = "templates_c";
+$smarty = new Smarty();
+$smarty->setTemplateDir("templates");
+$smarty->setCompileDir("templates_c");
 $name = "Smartyさん";
 $type = "テンプレート・エンジン";
 $smarty->assign("name", $name);

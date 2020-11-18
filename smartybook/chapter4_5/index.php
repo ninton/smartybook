@@ -1,6 +1,6 @@
 <?php
 
 require_once('../vendor/autoload.php');
-$smarty = new SmartyBC();
+$smarty = new Smarty();
 $smarty->assign('hour', date("G"));
 $smarty->display('index.tpl');

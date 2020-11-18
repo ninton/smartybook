@@ -82,7 +82,7 @@ if (isset($_SESSION[APPID]['form']['endDate_Year'])) {
     $_SESSION[APPID]['form']['endDate_TimeStamp'] = $now + 7 * 24 * 3600;
 }
 
-$smarty = new SmartyBC();
+$smarty = new Smarty();
 $smarty->assign("META", $META);
 $smarty->assign("form", $_SESSION[APPID]['form']);
 $smarty->display($tpl);
