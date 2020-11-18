@@ -35,4 +35,3 @@ services:
     volumes:
       - ./smartybook:/opt/lampp/htdocs/smartybook:cached
       - ./xampp-linux/lampp/logs:/opt/lampp/logs:cached
-    command: /bin/sh

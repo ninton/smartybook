@@ -9,4 +9,4 @@ s/;mbstring.internal_encoding =.*/mbstring.internal_encoding = UTF-8/
 s/;mbstring.http_input =.*/mbstring.http_input = pass/
 s/;mbstring.http_output =.*/mbstring.http_output = pass/
 s/;mbstring.encoding_translation = .*/mbstring.encoding_translation = Off/
-s/track_errors = On/;track_errors = On/
+s/track_errors=On/;track_errors=On/
