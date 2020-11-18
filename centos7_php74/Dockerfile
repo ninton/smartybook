@@ -16,4 +16,7 @@ RUN ./xampp-linux-x64-7.4.11-0-installer.run --enable-components xampp_developer
 
 EXPOSE 80 3306
 
-CMD "/bin/sh"
+COPY *.sed /root/
+COPY init.sh /root/init.sh
+CMD "/root/init.sh"
+#CMD "/bin/sh"
