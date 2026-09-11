@@ -1,7 +1,7 @@
 FROM centos:7
 
 # TimeZoneの設定
-RUN echo 'ZONE"=Asia/Tokyo"' > /etc/sysconfig/clock
+RUN echo 'ZONE="Asia/Tokyo"' > /etc/sysconfig/clock
 
 RUN yum install -y net-tools
 RUN yum install -y wget
