@@ -1,5 +1,4 @@
 FROM centos:7
-MAINTAINER aoki_makoto@ninton.co.jp
 
 # TimeZoneの設定
 RUN echo 'ZONE"=Asia/Tokyo"' > /etc/sysconfig/clock
