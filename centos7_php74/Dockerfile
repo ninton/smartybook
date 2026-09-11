@@ -1,4 +1,4 @@
-FROM centos:7
+FROM almalinux:8.10
 
 # TimeZoneの設定
 RUN echo 'ZONE="Asia/Tokyo"' > /etc/sysconfig/clock
