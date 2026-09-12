@@ -35,19 +35,6 @@
         "phpcs": [
             "./bin/phpcs.sh"
         ],
-        "xampp-start": [
-            "sudo docker-compose down",
-            "sudo docker-compose build",
-            "sudo docker-compose up -d",
-            "sudo docker-compose ps",
-            "./bin/xampp_start.sh",
-            "./bin/db_init.sh"
-        ],
-        "xampp-stop": [
-            "./bin/xampp_stop.sh",
-            "sudo docker-compose down",
-            "sudo docker-compose ps"
-        ],
         "test": [
             "composer phpmd",
             "composer phpcs",
