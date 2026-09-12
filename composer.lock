@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "27b381f55605ad4dfc92bb5b7e792998",
+    "content-hash": "b0137e53ade3351c7e7ec072f928e04e",
     "packages": [
         {
             "name": "pear-pear.php.net/Archive_Tar",
@@ -468,7 +468,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "7.4.11",
+        "php": "^7.4.11",
         "ext-json": "*",
         "ext-pdo": "*",
         "ext-mbstring": "*"
