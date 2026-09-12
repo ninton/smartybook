@@ -24,7 +24,6 @@
         "pear-pear.php.net/pager": "^2.5"
     },
     "require-dev": {
-        "squizlabs/php_codesniffer": "^3.5"
     },
     "scripts": {
     },
