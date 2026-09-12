@@ -24,25 +24,10 @@
         "pear-pear.php.net/pager": "^2.5"
     },
     "require-dev": {
-        "phpmd/phpmd": "^2.4",
         "simpletest/simpletest": "v1.2.0",
         "squizlabs/php_codesniffer": "^3.5"
     },
     "scripts": {
-        "phpmd": [
-            "./smartybook/vendor/bin/phpmd  smartybook  text cleancode,codesize,design,naming,unusedcode  --exclude \"*/smarty/*,*/vendor/*,*/templates_c/*,*/autorun.php\""
-        ],
-        "phpcs": [
-            "./bin/phpcs.sh"
-        ],
-        "test": [
-            "composer phpmd",
-            "composer phpcs",
-            "composer unittest"
-        ],
-        "unittest": [
-            "./bin/unittest.sh"
-        ]
     },
     "autoload": {
         "psr-4": {
