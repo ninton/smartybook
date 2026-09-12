@@ -1,0 +1,63 @@
+name: lint
+description: Lint files (format, lint, static analysis)
+runs:
+  using: composite
+  steps:
+    # ========================================
+    # ファイル変更検出系
+    # ========================================
+    - name: Detect changed files
+      uses: dorny/paths-filter@v4
+      id: paths_filter
+      with:
+        # 追加・変更されたファイルのリストをスペース区切りで取得する
+        list-files: shell
+        filters: |
+          sh:
+            - added|modified: '**/*.{sh,sh.tmpl}'
+          docker:
+            - added|modified: 'docker/**/Dockerfile'
+          php:
+            - added|modified: 'smartybook/**/*.php'
+          # actionlint 用なので、prettier用とは別途定義
+          github_yaml:
+            - added|modified: '.github/**/*.{yml,yaml}'
+
+    # ========================================
+    # Shell スクリプトLint系
+    # ========================================
+    - name: Run ShellCheck
+      if: steps.paths_filter.outputs.sh == 'true'
+      shell: bash
+      run: shellcheck ${{ steps.paths_filter.outputs.sh_files }}
+
+    # ========================================
+    # Hadolint (Dockerfileに変更があった時だけ実行)
+    # ========================================
+    - name: Run Hadolint
+      if: steps.paths_filter.outputs.docker == 'true'
+      uses: hadolint/hadolint-action@v3.5.0
+      with:
+        dockerfile: ${{ steps.paths_filter.outputs.docker_files }}
+
+    # ========================================
+    # GitHub Actions 定義 リント系
+    # ========================================
+    - name: Run actionlint
+      # GitHub Actions 定義ファイルに変更があった場合のみ実行
+      if: steps.paths_filter.outputs.github_yaml == 'true'
+      uses: reviewdog/action-actionlint@v1
+      with:
+        fail_level: warning
+        # composite action 側では permissions を宣言できないため、
+        # checks: write が必要な github-check は使わない。
+        # 呼び出し元ワークフローの権限設定に依存しにくい annotations を使う。
+        reporter: github-pr-annotations
+
+    # ========================================
+    # PHP 構文チェック系
+    # ========================================
+    - name: PHP syntax check
+      shell: bash
+      if: ${{ steps.paths_filter.outputs.php == 'true' }}
+      run: php -l ${{ steps.paths_filter.outputs.php_files }}
