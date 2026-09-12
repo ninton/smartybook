@@ -1,8 +1,7 @@
 services:
-  centos7_php74:
+  app:
     tty: true
-    container_name: centos7.smartybook.docker
-    build: centos7_php74
+    build: docker/app
     ports:
       - 5402:80
       - 5403:3306
