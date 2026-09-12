@@ -1,6 +1,7 @@
 .PHONY: composer-install
 composer-install:
 	docker compose run --rm app composer install
+	docker compose run --rm app bin/patch-pear.sh
 
 # 📁 setup用の状態管理ファイルの保存先ディレクトリ
 STATE_DIR := .make
