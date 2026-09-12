@@ -8,8 +8,6 @@
 
 # 3. 開発環境固有のファイル
 /.make/
-/results/
-/tests/simpletest.xml
 /**/templates_c/*.php
 
 # --- [ どこにあっても無視したいもの ] ---
