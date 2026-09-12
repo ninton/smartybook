@@ -7,10 +7,12 @@ RUN echo 'ZONE="Asia/Tokyo"' > /etc/sysconfig/clock
 RUN dnf -y update && \
     dnf -y install \
       net-tools \
+      git \
       glibc \
       libnsl \
       tar \
-      wget && \
+      wget \
+      which && \
     dnf clean all
 
 RUN wget --version
@@ -19,6 +21,12 @@ RUN chmod +x xampp-linux-x64-7.4.11-0-installer.run
 RUN ./xampp-linux-x64-7.4.11-0-installer.run --version
 RUN ./xampp-linux-x64-7.4.11-0-installer.run --enable-components xampp_developer_files --mode unattended
 
+# Composer の最新公式イメージからバイナリだけをコピーする
+# PEAR対応のため、暫定で composer 1 を使います
+COPY --from=composer:1 /usr/bin/composer /usr/local/bin/composer
+
+# XAMPPのPHPをデフォルトの php コマンドとしてパスを通す
+ENV PATH="/opt/lampp/bin:${PATH}"
 
 EXPOSE 80 3306
 
