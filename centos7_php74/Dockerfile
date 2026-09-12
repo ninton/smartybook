@@ -7,6 +7,7 @@ RUN echo 'ZONE="Asia/Tokyo"' > /etc/sysconfig/clock
 RUN dnf -y update && \
     dnf -y install \
       net-tools \
+      git \
       glibc \
       libnsl \
       tar \
