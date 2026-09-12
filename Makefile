@@ -10,8 +10,6 @@ STATE_DIR := .make
 setup: $(STATE_DIR)/.docker-compose-build $(STATE_DIR)/.composer-installed
 	@printf '\n=== Docker コンテナの起動確認 ===\n'
 	docker compose up -d
-	docker compose exec app smartybook/xampp_setup.sh
-	docker compose exec app /opt/lampp/lampp restart
 
 	@printf '\n🎉 セットアップが完了しました！\n'
 

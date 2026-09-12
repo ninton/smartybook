@@ -33,12 +33,14 @@ RUN set -eux \
     && chmod +x /usr/local/bin/xampp_setup.sh \
     && /usr/local/bin/xampp_setup.sh
 
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN set -eux \
+    && chmod +x /usr/local/bin/entrypoint.sh
+
 # WORKDIR、ENTRYPOINT、CMDの順序がお作法
 WORKDIR /opt/lampp/htdocs
 
 EXPOSE 80 3306
 
-COPY *.sed /root/
-COPY init.sh /root/init.sh
-CMD "/root/init.sh"
-#CMD "/bin/sh"
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+CMD ["/bin/sh", "-c", "/opt/lampp/lampp restart && tail -f /opt/lampp/logs/php_error_log /opt/lampp/logs/error_log"]
