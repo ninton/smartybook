@@ -1,3 +1,3 @@
 #!/bin/bash -eu
 
-docker exec centos7.smartybook.docker /opt/lampp/htdocs/smartybook/xampp_start.sh
+docker compose exec app /opt/lampp/htdocs/smartybook/xampp_start.sh
