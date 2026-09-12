@@ -2,18 +2,11 @@
     "name": "ninton/smartybook",
     "description": "Smarty動的Webサイト構築入門のCDROM",
     "type": "project",
-    "version": "2.3.1",
+    "license": "MIT",
     "config": {
-        "vendor-dir": "smartybook/vendor",
-        "platform": {
-            "php": "7.4.11"
-        }
+        "vendor-dir": "smartybook/vendor"
     },
     "repositories": [
-        {
-            "type": "vcs",
-            "url": "git@github.com:ninton/smartybook.git"
-        },
         {
             "type": "pear",
             "url": "https://pear.php.net/"
@@ -30,12 +23,6 @@
         "pear-pear.php.net/services_amazon": "^0.9.0",
         "pear-pear.php.net/pager": "^2.5"
     },
-    "authors": [
-        {
-            "name": "aoki.makoto",
-            "email": "aoki_makoto@ninton.co.jp"
-        }
-    ],
     "require-dev": {
         "phpmd/phpmd": "^2.4",
         "simpletest/simpletest": "v1.2.0",
