@@ -1,6 +1,5 @@
 # --- [ 厳格に場所を固定したいもの ] ---
 # 1. 依存関係
-/node_modules
 /smartybook/vendor/
 /xampp-linux/
 
@@ -8,8 +7,6 @@
 
 # 3. 開発環境固有のファイル
 /.make/
-/results/
-/tests/simpletest.xml
 /**/templates_c/*.php
 
 # --- [ どこにあっても無視したいもの ] ---
