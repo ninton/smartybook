@@ -28,12 +28,19 @@ COPY --from=composer:1 /usr/bin/composer /usr/local/bin/composer
 # XAMPPのPHPをデフォルトの php コマンドとしてパスを通す
 ENV PATH="/opt/lampp/bin:${PATH}"
 
+COPY xampp_setup.sh /usr/local/bin/xampp-setup.sh
+RUN set -eux \
+    && chmod +x /usr/local/bin/xampp-setup.sh \
+    && /usr/local/bin/xampp-setup.sh
+
+COPY entrypoint.sh /usr/local/bin/entrypoint.sh
+RUN set -eux \
+    && chmod +x /usr/local/bin/entrypoint.sh
+
 # WORKDIR、ENTRYPOINT、CMDの順序がお作法
 WORKDIR /opt/lampp/htdocs
 
 EXPOSE 80 3306
 
-COPY *.sed /root/
-COPY init.sh /root/init.sh
-CMD "/root/init.sh"
-#CMD "/bin/sh"
+ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+CMD ["/bin/sh", "-c", "/opt/lampp/lampp restart && tail -f /opt/lampp/logs/php_error_log /opt/lampp/logs/error_log"]
