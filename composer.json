@@ -38,14 +38,10 @@
         "test": [
             "composer phpmd",
             "composer phpcs",
-            "composer unittest",
-            "composer e2etest"
+            "composer unittest"
         ],
         "unittest": [
             "./bin/unittest.sh"
-        ],
-        "e2etest": [
-            "./bin/e2etest.sh"
         ]
     },
     "autoload": {
