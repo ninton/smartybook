@@ -28,7 +28,7 @@ COPY --from=composer:1 /usr/bin/composer /usr/local/bin/composer
 # XAMPPのPHPをデフォルトの php コマンドとしてパスを通す
 ENV PATH="/opt/lampp/bin:${PATH}"
 
-COPY xampp_setup.sh /usr/local/bin/xampp-setup.sh
+COPY xampp-setup.sh /usr/local/bin/xampp-setup.sh
 RUN set -eux \
     && chmod +x /usr/local/bin/xampp-setup.sh \
     && /usr/local/bin/xampp-setup.sh
