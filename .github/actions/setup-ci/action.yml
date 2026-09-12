@@ -16,11 +16,6 @@ runs:
         tools: cs2pr, composer:1.10.28
         ini-values: date.timezone=Asia/Tokyo, memory_limit=-1
 
-    - name: Install pnpm
-      uses: pnpm/action-setup@v6
-      # バージョンは package.json に任せます
-      # node-version-file は setup-node 側で行うのが一般的です
-
     # ----------------------------------------
     # composer install
     # @see https://github.com/actions/starter-workflows/blob/43366bbd1128ba86c37813c92a670eb88f5c50f8/deployments/azure-webapps-php.yml#L53-L70
