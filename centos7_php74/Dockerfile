@@ -10,7 +10,8 @@ RUN dnf -y update && \
       glibc \
       libnsl \
       tar \
-      wget && \
+      wget \
+      which && \
     dnf clean all
 
 RUN wget --version
