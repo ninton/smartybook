@@ -1,6 +1,5 @@
 # --- [ 厳格に場所を固定したいもの ] ---
 # 1. 依存関係
-/node_modules
 /smartybook/vendor/
 /xampp-linux/
 
