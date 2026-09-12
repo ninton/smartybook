@@ -20,6 +20,11 @@ RUN chmod +x xampp-linux-x64-7.4.11-0-installer.run
 RUN ./xampp-linux-x64-7.4.11-0-installer.run --version
 RUN ./xampp-linux-x64-7.4.11-0-installer.run --enable-components xampp_developer_files --mode unattended
 
+# Composer の最新公式イメージからバイナリだけをコピーする
+COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
+
+# XAMPPのPHPをデフォルトの php コマンドとしてパスを通す
+ENV PATH="/opt/lampp/bin:${PATH}"
 
 EXPOSE 80 3306
 
