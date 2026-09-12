@@ -8,6 +8,10 @@
 
 # 3. 開発環境固有のファイル
 /.make/
+/results/
+/selenium/results
+/selenium/**/*.tmp
+/tests/simpletest.xml
 /**/templates_c/*.php
 
 # --- [ どこにあっても無視したいもの ] ---
@@ -20,4 +24,3 @@ Thumbs.db
 .php_cs.cache
 
 # テスト・解析レポート
-selenium/results
