@@ -1,19 +1,17 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e813a8ffd1a49c39cc1b9e0824b2a115",
+    "content-hash": "ae1e4b657df1b1f370ca173711067087",
     "packages": [
         {
             "name": "pear-pear.php.net/Archive_Tar",
             "version": "1.4.10",
             "dist": {
                 "type": "file",
-                "url": "https://pear.php.net/get/Archive_Tar-1.4.10.tgz",
-                "reference": null,
-                "shasum": null
+                "url": "https://pear.php.net/get/Archive_Tar-1.4.10.tgz"
             },
             "require": {
                 "php": ">=5.2.0.0"
@@ -40,9 +38,7 @@
             "version": "1.6.4",
             "dist": {
                 "type": "file",
-                "url": "https://pear.php.net/get/Auth-1.6.4.tgz",
-                "reference": null,
-                "shasum": null
+                "url": "https://pear.php.net/get/Auth-1.6.4.tgz"
             },
             "require": {
                 "php": ">=4.3.3.0"
@@ -69,9 +65,7 @@
             "version": "1.4.3",
             "dist": {
                 "type": "file",
-                "url": "https://pear.php.net/get/Console_Getopt-1.4.3.tgz",
-                "reference": null,
-                "shasum": null
+                "url": "https://pear.php.net/get/Console_Getopt-1.4.3.tgz"
             },
             "require": {
                 "php": ">=5.4.0.0"
@@ -98,9 +92,7 @@
             "version": "1.4.4",
             "dist": {
                 "type": "file",
-                "url": "https://pear.php.net/get/HTTP_Request-1.4.4.tgz",
-                "reference": null,
-                "shasum": null
+                "url": "https://pear.php.net/get/HTTP_Request-1.4.4.tgz"
             },
             "require": {
                 "pear-pear.php.net/net_socket": ">=1.0.7.0",
@@ -129,9 +121,7 @@
             "version": "1.2.2",
             "dist": {
                 "type": "file",
-                "url": "https://pear.php.net/get/Net_Socket-1.2.2.tgz",
-                "reference": null,
-                "shasum": null
+                "url": "https://pear.php.net/get/Net_Socket-1.2.2.tgz"
             },
             "require": {
                 "php": ">=5.4.0.0"
@@ -158,9 +148,7 @@
             "version": "1.0.15",
             "dist": {
                 "type": "file",
-                "url": "https://pear.php.net/get/Net_URL-1.0.15.tgz",
-                "reference": null,
-                "shasum": null
+                "url": "https://pear.php.net/get/Net_URL-1.0.15.tgz"
             },
             "require": {
                 "php": ">=4.0.0.0"
@@ -187,9 +175,7 @@
             "version": "1.0.0",
             "dist": {
                 "type": "file",
-                "url": "https://pear.php.net/get/Net_UserAgent_Mobile-1.0.0.tgz",
-                "reference": null,
-                "shasum": null
+                "url": "https://pear.php.net/get/Net_UserAgent_Mobile-1.0.0.tgz"
             },
             "require": {
                 "ext-pcre": "*",
@@ -218,9 +204,7 @@
             "version": "1.10.12",
             "dist": {
                 "type": "file",
-                "url": "https://pear.php.net/get/PEAR-1.10.12.tgz",
-                "reference": null,
-                "shasum": null
+                "url": "https://pear.php.net/get/PEAR-1.10.12.tgz"
             },
             "require": {
                 "ext-pcre": "*",
@@ -253,9 +237,7 @@
             "version": "2.5.1",
             "dist": {
                 "type": "file",
-                "url": "https://pear.php.net/get/Pager-2.5.1.tgz",
-                "reference": null,
-                "shasum": null
+                "url": "https://pear.php.net/get/Pager-2.5.1.tgz"
             },
             "require": {
                 "php": ">=5.6.0.0"
@@ -282,9 +264,7 @@
             "version": "0.9.0",
             "dist": {
                 "type": "file",
-                "url": "https://pear.php.net/get/Services_Amazon-0.9.0.tgz",
-                "reference": null,
-                "shasum": null
+                "url": "https://pear.php.net/get/Services_Amazon-0.9.0.tgz"
             },
             "require": {
                 "pear-pear.php.net/http_request": "*",
@@ -314,9 +294,7 @@
             "version": "1.1.1",
             "dist": {
                 "type": "file",
-                "url": "https://pear.php.net/get/Structures_Graph-1.1.1.tgz",
-                "reference": null,
-                "shasum": null
+                "url": "https://pear.php.net/get/Structures_Graph-1.1.1.tgz"
             },
             "require": {
                 "php": ">=5.3.0.0"
@@ -343,9 +321,7 @@
             "version": "1.3.8",
             "dist": {
                 "type": "file",
-                "url": "https://pear.php.net/get/XML_Parser-1.3.8.tgz",
-                "reference": null,
-                "shasum": null
+                "url": "https://pear.php.net/get/XML_Parser-1.3.8.tgz"
             },
             "require": {
                 "pear-pear.php.net/pear": "*",
@@ -373,9 +349,7 @@
             "version": "0.21.0",
             "dist": {
                 "type": "file",
-                "url": "https://pear.php.net/get/XML_Serializer-0.21.0.tgz",
-                "reference": null,
-                "shasum": null
+                "url": "https://pear.php.net/get/XML_Serializer-0.21.0.tgz"
             },
             "require": {
                 "ext-xml": "*",
@@ -406,9 +380,7 @@
             "version": "1.4.5",
             "dist": {
                 "type": "file",
-                "url": "https://pear.php.net/get/XML_Util-1.4.5.tgz",
-                "reference": null,
-                "shasum": null
+                "url": "https://pear.php.net/get/XML_Util-1.4.5.tgz"
             },
             "require": {
                 "ext-pcre": "*",
@@ -1301,7 +1273,5 @@
         "ext-mbstring": "*"
     },
     "platform-dev": [],
-    "platform-overrides": {
-        "php": "7.4.11"
-    }
+    "plugin-api-version": "1.1.0"
 }
