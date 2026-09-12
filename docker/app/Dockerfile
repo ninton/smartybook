@@ -28,6 +28,9 @@ COPY --from=composer:1 /usr/bin/composer /usr/local/bin/composer
 # XAMPPのPHPをデフォルトの php コマンドとしてパスを通す
 ENV PATH="/opt/lampp/bin:${PATH}"
 
+# WORKDIR、ENTRYPOINT、CMDの順序がお作法
+WORKDIR /opt/lampp/htdocs
+
 EXPOSE 80 3306
 
 COPY *.sed /root/
