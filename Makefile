@@ -8,10 +8,12 @@ STATE_DIR := .make
 
 # git clone 直後や日常の git pull後に実行してください
 .PHONY: setup
-setup: $(STATE_DIR)/.docker-compose-build $(STATE_DIR)/.composer-installed
+setup: $(STATE_DIR)/.docker-compose-build $(STATE_DIR)/.composer-installed scripts/local/db_init.sql
 	@printf '\n=== Docker コンテナの起動確認 ===\n'
 	docker compose up -d
 	docker compose run --rm app bin/chmod.sh
+	# mariadb:10.4 の dockerイメージの /docker-entrypoint-initdb.d/ の自動実行を使うようにしたら、次の行は不要なので削除してください
+	docker compose exec app composer db:reset
 
 	@printf '\n🎉 セットアップが完了しました！\n'
 
