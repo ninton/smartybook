@@ -12,6 +12,9 @@
             "url": "https://pear.php.net/"
         }
     ],
+    "scripts": {
+       "db:reset": "bash ./scripts/local/db_init.sh"
+    },
     "require": {
         "php": "^7.4.11",
         "ext-json": "*",
@@ -24,8 +27,6 @@
         "pear-pear.php.net/pager": "^2.5"
     },
     "require-dev": {
-    },
-    "scripts": {
     },
     "autoload": {
         "psr-4": {
