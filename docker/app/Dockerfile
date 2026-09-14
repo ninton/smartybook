@@ -15,8 +15,7 @@ RUN dnf -y update && \
       which && \
     dnf clean all
 
-RUN wget --version \
-    && wget https://downloads.sourceforge.net/project/xampp/XAMPP%20Linux/7.4.11/xampp-linux-x64-7.4.11-0-installer.run \
+RUN wget --no-verbose https://downloads.sourceforge.net/project/xampp/XAMPP%20Linux/7.4.11/xampp-linux-x64-7.4.11-0-installer.run \
     && chmod +x xampp-linux-x64-7.4.11-0-installer.run \
     && ./xampp-linux-x64-7.4.11-0-installer.run --version \
     && ./xampp-linux-x64-7.4.11-0-installer.run --enable-components xampp_developer_files --mode unattended
