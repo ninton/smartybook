@@ -63,4 +63,5 @@ make setup
 起動後、以下の URL でアクセスできます。
 
 - アプリ: `http://127.0.0.1:5402`（例: `http://127.0.0.1:5402`）にアクセスしてください。ポート番号は 5402 固定です。
-- 例: phpinfo `http://127.0.0.1:5402/smartybook/chapter2/phpinfo.php`
+  - 例: phpinfo `http://127.0.0.1:5402/smartybook/chapter2/phpinfo.php`
+- phpMyAdmin: `http://127.0.0.1:5402/phpmyadmin/`
