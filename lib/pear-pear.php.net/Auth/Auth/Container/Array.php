@@ -126,7 +126,7 @@ class Auth_Container_Array extends Auth_Container {
      * @param  string Password
      * @return boolean|PEAR_Error Error object or boolean
      */
-    function fetchData($user, $pass)
+    function fetchData($user, $pass, $isChallengeResponse = false)
     {
         $this->log('Auth_Container_Array::fetchData() called.', AUTH_LOG_DEBUG);
         if (   isset($this->users[$user])

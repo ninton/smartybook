@@ -257,7 +257,7 @@ define('XML_UNSERIALIZER_ERROR_NO_UNSERIALIZATION', 151);
  * require_once 'XML/Unserializer.php';
  *
  * //  be careful to always use the ampersand in front of the new operator
- * $unserializer = &new XML_Unserializer();
+ * $unserializer = new XML_Unserializer();
  *
  * $unserializer->unserialize($xml);
  *

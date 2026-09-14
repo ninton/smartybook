@@ -1064,7 +1064,7 @@ class Services_AmazonECS4
     */
     function _sendHttpRequest($url)
     {
-        $http = &new HTTP_Request($url);
+        $http = new HTTP_Request($url);
         $http->setHttpVer('1.0');
         $http->addHeader('User-Agent', 'Services_AmazonECS4/' . $this->getApiVersion());
         if ($this->_proxy_host) {
@@ -1091,7 +1091,7 @@ class Services_AmazonECS4
     */
     function _parseRawResult($raw_result)
     {
-        $xml = &new XML_Unserializer();
+        $xml = new XML_Unserializer();
         $xml->setOption(XML_UNSERIALIZER_OPTION_ATTRIBUTES_PARSE, true);
         $xml->setOption(XML_UNSERIALIZER_OPTION_FORCE_ENUM,
                         array('Item', 'Review', 'EditorialReview',
