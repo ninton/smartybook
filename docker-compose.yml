@@ -4,7 +4,6 @@ services:
     build: docker/app
     ports:
       - 5402:80
-      - 5403:3306
     volumes:
       - .:/opt/lampp/htdocs:cached
       - ./xampp-linux/lampp/logs:/opt/lampp/logs:cached
