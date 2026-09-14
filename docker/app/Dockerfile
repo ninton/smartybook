@@ -15,15 +15,13 @@ RUN dnf -y update && \
       which && \
     dnf clean all
 
-RUN wget --version
-RUN wget https://downloads.sourceforge.net/project/xampp/XAMPP%20Linux/7.4.11/xampp-linux-x64-7.4.11-0-installer.run
-RUN chmod +x xampp-linux-x64-7.4.11-0-installer.run
-RUN ./xampp-linux-x64-7.4.11-0-installer.run --version
-RUN ./xampp-linux-x64-7.4.11-0-installer.run --enable-components xampp_developer_files --mode unattended
+RUN wget --no-verbose https://downloads.sourceforge.net/project/xampp/XAMPP%20Linux/7.4.11/xampp-linux-x64-7.4.11-0-installer.run \
+    && chmod +x xampp-linux-x64-7.4.11-0-installer.run \
+    && ./xampp-linux-x64-7.4.11-0-installer.run --version \
+    && ./xampp-linux-x64-7.4.11-0-installer.run --enable-components xampp_developer_files --mode unattended
 
 # Composer の最新公式イメージからバイナリだけをコピーする
-# PEAR対応のため、暫定で composer 1 を使います
-COPY --from=composer:1 /usr/bin/composer /usr/local/bin/composer
+COPY --from=composer:2.10.3 /usr/bin/composer /usr/local/bin/composer
 
 # XAMPPのPHPをデフォルトの php コマンドとしてパスを通す
 ENV PATH="/opt/lampp/bin:${PATH}"
