@@ -6,12 +6,6 @@
     "config": {
         "vendor-dir": "smartybook/vendor"
     },
-    "repositories": [
-        {
-            "type": "pear",
-            "url": "https://pear.php.net/"
-        }
-    ],
     "scripts": {
        "db:reset": "bash ./scripts/local/db_init.sh"
     },
