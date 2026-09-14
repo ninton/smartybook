@@ -1,6 +1,7 @@
-#!/bin/bash -ux
+#!/usr/bin/env bash
+set -ux
 
-cd smartybook/vendor/pear-pear.php.net
+cd lib/pear-pear.php.net
 
 find . -name "*.php" | xargs -l1 grep --with-filename -e '=\s*&\s*new'
 
