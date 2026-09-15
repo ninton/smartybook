@@ -7,7 +7,7 @@ STATE_DIR := .make
 
 # git clone 直後や日常の git pull後に実行してください
 .PHONY: setup
-setup: $(STATE_DIR)/.docker-compose-build $(STATE_DIR)/.composer-installed scripts/local/db_init.sql
+setup: .env $(STATE_DIR)/.docker-compose-build $(STATE_DIR)/.composer-installed scripts/local/db_init.sql
 	@printf '\n=== Docker コンテナの起動確認 ===\n'
 	docker compose up -d
 	docker compose run --rm app bin/chmod.sh
@@ -20,6 +20,26 @@ setup: $(STATE_DIR)/.docker-compose-build $(STATE_DIR)/.composer-installed scrip
 # ディレクトリが存在しない場合は自動で作成する
 $(STATE_DIR):
 	@mkdir -p $(STATE_DIR)
+
+.env: .env.example
+	@echo "=== .env の差分チェック ==="
+	@if [ ! -f .env ]; then \
+		cp .env.example .env && \
+		echo "Created .env from .env.example"; \
+	else \
+		MISSING=$$(grep -v '^#' .env.example | grep '=' | cut -d'=' -f1 | while read -r key; do \
+			if ! grep -q "^$${key}=" .env; then \
+				echo "  - $${key}"; \
+			fi; \
+		done); \
+		if [ -n "$${MISSING}" ]; then \
+			echo "⚠️  .env.example に新しい変数が追加されています。"; \
+			printf '以下の変数を .env に追加してください:\n\n'; \
+			printf '%s\n\n' "$${MISSING}"; \
+		else \
+			echo "✅ .env は最新です。"; \
+		fi; \
+	fi
 
 # Docker  コンテナのビルド（$(STATE_DIR) ディレクトリ自体の存在も依存関係に加える）
 DOCKER_FILES := $(shell find docker -type f)
