@@ -1,0 +1,11 @@
+ページ名,メソッド,URL,POSTデータ
+# chapter2
+chapter2/02_01,GET,http://localhost/smartybook/chapter2/02_01.php,
+chapter2/02_01_a,GET,http://localhost/smartybook/chapter2/02_01_a.php,
+# chapter2/02_01_b は設定ファイルなのでクロール不要
+chapter2/02_02,GET,http://localhost/smartybook/chapter2/02_02.php,
+chapter2/02_02_a,GET,http://localhost/smartybook/chapter2/02_02_a.php,
+chapter2/02_03,GET,http://localhost/smartybook/chapter2/02_03.php?category=Study,
+chapter2/02_04,GET,http://localhost/smartybook/chapter2/02_04.php,
+chapter2/02_05,POST,http://localhost/smartybook/chapter2/02_05.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
+chapter2/02_06,POST,http://localhost/smartybook/chapter2/02_06.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
