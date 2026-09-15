@@ -1,20 +1,15 @@
 <?php
 
-// phpcs:disable PSR1.Files.SideEffects
+namespace SmartyBook\chapter5_3\plib\tests;
 
-namespace SmartyBook\Tests;
-
-require_once __DIR__ . '/../vendor/autoload.php';
-require_once __DIR__ . '/../vendor/simpletest/simpletest/autorun.php';
-
-use UnitTestCase;
 use Net_UserAgent_Mobile;
+use PHPUnit\Framework\TestCase;
 
-class NetUserAgentMobileTest extends UnitTestCase
+final class NetUserAgentMobileTest extends TestCase
 {
-    private $level;
+    private int $level;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -24,26 +19,22 @@ class NetUserAgentMobileTest extends UnitTestCase
         $this->level = error_reporting(error_reporting() & ~E_STRICT & ~E_DEPRECATED);
     }
 
-    public function tearDown()
+    public function tearDown(): void
     {
-        parent::tearDown();
         error_reporting($this->level);
+
+        parent::tearDown();
     }
 
-    /**
-     * @test
-     *
-     * @SuppressWarnings(PHPMD.StaticAccess)
-     */
-    public function test_1()
+    public function test_1(): void
     {
         $_SERVER['HTTP_USER_AGENT'] = 'DoCoMo/2.0 SO902i(c100;TB;W24H12)';
 
         $agent = Net_UserAgent_Mobile::factory();
         $display = $agent->getDisplay();
 
-        $this->assertEqual('docomo', strtolower($agent->getCarrierLongName()));
-        $this->assertEqual(240, $display->getWidth());
-        $this->assertEqual(256, $display->getHeight());
+        static::assertEquals('docomo', strtolower($agent->getCarrierLongName()));
+        static::assertEquals(240, $display->getWidth());
+        static::assertEquals(256, $display->getHeight());
     }
 }
