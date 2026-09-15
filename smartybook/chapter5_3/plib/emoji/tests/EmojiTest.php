@@ -7,12 +7,22 @@ use PHPUnit\Framework\TestCase;
 
 final class EmojiTest extends TestCase
 {
-    public function test(): void
+    /**
+     * @dataProvider emojiProvider
+     */
+    public function test(Emoji $emoji, string $input, string $expected): void
     {
-        $emoji = Emoji::singleton('i_uni16', 'e_img_num');
-        static::assertEquals('<img localsrc="107" />', $emoji->convert('&#xE63F;'));
+        static::assertEquals($expected, $emoji->convert($input));
+    }
 
-        $emoji = Emoji::singleton('i_uni16', 's_uni16');
-        static::assertEquals('&#xE049;', $emoji->convert('&#xE63F;'));
+    public function emojiProvider(): array
+    {
+        $ezweb = Emoji::singleton('i_uni16', 'e_img_num');
+        $softbank = Emoji::singleton('i_uni16', 's_uni16');
+
+        return [
+            [$ezweb, '&#xE63F;', '<img localsrc="107" />'],
+            [$softbank, '&#xE63F;', '&#xE049;'],
+        ];
     }
 }
