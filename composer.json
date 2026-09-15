@@ -18,7 +18,26 @@
     },
     "require-dev": {
     },
+    "include-path": [
+        "lib/pear-pear.php.net/Archive_Tar",
+        "lib/pear-pear.php.net/Auth",
+        "lib/pear-pear.php.net/Console_Getopt",
+        "lib/pear-pear.php.net/HTTP_Request",
+        "lib/pear-pear.php.net/Net_Socket",
+        "lib/pear-pear.php.net/Net_URL",
+        "lib/pear-pear.php.net/Net_UserAgent_Mobile",
+        "lib/pear-pear.php.net/Pager",
+        "lib/pear-pear.php.net/PEAR",
+        "lib/pear-pear.php.net/Services_Amazon",
+        "lib/pear-pear.php.net/Structures_Graph",
+        "lib/pear-pear.php.net/XML_Parser",
+        "lib/pear-pear.php.net/XML_Serializer",
+        "lib/pear-pear.php.net/XML_Util"
+    ],
     "autoload": {
+        "classmap": [
+            "lib/"
+        ],
         "psr-4": {
             "SmartyBook\\": "smartybook/"
         }
