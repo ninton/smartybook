@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
+<head>
+<title>複数ある項目を並び替える</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="Content-Style-Type" content="text/css; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="./css/styles.css" />
+</head>
+<body>
+<div id="wrapper">
+
+
+
+
+
+
+
+<h1>Smarty for Designers</h1>
+
+<div id="info">
+<form action="/smartybook/chapter4_6/index.php" name="perPage">
+<input type="hidden" name="sort"  value="id" />
+<input type="hidden" name="order" value="desc" />
+全7件中 1件目～5件目 | 
+全2ページ中 1ページ目 | 
+表示件数<select name="setPerPage" onchange='document.forms["perPage"].submit()'><option value="1">1件/ページ</option><option value="2">2件/ページ</option><option value="3">3件/ページ</option><option value="4">4件/ページ</option><option value="5" selected="selected">5件/ページ</option><option value="6">6件/ページ</option><option value="7">7件/ページ</option><option value="8">8件/ページ</option><option value="9">9件/ページ</option><option value="10">10件/ページ</option><option value="11">11件/ページ</option><option value="12">12件/ページ</option><option value="13">13件/ページ</option><option value="14">14件/ページ</option><option value="15">15件/ページ</option><option value="16">16件/ページ</option><option value="17">17件/ページ</option><option value="18">18件/ページ</option><option value="19">19件/ページ</option><option value="20">20件/ページ</option><option value="7">7件/ページ</option></select>
+</form>
+</div>
+
+
+<table border="0" cellspacing="0">
+<tr>
+  <th>ID      <br /><a href="/smartybook/chapter4_6/index.php?sort=id&order=asc&pageID=1" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><img src="images/btn_desc_current.gif" alt="" border="0" /></th>
+  <th>カテゴリ<br /><a href="/smartybook/chapter4_6/index.php?sort=category&order=asc&pageID=1" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort=category&order=desc&pageID=1" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
+  <th>タイトル<br /><a href="/smartybook/chapter4_6/index.php?sort=title&order=asc&pageID=1" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort=title&order=desc&pageID=1" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
+  <th class="comment">コメント<br /><a href="/smartybook/chapter4_6/index.php?sort=comment&order=asc&pageID=1" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort=comment&order=desc&pageID=1" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
+  <th>日付    <br /><a href="/smartybook/chapter4_6/index.php?sort=time&order=asc&pageID=1" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort=time&order=desc&pageID=1" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
+</tr>
+<tr class="tr2_1 ">
+  <td>7</td>
+  <td>Eating</td>
+  <td>今日の昼食</td>
+  <td>東京タワーの見える公園でランチをとりました。青空の下のごはんはおいしい。</td>
+  <td>2008-02-18</td>
+</tr>
+<tr class="tr2_2 ">
+  <td>6</td>
+  <td>Eating</td>
+  <td>今日の朝食</td>
+  <td>今日の朝食はトーストとクロワッサンです。おいしそう。</td>
+  <td>2008-01-15</td>
+</tr>
+<tr class="tr2_1 ">
+  <td>5</td>
+  <td>Work</td>
+  <td>今日の予定</td>
+  <td>手帳を開くと今日も予定が沢山入っていて、忙しい日になりそう。
+きちんとスケジュール管理をせねば。</td>
+  <td>2008-01-15</td>
+</tr>
+<tr class="tr2_2 ">
+  <td>4</td>
+  <td>Work</td>
+  <td>打ち合わせ</td>
+  <td>同僚と案件の打ち合わせを行いました。予想外に複雑な仕様になりそうです。</td>
+  <td>2008-01-15</td>
+</tr>
+<tr class="tr2_1 tr5_5">
+  <td>3</td>
+  <td>Eating</td>
+  <td>今日の昼食</td>
+  <td>東京タワーの見える公園でランチをとりました。青空の下のごはんはおいしい。</td>
+  <td>2008-01-05</td>
+</tr>
+</table>
+
+
+<div id="navi">
+&lt;&lt;先頭へ
+
+&lt;前へ
+
+<select name="pageID" onchange="document.location.href='/smartybook/chapter4_6/index.php?sort=id&amp;order=desc&amp;pageID=' + this.options[this.selectedIndex].value + ''"><option value="1" selected="selected">1</option><option value="2">2</option></select>
+<span>1</span>&nbsp;<a href="/smartybook/chapter4_6/index.php?sort=id&amp;order=desc&amp;pageID=2" title="page 2">2</a>
+
+<a href="/smartybook/chapter4_6/index.php?sort=id&amp;order=desc&amp;pageID=2">次へ&gt;</a>
+
+
+<a href="/smartybook/chapter4_6/index.php?sort=id&amp;order=desc&amp;pageID=2">最後へ&gt;&gt;</a>
+
+1/2ページ
+</div><!-- id="navi" -->
+
+</div><!-- id="wrapper" -->
+</body>
+</html>

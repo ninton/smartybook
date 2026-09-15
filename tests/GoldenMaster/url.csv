@@ -97,3 +97,8 @@ chapter4_4/index,GET,http://localhost/smartybook/chapter4_4/index.php,
 
 # chapter4_5
 chapter4_5/index,GET,http://localhost/smartybook/chapter4_5/index.php,
+
+# chapter4_6
+chapter4_6/index,GET,http://localhost/smartybook/chapter4_6/index.php,
+chapter4_6/index page 2,GET,http://localhost/smartybook/chapter4_6/index.php?sort=id&order=asc&pageID=2,
+chapter4_6/index ID desc,GET,http://localhost/smartybook/chapter4_6/index.php?sort=id&order=desc&pageID=1,
