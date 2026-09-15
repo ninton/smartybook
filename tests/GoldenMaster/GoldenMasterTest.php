@@ -112,7 +112,7 @@ final class GoldenMasterTest extends TestCase
 
     private function sanitizeHtml(string $html): string
     {
-            // 日付と時刻を置換
+        // 日付と時刻を置換
         $html = preg_replace(
             '/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/',
             'YYYY-MM-DD HH:MM:SS',
@@ -125,6 +125,25 @@ final class GoldenMasterTest extends TestCase
             '<input type="hidden" name="date" value="TIMESTAMP">',
             $html
         );
+
+        if (str_contains($html, '時間毎にヘッダーを変える')) {
+            // chapter4_5/index.php 昼画像・夜画像
+            $html = str_replace('title_night.gif', 'title_REPLACED.gif', $html);
+            $html = str_replace('title_day.gif', 'title_REPLACED.gif', $html);
+
+            // chapter4_5/index.php 現在xx時
+            $html = preg_replace('/現在\d{1,2}時/', '現在XX時', $html);
+        }
+
+        if (str_contains($html, 'startDate[Year]')) {
+            // chapter4_7/index.php 年月日時分秒のセレクトボックスの値を置換
+            $html = str_replace(' selected="selected"', '', $html);
+            $html = preg_replace(
+                '/<option value="(\d{4})">(\d{4})<\/option>/',
+                '<option value="YYYY">YYYY</option>',
+                $html
+            );
+        }
 
         return $html;
     }
