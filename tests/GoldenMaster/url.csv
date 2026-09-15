@@ -115,3 +115,6 @@ chapter4_8/page1,GET,http://localhost/smartybook/chapter4_8/page1.php,
 chapter4_8/page2,GET,http://localhost/smartybook/chapter4_8/page2.php,
 chapter4_8/page3,GET,http://localhost/smartybook/chapter4_8/page3.php,
 chapter4_8/page4,GET,http://localhost/smartybook/chapter4_8/page4.php,
+
+# chapter4_9
+chapter4_9/index,GET,http://localhost/smartybook/chapter4_9/index.php,
