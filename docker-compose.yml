@@ -2,8 +2,12 @@ services:
   app:
     tty: true
     build: docker/app
+    # ホスト側ポートは環境変数APP_PORTで指定（未定義の場合は3000）
     ports:
-      - 5402:80
+      - target: 80
+        published: ${APP_PORT:-3000}
+        host_ip: 127.0.0.1
+        protocol: tcp
     volumes:
       - .:/opt/lampp/htdocs:cached
       - ./xampp-linux/lampp/logs:/opt/lampp/logs:cached
