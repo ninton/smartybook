@@ -126,6 +126,16 @@ final class GoldenMasterTest extends TestCase
             $html
         );
 
+        // 年月日時分秒のセレクトボックスの値を置換
+        if (str_contains($html, 'startDate[Year]')) {
+            $html = str_replace(' selected="selected"', '', $html);
+            $html = preg_replace(
+                '/<option value="(\d{4})">(\d{4})<\/option>/',
+                '<option value="YYYY">YYYY</option>',
+                $html
+            );
+        }
+
         return $html;
     }
 }
