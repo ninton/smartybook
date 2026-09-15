@@ -9,3 +9,30 @@ chapter2/02_03,GET,http://localhost/smartybook/chapter2/02_03.php?category=Study
 chapter2/02_04,GET,http://localhost/smartybook/chapter2/02_04.php,
 chapter2/02_05,POST,http://localhost/smartybook/chapter2/02_05.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
 chapter2/02_06,POST,http://localhost/smartybook/chapter2/02_06.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
+
+# chapter3
+chapter3/03_01,GET,http://localhost/smartybook/chapter3/03_01.php,
+chapter3/03_02,GET,http://localhost/smartybook/chapter3/03_02.php,
+chapter3/03_03,GET,http://localhost/smartybook/chapter3/03_03.php,
+chapter3/03_04,GET,http://localhost/smartybook/chapter3/03_04.php,
+chapter3/03_05,GET,http://localhost/smartybook/chapter3/03_05.php,
+chapter3/03_06,GET,http://localhost/smartybook/chapter3/03_06.php,
+chapter3/03_07,GET,http://localhost/smartybook/chapter3/03_07.php,
+chapter3/03_08,GET,http://localhost/smartybook/chapter3/03_08.php,
+chapter3/03_09,GET,http://localhost/smartybook/chapter3/03_09.php,
+# time()を呼んでいるので、テスト除外
+#chapter3/03_10,GET,http://localhost/smartybook/chapter3/03_10.php,
+chapter3/03_11,GET,http://localhost/smartybook/chapter3/03_11.php,
+chapter3/03_12,GET,http://localhost/smartybook/chapter3/03_12.php,
+chapter3/03_13,GET,http://localhost/smartybook/chapter3/03_13.php,
+# mt_rand()を呼んでいるので、テスト除外
+#chapter3/03_14,GET,http://localhost/smartybook/chapter3/03_14.php,
+chapter3/03_15,GET,http://localhost/smartybook/chapter3/03_15.php,
+chapter3/03_16,GET,http://localhost/smartybook/chapter3/03_16.php,
+chapter3/03_17,GET,http://localhost/smartybook/chapter3/03_17.php,
+chapter3/03_18,GET,http://localhost/smartybook/chapter3/03_18.php,
+chapter3/03_19,GET,http://localhost/smartybook/chapter3/03_19.php,
+chapter3/03_20,GET,http://localhost/smartybook/chapter3/03_20.php,
+chapter3/03_21,GET,http://localhost/smartybook/chapter3/03_21.php,
+chapter3/03_22,GET,http://localhost/smartybook/chapter3/03_22.php,
+
