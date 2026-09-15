@@ -8,6 +8,8 @@
 
 # 3. 開発環境固有のファイル
 /.make/
+/tests/GoldenMaster/fixtures/actual/*
+!/tests/GoldenMaster/fixtures/actual/.gitkeep
 /**/templates_c/*.php
 
 # --- [ どこにあっても無視したいもの ] ---
