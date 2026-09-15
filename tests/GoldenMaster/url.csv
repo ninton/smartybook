@@ -63,3 +63,10 @@ chapter4_2_3/contents,GET,http://localhost/smartybook/chapter4_2_3/contents.php?
 chapter4_2_3/admin,GET,http://localhost/smartybook/chapter4_2_3/admin.php,
 chapter4_2_3/confirm,POST,http://localhost/smartybook/chapter4_2_3/confirm.php,title=test-title&contents=test-body&date=1789462161&image=
 chapter4_2_3/complete,POST,http://localhost/smartybook/chapter4_2_3/complete.php,title=test-title&contents=test-body&date=1789462161&image=
+
+# chapter4_2_4
+chapter4_2_4/index,GET,http://localhost/smartybook/chapter4_2_4/index.php,
+chapter4_2_4/contents,GET,http://localhost/smartybook/chapter4_2_4/contents.php?category=Study,
+chapter4_2_4/admin,GET,http://localhost/smartybook/chapter4_2_4/admin.php,
+chapter4_2_4/confirm,POST,http://localhost/smartybook/chapter4_2_4/confirm.php,title=test-title&contents=test-body&date=1789462161&image=
+chapter4_2_4/complete,POST,http://localhost/smartybook/chapter4_2_4/complete.php,title=test-title&contents=test-body&date=1789462161&image=
