@@ -35,3 +35,10 @@ chapter3/03_19,GET,http://localhost/smartybook/chapter3/03_19.php,
 chapter3/03_20,GET,http://localhost/smartybook/chapter3/03_20.php,
 chapter3/03_21,GET,http://localhost/smartybook/chapter3/03_21.php,
 chapter3/03_22,GET,http://localhost/smartybook/chapter3/03_22.php,
+
+# chapter4_1
+chapter4_1/index,GET,http://localhost/smartybook/chapter4_1/index.php,
+chapter4_1/contents,GET,http://localhost/smartybook/chapter4_1/contents.php?category=Study,
+chapter4_1/admin,GET,http://localhost/smartybook/chapter4_1/admin.php,
+chapter4_1/confirm,POST,http://localhost/smartybook/chapter4_1/confirm.php,title=test-title&contents=test-body&date=1789462161&image=
+chapter4_1/complete,POST,http://localhost/smartybook/chapter4_1/complete.php,title=test-title&contents=test-body&date=1789462161&image=
