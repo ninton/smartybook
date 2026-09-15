@@ -12,6 +12,7 @@ setup: $(STATE_DIR)/.docker-compose-build $(STATE_DIR)/.composer-installed scrip
 	docker compose up -d
 	docker compose run --rm app bin/chmod.sh
 	# mariadb:10.4 の dockerイメージの /docker-entrypoint-initdb.d/ の自動実行を使うようにしたら、次の行は不要なので削除してください
+	sleep 5 # MariaDB の起動待ち
 	docker compose exec app composer db:reset
 
 	@printf '\n🎉 セットアップが完了しました！\n'
