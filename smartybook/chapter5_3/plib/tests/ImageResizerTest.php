@@ -7,40 +7,113 @@ use SmartyBook\chapter5_3\plib\ImageResizer;
 
 final class ImageResizerTest extends TestCase
 {
-    public function test_get_scale_type(): void
+    /**
+     * @dataProvider provide_get_scale_type_cases
+     */
+    public function test_get_scale_type(int $width, int $height, int $max_width, int $max_height, int $expected): void
     {
-        // 最大枠より、幅・高さ、どちらも小さい
-        static::assertEquals(0, ImageResizer::get_scale_type(90, 90, 100, 100));
-
-        // 最大枠より、幅だけが大きい
-        static::assertEquals(1, ImageResizer::get_scale_type(200, 100, 100, 100));
-
-        // 最大枠より、高さだけが大きい
-        static::assertEquals(2, ImageResizer::get_scale_type(100, 200, 100, 100));
-
-        // 最大枠より、幅・高さのどちらも大きいが、幅を最大枠に合わせる
-        static::assertEquals(3, ImageResizer::get_scale_type(300, 200, 100, 100));
-
-        // 最大枠より、幅・高さのどちらも大きいが、高さを最大枠に合わせる
-        static::assertEquals(4, ImageResizer::get_scale_type(200, 300, 100, 100));
+        static::assertEquals($expected, ImageResizer::get_scale_type($width, $height, $max_width, $max_height));
     }
 
-    public function test_scale(): void
+    /**
+     * @return array<string, array<string, int>>
+     */
+    public static function provide_get_scale_type_cases(): array
     {
-        // 最大枠より、幅・高さ、どちらも小さい
-        static::assertEquals(array(90, 90), ImageResizer::scale(0, 90, 90, 100, 100));
+        return [
+            '最大枠より、幅・高さ、どちらも小さい' => [
+                'width' => 90,
+                'height' => 90,
+                'max_width' => 100,
+                'max_height' => 100,
+                'expected' => 0,
+            ],
+            '最大枠より、幅だけが大きい' => [
+                'width' => 200,
+                'height' => 100,
+                'max_width' => 100,
+                'max_height' => 100,
+                'expected' => 1,
+            ],
+            '最大枠より、高さだけが大きい' => [
+                'width' => 100,
+                'height' => 200,
+                'max_width' => 100,
+                'max_height' => 100,
+                'expected' => 2,
+            ],
+            '最大枠より、幅・高さのどちらも大きいが、幅を最大枠に合わせる' => [
+                'width' => 300,
+                'height' => 200,
+                'max_width' => 100,
+                'max_height' => 100,
+                'expected' => 3,
+            ],
+            '最大枠より、幅・高さのどちらも大きいが、高さを最大枠に合わせる' => [
+                'width' => 200,
+                'height' => 300,
+                'max_width' => 100,
+                'max_height' => 100,
+                'expected' => 4,
+            ],
+        ];
+    }
 
-        // 最大枠より、幅だけが大きい
-        static::assertEquals(array(100, 50), ImageResizer::scale(1, 200, 100, 100, 100));
+    /**
+     * @dataProvider provide_scale_cases
+     */
+    public function test_scale(int $scale_type, int $width, int $height, int $max_width, int $max_height, array $expected): void
+    {
+        static::assertEquals($expected, ImageResizer::scale($scale_type, $width, $height, $max_width, $max_height));
+    }
 
-        // 最大枠より、高さだけが大きい
-        static::assertEquals(array(50, 100), ImageResizer::scale(2, 100, 200, 100, 100));
-
-        // 最大枠より、幅・高さのどちらも大きいが、幅を最大枠に合わせる
-        static::assertEquals(array(100, 50), ImageResizer::scale(3, 400, 200, 100, 100));
-
-        // 最大枠より、幅・高さのどちらも大きいが、高さを最大枠に合わせる
-        static::assertEquals(array(50, 100), ImageResizer::scale(4, 200, 400, 100, 100));
+    /**
+     * @return array<string, array<string, mixed>>
+     */
+    public static function provide_scale_cases(): array
+    {
+        return [
+            '最大枠より、幅・高さ、どちらも小さい' => [
+                'scale_type' => 0,
+                'width' => 90,
+                'height' => 90,
+                'max_width' => 100,
+                'max_height' => 100,
+                'expected' => [90, 90],
+            ],
+            '最大枠より、幅だけが大きい' => [
+                'scale_type' => 1,
+                'width' => 200,
+                'height' => 100,
+                'max_width' => 100,
+                'max_height' => 100,
+                'expected' => [100, 50],
+            ],
+            '最大枠より、高さだけが大きい' => [
+                'scale_type' => 2,
+                'width' => 100,
+                'height' => 200,
+                'max_width' => 100,
+                'max_height' => 100,
+                'expected' => [50, 100],
+            ],
+            '最大枠より、幅・高さのどちらも大きいが、幅を最大枠に合わせる' => [
+                'scale_type' => 3,
+                'width' => 400,
+                'height' => 200,
+                'max_width' => 100,
+                'max_height' => 100,
+                'expected' => [100, 50],
+            ],
+            '最大枠より、幅・高さのどちらも大きいが、高さを最大枠に合わせる' => [
+                'scale_type' => 4,
+                'width' => 200,
+                'height' => 400,
+                'max_width' => 100,
+                'max_height' => 100,
+                'expected' => [50, 100],
+            ],
+        ];
     }
     
     public function test_image_resize(): void
@@ -57,6 +130,6 @@ final class ImageResizerTest extends TestCase
         static::assertTrue(file_exists($dst));
 
         list($width, $height) = getimagesize($dst);
-        static::assertEquals(array(100, 66), array($width, $height));
+        static::assertEquals([100, 66], [$width, $height]);
     }
 }
