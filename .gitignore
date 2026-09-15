@@ -18,5 +18,6 @@ Thumbs.db
 
 # 各種ツールのキャッシュ・設定
 .php_cs.cache
+.phpunit.result.cache
 
 # テスト・解析レポート
