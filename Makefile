@@ -2,6 +2,10 @@
 composer-install:
 	docker compose run --rm app composer install
 
+.PHONY: php-test
+php-test:
+	docker compose run --rm app composer run-script test
+
 # 📁 setup用の状態管理ファイルの保存先ディレクトリ
 STATE_DIR := .make
 
