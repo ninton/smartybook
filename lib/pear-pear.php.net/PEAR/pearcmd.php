@@ -26,8 +26,8 @@ define('PEAR_IGNORE_BACKTRACE', 1);
  */
 //the space is needed for windows include paths with trailing backslash
 // http://pear.php.net/bugs/bug.php?id=19482
-if ('/opt/lampp/htdocs/vendor/pear-pear.php.net/PEAR ' != '@'.'include_path'.'@ ') {
-    ini_set('include_path', trim('/opt/lampp/htdocs/vendor/pear-pear.php.net/PEAR '). PATH_SEPARATOR .  get_include_path());
+if ('/opt/lampp/htdocs/lib/vendor/pear-pear.php.net/PEAR ' != '@'.'include_path'.'@ ') {
+    ini_set('include_path', trim('/opt/lampp/htdocs/lib/vendor/pear-pear.php.net/PEAR '). PATH_SEPARATOR .  get_include_path());
     $raw = false;
 } else {
     // this is a raw, uninstalled pear, either a cvs checkout, or php distro
