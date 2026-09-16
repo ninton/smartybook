@@ -16,12 +16,12 @@ if test "x$PHP_PEAR_INSTALL_DIR" != "x"; then
   INCDIR=$PHP_PEAR_INSTALL_DIR
   INCARG="-d include_path=$PHP_PEAR_INSTALL_DIR"
 else
-  if test "/opt/lampp/htdocs/smartybook/vendor/pear-pear.php.net/PEAR" = '@'php_dir'@'; then
+  if test "/opt/lampp/htdocs/lib/pear-pear.php.net/PEAR" = '@'php_dir'@'; then
     INCDIR=`dirname $0`
     INCARG=""
   else
-    INCDIR="/opt/lampp/htdocs/smartybook/vendor/pear-pear.php.net/PEAR"
-    INCARG="-d include_path=/opt/lampp/htdocs/smartybook/vendor/pear-pear.php.net/PEAR"
+    INCDIR="/opt/lampp/htdocs/lib/pear-pear.php.net/PEAR"
+    INCARG="-d include_path=/opt/lampp/htdocs/lib/pear-pear.php.net/PEAR"
   fi
 fi
 
