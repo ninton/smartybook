@@ -1,0 +1,15 @@
+parameters:
+    phpVersion: 70400 # PHP 7.4
+    level: 1
+    paths:
+        - lib
+        - smartybook
+        - tests
+    excludePaths:
+        - vendor
+    treatPhpDocTypesAsCertain: false
+includes:
+    - ./phpstan-baseline.neon
+    - ./vendor/phpstan/phpstan-phpunit/rules.neon
+    - ./vendor/phpstan/phpstan-phpunit/extension.neon
+    - ./vendor/phpstan/phpstan-deprecation-rules/rules.neon
