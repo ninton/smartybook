@@ -141,3 +141,7 @@ chapter5_5/login,GET,http://localhost/smartybook/chapter5_5/login.php,
 #chapter5_5/admin,GET,http://localhost/smartybook/chapter5_5/admin.php,
 #chapter5_5/confirm,POST,http://localhost/smartybook/chapter5_5/confirm.php,title=test-title&contents=test-body&date=1789462161&image=
 #chapter5_5/complete,POST,http://localhost/smartybook/chapter5_5/complete.php,title=test-title&contents=test-body&date=1789462161&image=
+
+# chapter5_6
+chapter5_6/admin,GET,http://localhost/smartybook/chapter5_6/admin.php,
+chapter5_6/view,GET,http://localhost/smartybook/chapter5_6/view.php?ListId=1,
