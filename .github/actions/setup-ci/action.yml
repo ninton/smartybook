@@ -13,7 +13,7 @@ runs:
       with:
         php-version: "7.4"
         # extensions: gd, mbstring はすでに有効になっている
-        tools: cs2pr, composer:1.10.28
+        tools: cs2pr, composer:2.10.3
         ini-values: date.timezone=Asia/Tokyo, memory_limit=-1
 
     # ----------------------------------------

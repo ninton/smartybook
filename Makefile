@@ -2,6 +2,10 @@
 composer-install:
 	docker compose run --rm app composer install
 
+.PHONY: composer-require-checker
+composer-require-checker:
+	docker compose run --rm app composer run-script composer-require-checker
+
 .PHONY: php-lint
 php-lint:
 	docker compose run --rm app composer run-script lint
