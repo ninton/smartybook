@@ -4,6 +4,7 @@
     "type": "project",
     "license": "MIT",
     "config": {
+        "sort-packages": true
     },
     "scripts": {
        "db:reset": "bash ./scripts/local/db_init.sh",
