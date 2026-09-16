@@ -150,3 +150,7 @@ chapter5_6/view,GET,http://localhost/smartybook/chapter5_6/view.php?ListId=1,
 chapter5_3/index,GET,http://localhost/smartybook/chapter5_3/index.php,
 chapter5_3/contents,GET,http://localhost/smartybook/chapter5_3/contents.php?category=Study,
 chapter5_3/contents pageID=2,GET,http://localhost/smartybook/chapter5_3/contents.php?category=Study&pageID=2,
+
+# chapter5_2
+# JSを返します
+chapter5_2/photogallary,GET,http://localhost/smartybook/chapter5_2/photogallery.php,
