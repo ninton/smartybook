@@ -1,0 +1,2119 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: smartybook/chapter2/02_02.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter2/02_02.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 3
+			path: smartybook/chapter2/02_02_a.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter2/02_02_a.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter2/02_03.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter2/02_03.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter2/02_03.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter2/02_04.php
+
+		-
+			message: '#^Variable \$imageDir might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: smartybook/chapter2/02_05.php
+
+		-
+			message: '#^Variable \$imageFile might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter2/02_05.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter2/02_05.php
+
+		-
+			message: '#^Call to function is_int\(\) with int\<1, max\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: smartybook/chapter2/02_06.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter2/02_06.php
+
+		-
+			message: '#^Variable \$lastId might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter2/02_06.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter2/02_06.php
+
+		-
+			message: '#^Access to an undefined property BookMark\:\:\$date\.$#'
+			identifier: property.notFound
+			count: 2
+			path: smartybook/chapter3/03_06.php
+
+		-
+			message: '#^Access to an undefined property BookMark\:\:\$title\.$#'
+			identifier: property.notFound
+			count: 1
+			path: smartybook/chapter3/03_06.php
+
+		-
+			message: '#^Access to an undefined property BookMark\:\:\$url\.$#'
+			identifier: property.notFound
+			count: 1
+			path: smartybook/chapter3/03_06.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_1/admin.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_1/admin.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_1/admin.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_1/admin.php
+
+		-
+			message: '#^Call to function is_int\(\) with int\<1, max\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: smartybook/chapter4_1/complete.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_1/complete.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_1/complete.php
+
+		-
+			message: '#^Variable \$lastId might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_1/complete.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_1/complete.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_1/confirm.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_1/confirm.php
+
+		-
+			message: '#^Variable \$imageDir might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: smartybook/chapter4_1/confirm.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_1/confirm.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_1/contents.php
+
+		-
+			message: '#^Variable \$data might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_1/contents.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_1/contents.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_1/contents.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_1/index.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_1/index.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_1/index.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_1/admin.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_1/admin.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_1/admin.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_1/admin.php
+
+		-
+			message: '#^Call to function is_int\(\) with int\<1, max\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: smartybook/chapter4_2_1/complete.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_1/complete.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_1/complete.php
+
+		-
+			message: '#^Variable \$lastId might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_1/complete.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_1/complete.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_1/confirm.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_1/confirm.php
+
+		-
+			message: '#^Variable \$imageDir might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: smartybook/chapter4_2_1/confirm.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_1/confirm.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_1/contents.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_1/contents.php
+
+		-
+			message: '#^Variable \$data might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_1/contents.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_1/contents.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_1/contents.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_1/index.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_1/index.php
+
+		-
+			message: '#^Variable \$data might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_1/index.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_1/index.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_1/index.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_2/admin.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_2/admin.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_2/admin.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_2/admin.php
+
+		-
+			message: '#^Call to function is_int\(\) with int\<1, max\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: smartybook/chapter4_2_2/complete.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_2/complete.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_2/complete.php
+
+		-
+			message: '#^Variable \$lastId might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_2/complete.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_2/complete.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_2/confirm.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_2/confirm.php
+
+		-
+			message: '#^Variable \$imageDir might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: smartybook/chapter4_2_2/confirm.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_2/confirm.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_2/contents.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_2/contents.php
+
+		-
+			message: '#^Variable \$data might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_2/contents.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_2/contents.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_2/contents.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_2/index.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_2/index.php
+
+		-
+			message: '#^Variable \$data might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_2/index.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_2/index.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_2/index.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_3/admin.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_3/admin.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_3/admin.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_3/admin.php
+
+		-
+			message: '#^Call to function is_int\(\) with int\<1, max\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: smartybook/chapter4_2_3/complete.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_3/complete.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_3/complete.php
+
+		-
+			message: '#^Variable \$lastId might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_3/complete.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_3/complete.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_3/confirm.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_3/confirm.php
+
+		-
+			message: '#^Variable \$imageDir might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: smartybook/chapter4_2_3/confirm.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_3/confirm.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_3/contents.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_3/contents.php
+
+		-
+			message: '#^Variable \$data might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_3/contents.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_3/contents.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_3/contents.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_3/index.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_3/index.php
+
+		-
+			message: '#^Variable \$data might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_3/index.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_3/index.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_3/index.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_4/admin.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_4/admin.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_4/admin.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_4/admin.php
+
+		-
+			message: '#^Call to function is_int\(\) with int\<1, max\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: smartybook/chapter4_2_4/complete.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_4/complete.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_4/complete.php
+
+		-
+			message: '#^Variable \$lastId might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_4/complete.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_4/complete.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_4/confirm.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_4/confirm.php
+
+		-
+			message: '#^Variable \$imageDir might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: smartybook/chapter4_2_4/confirm.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_4/confirm.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_4/contents.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_4/contents.php
+
+		-
+			message: '#^Variable \$data might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_4/contents.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_4/contents.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_4/contents.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_4/index.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_4/index.php
+
+		-
+			message: '#^Variable \$data might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_4/index.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_4/index.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_2_4/index.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/admin.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/admin.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/admin.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/admin.php
+
+		-
+			message: '#^Call to function is_int\(\) with int\<1, max\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: smartybook/chapter4_3_1/complete.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/complete.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/complete.php
+
+		-
+			message: '#^Variable \$lastId might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/complete.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/complete.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/confirm.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/confirm.php
+
+		-
+			message: '#^Variable \$imageDir might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: smartybook/chapter4_3_1/confirm.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/confirm.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/contents.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/contents.php
+
+		-
+			message: '#^Variable \$data might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/contents.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/contents.php
+
+		-
+			message: '#^Variable \$notice might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/contents.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/contents.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/index.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/index.php
+
+		-
+			message: '#^Variable \$data might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/index.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/index.php
+
+		-
+			message: '#^Variable \$notice might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/index.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_1/index.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_2/admin.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_2/admin.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_2/admin.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_2/admin.php
+
+		-
+			message: '#^Call to function is_int\(\) with int\<1, max\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: smartybook/chapter4_3_2/complete.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_2/complete.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_2/complete.php
+
+		-
+			message: '#^Variable \$lastId might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_2/complete.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_2/complete.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_2/confirm.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_2/confirm.php
+
+		-
+			message: '#^Variable \$imageDir might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: smartybook/chapter4_3_2/confirm.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_2/confirm.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_2/contents.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_2/contents.php
+
+		-
+			message: '#^Variable \$data might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_2/contents.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_2/contents.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_2/contents.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_2/index.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_2/index.php
+
+		-
+			message: '#^Variable \$data might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_2/index.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_2/index.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_2/index.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_3/admin.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_3/admin.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_3/admin.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_3/admin.php
+
+		-
+			message: '#^Call to function is_int\(\) with int\<1, max\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: smartybook/chapter4_3_3/complete.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_3/complete.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_3/complete.php
+
+		-
+			message: '#^Variable \$lastId might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_3/complete.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_3/complete.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_3/confirm.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_3/confirm.php
+
+		-
+			message: '#^Variable \$imageDir might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: smartybook/chapter4_3_3/confirm.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_3/confirm.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_3/contents.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_3/contents.php
+
+		-
+			message: '#^Variable \$data might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_3/contents.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_3/contents.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_3/contents.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_3/index.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_3/index.php
+
+		-
+			message: '#^Variable \$data might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_3/index.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_3/index.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_3_3/index.php
+
+		-
+			message: '#^Variable \$data might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_4/index.php
+
+		-
+			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.MissingImport\)\)\: Unexpected token "\.MissingImport\)", expected ''\)'' at offset 107 on line 6$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter4_6/CMS.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(array\)\: Unexpected token "\\n     \* ", expected variable at offset 48 on line 3$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter4_6/CMS.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(integer\)\: Unexpected token "\\n     \* ", expected variable at offset 27 on line 2$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter4_6/CMS.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(integer\)\: Unexpected token "\\n     \* ", expected variable at offset 51 on line 3$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter4_6/CMS.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(string\)\: Unexpected token "\\n     \* ", expected variable at offset 26 on line 2$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter4_6/CMS.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(string\)\: Unexpected token "\\n     \* ", expected variable at offset 74 on line 4$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter4_6/CMS.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(string\)\: Unexpected token "\\n     \* ", expected variable at offset 97 on line 5$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter4_6/CMS.php
+
+		-
+			message: '#^Method SmartyBook\\chapter4_6\\SortNavigator\:\:show\(\) should return string but return statement is missing\.$#'
+			identifier: return.missing
+			count: 1
+			path: smartybook/chapter4_6/SortNavigator.php
+
+		-
+			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.ElseExpression\)\)\: Unexpected token "\.ElseExpression\)", expected ''\)'' at offset 110 on line 6$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter4_6/SortNavigator.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(array\)\: Unexpected token "\\n     \* ", expected variable at offset 48 on line 3$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter4_6/SortNavigator.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(string\)\: Unexpected token "\\n     \* ", expected variable at offset 26 on line 2$#'
+			identifier: phpDoc.parseError
+			count: 5
+			path: smartybook/chapter4_6/SortNavigator.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(string\)\: Unexpected token "\\n     \* ", expected variable at offset 49 on line 3$#'
+			identifier: phpDoc.parseError
+			count: 3
+			path: smartybook/chapter4_6/SortNavigator.php
+
+		-
+			message: '#^Variable \$CONFIG might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: smartybook/chapter4_6/index.php
+
+		-
+			message: '#^Function makeTimeStamp\(\) should return array but returns \(int\|false\)\.$#'
+			identifier: return.type
+			count: 1
+			path: smartybook/chapter4_7/funcs.php
+
+		-
+			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.ElseExpression\)\)\: Unexpected token "\.ElseExpression\)", expected ''\)'' at offset 88 on line 6$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter4_7/funcs.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(array\)\: Unexpected token "\\n \* ", expected variable at offset 40 on line 3$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter4_7/funcs.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(string\)\: Unexpected token "\\n \* ", expected variable at offset 22 on line 2$#'
+			identifier: phpDoc.parseError
+			count: 3
+			path: smartybook/chapter4_7/funcs.php
+
+		-
+			message: '#^Access to protected property Smarty\:\:\$plugins_dir\.$#'
+			identifier: property.protected
+			count: 2
+			path: smartybook/chapter4_9/fetch.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_9/fetch.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter4_9/fetch.php
+
+		-
+			message: '#^Access to protected property Smarty\:\:\$plugins_dir\.$#'
+			identifier: property.protected
+			count: 2
+			path: smartybook/chapter4_9/index.php
+
+		-
+			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.ElseExpression\)\)\: Unexpected token "\.ElseExpression\)", expected ''\)'' at offset 358 on line 14$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter4_9/modifier.mb_truncate.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(integer\)\: Unexpected token "\\n \* ", expected variable at offset 293 on line 10$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter4_9/modifier.mb_truncate.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(string\)\: Unexpected token "\\n \* ", expected variable at offset 275 on line 9$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter4_9/modifier.mb_truncate.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(string\)\: Unexpected token "\\n \* ", expected variable at offset 310 on line 11$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter4_9/modifier.mb_truncate.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/admin.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/admin.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/admin.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/admin.php
+
+		-
+			message: '#^Call to function is_int\(\) with int\<1, max\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: smartybook/chapter5_1/complete.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/complete.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/complete.php
+
+		-
+			message: '#^Variable \$lastId might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/complete.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/complete.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/confirm.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/confirm.php
+
+		-
+			message: '#^Variable \$imageDir might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: smartybook/chapter5_1/confirm.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/confirm.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/contents.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/contents.php
+
+		-
+			message: '#^Variable \$data might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/contents.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/contents.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/contents.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/index.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/index.php
+
+		-
+			message: '#^Variable \$data might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/index.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/index.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/index.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/xml.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/xml.php
+
+		-
+			message: '#^Variable \$data might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/xml.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/xml.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_1/xml.php
+
+		-
+			message: '#^PHPDoc tag @var has invalid value \(\$CFG init\.phpで設定\)\: Unexpected token "\$CFG", expected type at offset 12 on line 2$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_3/contents.php
+
+		-
+			message: '#^PHPDoc tag @var has invalid value \(\$display ketai_init,phpで設定\)\: Unexpected token "\$display", expected type at offset 43 on line 3$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_3/contents.php
+
+		-
+			message: '#^Variable \$CFG might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_3/contents.php
+
+		-
+			message: '#^Variable \$display might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: smartybook/chapter5_3/contents.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_3/contents.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_3/contents.php
+
+		-
+			message: '#^PHPDoc tag @var has invalid value \(\$categories\)\: Unexpected token "\$categories", expected type at offset 64 on line 5$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_3/index.php
+
+		-
+			message: '#^PHPDoc tag @var has invalid value \(\$home\)\: Unexpected token "\$home", expected type at offset 50 on line 4$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_3/index.php
+
+		-
+			message: '#^PHPDoc tag @var has invalid value \(\$siteName\)\: Unexpected token "\$siteName", expected type at offset 32 on line 3$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_3/index.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_3/index.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_3/index.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_3/index.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_3/ini.php
+
+		-
+			message: '#^Static call to instance method Net_UserAgent_Mobile\:\:factory\(\)\.$#'
+			identifier: method.staticCall
+			count: 1
+			path: smartybook/chapter5_3/ketai_ini.php
+
+		-
+			message: '#^Static call to instance method SmartyBook\\chapter5_3\\plib\\emoji\\Emoji\:\:output_setting\(\)\.$#'
+			identifier: method.staticCall
+			count: 2
+			path: smartybook/chapter5_3/ketai_ini.php
+
+		-
+			message: '#^Call to an undefined method SmartyBook\\chapter5_3\\plib\\emoji\\Emoji\:\:convert_variables\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: smartybook/chapter5_3/plib/emoji/Emoji.php
+
+		-
+			message: '#^If condition is always false\.$#'
+			identifier: if.alwaysFalse
+			count: 2
+			path: smartybook/chapter5_3/plib/emoji/Emoji.php
+
+		-
+			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.ElseExpression\)\)\: Unexpected token "\.ElseExpression\)", expected ''\)'' at offset 111 on line 5$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_3/plib/emoji/Emoji.php
+
+		-
+			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.ElseExpression\)\)\: Unexpected token "\.ElseExpression\)", expected ''\)'' at offset 64 on line 4$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_3/plib/emoji/Emoji.php
+
+		-
+			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.ShortVariable\)\)\: Unexpected token "\.ShortVariable\)", expected ''\)'' at offset 112 on line 6$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_3/plib/emoji/Emoji.php
+
+		-
+			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.ShortVariable\)\)\: Unexpected token "\.ShortVariable\)", expected ''\)'' at offset 34 on line 2$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_3/plib/emoji/Emoji.php
+
+		-
+			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.StaticAccess\)\)\: Unexpected token "\.StaticAccess\)", expected ''\)'' at offset 100 on line 6$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_3/plib/emoji/Emoji.php
+
+		-
+			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.StaticAccess\)\)\: Unexpected token "\.StaticAccess\)", expected ''\)'' at offset 115 on line 7$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_3/plib/emoji/Emoji.php
+
+		-
+			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.Superglobals\)\)\: Unexpected token "\.Superglobals\)", expected ''\)'' at offset 98 on line 5$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_3/plib/emoji/Emoji.php
+
+		-
+			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.TooManyPublicMethods\)\)\: Unexpected token "\.TooManyPublicMethods\)", expected ''\)'' at offset 48 on line 4$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_3/plib/emoji/Emoji.php
+
+		-
+			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.UndefinedVariable\)\)\: Unexpected token "\.UndefinedVariable\)", expected ''\)'' at offset 132 on line 6$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_3/plib/emoji/Emoji.php
+
+		-
+			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.UnusedFormalParameter\)\)\: Unexpected token "\.UnusedFormalParameter\)", expected ''\)'' at offset 248 on line 7$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_3/plib/funcs.php
+
+		-
+			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.StaticAccess\)\)\: Unexpected token "\.StaticAccess\)", expected ''\)'' at offset 98 on line 5$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_3/plib/imgsizecvt_funcs.php
+
+		-
+			message: '#^Static call to instance method Net_UserAgent_Mobile\:\:factory\(\)\.$#'
+			identifier: method.staticCall
+			count: 1
+			path: smartybook/chapter5_3/plib/tests/NetUserAgentMobileTest.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_4/admin.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_4/admin.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_4/admin.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_4/admin.php
+
+		-
+			message: '#^Call to function is_int\(\) with int\<1, max\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: smartybook/chapter5_4/complete.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_4/complete.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_4/complete.php
+
+		-
+			message: '#^Variable \$lastId might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_4/complete.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_4/complete.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_4/confirm.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_4/confirm.php
+
+		-
+			message: '#^Variable \$imageDir might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: smartybook/chapter5_4/confirm.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_4/confirm.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_4/contents.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_4/contents.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_4/contents.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_4/contents.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_4/index.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_4/index.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_4/index.php
+
+		-
+			message: '#^Variable \$siteDescription might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_4/index.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_4/index.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/admin.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/admin.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/admin.php
+
+		-
+			message: '#^Variable \$oAuth might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: smartybook/chapter5_5/admin.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/admin.php
+
+		-
+			message: '#^Call to function is_int\(\) with int\<1, max\> will always evaluate to true\.$#'
+			identifier: function.alreadyNarrowedType
+			count: 1
+			path: smartybook/chapter5_5/complete.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/complete.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/complete.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/complete.php
+
+		-
+			message: '#^Variable \$lastId might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/complete.php
+
+		-
+			message: '#^Variable \$oAuth might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: smartybook/chapter5_5/complete.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/complete.php
+
+		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/confirm.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/confirm.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/confirm.php
+
+		-
+			message: '#^Variable \$imageDir might not be defined\.$#'
+			identifier: variable.undefined
+			count: 4
+			path: smartybook/chapter5_5/confirm.php
+
+		-
+			message: '#^Variable \$oAuth might not be defined\.$#'
+			identifier: variable.undefined
+			count: 2
+			path: smartybook/chapter5_5/confirm.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/confirm.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/contents.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/contents.php
+
+		-
+			message: '#^Variable \$data might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/contents.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/contents.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/contents.php
+
+		-
+			message: '#^Variable \$categories might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/index.php
+
+		-
+			message: '#^Variable \$csv might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/index.php
+
+		-
+			message: '#^Variable \$data might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/index.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/index.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/index.php
+
+		-
+			message: '#^Access to protected property Smarty\:\:\$plugins_dir\.$#'
+			identifier: property.protected
+			count: 2
+			path: smartybook/chapter5_5/login.php
+
+		-
+			message: '#^Variable \$home might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/login.php
+
+		-
+			message: '#^Variable \$siteName might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/login.php
+
+		-
+			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.UnusedFormalParameter\)\)\: Unexpected token "\.UnusedFormalParameter\)", expected ''\)'' at offset 87 on line 6$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_5/plugins/function.login_form.php
+
+		-
+			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.ElseExpression\)\)\: Unexpected token "\.ElseExpression\)", expected ''\)'' at offset 63 on line 4$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_6/_read/classes/App.php
+
+		-
+			message: '#^Cannot access property \$message on array\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: smartybook/chapter5_6/_read/classes/AppAmazon.php
+
+		-
+			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.StaticAccess\)\)\: Unexpected token "\.StaticAccess\)", expected ''\)'' at offset 146 on line 7$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_6/_read/classes/AppAmazon.php
+
+		-
+			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.UnusedFormalParameter\)\)\: Unexpected token "\.UnusedFormalParameter\)", expected ''\)'' at offset 132 on line 7$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_6/_read/classes/AppAmazon.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(array\)\: Unexpected token "\\n     \* ", expected variable at offset 70 on line 4$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_6/_read/classes/AppAmazon.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(assoc\)\: Unexpected token "\\n     \* ", expected variable at offset 48 on line 3$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_6/_read/classes/AppAmazon.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(string\)\: Unexpected token "\\n     \* ", expected variable at offset 26 on line 2$#'
+			identifier: phpDoc.parseError
+			count: 2
+			path: smartybook/chapter5_6/_read/classes/AppAmazon.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(string\)\: Unexpected token "\\n     \* ", expected variable at offset 49 on line 3$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_6/_read/classes/AppAmazon.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(string\)\: Unexpected token "\\n     \* ", expected variable at offset 72 on line 4$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_6/_read/classes/AppAmazon.php
+
+		-
+			message: '#^Variable \$CFG might not be defined\.$#'
+			identifier: variable.undefined
+			count: 15
+			path: smartybook/chapter5_6/admin.php
+
+		-
+			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.ElseExpression\)\)\: Unexpected token "\.ElseExpression\)", expected ''\)'' at offset 358 on line 14$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_6/modifier.mb_truncate.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(integer\)\: Unexpected token "\\n \* ", expected variable at offset 293 on line 10$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_6/modifier.mb_truncate.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(string\)\: Unexpected token "\\n \* ", expected variable at offset 275 on line 9$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_6/modifier.mb_truncate.php
+
+		-
+			message: '#^PHPDoc tag @param has invalid value \(string\)\: Unexpected token "\\n \* ", expected variable at offset 310 on line 11$#'
+			identifier: phpDoc.parseError
+			count: 1
+			path: smartybook/chapter5_6/modifier.mb_truncate.php
+
+		-
+			message: '#^Variable \$CFG might not be defined\.$#'
+			identifier: variable.undefined
+			count: 6
+			path: smartybook/chapter5_6/view.php

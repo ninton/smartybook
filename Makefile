@@ -2,6 +2,23 @@
 composer-install:
 	docker compose run --rm app composer install
 
+.PHONY: php-lint
+php-lint:
+	docker compose run --rm app composer run-script lint
+
+.PHONY: php-lint-baseline
+php-lint-baseline:
+# @note phpstan-baseline.neon は手作業で編集することがあるので、自分の権限でファイル作成します
+	docker compose run --rm -u $$(id -u):$$(id -g) app composer run-script lint:baseline
+
+.PHONY: php-lint-fix
+php-lint-fix:
+	docker compose run --rm app composer run-script lint:fix
+
+.PHONY: php-lint-fresh
+php-lint-fresh:
+	docker compose run --rm app composer run-script lint:fresh
+
 .PHONY: php-test
 php-test:
 	docker compose run --rm app composer run-script test
