@@ -126,6 +126,13 @@ final class GoldenMasterTest extends TestCase
             $html
         );
 
+        // 7259日前にブックマーク
+        $html = preg_replace(
+            '/\d+日前にブックマーク/',
+            'XXXX日前にブックマーク',
+            $html
+        );
+
         if (str_contains($html, '時間毎にヘッダーを変える')) {
             // chapter4_5/index.php 昼画像・夜画像
             $html = str_replace('title_night.gif', 'title_REPLACED.gif', $html);
