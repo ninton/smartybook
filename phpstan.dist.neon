@@ -1,11 +1,12 @@
 parameters:
     phpVersion: 70400 # PHP 7.4
-    level: 1
+    level: 4
     paths:
-        - lib
         - smartybook
         - tests
     excludePaths:
+        - */templates_c/*.php
+        - lib
         - vendor
     treatPhpDocTypesAsCertain: false
 includes:
