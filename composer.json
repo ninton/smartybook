@@ -22,8 +22,8 @@
     },
     "require": {
         "php": "^7.4.11",
+        "ext-pdo": "*",
         "ext-json": "*",
-        "ext-PDO": "*",
         "ext-mbstring": "*",
         "smarty/smarty": "v3.1.36",
         "symfony/polyfill-php80": "^1.37"
