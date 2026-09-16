@@ -4,6 +4,7 @@
     "type": "project",
     "license": "MIT",
     "config": {
+        "sort-packages": true
     },
     "scripts": {
        "db:reset": "bash ./scripts/local/db_init.sh",
@@ -21,9 +22,14 @@
     },
     "require": {
         "php": "^7.4.11",
+        "ext-dom": "*",
+        "ext-gd": "*",
         "ext-json": "*",
-        "ext-PDO": "*",
         "ext-mbstring": "*",
+        "ext-pdo": "*",
+        "ext-session": "*",
+        "ext-tokenizer": "*",
+        "ext-xml": "*",
         "smarty/smarty": "v3.1.36",
         "symfony/polyfill-php80": "^1.37"
     },
