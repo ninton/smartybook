@@ -132,3 +132,12 @@ chapter5_4/contents,GET,http://localhost/smartybook/chapter5_4/contents.php?cate
 chapter5_4/admin,GET,http://localhost/smartybook/chapter5_4/admin.php,
 chapter5_4/confirm,POST,http://localhost/smartybook/chapter5_4/confirm.php,title=test-title&contents=test-body&date=1789462161&image=
 chapter5_4/complete,POST,http://localhost/smartybook/chapter5_4/complete.php,title=test-title&contents=test-body&date=1789462161&image=
+
+# chapter5_5
+chapter5_5/index,GET,http://localhost/smartybook/chapter5_5/index.php,
+chapter5_5/contents,GET,http://localhost/smartybook/chapter5_5/contents.php?category=Study,
+chapter5_5/login,GET,http://localhost/smartybook/chapter5_5/login.php,
+# 以下はクッキーが必要なので、テスト除外
+#chapter5_5/admin,GET,http://localhost/smartybook/chapter5_5/admin.php,
+#chapter5_5/confirm,POST,http://localhost/smartybook/chapter5_5/confirm.php,title=test-title&contents=test-body&date=1789462161&image=
+#chapter5_5/complete,POST,http://localhost/smartybook/chapter5_5/complete.php,title=test-title&contents=test-body&date=1789462161&image=
