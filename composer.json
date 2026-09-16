@@ -16,7 +16,8 @@
        "test:golden-master-update": [
           "@db:reset",
             "SHOULD_UPDATE_GOLDEN_MASTER=1 ./vendor/bin/phpunit --colors=always tests/GoldenMaster"
-        ]
+        ],
+        "composer-require-checker": "composer-require-checker check composer.json"
     },
     "require": {
         "php": "^7.4.11",
