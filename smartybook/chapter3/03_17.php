@@ -1,6 +1,6 @@
 <?php
 
-require_once("../vendor/autoload.php");
+require_once("../../vendor/autoload.php");
 $smarty = new Smarty();
 $person = array(
     array("name" => "国枝", "height" => "156"),

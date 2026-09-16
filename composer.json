@@ -4,15 +4,14 @@
     "type": "project",
     "license": "MIT",
     "config": {
-        "vendor-dir": "smartybook/vendor"
     },
     "scripts": {
        "db:reset": "bash ./scripts/local/db_init.sh",
-       "test": "smartybook/vendor/bin/phpunit --colors=always",
-       "test:golden-master": ["@db:reset", "./smartybook/vendor/bin/phpunit --colors=always tests/GoldenMaster"],
+       "test": "vendor/bin/phpunit --colors=always",
+       "test:golden-master": ["@db:reset", "./vendor/bin/phpunit --colors=always tests/GoldenMaster"],
        "test:golden-master-update": [
           "@db:reset",
-            "SHOULD_UPDATE_GOLDEN_MASTER=1 ./smartybook/vendor/bin/phpunit --colors=always tests/GoldenMaster"
+            "SHOULD_UPDATE_GOLDEN_MASTER=1 ./vendor/bin/phpunit --colors=always tests/GoldenMaster"
         ]
     },
     "require": {

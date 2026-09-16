@@ -1,8 +1,8 @@
 <phpunit
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:noNamespaceSchemaLocation="smartybook/vendor/phpunit/phpunit/phpunit.xsd"
+  xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
   backupGlobals="false"
-  bootstrap="smartybook/vendor/autoload.php"
+  bootstrap="vendor/autoload.php"
   colors="true"
   processIsolation="false"
   stopOnFailure="false"

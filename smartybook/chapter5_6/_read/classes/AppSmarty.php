@@ -15,7 +15,7 @@ class AppSmarty extends Smarty
         $this->setCompileDir(dirname(__FILE__) . '/../../_temp/templates_c');
         $this->setCacheDir(dirname(__FILE__) . '/../../_temp/cahce');
 
-        $this->addPluginsDir(__DIR__ . '/../../../vendor/smarty/smarty/libs/plugins');
+        $this->addPluginsDir(__DIR__ . '/../../../../vendor/smarty/smarty/libs/plugins');
         $this->addPluginsDir(dirname(__FILE__) . '/../..');
     }
 }
