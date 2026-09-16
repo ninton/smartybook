@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ce47019dae71d58a07beae15a191d8af",
+    "content-hash": "5101aafa2afc2a7b97a3c73864c9857f",
     "packages": [
         {
             "name": "smarty/smarty",
@@ -3090,9 +3090,13 @@
     "platform": {
         "php": "^7.4.11",
         "ext-dom": "*",
+        "ext-gd": "*",
         "ext-json": "*",
         "ext-mbstring": "*",
-        "ext-pdo": "*"
+        "ext-pdo": "*",
+        "ext-session": "*",
+        "ext-tokenizer": "*",
+        "ext-xml": "*"
     },
     "platform-dev": {},
     "plugin-api-version": "2.9.0"
