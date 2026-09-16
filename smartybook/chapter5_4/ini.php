@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 
 // ウェブサイト名
 $siteName = "Smarty for Designers";
