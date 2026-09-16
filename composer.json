@@ -7,6 +7,10 @@
     },
     "scripts": {
        "db:reset": "bash ./scripts/local/db_init.sh",
+       "lint": "phpstan analyse --configuration=phpstan.dist.neon --memory-limit=-1",
+       "lint:baseline": "phpstan analyse --configuration=phpstan.dist.neon --memory-limit=-1 --generate-baseline=phpstan-baseline.neon  --allow-empty-baseline",
+       "lint:fix": "phpstan analyse --configuration=phpstan.dist.neon --memory-limit=-1 --fix",
+       "lint:fresh": "phpstan clear-result-cache && phpstan analyse --configuration phpstan.dist.neon --memory-limit 1G",
        "test": "vendor/bin/phpunit --colors=always",
        "test:golden-master": ["@db:reset", "./vendor/bin/phpunit --colors=always tests/GoldenMaster"],
        "test:golden-master-update": [
