@@ -61,3 +61,11 @@ runs:
       shell: bash
       if: ${{ steps.paths_filter.outputs.php == 'true' }}
       run: php -l ${{ steps.paths_filter.outputs.php_files }}
+
+    # ========================================
+    # PHP 解析系
+    # ========================================
+    - name: phpstan
+      shell: bash
+      run: |
+        composer run-script lint
