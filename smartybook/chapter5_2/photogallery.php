@@ -11,9 +11,9 @@ use Smarty\Smarty;
 require_once("../../vendor/autoload.php");
 // Smartyオブジェクトの作成
 $smarty = new Smarty();
-// デリミタタグの変更
-$smarty->left_delimiter  = "{{";
-$smarty->right_delimiter = "}}";
+// デリミタタグの変更: Smarty 5 からメソッドで設定するようになった
+$smarty->setLeftDelimiter("{{");
+$smarty->setRightDelimiter("}}");
 
 // 画像ファイルパスを取得（配列）
 $images = glob("$imgDir*.{jpg,png,gif}", GLOB_BRACE);
