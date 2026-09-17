@@ -1,4 +1,4 @@
-FROM php:7.4.33-apache-bullseye
+FROM php:8.0.30-apache-bullseye
 
 # sources.list.d 配下を削除し、archive.debian.org の main のみに絞り込む
 RUN rm -rf /etc/apt/sources.list.d/* \
