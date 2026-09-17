@@ -1291,18 +1291,6 @@ parameters:
 			path: smartybook/chapter4_6/index.php
 
 		-
-			message: '#^Function makeTimeStamp\(\) should return array but returns \(int\|false\)\.$#'
-			identifier: return.type
-			count: 1
-			path: smartybook/chapter4_7/funcs.php
-
-		-
-			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.ElseExpression\)\)\: Unexpected token "\.ElseExpression\)", expected ''\)'' at offset 88 on line 6$#'
-			identifier: phpDoc.parseError
-			count: 1
-			path: smartybook/chapter4_7/funcs.php
-
-		-
 			message: '#^PHPDoc tag @param has invalid value \(array\)\: Unexpected token "\\n \* ", expected variable at offset 40 on line 3$#'
 			identifier: phpDoc.parseError
 			count: 1
