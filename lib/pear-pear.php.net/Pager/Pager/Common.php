@@ -469,6 +469,10 @@ class Pager_Common
      */
     var $linkTagsRaw = array();
 
+    private array $_pageData = [];
+
+    public string $_url = '';
+
     /**
      * @var array Array with a key => value pair representing
      *            page# => bool value (true if key==currentPageNumber).

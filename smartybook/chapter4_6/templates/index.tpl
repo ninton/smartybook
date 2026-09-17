@@ -21,7 +21,7 @@
 <form action="{$smarty.server.SCRIPT_NAME}" name="perPage">
 <input type="hidden" name="sort"  value="{$smarty.request.sort}" />
 <input type="hidden" name="order" value="{$smarty.request.order}" />
-全{$Pager->numItems()}件中 {$Pager->ExOffsetFrom}件目～{$Pager->ExOffsetTo}件目 | 
+全{$Pager->numItems()}件中 {$PagerDto->ExOffsetFrom}件目～{$PagerDto->ExOffsetTo}件目 | 
 全{$Pager->numPages()}ページ中 {$Pager->getCurrentPageID()}ページ目 | 
 表示件数{$Pager->getPerPageSelectBox(1, 20, 1, true, $perpage_params)}
 </form>
@@ -54,29 +54,29 @@
 
 <div id="navi">
 {if not $Pager->isFirstPage()}
-<a href="{$Pager->ExFirstPageLink}">&lt;&lt;先頭へ</a>
+<a href="{$PagerDto->ExFirstPageLink}">&lt;&lt;先頭へ</a>
 {else}
 &lt;&lt;先頭へ
 {/if}
 
 {if $Pager->getPreviousPageID()}
-<a href="{$Pager->ExPreviousPageLink}">&lt;前へ</a>
+<a href="{$PagerDto->ExPreviousPageLink}">&lt;前へ</a>
 {else}
 &lt;前へ
 {/if}
 
 {$Pager->getPageSelectBox($popup_params)}
-{$Pager->ExLinks}
+{$PagerDto->ExLinks}
 
 {if $Pager->getNextPageID()}
-<a href="{$Pager->ExNextPageLink}">次へ&gt;</a>
+<a href="{$PagerDto->ExNextPageLink}">次へ&gt;</a>
 {else}
 次へ&gt;
 {/if}
 
 
 {if not $Pager->isLastPage()}
-<a href="{$Pager->ExLastPageLink}">最後へ&gt;&gt;</a>
+<a href="{$PagerDto->ExLastPageLink}">最後へ&gt;&gt;</a>
 {else}
 最後へ&gt;&gt;
 {/if}
