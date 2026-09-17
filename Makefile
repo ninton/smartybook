@@ -42,7 +42,7 @@ STATE_DIR := .make
 
 # git clone 直後や日常の git pull後に実行してください
 .PHONY: setup
-setup: .env $(STATE_DIR)/.docker-compose-build $(STATE_DIR)/.composer-installed scripts/local/db_init.sql
+setup: .env $(STATE_DIR)/.docker-compose-build $(STATE_DIR)/.composer-installed
 	@printf '\n=== Docker コンテナの起動確認 ===\n'
 	docker compose up -d
 	docker compose run --rm app bin/chmod.sh
