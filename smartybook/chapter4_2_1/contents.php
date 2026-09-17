@@ -9,7 +9,7 @@ $smarty->assign("categories", $categories);
 // CSVデータを配列に格納
 $fp = fopen($csv, "r");
 $i = 0;
-while ($array = fgetcsv($fp, 5000, ",")) {
+while ($array = fgetcsv($fp, 5000, ",", escape: '')) {
     if ($_GET["category"] == $array[1]) {
         $data[$i]["id"]       = $array[0];
         $data[$i]["category"] = $array[1];

@@ -12,7 +12,7 @@ $smarty->assign("categories", $categories);
 $data = [];
 $fp = fopen($csv, "r");
 $i = 0;
-while ($array = fgetcsv($fp, 5000, ",")) {
+while ($array = fgetcsv($fp, 5000, ",", escape: '')) {
     if ($array[1] == "Notice") {
         $notice = $array[3];
         $smarty->assign("notice", $notice);

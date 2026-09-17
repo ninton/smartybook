@@ -18,7 +18,7 @@ if (!$smarty->isCached('index.tpl')) {
     $i = 0;
     $p = 0;
 
-    while ($array = fgetcsv($fp, 5000, ",")) {
+    while ($array = fgetcsv($fp, 5000, ",", escape: '')) {
         if ($array[1] == "Picture") {
             $picture[$p]["id"]       = $array[0];
             $picture[$p]["category"] = $array[1];

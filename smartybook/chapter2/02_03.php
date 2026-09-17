@@ -18,7 +18,7 @@ print '<h1>カテゴリ：' . $_GET['category'] . '</h1>';
 print '<hr />';
 
 // CSVデータの詳細を表示
-while ($arr = fgetcsv($fp, 5000, ',')) {
+while ($arr = fgetcsv($fp, 5000, ',', escape: '')) {
     if ($_GET['category'] == $arr[1]) {
         print '記事ID：' . $arr[0] . '<br />';
         print '<h2>' . $arr[2] . '</h2>';
