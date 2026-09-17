@@ -4,6 +4,13 @@
     "type": "project",
     "license": "MIT",
     "config": {
+        "policy": {
+            "advisories": {
+                "ignore": [
+                    "smarty/smarty"
+                ]
+            }
+        },
         "sort-packages": true
     },
     "scripts": {
@@ -30,7 +37,7 @@
         "ext-session": "*",
         "ext-tokenizer": "*",
         "ext-xml": "*",
-        "smarty/smarty": "v3.1.36",
+        "smarty/smarty": "^v3.1.48",
         "symfony/polyfill-php80": "^1.37"
     },
     "require-dev": {
