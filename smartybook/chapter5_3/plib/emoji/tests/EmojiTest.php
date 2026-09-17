@@ -15,7 +15,7 @@ final class EmojiTest extends TestCase
         static::assertEquals($expected, $emoji->convert($input));
     }
 
-    public function emojiProvider(): array
+    public static function emojiProvider(): array
     {
         $ezweb = Emoji::singleton('i_uni16', 'e_img_num');
         $softbank = Emoji::singleton('i_uni16', 's_uni16');
