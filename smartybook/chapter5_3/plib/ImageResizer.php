@@ -38,9 +38,6 @@ class ImageResizer
         $retcode = imagecopyresized($dst_im, $src_im, 0, 0, 0, 0, $dstW, $dstH, $srcW, $srcH);
         imagejpeg($dst_im, $i_dst_path, $i_quality);
 
-        imagedestroy($dst_im);
-        imagedestroy($src_im);
-
         return $retcode;
     }
 

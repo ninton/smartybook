@@ -1,4 +1,4 @@
-FROM php:8.4.25-apache-trixie
+FROM php:8.5.10-apache-trixie
 
 # PHP Core Extensions
 # @see https://hub.docker.com/_/php
