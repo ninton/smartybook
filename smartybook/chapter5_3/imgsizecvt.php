@@ -1,5 +1,7 @@
 <?php
 
+use Smarty\Smarty;
+
 require_once('./ini.php');
 require_once __DIR__  . '/plib/imgsizecvt_funcs.php';
 

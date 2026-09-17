@@ -4,6 +4,8 @@
 
 header("Content-Type: application/xml; charset=UTF-8");
 require_once("ini.php");
+use Smarty\Smarty;
+
 require_once("../../vendor/autoload.php");
 $smarty = new Smarty();
 $smarty->assign("siteName", $siteName);
