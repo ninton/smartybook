@@ -145,6 +145,12 @@ final class GoldenMasterTest extends TestCase
             $html
         );
 
+        $html = preg_replace(
+            '/Smartyのバージョン：\d+\.\d+\.\d+/',
+            'Smartyのバージョン：4.5.7',
+            $html
+        );
+
         if (str_contains($html, '時間毎にヘッダーを変える')) {
             // chapter4_5/index.php 昼画像・夜画像
             $html = str_replace('title_night.gif', 'title_REPLACED.gif', $html);
