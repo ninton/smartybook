@@ -1,44 +1,60 @@
-FROM almalinux:8.10
+FROM php:7.4.11-apache-buster
 
-# TimeZoneの設定
-RUN echo 'ZONE="Asia/Tokyo"' > /etc/sysconfig/clock
+# EOLとなったDebian Busterのリポジトリを archive.debian.org へ切り替え
+RUN sed -i -e 's/deb.debian.org/archive.debian.org/g' \
+           -e 's/security.debian.org\/debian-security/archive.debian.org\/debian-security/g' \
+           -e '/buster-updates/d' /etc/apt/sources.list
 
-# XAMPPの動作用依存パッケージ
-RUN dnf -y update && \
-    dnf -y install \
-      net-tools \
-      git \
-      glibc \
-      libnsl \
-      tar \
-      wget \
-      which && \
-    dnf clean all
+# PHP Core Extensions
+# @see https://hub.docker.com/_/php
+# mbstring はデフォルトでインストール済み
+# pdo はデフォルトでインストール済み
+# dom はデフォルトでインストール済み
+# xml はデフォルトでインストール済み
+RUN set -x \
+    # TimeZoneの設定 \
+    && ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends \
+        # gd関数で必要 \
+        libfreetype6-dev \
+        libjpeg62-turbo-dev \
+        libpng-dev \
+        libzip-dev \
+        # intl xml関数で必要 \
+        libxml2-dev \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install -j"$(nproc)" \
+        gd \
+        mysqli \
+        pdo_mysql \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN wget --no-verbose https://downloads.sourceforge.net/project/xampp/XAMPP%20Linux/7.4.11/xampp-linux-x64-7.4.11-0-installer.run \
-    && chmod +x xampp-linux-x64-7.4.11-0-installer.run \
-    && ./xampp-linux-x64-7.4.11-0-installer.run --version \
-    && ./xampp-linux-x64-7.4.11-0-installer.run --enable-components xampp_developer_files --mode unattended
+COPY *.sed /root/
+
+RUN set -x \
+    && cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini \
+    && sed -ri --file=/root/php_ini.sed /usr/local/etc/php/php.ini
 
 # Composer の最新公式イメージからバイナリだけをコピーする
 COPY --from=composer:2.10.3 /usr/bin/composer /usr/local/bin/composer
-
-# XAMPPのPHPをデフォルトの php コマンドとしてパスを通す
-ENV PATH="/opt/lampp/bin:${PATH}"
-
-COPY xampp-setup.sh /usr/local/bin/xampp-setup.sh
-RUN set -eux \
-    && chmod +x /usr/local/bin/xampp-setup.sh \
-    && /usr/local/bin/xampp-setup.sh
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN set -eux \
     && chmod +x /usr/local/bin/entrypoint.sh
 
-# WORKDIR、ENTRYPOINT、CMDの順序がお作法
-WORKDIR /opt/lampp/htdocs
+ARG USER_ID=1000
+ARG GROUP_ID=1000
+# エントリポイント権限付与、www-data の ID 調整
+# 1 つの RUN にまとめてレイヤー増加を防ぐ
+RUN set -eux \
+    && chmod +x /usr/local/bin/entrypoint.sh \
+    && usermod -u ${USER_ID} www-data \
+    && groupmod -g ${GROUP_ID} www-data
 
-EXPOSE 80 3306
+# WORKDIR、ENTRYPOINT、CMDの順序がお作法
+WORKDIR /var/www/html
 
 ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
-CMD ["/bin/sh", "-c", "/opt/lampp/lampp restart && tail -f /opt/lampp/logs/php_error_log /opt/lampp/logs/error_log"]
+CMD ["apache2-foreground"]

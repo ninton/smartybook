@@ -9,5 +9,22 @@ services:
         host_ip: 127.0.0.1
         protocol: tcp
     volumes:
-      - .:/opt/lampp/htdocs:cached
-      - ./xampp-linux/lampp/logs:/opt/lampp/logs:cached
+      - .:/var/www/html:cached
+
+  db:
+    image: mariadb:10.4
+    # ホストへは公開しない（ports 未設定）。DB操作は Docker ネットワーク経由で実施する。
+    environment:
+      MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: "yes"
+      MYSQL_DATABASE: ${DB_DATABASE:-smartybook}
+
+    volumes:
+      # 永続化 ホストのパスではなく、ボリューム名（db-data）を指定
+      - db_data:/var/lib/mysql
+      # 初期化スクリプト（読み取り専用：安全）
+      - ./docker/db/init:/docker-entrypoint-initdb.d
+      # 設定ファイル（読み取り専用：確実）
+      - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf:ro
+
+volumes:
+  db_data:
