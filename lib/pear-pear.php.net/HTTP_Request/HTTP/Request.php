@@ -296,12 +296,12 @@ class HTTP_Request
     *   <li>user           - Basic Auth username (string)</li>
     *   <li>pass           - Basic Auth password (string)</li>
     *   <li>proxy_host     - Proxy server host (string)</li>
-    *   <li>proxy_port     - Proxy server port (integer)</li>
+    *   <li>proxy_port     - Proxy server port (int)</li>
     *   <li>proxy_user     - Proxy auth username (string)</li>
     *   <li>proxy_pass     - Proxy auth password (string)</li>
     *   <li>timeout        - Connection timeout in seconds (float)</li>
     *   <li>allowRedirects - Whether to follow redirects or not (bool)</li>
-    *   <li>maxRedirects   - Max number of redirects to follow (integer)</li>
+    *   <li>maxRedirects   - Max number of redirects to follow (int)</li>
     *   <li>useBrackets    - Whether to append [] to array variable names (bool)</li>
     *   <li>saveBody       - Whether to save response body in response object property (bool)</li>
     *   <li>readTimeout    - Timeout for reading / writing data over the socket (array (seconds, microseconds))</li>

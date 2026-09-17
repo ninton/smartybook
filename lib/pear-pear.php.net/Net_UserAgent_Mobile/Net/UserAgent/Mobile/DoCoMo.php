@@ -881,7 +881,7 @@ class Net_UserAgent_Mobile_DoCoMo extends Net_UserAgent_Mobile_Common
             if (!preg_match('/^c(\d+)$/', $cache, $matches)) {
                 return $this->noMatch();
             }
-            $this->_cacheSize = (integer)$matches[1];
+            $this->_cacheSize = (int)$matches[1];
         }
 
         if ($rest) {
@@ -896,7 +896,7 @@ class Net_UserAgent_Mobile_DoCoMo extends Net_UserAgent_Mobile_Common
                     continue;
                 }
                 if (preg_match('/^s(\d+)$/', $value, $matches)) {
-                    $this->_bandwidth = (integer)$matches[1];
+                    $this->_bandwidth = (int)$matches[1];
                     continue;
                 }
                 if (preg_match('/^W(\d+)H(\d+)$/', $value, $matches)) {
@@ -942,7 +942,7 @@ class Net_UserAgent_Mobile_DoCoMo extends Net_UserAgent_Mobile_Common
             $rest = explode(';', $matches[1]);
             foreach ($rest as $value) {
                 if (preg_match('/^c(\d+)$/', $value, $matches)) {
-                    $this->_cacheSize = (integer)$matches[1];
+                    $this->_cacheSize = (int)$matches[1];
                     continue;
                 }
                 if (preg_match('/^ser(\w{15})$/', $value, $matches)) {

@@ -157,7 +157,7 @@ class Net_UserAgent_Mobile_Willcom extends Net_UserAgent_Mobile_Common
             if (!preg_match('/^[Cc](\d+)/', $cache, $matches)) {
                 return $this->noMatch();
             }
-            $this->_cacheSize = (integer)$matches[1];
+            $this->_cacheSize = (int)$matches[1];
         } else {
             $this->noMatch();
         }

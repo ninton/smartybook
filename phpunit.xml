@@ -4,6 +4,7 @@
   backupGlobals="false"
   bootstrap="vendor/autoload.php"
   colors="true"
+  displayDetailsOnTestsThatTriggerDeprecations="true"
   processIsolation="false"
   stopOnFailure="false"
 >
