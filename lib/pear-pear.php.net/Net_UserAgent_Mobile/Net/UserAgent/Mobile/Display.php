@@ -147,13 +147,13 @@ class Net_UserAgent_Mobile_Display
      */
     function __construct($data)
     {
-        $this->_width  = (integer)@$data['width'];
-        $this->_height = (integer)@$data['height'];
-        $this->_depth  = (integer)@$data['depth'];
-        $this->_color  = (boolean)@$data['color'];
+        $this->_width  = (int)@$data['width'];
+        $this->_height = (int)@$data['height'];
+        $this->_depth  = (int)@$data['depth'];
+        $this->_color  = (bool)@$data['color'];
 
-        $this->_widthBytes  = (integer)@$data['width_bytes'];
-        $this->_heightBytes = (integer)@$data['height_bytes'];
+        $this->_widthBytes  = (int)@$data['width_bytes'];
+        $this->_heightBytes = (int)@$data['height_bytes'];
     }
 
     // }}}
