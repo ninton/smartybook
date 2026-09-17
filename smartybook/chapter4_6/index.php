@@ -48,27 +48,39 @@ if ((0 < $from) && (0 < $to)) {
     $rcd_arr = $cms->getAll($from - 1, $to - $from + 1, $_REQUEST['sort'], $_REQUEST['order']);
 }
 
-// Pagerクラスにプロパティを追加する
-$pager->ExOffsetFrom   = $from;
-$pager->ExOffsetTo     = $to;
+class PagerDto
+{
+    public int $ExOffsetFrom;
+    public int $ExOffsetTo;
+    public string $ExLinks;
+    public string $ExFirstPageLink;
+    public string $ExLastPageLink;
+    public string $ExPreviousPageLink;
+    public string $ExNextPageLink;
+}
+
+// PagerExクラスにプロパティを追加する
+$pagerDto = new PagerDto();
+$pagerDto->ExOffsetFrom   = $from;
+$pagerDto->ExOffsetTo     = $to;
 $links = $pager->getLinks();
-$pager->ExLinks = $links['pages'];
-$pager->ExFirstPageLink    = '';
-$pager->ExLastPageLink     = '';
-$pager->ExPreviousPageLink = '';
-$pager->ExNextPageLink     = '';
+$pagerDto->ExLinks = $links['pages'];
+$pagerDto->ExFirstPageLink    = '';
+$pagerDto->ExLastPageLink     = '';
+$pagerDto->ExPreviousPageLink = '';
+$pagerDto->ExNextPageLink     = '';
 
 if (preg_match('/href="(.*?)"/', $links['first'], $matches)) {
-    $pager->ExFirstPageLink    = $matches[1];
+    $pagerDto->ExFirstPageLink    = $matches[1];
 }
 if (preg_match('/href="(.*?)"/', $links['last'], $matches)) {
-    $pager->ExLastPageLink    = $matches[1];
+    $pagerDto->ExLastPageLink    = $matches[1];
 }
 if (preg_match('/href="(.*?)"/', $links['back'], $matches)) {
-    $pager->ExPreviousPageLink    = $matches[1];
+    $pagerDto->ExPreviousPageLink    = $matches[1];
 }
 if (preg_match('/href="(.*?)"/', $links['next'], $matches)) {
-    $pager->ExNextPageLink    = $matches[1];
+    $pagerDto->ExNextPageLink    = $matches[1];
 }
 
 // 並替えの△▽を表示するクラス
@@ -80,6 +92,7 @@ $perpage_params = [
 
 $smarty->assign("SortNavi", $sortnavi);
 $smarty->assign("Pager", $pager);
+$smarty->assign("PagerDto", $pagerDto);
 $smarty->assign('popup_params', array('autoSubmit' => true));
 $smarty->assign('perpage_params', $perpage_params);
 $smarty->assign("rcd_arr", $rcd_arr);

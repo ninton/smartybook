@@ -91,24 +91,6 @@ parameters:
 			path: smartybook/chapter2/02_06.php
 
 		-
-			message: '#^Access to an undefined property BookMark\:\:\$date\.$#'
-			identifier: property.notFound
-			count: 2
-			path: smartybook/chapter3/03_06.php
-
-		-
-			message: '#^Access to an undefined property BookMark\:\:\$title\.$#'
-			identifier: property.notFound
-			count: 1
-			path: smartybook/chapter3/03_06.php
-
-		-
-			message: '#^Access to an undefined property BookMark\:\:\$url\.$#'
-			identifier: property.notFound
-			count: 1
-			path: smartybook/chapter3/03_06.php
-
-		-
 			message: '#^Variable \$admin might not be defined\.$#'
 			identifier: variable.undefined
 			count: 1

@@ -5,6 +5,10 @@
 
 class BookMark
 {
+    public string $title;
+    public string $url;
+    public string $date;
+
     public function __construct($title, $url, $date)
     {
         $this->title = $title; //サイト名
