@@ -1,8 +1,5 @@
 FROM php:7.4.11-apache-buster
 
-# TimeZoneの設定
-#RUN echo 'ZONE="Asia/Tokyo"' > /etc/sysconfig/clock
-
 # EOLとなったDebian Busterのリポジトリを archive.debian.org へ切り替え
 RUN sed -i -e 's/deb.debian.org/archive.debian.org/g' \
            -e 's/security.debian.org\/debian-security/archive.debian.org\/debian-security/g' \
@@ -15,6 +12,8 @@ RUN sed -i -e 's/deb.debian.org/archive.debian.org/g' \
 # dom はデフォルトでインストール済み
 # xml はデフォルトでインストール済み
 RUN set -x \
+    # TimeZoneの設定 \
+    && ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
         # gd関数で必要 \
