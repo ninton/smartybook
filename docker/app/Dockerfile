@@ -18,11 +18,17 @@ RUN set -x \
         libjpeg62-turbo-dev \
         libpng-dev \
         libzip-dev \
+        # intl で必要 \
+        libicu-dev \
         # intl xml関数で必要 \
         libxml2-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j"$(nproc)" \
+        # composer-require-checker ^4.18 で必要 \
+        bcmath \
         gd \
+        # composer-require-checker ^4.18 で必要 \
+        intl \
         mysqli \
         pdo_mysql \
         # smarty/smarty のinstallで必要
