@@ -245,7 +245,7 @@ class Services_Amazon
      * @see    setBaseUrl
      * @see    setVersion
      */
-    function Services_Amazon($access_key_id, $secret_access_key, $associate_tag = null)
+    function __construct($access_key_id, $secret_access_key, $associate_tag = null)
     {
         $this->setAccessKeyID($access_key_id);
         $this->setSecretAccessKey($secret_access_key);

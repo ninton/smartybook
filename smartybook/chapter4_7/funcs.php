@@ -33,9 +33,7 @@ function assoc_load($i_path)
 /**
  *  @param  string
  *  @param  array
- *  @return array
- *
- * @SuppressWarnings(PHPMD.ElseExpression)
+ *  @return int
  */
 function makeTimeStamp(&$io_vars, $i_params = null)
 {
