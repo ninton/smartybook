@@ -2082,7 +2082,7 @@ class Net_UserAgent_Mobile_DoCoMo_ScreenInfo
      * @return Net_UserAgent_Mobile_DoCoMo_ScreenInfo
      * @static
      */
-    function &singleton()
+    static function &singleton()
     {
         if (@is_null($GLOBALS['NET_USERAGENT_MOBILE_DoCoMo_ScreenInfo_Instance'])) {
             $GLOBALS['NET_USERAGENT_MOBILE_DoCoMo_ScreenInfo_Instance'] = new Net_UserAgent_Mobile_DoCoMo_ScreenInfo();
@@ -2118,7 +2118,7 @@ class Net_UserAgent_Mobile_DoCoMo_ScreenInfo
      * Creates the screen information by a given XML file if DOCOMO_MAP environment
      * variable exists.
      */
-    function Net_UserAgent_Mobile_DoCoMo_ScreenInfo()
+    function __construct()
     {
         if (!array_key_exists('DOCOMO_MAP', $_SERVER)) {
             return;

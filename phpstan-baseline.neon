@@ -1597,12 +1597,6 @@ parameters:
 			path: smartybook/chapter5_3/ini.php
 
 		-
-			message: '#^Static call to instance method Net_UserAgent_Mobile\:\:factory\(\)\.$#'
-			identifier: method.staticCall
-			count: 1
-			path: smartybook/chapter5_3/ketai_ini.php
-
-		-
 			message: '#^Static call to instance method SmartyBook\\chapter5_3\\plib\\emoji\\Emoji\:\:output_setting\(\)\.$#'
 			identifier: method.staticCall
 			count: 2
@@ -1685,12 +1679,6 @@ parameters:
 			identifier: phpDoc.parseError
 			count: 1
 			path: smartybook/chapter5_3/plib/imgsizecvt_funcs.php
-
-		-
-			message: '#^Static call to instance method Net_UserAgent_Mobile\:\:factory\(\)\.$#'
-			identifier: method.staticCall
-			count: 1
-			path: smartybook/chapter5_3/plib/tests/NetUserAgentMobileTest.php
 
 		-
 			message: '#^Variable \$admin might not be defined\.$#'
