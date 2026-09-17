@@ -9,5 +9,4 @@ services:
         host_ip: 127.0.0.1
         protocol: tcp
     volumes:
-      - .:/opt/lampp/htdocs:cached
-      - ./xampp-linux/lampp/logs:/opt/lampp/logs:cached
+      - .:/var/www/html:cached
