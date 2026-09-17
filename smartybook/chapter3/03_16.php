@@ -1,5 +1,7 @@
 <?php
 
+use Smarty\Smarty;
+
 require_once("../../vendor/autoload.php");
 $smarty = new Smarty();
 $group = array(

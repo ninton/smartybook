@@ -25,6 +25,8 @@ class BookMark
     }
 }
 
+use Smarty\Smarty;
+
 require_once("../../vendor/autoload.php");
 $smarty = new Smarty();
 $smarty->setTemplateDir("templates");
