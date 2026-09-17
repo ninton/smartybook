@@ -11,7 +11,7 @@ runs:
     - name: Setup PHP
       uses: shivammathur/setup-php@v2
       with:
-        php-version: "8.1"
+        php-version: "8.2"
         # extensions: gd, mbstring はすでに有効になっている
         tools: cs2pr, composer:2.10.3
         ini-values: date.timezone=Asia/Tokyo, memory_limit=-1
