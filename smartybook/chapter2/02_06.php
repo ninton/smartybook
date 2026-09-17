@@ -18,7 +18,7 @@ require_once('02_01_b.php');
 // csvデータの最終行のIDをチェックする関数
 function lastIdCheck($file)
 {
-    while ($arr = fgetcsv($file, 5000, ',')) {
+    while ($arr = fgetcsv($file, 5000, ',', escape: '')) {
         $lastId = $arr[0];
     }
     if ($lastId == '') {
