@@ -43,7 +43,7 @@
     "require-dev": {
         "ext-bcmath": "*",
         "ext-intl": "*",
-        "maglnet/composer-require-checker": "^4.20",
+        "maglnet/composer-require-checker": "^4.24",
         "phpstan/phpstan": "^2.2",
         "phpstan/phpstan-deprecation-rules": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0",
