@@ -2,14 +2,13 @@
 
 namespace SmartyBook\chapter5_3\plib\tests;
 
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 use SmartyBook\chapter5_3\plib\ImageResizer;
 
 final class ImageResizerTest extends TestCase
 {
-    /**
-     * @dataProvider provide_get_scale_type_cases
-     */
+    #[DataProvider('provide_get_scale_type_cases')]
     public function test_get_scale_type(int $width, int $height, int $max_width, int $max_height, int $expected): void
     {
         static::assertEquals($expected, ImageResizer::get_scale_type($width, $height, $max_width, $max_height));
@@ -59,9 +58,7 @@ final class ImageResizerTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider provide_scale_cases
-     */
+    #[DataProvider('provide_scale_cases')]
     public function test_scale(int $scale_type, int $width, int $height, int $max_width, int $max_height, array $expected): void
     {
         static::assertEquals($expected, ImageResizer::scale($scale_type, $width, $height, $max_width, $max_height));
