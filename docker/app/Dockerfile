@@ -1,4 +1,4 @@
-FROM php:7.4.11-apache-buster
+FROM php:7.4.33-apache-buster
 
 # EOLとなったDebian Busterのリポジトリを archive.debian.org へ切り替え
 RUN sed -i -e 's/deb.debian.org/archive.debian.org/g' \
