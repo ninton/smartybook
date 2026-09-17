@@ -30,6 +30,8 @@ RUN set -x \
         gd \
         mysqli \
         pdo_mysql \
+        # smarty/smarty のinstallで必要
+        zip \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
