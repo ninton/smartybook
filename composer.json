@@ -45,7 +45,7 @@
         "phpstan/phpstan": "^2.2",
         "phpstan/phpstan-deprecation-rules": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0",
-        "maglnet/composer-require-checker": "^3.8"
+        "maglnet/composer-require-checker": "^4.4"
     },
     "include-path": [
         "lib/pear-pear.php.net/Archive_Tar",
