@@ -132,7 +132,7 @@ class Net_UserAgent_Mobile_Common
      *
      * @param string $userAgent User-Agent string
      */
-    function Net_UserAgent_Mobile_Common($userAgent)
+    function __construct($userAgent)
     {
         $this->_userAgent = $userAgent;
 
