@@ -37,7 +37,7 @@
         "ext-session": "*",
         "ext-tokenizer": "*",
         "ext-xml": "*",
-        "smarty/smarty": "^v3.1.48",
+        "smarty/smarty": "^4.3",
         "symfony/polyfill-php80": "^1.37"
     },
     "require-dev": {
