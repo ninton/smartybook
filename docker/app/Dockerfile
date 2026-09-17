@@ -1,8 +1,8 @@
-FROM php:8.0.30-apache-bullseye
+FROM php:8.1.34-apache-trixie
 
 # sources.list.d 配下を削除し、archive.debian.org の main のみに絞り込む
-RUN rm -rf /etc/apt/sources.list.d/* \
-    && echo "deb http://archive.debian.org/debian bullseye main" > /etc/apt/sources.list
+# RUN rm -rf /etc/apt/sources.list.d/* \
+#     && echo "deb http://archive.debian.org/debian bullseye main" > /etc/apt/sources.list
 
 # PHP Core Extensions
 # @see https://hub.docker.com/_/php
