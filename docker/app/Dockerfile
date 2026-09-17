@@ -1,9 +1,8 @@
-FROM php:7.4.33-apache-buster
+FROM php:7.4.33-apache-bullseye
 
-# EOLとなったDebian Busterのリポジトリを archive.debian.org へ切り替え
-RUN sed -i -e 's/deb.debian.org/archive.debian.org/g' \
-           -e 's/security.debian.org\/debian-security/archive.debian.org\/debian-security/g' \
-           -e '/buster-updates/d' /etc/apt/sources.list
+# sources.list.d 配下を削除し、archive.debian.org の main のみに絞り込む
+RUN rm -rf /etc/apt/sources.list.d/* \
+    && echo "deb http://archive.debian.org/debian bullseye main" > /etc/apt/sources.list
 
 # PHP Core Extensions
 # @see https://hub.docker.com/_/php
@@ -14,7 +13,7 @@ RUN sed -i -e 's/deb.debian.org/archive.debian.org/g' \
 RUN set -x \
     # TimeZoneの設定 \
     && ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime \
-    && apt-get update \
+    && apt-get update -o Acquire::Check-Valid-Until=false || apt-get update \
     && apt-get install -y --no-install-recommends \
         # CLI用 mysql コマンド \
         default-mysql-client \
