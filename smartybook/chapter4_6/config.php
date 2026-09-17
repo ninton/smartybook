@@ -6,5 +6,5 @@
 //$CONFIG['dsn'] = 'mysql://root@localhost/smartybook';
 
 // PDO用
-$CONFIG['dsn'] = 'mysql:dbname=smartybook;host=127.0.0.1';
+$CONFIG['dsn'] = 'mysql:dbname=smartybook;host=db';
 $CONFIG['db_user'] = 'root';
