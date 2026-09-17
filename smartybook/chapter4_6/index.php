@@ -1,6 +1,8 @@
 <?php
 
-require_once('../../vendor/autoload.php');
+use Smarty\Smarty;
+
+require_once("../../vendor/autoload.php");
 require_once('./config.php');
 
 use SmartyBook\chapter4_6\CMS;

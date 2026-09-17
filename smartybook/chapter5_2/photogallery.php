@@ -6,6 +6,8 @@ $slideFlag = "on";
 $slideTerm = "5000";
 
 // Smartyの読み込み
+use Smarty\Smarty;
+
 require_once("../../vendor/autoload.php");
 // Smartyオブジェクトの作成
 $smarty = new Smarty();

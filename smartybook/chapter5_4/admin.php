@@ -1,5 +1,7 @@
 <?php
 
+use Smarty\Smarty;
+
 require_once("ini.php");
 
 $smarty = new Smarty();

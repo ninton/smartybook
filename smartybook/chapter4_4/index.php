@@ -1,8 +1,12 @@
 <?php
 
+use Smarty\Smarty;
+
+require_once("../../vendor/autoload.php");
+
 //CSVファイルパス
 $csv = "data.csv";
-require_once('../../vendor/autoload.php');
+
 $smarty = new Smarty();
 // CSVデータを配列に格納
 $fp = fopen($csv, "r");
