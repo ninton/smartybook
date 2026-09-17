@@ -24,7 +24,7 @@ RUN set -x \
         # intl xml関数で必要 \
         libxml2-dev \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j$(nproc) \
+    && docker-php-ext-install -j"$(nproc)" \
         gd \
         mysqli \
         pdo_mysql \
