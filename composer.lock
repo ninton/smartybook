@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "17647a30cdea0e30b047f3d2173d71d8",
+    "content-hash": "66f5bec7089d50e3298d5f231c7e2e55",
     "packages": [
         {
             "name": "smarty/smarty",
@@ -3103,7 +3103,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": "^7.4.11",
+        "php": "^8.0",
         "ext-dom": "*",
         "ext-gd": "*",
         "ext-json": "*",
