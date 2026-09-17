@@ -3,13 +3,12 @@
 namespace SmartyBook\chapter5_3\plib\emoji\tests;
 
 use SmartyBook\chapter5_3\plib\emoji\Emoji;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 final class EmojiTest extends TestCase
 {
-    /**
-     * @dataProvider emojiProvider
-     */
+    #[DataProvider('emojiProvider')]
     public function test(Emoji $emoji, string $input, string $expected): void
     {
         static::assertEquals($expected, $emoji->convert($input));

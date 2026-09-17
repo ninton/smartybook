@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 namespace Tests\GoldenMaster;
-
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 final class GoldenMasterTest extends TestCase
@@ -29,8 +29,8 @@ final class GoldenMasterTest extends TestCase
     /**
      * @param array<string, mixed> $getVars
      * @param array<string, mixed> $postVars
-     * @dataProvider dataProvider
      */
+    #[DataProvider('dataProvider')]
     public function test(string $url, string $method, array $getVars, array $postVars, string $storageName): void
     {
         // 準備
