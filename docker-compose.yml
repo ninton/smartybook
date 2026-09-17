@@ -10,6 +10,8 @@ services:
         protocol: tcp
     volumes:
       - .:/var/www/html:cached
+    depends_on:
+      - db
 
   db:
     image: mariadb:10.4
@@ -25,6 +27,20 @@ services:
       - ./docker/db/init:/docker-entrypoint-initdb.d
       # 設定ファイル（読み取り専用：確実）
       - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf:ro
+
+  pma:
+    image: phpmyadmin:5.2-apache
+    environment:
+      PMA_HOST: db
+      PMA_ARBITRARY: 0
+    depends_on:
+      - db
+    # ホスト側ポートは自動割り当て（published: "0"）。割り当て結果は `docker compose ps pma` で確認する。
+    ports:
+      - target: 80
+        published: ${PMA_PORT:-3001}
+        host_ip: 127.0.0.1
+        protocol: tcp
 
 volumes:
   db_data:
