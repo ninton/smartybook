@@ -16,6 +16,8 @@ RUN set -x \
     && ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
+        # CLI用 mysql コマンド \
+        default-mysql-client \
         # gd関数で必要 \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
