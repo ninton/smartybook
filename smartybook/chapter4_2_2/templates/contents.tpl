@@ -49,7 +49,7 @@
 			</ul>
 			<h2 class="sideArea1Title">バナー</h2>
 			<p>
-				{insert name="noticeText"}
+				{insert_noticeText nocache}
 			</p>
 		</div>
 		
