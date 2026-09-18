@@ -13,7 +13,7 @@ class AppSmarty extends Smarty
         $this->setConfigDir(dirname(__FILE__) . '/../../_read/configs');
         $this->setTemplateDir(dirname(__FILE__) . '/../../_read/templates');
         $this->setCompileDir(dirname(__FILE__) . '/../../_temp/templates_c');
-        $this->setCacheDir(dirname(__FILE__) . '/../../_temp/cahce');
+        $this->setCacheDir(dirname(__FILE__) . '/../../_temp/cache');
 
         $this->addPluginsDir(__DIR__ . '/../../../../vendor/smarty/smarty/libs/plugins');
         $this->addPluginsDir(dirname(__FILE__) . '/../..');
