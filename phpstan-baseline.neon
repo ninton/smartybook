@@ -1963,12 +1963,6 @@ parameters:
 			path: smartybook/chapter5_5/index.php
 
 		-
-			message: '#^Access to protected property Smarty\:\:\$plugins_dir\.$#'
-			identifier: property.protected
-			count: 2
-			path: smartybook/chapter5_5/login.php
-
-		-
 			message: '#^Variable \$home might not be defined\.$#'
 			identifier: variable.undefined
 			count: 1
