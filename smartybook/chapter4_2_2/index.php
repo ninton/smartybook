@@ -7,6 +7,8 @@ use Smarty\Smarty;
 
 require_once("../../vendor/autoload.php");
 $smarty = new Smarty();
+// Smarty 5 から insertタグは廃止されました。代わりに registerPlugin を使って関数プラグインを登録します。
+$smarty->registerPlugin("function", "insert_noticeText", "insert_noticeText");
 $smarty->assign("siteName", $siteName);
 $smarty->assign("home", $home);
 $smarty->assign("categories", $categories);
