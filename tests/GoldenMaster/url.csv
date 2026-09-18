@@ -118,6 +118,8 @@ chapter4_8/page4,GET,http://localhost/smartybook/chapter4_8/page4.php,
 
 # chapter4_9
 chapter4_9/index,GET,http://localhost/smartybook/chapter4_9/index.php,
+# ランダムなのでテスト除外します
+#chapter4_9/fetch,GET,http://localhost/smartybook/chapter4_9/fetch.php,
 
 # chapter5_1
 chapter5_1/index,GET,http://localhost/smartybook/chapter5_1/index.php,
@@ -154,5 +156,3 @@ chapter5_3/contents pageID=2,GET,http://localhost/smartybook/chapter5_3/contents
 # chapter5_2
 # JSを返します
 chapter5_2/photogallary,GET,http://localhost/smartybook/chapter5_2/photogallery.php,
-
-chapter4_9/fetch,GET,http://localhost/smartybook/chapter4_9/fetch.php,
