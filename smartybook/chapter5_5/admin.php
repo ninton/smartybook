@@ -4,7 +4,9 @@ require_once("ini.php");
 require_once("../../vendor/autoload.php");
 
 $smarty = new Smarty();
-$smarty->addPluginsDir(__DIR__ . '/plugins');
+
+include_once(__DIR__ . '/plugins/function.login_form.php');
+$smarty->registerPlugin('function', 'login_form', smarty_function_login_form(...));
 
 $smarty->assign("siteName", $siteName);
 $smarty->assign("home", $home);
