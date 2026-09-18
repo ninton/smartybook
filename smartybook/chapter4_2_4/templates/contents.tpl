@@ -49,7 +49,7 @@
 			</ul>
 			<h2 class="sideArea1Title">バナー</h2>
 			<p>
-				{insert name="noticeText2" siteName=$siteName script="insert.php"}
+				{insert_noticeText2 siteName=$siteName nocache}
 			</p>
 		</div>
 
