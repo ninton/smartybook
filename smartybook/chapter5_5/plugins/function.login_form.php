@@ -15,7 +15,7 @@
  *
  * @SuppressWarnings(PHPMD.UnusedFormalParameter)
  */
-function smarty_function_login_form($params, &$smarty)
+function smarty_function_login_form($params, $smarty)
 {
     $self = $params["self"];
     $username = htmlspecialchars($params["username"]);
