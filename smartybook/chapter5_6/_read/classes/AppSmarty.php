@@ -15,6 +15,7 @@ class AppSmarty extends Smarty
         $this->setCompileDir(dirname(__FILE__) . '/../../_temp/templates_c');
         $this->setCacheDir(dirname(__FILE__) . '/../../_temp/cache');
 
-        $this->addPluginsDir(dirname(__FILE__) . '/../..');
+        include_once(__DIR__ . '/../../modifier.mb_truncate.php');
+        $this->registerPlugin('modifier', 'mb_truncate', smarty_modifier_mb_truncate(...));
     }
 }
