@@ -1297,12 +1297,6 @@ parameters:
 			path: smartybook/chapter4_9/fetch.php
 
 		-
-			message: '#^Access to protected property Smarty\:\:\$plugins_dir\.$#'
-			identifier: property.protected
-			count: 2
-			path: smartybook/chapter4_9/index.php
-
-		-
 			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.ElseExpression\)\)\: Unexpected token "\.ElseExpression\)", expected ''\)'' at offset 358 on line 14$#'
 			identifier: phpDoc.parseError
 			count: 1
