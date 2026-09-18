@@ -5,9 +5,8 @@ require_once("../../vendor/autoload.php");
 
 $smarty = new Smarty();
 
-$plugins_dir = $smarty->plugins_dir;
-$plugins_dir[] = __DIR__ . '/plugins';
-$smarty->plugins_dir = $plugins_dir;
+include_once(__DIR__ . '/plugins/function.login_form.php');
+$smarty->registerPlugin('function', 'login_form', smarty_function_login_form(...));
 
 $smarty->assign("siteName", $siteName);
 $smarty->assign("home", $home);
