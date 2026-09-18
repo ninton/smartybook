@@ -5,6 +5,11 @@
 require_once("ini.php");
 require_once("../../vendor/autoload.php");
 $smarty = new Smarty();
+
+// Smarty5 で {insert}タグ廃止予定なので、registerPluginで置き換えました
+require_once(__DIR__ . "/insert.php");
+$smarty->registerPlugin("function", "insert_noticeText2", smarty_insert_noticeText2(...));
+
 $smarty->assign("siteName", $siteName);
 $smarty->assign("home", $home);
 $smarty->assign("categories", $categories);
@@ -25,9 +30,3 @@ fclose($fp);
 $smarty->assign("data", $data);
 //出力
 $smarty->display("index.tpl");
-function insert_noticeText()
-{
-
-    $noticeText = '<img src="./images/banner.gif" />';
-    return $noticeText;
-}
