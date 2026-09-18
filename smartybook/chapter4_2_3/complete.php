@@ -11,7 +11,7 @@ $smarty->assign("admin", $admin);
 // 最新記事IDを取得する関数
 function lastIdCheck($file)
 {
-    while ($array = fgetcsv($file, 5000, ",")) {
+    while ($array = fgetcsv($file, 5000, ",", escape: '')) {
         $lastId = $array[0];
     }
     if ($lastId == "") {
