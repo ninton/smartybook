@@ -18,7 +18,7 @@ function get_featured_arr($i_csv)
 {
     $cms_arr = array();
     $handle = fopen($i_csv, 'r');
-    while ($arr = fgetcsv($handle, 10000)) {
+    while ($arr = fgetcsv($handle, 10000, escape: '')) {
         $rcd = array();
         $rcd['id'      ] = $arr[0];
         $rcd['category'] = $arr[1];
