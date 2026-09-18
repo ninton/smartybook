@@ -5,6 +5,9 @@
 require_once("ini.php");
 require_once("../../vendor/autoload.php");
 $smarty = new Smarty();
+
+$smarty->registerPlugin("function", "insert_noticeText2", "insert_noticeText2");
+
 $smarty->assign("siteName", $siteName);
 $smarty->assign("home", $home);
 $smarty->assign("categories", $categories);
@@ -28,11 +31,6 @@ $smarty->assign("data", $data);
 $smarty->assign("category", $_GET["category"]);
 //出力
 $smarty->display("contents.tpl");
-function insert_noticeText()
-{
-    $noticeText = '<img src="./images/banner.gif" />';
-    return $noticeText;
-}
 
 function insert_noticeText2($siteName)
 {
