@@ -1285,12 +1285,6 @@ parameters:
 			path: smartybook/chapter4_7/funcs.php
 
 		-
-			message: '#^Access to protected property Smarty\:\:\$plugins_dir\.$#'
-			identifier: property.protected
-			count: 2
-			path: smartybook/chapter4_9/fetch.php
-
-		-
 			message: '#^Variable \$categories might not be defined\.$#'
 			identifier: variable.undefined
 			count: 1

@@ -14,9 +14,8 @@ $featured_arr = get_featured_arr(BAT_SRC_DIR . "/$csv");
 
 $smarty = new Smarty();
 
-$plugins_dir = $smarty->plugins_dir;
-$plugins_dir[] = __DIR__;
-$smarty->plugins_dir = $plugins_dir;
+require_once(__DIR__ . '/modifier.mb_truncate.php');
+$smarty->registerPlugin('modifier', 'mb_truncate', smarty_modifier_mb_truncate(...));
 
 $smarty->assign('menu_arr', $menu_arr);
 $smarty->assign('featured_arr', $featured_arr);
