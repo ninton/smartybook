@@ -10,6 +10,7 @@ $smarty->registerPlugin('function', 'login_form', smarty_function_login_form(...
 
 $smarty->assign("siteName", $siteName);
 $smarty->assign("home", $home);
+$smarty->assign("admin", $admin);
 
 $smarty->assign("self", "admin.php");
 $smarty->assign("username", "");
