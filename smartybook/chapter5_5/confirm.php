@@ -20,6 +20,8 @@ if ($oAuth->getAuth()) {
         if (isset($_FILES["image"]["tmp_name"]) && is_uploaded_file($_FILES["image"]["tmp_name"])) {
             copy($_FILES["image"]["tmp_name"], $imageDir . $_FILES["image"]["name"]);
             $smarty->assign("imageFile", $imageDir . $_FILES["image"]["name"]);
+        } else {
+            $smarty->assign("imageFile", "");
         }
         $smarty->assign("category", $_POST["category"]);
         $smarty->assign("title", stripslashes($_POST["title"]));
