@@ -1951,6 +1951,12 @@ parameters:
 			path: smartybook/chapter5_5/index.php
 
 		-
+			message: '#^Variable \$admin might not be defined\.$#'
+			identifier: variable.undefined
+			count: 1
+			path: smartybook/chapter5_5/login.php
+
+		-
 			message: '#^Variable \$home might not be defined\.$#'
 			identifier: variable.undefined
 			count: 1
