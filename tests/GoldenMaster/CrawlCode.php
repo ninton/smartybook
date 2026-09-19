@@ -8,6 +8,8 @@ use InvalidArgumentException;
 
 final class CrawlCode
 {
+    private const string DEFAULT_USER_AGENT = 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:143.0) Gecko/20100101 Firefox/143.0';
+
     /**
      * @param string $urlCsv
      * @return list<CrawlCommand>
@@ -59,7 +61,7 @@ final class CrawlCode
         return $csvArr;
     }
 
-    public static function crawl(string $url, string $method, string $data): string
+    public static function crawl(string $url, string $method, string $data, string $userAgent = self::DEFAULT_USER_AGENT): string
     {
         if ($url === '') {
             throw new InvalidArgumentException('URL must be a non-empty string.');
@@ -71,6 +73,7 @@ final class CrawlCode
         }
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
 
         if (strtoupper($method) === 'POST') {
             curl_setopt($ch, CURLOPT_POST, true);
