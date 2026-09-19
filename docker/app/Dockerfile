@@ -13,6 +13,8 @@ RUN set -x \
     && apt-get install -y --no-install-recommends \
         # CLI用 mysql コマンド \
         default-mysql-client \
+        # Golden Master Test 前後のデータリセットで必要 \
+        git \
         # gd関数で必要 \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
