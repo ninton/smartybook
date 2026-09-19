@@ -49,6 +49,9 @@ if ((0 < $from) && (0 < $to)) {
 $page = pager_ex($pager, $from, $to);
 
 $smarty = new Smarty();
+
+$smarty->registerPlugin("modifier", "file_exists", file_exists(...));
+
 $smarty->assign("Pager", $pager);
 $smarty->assign("siteName", $siteName);
 $smarty->assign("home", $home);
