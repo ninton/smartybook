@@ -40,57 +40,57 @@ chapter3/03_22,GET,http://localhost/smartybook/chapter3/03_22.php,
 chapter4_1/index,GET,http://localhost/smartybook/chapter4_1/index.php,
 chapter4_1/contents,GET,http://localhost/smartybook/chapter4_1/contents.php?category=Study,
 chapter4_1/admin,GET,http://localhost/smartybook/chapter4_1/admin.php,
-chapter4_1/confirm,POST,http://localhost/smartybook/chapter4_1/confirm.php,title=test-title&contents=test-body&date=1789462161&image=
-chapter4_1/complete,POST,http://localhost/smartybook/chapter4_1/complete.php,title=test-title&contents=test-body&date=1789462161&image=
+chapter4_1/confirm,POST,http://localhost/smartybook/chapter4_1/confirm.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
+chapter4_1/complete,POST,http://localhost/smartybook/chapter4_1/complete.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
 
 # chapter4_2_1
 chapter4_2_1/index,GET,http://localhost/smartybook/chapter4_2_1/index.php,
 chapter4_2_1/contents,GET,http://localhost/smartybook/chapter4_2_1/contents.php?category=Study,
 chapter4_2_1/admin,GET,http://localhost/smartybook/chapter4_2_1/admin.php,
-chapter4_2_1/confirm,POST,http://localhost/smartybook/chapter4_2_1/confirm.php,title=test-title&contents=test-body&date=1789462161&image=
-chapter4_2_1/complete,POST,http://localhost/smartybook/chapter4_2_1/complete.php,title=test-title&contents=test-body&date=1789462161&image=
+chapter4_2_1/confirm,POST,http://localhost/smartybook/chapter4_2_1/confirm.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
+chapter4_2_1/complete,POST,http://localhost/smartybook/chapter4_2_1/complete.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
 
 # chapter4_2_2
 chapter4_2_2/index,GET,http://localhost/smartybook/chapter4_2_2/index.php,
 chapter4_2_2/contents,GET,http://localhost/smartybook/chapter4_2_2/contents.php?category=Study,
 chapter4_2_2/admin,GET,http://localhost/smartybook/chapter4_2_2/admin.php,
-chapter4_2_2/confirm,POST,http://localhost/smartybook/chapter4_2_2/confirm.php,title=test-title&contents=test-body&date=1789462161&image=
-chapter4_2_2/complete,POST,http://localhost/smartybook/chapter4_2_2/complete.php,title=test-title&contents=test-body&date=1789462161&image=
+chapter4_2_2/confirm,POST,http://localhost/smartybook/chapter4_2_2/confirm.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
+chapter4_2_2/complete,POST,http://localhost/smartybook/chapter4_2_2/complete.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
 
 # chapter4_2_3
 chapter4_2_3/index,GET,http://localhost/smartybook/chapter4_2_3/index.php,
 chapter4_2_3/contents,GET,http://localhost/smartybook/chapter4_2_3/contents.php?category=Study,
 chapter4_2_3/admin,GET,http://localhost/smartybook/chapter4_2_3/admin.php,
-chapter4_2_3/confirm,POST,http://localhost/smartybook/chapter4_2_3/confirm.php,title=test-title&contents=test-body&date=1789462161&image=
-chapter4_2_3/complete,POST,http://localhost/smartybook/chapter4_2_3/complete.php,title=test-title&contents=test-body&date=1789462161&image=
+chapter4_2_3/confirm,POST,http://localhost/smartybook/chapter4_2_3/confirm.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
+chapter4_2_3/complete,POST,http://localhost/smartybook/chapter4_2_3/complete.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
 
 # chapter4_2_4
 chapter4_2_4/index,GET,http://localhost/smartybook/chapter4_2_4/index.php,
 chapter4_2_4/contents,GET,http://localhost/smartybook/chapter4_2_4/contents.php?category=Study,
 chapter4_2_4/admin,GET,http://localhost/smartybook/chapter4_2_4/admin.php,
-chapter4_2_4/confirm,POST,http://localhost/smartybook/chapter4_2_4/confirm.php,title=test-title&contents=test-body&date=1789462161&image=
-chapter4_2_4/complete,POST,http://localhost/smartybook/chapter4_2_4/complete.php,title=test-title&contents=test-body&date=1789462161&image=
+chapter4_2_4/confirm,POST,http://localhost/smartybook/chapter4_2_4/confirm.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
+chapter4_2_4/complete,POST,http://localhost/smartybook/chapter4_2_4/complete.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
 
 # chapter4_3_1
 chapter4_3_1/index,GET,http://localhost/smartybook/chapter4_3_1/index.php,
 chapter4_3_1/contents,GET,http://localhost/smartybook/chapter4_3_1/contents.php?category=Study,
 chapter4_3_1/admin,GET,http://localhost/smartybook/chapter4_3_1/admin.php,
-chapter4_3_1/confirm,POST,http://localhost/smartybook/chapter4_3_1/confirm.php,title=test-title&contents=test-body&date=1789462161&image=
-chapter4_3_1/complete,POST,http://localhost/smartybook/chapter4_3_1/complete.php,title=test-title&contents=test-body&date=1789462161&image=
+chapter4_3_1/confirm,POST,http://localhost/smartybook/chapter4_3_1/confirm.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
+chapter4_3_1/complete,POST,http://localhost/smartybook/chapter4_3_1/complete.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
 
 # chapter4_3_2
 chapter4_3_2/index,GET,http://localhost/smartybook/chapter4_3_2/index.php,
 chapter4_3_2/contents,GET,http://localhost/smartybook/chapter4_3_2/contents.php?category=Study,
 chapter4_3_2/admin,GET,http://localhost/smartybook/chapter4_3_2/admin.php,
-chapter4_3_2/confirm,POST,http://localhost/smartybook/chapter4_3_2/confirm.php,title=test-title&contents=test-body&date=1789462161&image=
-chapter4_3_2/complete,POST,http://localhost/smartybook/chapter4_3_2/complete.php,title=test-title&contents=test-body&date=1789462161&image=
+chapter4_3_2/confirm,POST,http://localhost/smartybook/chapter4_3_2/confirm.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
+chapter4_3_2/complete,POST,http://localhost/smartybook/chapter4_3_2/complete.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
 
 # chapter4_3_3
 chapter4_3_3/index,GET,http://localhost/smartybook/chapter4_3_3/index.php,
 chapter4_3_3/contents,GET,http://localhost/smartybook/chapter4_3_3/contents.php?category=Study,
 chapter4_3_3/admin,GET,http://localhost/smartybook/chapter4_3_3/admin.php,
-chapter4_3_3/confirm,POST,http://localhost/smartybook/chapter4_3_3/confirm.php,title=test-title&contents=test-body&date=1789462161&image=
-chapter4_3_3/complete,POST,http://localhost/smartybook/chapter4_3_3/complete.php,title=test-title&contents=test-body&date=1789462161&image=
+chapter4_3_3/confirm,POST,http://localhost/smartybook/chapter4_3_3/confirm.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
+chapter4_3_3/complete,POST,http://localhost/smartybook/chapter4_3_3/complete.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
 
 # chapter4_4
 chapter4_4/index,GET,http://localhost/smartybook/chapter4_4/index.php,
@@ -125,15 +125,15 @@ chapter4_9/index,GET,http://localhost/smartybook/chapter4_9/index.php,
 chapter5_1/index,GET,http://localhost/smartybook/chapter5_1/index.php,
 chapter5_1/contents,GET,http://localhost/smartybook/chapter5_1/contents.php?category=Study,
 chapter5_1/admin,GET,http://localhost/smartybook/chapter5_1/admin.php,
-chapter5_1/confirm,POST,http://localhost/smartybook/chapter5_1/confirm.php,title=test-title&contents=test-body&date=1789462161&image=
-chapter5_1/complete,POST,http://localhost/smartybook/chapter5_1/complete.php,title=test-title&contents=test-body&date=1789462161&image=
+chapter5_1/confirm,POST,http://localhost/smartybook/chapter5_1/confirm.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
+chapter5_1/complete,POST,http://localhost/smartybook/chapter5_1/complete.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
 
 # chapter5_4
 chapter5_4/index,GET,http://localhost/smartybook/chapter5_4/index.php,
 chapter5_4/contents,GET,http://localhost/smartybook/chapter5_4/contents.php?category=Study,
 chapter5_4/admin,GET,http://localhost/smartybook/chapter5_4/admin.php,
-chapter5_4/confirm,POST,http://localhost/smartybook/chapter5_4/confirm.php,title=test-title&contents=test-body&date=1789462161&image=
-chapter5_4/complete,POST,http://localhost/smartybook/chapter5_4/complete.php,title=test-title&contents=test-body&date=1789462161&image=
+chapter5_4/confirm,POST,http://localhost/smartybook/chapter5_4/confirm.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
+chapter5_4/complete,POST,http://localhost/smartybook/chapter5_4/complete.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
 
 # chapter5_5
 chapter5_5/index,GET,http://localhost/smartybook/chapter5_5/index.php,
@@ -141,8 +141,8 @@ chapter5_5/contents,GET,http://localhost/smartybook/chapter5_5/contents.php?cate
 chapter5_5/login,GET,http://localhost/smartybook/chapter5_5/login.php,
 # 以下はクッキーが必要なので、テスト除外
 #chapter5_5/admin,GET,http://localhost/smartybook/chapter5_5/admin.php,
-#chapter5_5/confirm,POST,http://localhost/smartybook/chapter5_5/confirm.php,title=test-title&contents=test-body&date=1789462161&image=
-#chapter5_5/complete,POST,http://localhost/smartybook/chapter5_5/complete.php,title=test-title&contents=test-body&date=1789462161&image=
+#chapter5_5/confirm,POST,http://localhost/smartybook/chapter5_5/confirm.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
+#chapter5_5/complete,POST,http://localhost/smartybook/chapter5_5/complete.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
 
 # chapter5_6
 chapter5_6/admin,GET,http://localhost/smartybook/chapter5_6/admin.php,
