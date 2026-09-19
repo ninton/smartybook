@@ -17,7 +17,6 @@ if (isset($_FILES["image"]["tmp_name"]) && is_uploaded_file($_FILES["image"]["tm
 } else {
     $smarty->assign("imageFile", "");
 }
-
 $smarty->assign("category", $_POST["category"]);
 $smarty->assign("title", stripslashes($_POST["title"]));
 $smarty->assign("contents", stripslashes($_POST["contents"]));
