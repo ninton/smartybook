@@ -46,6 +46,7 @@ if (isset($_FILES["image"]["tmp_name"]) && is_uploaded_file($_FILES['image']['tm
     $imageFile = $imageDir . $_FILES['image']['name'];
     print '<td><img src="' . $imageFile . '" /></td>';
 } else {
+    $imageFile = "";
     print '<td>ファイルは指定されていません。</td>';
 }
 print '</tr>';
