@@ -5,7 +5,7 @@ function get_entry_arr($i_path, $i_category)
 {
     $entry_arr = array();
     $handle = fopen($i_path, "r");
-    while ($arr = fgetcsv($handle, 5000, ",")) {
+    while ($arr = fgetcsv($handle, 5000, ",", escape: '')) {
         if ($i_category == $arr[1]) {
             $rcd = array();
             $rcd["id"      ] = $arr[0];
