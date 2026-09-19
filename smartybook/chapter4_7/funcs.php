@@ -20,7 +20,7 @@ function assoc_load($i_path)
     $arr = array();
 
     $handle = fopen($i_path, "r");
-    while ($rcd = fgetcsv($handle, 10000)) {
+    while ($rcd = fgetcsv($handle, 10000, escape: '')) {
         $key = $rcd[0];
         $val = $rcd[1];
         $arr[$key] = $val;
