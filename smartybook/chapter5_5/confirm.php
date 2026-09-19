@@ -17,7 +17,7 @@ if ($oAuth->getAuth()) {
         if (!is_dir($imageDir)) {
             mkdir($imageDir);
         }
-        if (is_uploaded_file(@$_FILES["image"]["tmp_name"])) {
+        if (isset($_FILES["image"]["tmp_name"]) && is_uploaded_file($_FILES["image"]["tmp_name"])) {
             copy($_FILES["image"]["tmp_name"], $imageDir . $_FILES["image"]["name"]);
             $smarty->assign("imageFile", $imageDir . $_FILES["image"]["name"]);
         }

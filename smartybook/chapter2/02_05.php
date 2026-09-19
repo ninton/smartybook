@@ -41,7 +41,7 @@ if (!is_dir($imageDir)) {
 }
 
 // ファイルをアップロードする
-if (is_uploaded_file($_FILES['image']['tmp_name'])) {
+if (isset($_FILES["image"]["tmp_name"]) && is_uploaded_file($_FILES['image']['tmp_name'])) {
     copy($_FILES['image']['tmp_name'], $imageDir . $_FILES['image']['name']);
     $imageFile = $imageDir . $_FILES['image']['name'];
     print '<td><img src="' . $imageFile . '" /></td>';
