@@ -31,3 +31,26 @@ jobs:
       - name: test
         shell: bash
         run: composer run-script test
+
+  golden-master-test:
+    needs: ci # ci ジョブ（lint や test）が PASS した場合のみ実行する
+    if: github.event.pull_request.draft == false # ドラフトでは実行しない
+    name: Golden Master Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v7
+
+      - name: Start Docker Environment
+        run: |
+          make setup
+
+      - name: Wait for Web Server to be ready
+        run: |
+          # Web サーバーが応答するまで最大 30 秒待機
+          timeout 30s bash -c 'until curl -s -f http://localhost/ > /dev/null 2>&1; do sleep 1; done' || true
+
+      - name: Run Golden Master Tests
+        run: |
+          make php-test-golden-master
