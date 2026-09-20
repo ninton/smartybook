@@ -1,5 +1,7 @@
 <?php
 
+use Smarty\Smarty;
+
 require_once("../../vendor/autoload.php");
 $smarty = new Smarty();
 $member = array("斉藤", "中村", "米谷" ,"鈴木" ,"伊野口" ,"渡部" , "松本");
