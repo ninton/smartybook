@@ -25,9 +25,7 @@
        "test": "vendor/bin/phpunit --colors=always",
        "test:golden-master": [
            "@db:reset",
-           "@csv:reset",
-           "./vendor/bin/phpunit --colors=always tests/GoldenMaster",
-           "@csv:reset"
+           "./vendor/bin/phpunit --colors=always tests/GoldenMaster"
        ],
        "test:golden-master-update": [
           "@db:reset",
