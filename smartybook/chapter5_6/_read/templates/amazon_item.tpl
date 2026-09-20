@@ -8,7 +8,7 @@
 
     <span class="Author">
         {if isset($item.ItemAttributes.Author) && is_array($item.ItemAttributes.Author)}
-            {", "|join:$item.ItemAttributes.Author|escape:html}
+            {$item.ItemAttributes.Author|join:", "|escape:html}
         {else}
             Author empty
         {/if}
