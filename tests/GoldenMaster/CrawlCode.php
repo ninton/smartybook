@@ -22,17 +22,17 @@ final class CrawlCode
 
         $csvArr3 = array_filter(
             $csvArr2,
-            fn(array $row) => !empty($row[0]) && !str_starts_with($row[0], '#')
+            fn (array $row) => !empty($row[0]) && !str_starts_with($row[0], '#'),
         );
 
         $crawlCommandArr = array_map(
-            fn(array $row) => new CrawlCommand(
+            fn (array $row) => new CrawlCommand(
                 $row[0],
                 $row[1],
                 $row[2],
-                $row[3] ?? ''
+                $row[3] ?? '',
             ),
-            $csvArr3
+            $csvArr3,
         );
 
         return array_values($crawlCommandArr);
@@ -44,7 +44,7 @@ final class CrawlCode
      */
     private static function readCsvArr(string $urlCsv): array
     {
-        $fp = fopen($urlCsv, "r");
+        $fp = fopen($urlCsv, 'r');
         if (!$fp) {
             throw new \Exception("Failed to open CSV file: {$urlCsv}");
         }
@@ -69,7 +69,7 @@ final class CrawlCode
 
         $ch = curl_init();
         if (!$ch) {
-            throw new \Exception("Failed to initialize cURL");
+            throw new \Exception('Failed to initialize cURL');
         }
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

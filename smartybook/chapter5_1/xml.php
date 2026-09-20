@@ -2,36 +2,36 @@
 
 // phpcs:disable PSR1.Files.SideEffects
 
-header("Content-Type: application/xml; charset=UTF-8");
-require_once("ini.php");
+header('Content-Type: application/xml; charset=UTF-8');
+require_once('ini.php');
 use Smarty\Smarty;
 
-require_once("../../vendor/autoload.php");
+require_once('../../vendor/autoload.php');
 $smarty = new Smarty();
-$smarty->assign("siteName", $siteName);
-$smarty->assign("home", $home);
-$smarty->assign("categories", $categories);
+$smarty->assign('siteName', $siteName);
+$smarty->assign('home', $home);
+$smarty->assign('categories', $categories);
 //$smarty->assign("notice", $notice);
 // CSVデータを配列に格納
-$fp = fopen($csv, "r");
+$fp = fopen($csv, 'r');
 $i = 0;
-while ($array = fgetcsv($fp, 5000, ",", escape: '')) {
-    if ($array[1] == "Notice") {
+while ($array = fgetcsv($fp, 5000, ',', escape: '')) {
+    if ($array[1] == 'Notice') {
         $notice = $array[3];
-        $smarty->assign("notice", $notice);
+        $smarty->assign('notice', $notice);
     }
-    $data[$i]["id"]       = $array[0];
-    $data[$i]["category"] = $array[1];
-    $data[$i]["title"]    = $array[2];
-    $data[$i]["text"]     = $array[3];
-    $data[$i]["time"]     = $array[4];
-    $data[$i]["image"]    = $array[5];
+    $data[$i]['id']       = $array[0];
+    $data[$i]['category'] = $array[1];
+    $data[$i]['title']    = $array[2];
+    $data[$i]['text']     = $array[3];
+    $data[$i]['time']     = $array[4];
+    $data[$i]['image']    = $array[5];
     $i++;
 }
 fclose($fp);
 //データをsmartyの変数として格納
-$smarty->assign("data", $data);
-$smarty->display("xml.tpl");
+$smarty->assign('data', $data);
+$smarty->display('xml.tpl');
 function insert_noticeText()
 {
     $noticeText = '<img src="./images/banner.gif" />';
@@ -40,5 +40,5 @@ function insert_noticeText()
 
 function smarty_insert_noticeText2($siteName)
 {
-    return '<img src="./images/banner.gif" /><br />' . $siteName["siteName"];
+    return '<img src="./images/banner.gif" /><br />' . $siteName['siteName'];
 }

@@ -2,8 +2,8 @@
 
 use Smarty\Smarty;
 
-require_once("../../vendor/autoload.php");
+require_once('../../vendor/autoload.php');
 $smarty = new Smarty();
-$smarty->setTemplateDir("templates");
-$smarty->setCompileDir("templates_c");
-$smarty->display("03_07.tpl");
+$smarty->setTemplateDir('templates');
+$smarty->setCompileDir('templates_c');
+$smarty->display('03_07.tpl');

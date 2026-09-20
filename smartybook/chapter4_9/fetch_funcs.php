@@ -3,9 +3,9 @@
 // メニューを作る
 function get_menu_arr($i_categories)
 {
-    $menu_arr = array();
+    $menu_arr = [];
     foreach ($i_categories as $category) {
-        $rcd = array();
+        $rcd = [];
         $rcd['title'] = $category;
         $rcd['url'  ] = get_contents_url($category);
         $menu_arr[] = $rcd;
@@ -16,10 +16,10 @@ function get_menu_arr($i_categories)
 // 注目記事を1件選ぶ
 function get_featured_arr($i_csv)
 {
-    $cms_arr = array();
+    $cms_arr = [];
     $handle = fopen($i_csv, 'r');
     while ($arr = fgetcsv($handle, 10000, escape: '')) {
-        $rcd = array();
+        $rcd = [];
         $rcd['id'      ] = $arr[0];
         $rcd['category'] = $arr[1];
         $rcd['title'   ] = $arr[2];
@@ -37,7 +37,7 @@ function get_featured_arr($i_csv)
         $cms_arr[] = $rcd;
     }
     fclose($handle);
-//ランダムに1件選ぶ
+    //ランダムに1件選ぶ
     $offset = array_rand($cms_arr, 1);
     $featured_arr = array_slice($cms_arr, $offset, 1);
     return $featured_arr;
@@ -45,12 +45,12 @@ function get_featured_arr($i_csv)
 
 function get_contents_url($i_category)
 {
-    return sprintf("%s/contents.php?category=%s", get_url(), $i_category);
+    return sprintf('%s/contents.php?category=%s', get_url(), $i_category);
 }
 
 function get_image_url($i_image)
 {
-    return sprintf("%s/%s", get_url(), $i_image);
+    return sprintf('%s/%s', get_url(), $i_image);
 }
 
 // chapter4_1/ のURLを求める

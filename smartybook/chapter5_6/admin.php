@@ -42,9 +42,9 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                 $mylist->setItems($Item_arr);
 
                 $smarty = new AppSmarty();
-                $smarty->assign("CFG", $CFG);
-                $smarty->assign("message", $message);
-                $smarty->assign("mylist", $mylist);
+                $smarty->assign('CFG', $CFG);
+                $smarty->assign('message', $message);
+                $smarty->assign('mylist', $mylist);
                 $smarty->display('admin_preview.tpl');
                 break;
 
@@ -56,9 +56,9 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                     die('file read error');
                 }
                 $smarty = new AppSmarty();
-                $smarty->assign("CFG", $CFG);
-                $smarty->assign("message", $message);
-                $smarty->assign("mylist", $mylist);
+                $smarty->assign('CFG', $CFG);
+                $smarty->assign('message', $message);
+                $smarty->assign('mylist', $mylist);
                 $smarty->display('admin_form.tpl');
                 break;
 
@@ -83,9 +83,9 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
 
                 if ($message != '') {
                     $smarty = new AppSmarty();
-                    $smarty->assign("CFG", $CFG);
-                    $smarty->assign("message", $message);
-                    $smarty->assign("mylist", $mylist);
+                    $smarty->assign('CFG', $CFG);
+                    $smarty->assign('message', $message);
+                    $smarty->assign('mylist', $mylist);
                     $smarty->display('admin_form.tpl');
                 } else {
                     $mylistmgr->write($mylist);

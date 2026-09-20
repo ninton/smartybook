@@ -15,7 +15,7 @@ final class CrawlCommand
         string $title,
         string $method,
         string $url,
-        string $data
+        string $data,
     ) {
         $this->title = $title;
         $this->method = $method;

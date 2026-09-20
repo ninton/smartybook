@@ -2,12 +2,12 @@
 
 use Smarty\Smarty;
 
-require_once("../../vendor/autoload.php");
+require_once('../../vendor/autoload.php');
 $smarty = new Smarty();
-$group = array(
-    array("森永", "国枝"),
-    array("水村", "渋谷", "原田"),
-    array("北野", "村井")
-);
-$smarty->assign("group", $group);
-$smarty->display("03_16.tpl");
+$group = [
+    ['森永', '国枝'],
+    ['水村', '渋谷', '原田'],
+    ['北野', '村井'],
+];
+$smarty->assign('group', $group);
+$smarty->display('03_16.tpl');

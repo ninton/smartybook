@@ -2,9 +2,9 @@
 
 namespace SmartyBook\chapter5_3\plib\emoji\tests;
 
-use SmartyBook\chapter5_3\plib\emoji\Emoji;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
+use SmartyBook\chapter5_3\plib\emoji\Emoji;
 
 final class EmojiTest extends TestCase
 {

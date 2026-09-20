@@ -30,7 +30,7 @@ print '<td>' . $contents . '</td>';
 print '</tr>';
 print '<tr>';
 print '<td>日時</td>';
-print '<td>' . date("Y-m-d H:i:s", $_POST['date']) . '</td>';
+print '<td>' . date('Y-m-d H:i:s', $_POST['date']) . '</td>';
 print '</tr>';
 print '<tr>';
 print '<td>画像</td>';
@@ -41,12 +41,12 @@ if (!is_dir($imageDir)) {
 }
 
 // ファイルをアップロードする
-if (isset($_FILES["image"]["tmp_name"]) && is_uploaded_file($_FILES['image']['tmp_name'])) {
+if (isset($_FILES['image']['tmp_name']) && is_uploaded_file($_FILES['image']['tmp_name'])) {
     copy($_FILES['image']['tmp_name'], $imageDir . $_FILES['image']['name']);
     $imageFile = $imageDir . $_FILES['image']['name'];
     print '<td><img src="' . $imageFile . '" /></td>';
 } else {
-    $imageFile = "";
+    $imageFile = '';
     print '<td>ファイルは指定されていません。</td>';
 }
 print '</tr>';

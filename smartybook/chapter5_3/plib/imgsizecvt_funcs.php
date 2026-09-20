@@ -34,22 +34,22 @@ function get_current_url()
 function proc_image_list()
 {
     global  $CFG;
-    $rcd_arr = array();
+    $rcd_arr = [];
     $arr = glob($CFG['SRCIMG_DIR'] . '*.jpg');
     foreach ($arr as $src) {
         $fname = basename($src);
 
-        $rcd = array();
+        $rcd = [];
         $rcd['fname'] = $fname;
         $path = $src;
-        $img = array();
+        $img = [];
         $img['path'] = $path;
         list($img['width'], $img['height']) = getimagesize($path);
         $rcd['src'] = $img;
 
-        foreach (array(120, 240, 480) as $width) {
+        foreach ([120, 240, 480] as $width) {
             $path = $CFG['DSTIMG_DIR'] . "$width/$fname";
-            $img = array();
+            $img = [];
             $img['path'] = $path;
             $img['width'] = '';
             $img['height'] = '';
@@ -77,7 +77,7 @@ function proc_image_resize($i_fname)
     $fname = basename($i_fname);
     $src_path = $CFG['SRCIMG_DIR'] . $fname;
     if (file_exists($src_path)) {
-        foreach (array(120, 240, 480) as $width) {
+        foreach ([120, 240, 480] as $width) {
             $dst_path = $CFG['DSTIMG_DIR'] . "$width/$fname";
             ImageResizer::image_resize($src_path, $dst_path, $width, $width * 1.5);
         }

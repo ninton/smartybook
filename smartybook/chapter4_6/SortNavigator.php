@@ -28,8 +28,8 @@ class SortNavigator
 
         $this->vars['sortUrlVar' ] = 'sort';
         $this->vars['orderUrlVar'] = 'order';
-//      $this->vars['sortDefVal' ] = '';
-//      $this->vars['orderDefVal'] = 'asc';
+        //      $this->vars['sortDefVal' ] = '';
+        //      $this->vars['orderDefVal'] = 'asc';
 
         $this->sort  = $i_sort;
         $this->order = $i_order;
@@ -53,8 +53,8 @@ class SortNavigator
      */
     public function show($i_sort)
     {
-        $asc_navi  = $this->showLink($i_sort, "asc");
-        $desc_navi = $this->showLink($i_sort, "desc");
+        $asc_navi  = $this->showLink($i_sort, 'asc');
+        $desc_navi = $this->showLink($i_sort, 'desc');
 
         $buf = $asc_navi . $this->vars['separator'] . $desc_navi;
         print $buf;
@@ -85,11 +85,11 @@ class SortNavigator
                 $title = $this->vars['desc_title'];
             }
 
-            $vars = array(
+            $vars = [
                 $this->vars['sortUrlVar' ] => $i_sort,
                 $this->vars['orderUrlVar'] => $i_order,
-                'pageID'                   => 1
-            );
+                'pageID'                   => 1,
+            ];
             $html = [];
             $html['href' ] = $_SERVER['SCRIPT_NAME'] . '?' . $this->replaceQuery($_SERVER['QUERY_STRING'], $vars);
             $html['title'] = $title;

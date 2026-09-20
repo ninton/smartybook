@@ -3,17 +3,17 @@
 // CSVデータを配列に格納
 function get_entry_arr($i_path, $i_category)
 {
-    $entry_arr = array();
-    $handle = fopen($i_path, "r");
-    while ($arr = fgetcsv($handle, 5000, ",", escape: '')) {
+    $entry_arr = [];
+    $handle = fopen($i_path, 'r');
+    while ($arr = fgetcsv($handle, 5000, ',', escape: '')) {
         if ($i_category == $arr[1]) {
-            $rcd = array();
-            $rcd["id"      ] = $arr[0];
-            $rcd["category"] = $arr[1];
-            $rcd["title"   ] = $arr[2];
-            $rcd["text"    ] = $arr[3];
-            $rcd["time"    ] = $arr[4];
-            $rcd["image"   ] = $arr[5];
+            $rcd = [];
+            $rcd['id'      ] = $arr[0];
+            $rcd['category'] = $arr[1];
+            $rcd['title'   ] = $arr[2];
+            $rcd['text'    ] = $arr[3];
+            $rcd['time'    ] = $arr[4];
+            $rcd['image'   ] = $arr[5];
 
             $entry_arr[] = $rcd;
         }

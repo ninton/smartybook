@@ -13,7 +13,7 @@ class App
         $token = md5(TOKEN_SALT . $_SERVER['HTTP_USER_AGENT'] . $_SERVER['REMOTE_ADDR']);
         if ($_SESSION[APPID]['token'] != $token) {
             session_regenerate_id();
-            $_SESSION[APPID] = array();
+            $_SESSION[APPID] = [];
             $_SESSION[APPID]['token'] = $token;
         }
     }

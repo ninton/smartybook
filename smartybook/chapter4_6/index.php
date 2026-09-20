@@ -2,14 +2,14 @@
 
 use Smarty\Smarty;
 
-require_once("../../vendor/autoload.php");
+require_once('../../vendor/autoload.php');
 require_once('./config.php');
 
 use SmartyBook\chapter4_6\CMS;
 use SmartyBook\chapter4_6\SortNavigator;
 
 $smarty = new Smarty();
-$smarty->configLoad("index.conf");
+$smarty->configLoad('index.conf');
 
 // リクエスト変数を調べて、なければデフォルト値を設定する
 //  pageID      ページ番号
@@ -32,7 +32,7 @@ if (empty($_REQUEST['setPerPage'])) {
 // 全件数を調べて、Pagerを初期化する
 $cms = new CMS($CONFIG['dsn'], $CONFIG['db_user']);
 
-$params = array();
+$params = [];
 $params['totalItems'] = $cms->getCount();
 $pager = Pager::factory($params);
 
@@ -45,7 +45,7 @@ if ($pager->numPages() < $_REQUEST['pageID']) {
 }
 // ページに表示する範囲のデータを読みだす
 list($from, $to) = $pager->getOffsetByPageId($_REQUEST['pageID']);
-$rcd_arr = array();
+$rcd_arr = [];
 if ((0 < $from) && (0 < $to)) {
     $rcd_arr = $cms->getAll($from - 1, $to - $from + 1, $_REQUEST['sort'], $_REQUEST['order']);
 }
@@ -89,13 +89,13 @@ if (preg_match('/href="(.*?)"/', $links['next'], $matches)) {
 $sortnavi = new SortNavigator($_REQUEST['sort'], $_REQUEST['order']);
 $perpage_params = [
     'optionText' => '%d件/ページ',
-    'attributes' => "onchange='document.forms[\"perPage\"].submit()'"
+    'attributes' => "onchange='document.forms[\"perPage\"].submit()'",
 ];
 
-$smarty->assign("SortNavi", $sortnavi);
-$smarty->assign("Pager", $pager);
-$smarty->assign("PagerDto", $pagerDto);
-$smarty->assign('popup_params', array('autoSubmit' => true));
+$smarty->assign('SortNavi', $sortnavi);
+$smarty->assign('Pager', $pager);
+$smarty->assign('PagerDto', $pagerDto);
+$smarty->assign('popup_params', ['autoSubmit' => true]);
 $smarty->assign('perpage_params', $perpage_params);
-$smarty->assign("rcd_arr", $rcd_arr);
-$smarty->display("index.tpl");
+$smarty->assign('rcd_arr', $rcd_arr);
+$smarty->display('index.tpl');
