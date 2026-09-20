@@ -1,0 +1,35 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+updates:
+  # PHP (Composer): 月曜 4:10 JST
+  # コピペ元 https://github.com/dependabot/dependabot-core/blob/1980e125f31577ad4ce24dc4404eea8c109a2fd0/.github/dependabot.yml#L32-L50
+  - package-ecosystem: "composer"
+    directory: "/" # directories ではなく directory (単数形) が標準です
+    schedule:
+      interval: "weekly"
+      day: "monday" # 日本時間での曜日 (月曜 04:10 JST)
+      time: "04:10" # 04:10 JST
+      timezone: "Asia/Tokyo" # 日本標準時
+    groups:
+      prod-major:
+        dependency-type: "production"
+        update-types:
+          - "major"
+      prod-minor-patch:
+        dependency-type: "production"
+        update-types:
+          - "minor"
+          - "patch"
+      dev-major:
+        dependency-type: "development"
+        update-types:
+          - "major"
+      dev-minor-patch:
+        dependency-type: "development"
+        update-types:
+          - "minor"
+          - "patch"
