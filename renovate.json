@@ -14,9 +14,17 @@
   ],
   "packageRules": [
     {
+      "description": "PHP本体系イメージのメジャーアップデート（火曜日にPR作成・要手動レビュー）",
+      "matchManagers": ["dockerfile"],
+      "matchPackageNames": ["/^php$/", "/^php:/"],
+      "matchUpdateTypes": ["major"],
+      "schedule": ["at 4am on tuesday"]
+    },
+    {
+      "description": "MariaDBイメージのアップデート（火曜日にPR作成・要手動レビュー）",
       "matchManagers": ["dockerfile", "docker-compose"],
-      "matchPackageNames": ["mariadb"],
-      "enabled": false
+      "matchPackageNames": ["/^mariadb$/", "/^mariadb:/"],
+      "schedule": ["at 4am on tuesday"]
     },
     {
       "description": "Dockerfileとカスタムアクション内のcomposerを火曜日に集約",
