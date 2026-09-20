@@ -6,6 +6,14 @@ composer-install:
 composer-require-checker:
 	docker compose run --rm app composer run-script composer-require-checker
 
+.PHONY: php-format-check
+php-format-check:
+	docker compose run --rm app composer run-script format:check
+
+.PHONY: php-format-fix
+php-format-fix:
+	docker compose run --rm app composer run-script format:fix
+
 .PHONY: php-lint
 php-lint:
 	docker compose run --rm app composer run-script lint
