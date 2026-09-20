@@ -63,6 +63,14 @@ runs:
       run: php -l ${{ steps.paths_filter.outputs.php_files }}
 
     # ========================================
+    # PHP コードフォーマット系
+    # ========================================
+    - name: Run php-cs-fixer
+      if: ${{ steps.paths_filter.outputs.php == 'true' }}
+      shell: bash
+      run: composer run-script format:check ${{ steps.paths_filter.outputs.php_files }}
+
+    # ========================================
     # PHP 解析系
     # ========================================
     - name: phpstan
