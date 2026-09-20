@@ -45,6 +45,8 @@ jobs:
       - name: Start Docker Environment
         run: |
           make setup
+          # Docker コンテナ（www-data 等）からの書き込みを許可
+          sudo chmod -R 777 smartybook/
 
       - name: Wait for Web Server to be ready
         run: |
