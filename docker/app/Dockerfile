@@ -59,6 +59,7 @@ RUN set -eux \
     && chmod +x /usr/local/bin/entrypoint.sh \
     && usermod -u ${USER_ID} www-data \
     && groupmod -g ${GROUP_ID} www-data \
+    # make php-lint-baseline 等の実行時に、コンテナ内の /var/www/.gitconfig で Permission denied エラー、その対策 \
     && chown ${USER_ID}:${GROUP_ID} /var/www
 
 # WORKDIR、ENTRYPOINT、CMDの順序がお作法
