@@ -19,6 +19,7 @@ runs:
             - added|modified: 'docker/**/Dockerfile'
           php:
             - added|modified: 'smartybook/**/*.php'
+            - added|modified: 'tests/**/*.php'
           # actionlint 用なので、prettier用とは別途定義
           github_yaml:
             - added|modified: '.github/**/*.{yml,yaml}'
