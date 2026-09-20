@@ -54,9 +54,3 @@ jobs:
       - name: Run Golden Master Tests
         run: |
           make php-test-golden-master
-
-      - name: Setup SSH Debug session
-        uses: mxschmitt/action-tmate@v3
-        if: failure() # 失敗したときだけ SSH 接続を待機したい場合
-        with:
-          limit-access-to-actor: true # PR作成者/実行者のみアクセス許可
