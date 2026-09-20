@@ -38,12 +38,12 @@ php-test:
 .PHONY: php-test-golden-master
 php-test-golden-master:
 	docker compose up -d
-	docker compose exec -u $$(id -u):$$(id -g) app composer run-script test:golden-master
+	docker compose exec app composer run-script test:golden-master
 
 .PHONY: php-test-golden-master-update
 php-test-golden-master-update:
 	docker compose up -d
-	docker compose exec -u $$(id -u):$$(id -g) app composer run-script test:golden-master-update
+	docker compose exec app composer run-script test:golden-master-update
 
 # 📁 setup用の状態管理ファイルの保存先ディレクトリ
 STATE_DIR := .make
