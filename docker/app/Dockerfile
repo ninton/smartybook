@@ -58,7 +58,8 @@ ARG GROUP_ID=1000
 RUN set -eux \
     && chmod +x /usr/local/bin/entrypoint.sh \
     && usermod -u ${USER_ID} www-data \
-    && groupmod -g ${GROUP_ID} www-data
+    && groupmod -g ${GROUP_ID} www-data \
+    && chown ${USER_ID}:${GROUP_ID} /var/www
 
 # WORKDIR、ENTRYPOINT、CMDの順序がお作法
 WORKDIR /var/www/html
