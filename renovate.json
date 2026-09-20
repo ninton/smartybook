@@ -1,0 +1,43 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "timezone": "Asia/Tokyo",
+  "minimumReleaseAge": "3 days",
+  "postUpdateOptions": ["composerWithAll"],
+  "customManagers": [
+    {
+      "customType": "regex",
+      "managerFilePatterns": ["/^\\.github/actions/setup-ci/action\\.yml$/"],
+      "matchStrings": ["tools:\\s*[^\\n]*(?<depName>composer):(?<currentValue>\\d+\\.\\d+\\.\\d+)"],
+      "datasourceTemplate": "docker"
+    }
+  ],
+  "packageRules": [
+    {
+      "matchManagers": ["dockerfile", "docker-compose"],
+      "matchPackageNames": ["mariadb"],
+      "enabled": false
+    },
+    {
+      "description": "Dockerfileとカスタムアクション内のcomposerを火曜日に集約",
+      "matchPackageNames": ["composer"],
+      "matchManagers": ["dockerfile", "custom.regex"],
+      "groupName": "composer-deps",
+      "groupSlug": "composer-update",
+      "schedule": ["at 4am on tuesday"]
+    },
+    {
+      "description": "火曜 4:00：メジャーアップデート（手動レビュー用）",
+      "matchUpdateTypes": ["major"],
+      "schedule": ["at 4am on tuesday"]
+    },
+    {
+      "description": "水曜 4:00：マイナー・パッチアップデート（自動マージ対象）",
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
+      "schedule": ["at 4am on wednesday"],
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true
+    }
+  ]
+}
