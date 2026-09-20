@@ -59,7 +59,7 @@ function emoji_convert($i_buf, $i_from_encode, $i_to_encode)
  */
 class Emoji
 {
-    public static $output_setting_arr = array();
+    public static $output_setting_arr = [];
     private $from_encode;
     private $to_encode;
     private $regex;
@@ -101,19 +101,19 @@ class Emoji
     public function output_setting($i_from_encode = '', $i_to_encode = '')
     {
         if ('' == $i_from_encode) {
-            self::$output_setting_arr = array();
+            self::$output_setting_arr = [];
         } else {
-            $setting = array(
+            $setting = [
                 'from' => $i_from_encode,
-                'to'   => $i_to_encode
-            );
+                'to'   => $i_to_encode,
+            ];
             self::$output_setting_arr[] = $setting;
         }
     }
 
     public function getRegexArr()
     {
-        return array(
+        return [
             'i_sjisbin'     => '/(\xF8[\x90-\xFF]|\xF9[\x40-\xFF])/'           ,
             'i_sjis10'      => '/(&#63[678][0-9][0-9];)/i'                     ,
             'i_sjis16'      => '/(&#x(F8[9A-F]|F9[4-9A-F])[0-9A-F];)/i'        ,
@@ -138,8 +138,8 @@ class Emoji
             's_uni16'       => '/(&#x(E[0-5][0-9A-F]{2};)/i'                   ,
             's_unibin'      => '/([\xE0-\xE5].)/'                              ,
             's_utf8'        => '/\xEE[\x80-\x94][\x80-\xBF]/'                  ,
-            's_webcode'     => '/\x1B\$[A-Z].\x0F/i'
-        );
+            's_webcode'     => '/\x1B\$[A-Z].\x0F/i',
+        ];
     }
 
     public function getEncodeArr()
@@ -150,7 +150,7 @@ class Emoji
 
     public function clear()
     {
-        $this->map = array();
+        $this->map = [];
     }
 
     /**
@@ -159,7 +159,7 @@ class Emoji
     public function load()
     {
         $path = $this->mapPath();
-        $this->map = array();
+        $this->map = [];
         $buf = file_get_contents($path);
         if ('' == $buf) {
             return;
@@ -177,11 +177,11 @@ class Emoji
     public function save()
     {
         if (0) {
-            $arr = array();
+            $arr = [];
             foreach ($this->map as $from => $to) {
                 $arr[] = $from . "\t" . $to . "\t.\n";
             }
-            $buf = join("", $arr);
+            $buf = join('', $arr);
         }
         $buf = serialize($this->map);
         $path = $this->mapPath();
@@ -273,7 +273,7 @@ class Emoji
 
     public function encodeMethod($encode)
     {
-        $method = array(
+        $method = [
             'i_uni16'  => 1,
             'i_sjis16' => 1,
             'e_sjis16' => 1,
@@ -301,7 +301,7 @@ class Emoji
 
             'e_img_name' => 7,
             'e_img_num'  => 7,
-        );
+        ];
 
         if (isset($method[$encode])) {
             return $method[$encode];

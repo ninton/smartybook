@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 namespace Tests\GoldenMaster;
+
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
@@ -48,7 +49,7 @@ final class GoldenMasterTest extends TestCase
         $output = CrawlCode::crawl(
             $url,
             $method,
-            http_build_query($postVars)
+            http_build_query($postVars),
         );
 
         // 検証
@@ -91,7 +92,7 @@ final class GoldenMasterTest extends TestCase
             parse_str(parse_url($cmd->url, PHP_URL_QUERY) ?? '', $getVars);
             parse_str($cmd->data, $postVars);
 
-            $title = sprintf("%d/%d %s", $i + 1, $len, $cmd->title);
+            $title = sprintf('%d/%d %s', $i + 1, $len, $cmd->title);
 
             // 1. ファイル名に使えない文字を置換
             $safeUrl = preg_replace('/[^a-zA-Z0-9]/', '_', $cmd->url);
@@ -116,39 +117,39 @@ final class GoldenMasterTest extends TestCase
         $html = preg_replace(
             '/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/',
             'YYYY-MM-DD HH:MM:SS',
-            $html
+            $html,
         );
 
         // type="hidden" name="date" を含むinput要素のvalue属性のみ置換
         $html = preg_replace(
             '/<input[^>]*type="hidden"[^>]*name="date"[^>]*value="\d+"[^>]*>/',
             '<input type="hidden" name="date" value="TIMESTAMP">',
-            $html
+            $html,
         );
 
         // 7259日前にブックマーク
         $html = preg_replace(
             '/\d+日前にブックマーク/',
             'XXXX日前にブックマーク',
-            $html
+            $html,
         );
 
         $html = preg_replace(
             '#/opt/lampp/htdocs/#',
             '/var/www/html/',
-            $html
+            $html,
         );
 
         $html = preg_replace(
             '#/templates_c/.+\.tpl\.php#',
             '/templates_c/1234abcd.tpl.php',
-            $html
+            $html,
         );
 
         $html = preg_replace(
             '/Smartyのバージョン：\d+\.\d+\.\d+/',
             'Smartyのバージョン：4.5.7',
-            $html
+            $html,
         );
 
         if (str_contains($html, '時間毎にヘッダーを変える')) {
@@ -166,7 +167,7 @@ final class GoldenMasterTest extends TestCase
             $html = preg_replace(
                 '/<option value="(\d{4})">(\d{4})<\/option>/',
                 '<option value="YYYY">YYYY</option>',
-                $html
+                $html,
             );
         }
 
@@ -174,7 +175,7 @@ final class GoldenMasterTest extends TestCase
         $html = preg_replace(
             '/Smarty for Designers : \d+/',
             'Smarty for Designers : TIMESTAMP',
-            $html
+            $html,
         );
 
         return $html;

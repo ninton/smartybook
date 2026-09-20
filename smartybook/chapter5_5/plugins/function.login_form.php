@@ -17,8 +17,8 @@
  */
 function smarty_function_login_form($params, $smarty)
 {
-    $self = $params["self"];
-    $username = htmlspecialchars($params["username"]);
+    $self = $params['self'];
+    $username = htmlspecialchars($params['username']);
     $result = <<<LOGIN
 <form method="post" action="$self" class="message" id="cmsForm" name="cmsForm">
 	<fieldset>

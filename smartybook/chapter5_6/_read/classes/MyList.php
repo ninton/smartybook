@@ -17,7 +17,7 @@ class MyList
         $this->ListId     = '';
         $this->ListName   = '';
         $this->NickName   = '';
-        $this->detail_arr = array();
+        $this->detail_arr = [];
     }
 
     public function input($i_vars)
@@ -30,7 +30,7 @@ class MyList
     public function getASINs()
     {
         // ASINの重複要素と空要素を取り除いて、カンマ区切りにする
-        $map = array();
+        $map = [];
 
         foreach ($this->detail_arr as $detail) {
             if (! empty($detail['ASIN'])) {
@@ -43,7 +43,7 @@ class MyList
 
     public function setItems($i_Item_arr)
     {
-        $map = array();
+        $map = [];
         foreach ($this->detail_arr as $i => $detail) {
             if (! empty($detail['ASIN'])) {
                 $map[$detail['ASIN']][] = $i;

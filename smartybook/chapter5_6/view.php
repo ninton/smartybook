@@ -27,7 +27,7 @@ $message = $appAmazon->ItemLookup($mylist->getASINs(), $options, $Item_arr);
 $mylist->setItems($Item_arr);
 
 $smarty = new AppSmarty();
-$smarty->assign("CFG", $CFG);
-$smarty->assign("message", $message);
-$smarty->assign("mylist", $mylist);
+$smarty->assign('CFG', $CFG);
+$smarty->assign('message', $message);
+$smarty->assign('mylist', $mylist);
 $smarty->display('view.tpl');

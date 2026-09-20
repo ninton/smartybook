@@ -28,7 +28,7 @@ function lastIdCheck($file)
 }
 function convertNl($str)
 {
-    $str = str_replace("\\", "", $str);
+    $str = str_replace('\\', '', $str);
     $str = str_replace('"', '""', $str);
     $str = '"' . $str . '"';
     return $str;
@@ -44,7 +44,7 @@ flock($fp, LOCK_EX);
 $lastId = lastIdCheck($fp);
 
 // IDが4桁に満たない番号の場合、0で埋めて4桁表示にする
-$id = sprintf("%04d", $lastId + 1);
+$id = sprintf('%04d', $lastId + 1);
 
 // 書き込むデータを生成
 $title = convertNl($_POST['title']);

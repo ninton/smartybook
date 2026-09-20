@@ -55,7 +55,7 @@ class CMS
             case 'time':
                 break;
             default:
-                return array();
+                return [];
         }
 
         switch ($i_order) {
@@ -63,7 +63,7 @@ class CMS
             case 'desc':
                 break;
             default:
-                return array();
+                return [];
         }
 
         $sort  = addslashes($i_sort);

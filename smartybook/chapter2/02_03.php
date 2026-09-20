@@ -23,7 +23,7 @@ while ($arr = fgetcsv($fp, 5000, ',', escape: '')) {
         print '記事ID：' . $arr[0] . '<br />';
         print '<h2>' . $arr[2] . '</h2>';
         print $arr[3] . '<br />';
-        print date("Y-m-d H:i:s", $arr[4]) . '<br />';
+        print date('Y-m-d H:i:s', $arr[4]) . '<br />';
         print '<img src="' . $arr[5] . '" />';
         print '<hr />';
     }

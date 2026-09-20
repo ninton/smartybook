@@ -17,9 +17,9 @@ function array_load($i_path)
  */
 function assoc_load($i_path)
 {
-    $arr = array();
+    $arr = [];
 
-    $handle = fopen($i_path, "r");
+    $handle = fopen($i_path, 'r');
     while ($rcd = fgetcsv($handle, 10000, escape: '')) {
         $key = $rcd[0];
         $val = $rcd[1];
@@ -37,16 +37,16 @@ function assoc_load($i_path)
  */
 function makeTimeStamp(&$io_vars, $i_params = null)
 {
-/*
-{html_select_date prefix="" field_array="startDate" time=$t}
-↓
-makeTimeStamp( $_POST, array('field_array' => 'startDate') );
+    /*
+    {html_select_date prefix="" field_array="startDate" time=$t}
+    ↓
+    makeTimeStamp( $_POST, array('field_array' => 'startDate') );
 
-{html_select_date prefix="endDate_" time=$t}
-↓
-makeTimeStamp( $_POST, array('prefix' => 'endDate_') );
+    {html_select_date prefix="endDate_" time=$t}
+    ↓
+    makeTimeStamp( $_POST, array('prefix' => 'endDate_') );
 
-*/
+    */
     $prefix = '';
     if (isset($i_params['prefix'])) {
         $prefix = $i_params['prefix'];
@@ -58,9 +58,9 @@ makeTimeStamp( $_POST, array('prefix' => 'endDate_') );
     }
 
     if ($field_array != '') {
-        $vars =& $io_vars[$field_array];
+        $vars = & $io_vars[$field_array];
     } else {
-        $vars =& $io_vars;
+        $vars = & $io_vars;
     }
 
     $t_sec = mktime(
@@ -69,7 +69,7 @@ makeTimeStamp( $_POST, array('prefix' => 'endDate_') );
         $vars[$prefix . 'Second'],
         $vars[$prefix . 'Month' ],
         $vars[$prefix . 'Day'   ],
-        $vars[$prefix . 'Year'  ]
+        $vars[$prefix . 'Year'  ],
     );
     $vars[$prefix . 'TimeStamp'] = $t_sec;
 

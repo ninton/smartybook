@@ -34,7 +34,7 @@ require_once('02_01_b.php');
 <tr>
     <td>日時</td>
     <td>
-        <?php print date("Y-m-d H:i:s", time()); ?>
+        <?php print date('Y-m-d H:i:s', time()); ?>
         <input type="hidden" name="date" value="<?php print time(); ?>" />
     </td>
 </tr>

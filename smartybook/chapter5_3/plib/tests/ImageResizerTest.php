@@ -112,11 +112,11 @@ final class ImageResizerTest extends TestCase
             ],
         ];
     }
-    
+
     public function test_image_resize(): void
     {
-        $src = __DIR__ . "/fixtures/sample_230x153.jpg";
-        $dst = "/tmp/test_max100x100.jpg";
+        $src = __DIR__ . '/fixtures/sample_230x153.jpg';
+        $dst = '/tmp/test_max100x100.jpg';
         if (file_exists($dst)) {
             unlink($dst);
         }

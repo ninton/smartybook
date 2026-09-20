@@ -12,7 +12,7 @@ require_once('./ketai_ini.php');
  * @var $categories
  */
 $smarty = new Smarty();
-$smarty->assign("siteName", $siteName);
-$smarty->assign("home", $home);
-$smarty->assign("categories", $categories);
-$smarty->display("index.tpl");
+$smarty->assign('siteName', $siteName);
+$smarty->assign('home', $home);
+$smarty->assign('categories', $categories);
+$smarty->display('index.tpl');

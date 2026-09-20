@@ -3,16 +3,16 @@
 require_once __DIR__ . '/../../vendor/autoload.php';
 
 // ウェブサイト名
-$siteName = "Smarty for Designers";
+$siteName = 'Smarty for Designers';
 // サイトの説明
-$siteDescription = "日々の悪戦苦闘を語ります";
+$siteDescription = '日々の悪戦苦闘を語ります';
 // CSVファイル名
-$csv = "data.csv";
+$csv = 'data.csv';
 // 画像ディレクトリ
-$imageDir = "./images/";
+$imageDir = './images/';
 // ホーム
-$home = "index.php";
+$home = 'index.php';
 // 管理者ページ
-$admin = "admin.php";
+$admin = 'admin.php';
 // カテゴリ一覧
-$categories = array("Study", "Eating", "Work", "Picture", "Link");
+$categories = ['Study', 'Eating', 'Work', 'Picture', 'Link'];
