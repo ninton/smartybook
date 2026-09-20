@@ -5,6 +5,7 @@
   bootstrap="vendor/autoload.php"
   colors="true"
   displayDetailsOnTestsThatTriggerDeprecations="true"
+  displayDetailsOnTestsThatTriggerWarnings="true"
   processIsolation="false"
   stopOnFailure="false"
 >
