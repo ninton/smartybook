@@ -61,12 +61,6 @@ parameters:
 			path: smartybook/chapter5_1/complete.php
 
 		-
-			message: '#^Call to an undefined method SmartyBook\\chapter5_3\\plib\\emoji\\Emoji\:\:convert_variables\(\)\.$#'
-			identifier: method.notFound
-			count: 1
-			path: smartybook/chapter5_3/plib/emoji/Emoji.php
-
-		-
 			message: '#^If condition is always false\.$#'
 			identifier: if.alwaysFalse
 			count: 2
