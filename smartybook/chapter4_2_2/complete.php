@@ -2,6 +2,14 @@
 
 
 require_once('ini.php');
+
+/**
+ * @var string $siteName
+ * @var string $home
+ * @var string $admin
+ * @var int $lastId
+ */
+
 use Smarty\Smarty;
 
 require_once('../../vendor/autoload.php');
@@ -12,6 +20,7 @@ $smarty->assign('admin', $admin);
 // 最新記事IDを取得する関数
 function lastIdCheck($file)
 {
+    $lastId = '';
     while ($array = fgetcsv($file, 5000, ',', escape: '')) {
         $lastId = $array[0];
     }

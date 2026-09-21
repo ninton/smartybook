@@ -1,6 +1,14 @@
 <?php
 
 require_once('ini.php');
+
+/**
+ * @var string $siteName
+ * @var string $home
+ * @var string $admin
+ * @var string $imageDir
+ */
+
 use Smarty\Smarty;
 
 require_once('../../vendor/autoload.php');
