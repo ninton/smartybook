@@ -23,7 +23,7 @@ namespace SmartyBook\chapter5_3\plib\emoji;
 function emoji_convert_variables(&$io_vars, $i_from_encode, $i_to_encode)
 {
     $emoji = Emoji::singleton($i_from_encode, $i_to_encode);
-    $emoji->convert_variables($io_vars);
+    $emoji->convertVariables($io_vars);
 }
 
 function emoji_output_handler($i_buf)
