@@ -3,6 +3,13 @@
 require_once('ini.php');
 use Smarty\Smarty;
 
+/**
+ * @var string $siteName
+ * @var string $home
+ * @var string $admin
+ * @var array<int, string> $categories
+ */
+
 require_once('../../vendor/autoload.php');
 $smarty = new Smarty();
 $smarty->assign('siteName', $siteName);
