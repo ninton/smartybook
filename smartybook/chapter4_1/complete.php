@@ -57,12 +57,10 @@ $string = $id . ','
 
 $check = fwrite($fp, $string);
 
-if ($check == false) {
+if ($check === false) {
     $smarty->assign('flag', false);
-} elseif (is_int($check)) {
-    $smarty->assign('flag', true);
 } else {
-    $smarty->assign('flag', false);
+    $smarty->assign('flag', true);
 }
 flock($fp, LOCK_UN);
 fclose($fp);

@@ -60,12 +60,10 @@ if ($oAuth->getAuth()) {
             . $_POST['image'] . "\n";
 
         $check = fwrite($fp, $string);
-        if ($check == false) {
+        if ($check === false) {
             $smarty->assign('flag', 'FALSE');
-        } elseif (is_int($check)) {
-            $smarty->assign('flag', 'TRUE');
         } else {
-            $smarty->assign('flag', 'FALSE');
+            $smarty->assign('flag', 'TRUE');
         }
         flock($fp, LOCK_UN);
         fclose($fp);
