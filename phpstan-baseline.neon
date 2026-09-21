@@ -61,12 +61,6 @@ parameters:
 			path: smartybook/chapter5_1/complete.php
 
 		-
-			message: '#^If condition is always false\.$#'
-			identifier: if.alwaysFalse
-			count: 2
-			path: smartybook/chapter5_3/plib/emoji/Emoji.php
-
-		-
 			message: '#^Call to function is_int\(\) with int\<1, max\> will always evaluate to true\.$#'
 			identifier: function.alreadyNarrowedType
 			count: 1

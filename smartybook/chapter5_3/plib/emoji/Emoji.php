@@ -159,24 +159,10 @@ class Emoji
             return;
         }
         $this->map = unserialize($buf);
-        if (0) {
-            $arr = explode("\n", $buf);
-            foreach ($arr as $line) {
-                list($from, $to) = explode("\t", $line);
-                $this->map[$from] = $to;
-            }
-        }
     }
 
     public function save()
     {
-        if (0) {
-            $arr = [];
-            foreach ($this->map as $from => $to) {
-                $arr[] = $from . "\t" . $to . "\t.\n";
-            }
-            $buf = join('', $arr);
-        }
         $buf = serialize($this->map);
         $path = $this->mapPath();
 
