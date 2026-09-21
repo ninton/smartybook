@@ -97,12 +97,6 @@ parameters:
 			path: smartybook/chapter4_6/CMS.php
 
 		-
-			message: '#^Method SmartyBook\\chapter4_6\\SortNavigator\:\:show\(\) should return string but return statement is missing\.$#'
-			identifier: return.missing
-			count: 1
-			path: smartybook/chapter4_6/SortNavigator.php
-
-		-
 			message: '#^PHPDoc tag @param has invalid value \(array\)\: Unexpected token "\\n     \* ", expected variable at offset 48 on line 3$#'
 			identifier: phpDoc.parseError
 			count: 1
@@ -119,12 +113,6 @@ parameters:
 			identifier: phpDoc.parseError
 			count: 3
 			path: smartybook/chapter4_6/SortNavigator.php
-
-		-
-			message: '#^Variable \$CONFIG might not be defined\.$#'
-			identifier: variable.undefined
-			count: 2
-			path: smartybook/chapter4_6/index.php
 
 		-
 			message: '#^PHPDoc tag @param has invalid value \(array\)\: Unexpected token "\\n \* ", expected variable at offset 40 on line 3$#'
