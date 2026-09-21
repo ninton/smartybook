@@ -8,6 +8,9 @@ require_once('./fetch_funcs.php');
 require_once(BAT_SRC_DIR . '/ini.php');
 mb_internal_encoding('UTF-8');
 
+/** @var array<string> $categories */
+/** @var string $csv */
+
 // メニュー
 $menu_arr = get_menu_arr($categories);
 
