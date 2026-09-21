@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @var string $siteName
+ * @var string $home
+ * @var string $admin
+ * @var string $lastId
+ */
 
 require_once('ini.php');
 use Smarty\Smarty;
@@ -12,6 +18,8 @@ $smarty->assign('admin', $admin);
 // 最新記事IDを取得する関数
 function lastIdCheck($file)
 {
+    /** @var string|int $lastId */
+    $lastId = '';
     while ($array = fgetcsv($file, 5000, ',', escape: '')) {
         $lastId = $array[0];
     }
