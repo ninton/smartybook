@@ -1,6 +1,5 @@
 <?php
 
-// phpcs:disable PSR1.Files.SideEffects
 
 require_once('ini.php');
 use Smarty\Smarty;

@@ -1,7 +1,5 @@
 <?php
 
-// phpcs:disable PSR1.Classes.ClassDeclaration
-// phpcs:disable PSR1.Files.SideEffects
 
 class BookMark
 {

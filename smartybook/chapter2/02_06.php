@@ -1,6 +1,5 @@
 <?php
 
-// phpcs:disable PSR1.Files.SideEffects
 
 // 設定ファイルの読み込み
 require_once('02_01_b.php');
