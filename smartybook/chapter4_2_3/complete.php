@@ -4,14 +4,23 @@
 require_once('ini.php');
 use Smarty\Smarty;
 
+/** @var string $siteName */
+/** @var string $home */
+/** @var string $admin */
+
 require_once('../../vendor/autoload.php');
 $smarty = new Smarty();
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
 $smarty->assign('admin', $admin);
 // 最新記事IDを取得する関数
+/**
+ * @param resource $file
+ * @return mixed
+ */
 function lastIdCheck($file)
 {
+    $lastId = '';
     while ($array = fgetcsv($file, 5000, ',', escape: '')) {
         $lastId = $array[0];
     }
