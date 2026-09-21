@@ -1,6 +1,10 @@
 <?php
 // 設定ファイルの読み込み
 require_once('02_01_b.php');
+
+/**
+ * @var string $siteName
+ */
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
