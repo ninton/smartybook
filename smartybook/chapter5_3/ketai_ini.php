@@ -3,6 +3,7 @@
 require_once(dirname(__FILE__) . '/plib/semulator.php');
 
 use SmartyBook\chapter5_3\plib\emoji\Emoji;
+
 use function SmartyBook\chapter5_3\plib\emoji\emoji_output_handler;
 
 $agent = Net_UserAgent_Mobile::factory();
