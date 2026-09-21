@@ -199,12 +199,6 @@ parameters:
 			path: smartybook/chapter5_6/_read/classes/AppAmazon.php
 
 		-
-			message: '#^Variable \$CFG might not be defined\.$#'
-			identifier: variable.undefined
-			count: 15
-			path: smartybook/chapter5_6/admin.php
-
-		-
 			message: '#^PHPDoc tag @param has invalid value \(integer\)\: Unexpected token "\\n \* ", expected variable at offset 293 on line 10$#'
 			identifier: phpDoc.parseError
 			count: 1
@@ -221,9 +215,3 @@ parameters:
 			identifier: phpDoc.parseError
 			count: 1
 			path: smartybook/chapter5_6/modifier.mb_truncate.php
-
-		-
-			message: '#^Variable \$CFG might not be defined\.$#'
-			identifier: variable.undefined
-			count: 6
-			path: smartybook/chapter5_6/view.php
