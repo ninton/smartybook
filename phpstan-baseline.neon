@@ -77,9 +77,3 @@ parameters:
 			identifier: function.alreadyNarrowedType
 			count: 1
 			path: smartybook/chapter5_5/complete.php
-
-		-
-			message: '#^Cannot access property \$message on array\.$#'
-			identifier: property.nonObject
-			count: 1
-			path: smartybook/chapter5_6/_read/classes/AppAmazon.php
