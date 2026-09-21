@@ -5,6 +5,12 @@ use Smarty\Smarty;
 
 require_once('../../vendor/autoload.php');
 
+/** @var string $siteName */
+/** @var string $home */
+/** @var string $admin */
+/** @var string[] $categories */
+/** @var Auth $oAuth */
+
 $smarty = new Smarty();
 
 include_once(__DIR__ . '/plugins/function.login_form.php');
