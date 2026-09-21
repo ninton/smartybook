@@ -68,7 +68,6 @@ function proc_image_list()
  * 元画像から大中小の画像を作る
  * @param $i_fname
  *
- * @SuppressWarnings(PHPMD.StaticAccess)
  */
 function proc_image_resize($i_fname)
 {

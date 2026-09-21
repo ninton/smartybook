@@ -1117,12 +1117,6 @@ parameters:
 			path: smartybook/chapter4_4/index.php
 
 		-
-			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.MissingImport\)\)\: Unexpected token "\.MissingImport\)", expected ''\)'' at offset 107 on line 6$#'
-			identifier: phpDoc.parseError
-			count: 1
-			path: smartybook/chapter4_6/CMS.php
-
-		-
 			message: '#^PHPDoc tag @param has invalid value \(array\)\: Unexpected token "\\n     \* ", expected variable at offset 48 on line 3$#'
 			identifier: phpDoc.parseError
 			count: 1
@@ -1161,12 +1155,6 @@ parameters:
 		-
 			message: '#^Method SmartyBook\\chapter4_6\\SortNavigator\:\:show\(\) should return string but return statement is missing\.$#'
 			identifier: return.missing
-			count: 1
-			path: smartybook/chapter4_6/SortNavigator.php
-
-		-
-			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.ElseExpression\)\)\: Unexpected token "\.ElseExpression\)", expected ''\)'' at offset 110 on line 6$#'
-			identifier: phpDoc.parseError
 			count: 1
 			path: smartybook/chapter4_6/SortNavigator.php
 
@@ -1217,12 +1205,6 @@ parameters:
 			identifier: variable.undefined
 			count: 1
 			path: smartybook/chapter4_9/fetch.php
-
-		-
-			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.ElseExpression\)\)\: Unexpected token "\.ElseExpression\)", expected ''\)'' at offset 358 on line 14$#'
-			identifier: phpDoc.parseError
-			count: 1
-			path: smartybook/chapter4_9/modifier.mb_truncate.php
 
 		-
 			message: '#^PHPDoc tag @param has invalid value \(integer\)\: Unexpected token "\\n \* ", expected variable at offset 293 on line 10$#'
@@ -1505,72 +1487,6 @@ parameters:
 			identifier: if.alwaysFalse
 			count: 2
 			path: smartybook/chapter5_3/plib/emoji/Emoji.php
-
-		-
-			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.ElseExpression\)\)\: Unexpected token "\.ElseExpression\)", expected ''\)'' at offset 111 on line 5$#'
-			identifier: phpDoc.parseError
-			count: 1
-			path: smartybook/chapter5_3/plib/emoji/Emoji.php
-
-		-
-			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.ElseExpression\)\)\: Unexpected token "\.ElseExpression\)", expected ''\)'' at offset 64 on line 4$#'
-			identifier: phpDoc.parseError
-			count: 1
-			path: smartybook/chapter5_3/plib/emoji/Emoji.php
-
-		-
-			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.ShortVariable\)\)\: Unexpected token "\.ShortVariable\)", expected ''\)'' at offset 112 on line 6$#'
-			identifier: phpDoc.parseError
-			count: 1
-			path: smartybook/chapter5_3/plib/emoji/Emoji.php
-
-		-
-			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.ShortVariable\)\)\: Unexpected token "\.ShortVariable\)", expected ''\)'' at offset 34 on line 2$#'
-			identifier: phpDoc.parseError
-			count: 1
-			path: smartybook/chapter5_3/plib/emoji/Emoji.php
-
-		-
-			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.StaticAccess\)\)\: Unexpected token "\.StaticAccess\)", expected ''\)'' at offset 100 on line 6$#'
-			identifier: phpDoc.parseError
-			count: 1
-			path: smartybook/chapter5_3/plib/emoji/Emoji.php
-
-		-
-			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.StaticAccess\)\)\: Unexpected token "\.StaticAccess\)", expected ''\)'' at offset 115 on line 7$#'
-			identifier: phpDoc.parseError
-			count: 1
-			path: smartybook/chapter5_3/plib/emoji/Emoji.php
-
-		-
-			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.Superglobals\)\)\: Unexpected token "\.Superglobals\)", expected ''\)'' at offset 98 on line 5$#'
-			identifier: phpDoc.parseError
-			count: 1
-			path: smartybook/chapter5_3/plib/emoji/Emoji.php
-
-		-
-			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.TooManyPublicMethods\)\)\: Unexpected token "\.TooManyPublicMethods\)", expected ''\)'' at offset 48 on line 4$#'
-			identifier: phpDoc.parseError
-			count: 1
-			path: smartybook/chapter5_3/plib/emoji/Emoji.php
-
-		-
-			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.UndefinedVariable\)\)\: Unexpected token "\.UndefinedVariable\)", expected ''\)'' at offset 132 on line 6$#'
-			identifier: phpDoc.parseError
-			count: 1
-			path: smartybook/chapter5_3/plib/emoji/Emoji.php
-
-		-
-			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.UnusedFormalParameter\)\)\: Unexpected token "\.UnusedFormalParameter\)", expected ''\)'' at offset 248 on line 7$#'
-			identifier: phpDoc.parseError
-			count: 1
-			path: smartybook/chapter5_3/plib/funcs.php
-
-		-
-			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.StaticAccess\)\)\: Unexpected token "\.StaticAccess\)", expected ''\)'' at offset 98 on line 5$#'
-			identifier: phpDoc.parseError
-			count: 1
-			path: smartybook/chapter5_3/plib/imgsizecvt_funcs.php
 
 		-
 			message: '#^Variable \$admin might not be defined\.$#'
@@ -1891,32 +1807,8 @@ parameters:
 			path: smartybook/chapter5_5/login.php
 
 		-
-			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.UnusedFormalParameter\)\)\: Unexpected token "\.UnusedFormalParameter\)", expected ''\)'' at offset 87 on line 6$#'
-			identifier: phpDoc.parseError
-			count: 1
-			path: smartybook/chapter5_5/plugins/function.login_form.php
-
-		-
-			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.ElseExpression\)\)\: Unexpected token "\.ElseExpression\)", expected ''\)'' at offset 63 on line 4$#'
-			identifier: phpDoc.parseError
-			count: 1
-			path: smartybook/chapter5_6/_read/classes/App.php
-
-		-
 			message: '#^Cannot access property \$message on array\.$#'
 			identifier: property.nonObject
-			count: 1
-			path: smartybook/chapter5_6/_read/classes/AppAmazon.php
-
-		-
-			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.StaticAccess\)\)\: Unexpected token "\.StaticAccess\)", expected ''\)'' at offset 146 on line 7$#'
-			identifier: phpDoc.parseError
-			count: 1
-			path: smartybook/chapter5_6/_read/classes/AppAmazon.php
-
-		-
-			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.UnusedFormalParameter\)\)\: Unexpected token "\.UnusedFormalParameter\)", expected ''\)'' at offset 132 on line 7$#'
-			identifier: phpDoc.parseError
 			count: 1
 			path: smartybook/chapter5_6/_read/classes/AppAmazon.php
 
@@ -1955,12 +1847,6 @@ parameters:
 			identifier: variable.undefined
 			count: 15
 			path: smartybook/chapter5_6/admin.php
-
-		-
-			message: '#^PHPDoc tag @SuppressWarnings has invalid value \(\(PHPMD\.ElseExpression\)\)\: Unexpected token "\.ElseExpression\)", expected ''\)'' at offset 358 on line 14$#'
-			identifier: phpDoc.parseError
-			count: 1
-			path: smartybook/chapter5_6/modifier.mb_truncate.php
 
 		-
 			message: '#^PHPDoc tag @param has invalid value \(integer\)\: Unexpected token "\\n \* ", expected variable at offset 293 on line 10$#'

@@ -19,7 +19,6 @@ class CMS
      *  @param  array
      *  @return void
      *
-     * @SuppressWarnings(PHPMD.MissingImport)
      */
     public function __construct($i_dsn, $i_dbuser)
     {
