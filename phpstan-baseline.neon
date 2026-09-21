@@ -7,12 +7,6 @@ parameters:
 			path: smartybook/chapter2/02_06.php
 
 		-
-			message: '#^Variable \$lastId might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: smartybook/chapter2/02_06.php
-
-		-
 			message: '#^Call to function is_int\(\) with int\<1, max\> will always evaluate to true\.$#'
 			identifier: function.alreadyNarrowedType
 			count: 1
