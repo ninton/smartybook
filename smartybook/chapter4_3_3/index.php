@@ -5,6 +5,12 @@ require_once('ini.php');
 use Smarty\Smarty;
 
 require_once('../../vendor/autoload.php');
+
+/** @var string $siteName */
+/** @var string $home */
+/** @var array<string> $categories */
+/** @var string $csv */
+
 $smarty = new Smarty();
 
 require_once(__DIR__ . '/insert.php');
@@ -17,6 +23,8 @@ $smarty->assign('categories', $categories);
 // CSVデータを配列に格納
 $fp = fopen($csv, 'r');
 $i = 0;
+/** @var array<int, array<string, string|int>> $data */
+$data = [];
 while ($array = fgetcsv($fp, 5000, ',', escape: '')) {
     if ($array[1] == 'Notice') {
         $notice = $array[3];
