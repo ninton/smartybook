@@ -5,6 +5,12 @@ use Smarty\Smarty;
 
 require_once('../../vendor/autoload.php');
 
+/**
+ * @var string $siteName
+ * @var string $home
+ * @var string[] $categories
+ * @var string $csv
+ */
 $smarty = new Smarty();
 
 require_once(__DIR__ . '/insert.php');

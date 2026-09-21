@@ -30,7 +30,6 @@ class App
     /**
      * @return string
      *
-     * @SuppressWarnings(PHPMD.ElseExpression)
      */
     public static function getCmd()
     {

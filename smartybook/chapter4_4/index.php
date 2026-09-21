@@ -9,6 +9,8 @@ $csv = 'data.csv';
 
 $smarty = new Smarty();
 // CSVデータを配列に格納
+/** @var array<int, array<string, string>> $data */
+$data = [];
 $fp = fopen($csv, 'r');
 $i = 0;
 while ($array = fgetcsv($fp, 5000, ',', escape: '')) {

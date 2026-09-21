@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @var array<string, mixed> $CFG
+ */
+
 // 2020年3月で、本プログラムで使っているAmazon_ECSのAPIは廃止となりました。
 // 常に410エラーです
 

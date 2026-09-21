@@ -23,7 +23,6 @@ class AppAmazon
      *  @param  string
      *  @return void
      *
-     *  @SuppressWarnings(PHPMD.UnusedFormalParameter)
      */
     public function __construct($access_key_id, $secret_access_key, $associate_tag)
     {
@@ -41,7 +40,6 @@ class AppAmazon
      *  @param  array
      *  @return string  error message
      *
-     * @SuppressWarnings(PHPMD.StaticAccess)
      */
     /*
         $ASINs = '12345,23456,34567';

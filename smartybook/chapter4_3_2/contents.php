@@ -1,6 +1,12 @@
 <?php
 
-// phpcs:disable PSR1.Files.SideEffects
+/**
+ * @var string $siteName
+ * @var string $home
+ * @var array<string> $categories
+ * @var string $csv
+ * @var array<int, array<string, string>> $data
+ */
 
 require_once('ini.php');
 use Smarty\Smarty;

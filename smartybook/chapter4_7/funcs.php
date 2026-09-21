@@ -1,8 +1,8 @@
 <?php
 
 /**
- *  @param  string
- *  @return array
+ * @param string $i_path
+ * @return array
  */
 function array_load($i_path)
 {
@@ -12,8 +12,8 @@ function array_load($i_path)
 }
 
 /**
- *  @param  string
- *  @return array
+ * @param string $i_path
+ * @return array
  */
 function assoc_load($i_path)
 {
@@ -31,9 +31,9 @@ function assoc_load($i_path)
 }
 
 /**
- *  @param  string
- *  @param  array
- *  @return int
+ * @param array $io_vars
+ * @param array|null $i_params
+ * @return int
  */
 function makeTimeStamp(&$io_vars, $i_params = null)
 {

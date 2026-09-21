@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @var array{dsn: string, db_user: string} $CONFIG
+ */
+
 use Smarty\Smarty;
 
 require_once('../../vendor/autoload.php');

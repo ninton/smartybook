@@ -5,6 +5,10 @@ use Smarty\Smarty;
 
 require_once('../../vendor/autoload.php');
 $smarty = new Smarty();
+/** @var string $siteName */
+/** @var string $home */
+/** @var string $admin */
+/** @var string $imageDir */
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
 $smarty->assign('admin', $admin);

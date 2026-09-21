@@ -1,18 +1,22 @@
 <?php
 
-// phpcs:disable PSR1.Files.SideEffects
 
 require_once('ini.php');
 use Smarty\Smarty;
 
 require_once('../../vendor/autoload.php');
 $smarty = new Smarty();
+/** @var string $siteName */
+/** @var string $home */
+/** @var string $admin */
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
 $smarty->assign('admin', $admin);
 // 最新記事IDを取得する関数
-function lastIdCheck($file)
+function lastIdCheck($file): string|int
 {
+    /** @var string|int $lastId */
+    $lastId = 0;
     while ($array = fgetcsv($file, 5000, ',', escape: '')) {
         $lastId = $array[0];
     }

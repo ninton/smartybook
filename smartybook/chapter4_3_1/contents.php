@@ -1,9 +1,17 @@
 <?php
 
-// phpcs:disable PSR1.Files.SideEffects
 
 require_once('ini.php');
 use Smarty\Smarty;
+
+/**
+ * @var string $siteName
+ * @var string $home
+ * @var array<int, string> $categories
+ * @var string $notice
+ * @var string $csv
+ * @var array<int, array<string, string|int>> $data
+ */
 
 require_once('../../vendor/autoload.php');
 $smarty = new Smarty();
@@ -17,6 +25,8 @@ $smarty->assign('categories', $categories);
 $smarty->assign('notice', $notice);
 // CSVデータを配列に格納
 $fp = fopen($csv, 'r');
+/** @var array<int, array<string, string|int>> $data */
+$data = [];
 $i = 0;
 while ($array = fgetcsv($fp, 5000, ',', escape: '')) {
     if ($_GET['category'] == $array[1]) {

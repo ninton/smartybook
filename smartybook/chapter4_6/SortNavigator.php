@@ -49,7 +49,7 @@ class SortNavigator
 
     /**
      *  @param  string
-     *  @return string
+     *  @return void
      */
     public function show($i_sort)
     {
@@ -65,7 +65,6 @@ class SortNavigator
      *  @param  string
      *  @return string
      *
-     * @SuppressWarnings(PHPMD.ElseExpression)
      */
     public function showLink($i_sort, $i_order)
     {

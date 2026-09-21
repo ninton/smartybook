@@ -1,6 +1,5 @@
 <?php
 
-// phpcs:disable PSR1.Files.SideEffects
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 

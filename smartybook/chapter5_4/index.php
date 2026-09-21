@@ -5,6 +5,13 @@ use Smarty\Smarty;
 
 require_once('../../vendor/autoload.php');
 
+/**
+ * @var string $siteName
+ * @var string $siteDescription
+ * @var string $home
+ * @var string[] $categories
+ * @var string $csv
+ */
 $smarty = new Smarty();
 $smarty->assign('siteName', $siteName);
 $smarty->assign('siteDescription', $siteDescription);

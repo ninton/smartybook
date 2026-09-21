@@ -1,6 +1,5 @@
 <?php
 
-// phpcs:disable PSR1.Files.SideEffects
 
 header('Content-Type: application/xml; charset=UTF-8');
 require_once('ini.php');
@@ -8,6 +7,10 @@ use Smarty\Smarty;
 
 require_once('../../vendor/autoload.php');
 $smarty = new Smarty();
+/** @var string $siteName */
+/** @var string $home */
+/** @var string[] $categories */
+/** @var string $csv */
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
 $smarty->assign('categories', $categories);
@@ -15,6 +18,7 @@ $smarty->assign('categories', $categories);
 // CSVデータを配列に格納
 $fp = fopen($csv, 'r');
 $i = 0;
+/** @var array<int, array<string, mixed>> $data */
 while ($array = fgetcsv($fp, 5000, ',', escape: '')) {
     if ($array[1] == 'Notice') {
         $notice = $array[3];
