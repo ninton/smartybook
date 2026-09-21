@@ -12,8 +12,8 @@ class SortNavigator
     private $vars;
 
     /**
-     *  @param  string
-     *  @param  string
+     *  @param string $i_sort
+     *  @param string $i_order
      *  @return void
      */
     public function __construct($i_sort, $i_order)
@@ -36,8 +36,8 @@ class SortNavigator
     }
 
     /**
-     *  @param  string
-     *  @param  string
+     *  @param string $i_key
+     *  @param string $i_value
      *  @return void
      */
     public function setOption($i_key, $i_value)
@@ -48,7 +48,7 @@ class SortNavigator
     }
 
     /**
-     *  @param  string
+     *  @param string $i_sort
      *  @return void
      */
     public function show($i_sort)
@@ -61,8 +61,8 @@ class SortNavigator
     }
 
     /**
-     *  @param  string
-     *  @param  string
+     *  @param string $i_sort
+     *  @param string $i_order
      *  @return string
      *
      */
@@ -104,8 +104,8 @@ EOT;
     }
 
     /**
-     *  @param  string
-     *  @param  array
+     *  @param string $i_query
+     *  @param array $i_vars
      *  @return string
      */
     public function replaceQuery($i_query, $i_vars)

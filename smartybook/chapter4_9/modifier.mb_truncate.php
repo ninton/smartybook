@@ -14,10 +14,9 @@
  * Name:     mb_truncate<br>
  * Purpose:  Truncate a string to a certain length if necessary,
  *           optionally appending the $etc string.
- * @author   Aoki Makoto <gzl03577@nifty.com>
- * @param string
- * @param integer
- * @param string
+ * @param string $i_string
+ * @param int $i_length
+ * @param string $i_etc
  * @return string
  *
  */
