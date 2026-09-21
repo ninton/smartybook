@@ -49,7 +49,7 @@ class SortNavigator
 
     /**
      *  @param  string
-     *  @return string
+     *  @return void
      */
     public function show($i_sort)
     {
