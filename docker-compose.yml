@@ -14,7 +14,7 @@ services:
       - db
 
   db:
-    image: mariadb:12.3
+    image: mariadb:13.0
     # ホストへは公開しない（ports 未設定）。DB操作は Docker ネットワーク経由で実施する。
     environment:
       MARIADB_ALLOW_EMPTY_ROOT_PASSWORD: "yes"
