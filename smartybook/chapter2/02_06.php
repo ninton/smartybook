@@ -62,12 +62,10 @@ $string = "$id,$_POST[category],$title,$contents,$_POST[date],$_POST[image]\n";
 $check = fwrite($fp, $string);
 
 // 書き込みできたかチェック
-if ($check == false) {
+if ($check === false) {
     print '登録に失敗しました。<br />';
-} elseif (is_int($check)) {
-    print '正常に登録できました。<br />';
 } else {
-    print '登録に失敗しました。<br />';
+    print '正常に登録できました。<br />';
 }
 
 // CSVファイルのロックを解除
