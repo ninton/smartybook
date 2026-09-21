@@ -33,12 +33,12 @@ switch ($_SERVER['carrier_ua']) {
         break;
 
     case 'ezweb':
-        Emoji::output_setting('i_uni16', 'e_img_num');
+        Emoji::singleton('i_uni16', 'e_img_num')->output_setting('i_uni16', 'e_img_num');
         ob_start('emoji_output_handler');
         break;
 
     case 'softbank':
-        Emoji::output_setting('i_uni16', 's_uni16');
+        Emoji::singleton('i_uni16', 's_uni16')->output_setting('i_uni16', 's_uni16');
         ob_start('emoji_output_handler');
         break;
 }
