@@ -1,85 +1,13 @@
 parameters:
 	ignoreErrors:
 		-
-			message: '#^Variable \$categories might not be defined\.$#'
-			identifier: variable.undefined
-			count: 6
-			path: smartybook/chapter2/02_02.php
-
-		-
-			message: '#^Variable \$siteName might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: smartybook/chapter2/02_02.php
-
-		-
-			message: '#^Variable \$categories might not be defined\.$#'
-			identifier: variable.undefined
-			count: 3
-			path: smartybook/chapter2/02_02_a.php
-
-		-
-			message: '#^Variable \$siteName might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: smartybook/chapter2/02_02_a.php
-
-		-
-			message: '#^Variable \$csv might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: smartybook/chapter2/02_03.php
-
-		-
-			message: '#^Variable \$home might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: smartybook/chapter2/02_03.php
-
-		-
-			message: '#^Variable \$siteName might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: smartybook/chapter2/02_03.php
-
-		-
-			message: '#^Variable \$siteName might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: smartybook/chapter2/02_04.php
-
-		-
-			message: '#^Variable \$imageDir might not be defined\.$#'
-			identifier: variable.undefined
-			count: 4
-			path: smartybook/chapter2/02_05.php
-
-		-
-			message: '#^Variable \$siteName might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: smartybook/chapter2/02_05.php
-
-		-
 			message: '#^Call to function is_int\(\) with int\<1, max\> will always evaluate to true\.$#'
 			identifier: function.alreadyNarrowedType
 			count: 1
 			path: smartybook/chapter2/02_06.php
 
 		-
-			message: '#^Variable \$admin might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: smartybook/chapter2/02_06.php
-
-		-
 			message: '#^Variable \$lastId might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: smartybook/chapter2/02_06.php
-
-		-
-			message: '#^Variable \$siteName might not be defined\.$#'
 			identifier: variable.undefined
 			count: 1
 			path: smartybook/chapter2/02_06.php
