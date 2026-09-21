@@ -15,8 +15,8 @@ class CMS
     private $dbh;
 
     /**
-     *  @param  string
-     *  @param  array
+     *  @param string $i_dsn
+     *  @param string $i_dbuser
      *  @return void
      *
      */
@@ -37,10 +37,10 @@ class CMS
     }
 
     /**
-     *  @param  integer
-     *  @param  integer
-     *  @param  string
-     *  @param  string
+     *  @param int $i_offset
+     *  @param int $i_limit
+     *  @param string $i_sort
+     *  @param string $i_order
      *  @return array
      */
     public function getAll($i_offset, $i_limit, $i_sort, $i_order)

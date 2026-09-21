@@ -18,9 +18,9 @@ class AppAmazon
     private $amazon;
 
     /**
-     *  @param  string
-     *  @param  string
-     *  @param  string
+     *  @param string $access_key_id
+     *  @param string $secret_access_key
+     *  @param string $associate_tag
      *  @return void
      *
      */
@@ -35,9 +35,9 @@ class AppAmazon
     }
 
     /**
-     *  @param  string
-     *  @param  assoc
-     *  @param  array
+     *  @param string $i_ASINs
+     *  @param array $i_options
+     *  @param array $o_Item_arr
      *  @return string  error message
      *
      */
