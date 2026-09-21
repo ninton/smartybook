@@ -20,7 +20,7 @@ require_once('02_01_b.php');
 <body>
 <?php
 // csvデータの最終行のIDをチェックする関数
-function lastIdCheck($file)
+function lastIdCheck(mixed $file): string|int
 {
     $lastId = '';
     /** @var string $lastId */
@@ -32,7 +32,7 @@ function lastIdCheck($file)
     }
     return $lastId;
 }
-function convertNl($str)
+function convertNl(string $str): string
 {
     $str = str_replace('\\', '', $str);
     $str = str_replace('"', '""', $str);
