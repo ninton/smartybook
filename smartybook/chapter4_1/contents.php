@@ -1,4 +1,9 @@
 <?php
+/**
+ * @var string $siteName
+ * @var string $home
+ * @var string $csv
+ */
 
 require_once('ini.php');
 use Smarty\Smarty;
@@ -11,6 +16,7 @@ $smarty->assign('home', $home);
 // CSVデータを配列に格納
 $fp = fopen($csv, 'r');
 $i = 0;
+$data = [];
 while ($array = fgetcsv($fp, 5000, ',', escape: '')) {
     if ($_GET['category'] == $array[1]) {
         $data[$i]['id']       = $array[0];

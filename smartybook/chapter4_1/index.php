@@ -1,4 +1,9 @@
 <?php
+/**
+ * @var string $siteName
+ * @var string $home
+ * @var array $categories
+ */
 
 require_once('ini.php');
 use Smarty\Smarty;
