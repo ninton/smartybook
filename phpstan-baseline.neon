@@ -61,12 +61,6 @@ parameters:
 			path: smartybook/chapter4_3_3/complete.php
 
 		-
-			message: '#^Variable \$data might not be defined\.$#'
-			identifier: variable.undefined
-			count: 1
-			path: smartybook/chapter4_4/index.php
-
-		-
 			message: '#^PHPDoc tag @param has invalid value \(array\)\: Unexpected token "\\n     \* ", expected variable at offset 48 on line 3$#'
 			identifier: phpDoc.parseError
 			count: 1
