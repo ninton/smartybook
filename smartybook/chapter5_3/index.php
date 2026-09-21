@@ -7,9 +7,9 @@ require_once('./ketai_ini.php');
 
 /**
  * ini.phpで定義
- * @var $siteName
- * @var $home
- * @var $categories
+ * @var string $siteName
+ * @var string $home
+ * @var array<int, array<string, string>> $categories
  */
 $smarty = new Smarty();
 $smarty->assign('siteName', $siteName);

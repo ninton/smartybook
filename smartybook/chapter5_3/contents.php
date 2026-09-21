@@ -8,8 +8,10 @@ require_once __DIR__ . '/plib/funcs.php';
 require_once __DIR__ . '/plib/pager_ex.php';
 
 /**
- * @var $CFG init.phpで設定
- * @var $display ketai_init,phpで設定
+ * @var array<string, string> $CFG init.phpで設定
+ * @var object $display ketai_init,phpで設定
+ * @var string $siteName ini.phpで設定
+ * @var string $home ini.phpで設定
  */
 // 画面幅から画像サイズを判断する
 if ($display->getWidth() < 180) {
