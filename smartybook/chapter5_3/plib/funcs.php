@@ -30,7 +30,6 @@ function get_entry_arr($i_path, $i_category)
  * @param string $i_imageSizeGroup
  *
  * array_walkのコールバック関数、2つめの引数に配列キーが渡される（が、この関数では使わない）
- * @SuppressWarnings(PHPMD.UnusedFormalParameter)
  */
 function replace_entry_image(&$io_rcd, $i_key, $i_imageSizeGroup)
 {

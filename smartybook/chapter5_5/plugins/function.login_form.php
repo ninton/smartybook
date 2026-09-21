@@ -13,7 +13,6 @@
  * @param $smarty
  * @return string
  *
- * @SuppressWarnings(PHPMD.UnusedFormalParameter)
  */
 function smarty_function_login_form($params, $smarty)
 {

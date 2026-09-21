@@ -19,7 +19,6 @@ namespace SmartyBook\chapter5_3\plib\emoji;
  * @param $i_from_encode
  * @param $i_to_encode
  *
- * @SuppressWarnings(PHPMD.StaticAccess)
  */
 function emoji_convert_variables(&$io_vars, $i_from_encode, $i_to_encode)
 {
@@ -43,7 +42,6 @@ function emoji_output_handler($i_buf)
  * @param $i_to_encode
  * @return mixed
  *
- * @SuppressWarnings(PHPMD.StaticAccess)
  */
 function emoji_convert($i_buf, $i_from_encode, $i_to_encode)
 {
@@ -55,7 +53,6 @@ function emoji_convert($i_buf, $i_from_encode, $i_to_encode)
 /**
  * Class Emoji
  *
- * @SuppressWarnings(PHPMD.TooManyPublicMethods)
  */
 class Emoji
 {
@@ -80,7 +77,6 @@ class Emoji
      * @param string $i_to_encode
      * @return Emoji
      *
-     * @SuppressWarnings(PHPMD.UndefinedVariable)
      */
     public static function singleton($i_from_encode, $i_to_encode)
     {
@@ -96,7 +92,6 @@ class Emoji
      * @param string $i_from_encode
      * @param string $i_to_encode
      *
-     * @SuppressWarnings(PHPMD.ElseExpression)
      */
     public function output_setting($i_from_encode = '', $i_to_encode = '')
     {
@@ -154,7 +149,6 @@ class Emoji
     }
 
     /**
-     * @SuppressWarnings(PHPMD.ShortVariable)
      */
     public function load()
     {
@@ -201,7 +195,6 @@ class Emoji
      * @param $i_to
      * @param string $i_text
      *
-     * @SuppressWarnings(PHPMD.ShortVariable)
      */
     public function add($i_from, $i_to, $i_text = '')
     {
@@ -314,7 +307,6 @@ class Emoji
      * @param $i_buf
      * @return string|string[]|null
      *
-     * @SuppressWarnings(PHPMD.Superglobals)
      */
     public function convert($i_buf)
     {
@@ -360,7 +352,6 @@ class Emoji
     /**
      * @param $io_vars
      *
-     * @SuppressWarnings(PHPMD.ElseExpression)
      */
     public function convertVariables(&$io_vars)
     {
