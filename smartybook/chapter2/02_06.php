@@ -34,6 +34,11 @@ function convertNl($str)
     return $str;
 }
 
+var_dump(file_exists('data.csv'));
+var_dump(is_writable('data.csv'));
+var_dump(fileowner('data.csv'));
+var_dump(substr(sprintf('%o', fileperms('data.csv')), -4));
+
 // CSVファイルを読み込み、追記両用で開く
 $fp = fopen('data.csv', 'a+') or die('file_open_error');
 
