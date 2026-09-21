@@ -10,6 +10,10 @@ $smarty = new Smarty();
 require_once(__DIR__ . '/insert.php');
 $smarty->registerPlugin('function', 'insert_noticeText2', 'smarty_insert_noticeText2');
 
+/** @var string $siteName */
+/** @var string $home */
+/** @var string[] $categories */
+/** @var string $csv */
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
 $smarty->assign('categories', $categories);
@@ -17,6 +21,7 @@ $smarty->assign('categories', $categories);
 // CSVデータを配列に格納
 $fp = fopen($csv, 'r');
 $i = 0;
+/** @var array<int, array<string, mixed>> $data */
 while ($array = fgetcsv($fp, 5000, ',', escape: '')) {
     if ($array[1] == 'Notice') {
         $notice = $array[3];
