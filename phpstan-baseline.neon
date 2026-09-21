@@ -115,18 +115,6 @@ parameters:
 			path: smartybook/chapter4_6/SortNavigator.php
 
 		-
-			message: '#^PHPDoc tag @param has invalid value \(array\)\: Unexpected token "\\n \* ", expected variable at offset 40 on line 3$#'
-			identifier: phpDoc.parseError
-			count: 1
-			path: smartybook/chapter4_7/funcs.php
-
-		-
-			message: '#^PHPDoc tag @param has invalid value \(string\)\: Unexpected token "\\n \* ", expected variable at offset 22 on line 2$#'
-			identifier: phpDoc.parseError
-			count: 3
-			path: smartybook/chapter4_7/funcs.php
-
-		-
 			message: '#^Variable \$categories might not be defined\.$#'
 			identifier: variable.undefined
 			count: 1
