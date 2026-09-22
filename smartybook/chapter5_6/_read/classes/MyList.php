@@ -7,9 +7,13 @@ namespace SmartyBook\chapter5_6\_read\classes;
  */
 class MyList
 {
+    /** @var string */
     public $ListId;
+    /** @var string */
     public $ListName;
+    /** @var string */
     public $NickName;
+    /** @var list<array{ASIN: string, Item?: mixed}> */
     public $detail_arr;
 
     public function __construct()
@@ -20,6 +24,10 @@ class MyList
         $this->detail_arr = [];
     }
 
+    /**
+     * @param array{ListName: string, NickName: string, detail_arr: list<array{ASIN: string, Item?: mixed}>} $i_vars
+     * @return void
+     */
     public function input($i_vars)
     {
         $this->ListName   = $i_vars['ListName'];
@@ -27,6 +35,9 @@ class MyList
         $this->detail_arr = $i_vars['detail_arr'];
     }
 
+    /**
+     * @return string
+     */
     public function getASINs()
     {
         // ASINの重複要素と空要素を取り除いて、カンマ区切りにする
@@ -41,6 +52,10 @@ class MyList
         return join(',', array_keys($map));
     }
 
+    /**
+     * @param list<array{ASIN: string}> $i_Item_arr
+     * @return void
+     */
     public function setItems($i_Item_arr)
     {
         $map = [];
