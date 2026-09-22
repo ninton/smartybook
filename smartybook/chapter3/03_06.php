@@ -7,6 +7,11 @@ class BookMark
     public string $url;
     public string $date;
 
+    /**
+     * @param string $title
+     * @param string $url
+     * @param string $date
+     */
     public function __construct($title, $url, $date)
     {
         $this->title = $title; //サイト名
@@ -14,6 +19,9 @@ class BookMark
         $this->date  = $date; //ブックマークした日付
     }
 
+    /**
+     * @return int|float
+     */
     public function getAgo()
     {
         //現在日時からどのくらい時間が経っているか（単位:秒）
