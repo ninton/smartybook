@@ -19,20 +19,19 @@ require_once('02_01_b.php');
 </head>
 <body>
 <?php
-// csvデータの最終行のIDをチェックする関数
-function lastIdCheck($file)
+/**
+ * CSVファイルの最終行のIDを取得する関数
+ * @param resource $file CSVファイルのファイルポインタ
+ * @return int 最終行のID
+ */
+function lastIdCheck($file): int
 {
-    $lastId = '';
-    /** @var string $lastId */
     while ($arr = fgetcsv($file, 5000, ',', escape: '')) {
-        $lastId = $arr[0];
+        $lastId = (int)$arr[0];
     }
-    if ($lastId == '') {
-        $lastId = 0;
-    }
-    return $lastId;
+    return $lastId ?? 0;
 }
-function convertNl($str)
+function convertNl(string $str): string
 {
     $str = str_replace('\\', '', $str);
     $str = str_replace('"', '""', $str);
