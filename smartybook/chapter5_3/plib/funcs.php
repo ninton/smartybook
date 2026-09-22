@@ -1,6 +1,11 @@
 <?php
 
 // CSVデータを配列に格納
+/**
+ * @param string $i_path
+ * @param string $i_category
+ * @return list<array{id: string, category: string, title: string, text: string, time: string, image: string}>
+ */
 function get_entry_arr($i_path, $i_category)
 {
     $entry_arr = [];
@@ -25,9 +30,10 @@ function get_entry_arr($i_path, $i_category)
 
 // 元画像パスを大中小画像パスに置換する
 /**
- * @param array $io_rcd
- * @param string $i_key
- * @param string $i_imageSizeGroup
+ * @param array{id: string, category: string, title: string, text: string, time: string, image: string} $io_rcd
+ * @param int $i_key
+ * @param '120'|'240'|'480' $i_imageSizeGroup
+ * @return void
  *
  * array_walkのコールバック関数、2つめの引数に配列キーが渡される（が、この関数では使わない）
  */
