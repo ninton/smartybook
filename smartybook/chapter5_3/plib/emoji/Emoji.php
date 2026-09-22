@@ -15,10 +15,10 @@ namespace SmartyBook\chapter5_3\plib\emoji;
 
 */
 /**
- * @param $io_vars
- * @param $i_from_encode
- * @param $i_to_encode
- *
+ * @param array<mixed> $io_vars
+ * @param string $i_from_encode
+ * @param string $i_to_encode
+ * @return void
  */
 function emoji_convert_variables(&$io_vars, $i_from_encode, $i_to_encode)
 {
@@ -26,6 +26,10 @@ function emoji_convert_variables(&$io_vars, $i_from_encode, $i_to_encode)
     $emoji->convertVariables($io_vars);
 }
 
+/**
+ * @param string $i_buf
+ * @return string
+ */
 function emoji_output_handler($i_buf)
 {
     $buf = $i_buf;
@@ -37,11 +41,10 @@ function emoji_output_handler($i_buf)
 }
 
 /**
- * @param $i_buf
- * @param $i_from_encode
- * @param $i_to_encode
- * @return mixed
- *
+ * @param string $i_buf
+ * @param string $i_from_encode
+ * @param string $i_to_encode
+ * @return string|string[]|null
  */
 function emoji_convert($i_buf, $i_from_encode, $i_to_encode)
 {
@@ -56,12 +59,22 @@ function emoji_convert($i_buf, $i_from_encode, $i_to_encode)
  */
 class Emoji
 {
+    /** @var array<int, array{from: string, to: string}> */
     public static $output_setting_arr = [];
+    /** @var string */
     private $from_encode;
+    /** @var string */
     private $to_encode;
+    /** @var string */
     private $regex;
+    /** @var array<string, string> */
     private $map;
 
+    /**
+     * @param string $i_from_encode
+     * @param string $i_to_encode
+     * @return void
+     */
     private function __construct($i_from_encode, $i_to_encode)
     {
         $this->from_encode = $i_from_encode;
@@ -91,7 +104,7 @@ class Emoji
     /**
      * @param string $i_from_encode
      * @param string $i_to_encode
-     *
+     * @return void
      */
     public function output_setting($i_from_encode = '', $i_to_encode = '')
     {
@@ -106,6 +119,9 @@ class Emoji
         }
     }
 
+    /**
+     * @return array<string, string>
+     */
     public function getRegexArr()
     {
         return [
@@ -137,18 +153,25 @@ class Emoji
         ];
     }
 
+    /**
+     * @return array<int, string>
+     */
     public function getEncodeArr()
     {
         $arr = self::getRegexArr();
         return array_keys($arr);
     }
 
+    /**
+     * @return void
+     */
     public function clear()
     {
         $this->map = [];
     }
 
     /**
+     * @return void
      */
     public function load()
     {
@@ -161,6 +184,9 @@ class Emoji
         $this->map = unserialize($buf);
     }
 
+    /**
+     * @return void
+     */
     public function save()
     {
         $buf = serialize($this->map);
@@ -169,6 +195,9 @@ class Emoji
         file_put_contents($path, $buf);
     }
 
+    /**
+     * @return string
+     */
     public function mapPath()
     {
         $fname = "{$this->from_encode}.{$this->to_encode}.dat";
@@ -177,10 +206,10 @@ class Emoji
     }
 
     /**
-     * @param $i_from
-     * @param $i_to
+     * @param string $i_from
+     * @param string $i_to
      * @param string $i_text
-     *
+     * @return void
      */
     public function add($i_from, $i_to, $i_text = '')
     {
@@ -209,6 +238,11 @@ class Emoji
         //var_dump( $this->map );
     }
 
+    /**
+     * @param string $i_buf
+     * @param string $i_encode
+     * @return string
+     */
     public function modifier($i_buf, $i_encode)
     {
         $method = $this->encodeMethod($i_encode);
@@ -250,6 +284,10 @@ class Emoji
         return $buf;
     }
 
+    /**
+     * @param string $encode
+     * @return int
+     */
     public function encodeMethod($encode)
     {
         $method = [
@@ -290,9 +328,8 @@ class Emoji
     }
 
     /**
-     * @param $i_buf
+     * @param string $i_buf
      * @return string|string[]|null
-     *
      */
     public function convert($i_buf)
     {
@@ -303,6 +340,10 @@ class Emoji
         return $buf;
     }
 
+    /**
+     * @param string $i_buf
+     * @return string
+     */
     public function mapping($i_buf)
     {
         switch ($this->from_encode) {
@@ -325,6 +366,10 @@ class Emoji
         return "$buf";
     }
 
+    /**
+     * @param string $i_buf
+     * @return string
+     */
     public function pack16bin($i_buf)
     {
         $buf = '';
@@ -336,8 +381,8 @@ class Emoji
     }
 
     /**
-     * @param $io_vars
-     *
+     * @param array<mixed> $io_vars
+     * @return void
      */
     public function convertVariables(&$io_vars)
     {
