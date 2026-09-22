@@ -27,7 +27,7 @@ class BookMark
         //現在日時からどのくらい時間が経っているか（単位:秒）
         $span = time() - strtotime($this->date);
         //単位を日数に換算して値を返す
-        return floor($span / (60 * 60 * 24));
+        return (int)floor($span / (60 * 60 * 24));
     }
 }
 
