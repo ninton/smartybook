@@ -29,10 +29,7 @@ function lastIdCheck($file): int
     while ($arr = fgetcsv($file, 5000, ',', escape: '')) {
         $lastId = (int)$arr[0];
     }
-    if (!isset($lastId)) {
-        $lastId = 0;
-    }
-    return $lastId;
+    return $lastId ?? 0;
 }
 function convertNl(string $str): string
 {
