@@ -65,7 +65,10 @@ class PagerDto
     public string $ExNextPageLink;
 }
 
-// PagerExクラスにプロパティを追加する
+/**
+ * PagerExクラスにプロパティを追加する
+ * @fixme chapter5_3/lib/pager_ex.php の pager_ex 関数を参考にして関数などにしたい
+ */
 $pagerDto = new PagerDto();
 $pagerDto->ExOffsetFrom   = $from;
 $pagerDto->ExOffsetTo     = $to;
