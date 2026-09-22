@@ -8,7 +8,7 @@ use Smarty\Smarty;
 /** @var string $home */
 /** @var list<string> $categories */
 /** @var string $csv */
-/** @var array $data */
+/** @var list<array{id: string, category: string, title: string, text: string, time: string, image: string}> $data */
 
 require_once('../../vendor/autoload.php');
 $smarty = new Smarty();
@@ -39,6 +39,10 @@ $smarty->assign('category', $_GET['category']);
 //出力
 $smarty->display('contents.tpl');
 
+/**
+ * @param array{siteName: string} $siteName
+ * @return string
+ */
 function insert_noticeText2($siteName)
 {
     return '<img src="./images/banner.gif" /><br />' . $siteName['siteName'];
