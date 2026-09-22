@@ -2,6 +2,14 @@
 
 // Pagerクラスを拡張する
 
+/**
+ * Pagerオブジェクトを拡張して追加のページング情報を設定します
+ *
+ * @param object $pager Pagerオブジェクト
+ * @param int $from_page 表示開始位置
+ * @param int $to_page 表示終了位置
+ * @return object 拡張されたPagerオブジェクト
+ */
 function pager_ex($pager, $from_page, $to_page)
 {
     $links = $pager->getLinks();
