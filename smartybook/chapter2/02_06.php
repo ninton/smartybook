@@ -29,7 +29,7 @@ function lastIdCheck($file): int
     $lastId = '';
     /** @var string $lastId */
     while ($arr = fgetcsv($file, 5000, ',', escape: '')) {
-        $lastId = $arr[0];
+        $lastId = (int)$arr[0];
     }
     if ($lastId == '') {
         $lastId = 0;
