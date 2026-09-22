@@ -8,7 +8,7 @@ require_once('ini.php');
  * @var string $home
  * @var string[] $categories
  * @var string $csv
- * @var array $data
+ * @var list<array<string, string|int>> $data
  */
 
 use Smarty\Smarty;
@@ -40,6 +40,9 @@ $smarty->assign('data', $data);
 $smarty->assign('category', $_GET['category']);
 //出力
 $smarty->display('contents.tpl');
+/**
+ * @return string
+ */
 function insert_noticeText()
 {
     $noticeText = '<img src="./images/banner.gif" />';
