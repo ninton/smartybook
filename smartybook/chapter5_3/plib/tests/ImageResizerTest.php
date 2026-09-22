@@ -58,6 +58,9 @@ final class ImageResizerTest extends TestCase
         ];
     }
 
+    /**
+     * @param list<int> $expected
+     */
     #[DataProvider('provide_scale_cases')]
     public function test_scale(int $scale_type, int $width, int $height, int $max_width, int $max_height, array $expected): void
     {
@@ -65,7 +68,7 @@ final class ImageResizerTest extends TestCase
     }
 
     /**
-     * @return array<string, array<string, mixed>>
+     * @return array<string, array{scale_type: int, width: int, height: int, max_width: int, max_height: int, expected: list<int>}>
      */
     public static function provide_scale_cases(): array
     {
