@@ -8,15 +8,15 @@ class BookMark
     public string $date;
 
     /**
-     * @param string $title
-     * @param string $url
-     * @param string $date
+     * @param string $title サイト名
+     * @param string $url サイトURL
+     * @param string $date ブックマークした日付
      */
     public function __construct($title, $url, $date)
     {
-        $this->title = $title; //サイト名
-        $this->url   = $url; //サイトURL
-        $this->date  = $date; //ブックマークした日付
+        $this->title = $title;
+        $this->url   = $url;
+        $this->date  = $date;
     }
 
     /**
