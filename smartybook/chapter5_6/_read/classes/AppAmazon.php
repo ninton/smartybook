@@ -36,8 +36,9 @@ class AppAmazon
 
     /**
      *  @param string $i_ASINs
-     *  @param array $i_options
-     *  @param array $o_Item_arr
+     *  @param array<string, mixed> $i_options
+     *  @param array<int, mixed> $o_Item_arr
+     *  @param-out array<mixed> $o_Item_arr
      *  @return string  error message
      *
      */
@@ -63,7 +64,7 @@ class AppAmazon
             $ASINs = join(',', array_slice($ASIN_arr, $i, 10));
             if ($ASINs != '') {
                 $result = $this->amazon->ItemLookup($ASINs, $i_options);
-                /** @var array|\PEAR_Error $result */
+                /** @var array{Item: array<int, mixed>}|\PEAR_Error $result */
                 if (\PEAR::isError($result)) {
                     return $result->message;
                 }
