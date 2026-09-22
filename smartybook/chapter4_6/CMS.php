@@ -41,7 +41,7 @@ class CMS
      *  @param int $i_limit
      *  @param string $i_sort
      *  @param string $i_order
-     *  @return array
+     *  @return list<array<string, mixed>>
      */
     public function getAll($i_offset, $i_limit, $i_sort, $i_order)
     {
