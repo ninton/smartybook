@@ -8,7 +8,7 @@ require_once('ini.php');
  * @var string $home
  * @var string[] $categories
  * @var string $csv
- * @var array<int, array<string, string|int>> $data
+ * @var list<array<string, string|int>> $data
  */
 
 use Smarty\Smarty;
