@@ -84,7 +84,7 @@ function proc_image_resize($i_fname)
     if (file_exists($src_path)) {
         foreach ([120, 240, 480] as $width) {
             $dst_path = $CFG['DSTIMG_DIR'] . "$width/$fname";
-            ImageResizer::image_resize($src_path, $dst_path, $width, $width * 1.5);
+            ImageResizer::image_resize($src_path, $dst_path, $width, (int)($width * 1.5));
         }
     }
 }
