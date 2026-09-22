@@ -7,6 +7,9 @@ namespace SmartyBook\chapter5_6\_read\classes;
  */
 class App
 {
+    /**
+     * @return void
+     */
     public static function sessionStart()
     {
         session_start();
@@ -18,6 +21,10 @@ class App
         }
     }
 
+    /**
+     * @param string $i_qs
+     * @return void
+     */
     public static function redirect($i_qs = '')
     {
         $scheme = empty($_SERVER['HTTPS']) ? 'http' : 'https';
