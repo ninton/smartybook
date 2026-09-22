@@ -20,9 +20,9 @@ require_once('02_01_b.php');
 <body>
 <?php
 /**
- * CSVファイルの最終行のIDを取得する関数
+ * 最新記事ID（CSVファイルの最終行のID）を取得する関数
  * @param resource $file CSVファイルのファイルポインタ
- * @return int 最終行のID
+ * @return int 最新記事ID
  */
 function lastIdCheck($file): int
 {

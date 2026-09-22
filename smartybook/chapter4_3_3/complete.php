@@ -14,19 +14,20 @@ $smarty = new Smarty();
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
 $smarty->assign('admin', $admin);
-// 最新記事IDを取得する関数
-function lastIdCheck($file)
+
+/**
+ * 最新記事ID（CSVファイルの最終行のID）を取得する関数
+ * @param resource $file CSVファイルのファイルポインタ
+ * @return int 最新記事ID
+ */
+function lastIdCheck($file): int
 {
-    /** @var string|int $lastId */
-    $lastId = '';
-    while ($array = fgetcsv($file, 5000, ',', escape: '')) {
-        $lastId = $array[0];
+    while ($arr = fgetcsv($file, 5000, ',', escape: '')) {
+        $lastId = (int)$arr[0];
     }
-    if ($lastId == '') {
-        $lastId = 0;
-    }
-    return $lastId;
+    return $lastId ?? 0;
 }
+
 // 改行文字,カンマ,クォートを処理する関数
 function convertNl($str)
 {
