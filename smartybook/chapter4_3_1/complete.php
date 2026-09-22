@@ -8,7 +8,7 @@ use Smarty\Smarty;
  * @var string $siteName
  * @var string $home
  * @var string $admin
- * @var string|int $lastId
+ * @var int $lastId
  */
 
 require_once('../../vendor/autoload.php');

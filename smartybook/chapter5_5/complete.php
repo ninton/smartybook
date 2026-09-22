@@ -10,7 +10,7 @@ require_once('../../vendor/autoload.php');
 /** @var string $admin */
 /** @var string[] $categories */
 /** @var Auth $oAuth */
-/** @var int|string $lastId */
+/** @var int $lastId */
 
 $smarty = new Smarty();
 $smarty->assign('siteName', $siteName);
