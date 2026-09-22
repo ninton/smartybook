@@ -20,7 +20,8 @@ class BookMark
     }
 
     /**
-     * @return int
+     * 現在日時からどのくらい日数が経過しているかを取得します。
+     * @return int 経過日数
      */
     public function getAgo()
     {
