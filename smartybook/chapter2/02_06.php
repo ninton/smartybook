@@ -26,12 +26,10 @@ require_once('02_01_b.php');
  */
 function lastIdCheck($file): int
 {
-    $lastId = '';
-    /** @var string $lastId */
     while ($arr = fgetcsv($file, 5000, ',', escape: '')) {
         $lastId = (int)$arr[0];
     }
-    if ($lastId == '') {
+    if (!isset($lastId)) {
         $lastId = 0;
     }
     return $lastId;
