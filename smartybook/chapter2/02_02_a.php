@@ -4,7 +4,7 @@ require_once('02_01_b.php');
 
 /**
  * @var string $siteName
- * @var array<int, string> $categories
+ * @var list<string> $categories
  */
 ?>
 
