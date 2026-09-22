@@ -10,7 +10,7 @@ require_once('../../vendor/autoload.php');
 /** @var string $home */
 /** @var string[] $categories */
 /** @var string $csv */
-/** @var array $data */
+/** @var list<array{id: string, category: string, title: string, text: string, time: string, image: string}> $data */
 
 $smarty = new Smarty();
 
