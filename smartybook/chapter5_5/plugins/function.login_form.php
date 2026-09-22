@@ -9,10 +9,9 @@
  * @see
  */
 /**
- * @param $params
- * @param $smarty
+ * @param array<string, mixed> $params
+ * @param mixed $smarty
  * @return string
- *
  */
 function smarty_function_login_form($params, $smarty)
 {
