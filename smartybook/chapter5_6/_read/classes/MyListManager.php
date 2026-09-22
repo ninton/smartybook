@@ -4,9 +4,20 @@ namespace SmartyBook\chapter5_6\_read\classes;
 
 class MyListManager
 {
+    /**
+     * @var int
+     */
     private $max_items;
+
+    /**
+     * @var string
+     */
     private $dir;
 
+    /**
+     * @param int $i_max_items
+     * @param string $i_dir
+     */
     public function __construct($i_max_items, $i_dir)
     {
         $this->max_items = $i_max_items;
@@ -40,6 +51,10 @@ class MyListManager
         return $mylist;
     }
 
+    /**
+     * @param MyList $i_MyList
+     * @return void
+     */
     public function write($i_MyList)
     {
         $buf = serialize($i_MyList);
