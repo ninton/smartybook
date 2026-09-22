@@ -3,7 +3,7 @@
 /**
  * @var string $siteName
  * @var string $home
- * @var array $categories
+ * @var list<string> $categories
  */
 
 require_once('ini.php');
