@@ -23,8 +23,8 @@ class ImageResizer
     /**
      * @param string $i_src_path
      * @param string $i_dst_path
-     * @param int|float $i_maxW
-     * @param int|float $i_maxH
+     * @param int $i_maxW
+     * @param int $i_maxH
      * @param int $i_quality
      * @return bool|int
      */
@@ -50,10 +50,10 @@ class ImageResizer
     }
 
     /**
-     * @param int|float $srcW
-     * @param int|float $srcH
-     * @param int|float $i_maxW
-     * @param int|float $i_maxH
+     * @param int $srcW
+     * @param int $srcH
+     * @param int $i_maxW
+     * @param int $i_maxH
      * @return int
      */
     public static function get_scale_type($srcW, $srcH, $i_maxW, $i_maxH)
@@ -77,10 +77,10 @@ class ImageResizer
 
     /**
      * @param int $type
-     * @param int|float $srcW
-     * @param int|float $srcH
-     * @param int|float $i_maxW
-     * @param int|float $i_maxH
+     * @param int $srcW
+     * @param int $srcH
+     * @param int $i_maxW
+     * @param int $i_maxH
      * @return list<int>
      */
     public static function scale($type, $srcW, $srcH, $i_maxW, $i_maxH)
