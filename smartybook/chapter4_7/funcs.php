@@ -2,7 +2,7 @@
 
 /**
  * @param string $i_path
- * @return array
+ * @return list<string>
  */
 function array_load($i_path)
 {
@@ -13,7 +13,7 @@ function array_load($i_path)
 
 /**
  * @param string $i_path
- * @return array
+ * @return array<string, string>
  */
 function assoc_load($i_path)
 {
@@ -31,8 +31,8 @@ function assoc_load($i_path)
 }
 
 /**
- * @param array $io_vars
- * @param array|null $i_params
+ * @param array<string, mixed> $io_vars
+ * @param array<string, string>|null $i_params
  * @return int
  */
 function makeTimeStamp(&$io_vars, $i_params = null)
