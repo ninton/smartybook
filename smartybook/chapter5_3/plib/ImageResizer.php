@@ -26,7 +26,7 @@ class ImageResizer
      * @param int $i_maxW
      * @param int $i_maxH
      * @param int $i_quality
-     * @return bool|int
+     * @return bool
      */
     public static function image_resize($i_src_path, $i_dst_path, $i_maxW = 640, $i_maxH = 640, $i_quality = 75)
     {
