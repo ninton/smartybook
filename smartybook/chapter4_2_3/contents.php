@@ -6,7 +6,7 @@ use Smarty\Smarty;
 
 /** @var string $siteName */
 /** @var string $home */
-/** @var array $categories */
+/** @var list<string> $categories */
 /** @var string $csv */
 /** @var array $data */
 

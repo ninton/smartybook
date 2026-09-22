@@ -6,7 +6,7 @@ use Smarty\Smarty;
 /** @var string $siteName */
 /** @var string $home */
 /** @var string $admin */
-/** @var array $categories */
+/** @var list<string> $categories */
 
 require_once('../../vendor/autoload.php');
 $smarty = new Smarty();
