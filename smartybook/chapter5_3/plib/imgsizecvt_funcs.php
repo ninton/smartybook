@@ -3,6 +3,9 @@
 use SmartyBook\chapter5_3\plib\ImageResizer;
 
 // 現在アクセス中のURL
+/**
+ * @return string
+ */
 function get_current_url()
 {
     $shceme = empty($_SERVER['HTTPS']) ? 'http' : 'https';
@@ -31,6 +34,9 @@ function get_current_url()
 //  $rcd_arr[]['dst'][480]['path'  ]
 // $rcd_arr[]['dst'][480]['width' ]
 // $rcd_arr[]['dst'][480]['height']
+/**
+ * @return list<array{fname: string, src: array{path: string, width: int, height: int}, dst: array<int, array{path: string, width: string|int, height: string|int}>}>
+ */
 function proc_image_list()
 {
     global  $CFG;
@@ -66,8 +72,8 @@ function proc_image_list()
 
 /**
  * 元画像から大中小の画像を作る
- * @param $i_fname
- *
+ * @param string $i_fname
+ * @return void
  */
 function proc_image_resize($i_fname)
 {
