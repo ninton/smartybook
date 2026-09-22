@@ -20,7 +20,7 @@ class BookMark
     }
 
     /**
-     * @return int|float
+     * @return int
      */
     public function getAgo()
     {
