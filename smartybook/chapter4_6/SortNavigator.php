@@ -7,8 +7,11 @@ namespace SmartyBook\chapter4_6;
  */
 class SortNavigator
 {
+    /** @var string */
     private $sort;
+    /** @var string */
     private $order;
+    /** @var array<string, string> */
     private $vars;
 
     /**
@@ -105,7 +108,7 @@ EOT;
 
     /**
      *  @param string $i_query
-     *  @param array $i_vars
+     *  @param array<string, string> $i_vars
      *  @return string
      */
     public function replaceQuery($i_query, $i_vars)
