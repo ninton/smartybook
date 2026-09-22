@@ -24,7 +24,7 @@ require_once('02_01_b.php');
  * @param resource $file CSVファイルのファイルポインタ
  * @return int 最終行のID
  */
-function lastIdCheck($file): string|int
+function lastIdCheck($file): int
 {
     $lastId = '';
     /** @var string $lastId */
