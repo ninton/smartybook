@@ -29,14 +29,19 @@ function lastIdCheck($file): int
     return $lastId ?? 0;
 }
 
-// 改行文字,カンマ,クォートを処理する関数
-function convertNl($str)
+/**
+ * 改行文字,カンマ,クォートを処理する関数
+ * @param string $str 入力文字列
+ * @return string 処理後の文字列
+ */
+function convertNl(string $str): string
 {
     $str = stripslashes($str);
     $str = str_replace('"', '""', $str);
     $str = '"' . $str . '"';
     return $str;
 }
+
 // 記事の書き込み
 $fp = fopen('data.csv', 'a+') or die('file_open_error');
 flock($fp, LOCK_EX);
