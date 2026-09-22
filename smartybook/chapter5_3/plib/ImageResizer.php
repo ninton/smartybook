@@ -20,6 +20,14 @@ namespace SmartyBook\chapter5_3\plib;
 
 class ImageResizer
 {
+    /**
+     * @param string $i_src_path
+     * @param string $i_dst_path
+     * @param int|float $i_maxW
+     * @param int|float $i_maxH
+     * @param int $i_quality
+     * @return bool|int
+     */
     public static function image_resize($i_src_path, $i_dst_path, $i_maxW = 640, $i_maxH = 640, $i_quality = 75)
     {
         $src_im = null;
@@ -41,6 +49,13 @@ class ImageResizer
         return $retcode;
     }
 
+    /**
+     * @param int|float $srcW
+     * @param int|float $srcH
+     * @param int|float $i_maxW
+     * @param int|float $i_maxH
+     * @return int
+     */
     public static function get_scale_type($srcW, $srcH, $i_maxW, $i_maxH)
     {
         $type = -1;
@@ -60,6 +75,14 @@ class ImageResizer
         return $type;
     }
 
+    /**
+     * @param int $type
+     * @param int|float $srcW
+     * @param int|float $srcH
+     * @param int|float $i_maxW
+     * @param int|float $i_maxH
+     * @return list<int>
+     */
     public static function scale($type, $srcW, $srcH, $i_maxW, $i_maxH)
     {
         switch ($type) {
@@ -85,6 +108,10 @@ class ImageResizer
         return [(int)$dstW, (int)$dstH];
     }
 
+    /**
+     * @param string $i_src_path
+     * @return \GdImage|null
+     */
     public static function image_from_file($i_src_path)
     {
         $path_parts = pathinfo($i_src_path);
