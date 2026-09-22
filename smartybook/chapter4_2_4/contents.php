@@ -6,7 +6,7 @@ require_once('ini.php');
 /**
  * @var string $siteName
  * @var string $home
- * @var array $categories
+ * @var list<string> $categories
  * @var string $csv
  */
 
