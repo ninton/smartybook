@@ -1,8 +1,3 @@
--- xampp-linux-1.7.1
--- PHP 5.2.9
--- MySQL Server 5.1.33
--- phpmyadmin 3.1.3.1
---
 -- 1 phpMyAdminを表示
 -- 2 SQLタブ
 -- 3 SQL欄に以下をコピペ
@@ -10,20 +5,20 @@
 
 DROP DATABASE IF EXISTS smartybook;
 
-CREATE DATABASE IF NOT EXISTS smartybook COLLATE utf8_unicode_ci;
+CREATE DATABASE smartybook CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE smartybook;
 
-CREATE TABLE IF NOT EXISTS `cms` (
-  `id` int(11) NOT NULL,
+DROP TABLE IF EXISTS `cms`;
+
+CREATE TABLE `cms` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `category` varchar(200) NOT NULL,
   `title` varchar(200) NOT NULL,
   `comment` text NOT NULL,
   `time` bigint(20) NOT NULL,
   `image` varchar(200) NOT NULL,
   PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
-
-TRUNCATE TABLE `cms`;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `cms`
