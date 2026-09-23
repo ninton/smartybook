@@ -23,7 +23,7 @@ class BookMark
      * 現在日時からどのくらい日数が経過しているかを取得します。
      * @return int 経過日数
      */
-    public function getAgo()
+    public function getAgo(): int
     {
         //現在日時からどのくらい時間が経っているか（単位:秒）
         $span = time() - strtotime($this->date);

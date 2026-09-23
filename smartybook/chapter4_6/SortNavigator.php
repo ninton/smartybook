@@ -109,7 +109,7 @@ EOT;
      *  @param array<string, string> $i_vars
      *  @return string
      */
-    public function replaceQuery($i_query, $i_vars)
+    public function replaceQuery($i_query, $i_vars): string
     {
         $vars = [];
         parse_str($i_query, $vars);

@@ -68,7 +68,7 @@ class MyListManager
      * @param string $i_ListId
      * @return string
      */
-    public function getPath($i_ListId)
+    public function getPath($i_ListId): string
     {
         if (preg_match('/[^0-9A-Za-z]/', $i_ListId)) {
             return '';

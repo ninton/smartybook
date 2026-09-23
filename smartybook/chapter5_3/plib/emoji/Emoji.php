@@ -20,7 +20,7 @@ namespace SmartyBook\chapter5_3\plib\emoji;
  * @param string $i_to_encode
  * @return void
  */
-function emoji_convert_variables(&$io_vars, $i_from_encode, $i_to_encode)
+function emoji_convert_variables(&$io_vars, $i_from_encode, $i_to_encode): void
 {
     $emoji = Emoji::singleton($i_from_encode, $i_to_encode);
     $emoji->convertVariables($io_vars);
@@ -122,7 +122,7 @@ class Emoji
     /**
      * @return array<string, string>
      */
-    public function getRegexArr()
+    public function getRegexArr(): array
     {
         return [
             'i_sjisbin'     => '/(\xF8[\x90-\xFF]|\xF9[\x40-\xFF])/'           ,
@@ -198,7 +198,7 @@ class Emoji
     /**
      * @return string
      */
-    public function mapPath()
+    public function mapPath(): string
     {
         $fname = "{$this->from_encode}.{$this->to_encode}.dat";
         $path = dirname(__FILE__) . "/map/$fname";
@@ -288,7 +288,7 @@ class Emoji
      * @param string $encode
      * @return int
      */
-    public function encodeMethod($encode)
+    public function encodeMethod($encode): int
     {
         $method = [
             'i_uni16'  => 1,
@@ -344,7 +344,7 @@ class Emoji
      * @param string $i_buf
      * @return string
      */
-    public function mapping($i_buf)
+    public function mapping($i_buf): string
     {
         switch ($this->from_encode) {
             case 'e_img_num':
@@ -370,7 +370,7 @@ class Emoji
      * @param string $i_buf
      * @return string
      */
-    public function pack16bin($i_buf)
+    public function pack16bin($i_buf): string
     {
         $buf = '';
         if (preg_match('/^[0-9A-F]{4}$/i', $i_buf)) {

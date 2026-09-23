@@ -37,7 +37,7 @@ if (isset($_GET['lo']) && $_GET['lo'] == 'ok') {
  * @param int $status
  * @return void
  */
-function displayLogin($username, $status)
+function displayLogin($username, $status): void
 {
     $self = $_SERVER['PHP_SELF'];
     global $smarty;
