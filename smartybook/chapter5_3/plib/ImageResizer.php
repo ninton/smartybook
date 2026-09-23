@@ -56,7 +56,7 @@ class ImageResizer
      * @param int $i_maxH
      * @return int
      */
-    public static function get_scale_type($srcW, $srcH, $i_maxW, $i_maxH)
+    public static function get_scale_type($srcW, $srcH, $i_maxW, $i_maxH): int
     {
         $type = -1;
 
@@ -83,7 +83,7 @@ class ImageResizer
      * @param int $i_maxH
      * @return list<int>
      */
-    public static function scale($type, $srcW, $srcH, $i_maxW, $i_maxH)
+    public static function scale($type, $srcW, $srcH, $i_maxW, $i_maxH): array
     {
         switch ($type) {
             case 0:

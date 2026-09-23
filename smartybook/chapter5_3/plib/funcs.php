@@ -6,7 +6,7 @@
  * @param string $i_category
  * @return list<array{id: string, category: string, title: string, text: string, time: string, image: string}>
  */
-function get_entry_arr($i_path, $i_category)
+function get_entry_arr($i_path, $i_category): array
 {
     $entry_arr = [];
     $handle = fopen($i_path, 'r');
@@ -37,7 +37,7 @@ function get_entry_arr($i_path, $i_category)
  *
  * array_walkのコールバック関数、2つめの引数に配列キーが渡される（が、この関数では使わない）
  */
-function replace_entry_image(&$io_rcd, $i_key, $i_imageSizeGroup)
+function replace_entry_image(&$io_rcd, $i_key, $i_imageSizeGroup): void
 {
     if ($io_rcd['image']) {
         $fname = basename($io_rcd['image']);

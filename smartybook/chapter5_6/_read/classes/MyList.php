@@ -35,7 +35,7 @@ class MyList
     /**
      * @return string
      */
-    public function getASINs()
+    public function getASINs(): string
     {
         // ASINの重複要素と空要素を取り除いて、カンマ区切りにする
         $map = [];

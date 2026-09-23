@@ -6,7 +6,7 @@ use SmartyBook\chapter5_3\plib\ImageResizer;
  * 現在アクセス中のURL
  * @return string
  */
-function get_current_url()
+function get_current_url(): string
 {
     $shceme = empty($_SERVER['HTTPS']) ? 'http' : 'https';
     $host = $_SERVER['HTTP_HOST'];
@@ -37,7 +37,7 @@ function get_current_url()
 /**
  * @return list<array{fname: string, src: array{path: string, width: int, height: int}, dst: array<int, array{path: string, width: string|int, height: string|int}>}>
  */
-function proc_image_list()
+function proc_image_list(): array
 {
     global  $CFG;
     $rcd_arr = [];
@@ -75,7 +75,7 @@ function proc_image_list()
  * @param string $i_fname
  * @return void
  */
-function proc_image_resize($i_fname)
+function proc_image_resize($i_fname): void
 {
     global  $CFG;
 

@@ -40,7 +40,7 @@ $smarty->display('index.tpl');
 /**
  * @return string
  */
-function insert_noticeText()
+function insert_noticeText(): string
 {
     $noticeText = '<img src="./images/banner.gif" />';
     return $noticeText;

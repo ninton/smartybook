@@ -22,11 +22,11 @@ final class CrawlCode
 
         $csvArr3 = array_filter(
             $csvArr2,
-            fn (array $row) => !empty($row[0]) && !str_starts_with($row[0], '#'),
+            fn (array $row): bool => !empty($row[0]) && !str_starts_with($row[0], '#'),
         );
 
         $crawlCommandArr = array_map(
-            fn (array $row) => new CrawlCommand(
+            fn (array $row): \Tests\GoldenMaster\CrawlCommand => new CrawlCommand(
                 $row[0],
                 $row[1],
                 $row[2],

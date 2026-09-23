@@ -43,7 +43,7 @@ $smarty->display('contents.tpl');
  * @param array{siteName: string} $siteName
  * @return string
  */
-function insert_noticeText2($siteName)
+function insert_noticeText2($siteName): string
 {
     return '<img src="./images/banner.gif" /><br />' . $siteName['siteName'];
 }

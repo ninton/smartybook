@@ -15,7 +15,7 @@ function array_load($i_path)
  * @param string $i_path
  * @return array<string, string>
  */
-function assoc_load($i_path)
+function assoc_load($i_path): array
 {
     $arr = [];
 

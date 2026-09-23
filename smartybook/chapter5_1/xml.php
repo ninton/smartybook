@@ -40,7 +40,7 @@ $smarty->display('xml.tpl');
 /**
  * @return string
  */
-function insert_noticeText()
+function insert_noticeText(): string
 {
     $noticeText = '<img src="./images/banner.gif" />';
     return $noticeText;
@@ -50,7 +50,7 @@ function insert_noticeText()
  * @param array<string, mixed> $siteName
  * @return string
  */
-function smarty_insert_noticeText2($siteName)
+function smarty_insert_noticeText2($siteName): string
 {
     return '<img src="./images/banner.gif" /><br />' . $siteName['siteName'];
 }

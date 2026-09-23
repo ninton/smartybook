@@ -5,7 +5,7 @@
  * @param list<string> $i_categories
  * @return list<array<string, string>>
  */
-function get_menu_arr($i_categories)
+function get_menu_arr($i_categories): array
 {
     $menu_arr = [];
     foreach ($i_categories as $category) {
@@ -22,7 +22,7 @@ function get_menu_arr($i_categories)
  * @param string $i_csv
  * @return list<array<string, string|null>>
  */
-function get_featured_arr($i_csv)
+function get_featured_arr($i_csv): array
 {
     $cms_arr = [];
     $handle = fopen($i_csv, 'r');
@@ -55,7 +55,7 @@ function get_featured_arr($i_csv)
  * @param string $i_category
  * @return string
  */
-function get_contents_url($i_category)
+function get_contents_url($i_category): string
 {
     return sprintf('%s/contents.php?category=%s', get_url(), $i_category);
 }
@@ -64,7 +64,7 @@ function get_contents_url($i_category)
  * @param string $i_image
  * @return string
  */
-function get_image_url($i_image)
+function get_image_url($i_image): string
 {
     return sprintf('%s/%s', get_url(), $i_image);
 }
