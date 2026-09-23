@@ -41,7 +41,7 @@ class SortNavigator
      *  @param string $i_value
      *  @return void
      */
-    public function setOption($i_key, $i_value)
+    public function setOption($i_key, $i_value): void
     {
         if (isset($this->vars[$i_key])) {
             $this->vars[$i_key] = $i_value;
@@ -52,7 +52,7 @@ class SortNavigator
      *  @param string $i_sort
      *  @return void
      */
-    public function show($i_sort)
+    public function show($i_sort): void
     {
         $asc_navi  = $this->showLink($i_sort, 'asc');
         $desc_navi = $this->showLink($i_sort, 'desc');

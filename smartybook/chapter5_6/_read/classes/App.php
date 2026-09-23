@@ -7,7 +7,7 @@ class App
     /**
      * @return void
      */
-    public static function sessionStart()
+    public static function sessionStart(): void
     {
         session_start();
         $token = md5(TOKEN_SALT . $_SERVER['HTTP_USER_AGENT'] . $_SERVER['REMOTE_ADDR']);
@@ -22,7 +22,7 @@ class App
      * @param string $i_qs
      * @return void
      */
-    public static function redirect($i_qs = '')
+    public static function redirect($i_qs = ''): void
     {
         $scheme = empty($_SERVER['HTTPS']) ? 'http' : 'https';
         $host = $_SERVER['HTTP_HOST'];

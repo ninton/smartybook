@@ -12,7 +12,7 @@ class BookMark
      * @param string $url サイトURL
      * @param string $date ブックマークした日付
      */
-    public function __construct($title, $url, $date)
+    public function __construct(string $title, string $url, string $date)
     {
         $this->title = $title;
         $this->url   = $url;

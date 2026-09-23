@@ -106,7 +106,7 @@ class Emoji
      * @param string $i_to_encode
      * @return void
      */
-    public function output_setting($i_from_encode = '', $i_to_encode = '')
+    public function output_setting($i_from_encode = '', $i_to_encode = ''): void
     {
         if ('' == $i_from_encode) {
             self::$output_setting_arr = [];
@@ -156,7 +156,7 @@ class Emoji
     /**
      * @return array<int, string>
      */
-    public function getEncodeArr()
+    public function getEncodeArr(): array
     {
         $arr = self::getRegexArr();
         return array_keys($arr);
@@ -165,7 +165,7 @@ class Emoji
     /**
      * @return void
      */
-    public function clear()
+    public function clear(): void
     {
         $this->map = [];
     }
@@ -173,7 +173,7 @@ class Emoji
     /**
      * @return void
      */
-    public function load()
+    public function load(): void
     {
         $path = $this->mapPath();
         $this->map = [];
@@ -187,7 +187,7 @@ class Emoji
     /**
      * @return void
      */
-    public function save()
+    public function save(): void
     {
         $buf = serialize($this->map);
         $path = $this->mapPath();
@@ -211,7 +211,7 @@ class Emoji
      * @param string $i_text
      * @return void
      */
-    public function add($i_from, $i_to, $i_text = '')
+    public function add($i_from, $i_to, $i_text = ''): void
     {
         switch ($i_from) {
             case '':
@@ -331,9 +331,9 @@ class Emoji
      * @param string $i_buf
      * @return string|string[]|null
      */
-    public function convert($i_buf)
+    public function convert($i_buf): string|array|null
     {
-        $buf = preg_replace_callback($this->regex, function ($mathes) {
+        $buf = preg_replace_callback($this->regex, function ($mathes): string {
             return $this->mapping($mathes[1]);
         }, $i_buf);
 
@@ -384,7 +384,7 @@ class Emoji
      * @param array<mixed> $io_vars
      * @return void
      */
-    public function convertVariables(&$io_vars)
+    public function convertVariables(&$io_vars): void
     {
         foreach ($io_vars as $key => $val) {
             if (is_array($val)) {
