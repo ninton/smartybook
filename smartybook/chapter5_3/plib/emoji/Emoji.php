@@ -89,7 +89,6 @@ class Emoji
      * @param string $i_from_encode
      * @param string $i_to_encode
      * @return Emoji
-     *
      */
     public static function singleton($i_from_encode, $i_to_encode)
     {

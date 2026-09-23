@@ -28,14 +28,6 @@ class AppAmazon
         $this->amazon = $amazon;
     }
 
-    /**
-     *  @param string $i_ASINs
-     *  @param array<string, mixed> $i_options
-     *  @param array<int, mixed> $o_Item_arr
-     *  @param-out array<mixed> $o_Item_arr
-     *  @return string  error message
-     *
-     */
     /*
         $ASINs = '12345,23456,34567';
         $options['ResponseGroup'] = 'Medium';
@@ -47,6 +39,13 @@ class AppAmazon
         $Item_arr[3]    ASIN「34567」のItem情報
     */
     // ItemLookupで書籍掲載しているので、itemLookupではなく、ItemLookupのままとすることにした。
+    /**
+     *  @param string $i_ASINs
+     *  @param array<string, mixed> $i_options
+     *  @param array<int, mixed> $o_Item_arr
+     *  @param-out array<mixed> $o_Item_arr
+     *  @return string  error message
+     */
     public function ItemLookup($i_ASINs, $i_options, &$o_Item_arr)
     {
         $ASIN_arr = explode(',', $i_ASINs);

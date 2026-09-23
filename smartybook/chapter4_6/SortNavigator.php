@@ -65,7 +65,6 @@ class SortNavigator
      *  @param string $i_sort
      *  @param string $i_order
      *  @return string
-     *
      */
     public function showLink($i_sort, $i_order)
     {
