@@ -1,7 +1,5 @@
 <?php
 
-// Pagerクラスを拡張する
-
 /**
  * Pagerオブジェクトを拡張して追加のページング情報を設定します
  * @fixme chapter4_6 の PagerDtoクラスを返すようにリファクタリングすることで、引数の $pager は pagerクラス、戻り値は PagerDtoクラスを指定できるようになります

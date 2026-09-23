@@ -31,8 +31,6 @@ class SortNavigator
 
         $this->vars['sortUrlVar' ] = 'sort';
         $this->vars['orderUrlVar'] = 'order';
-        //      $this->vars['sortDefVal' ] = '';
-        //      $this->vars['orderDefVal'] = 'asc';
 
         $this->sort  = $i_sort;
         $this->order = $i_order;

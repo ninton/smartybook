@@ -2,9 +2,6 @@
 
 namespace SmartyBook\chapter5_6\_read\classes;
 
-/**
- *  @author MW web studio, Aoki Makoto, 2007-12
- */
 class App
 {
     /**

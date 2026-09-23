@@ -2,8 +2,8 @@
 
 use SmartyBook\chapter5_3\plib\ImageResizer;
 
-// 現在アクセス中のURL
 /**
+ * 現在アクセス中のURL
  * @return string
  */
 function get_current_url()

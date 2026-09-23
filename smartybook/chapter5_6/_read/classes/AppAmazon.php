@@ -7,9 +7,6 @@ namespace SmartyBook\chapter5_6\_read\classes;
 
 use Services_Amazon;
 
-/**
- *  @author MW web studio, Aoki Makoto, 2007-12
- */
 class AppAmazon
 {
     /**
