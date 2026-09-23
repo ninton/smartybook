@@ -2,6 +2,8 @@
 
 ## ReadMe.txt
 
+CD-ROM収録時の ReadMe.txt
+```
 _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 
 速習Webテクニック Smarty 動的Webサイト構築入門　付属CD-ROM
@@ -26,11 +28,64 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 　詳しくは本書5ページをご覧ください。
 　なお、本書掲載のサンプルとは違い、著作権の観点から、本CD-ROMに収録で
 　きない写真は差し替えております。ご了承ください。
+```
 
-## Wiki
+## 正誤表
 
-https://github.com/ninton/smartybook/wiki
+https://github.com/ninton/smartybook/wiki/%E6%AD%A3%E8%AA%A4%E8%A1%A8
 
+## 概要
+
+- **言語・フレームワーク:** PHP 8.5 / Smarty 5
+- **インフラ:** ローカル開発環境のみ
+- **デプロイ:** なし
+
+## ディレクトリ構成
+
+```
+.
+├── bin
+├── docker
+│   ├── app
+│   │   └── Dockerfile
+│   └── db
+│       └── init
+│           └── db_init.sql
+├── lib
+│   └── pear-pear.php.net
+├── scripts
+│   └── local
+├── smartybook
+│   ├── chapter2
+│   ├── chapter3
+│   ├── chapter4_1
+│   ├── chapter4_2_1
+│   ├── chapter4_2_2
+│   ├── chapter4_2_3
+│   ├── chapter4_2_4
+│   ├── chapter4_3_1
+│   ├── chapter4_3_2
+│   ├── chapter4_3_3
+│   ├── chapter4_4
+│   ├── chapter4_5
+│   ├── chapter4_6
+│   ├── chapter4_7
+│   ├── chapter4_8
+│   ├── chapter4_9
+│   ├── chapter5_1
+│   ├── chapter5_2
+│   ├── chapter5_3
+│   ├── chapter5_4
+│   ├── chapter5_5
+│   └── chapter5_6
+├── tests
+│   └── GoldenMaster
+├── vendor
+├── .env.sample
+├── composer.json
+├── docker-compose.yml
+└── Makefile
+```
 
 ## 開発環境のセットアップ
 
@@ -66,3 +121,21 @@ make setup
   - phpinfo: 例: `http://127.0.0.1:3000/smartybook/chapter2/phpinfo.php`
   - chapter3/03_01.php: 例: `http://127.0.0.1:3000/smartybook/chapter3/03_01.php`
 - phpMyAdmin: `http://127.0.0.1:<PMA_PORT>`（例: `http://127.0.0.1:3001`）にアクセスしてください。ポート番号は .env の PMA_PORT で変更可能です。
+
+## よく使うコマンド
+
+```bash
+make composer-install          # composer install
+
+make php-lint                  # PHPStan 静的解析
+make php-lint-fix              # PHPStan 自動修正
+make php-lint-baseline         # PHPStan ベースライン更新
+
+make php-format-check          # php-cs-fixer コードスタイルチェック
+make php-format-fix            # php-cs-fixer コードスタイル更新
+
+make php-test                  # PHPUnit Unit テスト実行
+make php-test-golden-master    # ゴールデンマスターテスト実行
+
+make php-test-golden-master-update # ゴールデンマスターテストの期待値を更新する
+```
