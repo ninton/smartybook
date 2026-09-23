@@ -55,7 +55,7 @@ class MyListManager
      * @param MyList $i_MyList
      * @return void
      */
-    public function write($i_MyList)
+    public function write($i_MyList): void
     {
         $buf = serialize($i_MyList);
         $path = $this->getPath($i_MyList->ListId);

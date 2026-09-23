@@ -9,10 +9,7 @@ use PDO;
  */
 class CMS
 {
-    /**
-     * @var PDO
-     */
-    private $dbh;
+    private \PDO $dbh;
 
     /**
      *  @param string $i_dsn

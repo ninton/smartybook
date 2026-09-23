@@ -9,10 +9,7 @@ use Services_Amazon;
 
 class AppAmazon
 {
-    /**
-     * @var Services_Amazon
-     */
-    private $amazon;
+    private \Services_Amazon $amazon;
 
     /**
      *  @param string $access_key_id
