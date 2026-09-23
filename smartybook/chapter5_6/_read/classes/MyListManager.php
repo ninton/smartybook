@@ -7,12 +7,12 @@ class MyListManager
     /**
      * @var int
      */
-    private $max_items;
+    private int $max_items;
 
     /**
      * @var string
      */
-    private $dir;
+    private string $dir;
 
     /**
      * @param int $i_max_items

@@ -5,13 +5,13 @@ namespace SmartyBook\chapter5_6\_read\classes;
 class MyList
 {
     /** @var string */
-    public $ListId;
+    public string $ListId;
     /** @var string */
-    public $ListName;
+    public string $ListName;
     /** @var string */
-    public $NickName;
+    public string $NickName;
     /** @var list<array{ASIN: string, Item?: mixed}> */
-    public $detail_arr;
+    public array $detail_arr;
 
     public function __construct()
     {

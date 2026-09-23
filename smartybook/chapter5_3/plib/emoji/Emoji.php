@@ -60,14 +60,14 @@ function emoji_convert($i_buf, $i_from_encode, $i_to_encode): string|null
 class Emoji
 {
     /** @var array<int, array{from: string, to: string}> */
-    public static $output_setting_arr = [];
+    public static array $output_setting_arr = [];
     private string $from_encode;
     /** @var string */
-    private $to_encode;
+    private string $to_encode;
     /** @var string */
-    private $regex;
+    private string $regex;
     /** @var array<string, string> */
-    private $map;
+    private array $map;
 
     /**
      * @param string $i_from_encode
