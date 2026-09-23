@@ -25,7 +25,7 @@ class MyList
      * @param array{ListName: string, NickName: string, detail_arr: list<array{ASIN: string, Item?: mixed}>} $i_vars
      * @return void
      */
-    public function input($i_vars): void
+    public function input(array $i_vars): void
     {
         $this->ListName   = $i_vars['ListName'];
         $this->NickName   = $i_vars['NickName'];
@@ -53,7 +53,7 @@ class MyList
      * @param list<array{ASIN: string}> $i_Item_arr
      * @return void
      */
-    public function setItems($i_Item_arr): void
+    public function setItems(array $i_Item_arr): void
     {
         $map = [];
         foreach ($this->detail_arr as $i => $detail) {

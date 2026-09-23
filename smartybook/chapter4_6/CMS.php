@@ -18,7 +18,7 @@ class CMS
      *  @return void
      *
      */
-    public function __construct($i_dsn, $i_dbuser, $dbPassword)
+    public function __construct(string $i_dsn, string $i_dbuser, string $dbPassword)
     {
         $this->dbh = new PDO($i_dsn, $i_dbuser, $dbPassword);
         $this->dbh->query('SET NAMES UTF8');
@@ -41,7 +41,7 @@ class CMS
      *  @param string $i_order
      *  @return list<array<string, mixed>>
      */
-    public function getAll($i_offset, $i_limit, $i_sort, $i_order): array
+    public function getAll(int $i_offset, int $i_limit, string $i_sort, string $i_order): array
     {
         // 安全な値かどうかをチェックする
         switch ($i_sort) {

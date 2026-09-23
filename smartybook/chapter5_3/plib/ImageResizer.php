@@ -28,7 +28,7 @@ class ImageResizer
      * @param int $i_quality
      * @return bool
      */
-    public static function image_resize($i_src_path, $i_dst_path, $i_maxW = 640, $i_maxH = 640, $i_quality = 75): bool
+    public static function image_resize(string $i_src_path, string $i_dst_path, int $i_maxW = 640, int $i_maxH = 640, int $i_quality = 75): bool
     {
         $src_im = null;
         $dst_im = null;
@@ -56,7 +56,7 @@ class ImageResizer
      * @param int $i_maxH
      * @return int
      */
-    public static function get_scale_type($srcW, $srcH, $i_maxW, $i_maxH): int
+    public static function get_scale_type(int $srcW, int $srcH, int $i_maxW, int $i_maxH): int
     {
         $type = -1;
 
@@ -83,7 +83,7 @@ class ImageResizer
      * @param int $i_maxH
      * @return list<int>
      */
-    public static function scale($type, $srcW, $srcH, $i_maxW, $i_maxH): array
+    public static function scale(int $type, int $srcW, int $srcH, int $i_maxW, int $i_maxH): array
     {
         switch ($type) {
             case 0:
@@ -112,7 +112,7 @@ class ImageResizer
      * @param string $i_src_path
      * @return \GdImage|null
      */
-    public static function image_from_file($i_src_path): \GdImage|null
+    public static function image_from_file(string $i_src_path): \GdImage|null
     {
         $path_parts = pathinfo($i_src_path);
 

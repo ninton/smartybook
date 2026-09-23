@@ -18,7 +18,7 @@ class AppAmazon
      *  @return void
      *
      */
-    public function __construct($access_key_id, $secret_access_key, $associate_tag)
+    public function __construct(string $access_key_id, string $secret_access_key, string $associate_tag)
     {
         // Services_AmazonECS4は非推奨となり、Services_Amazon(を使うようにとのこと
         // https://wiki.php.net/pear/packages/services_amazon
@@ -46,7 +46,7 @@ class AppAmazon
      *  @param-out array<mixed> $o_Item_arr
      *  @return string  error message
      */
-    public function ItemLookup($i_ASINs, $i_options, &$o_Item_arr): string
+    public function ItemLookup(string $i_ASINs, array $i_options, &$o_Item_arr): string
     {
         $ASIN_arr = explode(',', $i_ASINs);
 

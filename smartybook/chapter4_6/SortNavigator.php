@@ -19,7 +19,7 @@ class SortNavigator
      *  @param string $i_order
      *  @return void
      */
-    public function __construct($i_sort, $i_order)
+    public function __construct(string $i_sort, string $i_order)
     {
         $this->vars['asc_current' ] = '△';
         $this->vars['asc_link'    ] = '▲';
@@ -41,7 +41,7 @@ class SortNavigator
      *  @param string $i_value
      *  @return void
      */
-    public function setOption($i_key, $i_value): void
+    public function setOption(string $i_key, string $i_value): void
     {
         if (isset($this->vars[$i_key])) {
             $this->vars[$i_key] = $i_value;
@@ -52,7 +52,7 @@ class SortNavigator
      *  @param string $i_sort
      *  @return void
      */
-    public function show($i_sort): void
+    public function show(string $i_sort): void
     {
         $asc_navi  = $this->showLink($i_sort, 'asc');
         $desc_navi = $this->showLink($i_sort, 'desc');
@@ -66,7 +66,7 @@ class SortNavigator
      *  @param string $i_order
      *  @return string
      */
-    public function showLink($i_sort, $i_order): string
+    public function showLink(string $i_sort, string $i_order): string
     {
         if (($i_sort == $this->sort) && ($i_order == $this->order)) {
             if ($i_order == 'asc') {
@@ -108,7 +108,7 @@ EOT;
      *  @param array<string, string> $i_vars
      *  @return string
      */
-    public function replaceQuery($i_query, $i_vars): string
+    public function replaceQuery(string $i_query, array $i_vars): string
     {
         $vars = [];
         parse_str($i_query, $vars);

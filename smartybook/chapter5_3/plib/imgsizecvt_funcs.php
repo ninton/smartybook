@@ -75,7 +75,7 @@ function proc_image_list(): array
  * @param string $i_fname
  * @return void
  */
-function proc_image_resize($i_fname): void
+function proc_image_resize(string $i_fname): void
 {
     global  $CFG;
 

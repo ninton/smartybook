@@ -9,7 +9,7 @@
  * @param int $to_page 表示終了位置
  * @return object 拡張されたPagerオブジェクト
  */
-function pager_ex($pager, $from_page, $to_page): object
+function pager_ex(object $pager, int $from_page, int $to_page): object
 {
     $links = $pager->getLinks();
 
