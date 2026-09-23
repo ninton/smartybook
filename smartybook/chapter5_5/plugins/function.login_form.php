@@ -13,7 +13,7 @@
  * @param mixed $smarty
  * @return string
  */
-function smarty_function_login_form($params, $smarty): string
+function smarty_function_login_form(array $params, $smarty): string
 {
     $self = $params['self'];
     $username = htmlspecialchars($params['username']);
