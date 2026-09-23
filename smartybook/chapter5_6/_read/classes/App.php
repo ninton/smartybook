@@ -22,7 +22,7 @@ class App
      * @param string $i_qs
      * @return void
      */
-    public static function redirect($i_qs = ''): void
+    public static function redirect(string $i_qs = ''): void
     {
         $scheme = empty($_SERVER['HTTPS']) ? 'http' : 'https';
         $host = $_SERVER['HTTP_HOST'];

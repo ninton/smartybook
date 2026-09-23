@@ -4,7 +4,7 @@
  * @param string $i_path
  * @return list<string>
  */
-function array_load($i_path): array
+function array_load(string $i_path): array
 {
     $buf = file_get_contents($i_path);
     $arr = preg_split("/[\r\n]+/", $buf, -1, PREG_SPLIT_NO_EMPTY);
@@ -15,7 +15,7 @@ function array_load($i_path): array
  * @param string $i_path
  * @return array<string, string>
  */
-function assoc_load($i_path): array
+function assoc_load(string $i_path): array
 {
     $arr = [];
 
@@ -35,7 +35,7 @@ function assoc_load($i_path): array
  * @param array<string, string>|null $i_params
  * @return int|false
  */
-function makeTimeStamp(array &$io_vars, $i_params = null): int|false
+function makeTimeStamp(array &$io_vars, ?array $i_params = null): int|false
 {
     /*
     {html_select_date prefix="" field_array="startDate" time=$t}

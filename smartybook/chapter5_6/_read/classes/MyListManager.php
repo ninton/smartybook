@@ -18,7 +18,7 @@ class MyListManager
      * @param int $i_max_items
      * @param string $i_dir
      */
-    public function __construct($i_max_items, $i_dir)
+    public function __construct(int $i_max_items, string $i_dir)
     {
         $this->max_items = $i_max_items;
         $this->dir = $i_dir;
@@ -28,7 +28,7 @@ class MyListManager
      * @param string $i_ListId
      * @return MyList|null
      */
-    public function read($i_ListId): ?MyList
+    public function read(string $i_ListId): ?MyList
     {
         $path = $this->getPath($i_ListId);
         if ($path === '') {
@@ -55,7 +55,7 @@ class MyListManager
      * @param MyList $i_MyList
      * @return void
      */
-    public function write($i_MyList): void
+    public function write(MyList $i_MyList): void
     {
         $buf = serialize($i_MyList);
         $path = $this->getPath($i_MyList->ListId);
@@ -68,7 +68,7 @@ class MyListManager
      * @param string $i_ListId
      * @return string
      */
-    public function getPath($i_ListId): string
+    public function getPath(string $i_ListId): string
     {
         if (preg_match('/[^0-9A-Za-z]/', $i_ListId)) {
             return '';

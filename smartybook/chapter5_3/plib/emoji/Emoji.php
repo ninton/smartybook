@@ -20,7 +20,7 @@ namespace SmartyBook\chapter5_3\plib\emoji;
  * @param string $i_to_encode
  * @return void
  */
-function emoji_convert_variables(&$io_vars, $i_from_encode, $i_to_encode): void
+function emoji_convert_variables(array &$io_vars, string $i_from_encode, string $i_to_encode): void
 {
     $emoji = Emoji::singleton($i_from_encode, $i_to_encode);
     $emoji->convertVariables($io_vars);
@@ -30,7 +30,7 @@ function emoji_convert_variables(&$io_vars, $i_from_encode, $i_to_encode): void
  * @param string $i_buf
  * @return string|null
  */
-function emoji_output_handler($i_buf): string|null
+function emoji_output_handler(string $i_buf): string|null
 {
     $buf = $i_buf;
     foreach (Emoji::$output_setting_arr as $setting) {
@@ -46,7 +46,7 @@ function emoji_output_handler($i_buf): string|null
  * @param string $i_to_encode
  * @return string|null
  */
-function emoji_convert($i_buf, $i_from_encode, $i_to_encode): string|null
+function emoji_convert(string $i_buf, string $i_from_encode, string $i_to_encode): string|null
 {
     $emoji = Emoji::singleton($i_from_encode, $i_to_encode);
     $buf = $emoji->convert($i_buf);
@@ -74,7 +74,7 @@ class Emoji
      * @param string $i_to_encode
      * @return void
      */
-    private function __construct(string $i_from_encode, $i_to_encode)
+    private function __construct(string $i_from_encode, string $i_to_encode)
     {
         $this->from_encode = $i_from_encode;
         $this->to_encode   = $i_to_encode;
@@ -89,7 +89,7 @@ class Emoji
      * @param string $i_to_encode
      * @return Emoji
      */
-    public static function singleton($i_from_encode, $i_to_encode): Emoji
+    public static function singleton(string $i_from_encode, string $i_to_encode): Emoji
     {
         static $instance = [];
         if (! isset($instance[$i_from_encode][$i_to_encode])) {
@@ -104,7 +104,7 @@ class Emoji
      * @param string $i_to_encode
      * @return void
      */
-    public function output_setting($i_from_encode = '', $i_to_encode = ''): void
+    public function output_setting(string $i_from_encode = '', string $i_to_encode = ''): void
     {
         if ('' == $i_from_encode) {
             self::$output_setting_arr = [];
@@ -209,7 +209,7 @@ class Emoji
      * @param string $i_text
      * @return void
      */
-    public function add($i_from, $i_to, $i_text = ''): void
+    public function add(string $i_from, string $i_to, string $i_text = ''): void
     {
         switch ($i_from) {
             case '':
@@ -241,7 +241,7 @@ class Emoji
      * @param string $i_encode
      * @return string
      */
-    public function modifier($i_buf, $i_encode): string
+    public function modifier(string $i_buf, string $i_encode): string
     {
         $method = $this->encodeMethod($i_encode);
         switch ($method) {
@@ -286,7 +286,7 @@ class Emoji
      * @param string $encode
      * @return int
      */
-    public function encodeMethod($encode): int
+    public function encodeMethod(string $encode): int
     {
         $method = [
             'i_uni16'  => 1,
@@ -329,7 +329,7 @@ class Emoji
      * @param string $i_buf
      * @return string|null
      */
-    public function convert($i_buf): string|null
+    public function convert(string $i_buf): string|null
     {
         $buf = preg_replace_callback($this->regex, function (array $mathes): string {
             return $this->mapping($mathes[1]);
@@ -342,7 +342,7 @@ class Emoji
      * @param string $i_buf
      * @return string
      */
-    public function mapping($i_buf): string
+    public function mapping(string $i_buf): string
     {
         switch ($this->from_encode) {
             case 'e_img_num':
@@ -368,7 +368,7 @@ class Emoji
      * @param string $i_buf
      * @return string
      */
-    public function pack16bin($i_buf): string
+    public function pack16bin(string $i_buf): string
     {
         $buf = '';
         if (preg_match('/^[0-9A-F]{4}$/i', $i_buf)) {
