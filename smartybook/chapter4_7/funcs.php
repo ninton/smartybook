@@ -33,7 +33,7 @@ function assoc_load($i_path): array
 /**
  * @param array<string, mixed> $io_vars
  * @param array<string, string>|null $i_params
- * @return int
+ * @return int|false
  */
 function makeTimeStamp(array &$io_vars, $i_params = null): int|false
 {
