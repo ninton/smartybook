@@ -66,7 +66,7 @@ class SortNavigator
      *  @param string $i_order
      *  @return string
      */
-    public function showLink($i_sort, $i_order)
+    public function showLink($i_sort, $i_order): string
     {
         if (($i_sort == $this->sort) && ($i_order == $this->order)) {
             if ($i_order == 'asc') {

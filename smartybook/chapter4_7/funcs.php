@@ -4,7 +4,7 @@
  * @param string $i_path
  * @return list<string>
  */
-function array_load($i_path)
+function array_load($i_path): array
 {
     $buf = file_get_contents($i_path);
     $arr = preg_split("/[\r\n]+/", $buf, -1, PREG_SPLIT_NO_EMPTY);

@@ -27,7 +27,7 @@ class CMS
     /**
      *  @return int
      */
-    public function getCount()
+    public function getCount(): int
     {
         $stmt = $this->dbh->query('SELECT COUNT(id) FROM cms');
         $row = $stmt->fetch(PDO::FETCH_NUM);
@@ -41,7 +41,7 @@ class CMS
      *  @param string $i_order
      *  @return list<array<string, mixed>>
      */
-    public function getAll($i_offset, $i_limit, $i_sort, $i_order)
+    public function getAll($i_offset, $i_limit, $i_sort, $i_order): array
     {
         // 安全な値かどうかをチェックする
         switch ($i_sort) {

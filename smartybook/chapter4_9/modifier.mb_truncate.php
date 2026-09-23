@@ -11,9 +11,8 @@
  * @param int $i_length
  * @param string $i_etc
  * @return string
- *
  */
-function smarty_modifier_mb_truncate($i_string, $i_length = 40, $i_etc = '...')
+function smarty_modifier_mb_truncate($i_string, $i_length = 40, $i_etc = '...'): string
 {
     $string = '';
 

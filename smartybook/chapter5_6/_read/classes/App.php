@@ -34,7 +34,7 @@ class App
     /**
      * @return string
      */
-    public static function getCmd()
+    public static function getCmd(): string
     {
         $cmd_arr = preg_grep('/^cmd.*/', array_keys($_POST));
         $cmd_arr = array_values($cmd_arr);

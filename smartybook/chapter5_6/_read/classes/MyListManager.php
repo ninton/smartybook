@@ -28,7 +28,7 @@ class MyListManager
      * @param string $i_ListId
      * @return MyList|null
      */
-    public function read($i_ListId)
+    public function read($i_ListId): ?MyList
     {
         $path = $this->getPath($i_ListId);
         if ($path === '') {
