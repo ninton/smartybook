@@ -1,13 +1,6 @@
 <?php
 
 /**
- * Smarty plugin
- * @package Smarty
- * @subpackage plugins
- */
-
-
-/**
  * Smarty truncate modifier plugin
  *
  * Type:     modifier<br>
@@ -34,5 +27,3 @@ function smarty_modifier_mb_truncate($i_string, $i_length = 40, $i_etc = '...')
 
     return $string;
 }
-
-/* vim: set expandtab: */
