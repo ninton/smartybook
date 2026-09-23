@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @var array{dsn: string, db_user: string} $CONFIG
+ * @var array{dsn: string, db_user: string, db_password: string} $CONFIG
  */
 
 use Smarty\Smarty;
@@ -34,7 +34,7 @@ if (empty($_REQUEST['setPerPage'])) {
 }
 
 // 全件数を調べて、Pagerを初期化する
-$cms = new CMS($CONFIG['dsn'], $CONFIG['db_user']);
+$cms = new CMS($CONFIG['dsn'], $CONFIG['db_user'], $CONFIG['db_password']);
 
 $params = [];
 $params['totalItems'] = $cms->getCount();
