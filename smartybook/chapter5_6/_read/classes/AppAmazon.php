@@ -46,7 +46,7 @@ class AppAmazon
      *  @param-out array<mixed> $o_Item_arr
      *  @return string  error message
      */
-    public function ItemLookup(string $i_ASINs, array $i_options, &$o_Item_arr): string
+    public function ItemLookup(string $i_ASINs, array $i_options, array &$o_Item_arr): string
     {
         $ASIN_arr = explode(',', $i_ASINs);
 
