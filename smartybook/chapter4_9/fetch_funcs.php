@@ -1,7 +1,7 @@
 <?php
 
-// メニューを作る
 /**
+ * メニューを作る
  * @param list<string> $i_categories
  * @return list<array<string, string>>
  */
@@ -17,8 +17,8 @@ function get_menu_arr($i_categories)
     return $menu_arr;
 }
 
-// 注目記事を1件選ぶ
 /**
+ * 注目記事を1件選ぶ
  * @param string $i_csv
  * @return list<array<string, string|null>>
  */
@@ -69,8 +69,8 @@ function get_image_url($i_image)
     return sprintf('%s/%s', get_url(), $i_image);
 }
 
-// chapter4_1/ のURLを求める
 /**
+ * chapter4_1/ のURLを求める
  * @return string
  */
 function get_url()
