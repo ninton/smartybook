@@ -73,7 +73,7 @@ function get_image_url($i_image): string
  * chapter4_1/ のURLを求める
  * @return string
  */
-function get_url()
+function get_url(): string
 {
     static $url;
 

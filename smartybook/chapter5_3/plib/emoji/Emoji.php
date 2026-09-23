@@ -28,9 +28,9 @@ function emoji_convert_variables(&$io_vars, $i_from_encode, $i_to_encode): void
 
 /**
  * @param string $i_buf
- * @return string
+ * @return string|null
  */
-function emoji_output_handler($i_buf)
+function emoji_output_handler($i_buf): string|null
 {
     $buf = $i_buf;
     foreach (Emoji::$output_setting_arr as $setting) {
@@ -44,9 +44,9 @@ function emoji_output_handler($i_buf)
  * @param string $i_buf
  * @param string $i_from_encode
  * @param string $i_to_encode
- * @return string|string[]|null
+ * @return string|null
  */
-function emoji_convert($i_buf, $i_from_encode, $i_to_encode)
+function emoji_convert($i_buf, $i_from_encode, $i_to_encode): string|null
 {
     $emoji = Emoji::singleton($i_from_encode, $i_to_encode);
     $buf = $emoji->convert($i_buf);
@@ -89,7 +89,7 @@ class Emoji
      * @param string $i_to_encode
      * @return Emoji
      */
-    public static function singleton($i_from_encode, $i_to_encode)
+    public static function singleton($i_from_encode, $i_to_encode): Emoji
     {
         static $instance = [];
         if (! isset($instance[$i_from_encode][$i_to_encode])) {
@@ -241,7 +241,7 @@ class Emoji
      * @param string $i_encode
      * @return string
      */
-    public function modifier($i_buf, $i_encode)
+    public function modifier($i_buf, $i_encode): string
     {
         $method = $this->encodeMethod($i_encode);
         switch ($method) {
@@ -327,9 +327,9 @@ class Emoji
 
     /**
      * @param string $i_buf
-     * @return string|string[]|null
+     * @return string|null
      */
-    public function convert($i_buf): string|array|null
+    public function convert($i_buf): string|null
     {
         $buf = preg_replace_callback($this->regex, function (array $mathes): string {
             return $this->mapping($mathes[1]);
