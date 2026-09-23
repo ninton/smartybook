@@ -33,7 +33,6 @@ class App
 
     /**
      * @return string
-     *
      */
     public static function getCmd()
     {

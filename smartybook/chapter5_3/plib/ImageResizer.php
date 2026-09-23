@@ -112,7 +112,7 @@ class ImageResizer
      * @param string $i_src_path
      * @return \GdImage|null
      */
-    public static function image_from_file($i_src_path)
+    public static function image_from_file($i_src_path): \GdImage|null
     {
         $path_parts = pathinfo($i_src_path);
 

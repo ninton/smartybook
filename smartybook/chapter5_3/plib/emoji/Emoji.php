@@ -61,8 +61,7 @@ class Emoji
 {
     /** @var array<int, array{from: string, to: string}> */
     public static $output_setting_arr = [];
-    /** @var string */
-    private $from_encode;
+    private string $from_encode;
     /** @var string */
     private $to_encode;
     /** @var string */
@@ -75,7 +74,7 @@ class Emoji
      * @param string $i_to_encode
      * @return void
      */
-    private function __construct($i_from_encode, $i_to_encode)
+    private function __construct(string $i_from_encode, $i_to_encode)
     {
         $this->from_encode = $i_from_encode;
         $this->to_encode   = $i_to_encode;
@@ -89,7 +88,6 @@ class Emoji
      * @param string $i_from_encode
      * @param string $i_to_encode
      * @return Emoji
-     *
      */
     public static function singleton($i_from_encode, $i_to_encode)
     {
@@ -333,7 +331,7 @@ class Emoji
      */
     public function convert($i_buf): string|array|null
     {
-        $buf = preg_replace_callback($this->regex, function ($mathes): string {
+        $buf = preg_replace_callback($this->regex, function (array $mathes): string {
             return $this->mapping($mathes[1]);
         }, $i_buf);
 
@@ -384,7 +382,7 @@ class Emoji
      * @param array<mixed> $io_vars
      * @return void
      */
-    public function convertVariables(&$io_vars): void
+    public function convertVariables(array &$io_vars): void
     {
         foreach ($io_vars as $key => $val) {
             if (is_array($val)) {

@@ -37,7 +37,7 @@ function get_entry_arr($i_path, $i_category): array
  *
  * array_walkのコールバック関数、2つめの引数に配列キーが渡される（が、この関数では使わない）
  */
-function replace_entry_image(&$io_rcd, $i_key, $i_imageSizeGroup): void
+function replace_entry_image(array &$io_rcd, $i_key, string $i_imageSizeGroup): void
 {
     if ($io_rcd['image']) {
         $fname = basename($io_rcd['image']);

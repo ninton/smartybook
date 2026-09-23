@@ -25,7 +25,7 @@ class CMS
     }
 
     /**
-     *  @return integer
+     *  @return int
      */
     public function getCount()
     {
