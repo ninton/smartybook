@@ -8,11 +8,11 @@ namespace SmartyBook\chapter4_6;
 class SortNavigator
 {
     /** @var string */
-    private $sort;
+    private string $sort;
     /** @var string */
-    private $order;
+    private string $order;
     /** @var array<string, string> */
-    private $vars;
+    private array $vars;
 
     /**
      *  @param string $i_sort
