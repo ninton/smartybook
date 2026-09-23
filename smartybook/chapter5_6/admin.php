@@ -42,6 +42,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
 
                 $appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['secret_access_key'], $CFG['associate_tag']);
                 $options['ResponseGroup'] = 'Medium';
+                $Item_arr = [];
                 $message = $appAmazon->ItemLookup($mylist->getASINs(), $options, $Item_arr);
                 $mylist->setItems($Item_arr);
 
@@ -79,6 +80,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                 $mylist->input($_POST);
                 $appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['secret_access_key'], $CFG['associate_tag']);
                 $options['ResponseGroup'] = 'Small';
+                $item_arr = [];
                 $message = $appAmazon->ItemLookup($mylist->getASINs(), $options, $item_arr);
                 $mylist->setItems($item_arr);
                 if ($mylist === null) {
