@@ -12,11 +12,3 @@ foreach ($_SERVER as $key => $value) {
         $_SERVER[$jhone_key] = $_SERVER[$key];
     }
 }
-
-// Net_UserAgent_Mobile-0.31.0 から不要
-// if ( preg_match('/^Vemulator/', $_SERVER['HTTP_USER_AGENT']) ) {
-//  $_SERVER['HTTP_USER_AGENT'] = preg_replace('/^Vemulator/', 'Vodafone', $_SERVER['HTTP_USER_AGENT']);
-// }
-// if ( preg_match('/^Semulator/', $_SERVER['HTTP_USER_AGENT']) ) {
-//  $_SERVER['HTTP_USER_AGENT'] = preg_replace('/^Semulator/', 'Softbank', $_SERVER['HTTP_USER_AGENT']);
-// }
