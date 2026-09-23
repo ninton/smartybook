@@ -58,8 +58,7 @@
         "phpstan/phpstan": "^2.2",
         "phpstan/phpstan-deprecation-rules": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0",
-        "phpunit/phpunit": "^13.3",
-        "rector/rector": "^2.6"
+        "phpunit/phpunit": "^13.3"
     },
     "include-path": [
         "lib/pear-pear.php.net/Archive_Tar",
