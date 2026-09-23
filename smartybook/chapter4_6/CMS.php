@@ -17,12 +17,13 @@ class CMS
     /**
      *  @param string $i_dsn
      *  @param string $i_dbuser
+     *  @param string $dbPassword
      *  @return void
      *
      */
-    public function __construct($i_dsn, $i_dbuser)
+    public function __construct($i_dsn, $i_dbuser, $dbPassword)
     {
-        $this->dbh = new PDO($i_dsn, $i_dbuser);
+        $this->dbh = new PDO($i_dsn, $i_dbuser, $dbPassword);
         $this->dbh->query('SET NAMES UTF8');
     }
 
