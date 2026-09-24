@@ -30,6 +30,8 @@ class AppAmazon
     public function ItemLookup(string $i_ASINs, array $i_options, array &$o_Item_arr): string
     {
         $ASIN_arr = explode(',', $i_ASINs);
+        // 空のASINを除外する
+        $ASIN_arr = array_filter($ASIN_arr, static fn (string $ASIN): bool => $ASIN !== '');
 
         $o_Item_arr = array_map(
             fn ($ASIN) => [
