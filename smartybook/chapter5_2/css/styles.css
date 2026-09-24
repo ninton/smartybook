@@ -89,8 +89,7 @@ a { color : #ffffff; }
 		padding:3px;
 		width: 60px!important;
 		width /**/: 66px;
-		height: 45px!important;
-		height /**/:51px;
+		height: 45px;
 	}
 	#thumbArea div.thumbOff { background: #444444; }
 	#thumbArea div.thumbOn { background: #ffffff; }

@@ -59,8 +59,7 @@ h3.entryTitle {
 	text-align: left;
 	margin-bottom: 18px;
 	padding: 10px 0 10px 200px;
-	height: 20px !important;
-	height /**/: 40px;
+	height: 20px;
 	background: transparent url(../images/bg_gnavi.gif) -240px 0 repeat-y;
 }
 #contents {
