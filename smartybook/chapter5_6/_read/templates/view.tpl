@@ -8,8 +8,7 @@
 </div>
 <div id="beta">
     <h1>
-        （2020年3月で本プログラムが使っているAmazon_ECSのAPIは廃止となりました。
-        代わりに常に同じダミーデータを表示します）<br>
+        （2020年3月で本プログラムが使っているAmazon_ECSのAPIは廃止となりました。常に410エラーです）<br>
         {$mylist->ListName|escape:html} - {$mylist->NickName|escape:html}
     </h1>
 

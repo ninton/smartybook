@@ -1,14 +1,33 @@
 <?php
 
-/**
- * 2020年3月で、本プログラムで使っているAmazon_ECSのAPIは廃止となりました。
- * APIを呼ぶ代わりにダミーデータを返します。
- */
+// 2020年3月で、本プログラムで使っているAmazon_ECSのAPIは廃止となりました。
+// 常に410エラーです
 
 namespace SmartyBook\chapter5_6\_read\classes;
 
+use Services_Amazon;
+
 class AppAmazon
 {
+    private \Services_Amazon $amazon;
+
+    /**
+     *  @param string $access_key_id
+     *  @param string $secret_access_key
+     *  @param string $associate_tag
+     *  @return void
+     *
+     */
+    public function __construct(string $access_key_id, string $secret_access_key, string $associate_tag)
+    {
+        // Services_AmazonECS4は非推奨となり、Services_Amazon(を使うようにとのこと
+        // https://wiki.php.net/pear/packages/services_amazon
+        $amazon = new Services_Amazon($access_key_id, $secret_access_key, $associate_tag);
+        $amazon->setLocale('JP');
+        //$amazon->setCache('file', array('cache_dir' => $i_cache_dir));
+        $this->amazon = $amazon;
+    }
+
     /*
         $ASINs = '12345,23456,34567';
         $options['ResponseGroup'] = 'Medium';
@@ -30,35 +49,22 @@ class AppAmazon
     public function ItemLookup(string $i_ASINs, array $i_options, array &$o_Item_arr): string
     {
         $ASIN_arr = explode(',', $i_ASINs);
-        // 空のASINを除外する
-        $ASIN_arr = array_filter($ASIN_arr, static fn (string $ASIN): bool => $ASIN !== '');
 
-        $o_Item_arr = array_map(
-            static fn ($ASIN) => [
-                'ASIN' => "$ASIN",
-                'SmallImage' => [
-                    'URL' => 'https://m.media-amazon.com/images/I/51tY5PtGsuL.jpg',
-                    'Height' => [
-                        '_content' => 75,
-                    ],
-                    'Width' => [
-                        '_content' => 53,
-                    ],
-                ],
-                'DetailPageURL' => 'https://www.amazon.co.jp/dp/4774136301',
-                'ItemAttributes' => [
-                    'Title' => '速習Webテクニック Smarty動的Webサイト構築入門 (Quick Master of Web Technique)',
-                    'Author' => ['原 一浩', '青木 真', '鵜飼 孝陽', '川野辺 亮'],
-                    'Publisher' => '技術評論社',
-                    'PublicationDate' => '2008/9/20',
-                    'ListPrice' => [
-                        'FormattedPrice' => '2694',
-                    ],
-                ],
-            ],
-            $ASIN_arr,
-        );
+        // $ASIN_arrから10個づつ問合わせして、$o_Item_arrに蓄積する
+        $o_Item_arr = [];
+        $asin_arr_cnt = count($ASIN_arr);
+        for ($i = 0; $i < $asin_arr_cnt; $i += 10) {
+            $ASINs = join(',', array_slice($ASIN_arr, $i, 10));
+            if ($ASINs != '') {
+                $result = $this->amazon->ItemLookup($ASINs, $i_options);
+                /** @var array{Item: array<int, mixed>}|\PEAR_Error $result */
+                if (\PEAR::isError($result)) {
+                    return $result->message;
+                }
 
+                $o_Item_arr = array_merge($o_Item_arr, $result['Item']);
+            }
+        }
         return '';
     }
 }
