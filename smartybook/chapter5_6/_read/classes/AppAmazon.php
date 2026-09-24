@@ -34,7 +34,7 @@ class AppAmazon
         $ASIN_arr = array_filter($ASIN_arr, static fn (string $ASIN): bool => $ASIN !== '');
 
         $o_Item_arr = array_map(
-            fn ($ASIN) => [
+            static fn ($ASIN) => [
                 'ASIN' => "$ASIN",
                 'SmallImage' => [
                     'URL' => 'https://m.media-amazon.com/images/I/51tY5PtGsuL.jpg',
