@@ -4,10 +4,7 @@
 #toppage {
 	background-color: #ffffff;
 	padding: 0 0 0 0;
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: 0;
-	margin-bottom: 0;
+	margin: 0 auto;
 	text-align: left;
 	width: 760px;
 }
@@ -15,10 +12,7 @@
 #entrypage {
 	background-color: #ffffff;
 	padding: 0 0 0 0;
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: 0;
-	margin-bottom: 0;
+	margin: 0 auto;
 	text-align: left;
 	width: 760px;
 }
@@ -26,10 +20,7 @@
 #page {
 	background-color: #ffffff;
 	padding: 0 0 0 0;
-	margin-right: auto;
-	margin-left: auto;
-	margin-top: 0;
-	margin-bottom: 0;
+	margin: 0 auto;
 	text-align: left;
 	width: 760px;
 }
