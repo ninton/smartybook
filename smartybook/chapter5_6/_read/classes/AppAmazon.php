@@ -32,7 +32,7 @@ class AppAmazon
         $ASIN_arr = explode(',', $i_ASINs);
 
         $o_Item_arr = array_map(
-            fn($ASIN) => [
+            fn ($ASIN) => [
                 'ASIN' => "$ASIN",
                 'SmallImage' => [
                     'URL' => 'https://m.media-amazon.com/images/I/51tY5PtGsuL.jpg',
@@ -52,9 +52,9 @@ class AppAmazon
                     'ListPrice' => [
                         'FormattedPrice' => '2694',
                     ],
-                ]
+                ],
             ],
-            $ASIN_arr
+            $ASIN_arr,
         );
 
         return '';
