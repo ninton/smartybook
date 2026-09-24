@@ -19,8 +19,7 @@
 	background-image: url(../images/header.jpg);
 	background-repeat: no-repeat;
 	background-position: 0 0;
-	height: 80px !important;
-	height /**/: 100px;
+	height: 80px;
 	color:#333333;
 	border-left: solid 2px #996633;
 	border-right: solid 2px #996633;
