@@ -81,7 +81,7 @@ a { color : #ffffff; }
 	/*#mainImgBox img { position:absolute; }*/
 
 #pg_thumb { width : 100%; }
-	/* thumbOff: chapter5_2/templates/photogallery.tpl#L94,L184,L185 で参照しています */
+	/* thumb: chapter5_2/templates/photogallery.tpl#L94,L184,L185 で参照しています */
 	#thumbArea div.thumb {
 		float:left;
 		overflow:hidden;
