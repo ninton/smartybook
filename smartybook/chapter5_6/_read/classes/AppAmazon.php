@@ -4,6 +4,7 @@
  * 2020年3月で、本プログラムで使っているAmazon_ECSのAPIは廃止となりました。
  * APIを呼ぶ代わりにダミーデータを返すスタブクラスを使います。
  */
+
 namespace SmartyBook\chapter5_6\_read\classes;
 
 use SmartyBook\chapter5_6\src\ServicesAmazonStub;
