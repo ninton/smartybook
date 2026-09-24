@@ -74,9 +74,7 @@ a { color : #ffffff; }
 		margin-right:auto;
 		width:100%;
 		height:360px;
-		background:transparent;
-		background-position:center center;
-		background-repeat:no-repeat;
+		background: transparent no-repeat center center;
 		overflow:hidden;
 	}
 	/*#mainImgBox img { position:absolute; }*/
