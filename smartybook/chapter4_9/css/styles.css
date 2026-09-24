@@ -20,8 +20,7 @@ p { margin: 0 0 10px; }
 h1 {
 	margin: 0;
 	padding: 130px 0 0;
-	height: 0 !important;
-	height /**/: 130px;
+	height: 0;
 	width: 301px;
 	color: #888;
 	text-align: left;
