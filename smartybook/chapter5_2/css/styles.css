@@ -87,8 +87,7 @@ a { color : #ffffff; }
 		overflow:hidden;
 		margin:0 10px 10px 0;
 		padding:3px;
-		width: 60px!important;
-		width /**/: 66px;
+		width: 60px;
 		height: 45px;
 	}
 	#thumbArea div.thumbOff { background: #444444; }
