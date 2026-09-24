@@ -42,7 +42,7 @@
 	padding: 0px 0px 0px 0px;
 	margin: 0px 0px 0px 0px;
 	background-image: url(../images/top_norepeat_bk.gif);
-	background-repeat: y-repeat;
+	background-repeat: repeat-y;
 	background-position: 0px 0px;
 }
 
@@ -50,7 +50,7 @@
 	margin: 0px 0px 0px 0px;
 	padding: 7px 0px 15px 11px;
 	background-image: url(../images/page_title_bk.gif);
-	background-repeat: y-repeat;
+	background-repeat: repeat-y;
 	background-position: 0px 0px;
 }
 
