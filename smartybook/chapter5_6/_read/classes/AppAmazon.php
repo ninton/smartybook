@@ -43,7 +43,7 @@ class AppAmazon
                         '_content' => 53,
                     ],
                 ],
-                'DetailPageURL' => 'https://example.com',
+                'DetailPageURL' => 'https://www.amazon.co.jp/dp/4774136301',
                 'ItemAttributes' => [
                     'Title' => '速習Webテクニック Smarty動的Webサイト構築入門 (Quick Master of Web Technique)',
                     'Author' => ['原 一浩', '青木 真', '鵜飼 孝陽', '川野辺 亮'],
