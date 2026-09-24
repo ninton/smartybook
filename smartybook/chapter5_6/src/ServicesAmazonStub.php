@@ -2,7 +2,7 @@
 
 namespace SmartyBook\chapter5_6\src;
 
-class ServicesAmazonStub extends \Services_Amazon
+class ServicesAmazonStub
 {
     // @phpstan-ignore-next-line
     public function __construct($access_key_id, $secret_access_key, $associate_tag = null)
