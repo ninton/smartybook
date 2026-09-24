@@ -60,7 +60,7 @@ a { color : #ffffff; }
     background: #000000 url(../site_images/footer_bg.gif) left top repeat-x;
     font-size: 10px;
     letter-spacing: 0.1em;
-    font-family: arial;
+    font-family: arial, sans-serif;
     color: #999999;
 }
 
