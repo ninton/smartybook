@@ -1,15 +1,17 @@
 <?php
 
-// 2020年3月で、本プログラムで使っているAmazon_ECSのAPIは廃止となりました。
-// 常に410エラーです
+/**
+ * 2020年3月で、本プログラムで使っているAmazon_ECSのAPIは廃止となりました。
+ * APIを呼ぶ代わりにダミーデータを返すスタブクラスを使います。
+ */
 
 namespace SmartyBook\chapter5_6\_read\classes;
 
-use Services_Amazon;
+use SmartyBook\chapter5_6\src\ServicesAmazonStub;
 
 class AppAmazon
 {
-    private \Services_Amazon $amazon;
+    private ServicesAmazonStub $amazon;
 
     /**
      *  @param string $access_key_id
@@ -22,7 +24,7 @@ class AppAmazon
     {
         // Services_AmazonECS4は非推奨となり、Services_Amazon(を使うようにとのこと
         // https://wiki.php.net/pear/packages/services_amazon
-        $amazon = new Services_Amazon($access_key_id, $secret_access_key, $associate_tag);
+        $amazon = new ServicesAmazonStub($access_key_id, $secret_access_key, $associate_tag);
         $amazon->setLocale('JP');
         //$amazon->setCache('file', array('cache_dir' => $i_cache_dir));
         $this->amazon = $amazon;
@@ -57,7 +59,7 @@ class AppAmazon
             $ASINs = join(',', array_slice($ASIN_arr, $i, 10));
             if ($ASINs != '') {
                 $result = $this->amazon->ItemLookup($ASINs, $i_options);
-                /** @var array{Item: array<int, mixed>}|\PEAR_Error $result */
+                /** @var array{Item: list<array<string, mixed>>}|\PEAR_Error $result */
                 if (\PEAR::isError($result)) {
                     return $result->message;
                 }
