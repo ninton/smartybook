@@ -5,8 +5,8 @@ body {
 	font-size: small;
 	line-height: 1.3em;
 	color: #333333;
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 0px 0px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
 	text-align: center;
 	background-color: #ffffff;
 	width: 100%;
@@ -24,8 +24,8 @@ a:hover { border: 0; color: #cc3300; background-color: transparent; text-decorat
 
 
 p {
-	margin: 0px 0px 10px 0px;
-	padding: 0px 0px 0px 0px;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
 }
 
 a img {
@@ -48,10 +48,10 @@ img.picRight {
 
 hr {
 	display: none;
-	margin: 0px 0px 0px 0px;
-	padding: 50px 0px 0px 0px;
-	height: 0px !important;
-	height /**/: 0px;
+	margin: 0 0 0 0;
+	padding: 50px 0 0 0;
+	height: 0 !important;
+	height /**/: 0;
 	clear: both;
 }
 
@@ -65,8 +65,8 @@ hr {
 #footer address {
 	color: #999999;
 	font-style: normal;
-	margin: 0px 0px 0px 0px;
-	padding: 4px 0px 0px 8px;
+	margin: 0 0 0 0;
+	padding: 4px 0 0 8px;
 	font-size: 10pt;
 }
 

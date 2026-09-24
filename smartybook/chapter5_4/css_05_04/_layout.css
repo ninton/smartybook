@@ -1,11 +1,11 @@
 @charset "utf-8";
 
 #portalPage {
-	padding: 0px 0px 0px 0px;
+	padding: 0 0 0 0;
 	margin-right: auto;
 	margin-left: auto;
-	margin-top: 0px;
-	margin-bottom: 0px;
+	margin-top: 0;
+	margin-bottom: 0;
 	text-align: left;
 	width: 760px !important;
 	width /**/: 764px;
@@ -14,11 +14,11 @@
 
 #portalPage #header {
 	position: relative;
-	margin: 0px 0px 0px 0px;
-	padding: 20px 0px 0px 16px;
+	margin: 0 0 0 0;
+	padding: 20px 0 0 16px;
 	background-image: url(../images/header.jpg);
 	background-repeat: no-repeat;
-	background-position: 0px 0px;
+	background-position: 0 0;
 	height: 80px !important;
 	height /**/: 100px;
 	color:#333333;
@@ -29,8 +29,8 @@
 #portalPage #main {
 	position: relative;
 	background-color: #ffffff;
-	margin: 0px 0px 0px 0px;
-	padding: 8px 0px 0px 16px;
+	margin: 0 0 0 0;
+	padding: 8px 0 0 16px;
 	border-bottom: 2px solid #996633;
 	border-left: solid 2px #996633;
 	border-right: solid 2px #996633;
