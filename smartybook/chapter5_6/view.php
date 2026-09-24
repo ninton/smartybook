@@ -22,12 +22,11 @@ if ($mylist === null) {
     die('read error');
 }
 
-$appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['secret_access_key'], $CFG['associate_tag']);
+$appAmazon = new AppAmazon();
 
 $options['ResponseGroup'] = 'Medium';
 $Item_arr = [];
 $message = $appAmazon->ItemLookup($mylist->getASINs(), $options, $Item_arr);
-
 $mylist->setItems($Item_arr);
 
 $smarty = new AppSmarty();
