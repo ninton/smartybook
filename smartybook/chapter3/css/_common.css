@@ -48,11 +48,6 @@ img.picRight {
 
 hr {
 	display: none;
-	margin: 0 0 0 0;
-	padding: 50px 0 0 0;
-	height: 0 !important;
-	height /**/: 0;
-	clear: both;
 }
 
 #contents:after {
