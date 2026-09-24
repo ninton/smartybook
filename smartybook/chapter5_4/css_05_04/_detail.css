@@ -133,12 +133,11 @@
 
 #portalPage #main #link li {
 	padding :0; 
-	margin:0; 
+	margin:1px 0;
 	background-image:url(../images/arrow.gif);
 	text-decoration:none;
 	background-repeat:no-repeat;
 	padding-left:20px; 
 	font-size:small;
-	margin:1px 0;
 	height:1.5em;
 }
