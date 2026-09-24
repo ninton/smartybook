@@ -70,7 +70,6 @@
         "lib/pear-pear.php.net/Net_UserAgent_Mobile",
         "lib/pear-pear.php.net/Pager",
         "lib/pear-pear.php.net/PEAR",
-        "lib/pear-pear.php.net/Services_Amazon",
         "lib/pear-pear.php.net/Structures_Graph",
         "lib/pear-pear.php.net/XML_Parser",
         "lib/pear-pear.php.net/XML_Serializer",

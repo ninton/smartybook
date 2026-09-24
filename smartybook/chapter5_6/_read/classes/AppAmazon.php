@@ -22,11 +22,7 @@ class AppAmazon
      */
     public function __construct(string $access_key_id, string $secret_access_key, string $associate_tag)
     {
-        // Services_AmazonECS4は非推奨となり、Services_Amazon(を使うようにとのこと
-        // https://wiki.php.net/pear/packages/services_amazon
         $amazon = new ServicesAmazonStub($access_key_id, $secret_access_key, $associate_tag);
-        $amazon->setLocale('JP');
-        //$amazon->setCache('file', array('cache_dir' => $i_cache_dir));
         $this->amazon = $amazon;
     }
 
@@ -59,10 +55,6 @@ class AppAmazon
             $ASINs = join(',', array_slice($ASIN_arr, $i, 10));
             if ($ASINs != '') {
                 $result = $this->amazon->ItemLookup($ASINs, $i_options);
-                /** @var array{Item: list<array<string, mixed>>}|\PEAR_Error $result */
-                if (\PEAR::isError($result)) {
-                    return $result->message;
-                }
 
                 $o_Item_arr = array_merge($o_Item_arr, $result['Item']);
             }
