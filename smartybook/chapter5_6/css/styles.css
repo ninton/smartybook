@@ -33,7 +33,7 @@ textarea, select, input {
 p#siteTitle {
 	margin: 0;
 	padding: 256px 0 0;
-	height: 0px !important;
+	height: 0 !important;
 	height /**/: 256px;
 	width: 270px;
 	background: transparent url(../images/title.gif) left top no-repeat;

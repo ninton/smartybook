@@ -1,7 +1,7 @@
 ﻿body {
     margin : 0;
     padding : 0;
-    background : #000000 url(../site_images/header_bg.gif) 0px -20px repeat-x;
+    background : #000000 url(../site_images/header_bg.gif) 0 -20px repeat-x;
     text-align : center;
     color : #ffffff;
     line-height : 1.5;
@@ -25,10 +25,10 @@ a { color : #ffffff; }
     position: absolute;
     top: 30px;
     left: 40px;
-    margin: 0px;
+    margin: 0;
     padding-top: 30px;
     width: 300px;
-    height: 0px!important;
+    height: 0 !important;
     height /**/: 30px;
     background: transparent url(../site_images/title.gif) left top no-repeat;
     overflow: hidden;
@@ -38,10 +38,10 @@ a { color : #ffffff; }
     position : absolute;
     right : 20px;
     top : 30px;
-    margin: 0px;
+    margin: 0;
     padding-top: 20px;
     width: 200px;
-    height: 0px!important;
+    height: 0 !important;
     height /**/: 20px;
     background: transparent url(../site_images/subtitle.gif) left top no-repeat;
     overflow: hidden;
@@ -117,7 +117,7 @@ a { color : #ffffff; }
     	margin-bottom: 10px;
     	padding-top: 20px;
    		width: 100%;
-    	height: 0px!important;
+    	height: 0 !important;
     	height /**/: 20px;
     	background: #000000 url(../site_images/slideshow_btn.gif) right top no-repeat;
     	overflow: hidden;
@@ -128,7 +128,7 @@ a { color : #ffffff; }
     	margin-bottom: 10px;
     	padding-top: 20px;
     	width: 100%;
-    	height: 0px!important;
+    	height: 0 !important;
     	height /**/: 20px;
     	background: #000000 url(../site_images/slideshow_btn.gif) right -20px no-repeat;
     	overflow: hidden;

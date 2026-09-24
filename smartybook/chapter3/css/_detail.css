@@ -1,8 +1,8 @@
 @charset "utf-8";
 
 #intro h1#siteTitle {
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 0px 0px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
 	position: absolute;
 	left: 45px;
 	top: 209px;
@@ -14,8 +14,8 @@
 }
 
 #entrypage #header h1 {
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 0px 0px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
 	text-align: left;
 	font-size: 100%;
 	font-style: normal;
@@ -23,7 +23,7 @@
 }
 
 #index {
-	margin: 0px 0px 0px 0px;
+	margin: 0 0 0 0;
 	padding: 232px 20px 20px 469px;
 	height: 157px !important;
 	height /**/: 399px;
@@ -34,8 +34,8 @@
 }
 
 #index h2{
-	margin: 0px 0px 20px 0px;
-	padding: 0px 0px 0px 0px;
+	margin: 0 0 20px 0;
+	padding: 0 0 0 0;
 }
 
 #menus {
@@ -71,8 +71,8 @@
 }
 
 .entryTitle {
-	margin: 0px 0px 20px 0px;
-	padding: 0px 0px 2px 0px;
+	margin: 0 0 20px 0;
+	padding: 0 0 2px 0;
 	font-size: 120%;
 	font-style: normal;
 	font-weight: bold;
@@ -82,8 +82,8 @@
 }
 
 .contentsBody {
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 0px 0px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
 	width: 720px;
 }
 
@@ -91,14 +91,14 @@
 	font-size: 100%;
 	color: #333333;
 	line-height: 130%;
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 20px 0px;
+	margin: 0 0 0 0;
+	padding: 0 0 20px 0;
 }
 
 .pageNav {
 	border-top: 1px solid #999999;
-	margin: 4px 0px 0px 0px;
-	padding: 4px 0px 0px 0px;
+	margin: 4px 0 0 0;
+	padding: 4px 0 0 0;
 	color: #333333;
 	text-align: right;
 	width: 720px !important;
@@ -106,7 +106,7 @@
 }
 
 .pageNav a{
-	padding: 0px 14px 0px 0px;
+	padding: 0 14px 0 0;
 	background-image: url(../images/pagetop_nav.gif);
 	background-repeat: no-repeat;
 	background-position: right 50%;
@@ -118,24 +118,24 @@
 */
 
 #cmsForm {
-	margin: 0px 0px 20px 0px;
-	padding: 0px 0px 0px 0px;
+	margin: 0 0 20px 0;
+	padding: 0 0 0 0;
 }
 
 #cmsForm fieldset {
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 0px 0px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
 	border: none;
 }
 
 #cmsForm table {
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 0px 0px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
 }
 
 #cmsForm table th, #cmsForm table td{
-	margin: 0px 0px 0px 0px;
-	padding: 8px 16px 8px 0px;
+	margin: 0 0 0 0;
+	padding: 8px 16px 8px 0;
 	text-align: left;
 	border-top: 1px solid #ffffff;
 }
@@ -166,8 +166,8 @@
 	width: 400px;
 }
 #cmsForm .submitBtn {
-	margin: 0px 20px 0px 0px;
-	padding: 0px 0px 0px 0px;
+	margin: 0 20px 0 0;
+	padding: 0 0 0 0;
 
 }
 
@@ -177,24 +177,24 @@
 */
 
 .panel {
-	margin: 0px 0px 10px 0px;
-	padding: 0px 0px 19px 0px;
+	margin: 0 0 10px 0;
+	padding: 0 0 19px 0;
 	background-image: url(../images/window_L_footer.gif);
 	background-repeat: no-repeat;
-	background-position: 0% 100%;
+	background-position: 0 100%;
 }
 
 .panel .header {
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 0px 0px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
 	background-image: url(../images/window_L_header.gif);
 	background-repeat: no-repeat;
-	background-position: 0% 0%;
+	background-position: 0 0;
 }
 
 .panel h2 {
-	margin: 0px 0px 0px 0px;
-	padding: 10px 0px 8px 40px;
+	margin: 0 0 0 0;
+	padding: 10px 0 8px 40px;
 	background-image: url(../images/icons_write.gif);
 	background-repeat: no-repeat;
 	background-position: 12px 50%;
@@ -205,7 +205,7 @@
 .panel .contents {
 	background-image: url(../images/window_L_middle.gif);
 	background-repeat: repeat-y;
-	margin: 0px 0px 0px 0px;
+	margin: 0 0 0 0;
 	padding: 30px 20px 20px 40px;
 }
 
@@ -214,20 +214,20 @@
 	font-weight: bold;
 	font-size: 110%;
 	line-height: 140%;
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 30px 0px;
+	margin: 0 0 0 0;
+	padding: 0 0 30px 0;
 }
 
 .entryDate {
-	margin: 0px 20px 30px 0px;
+	margin: 0 20px 30px 0;
 	text-align: right;
 	font-size: 80%;
 	color: #996666;
 }
 
 .entryDate p {
-	margin: 0px 0px 0px 0px;
-	padding: 0px 0px 0px 0px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
 }
 
 .attention {
