@@ -1,3 +1,4 @@
+// Flash Player は、2020年12月31日をもってサポートが終了しました。メンテナンス対象外、リントエラー放置します
 //v1.7
 // Flash Player Version Detection
 // Detect Client Browser type
