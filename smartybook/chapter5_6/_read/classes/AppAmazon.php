@@ -57,10 +57,6 @@ class AppAmazon
             $ASINs = join(',', array_slice($ASIN_arr, $i, 10));
             if ($ASINs != '') {
                 $result = $this->amazon->ItemLookup($ASINs, $i_options);
-                /** @var array{Item: list<array<string, mixed>>}|\PEAR_Error $result */
-                if (\PEAR::isError($result)) {
-                    return $result->message;
-                }
 
                 $o_Item_arr = array_merge($o_Item_arr, $result['Item']);
             }

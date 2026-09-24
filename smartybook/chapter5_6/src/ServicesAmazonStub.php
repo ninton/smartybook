@@ -13,9 +13,9 @@ class ServicesAmazonStub
     /**
      *  @param string $item_id
      *  @param array<string,string> $options
-     *  @return array{Item: list<array<string, mixed>>}|\PEAR_Error
+     *  @return array{Item: list<array<string, mixed>>}
      */
-    public function ItemLookup($item_id, $options = []): array|\PEAR_Error
+    public function ItemLookup($item_id, $options = []): array
     {
         $item_id_arr = preg_split('/,/', $item_id, -1, PREG_SPLIT_NO_EMPTY);
 
