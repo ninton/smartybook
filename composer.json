@@ -67,7 +67,6 @@
         "lib/pear-pear.php.net/HTTP_Request",
         "lib/pear-pear.php.net/Net_Socket",
         "lib/pear-pear.php.net/Net_URL",
-        "lib/pear-pear.php.net/Net_UserAgent_Mobile",
         "lib/pear-pear.php.net/Pager",
         "lib/pear-pear.php.net/PEAR",
         "lib/pear-pear.php.net/Structures_Graph",
