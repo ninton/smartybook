@@ -1,6 +1,6 @@
 <?php
 
-namespace SmartyBook\chapter5_6\src;
+namespace Lib\PearStub;
 
 class ServicesAmazonStub
 {
