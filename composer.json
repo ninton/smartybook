@@ -76,9 +76,10 @@
     ],
     "autoload": {
         "classmap": [
-            "lib/"
+            "lib/pear-pear.php.net/"
         ],
         "psr-4": {
+            "Lib\\": "lib/",
             "SmartyBook\\": "smartybook/"
         }
     },
