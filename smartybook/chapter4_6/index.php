@@ -3,7 +3,7 @@
 /**
  * @var array{dsn: string, db_user: string, db_password: string} $CONFIG
  */
-
+use Lib\PearStub\PagerStub as Pager;
 use Smarty\Smarty;
 
 require_once('../../vendor/autoload.php');
@@ -48,7 +48,7 @@ if ($pager->numPages() < $_REQUEST['pageID']) {
     $_REQUEST['pageID'] = 1;
 }
 // ページに表示する範囲のデータを読みだす
-list($from, $to) = $pager->getOffsetByPageId($_REQUEST['pageID']);
+list($from, $to) = $pager->getOffsetByPageId();
 $rcd_arr = [];
 if ((0 < $from) && (0 < $to)) {
     $rcd_arr = $cms->getAll($from - 1, $to - $from + 1, $_REQUEST['sort'], $_REQUEST['order']);
