@@ -36,17 +36,19 @@ if (empty($_REQUEST['setPerPage'])) {
 // 全件数を調べて、Pagerを初期化する
 $cms = new CMS($CONFIG['dsn'], $CONFIG['db_user'], $CONFIG['db_password']);
 
-$params = [];
-$params['totalItems'] = $cms->getCount();
-$pager = Pager::factory($params);
-
 // ページ番号の調整
 if ((int)$_REQUEST['pageID'] < 1) {
     $_REQUEST['pageID'] = 1;
 }
-if ($pager->numPages() < $_REQUEST['pageID']) {
+if ($cms->getCount() < $_REQUEST['pageID']) {
     $_REQUEST['pageID'] = 1;
 }
+
+$params = [];
+$params['totalItems'] = $cms->getCount();
+$params['currentPage'] = (int)$_REQUEST['pageID'];
+$pager = Pager::factory($params);
+
 // ページに表示する範囲のデータを読みだす
 list($from, $to) = $pager->getOffsetByPageId();
 $rcd_arr = [];
