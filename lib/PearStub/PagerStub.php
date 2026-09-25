@@ -27,7 +27,7 @@ class PagerStub
     {
         $this->itemData     = $options['itemData'] ?? [];
         $this->totalItems   = $options['totalItems'] ?? count($this->itemData);
-        $this->perPage      = max(1, (int)($options['perPage'] ?? 5));
+        $this->perPage      = max(1, (int)($options['perPage'] ?? ($_REQUEST['setPerPage'] ?? 5)));
         $this->delta        = max(1, (int)($options['delta'] ?? 2));
         $this->urlVar       = $options['urlVar'] ?? 'pageID';
 
