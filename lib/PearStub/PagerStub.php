@@ -145,11 +145,11 @@ class PagerStub
         }
 
         // HTMLリンク生成用の内部関数
-        $buildUrl = function(int $page) {
+        $buildUrl = function (int $page) {
             $params = $_GET;
             $params[$this->urlVar] = $page;
             $queryString = http_build_query($params);
-            
+
             if ($this->path !== '') {
                 $file = str_replace('%d', (string)$page, $this->fileName);
                 return rtrim($this->path, '/') . '/' . $file . ($queryString ? '?' . $queryString : '');
@@ -179,7 +179,7 @@ class PagerStub
                 $links['pages'][$p] = [
                     'number' => $p,
                     'isCurrent' => true,
-                    'url' => ''
+                    'url' => '',
                 ];
             } else {
                 $url = $buildUrl($p);
@@ -187,7 +187,7 @@ class PagerStub
                 $links['pages'][$p] = [
                     'number' => $p,
                     'isCurrent' => false,
-                    'url' => $url
+                    'url' => $url,
                 ];
             }
         }
@@ -198,21 +198,21 @@ class PagerStub
             $links['back'],
             implode(' ', $pageHtmlArr),
             $links['next'],
-            $links['last']
+            $links['last'],
         ]);
         $links['pages'] = implode(' ', $allHtml);
 
         return $links;
     }
 
-    public function getPerPageSelectBox($start=5, $end=30, $step=5, $showAllData=false, $extraParams=array()): string
+    public function getPerPageSelectBox($start = 5, $end = 30, $step = 5, $showAllData = false, $extraParams = []): string
     {
         return <<<HTML
 <select name="setPerPage" onchange='document.forms["perPage"].submit()'><option value="1">1件/ページ</option><option value="2">2件/ページ</option><option value="3">3件/ページ</option><option value="4">4件/ページ</option><option value="5" selected="selected">5件/ページ</option><option value="6">6件/ページ</option><option value="7">7件/ページ</option><option value="8">8件/ページ</option><option value="9">9件/ページ</option><option value="10">10件/ページ</option><option value="11">11件/ページ</option><option value="12">12件/ページ</option><option value="13">13件/ページ</option><option value="14">14件/ページ</option><option value="15">15件/ページ</option><option value="16">16件/ページ</option><option value="17">17件/ページ</option><option value="18">18件/ページ</option><option value="19">19件/ページ</option><option value="20">20件/ページ</option><option value="7">7件/ページ</option></select>
 HTML;
     }
 
-    public function getPageSelectBox($params = array(), $extraAttributes = ''): string
+    public function getPageSelectBox($params = [], $extraAttributes = ''): string
     {
         return <<<HTML
 <select name="pageID" onchange="document.location.href='/smartybook/chapter4_6/index.php?pageID=' + this.options[this.selectedIndex].value + ''"><option value="1" selected="selected">1</option><option value="2">2</option></select>
