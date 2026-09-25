@@ -212,6 +212,7 @@ class PagerStub
     }
 
     /**
+     * @note スタブです。引数を無視して、固定のHTMLを返します。
      * 1ページあたりの表示件数を選択するセレクトボックスを生成する
      * @param int $start セレクトボックスの開始値
      * @param int $end セレクトボックスの終了値
@@ -228,6 +229,7 @@ HTML;
     }
 
     /**
+     * @note スタブです。引数を無視して、固定のHTMLを返します。
      * ページ番号のセレクトボックスを生成する
      * @param array<string, int|string> $params ページ番号の選択肢を生成するためのパラメータ
      * @param string $extraAttributes セレクトボックスに追加する属性
