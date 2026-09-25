@@ -198,15 +198,7 @@ class PagerStub
             }
         }
 
-        // PEAR::Pager の $links['pages'] 相当のHTML文字列を連結
-        $allHtml = array_filter([
-            $links['first'],
-            $links['back'],
-            implode(' ', $pageHtmlArr),
-            $links['next'],
-            $links['last'],
-        ]);
-        $links['pages'] = implode(' ', $allHtml);
+        $links['pages'] = implode(' ', $pageHtmlArr);
 
         return $links;
     }
