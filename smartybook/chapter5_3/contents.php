@@ -1,6 +1,7 @@
 <?php
 
 use Smarty\Smarty;
+use Lib\PearStub\PagerStub as Pager;
 
 require_once('./ini.php');
 require_once('./ketai_ini.php');
@@ -28,22 +29,25 @@ $entry_arr = get_entry_arr($CFG['CSV_FILE'], $_GET['category']);
 // CMS配列中の元画像パスを大中小画像パスに置換する
 array_walk($entry_arr, 'replace_entry_image', $imageSizeGroup);
 
-$params = [];
-$params['perPage'] = 1;
-$params['totalItems'] = count($entry_arr);
-$pager = Pager::factory($params);
-
-
 $pageID = 1;
 if (isset($_REQUEST['pageID'])) {
     $pageID = $_REQUEST['pageID'];
 }
 // ページ番号の調整
-if ($pager->numPages() < $pageID) {
-    $pageID = $pager->numPages();
+if (count($entry_arr) < $pageID) {
+    $pageID = count($entry_arr);
 }
+
+
+$params = [];
+$params['perPage'] = 1;
+$params['totalItems'] = count($entry_arr);
+$params['currentPage'] = $pageID;
+$pager = Pager::factory($params);
+
+
 // 表示開始位置と終了位置
-list($from, $to) = $pager->getOffsetByPageId($pageID);
+list($from, $to) = $pager->getOffsetByPageId();
 
 $entry = [];
 if ((0 < $from) && (0 < $to)) {
