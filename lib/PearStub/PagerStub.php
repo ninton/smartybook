@@ -17,8 +17,12 @@ class PagerStub
     private string $urlVar;
     private string $path;
     private string $fileName;
+    /** @var list<mixed> */
     private array $itemData;
 
+    /**
+     * @param array<string, mixed> $options ページネーションのオプション
+     */
     public function __construct(array $options = [])
     {
         $this->itemData     = $options['itemData'] ?? [];
@@ -38,6 +42,8 @@ class PagerStub
 
     /**
      * PEAR::Pager::factory 互換ファクトリメソッド
+     * @param array<string, int|string> $options ページネーションのオプション
+     * @return PagerStub 新しいPagerStubインスタンス
      */
     public static function factory(array $options = []): PagerStub
     {
@@ -102,6 +108,7 @@ class PagerStub
 
     /**
      * 現在のページに対応するデータ（itemDataを指定した場合）を取得
+     * @return list<mixed> 現在のページに対応するデータの配列
      */
     public function getPageData(): array
     {
@@ -114,6 +121,7 @@ class PagerStub
 
     /**
      * 現在のページで表示しているアイテムの開始・終了インデックス等を取得
+     * @return array{0: int, 1: int} 現在のページで表示しているアイテムの開始・終了インデックス
      */
     public function getOffsetByPageId(): array
     {
@@ -127,6 +135,14 @@ class PagerStub
 
     /**
      * ページナビゲーション用リンクHTML / 構造化データを取得
+     * @return array{
+     *     all: string,
+     *     first: string,
+     *     back: string,
+     *     next: string,
+     *     last: string,
+     *     pages: string,
+     * } ページナビゲーション用リンクの配列
      */
     public function getLinks(): array
     {
@@ -137,7 +153,7 @@ class PagerStub
             'back'  => '',
             'next'  => '',
             'last'  => '',
-            'pages' => [],
+            'pages' => '',
         ];
 
         if ($totalPages <= 1) {
@@ -205,6 +221,15 @@ class PagerStub
         return $links;
     }
 
+    /**
+     * 1ページあたりの表示件数を選択するセレクトボックスを生成する
+     * @param int $start セレクトボックスの開始値
+     * @param int $end セレクトボックスの終了値
+     * @param int $step セレクトボックスのステップ値
+     * @param bool $showAllData 全データを表示するオプション
+     * @param array<string, int|string> $extraParams 追加のパラメータ
+     * @return string HTML文字列
+     */
     public function getPerPageSelectBox($start = 5, $end = 30, $step = 5, $showAllData = false, $extraParams = []): string
     {
         return <<<HTML
@@ -212,6 +237,12 @@ class PagerStub
 HTML;
     }
 
+    /**
+     * ページ番号のセレクトボックスを生成する
+     * @param array<string, int|string> $params ページ番号の選択肢を生成するためのパラメータ
+     * @param string $extraAttributes セレクトボックスに追加する属性
+     * @return string HTML文字列
+     */
     public function getPageSelectBox($params = [], $extraAttributes = ''): string
     {
         return <<<HTML
