@@ -192,19 +192,9 @@ class PagerStub
         for ($p = $start; $p <= $end; $p++) {
             if ($p === $this->currentPage) {
                 $pageHtmlArr[] = $p;
-                $links['pages'][$p] = [
-                    'number' => $p,
-                    'isCurrent' => true,
-                    'url' => '',
-                ];
             } else {
                 $url = $buildUrl($p);
                 $pageHtmlArr[] = '<a href="' . htmlspecialchars($url) . '">' . $p . '</a>';
-                $links['pages'][$p] = [
-                    'number' => $p,
-                    'isCurrent' => false,
-                    'url' => $url,
-                ];
             }
         }
 
