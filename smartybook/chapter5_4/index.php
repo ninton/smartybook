@@ -55,8 +55,7 @@ if (!$smarty->isCached('index.tpl')) {
     $smarty->assign('data', $data);
     $smarty->assign('picture', $picture);
 
-    //Twitter APIからのコンテンツ読み込み
-    $twitterUrl =  'http://twitter.com/statuses/user_timeline/kara_d.json';
+    /** @note Twitter API はサービス停止しました。代わりにダミーデータJSONを読み込みます */
     $twitterUrl =  'kara_d.json';
     $jTwitter = file_get_contents($twitterUrl);
     $aTwitter = json_decode($jTwitter);
