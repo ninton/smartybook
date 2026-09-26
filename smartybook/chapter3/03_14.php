@@ -2,7 +2,7 @@
 
 use Smarty\Smarty;
 
-require_once '../../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 $smarty = new Smarty();
 $result = mt_rand(1, 3);
 $smarty->assign('result', $result);

@@ -2,7 +2,7 @@
 
 use Smarty\Smarty;
 
-require_once '../../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 $smarty = new Smarty();
 
 // Smarty5準備: preg_match修飾子を登録

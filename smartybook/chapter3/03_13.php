@@ -2,7 +2,7 @@
 
 use Smarty\Smarty;
 
-require_once '../../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 $smarty = new Smarty();
 $siteName = 'スノーボード関連本';
 $bookList = ['ボードの選び方', 'ゲレンデマップ', 'ウエア・カタログ'];

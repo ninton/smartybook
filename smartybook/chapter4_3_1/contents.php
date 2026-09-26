@@ -13,7 +13,7 @@ use Smarty\Smarty;
  * @var array<int, array<string, string|int>> $data
  */
 
-require_once '../../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 $smarty = new Smarty();
 
 require_once __DIR__ . '/insert.php';
