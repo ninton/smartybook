@@ -1,7 +1,7 @@
 <?php
 
 
-require_once('ini.php');
+require_once 'ini.php';
 
 /**
  * @var string $siteName
@@ -12,10 +12,10 @@ require_once('ini.php');
 
 use Smarty\Smarty;
 
-require_once('../../vendor/autoload.php');
+require_once '../../vendor/autoload.php';
 $smarty = new Smarty();
 
-require_once(__DIR__ . '/insert.php');
+require_once __DIR__ . '/insert.php';
 $smarty->registerPlugin('function', 'insert_noticeText2', smarty_insert_noticeText2(...));
 
 $smarty->assign('siteName', $siteName);

@@ -6,8 +6,8 @@
 use Lib\PearStub\PagerStub as Pager;
 use Smarty\Smarty;
 
-require_once('../../vendor/autoload.php');
-require_once('./config.php');
+require_once '../../vendor/autoload.php';
+require_once './config.php';
 
 use SmartyBook\chapter4_6\CMS;
 use SmartyBook\chapter4_6\SortNavigator;

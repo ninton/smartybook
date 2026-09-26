@@ -26,7 +26,7 @@ final class CrawlCode
         );
 
         $crawlCommandArr = array_map(
-            fn (array $row): \Tests\GoldenMaster\CrawlCommand => new CrawlCommand(
+            fn (array $row): CrawlCommand => new CrawlCommand(
                 $row[0],
                 $row[1],
                 $row[2],

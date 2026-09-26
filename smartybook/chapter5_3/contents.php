@@ -3,8 +3,8 @@
 use Lib\PearStub\PagerStub as Pager;
 use Smarty\Smarty;
 
-require_once('./ini.php');
-require_once('./ketai_ini.php');
+require_once './ini.php';
+require_once './ketai_ini.php';
 require_once __DIR__ . '/plib/funcs.php';
 require_once __DIR__ . '/plib/pager_ex.php';
 

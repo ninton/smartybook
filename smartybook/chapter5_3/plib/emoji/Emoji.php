@@ -55,7 +55,6 @@ function emoji_convert(string $i_buf, string $i_from_encode, string $i_to_encode
 
 /**
  * Class Emoji
- *
  */
 class Emoji
 {

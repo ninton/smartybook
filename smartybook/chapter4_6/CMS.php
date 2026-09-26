@@ -9,14 +9,13 @@ use PDO;
  */
 class CMS
 {
-    private \PDO $dbh;
+    private PDO $dbh;
 
     /**
-     *  @param string $i_dsn
-     *  @param string $i_dbuser
-     *  @param string $dbPassword
-     *  @return void
-     *
+     * @param string $i_dsn
+     * @param string $i_dbuser
+     * @param string $dbPassword
+     * @return void
      */
     public function __construct(string $i_dsn, string $i_dbuser, string $dbPassword)
     {
@@ -25,7 +24,7 @@ class CMS
     }
 
     /**
-     *  @return int
+     * @return int
      */
     public function getCount(): int
     {
@@ -35,11 +34,11 @@ class CMS
     }
 
     /**
-     *  @param int $i_offset
-     *  @param int $i_limit
-     *  @param string $i_sort
-     *  @param string $i_order
-     *  @return list<array<string, mixed>>
+     * @param int $i_offset
+     * @param int $i_limit
+     * @param string $i_sort
+     * @param string $i_order
+     * @return list<array<string, mixed>>
      */
     public function getAll(int $i_offset, int $i_limit, string $i_sort, string $i_order): array
     {

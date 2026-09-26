@@ -14,11 +14,10 @@ class AppAmazon
     private ServicesAmazonStub $amazon;
 
     /**
-     *  @param string $access_key_id
-     *  @param string $secret_access_key
-     *  @param string $associate_tag
-     *  @return void
-     *
+     * @param string $access_key_id
+     * @param string $secret_access_key
+     * @param string $associate_tag
+     * @return void
      */
     public function __construct(string $access_key_id, string $secret_access_key, string $associate_tag)
     {
@@ -38,11 +37,11 @@ class AppAmazon
     */
     // ItemLookupで書籍掲載しているので、itemLookupではなく、ItemLookupのままとすることにした。
     /**
-     *  @param string $i_ASINs
-     *  @param array<string, mixed> $i_options
-     *  @param array<int, mixed> $o_Item_arr
-     *  @param-out array<mixed> $o_Item_arr
-     *  @return string  error message
+     * @param string $i_ASINs
+     * @param array<string, mixed> $i_options
+     * @param array<int, mixed> $o_Item_arr
+     * @param-out array<mixed> $o_Item_arr
+     * @return string error message
      */
     public function ItemLookup(string $i_ASINs, array $i_options, array &$o_Item_arr): string
     {

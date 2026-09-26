@@ -1,9 +1,9 @@
 <?php
 
-require_once('ini.php');
+require_once 'ini.php';
 use Smarty\Smarty;
 
-require_once('../../vendor/autoload.php');
+require_once '../../vendor/autoload.php';
 
 /**
  * @var string $siteName

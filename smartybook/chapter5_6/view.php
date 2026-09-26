@@ -7,7 +7,7 @@
 // 2020年3月で、本プログラムで使っているAmazon_ECSのAPIは廃止となりました。
 // 常に410エラーです
 
-require_once('./_read/inc.php');
+require_once './_read/inc.php';
 
 use SmartyBook\chapter5_6\_read\classes\AppAmazon;
 use SmartyBook\chapter5_6\_read\classes\AppSmarty;

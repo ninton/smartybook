@@ -1,7 +1,7 @@
 <?php
 
 
-require_once('ini.php');
+require_once 'ini.php';
 use Smarty\Smarty;
 
 /**
@@ -13,11 +13,11 @@ use Smarty\Smarty;
  * @var array<int, array<string, string|int>> $data
  */
 
-require_once('../../vendor/autoload.php');
+require_once '../../vendor/autoload.php';
 $smarty = new Smarty();
 
 // Smarty5 で {insert}タグ廃止予定なので、registerPluginで置き換えました
-require_once(__DIR__ . '/insert.php');
+require_once __DIR__ . '/insert.php';
 $smarty->registerPlugin('function', 'insert_noticeText2', smarty_insert_noticeText2(...));
 
 $smarty->assign('siteName', $siteName);
