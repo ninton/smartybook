@@ -2,6 +2,7 @@ parameters:
     phpVersion: 80500 # PHP 8.5
     level: 6
     paths:
+        - bootstrap
         - lib
         - smartybook
         - tests
