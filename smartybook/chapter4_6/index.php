@@ -5,7 +5,7 @@ use Smarty\Smarty;
 use SmartyBook\chapter4_6\CMS;
 use SmartyBook\chapter4_6\SortNavigator;
 
-require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../bootstrap/app.php';
 require_once __DIR__ . '/config.php';
 
 /**
