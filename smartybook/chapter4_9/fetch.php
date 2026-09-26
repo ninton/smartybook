@@ -3,8 +3,8 @@
 use Smarty\Smarty;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
-require_once './fetch_ini.php';
-require_once './fetch_funcs.php';
+require_once __DIR__ . '/fetch_ini.php';
+require_once __DIR__ . '/fetch_funcs.php';
 require_once BAT_SRC_DIR . '/ini.php';
 mb_internal_encoding('UTF-8');
 

@@ -2,8 +2,8 @@
 
 use Smarty\Smarty;
 
-require_once './ini.php';
-require_once './ketai_ini.php';
+require_once __DIR__ . '/ini.php';
+require_once __DIR__ . '/ketai_ini.php';
 
 /**
  * ini.phpで定義
