@@ -2,12 +2,11 @@ parameters:
     phpVersion: 80500 # PHP 8.5
     level: 6
     paths:
-        - lib/PearStub
+        - lib
         - smartybook
         - tests
     excludePaths:
         - */templates_c/*.php
-        - lib/pear-pear.php.net
         - vendor
     treatPhpDocTypesAsCertain: false
 includes:
