@@ -60,23 +60,7 @@
         "phpstan/phpstan-phpunit": "^2.0",
         "phpunit/phpunit": "^13.3"
     },
-    "include-path": [
-        "lib/pear-pear.php.net/Archive_Tar",
-        "lib/pear-pear.php.net/Auth",
-        "lib/pear-pear.php.net/Console_Getopt",
-        "lib/pear-pear.php.net/HTTP_Request",
-        "lib/pear-pear.php.net/Net_Socket",
-        "lib/pear-pear.php.net/Net_URL",
-        "lib/pear-pear.php.net/PEAR",
-        "lib/pear-pear.php.net/Structures_Graph",
-        "lib/pear-pear.php.net/XML_Parser",
-        "lib/pear-pear.php.net/XML_Serializer",
-        "lib/pear-pear.php.net/XML_Util"
-    ],
     "autoload": {
-        "classmap": [
-            "lib/pear-pear.php.net/"
-        ],
         "psr-4": {
             "Lib\\": "lib/",
             "SmartyBook\\": "smartybook/"
