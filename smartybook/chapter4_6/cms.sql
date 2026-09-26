@@ -1,9 +1,2 @@
-CREATE TABLE `cms` (
-  `id` int(11) NOT NULL,
-  `category` varchar(200) NOT NULL,
-  `title` varchar(200) NOT NULL,
-  `comment` text NOT NULL,
-  `time` bigint(20) NOT NULL,
-  `image` varchar(200) NOT NULL,
-  PRIMARY KEY  (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+-- docker/db/init/db_init.sql を参照してください
+-- 書籍の説明で使っているので、本ファイルを残しています。
