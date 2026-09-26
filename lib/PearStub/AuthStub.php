@@ -49,7 +49,7 @@ final class AuthStub
             if (isset($this->users[$username]) && $this->users[$username] === md5($password)) {
                 $_SESSION['__auth_user'] = $username;
             } else {
-                call_user_func($this->loginFunction, $username, -1);
+                call_user_func($this->loginFunction, $username, -3);
                 exit;
             }
         }
