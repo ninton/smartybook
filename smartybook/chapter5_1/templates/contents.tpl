@@ -57,9 +57,7 @@
 			<p>
 				{insert_noticeText2 siteName=$siteName nocache}
 			</p>
-			<!-- 変更 05_01 -->
-			<p><script type="text/javascript" src="parts.js"></script></p>
-			<!-- 変更 05_01 -->
+			{* ここでFlashウィジェットを表示していましたが、Flashは廃止されたため削除しました *}
 		</div>
 
 		
