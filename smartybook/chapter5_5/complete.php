@@ -1,6 +1,6 @@
 <?php
 
-require_once 'ini.php';
+require_once __DIR__ . '/ini.php';
 use Lib\PearStub\AuthStub as Auth;
 use Smarty\Smarty;
 
