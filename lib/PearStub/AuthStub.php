@@ -47,6 +47,7 @@ final class AuthStub
             // MD5ハッシュ照合（※互換性のため元のMD5ロジックを保持）
             // @fixme md5() を 現代基準の password_verify() に置き換えたい
             if (isset($this->users[$username]) && $this->users[$username] === md5($password)) {
+                session_regenerate_id(true);
                 $_SESSION['__auth_user'] = $username;
             } else {
                 call_user_func($this->loginFunction, $username, -3);
