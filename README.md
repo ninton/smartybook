@@ -1,5 +1,18 @@
 # 速習Webテクニック Smarty 動的Webサイト構築入門　掲載コードリポジトリ
 
+## このリポジトリについて
+
+2008年出版の『Smarty動的Webサイト構築入門』のサンプルコードを、PHP 8.x + Smarty 5 環境で動作するようにメンテナンスしたものです。
+
+- 2008年当時の設計（フレームワークレスな構造）や Smarty の学習目的を損なわないよう配慮しています。
+- メンテナンスが終了した PEAR パッケージや廃止された外部API（Amazon ECS）は、最小限のスタブ（Stub）クラスに置き換えています。
+
+レガシーな PHP/Smarty プロジェクトを現代の PHP 環境へ安全に移行・リファクタリングする際の実践的な参考になれば幸いです。
+
+『Smarty動的Webサイト構築入門』
+- https://gihyo.jp/book/2008/978-4-7741-3630-1
+- https://www.amazon.co.jp/dp/4774136301
+
 ## ReadMe.txt
 
 CD-ROM収録時の ReadMe.txt
@@ -51,8 +64,6 @@ https://github.com/ninton/smartybook/wiki/%E6%AD%A3%E8%AA%A4%E8%A1%A8
 │   └── db
 │       └── init
 │           └── db_init.sql
-├── lib
-│   └── pear-pear.php.net
 ├── scripts
 │   └── local
 ├── smartybook
