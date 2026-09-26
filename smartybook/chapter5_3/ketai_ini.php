@@ -1,6 +1,6 @@
 <?php
 
-require_once dirname(__FILE__) . '/plib/semulator.php';
+require_once __DIR__ . '/plib/semulator.php';
 
 use SmartyBook\chapter5_3\plib\emoji\Emoji;
 

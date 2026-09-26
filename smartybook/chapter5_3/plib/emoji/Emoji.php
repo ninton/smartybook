@@ -198,7 +198,7 @@ class Emoji
     public function mapPath(): string
     {
         $fname = "{$this->from_encode}.{$this->to_encode}.dat";
-        $path = dirname(__FILE__) . "/map/$fname";
+        $path = __DIR__ . "/map/$fname";
         return $path;
     }
 
