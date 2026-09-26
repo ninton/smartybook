@@ -8,7 +8,7 @@ $slideTerm = '5000';
 // Smartyの読み込み
 use Smarty\Smarty;
 
-require_once '../../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 // Smartyオブジェクトの作成
 $smarty = new Smarty();
 // デリミタタグの変更: Smarty 5 からメソッドで設定するようになった

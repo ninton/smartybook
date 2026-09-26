@@ -10,7 +10,7 @@ use Smarty\Smarty;
 /** @var string $csv */
 /** @var list<array{id: string, category: string, title: string, text: string, time: string, image: string}> $data */
 
-require_once '../../vendor/autoload.php';
+require_once __DIR__ . '/../../vendor/autoload.php';
 $smarty = new Smarty();
 
 $smarty->registerPlugin('function', 'insert_noticeText2', 'insert_noticeText2');
