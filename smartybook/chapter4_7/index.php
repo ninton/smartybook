@@ -3,8 +3,8 @@
 use Smarty\Smarty;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
-require_once './funcs.php';
-require_once './config.php';
+require_once __DIR__ . '/funcs.php';
+require_once __DIR__ . '/config.php';
 // 都道府県などのメタデータをファイルから読み込む
 $META['prefecture'] = array_load('prefecture.txt');
 $META['rating'    ] = assoc_load('rating.txt');
