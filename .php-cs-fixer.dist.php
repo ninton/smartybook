@@ -59,6 +59,10 @@ return (new PhpCsFixer\Config())
         // ----------------------------------------------------
         // 9. require_once ('file.php'); のカッコを外して require_once 'file.php'; に統一
         'include' => true,
+
+        // ... その他のルール
+        // dirname(__FILE__) を __DIR__ に変換
+        'dir_constant' => true,
     ])
     ->setFinder($finder)
     ->setRiskyAllowed(false);
