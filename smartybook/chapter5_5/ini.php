@@ -9,7 +9,7 @@ error_reporting(error_reporting() & ~E_DEPRECATED);
 // ウェブサイト名
 $siteName = 'Smarty for Designers';
 // CSVファイル名
-$csv = 'data.csv';
+$csv = __DIR__ . '/data.csv';
 // 画像ディレクトリ
 $imageDir = './images/';
 // ホーム

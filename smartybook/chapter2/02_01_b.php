@@ -5,7 +5,7 @@ $siteName = 'Smarty for Designers';
 // バージョン番号
 $revision = 1;
 // CSVファイル名
-$csv = 'data.csv';
+$csv = __DIR__ . '/data.csv';
 // 画像ディレクトリ
 $imageDir = './images/';
 //トップページ

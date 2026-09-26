@@ -52,7 +52,7 @@ $oAuth->start();
 if ($oAuth->getAuth()) {
     if ($_POST['title']) {
         // 記事の書き込み
-        $fp = fopen('data.csv', 'a+') or die('file_open_error');
+        $fp = fopen(__DIR__ . '/data.csv', 'a+') or die('file_open_error');
         flock($fp, LOCK_EX);
         $lastId = lastIdCheck($fp);
         $id = sprintf('%04d', $lastId + 1);

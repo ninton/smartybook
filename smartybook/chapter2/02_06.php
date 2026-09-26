@@ -46,7 +46,7 @@ function convertNl(string $str): string
 }
 
 // CSVファイルを読み込み、追記両用で開く
-$fp = fopen('data.csv', 'a+') or die('file_open_error');
+$fp = fopen(__DIR__ . '/data.csv', 'a+') or die('file_open_error');
 
 // CSVファイルをロック
 flock($fp, LOCK_EX);
