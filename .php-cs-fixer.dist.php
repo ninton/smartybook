@@ -58,7 +58,7 @@ return (new PhpCsFixer\Config())
         // require / include の制御
         // ----------------------------------------------------
         // 9. require_once ('file.php'); のカッコを外して require_once 'file.php'; に統一
-        'no_alternative_syntax' => true,
+        'include' => true,
     ])
     ->setFinder($finder)
     ->setRiskyAllowed(false);
