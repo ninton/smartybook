@@ -1,5 +1,14 @@
 <?php
 
+/**
+ * 【歴史的経緯・リファクタリングに関する注記】
+ * このファイルは出版当時の実装（Smartyテンプレートを用いてXMLを出力する構成）を
+ * そのまま保持し、PHP 8.x + Smarty 5 環境での Golden Master テスト対象としています。
+ *
+ * 現代の PHP 開発における定石：
+ * - XML を出力する場合：Smarty テンプレートではなく DOMDocument や SimpleXMLElement を使用する
+ * - JSON を出力する場合：Smarty テンプレートではなく json_encode() を使用する
+ */
 
 header('Content-Type: application/xml; charset=UTF-8');
 require_once('ini.php');
