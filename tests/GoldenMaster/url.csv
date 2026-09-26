@@ -156,3 +156,6 @@ chapter5_3/contents pageID=2,GET,http://localhost/smartybook/chapter5_3/contents
 # chapter5_2
 # JSを返します
 chapter5_2/photogallary,GET,http://localhost/smartybook/chapter5_2/photogallery.php,
+
+# chapter5_1 追加
+chapter5_1/xml,GET,http://localhost/smartybook/chapter5_1/xml.php,
