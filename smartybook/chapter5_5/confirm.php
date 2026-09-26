@@ -1,6 +1,7 @@
 <?php
 
 require_once('ini.php');
+use Lib\PearStub\AuthStub as Auth;
 use Smarty\Smarty;
 
 require_once('../../vendor/autoload.php');
