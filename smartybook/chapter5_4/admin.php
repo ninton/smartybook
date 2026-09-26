@@ -2,7 +2,7 @@
 
 use Smarty\Smarty;
 
-require_once 'ini.php';
+require_once __DIR__ . '/ini.php';
 
 /**
  * @var string $siteName

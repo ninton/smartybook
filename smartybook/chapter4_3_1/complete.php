@@ -1,7 +1,7 @@
 <?php
 
 
-require_once 'ini.php';
+require_once __DIR__ . '/ini.php';
 use Smarty\Smarty;
 
 /**
