@@ -48,7 +48,8 @@
         "ext-tokenizer": "*",
         "ext-xml": "*",
         "smarty/smarty": "^5.0",
-        "symfony/polyfill-php80": "^1.37"
+        "symfony/polyfill-php80": "^1.37",
+        "vlucas/phpdotenv": "^5.7"
     },
     "require-dev": {
         "ext-bcmath": "*",
