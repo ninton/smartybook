@@ -1,16 +1,17 @@
 <?php
 
-/**
- * @var array{dsn: string, db_user: string, db_password: string} $CONFIG
- */
 use Lib\PearStub\PagerStub as Pager;
 use Smarty\Smarty;
-
-require_once __DIR__ . '/../../vendor/autoload.php';
-require_once __DIR__ . '/config.php';
-
 use SmartyBook\chapter4_6\CMS;
 use SmartyBook\chapter4_6\SortNavigator;
+
+require_once __DIR__ . '/../../bootstrap/app.php';
+require_once __DIR__ . '/config.php';
+
+/**
+ * config.php で定義
+ * @var array{dsn: string, db_user: string, db_password: string} $CONFIG
+ */
 
 $smarty = new Smarty();
 $smarty->configLoad('index.conf');
