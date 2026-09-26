@@ -5,7 +5,7 @@ use Smarty\Smarty;
 require_once __DIR__ . '/../../vendor/autoload.php';
 
 //CSVファイルパス
-$csv = 'data.csv';
+$csv = __DIR__ . '/data.csv';
 
 $smarty = new Smarty();
 // CSVデータを配列に格納

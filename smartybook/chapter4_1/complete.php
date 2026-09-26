@@ -43,7 +43,7 @@ function convertNl(string $str): string
 }
 
 // 記事の書き込み
-$fp = fopen('data.csv', 'a+') or die('file_open_error');
+$fp = fopen(__DIR__ . '/data.csv', 'a+') or die('file_open_error');
 flock($fp, LOCK_EX);
 
 $lastId = lastIdCheck($fp);
