@@ -14,7 +14,7 @@
 // POST cmdSave
 // POST cmdForm=
 //    POST cmdLoad=
-require_once('./_read/inc.php');
+require_once './_read/inc.php';
 
 use SmartyBook\chapter5_6\_read\classes\App;
 use SmartyBook\chapter5_6\_read\classes\AppAmazon;

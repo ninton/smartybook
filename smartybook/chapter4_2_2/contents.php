@@ -1,7 +1,7 @@
 <?php
 
 
-require_once('ini.php');
+require_once 'ini.php';
 
 /**
  * @var string $siteName
@@ -13,7 +13,7 @@ require_once('ini.php');
 
 use Smarty\Smarty;
 
-require_once('../../vendor/autoload.php');
+require_once '../../vendor/autoload.php';
 $smarty = new Smarty();
 // Smarty 5 から insertタグは廃止されました。代わりに registerPlugin を使って関数プラグインを登録します。
 $smarty->registerPlugin('function', 'insert_noticeText', 'insert_noticeText');

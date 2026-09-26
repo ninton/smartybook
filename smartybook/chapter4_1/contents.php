@@ -6,10 +6,10 @@
  * @var string $csv
  */
 
-require_once('ini.php');
+require_once 'ini.php';
 use Smarty\Smarty;
 
-require_once('../../vendor/autoload.php');
+require_once '../../vendor/autoload.php';
 $smarty = new Smarty();
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);

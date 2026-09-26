@@ -2,10 +2,10 @@
 
 use Smarty\Smarty;
 
-require_once('../../vendor/autoload.php');
-require_once('./fetch_ini.php');
-require_once('./fetch_funcs.php');
-require_once(BAT_SRC_DIR . '/ini.php');
+require_once '../../vendor/autoload.php';
+require_once './fetch_ini.php';
+require_once './fetch_funcs.php';
+require_once BAT_SRC_DIR . '/ini.php';
 mb_internal_encoding('UTF-8');
 
 /** @var array<string> $categories */
@@ -19,7 +19,7 @@ $featured_arr = get_featured_arr(BAT_SRC_DIR . "/$csv");
 
 $smarty = new Smarty();
 
-require_once(__DIR__ . '/modifier.mb_truncate.php');
+require_once __DIR__ . '/modifier.mb_truncate.php';
 $smarty->registerPlugin('modifier', 'mb_truncate', smarty_modifier_mb_truncate(...));
 
 $smarty->assign('menu_arr', $menu_arr);

@@ -2,9 +2,9 @@
 
 use Smarty\Smarty;
 
-require_once('../../vendor/autoload.php');
-require_once('./funcs.php');
-require_once('./config.php');
+require_once '../../vendor/autoload.php';
+require_once './funcs.php';
+require_once './config.php';
 // 都道府県などのメタデータをファイルから読み込む
 $META['prefecture'] = array_load('prefecture.txt');
 $META['rating'    ] = assoc_load('rating.txt');

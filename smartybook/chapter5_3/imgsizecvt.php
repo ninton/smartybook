@@ -2,7 +2,7 @@
 
 use Smarty\Smarty;
 
-require_once('./ini.php');
+require_once './ini.php';
 require_once __DIR__  . '/plib/imgsizecvt_funcs.php';
 
 switch (strtolower($_SERVER['REQUEST_METHOD'])) {

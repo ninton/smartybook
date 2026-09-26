@@ -1,12 +1,12 @@
 <?php
 
-require_once(dirname(__FILE__) . '/plib/semulator.php');
+require_once dirname(__FILE__) . '/plib/semulator.php';
 
 use SmartyBook\chapter5_3\plib\emoji\Emoji;
 
 use function SmartyBook\chapter5_3\plib\emoji\emoji_output_handler;
 
-$agent = new \Lib\PearStub\NetUserAgentMobileCommonStub();
+$agent = new Lib\PearStub\NetUserAgentMobileCommonStub();
 
 $display = $agent->getDisplay();
 // キャリア名称の調整

@@ -15,9 +15,9 @@ class SortNavigator
     private array $vars;
 
     /**
-     *  @param string $i_sort
-     *  @param string $i_order
-     *  @return void
+     * @param string $i_sort
+     * @param string $i_order
+     * @return void
      */
     public function __construct(string $i_sort, string $i_order)
     {
@@ -37,9 +37,9 @@ class SortNavigator
     }
 
     /**
-     *  @param string $i_key
-     *  @param string $i_value
-     *  @return void
+     * @param string $i_key
+     * @param string $i_value
+     * @return void
      */
     public function setOption(string $i_key, string $i_value): void
     {
@@ -49,8 +49,8 @@ class SortNavigator
     }
 
     /**
-     *  @param string $i_sort
-     *  @return void
+     * @param string $i_sort
+     * @return void
      */
     public function show(string $i_sort): void
     {
@@ -62,9 +62,9 @@ class SortNavigator
     }
 
     /**
-     *  @param string $i_sort
-     *  @param string $i_order
-     *  @return string
+     * @param string $i_sort
+     * @param string $i_order
+     * @return string
      */
     public function showLink(string $i_sort, string $i_order): string
     {
@@ -104,9 +104,9 @@ EOT;
     }
 
     /**
-     *  @param string $i_query
-     *  @param array<string, string> $i_vars
-     *  @return string
+     * @param string $i_query
+     * @param array<string, string> $i_vars
+     * @return string
      */
     public function replaceQuery(string $i_query, array $i_vars): string
     {

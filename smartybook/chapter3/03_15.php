@@ -2,7 +2,7 @@
 
 use Smarty\Smarty;
 
-require_once('../../vendor/autoload.php');
+require_once '../../vendor/autoload.php';
 $smarty = new Smarty();
 $name = ['八代', '国枝', '大石'];
 $height = ['167', '156', '182', '200'];

@@ -1,10 +1,10 @@
 <?php
 
-require_once('ini.php');
+require_once 'ini.php';
 use Lib\PearStub\AuthStub as Auth;
 use Smarty\Smarty;
 
-require_once('../../vendor/autoload.php');
+require_once '../../vendor/autoload.php';
 
 /** @var string $siteName */
 /** @var string $home */

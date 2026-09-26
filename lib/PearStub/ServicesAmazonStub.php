@@ -11,9 +11,9 @@ class ServicesAmazonStub
     }
 
     /**
-     *  @param string $item_id
-     *  @param array<string,string> $options
-     *  @return array{Item: list<array<string, mixed>>}
+     * @param string $item_id
+     * @param array<string,string> $options
+     * @return array{Item: list<array<string, mixed>>}
      */
     public function ItemLookup($item_id, $options = []): array
     {
@@ -28,8 +28,8 @@ class ServicesAmazonStub
     }
 
     /**
-     *  @param string $item_id
-     *  @return array<string, mixed>
+     * @param string $item_id
+     * @return array<string, mixed>
      */
     private static function createDummyItem(string $item_id): array
     {

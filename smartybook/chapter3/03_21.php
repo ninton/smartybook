@@ -2,7 +2,7 @@
 
 use Smarty\Smarty;
 
-require_once('../../vendor/autoload.php');
+require_once '../../vendor/autoload.php';
 $smarty = new Smarty();
 $id = ['001', '002', '003'];
 $location = ['北海道', '青森', '岩手'];
