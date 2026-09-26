@@ -1,5 +1,6 @@
 <?php
 
+use Lib\PearStub\AuthStub as Auth;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 
