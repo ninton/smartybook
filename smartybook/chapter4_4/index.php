@@ -1,6 +1,6 @@
 <?php
 
-use Smarty\Smarty;
+use App\Smarty\AppSmarty as Smarty;
 
 require_once __DIR__ . '/../../bootstrap/app.php';
 
@@ -23,4 +23,4 @@ while ($array = fgetcsv($fp, 5000, ',', escape: '')) {
 }
 fclose($fp);
 $smarty->assign('data', $data);
-$smarty->display('index.tpl');
+$smarty->display('pages/chapter4_4/index.tpl');
