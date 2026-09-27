@@ -3,7 +3,7 @@
 require_once __DIR__ . '/ini.php';
 use Smarty\Smarty;
 
-require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../bootstrap/app.php';
 
 /** @var string $siteName */
 /** @var string $home */

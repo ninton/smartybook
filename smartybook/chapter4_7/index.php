@@ -2,7 +2,7 @@
 
 use Smarty\Smarty;
 
-require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../bootstrap/app.php';
 require_once __DIR__ . '/funcs.php';
 require_once __DIR__ . '/config.php';
 // 都道府県などのメタデータをファイルから読み込む

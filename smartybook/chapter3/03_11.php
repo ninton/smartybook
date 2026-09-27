@@ -2,7 +2,7 @@
 
 use Smarty\Smarty;
 
-require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../bootstrap/app.php';
 $smarty = new Smarty();
 $body = <<<ABC
 nl2br修飾子は、改行文字を&lt;br /&gt;タグに置換します。

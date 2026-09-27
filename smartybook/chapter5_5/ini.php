@@ -2,7 +2,7 @@
 
 use Lib\PearStub\AuthStub as Auth;
 
-require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../bootstrap/app.php';
 
 // PEAR内の PHP Strict Standards: PHP Deprecated: を抑制する
 error_reporting(error_reporting() & ~E_DEPRECATED);
