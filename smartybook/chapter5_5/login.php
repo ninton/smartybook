@@ -1,17 +1,19 @@
 <?php
 
-require_once __DIR__ . '/ini.php';
 use Smarty\Smarty;
 
 require_once __DIR__ . '/../../bootstrap/app.php';
-
-/** @var string $siteName */
-/** @var string $home */
-/** @var string $admin */
+require_once __DIR__ . '/ini.php';
+require_once __DIR__ . '/plugins/function.login_form.php';
+/**
+ * ini.phpで定義されている変数
+ * @var string $siteName
+ * @var string $home
+ * @var string $admin
+ */
 
 $smarty = new Smarty();
 
-include_once __DIR__ . '/plugins/function.login_form.php';
 $smarty->registerPlugin('function', 'login_form', smarty_function_login_form(...));
 
 $smarty->assign('siteName', $siteName);
