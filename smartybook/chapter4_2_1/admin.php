@@ -1,6 +1,6 @@
 <?php
 
-use Smarty\Smarty;
+use App\Smarty\AppSmarty as Smarty;
 
 require_once __DIR__ . '/../../bootstrap/app.php';
 require_once __DIR__ . '/ini.php';
@@ -18,4 +18,4 @@ $smarty->assign('home', $home);
 $smarty->assign('admin', $admin);
 $smarty->assign('categories', $categories);
 //出力
-$smarty->display('admin.tpl');
+$smarty->display('pages/chapter4_2_1/admin.tpl');
