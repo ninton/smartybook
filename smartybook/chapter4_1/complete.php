@@ -1,6 +1,6 @@
 <?php
 
-use Smarty\Smarty;
+use App\Smarty\AppSmarty as Smarty;
 
 require_once __DIR__ . '/../../bootstrap/app.php';
 require_once __DIR__ . '/ini.php';
@@ -71,4 +71,4 @@ flock($fp, LOCK_UN);
 fclose($fp);
 
 // 出力
-$smarty->display('complete.tpl');
+$smarty->display('pages/chapter4_1/complete.tpl');
