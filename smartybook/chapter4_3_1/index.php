@@ -1,19 +1,17 @@
 <?php
 
-
-require_once __DIR__ . '/ini.php';
 use Smarty\Smarty;
 
+require_once __DIR__ . '/../../bootstrap/app.php';
+require_once __DIR__ . '/ini.php';
 /**
+ * ini.phpで定義されている変数
  * @var string $siteName
  * @var string $home
  * @var list<string> $categories
  * @var string $notice
  * @var string $csv
- * @var array<int, array<string, string|int>> $data
  */
-
-require_once __DIR__ . '/../../bootstrap/app.php';
 $smarty = new Smarty();
 
 // Smarty5 で {insert}タグ廃止予定なので、registerPluginで置き換えました
