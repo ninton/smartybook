@@ -9,7 +9,6 @@ require_once __DIR__ . '/ini.php';
  * @var string $siteName
  * @var string $home
  * @var string $admin
- * @var list<string> $categories
  */
 $smarty = new Smarty();
 $smarty->assign('siteName', $siteName);

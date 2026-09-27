@@ -8,9 +8,7 @@ require_once __DIR__ . '/ini.php';
  * ini.phpで定義されている変数
  * @var string $siteName
  * @var string $csv
- * @var string $imageDir
  * @var string $home
- * @var string $admin
  * @var list<string> $categories
  * @var list<array{id: string, category: string, title: string, text: string, time: string, image: string}> $data
  */
