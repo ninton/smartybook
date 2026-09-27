@@ -24,9 +24,6 @@ MYSQL_ROOT_PASSWORD="${DB_ROOT_PASSWORD:?DB_ROOT_PASSWORD is required}"
 # プロジェクトルートからの相対パスなので、この指定で固定できます
 INIT_SQL_DIR="./docker/db/init"
 
-# --- 設定 ---
-INIT_SQL_DIR="./docker/db/init"
-
 echo "🔄 データベースの初期化を開始します..."
 
 sql_file="${INIT_SQL_DIR}/db_init.sql"
