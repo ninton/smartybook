@@ -1,6 +1,6 @@
 <?php
 
-use Smarty\Smarty;
+use App\Smarty\AppSmarty as Smarty;
 
 require_once __DIR__ . '/../../bootstrap/app.php';
 
@@ -23,4 +23,4 @@ $smarty->assign('images', $images);
 $smarty->assign('slideFlag', $slideFlag);
 $smarty->assign('slideTerm', $slideTerm);
 // 出力
-$smarty->display('photogallery.tpl');
+$smarty->display('pages/chapter5_2/photogallery.tpl');
