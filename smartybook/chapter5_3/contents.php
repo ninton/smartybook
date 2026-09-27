@@ -1,7 +1,7 @@
 <?php
 
+use App\Smarty\AppSmarty as Smarty;
 use Lib\PearStub\PagerStub as Pager;
-use Smarty\Smarty;
 
 require_once __DIR__ . '/ini.php';
 require_once __DIR__ . '/ketai_ini.php';
@@ -64,4 +64,4 @@ $smarty->assign('Pager', $pager);
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
 $smarty->assign('entry', $entry);
-$smarty->display('contents.tpl');
+$smarty->display('pages/chapter5_3/contents.tpl');

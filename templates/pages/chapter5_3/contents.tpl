@@ -1,4 +1,4 @@
-{include file="head_`$smarty.server.carrier_ua`.tpl"}
+{include file="pages/chapter5_3/head_`$smarty.server.carrier_ua`.tpl"}
 {config_load file="style.conf"}
 {config_load file="emoji.conf"}
 {assign var=category value=$smarty.get.category}
