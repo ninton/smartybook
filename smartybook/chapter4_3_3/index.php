@@ -1,15 +1,16 @@
 <?php
 
-
-require_once __DIR__ . '/ini.php';
 use Smarty\Smarty;
 
 require_once __DIR__ . '/../../bootstrap/app.php';
-
-/** @var string $siteName */
-/** @var string $home */
-/** @var array<string> $categories */
-/** @var string $csv */
+require_once __DIR__ . '/ini.php';
+/**
+ * ini.phpで定義されている変数
+ * @var string $siteName
+ * @var string $home
+ * @var array<string> $categories
+ * @var string $csv
+ */
 
 $smarty = new Smarty();
 
