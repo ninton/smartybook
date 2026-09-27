@@ -1,6 +1,6 @@
 <?php
 
-use Smarty\Smarty;
+use App\Smarty\AppSmarty as Smarty;
 
 require_once __DIR__ . '/../../bootstrap/app.php';
 $smarty = new Smarty();
@@ -10,4 +10,4 @@ $newBook = 'スノーボード・テクニック';
 $smarty->assign('siteName', $siteName);
 $smarty->assign('bookList', $bookList);
 $smarty->assign('newBook', $newBook);
-$smarty->display('03_13.tpl');
+$smarty->display('pages/chapter3/03_13.tpl');
