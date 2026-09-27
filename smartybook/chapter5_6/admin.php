@@ -1,25 +1,26 @@
 <?php
 
 /**
- * @var array<string, mixed> $CFG
+ * @note 2020年3月で、本プログラムで使っているAmazon_ECSのAPIは廃止となりました。
+ * スタブに置き換えています
  */
-
-// 2020年3月で、本プログラムで使っているAmazon_ECSのAPIは廃止となりました。
-// 常に410エラーです
-
-//  GET show=
-//    GET show=form
-//    GET show=preview
-// POST cmdPreview=
-// POST cmdSave
-// POST cmdForm=
-//    POST cmdLoad=
-require_once __DIR__ . '/_read/inc.php';
-
 use SmartyBook\chapter5_6\_read\classes\App;
 use SmartyBook\chapter5_6\_read\classes\AppAmazon;
 use SmartyBook\chapter5_6\_read\classes\AppSmarty;
 use SmartyBook\chapter5_6\_read\classes\MyListManager;
+
+require_once __DIR__ . '/_read/inc.php';
+/**
+ * @var array<string, mixed> $CFG
+ */
+
+// GET show=
+// GET show=form
+// GET show=preview
+// POST cmdPreview=
+// POST cmdSave
+// POST cmdForm=
+// POST cmdLoad=
 
 $show = '';
 if (isset($_GET['show'])) {
