@@ -1,6 +1,6 @@
 <?php
 
-use Smarty\Smarty;
+use App\Smarty\AppSmarty as Smarty;
 
 require_once __DIR__ . '/../../bootstrap/app.php';
 require_once __DIR__ . '/ini.php';
@@ -64,4 +64,4 @@ if (!$smarty->isCached('index.tpl')) {
 }
 
 //出力
-$smarty->display('index.tpl');
+$smarty->display('pages/chapter5_4/index.tpl');
