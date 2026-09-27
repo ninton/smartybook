@@ -1,5 +1,5 @@
-﻿{include file="03_13_assign.tpl" assign="new"}
-{include file="03_12_header.tpl"}
+﻿{include file="pages/chapter3/03_13_assign.tpl" assign="new"}
+{include file="pages/chapter3/03_12_header.tpl"}
 {$new}
 <ul>
     <li>{$bookList[0]}</li>
