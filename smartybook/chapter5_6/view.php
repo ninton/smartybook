@@ -1,17 +1,18 @@
 <?php
 
 /**
- * @var array<string, mixed> $CFG
+ * @note 2020年3月で、本プログラムで使っているAmazon_ECSのAPIは廃止となりました。
+ * スタブに置き換えています
  */
-
-// 2020年3月で、本プログラムで使っているAmazon_ECSのAPIは廃止となりました。
-// 常に410エラーです
-
-require_once __DIR__ . '/_read/inc.php';
-
 use SmartyBook\chapter5_6\_read\classes\AppAmazon;
 use SmartyBook\chapter5_6\_read\classes\AppSmarty;
 use SmartyBook\chapter5_6\_read\classes\MyListManager;
+
+require_once __DIR__ . '/_read/inc.php';
+
+/**
+ * @var array<string, mixed> $CFG
+ */
 
 if (empty($_REQUEST['ListId'])) {
     $_REQUEST['ListId'] = 1;
