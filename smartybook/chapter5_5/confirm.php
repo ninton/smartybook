@@ -1,17 +1,19 @@
 <?php
 
-require_once __DIR__ . '/ini.php';
 use Lib\PearStub\AuthStub as Auth;
 use Smarty\Smarty;
 
 require_once __DIR__ . '/../../bootstrap/app.php';
-
-/** @var string $siteName */
-/** @var string $home */
-/** @var string $admin */
-/** @var string[] $categories */
-/** @var Auth $oAuth */
-/** @var string $imageDir */
+require_once __DIR__ . '/ini.php';
+/**
+ * ini.phpで定義されている変数
+ * @var string $siteName
+ * @var string $home
+ * @var string $admin
+ * @var string[] $categories
+ * @var Auth $oAuth
+ * @var string $imageDir
+ */
 
 $smarty = new Smarty();
 $smarty->assign('siteName', $siteName);
