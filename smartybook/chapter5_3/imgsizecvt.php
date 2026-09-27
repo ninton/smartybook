@@ -1,6 +1,6 @@
 <?php
 
-use Smarty\Smarty;
+use App\Smarty\AppSmarty as Smarty;
 
 require_once __DIR__ . '/ini.php';
 require_once __DIR__  . '/plib/imgsizecvt_funcs.php';
@@ -16,6 +16,6 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
         $rcd_arr = proc_image_list();
         $smarty = new Smarty();
         $smarty->assign('rcd_arr', $rcd_arr);
-        $smarty->display('imgsizecvt.tpl');
+        $smarty->display('pages/chapter5_3/imgsizecvt.tpl');
         break;
 }
