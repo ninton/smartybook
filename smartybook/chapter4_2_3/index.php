@@ -1,16 +1,19 @@
 <?php
 
-
-require_once __DIR__ . '/ini.php';
 use Smarty\Smarty;
 
-/** @var string $siteName */
-/** @var string $home */
-/** @var list<string> $categories */
-/** @var string $csv */
-/** @var list<array{id: string, category: string, title: string, text: string, time: string, image: string}> $data */
-
 require_once __DIR__ . '/../../bootstrap/app.php';
+require_once __DIR__ . '/ini.php';
+/**
+ * ini.phpで定義されている変数
+ * @var string $siteName
+ * @var string $csv
+ * @var string $imageDir
+ * @var string $home
+ * @var string $admin
+ * @var list<string> $categories
+ * @var list<array{id: string, category: string, title: string, text: string, time: string, image: string}> $data
+ */
 $smarty = new Smarty();
 
 $smarty->registerPlugin('function', 'insert_noticeText2', insert_noticeText2(...));
