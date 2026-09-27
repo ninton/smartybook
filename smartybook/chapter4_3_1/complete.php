@@ -11,7 +11,7 @@ use Smarty\Smarty;
  * @var int $lastId
  */
 
-require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../bootstrap/app.php';
 $smarty = new Smarty();
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);

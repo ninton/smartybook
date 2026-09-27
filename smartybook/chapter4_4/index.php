@@ -2,7 +2,7 @@
 
 use Smarty\Smarty;
 
-require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../bootstrap/app.php';
 
 //CSVファイルパス
 $csv = __DIR__ . '/data.csv';

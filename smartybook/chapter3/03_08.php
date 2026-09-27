@@ -2,7 +2,7 @@
 
 use Smarty\Smarty;
 
-require_once __DIR__ . '/../../vendor/autoload.php';
+require_once __DIR__ . '/../../bootstrap/app.php';
 $smarty = new Smarty();
 $smarty->assign('name1', 'Smartyさん');
 $smarty->assign('name2', '');
