@@ -1,7 +1,7 @@
 <?php
 
+use App\Smarty\AppSmarty as Smarty;
 use Lib\PearStub\PagerStub as Pager;
-use Smarty\Smarty;
 use SmartyBook\chapter4_6\CMS;
 use SmartyBook\chapter4_6\SortNavigator;
 
@@ -108,4 +108,4 @@ $smarty->assign('PagerDto', $pagerDto);
 $smarty->assign('popup_params', ['autoSubmit' => true]);
 $smarty->assign('perpage_params', $perpage_params);
 $smarty->assign('rcd_arr', $rcd_arr);
-$smarty->display('index.tpl');
+$smarty->display('pages/chapter4_6/index.tpl');
