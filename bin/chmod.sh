@@ -14,7 +14,6 @@ chmod o+w ./smartybook/chapter4_2_1/data.csv
 chmod o+w ./smartybook/chapter4_2_1/images
 
 chmod o+w ./smartybook/chapter4_2_2/data.csv
-chmod o+w ./smartybook/chapter4_2_2/templates_c
 chmod o+w ./smartybook/chapter4_2_2/images
 
 chmod o+w ./smartybook/chapter4_2_3/data.csv
