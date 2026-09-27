@@ -1,3 +1,7 @@
+#!/usr/bin/env bash
+
+set -e
+
 chmod o+w ./templates_c
 
 chmod o+w ./smartybook/chapter2/data.csv
