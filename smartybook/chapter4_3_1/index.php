@@ -1,6 +1,6 @@
 <?php
 
-use Smarty\Smarty;
+use App\Smarty\AppSmarty as Smarty;
 
 require_once __DIR__ . '/../../bootstrap/app.php';
 require_once __DIR__ . '/ini.php';
@@ -40,4 +40,4 @@ fclose($fp);
 //データをsmartyの変数として格納
 $smarty->assign('data', $data);
 //出力
-$smarty->display('index.tpl');
+$smarty->display('pages/chapter4_3_1/index.tpl');
