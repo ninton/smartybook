@@ -16,3 +16,6 @@ if (file_exists(PROJECT_ROOT . '/.env')) {
     $dotenv = Dotenv::createImmutable(PROJECT_ROOT);
     $dotenv->load();
 }
+
+define('SMARTY_COMPILE_DIR', PROJECT_ROOT . '/templates_c');
+define('SMARTY_TEMPLATE_DIR', PROJECT_ROOT . '/templates');
