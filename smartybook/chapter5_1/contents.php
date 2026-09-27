@@ -4,6 +4,7 @@ use Smarty\Smarty;
 
 require_once __DIR__ . '/../../bootstrap/app.php';
 require_once __DIR__ . '/ini.php';
+require_once __DIR__ . '/insert.php';
 /**
  * ini.phpで定義されている変数
  * @var string $siteName
@@ -11,8 +12,6 @@ require_once __DIR__ . '/ini.php';
  * @var string[] $categories
  * @var string $csv
  */
-
-require_once __DIR__ . '/insert.php';
 
 $smarty = new Smarty();
 $smarty->registerPlugin('function', 'insert_noticeText2', 'smarty_insert_noticeText2');
