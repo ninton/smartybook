@@ -1,14 +1,18 @@
 <?php
 
-require_once __DIR__ . '/ini.php';
 use Smarty\Smarty;
 
 require_once __DIR__ . '/../../bootstrap/app.php';
+require_once __DIR__ . '/ini.php';
+/**
+ * ini.phpで定義されている変数
+ * @var string $siteName
+ * @var string $home
+ * @var string $admin
+ * @var list<string> $categories
+ */
+
 $smarty = new Smarty();
-/** @var string $siteName */
-/** @var string $home */
-/** @var string $admin */
-/** @var string[] $categories */
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
 $smarty->assign('admin', $admin);

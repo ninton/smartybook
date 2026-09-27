@@ -1,5 +1,9 @@
 <?php
 
+use Smarty\Smarty;
+
+require_once __DIR__ . '/../../bootstrap/app.php';
+require_once __DIR__ . '/ini.php';
 /**
  * 【歴史的経緯・リファクタリングに関する注記】
  * このファイルは出版当時の実装（Smartyテンプレートを用いてXMLを出力する構成）を
@@ -8,18 +12,16 @@
  * 現代の PHP 開発における定石：
  * - XML を出力する場合：Smarty テンプレートではなく DOMDocument や SimpleXMLElement を使用する
  * - JSON を出力する場合：Smarty テンプレートではなく json_encode() を使用する
+ *
+ * ini.phpで定義されている変数
+ * @var string $siteName
+ * @var string $home
+ * @var list<string> $categories
+ * @var string $csv
  */
 
 header('Content-Type: application/xml; charset=UTF-8');
-require_once __DIR__ . '/ini.php';
-use Smarty\Smarty;
-
-require_once __DIR__ . '/../../bootstrap/app.php';
 $smarty = new Smarty();
-/** @var string $siteName */
-/** @var string $home */
-/** @var string[] $categories */
-/** @var string $csv */
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
 $smarty->assign('categories', $categories);
