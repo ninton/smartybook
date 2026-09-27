@@ -32,13 +32,11 @@ class BookMark
     }
 }
 
-use Smarty\Smarty;
+use App\Smarty\AppSmarty as Smarty;
 
 require_once __DIR__ . '/../../bootstrap/app.php';
 $smarty = new Smarty();
-$smarty->setTemplateDir('templates');
-$smarty->setCompileDir('templates_c');
 //BookMarkオブジェクトの作成
 $bookmark = new BookMark('Google', 'http://www.google.com/', '2006/11/01');
 $smarty->assign('bookmark', $bookmark);
-$smarty->display('03_06.tpl');
+$smarty->display('pages/chapter3/03_06.tpl');

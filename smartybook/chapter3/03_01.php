@@ -1,10 +1,8 @@
 <?php
 
-use Smarty\Smarty;
+use App\Smarty\AppSmarty as Smarty;
 
 require_once __DIR__ . '/../../bootstrap/app.php';
 $smarty = new Smarty();
-$smarty->setTemplateDir('templates');
-$smarty->setCompileDir('templates_c');
 $smarty->assign('name', 'Smartyさん');
-$smarty->display('03_01.tpl');
+$smarty->display('pages/chapter3/03_01.tpl');
