@@ -1,6 +1,6 @@
 <?php
 
-use Smarty\Smarty;
+use App\Smarty\AppSmarty as Smarty;
 
 require_once __DIR__ . '/../../bootstrap/app.php';
 require_once __DIR__ . '/ini.php';
@@ -31,4 +31,4 @@ $smarty->assign('title', stripslashes($_POST['title']));
 $smarty->assign('contents', stripslashes($_POST['contents']));
 $smarty->assign('date', $_POST['date']);
 //出力
-$smarty->display('confirm.tpl');
+$smarty->display('pages/chapter5_1/confirm.tpl');
