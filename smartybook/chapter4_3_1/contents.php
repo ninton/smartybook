@@ -1,10 +1,11 @@
 <?php
 
-
-require_once __DIR__ . '/ini.php';
 use Smarty\Smarty;
 
+require_once __DIR__ . '/../../bootstrap/app.php';
+require_once __DIR__ . '/ini.php';
 /**
+ * ini.phpで定義されている変数
  * @var string $siteName
  * @var string $home
  * @var list<string> $categories
@@ -12,8 +13,6 @@ use Smarty\Smarty;
  * @var string $csv
  * @var array<int, array<string, string|int>> $data
  */
-
-require_once __DIR__ . '/../../bootstrap/app.php';
 $smarty = new Smarty();
 
 require_once __DIR__ . '/insert.php';
