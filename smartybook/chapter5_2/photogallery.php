@@ -1,14 +1,14 @@
 <?php
 
+use Smarty\Smarty;
+
+require_once __DIR__ . '/../../bootstrap/app.php';
+
 // 初期設定
 $imgDir = './images/';
 $slideFlag = 'on';
 $slideTerm = '5000';
 
-// Smartyの読み込み
-use Smarty\Smarty;
-
-require_once __DIR__ . '/../../bootstrap/app.php';
 // Smartyオブジェクトの作成
 $smarty = new Smarty();
 // デリミタタグの変更: Smarty 5 からメソッドで設定するようになった
