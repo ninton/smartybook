@@ -53,5 +53,5 @@ function displayLogin(string $username, int $status): void
     $smarty->assign('errormsg', $errmsg);
 
     // 出力
-    $smarty->display('login.tpl');
+    $smarty->display('pages/chapter5_5/login.tpl');
 }

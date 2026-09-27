@@ -1,7 +1,7 @@
 <?php
 
+use App\Smarty\AppSmarty as Smarty;
 use Lib\PearStub\AuthStub as Auth;
-use Smarty\Smarty;
 
 require_once __DIR__ . '/../../bootstrap/app.php';
 require_once __DIR__ . '/ini.php';
@@ -29,5 +29,5 @@ $oAuth->start();
 //認証が通った際の処理
 if ($oAuth->getAuth()) {
     // 出力
-    $smarty->display('admin.tpl');
+    $smarty->display('pages/chapter5_5/admin.tpl');
 }
