@@ -1,19 +1,21 @@
 <?php
 
-
-require_once __DIR__ . '/ini.php';
 use Smarty\Smarty;
 
 require_once __DIR__ . '/../../bootstrap/app.php';
+require_once __DIR__ . '/ini.php';
+/**
+ * ini.phpで定義されている変数
+ * @var string $siteName
+ * @var string $home
+ * @var string[] $categories
+ * @var string $csv
+ */
+
 $smarty = new Smarty();
 
 require_once __DIR__ . '/insert.php';
 $smarty->registerPlugin('function', 'insert_noticeText2', 'smarty_insert_noticeText2');
-
-/** @var string $siteName */
-/** @var string $home */
-/** @var string[] $categories */
-/** @var string $csv */
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
 $smarty->assign('categories', $categories);
