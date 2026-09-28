@@ -16,5 +16,5 @@ $CFG['secret_access_key'] = '********************';
 $CFG['associate_tag'] = '********************';
 
 // ファイル、ディレクトリ
-$CFG['mylist_dir'  ] = __DIR__ . '/../_write/mylist/';
+$CFG['mylist_dir'  ] = dirname(__DIR__, 1) . '/_write/mylist/';
 mb_internal_encoding('UTF-8');
