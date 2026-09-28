@@ -1,8 +1,8 @@
-{include file="header.tpl"}
+{include file="pages/chapter4_8/header.tpl"}
 
 <h3>BACKSIDE 180</h3>
 
-{include file="menubox.tpl"}
+{include file="pages/chapter4_8/menubox.tpl"}
 
 <div id="contents">
 <h4>進行方向に背中を向ける</h4>
@@ -14,4 +14,4 @@
 
 </div>
 
-{include file="footer.tpl"}
+{include file="pages/chapter4_8/footer.tpl"}

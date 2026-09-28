@@ -1,6 +1,6 @@
 <?php
 
-use Smarty\Smarty;
+use App\Smarty\AppSmarty as Smarty;
 
 require_once __DIR__ . '/../../bootstrap/app.php';
 $smarty = new Smarty();
@@ -10,4 +10,4 @@ $smarty->registerPlugin('modifier', 'preg_match', preg_match(...));
 
 $php = basename($_SERVER['SCRIPT_NAME']);
 $tpl = preg_replace('/\.php$/', '.tpl', $php);
-$smarty->display($tpl);
+$smarty->display('pages/chapter4_8/' . $tpl);
