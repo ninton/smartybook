@@ -11,7 +11,6 @@ class AppSmarty extends Smarty
         parent::__construct();
 
         $this->setConfigDir(__DIR__ . '/../../_read/configs');
-        $this->setCacheDir(__DIR__ . '/../../_temp/cache');
 
         include_once __DIR__ . '/../../modifier.mb_truncate.php';
         $this->registerPlugin('modifier', 'mb_truncate', smarty_modifier_mb_truncate(...));
