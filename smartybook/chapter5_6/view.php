@@ -14,9 +14,12 @@ require_once __DIR__ . '/_read/inc.php';
  * @var array<string, mixed> $CFG
  */
 
+// ----- 入力値受取・前処理 -----
 if (empty($_REQUEST['ListId'])) {
     $_REQUEST['ListId'] = 1;
 }
+
+// ----- メイン処理・データ操作 -----
 $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
 $mylist = $mylistmgr->read($_REQUEST['ListId']);
 if ($mylist === null) {
@@ -31,6 +34,7 @@ $message = $appAmazon->ItemLookup($mylist->getASINs(), $options, $Item_arr);
 
 $mylist->setItems($Item_arr);
 
+// ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new AppSmarty();
 $smarty->assign('CFG', $CFG);
 $smarty->assign('message', $message);
