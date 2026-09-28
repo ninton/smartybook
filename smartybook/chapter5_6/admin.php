@@ -37,6 +37,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                 if (empty($_REQUEST['ListId'])) {
                     $_REQUEST['ListId'] = 1;
                 }
+
                 // ----- メイン処理・データ操作 -----
                 $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
                 $mylist = $mylistmgr->read($_REQUEST['ListId']);
