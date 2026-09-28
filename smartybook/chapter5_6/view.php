@@ -35,4 +35,4 @@ $smarty = new AppSmarty();
 $smarty->assign('CFG', $CFG);
 $smarty->assign('message', $message);
 $smarty->assign('mylist', $mylist);
-$smarty->display('view.tpl');
+$smarty->display('pages/chapter5_6/view.tpl');

@@ -1,4 +1,4 @@
-{include file="head.tpl"}
+{include file="components/chapter5_6/head.tpl"}
 <title>Smarty for Designers</title>
 </head><body>
 <div id="wrapper">
@@ -31,7 +31,7 @@
                     <td>{$smarty.foreach.f.iteration|escape:html}</td>
                     <td>
                         {if isset($detail.Item.SmallImage)}
-                            {include file="amazon_image.tpl" image=$detail.Item.SmallImage  width=75 height=75}
+                            {include file="components/chapter5_6/amazon_image.tpl" image=$detail.Item.SmallImage  width=75 height=75}
                         {else}
                             SmallImage empty
                         {/if}
@@ -39,7 +39,7 @@
 
                     {strip}
                         <td>
-                            {include file="amazon_item.tpl" item=$detail.Item}
+                            {include file="components/chapter5_6/amazon_item.tpl" item=$detail.Item}
                             <div class="comment">
                                 <strong>コメント: </strong> {$detail.comment|escape:html}
                             </div>
@@ -57,4 +57,4 @@
         </form>
     </div>
 </div>
-{include file="footer.tpl"} 
+{include file="components/chapter5_6/footer.tpl"} 

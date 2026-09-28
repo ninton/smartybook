@@ -51,7 +51,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                 $smarty->assign('CFG', $CFG);
                 $smarty->assign('message', $message);
                 $smarty->assign('mylist', $mylist);
-                $smarty->display('admin_preview.tpl');
+                $smarty->display('pages/chapter5_6/admin_preview.tpl');
                 break;
 
             case 'form':
@@ -65,7 +65,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                 $smarty->assign('CFG', $CFG);
                 $smarty->assign('message', $message);
                 $smarty->assign('mylist', $mylist);
-                $smarty->display('admin_form.tpl');
+                $smarty->display('pages/chapter5_6/admin_form.tpl');
                 break;
 
             default:
@@ -93,7 +93,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                     $smarty->assign('CFG', $CFG);
                     $smarty->assign('message', $message);
                     $smarty->assign('mylist', $mylist);
-                    $smarty->display('admin_form.tpl');
+                    $smarty->display('pages/chapter5_6/admin_form.tpl');
                 } else {
                     $mylistmgr->write($mylist);
                     App::redirect('?show=preview&ListId=' . $_REQUEST['ListId']);
