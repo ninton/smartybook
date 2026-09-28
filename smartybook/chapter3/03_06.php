@@ -1,6 +1,10 @@
 <?php
 
+use App\Smarty\AppSmarty as Smarty;
 
+require_once __DIR__ . '/../../bootstrap/app.php';
+
+// インラインクラス定義
 class BookMark
 {
     public string $title;
@@ -32,11 +36,11 @@ class BookMark
     }
 }
 
-use App\Smarty\AppSmarty as Smarty;
-
-require_once __DIR__ . '/../../bootstrap/app.php';
-$smarty = new Smarty();
-//BookMarkオブジェクトの作成
+// データ準備
+// BookMarkオブジェクトの作成
 $bookmark = new BookMark('Google', 'http://www.google.com/', '2006/11/01');
+
+// テンプレートエンジン初期化・変数アサイン・描画
+$smarty = new Smarty();
 $smarty->assign('bookmark', $bookmark);
 $smarty->display('pages/chapter3/03_06.tpl');
