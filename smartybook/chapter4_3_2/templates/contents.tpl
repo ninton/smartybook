@@ -20,7 +20,7 @@
 		<div id="contents">
 			<div id=notice>
 				<h2>告知</h2>
-				<p>{fetch file="templates/notice.tpl"}</p>
+				<p>{fetch file="data/notice.txt"}</p>
 			</div>
 			<!-- エントリーはじまり -->
 {foreach from=$data item="topic" name="article"}
