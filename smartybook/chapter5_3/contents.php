@@ -14,6 +14,8 @@ require_once __DIR__ . '/plib/pager_ex.php';
  * @var string $siteName ini.phpで設定
  * @var string $home ini.phpで設定
  */
+
+// ----- 入力値受取・前処理 -----
 // 画面幅から画像サイズを判断する
 if ($display->getWidth() < 180) {
     $imageSizeGroup = '120';
@@ -23,28 +25,28 @@ if ($display->getWidth() < 180) {
     $imageSizeGroup = '480';
 }
 
+$pageID = 1;
+if (isset($_REQUEST['pageID'])) {
+    $pageID = $_REQUEST['pageID'];
+}
+
+// ----- メイン処理・データ操作 -----
 // CMSデータを配列に格納
 $entry_arr = get_entry_arr($CFG['CSV_FILE'], $_GET['category']);
 
 // CMS配列中の元画像パスを大中小画像パスに置換する
 array_walk($entry_arr, 'replace_entry_image', $imageSizeGroup);
 
-$pageID = 1;
-if (isset($_REQUEST['pageID'])) {
-    $pageID = $_REQUEST['pageID'];
-}
 // ページ番号の調整
 if (count($entry_arr) < $pageID) {
     $pageID = count($entry_arr);
 }
-
 
 $params = [];
 $params['perPage'] = 1;
 $params['totalItems'] = count($entry_arr);
 $params['currentPage'] = $pageID;
 $pager = Pager::factory($params);
-
 
 // 表示開始位置と終了位置
 list($from, $to) = $pager->getOffsetByPageId();
@@ -56,6 +58,7 @@ if ((0 < $from) && (0 < $to)) {
 
 $page = pager_ex($pager, $from, $to);
 
+// ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
 
 $smarty->registerPlugin('modifier', 'file_exists', file_exists(...));

@@ -11,6 +11,8 @@ require_once __DIR__ . '/ketai_ini.php';
  * @var string $home
  * @var array<int, array<string, string>> $categories
  */
+
+// ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
