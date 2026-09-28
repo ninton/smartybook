@@ -1,6 +1,6 @@
 <?php
 
-use Smarty\Smarty;
+use App\Smarty\AppSmarty as Smarty;
 
 require_once __DIR__ . '/../../bootstrap/app.php';
 require_once __DIR__ . '/funcs.php';
@@ -87,7 +87,7 @@ if (isset($_SESSION[APPID]['form']['endDate_Year'])) {
 $smarty = new Smarty();
 $smarty->assign('META', $META);
 $smarty->assign('form', $_SESSION[APPID]['form']);
-$smarty->display($tpl);
+$smarty->display('pages/chapter4_7/' . $tpl);
 
 // 送信完了後、セッション変数をクリアする
 switch ($action) {
