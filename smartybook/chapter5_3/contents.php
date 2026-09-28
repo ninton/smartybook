@@ -14,6 +14,7 @@ require_once __DIR__ . '/plib/pager_ex.php';
  * @var string $siteName ini.phpで設定
  * @var string $home ini.phpで設定
  */
+
 // ----- 入力値受取・前処理 -----
 // 画面幅から画像サイズを判断する
 if ($display->getWidth() < 180) {
