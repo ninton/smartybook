@@ -1,8 +1,8 @@
-{include file="pages/chapter4_8/header.tpl"}
+{include file="components/chapter4_8/header.tpl"}
 
 <h3>NOSE PRESS</h3>
 
-{include file="pages/chapter4_8/menubox.tpl"}
+{include file="components/chapter4_8/menubox.tpl"}
 
 <div id="contents">
 <h4>前足側に体重移動して後ろ足側を浮かせる</h4>
@@ -13,4 +13,4 @@
 <p>大抵の場合、バランスがうまく取れない原因は上半身にあります。ノーズ側に荷重しようとするあまり、頭が下がり、肩のラインが斜めになってしまうことが多いようです。これを防ぐには、腕を広げて、とくに前手を水平に進行方向に伸ばすと、肩のラインが水平になり安定します。</p>
 </div>
 
-{include file="pages/chapter4_8/footer.tpl"}
+{include file="components/chapter4_8/footer.tpl"}
