@@ -1,4 +1,4 @@
-{include file="pages/chapter4_7/head.tpl"}
+{include file="components/chapter4_7/head.tpl"}
 <link rel="stylesheet" type="text/css" href="css/styles.css" />
 </head><body>
 <div id="wrapper">
