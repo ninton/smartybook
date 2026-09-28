@@ -10,7 +10,7 @@ chapter4_3_2/
 
 ```
 
-※ `index.tpl` は共通テンプレートディレクトリ（`templates/chapter4_3_2/index.tpl`）に配置されています。
+※ `index.tpl` は共通テンプレートディレクトリ（`templates/pages/chapter4_3_2/index.tpl`）に配置されています。
 
 ## `{fetch}` タグのポイント
 
