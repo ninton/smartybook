@@ -1,4 +1,4 @@
-{include file="pages/chapter4_7/head.tpl"}
+{include file="components/chapter4_7/head.tpl"}
 
 <link rel="stylesheet" type="text/css" href="css/styles.css" />
 </head>
@@ -39,8 +39,8 @@
       <tr>
         <th>終了日時</th>
         <td>
-{include file="pages/chapter4_7/select_date.tpl" prefix="endDate_" field_array="" time=$form.endDate_TimeStamp start_year="" end_year="+3"}
-{include file="pages/chapter4_7/select_time.tpl" prefix="endDate_" field_array="" time=$form.endDate_TimeStamp start_year="" end_year="" }<br />
+{include file="components/chapter4_7/select_date.tpl" prefix="endDate_" field_array="" time=$form.endDate_TimeStamp start_year="" end_year="+3"}
+{include file="components/chapter4_7/select_time.tpl" prefix="endDate_" field_array="" time=$form.endDate_TimeStamp start_year="" end_year="" }<br />
         </td>
       </tr>
     </table>
