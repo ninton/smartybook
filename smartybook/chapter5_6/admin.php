@@ -10,6 +10,7 @@ use SmartyBook\chapter5_6\_read\classes\AppSmarty;
 use SmartyBook\chapter5_6\_read\classes\MyListManager;
 
 require_once __DIR__ . '/_read/inc.php';
+
 /**
  * @var array<string, mixed> $CFG
  */
@@ -32,9 +33,11 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
         switch ($show) {
             case '':
             case 'preview':
+                // ----- 入力値受取・前処理 -----
                 if (empty($_REQUEST['ListId'])) {
                     $_REQUEST['ListId'] = 1;
                 }
+                // ----- メイン処理・データ操作 -----
                 $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
                 $mylist = $mylistmgr->read($_REQUEST['ListId']);
                 if ($mylist === null) {
@@ -47,6 +50,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                 $message = $appAmazon->ItemLookup($mylist->getASINs(), $options, $Item_arr);
                 $mylist->setItems($Item_arr);
 
+                // ----- テンプレートエンジンの初期化とアサイン・描画 -----
                 $smarty = new AppSmarty();
                 $smarty->assign('CFG', $CFG);
                 $smarty->assign('message', $message);
@@ -55,12 +59,15 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                 break;
 
             case 'form':
+                // ----- メイン処理・データ操作 -----
                 $message = '';
                 $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
                 $mylist = $mylistmgr->read($_REQUEST['ListId']);
                 if ($mylist === null) {
                     die('file read error');
                 }
+
+                // ----- テンプレートエンジンの初期化とアサイン・描画 -----
                 $smarty = new AppSmarty();
                 $smarty->assign('CFG', $CFG);
                 $smarty->assign('message', $message);
@@ -76,6 +83,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
     case 'post':
         switch (App::getCmd()) {
             case 'cmdSave':
+                // ----- メイン処理・データ操作 -----
                 $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
                 $mylist = $mylistmgr->read($_REQUEST['ListId']);
                 $mylist->input($_POST);
@@ -89,6 +97,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                 }
 
                 if ($message != '') {
+                    // ----- テンプレートエンジンの初期化とアサイン・描画 -----
                     $smarty = new AppSmarty();
                     $smarty->assign('CFG', $CFG);
                     $smarty->assign('message', $message);
