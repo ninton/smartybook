@@ -4,10 +4,10 @@ use App\Smarty\AppSmarty as Smarty;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 
-//CSVファイルパス
+// CSVファイルパス
 $csv = __DIR__ . '/data.csv';
 
-$smarty = new Smarty();
+// ----- メイン処理・データ操作 -----
 // CSVデータを配列に格納
 /** @var array<int, array<string, string>> $data */
 $data = [];
@@ -22,5 +22,8 @@ while ($array = fgetcsv($fp, 5000, ',', escape: '')) {
     $i++;
 }
 fclose($fp);
+
+// ----- テンプレートエンジンの初期化とアサイン・描画 -----
+$smarty = new Smarty();
 $smarty->assign('data', $data);
 $smarty->display('pages/chapter4_4/index.tpl');
