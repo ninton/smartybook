@@ -3,11 +3,15 @@
 use App\Smarty\AppSmarty as Smarty;
 
 require_once __DIR__ . '/../../bootstrap/app.php';
-$smarty = new Smarty();
+
+// データ準備
 $group = [
     ['森永', '国枝'],
     ['水村', '渋谷', '原田'],
     ['北野', '村井'],
 ];
+
+// テンプレートエンジン初期化・変数アサイン・描画
+$smarty = new Smarty();
 $smarty->assign('group', $group);
 $smarty->display('pages/chapter3/03_16.tpl');
