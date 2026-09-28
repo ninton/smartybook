@@ -3,7 +3,7 @@
 use App\Smarty\AppSmarty as Smarty;
 use Lib\PearStub\AuthStub as Auth;
 
-require_once __DIR__ . '/../../bootstrap/app.php';
+require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/ini.php';
 /**
  * ini.phpで定義されている変数

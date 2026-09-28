@@ -5,7 +5,7 @@ use Lib\PearStub\PagerStub as Pager;
 use SmartyBook\chapter4_6\CMS;
 use SmartyBook\chapter4_6\SortNavigator;
 
-require_once __DIR__ . '/../../bootstrap/app.php';
+require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/config.php';
 
 /**

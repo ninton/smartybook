@@ -2,7 +2,7 @@
 
 use App\Smarty\AppSmarty as Smarty;
 
-require_once __DIR__ . '/../../bootstrap/app.php';
+require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/ini.php';
 /**
  * 【歴史的経緯・リファクタリングに関する注記】
