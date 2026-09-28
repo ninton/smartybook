@@ -2,7 +2,7 @@
 
 namespace SmartyBook\chapter5_6\_read\classes;
 
-use Smarty\Smarty;
+use App\Smarty\AppSmarty as Smarty;
 
 class AppSmarty extends Smarty
 {
@@ -11,8 +11,6 @@ class AppSmarty extends Smarty
         parent::__construct();
 
         $this->setConfigDir(__DIR__ . '/../../_read/configs');
-        $this->setTemplateDir(__DIR__ . '/../../_read/templates');
-        $this->setCompileDir(__DIR__ . '/../../_temp/templates_c');
         $this->setCacheDir(__DIR__ . '/../../_temp/cache');
 
         include_once __DIR__ . '/../../modifier.mb_truncate.php';

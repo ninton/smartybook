@@ -1,4 +1,4 @@
-{include file="head.tpl"}
+{include file="components/chapter5_6/head.tpl"}
 <title>Smarty for Designers</title>
 <script src="js/isbn.js"></script>
 </head><body>
@@ -61,4 +61,4 @@
         </div>
     </form>
 </div>
-{include file="footer.tpl"} 
+{include file="components/chapter5_6/footer.tpl"} 
