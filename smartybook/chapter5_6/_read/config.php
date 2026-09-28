@@ -17,5 +17,4 @@ $CFG['associate_tag'] = '********************';
 
 // ファイル、ディレクトリ
 $CFG['mylist_dir'  ] = __DIR__ . '/../_write/mylist/';
-$CFG['aws_cache_dir'] =  __DIR__ . '/../_temp/amazon/';
 mb_internal_encoding('UTF-8');
