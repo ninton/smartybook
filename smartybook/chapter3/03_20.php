@@ -2,7 +2,7 @@
 
 use App\Smarty\AppSmarty as Smarty;
 
-require_once __DIR__ . '/../../bootstrap/app.php';
+require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 
 // データ準備
 $member = ['斉藤', '中村', '米谷' ,'鈴木' ,'伊野口' ,'渡部' , '松本'];
