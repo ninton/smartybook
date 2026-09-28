@@ -11,6 +11,7 @@ require_once __DIR__ . '/ini.php';
  * @var list<string> $categories
  */
 
+// テンプレートエンジン初期化・変数アサイン・描画
 $smarty = new Smarty();
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);

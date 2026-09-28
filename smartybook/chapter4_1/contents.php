@@ -11,10 +11,8 @@ require_once __DIR__ . '/ini.php';
  * @var string $csv
  */
 
-$smarty = new Smarty();
-$smarty->assign('siteName', $siteName);
-$smarty->assign('home', $home);
 
+// メイン処理・データ操作
 // CSVデータを配列に格納
 $fp = fopen($csv, 'r');
 $i = 0;
@@ -32,6 +30,10 @@ while ($array = fgetcsv($fp, 5000, ',', escape: '')) {
 }
 fclose($fp);
 
+// テンプレートエンジン初期化・変数アサイン・描画
+$smarty = new Smarty();
+$smarty->assign('siteName', $siteName);
+$smarty->assign('home', $home);
 $smarty->assign('data', $data);
 $smarty->assign('category', $_GET['category']);
 $smarty->display('pages/chapter4_1/contents.tpl');
