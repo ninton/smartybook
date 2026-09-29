@@ -8,12 +8,9 @@ use SmartyBook\chapter4_6\SortNavigator;
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 
 /**
- * @var array{dsn: string, db_user: string, db_password: string} $CONFIG
+ * @var array{dsn: string, db_user: string, db_password: string, perPage: int, sort: string, order: string} $CONFIG
  */
 $CONFIG = require_once __DIR__ . '/config.php';
-
-$smarty = new Smarty();
-$smarty->configLoad('index.conf');
 
 // リクエスト変数を調べて、なければデフォルト値を設定する
 //  pageID      ページ番号
@@ -24,13 +21,13 @@ if (empty($_REQUEST['pageID'])) {
     $_REQUEST['pageID'] = 1;
 }
 if (empty($_REQUEST['sort'])) {
-    $_REQUEST['sort'] = $smarty->getConfigVars('sort');
+    $_REQUEST['sort'] = $CONFIG['sort'];
 }
 if (empty($_REQUEST['order'])) {
-    $_REQUEST['order'] = $smarty->getConfigVars('order');
+    $_REQUEST['order'] = $CONFIG['order'];
 }
 if (empty($_REQUEST['setPerPage'])) {
-    $_REQUEST['setPerPage'] = $smarty->getConfigVars('perPage');
+    $_REQUEST['setPerPage'] = $CONFIG['perPage'];
 }
 
 // 全件数を調べて、Pagerを初期化する
@@ -101,6 +98,7 @@ $perpage_params = [
     'attributes' => "onchange='document.forms[\"perPage\"].submit()'",
 ];
 
+$smarty = new Smarty();
 $smarty->assign('SortNavi', $sortnavi);
 $smarty->assign('Pager', $pager);
 $smarty->assign('PagerDto', $pagerDto);
