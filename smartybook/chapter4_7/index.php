@@ -53,7 +53,7 @@ switch ("$requestMethod.$action") {
         $tpl = 'form.tpl';
         break;
     case 'GET.form':
-        $form = $_SESSION[APPID]['form'];
+        $form = $_SESSION[APPID]['form'] ?? [];
         $tpl = 'form.tpl';
         break;
     case 'POST.confirm':
@@ -61,7 +61,7 @@ switch ("$requestMethod.$action") {
         $tpl = 'confirm.tpl';
         break;
     case 'POST.submit':
-        $form = $_SESSION[APPID]['form'];
+        $form = $_SESSION[APPID]['form'] ?? [];
         $tpl = 'thanks.tpl';
         break;
     default:
