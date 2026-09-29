@@ -21,6 +21,10 @@ $dbUser     = envString('DB_USER');
 $dbPassword = envString('DB_PASSWORD');
 
 // PDO設定
-$CONFIG['dsn'] = sprintf('mysql:dbname=%s;host=%s', $dbDatabase, $dbHost);
-$CONFIG['db_user'] = $dbUser;
-$CONFIG['db_password'] = $dbPassword;
+$dsn = sprintf('mysql:dbname=%s;host=%s', $dbDatabase, $dbHost);
+
+return [
+    'dsn' => $dsn,
+    'db_user' => $dbUser,
+    'db_password' => $dbPassword,
+];

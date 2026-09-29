@@ -6,12 +6,11 @@ use SmartyBook\chapter4_6\CMS;
 use SmartyBook\chapter4_6\SortNavigator;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
-require_once __DIR__ . '/config.php';
 
 /**
- * config.php で定義
  * @var array{dsn: string, db_user: string, db_password: string} $CONFIG
  */
+$CONFIG = require_once __DIR__ . '/config.php';
 
 $smarty = new Smarty();
 $smarty->configLoad('index.conf');
