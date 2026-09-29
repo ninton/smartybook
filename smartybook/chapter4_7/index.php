@@ -42,6 +42,9 @@ if (!isset($_SESSION[APPID]['token']) || $_SESSION[APPID]['token'] != $token) {
 
 $requestMethod = strtoupper($_SERVER['REQUEST_METHOD']) === 'POST' ? 'POST' : 'GET';
 $action = $_REQUEST['action'] ?? '';
+if (!is_string($action)) {
+    die();
+}
 
 switch ("$requestMethod.$action") {
     case 'GET.':
