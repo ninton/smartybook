@@ -40,44 +40,29 @@ if (!isset($_SESSION[APPID]['token']) || $_SESSION[APPID]['token'] != $token) {
     $_SESSION[APPID]['token'] = $token;
 }
 
-$action = '';
-if (isset($_REQUEST['action'])) {
-    $action = $_REQUEST['action'];
+$requestMethod = strtoupper($_SERVER['REQUEST_METHOD']) === 'POST' ? 'POST' : 'GET';
+$action = $_REQUEST['action'] ?? '';
+if (!is_string($action)) {
+    die();
 }
-// actionを調べて、表示するテンプレートを切り替える
-switch (strtoupper($_SERVER['REQUEST_METHOD'])) {
-    case 'POST':
-        switch ($action) {
-            case 'confirm':
-                $_SESSION[APPID]['form'] = $_POST;
-                $tpl = 'confirm.tpl';
-                break;
 
-            case 'submit':
-                $tpl = 'thanks.tpl';
-                break;
-
-            default:
-                die();
-        }
-
+switch ("$requestMethod.$action") {
+    case 'GET.':
+        $_SESSION[APPID]['form'] = [];
+        $tpl = 'form.tpl';
+        break;
+    case 'GET.form':
+        $tpl = 'form.tpl';
+        break;
+    case 'POST.confirm':
+        $_SESSION[APPID]['form'] = $_POST;
+        $tpl = 'confirm.tpl';
+        break;
+    case 'POST.submit':
+        $tpl = 'thanks.tpl';
         break;
     default:
-        switch ($action) {
-            case '':
-                $_SESSION[APPID]['form'] = [];
-                $tpl = 'form.tpl';
-                break;
-
-            case 'form':
-                $tpl = 'form.tpl';
-                break;
-
-            default:
-                die();
-        }
-
-        break;
+        die();
 }
 
 if (!isset($_SESSION[APPID]['form']['prefecture'])) {
