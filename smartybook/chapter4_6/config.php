@@ -27,4 +27,7 @@ return [
     'dsn' => $dsn,
     'db_user' => $dbUser,
     'db_password' => $dbPassword,
+    'perPage' => 5,
+    'sort' => 'id',
+    'order' => 'asc',
 ];
