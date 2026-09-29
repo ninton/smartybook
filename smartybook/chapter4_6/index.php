@@ -12,7 +12,6 @@ require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
  */
 $CONFIG = require_once __DIR__ . '/config.php';
 
-$smarty = new Smarty();
 // リクエスト変数を調べて、なければデフォルト値を設定する
 //  pageID      ページ番号
 //  sort        並び替える項目
@@ -99,6 +98,7 @@ $perpage_params = [
     'attributes' => "onchange='document.forms[\"perPage\"].submit()'",
 ];
 
+$smarty = new Smarty();
 $smarty->assign('SortNavi', $sortnavi);
 $smarty->assign('Pager', $pager);
 $smarty->assign('PagerDto', $pagerDto);
