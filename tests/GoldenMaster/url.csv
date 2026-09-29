@@ -161,6 +161,7 @@ chapter5_2/photogallary,GET,http://localhost/smartybook/chapter5_2/photogallery.
 chapter5_1/xml,GET,http://localhost/smartybook/chapter5_1/xml.php,
 
 # chapter4_7 追加
+# @note action=confirm,action=form,action=submit の実行順序に依存します。行順序に注意してください。
 chapter4_7/index action=form,GET,http://localhost/smartybook/chapter4_7/index.php?action=form,
 chapter4_7/index action=submit,POST,http://localhost/smartybook/chapter4_7/index.php,action=submit
 
