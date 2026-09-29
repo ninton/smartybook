@@ -48,60 +48,63 @@ if (!is_string($action)) {
 
 switch ("$requestMethod.$action") {
     case 'GET.':
+        $form = [];
         $_SESSION[APPID]['form'] = [];
         $tpl = 'form.tpl';
         break;
     case 'GET.form':
+        $form = $_SESSION[APPID]['form'] ?? [];
         $tpl = 'form.tpl';
         break;
     case 'POST.confirm':
-        $_SESSION[APPID]['form'] = $_POST;
+        $form = $_POST;
         $tpl = 'confirm.tpl';
         break;
     case 'POST.submit':
+        $form = $_SESSION[APPID]['form'] ?? [];
         $tpl = 'thanks.tpl';
         break;
     default:
         die();
 }
 
-if (!isset($_SESSION[APPID]['form']['prefecture'])) {
-    $_SESSION[APPID]['form']['prefecture'] = '';
+if (!isset($form['prefecture'])) {
+    $form['prefecture'] = '';
 }
 
-if (!isset($_SESSION[APPID]['form']['rating'])) {
-    $_SESSION[APPID]['form']['rating'] = '';
+if (!isset($form['rating'])) {
+    $form['rating'] = '';
 }
 
-if (!isset($_SESSION[APPID]['form']['where_arr'])) {
-    $_SESSION[APPID]['form']['where_arr'] = [];
+if (!isset($form['where_arr'])) {
+    $form['where_arr'] = [];
 }
 
 // {html_select_date/time}用タイムスタンプを計算する
 $now = time();
-if (isset($_SESSION[APPID]['form']['startDate'])) {
-    makeTimeStamp($_SESSION[APPID]['form'], ['field_array' => 'startDate']);
+if (isset($form['startDate'])) {
+    makeTimeStamp($form, ['field_array' => 'startDate']);
 } else {
-    $_SESSION[APPID]['form']['startDate']['TimeStamp'] = $now;
+    $form['startDate']['TimeStamp'] = $now;
 }
 
-if (isset($_SESSION[APPID]['form']['endDate_Year'])) {
-    makeTimeStamp($_SESSION[APPID]['form'], ['prefix' => 'endDate_']);
+if (isset($form['endDate_Year'])) {
+    makeTimeStamp($form, ['prefix' => 'endDate_']);
 } else {
-    $_SESSION[APPID]['form']['endDate_TimeStamp'] = $now + 7 * 24 * 3600;
+    $form['endDate_TimeStamp'] = $now + 7 * 24 * 3600;
 }
 
 $smarty = new Smarty();
 $smarty->assign('META', $META);
-$smarty->assign('form', $_SESSION[APPID]['form']);
+$smarty->assign('form', $form);
 $smarty->display('pages/chapter4_7/' . $tpl);
 
-// 送信完了後、セッション変数をクリアする
-switch ($action) {
-    case 'submit':
+switch ("$requestMethod.$action") {
+    case 'POST.confirm':
+        $_SESSION[APPID]['form'] = $form;
+        break;
+    case 'POST.submit':
         $_SESSION[APPID]['form'] = [];
         break;
 
-    default:
-        break;
 }
