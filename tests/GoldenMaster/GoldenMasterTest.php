@@ -11,6 +11,8 @@ final class GoldenMasterTest extends TestCase
 {
     use HtmlStringAssertionTrait;
 
+    private const string COOKIE_FILE = '/tmp/curl-cookie-golden-master.txt';
+
     public function tearDown(): void
     {
         $_GET = [];
@@ -50,6 +52,7 @@ final class GoldenMasterTest extends TestCase
             $url,
             $method,
             http_build_query($postVars),
+            self::COOKIE_FILE,
         );
 
         // 検証

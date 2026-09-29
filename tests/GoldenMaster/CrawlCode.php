@@ -61,7 +61,7 @@ final class CrawlCode
         return $csvArr;
     }
 
-    public static function crawl(string $url, string $method, string $data, string $userAgent = self::DEFAULT_USER_AGENT): string
+    public static function crawl(string $url, string $method, string $data, string $cookieFile, string $userAgent = self::DEFAULT_USER_AGENT): string
     {
         if ($url === '') {
             throw new InvalidArgumentException('URL must be a non-empty string.');
@@ -75,6 +75,9 @@ final class CrawlCode
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
 
+        curl_setopt($ch, CURLOPT_COOKIEFILE, $cookieFile);
+        curl_setopt($ch, CURLOPT_COOKIEJAR, $cookieFile);
+
         if (strtoupper($method) === 'POST') {
             curl_setopt($ch, CURLOPT_POST, true);
             curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
@@ -83,17 +86,5 @@ final class CrawlCode
         $response = curl_exec($ch);
 
         return is_bool($response) ? '' : $response;
-    }
-
-    /** @noinspection PhpUnused curlで PHPUNIT_RUNNING=1 を設定する方法を検討中、利用予定 */
-    public static function main(string $urlCsv): int
-    {
-        $crawlCommandArr = self::readCrawlCommandArrFromCsv($urlCsv);
-
-        foreach ($crawlCommandArr as $crawlCommand) {
-            self::crawl($crawlCommand->url, $crawlCommand->method, $crawlCommand->data);
-        }
-
-        return count($crawlCommandArr);
     }
 }
