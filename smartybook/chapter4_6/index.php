@@ -12,6 +12,19 @@ require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
  */
 $CONFIG = require_once __DIR__ . '/config.php';
 
+// ----- インラインクラス定義 -----
+class PagerDto
+{
+    public int $ExOffsetFrom;
+    public int $ExOffsetTo;
+    public string $ExLinks;
+    public string $ExFirstPageLink;
+    public string $ExLastPageLink;
+    public string $ExPreviousPageLink;
+    public string $ExNextPageLink;
+}
+
+// ----- 入力値受取・前処理 -----
 // リクエスト変数を調べて、なければデフォルト値を設定する
 //  pageID      ページ番号
 //  sort        並び替える項目
@@ -19,7 +32,10 @@ $CONFIG = require_once __DIR__ . '/config.php';
 //  setPerPage  1ページあたりの表示件数
 if (empty($_REQUEST['pageID'])) {
     $_REQUEST['pageID'] = 1;
+} elseif ((int)$_REQUEST['pageID'] < 1) {
+    $_REQUEST['pageID'] = 1;
 }
+
 if (empty($_REQUEST['sort'])) {
     $_REQUEST['sort'] = $CONFIG['sort'];
 }
@@ -30,17 +46,17 @@ if (empty($_REQUEST['setPerPage'])) {
     $_REQUEST['setPerPage'] = $CONFIG['perPage'];
 }
 
-// 全件数を調べて、Pagerを初期化する
+// ----- メイン処理・データ操作 -----
 $cms = new CMS($CONFIG['dsn'], $CONFIG['db_user'], $CONFIG['db_password']);
 
-// ページ番号の調整
-if ((int)$_REQUEST['pageID'] < 1) {
-    $_REQUEST['pageID'] = 1;
-}
 if ($cms->getCount() < $_REQUEST['pageID']) {
     $_REQUEST['pageID'] = 1;
 }
 
+/**
+ * @fixme Pagerクラス関連を UIパーツブロックへ移動したい
+ * そのために $from と $to を 独自に計算するようにして、Pager クラスに依存しないようにする
+ **/
 $params = [];
 $params['totalItems'] = $cms->getCount();
 $params['currentPage'] = (int)$_REQUEST['pageID'];
@@ -53,17 +69,7 @@ if ((0 < $from) && (0 < $to)) {
     $rcd_arr = $cms->getAll($from - 1, $to - $from + 1, $_REQUEST['sort'], $_REQUEST['order']);
 }
 
-class PagerDto
-{
-    public int $ExOffsetFrom;
-    public int $ExOffsetTo;
-    public string $ExLinks;
-    public string $ExFirstPageLink;
-    public string $ExLastPageLink;
-    public string $ExPreviousPageLink;
-    public string $ExNextPageLink;
-}
-
+// ----- UIパーツ -----
 /**
  * PagerExクラスにプロパティを追加する
  * @fixme chapter5_3/lib/pager_ex.php の pager_ex 関数を参考にして関数などにしたい
@@ -98,6 +104,7 @@ $perpage_params = [
     'attributes' => "onchange='document.forms[\"perPage\"].submit()'",
 ];
 
+// ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
 $smarty->assign('SortNavi', $sortnavi);
 $smarty->assign('Pager', $pager);
