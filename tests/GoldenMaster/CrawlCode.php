@@ -75,8 +75,13 @@ final class CrawlCode
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_USERAGENT, $userAgent);
 
+        // 既存クッキーの読み込み（curl -b cookies.txt に相当）
         curl_setopt($ch, CURLOPT_COOKIEFILE, $cookieFile);
+        // レスポンスで受け取ったクッキーの保存（curl -c cookies.txt に相当）
         curl_setopt($ch, CURLOPT_COOKIEJAR, $cookieFile);
+
+        // リダイレクト追跡が必要な場合（curl -L に相当）
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 
         if (strtoupper($method) === 'POST') {
             curl_setopt($ch, CURLOPT_POST, true);
