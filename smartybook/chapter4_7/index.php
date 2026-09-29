@@ -1,14 +1,36 @@
 <?php
 
+/**
+ * アンケート入力フォーム
+ *
+ * GET index.php
+ *  - フォーム表示
+ *  - 項目は未入力状態
+ *
+ * GET index.php?action=form
+ *  - フォーム表示
+ *  - 項目はセッションから復元
+ *
+ * POST index.php?action=confirm
+ *  - 入力内容をセッションに保存
+ *  - 確認画面を表示
+ *
+ * POST index.php?action=submit
+ *  - (本サンプルコードでは、入力内容の保存または管理者に送信などは未実装）
+ *  - セッション変数をクリア
+ *  - 送信完了画面を表示
+ */
 use App\Smarty\AppSmarty as Smarty;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/funcs.php';
 require_once __DIR__ . '/config.php';
+
 // 都道府県などのメタデータをファイルから読み込む
 $META['prefecture'] = array_load('prefecture.txt');
-$META['rating'    ] = assoc_load('rating.txt');
-$META['where'     ] = array_load('where.txt');
+$META['rating'] = assoc_load('rating.txt');
+$META['where'] = array_load('where.txt');
+
 // セッションを開始、セッショントークンをチェックする
 session_start();
 $token = md5(TOKEN_SALT . $_SERVER['HTTP_USER_AGENT'] . $_SERVER['REMOTE_ADDR']);
