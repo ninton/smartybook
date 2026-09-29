@@ -11,7 +11,25 @@ final class GoldenMasterTest extends TestCase
 {
     use HtmlStringAssertionTrait;
 
-    private const string COOKIE_FILE = '/tmp/curl-cookie-golden-master.txt';
+    private static string $cookieFile = '';
+
+    public static function setUpBeforeClass(): void
+    {
+        parent::setUpBeforeClass();
+
+        // sys_get_temp_dir() を使用し、一意なファイル名を動的に生成
+        self::$cookieFile = sys_get_temp_dir() . '/curl_cookie_' . uniqid('', true) . '.txt';
+    }
+
+    public static function tearDownAfterClass(): void
+    {
+        // ファイルが存在する場合のみ安全に削除
+        if (self::$cookieFile !== '' && file_exists(self::$cookieFile)) {
+            @unlink(self::$cookieFile);
+        }
+
+        parent::tearDownAfterClass();
+    }
 
     public function tearDown(): void
     {
@@ -52,7 +70,7 @@ final class GoldenMasterTest extends TestCase
             $url,
             $method,
             http_build_query($postVars),
-            self::COOKIE_FILE,
+            self::$cookieFile,
         );
 
         // 検証
