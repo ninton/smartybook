@@ -17,6 +17,10 @@ final class GoldenMasterTest extends TestCase
     {
         parent::setUpBeforeClass();
 
+        if (getenv('SHOULD_UPDATE_GOLDEN_MASTER') === '1') {
+            system('rm -rf ' . __DIR__ . '/fixtures/current/*');
+        }
+
         // sys_get_temp_dir() を使用し、一意なファイル名を動的に生成
         self::$cookieFile = sys_get_temp_dir() . '/curl_cookie_' . uniqid('', true) . '.txt';
     }
