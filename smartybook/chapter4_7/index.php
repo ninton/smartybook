@@ -31,6 +31,82 @@ $META['prefecture'] = array_load('prefecture.txt');
 $META['rating'] = assoc_load('rating.txt');
 $META['where'] = array_load('where.txt');
 
+// ----- インライン関数定義 -----
+/**
+ * @param array<string, mixed> $meta メタデータ
+ * @param array<string, mixed> $formFromSession セッションから復元したフォームデータ（未入力の場合は空配列）
+ */
+function form(array $meta, array $formFromSession = []): void
+{
+    // ----- データ準備 -----
+    $now = time();
+
+    $defaultForm = [
+        'prefecture' => '',
+        'rating' => '',
+        'where_arr' => [],
+        'startDate' => ['TimeStamp' => $now],
+        'endDate_TimeStamp' => $now + 7 * 24 * 3600,
+    ];
+
+    if (empty($formFromSession)) {
+        $form = $defaultForm;
+        // 新規フォームの場合はセッションをクリア
+        $_SESSION[APPID]['form'] = [];
+    } else {
+        $form = array_merge($defaultForm, $formFromSession);
+        // 確認ページからの戻りの場合は、セッションをクリアしない
+        // セッションをクリアしてしまうと、リロードした場合、確認ページから戻ったフォームの内容が消えてしまう
+        // 書籍掲載コードの仕様のままとしました
+    }
+
+    // ----- テンプレートエンジンの初期化とアサイン・描画 -----
+    $smarty = new Smarty();
+    $smarty->assign('META', $meta);
+    $smarty->assign('form', $form);
+    $smarty->display('pages/chapter4_7/form.tpl');
+}
+/**
+ * @param array<string, mixed> $meta メタデータ
+ * @param array<string, mixed> $postVars POSTされたフォームデータ
+ */
+function confirm(array $meta, array $postVars): void
+{
+    // ----- 入力値受取・前処理 -----
+    $form = $postVars;
+    makeTimeStamp($form, ['field_array' => 'startDate']);
+    makeTimeStamp($form, ['prefix' => 'endDate_']);
+    $_SESSION[APPID]['form'] = $form;
+
+    // ----- テンプレートエンジンの初期化とアサイン・描画 -----
+    $smarty = new Smarty();
+    $smarty->assign('META', $meta);
+    $smarty->assign('form', $form);
+    $smarty->display('pages/chapter4_7/confirm.tpl');
+}
+
+/**
+ * @param array<string, mixed> $meta メタデータ
+ * @param array<string, mixed> $formFromSession セッションから復元したフォームデータ
+ */
+function submit(array $meta, array $formFromSession): void
+{
+    // ----- 入力値受取・前処理 -----
+    // 未実装
+
+    // ----- メイン処理・データ操作 -----
+    // 未実装
+
+    // 最後にセッション変数をクリア
+    $_SESSION[APPID]['form'] = [];
+
+    // ----- テンプレートエンジンの初期化とアサイン・描画 -----
+    $smarty = new Smarty();
+    $smarty->assign('META', $meta);
+    $smarty->assign('form', $formFromSession);
+    $smarty->display('pages/chapter4_7/thanks.tpl');
+}
+
 // セッションを開始、セッショントークンをチェックする
 session_start();
 $token = md5(TOKEN_SALT . $_SERVER['HTTP_USER_AGENT'] . $_SERVER['REMOTE_ADDR']);
@@ -48,63 +124,17 @@ if (!is_string($action)) {
 
 switch ("$requestMethod.$action") {
     case 'GET.':
-        $form = [];
-        $_SESSION[APPID]['form'] = [];
-        $tpl = 'form.tpl';
+        form($META);
         break;
     case 'GET.form':
-        $form = $_SESSION[APPID]['form'] ?? [];
-        $tpl = 'form.tpl';
+        form($META, $_SESSION[APPID]['form'] ?? []);
         break;
     case 'POST.confirm':
-        $form = $_POST;
-        $tpl = 'confirm.tpl';
+        confirm($META, $_POST);
         break;
     case 'POST.submit':
-        $form = $_SESSION[APPID]['form'] ?? [];
-        $tpl = 'thanks.tpl';
+        submit($META, $_SESSION[APPID]['form'] ?? []);
         break;
     default:
         die();
-}
-
-if (!isset($form['prefecture'])) {
-    $form['prefecture'] = '';
-}
-
-if (!isset($form['rating'])) {
-    $form['rating'] = '';
-}
-
-if (!isset($form['where_arr'])) {
-    $form['where_arr'] = [];
-}
-
-// {html_select_date/time}用タイムスタンプを計算する
-$now = time();
-if (isset($form['startDate'])) {
-    makeTimeStamp($form, ['field_array' => 'startDate']);
-} else {
-    $form['startDate']['TimeStamp'] = $now;
-}
-
-if (isset($form['endDate_Year'])) {
-    makeTimeStamp($form, ['prefix' => 'endDate_']);
-} else {
-    $form['endDate_TimeStamp'] = $now + 7 * 24 * 3600;
-}
-
-$smarty = new Smarty();
-$smarty->assign('META', $META);
-$smarty->assign('form', $form);
-$smarty->display('pages/chapter4_7/' . $tpl);
-
-switch ("$requestMethod.$action") {
-    case 'POST.confirm':
-        $_SESSION[APPID]['form'] = $form;
-        break;
-    case 'POST.submit':
-        $_SESSION[APPID]['form'] = [];
-        break;
-
 }
