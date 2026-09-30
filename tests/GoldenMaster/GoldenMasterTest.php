@@ -179,7 +179,7 @@ final class GoldenMasterTest extends TestCase
 
         $html = preg_replace(
             '/Smartyのバージョン：\d+\.\d+\.\d+/',
-            'Smartyのバージョン：4.5.7',
+            'Smartyのバージョン：X.X.X',
             $html,
         );
 
