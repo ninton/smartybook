@@ -127,13 +127,13 @@ switch ("$requestMethod.$action") {
         form($META);
         break;
     case 'GET.form':
-        form($META, $_SESSION[APPID]['form']);
+        form($META, $_SESSION[APPID]['form'] ?? []);
         break;
     case 'POST.confirm':
         confirm($META, $_POST);
         break;
     case 'POST.submit':
-        submit($META, $_SESSION[APPID]['form']);
+        submit($META, $_SESSION[APPID]['form'] ?? []);
         break;
     default:
         die();
