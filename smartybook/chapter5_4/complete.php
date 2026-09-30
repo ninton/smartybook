@@ -59,9 +59,9 @@ $string = $id . ','
 
 $check = fwrite($fp, $string);
 if ($check === false) {
-    $smarty->assign('flag', 'FALSE');
+    $smarty->assign('flag', false);
 } else {
-    $smarty->assign('flag', 'TRUE');
+    $smarty->assign('flag', true);
 }
 flock($fp, LOCK_UN);
 fclose($fp);
