@@ -89,21 +89,19 @@ final class GoldenMasterTest extends TestCase
         $masterPath = __DIR__ . "/fixtures/current/{$storageName}.html";
         $actualPath = __DIR__ . "/fixtures/actual/{$storageName}.html";
 
-        file_put_contents($actualPath, $output);
+        $actual = $this->sanitizeHtml($output);
+        file_put_contents($actualPath, $actual);
 
         if (getenv('SHOULD_UPDATE_GOLDEN_MASTER') === '1') {
-            file_put_contents($masterPath, $output);
+            file_put_contents($masterPath, $actual);
         }
 
         GoldenMasterTest::assertFileExists($masterPath, "Golden Master が見つかりません: {$masterPath}");
 
-        $expectedHtml = file_get_contents($masterPath);
-        if ($expectedHtml === false) {
+        $expected = file_get_contents($masterPath);
+        if ($expected === false) {
             GoldenMasterTest::fail("Golden Master の読み込みに失敗しました: {$masterPath}");
         }
-
-        $actual = $this->sanitizeHtml($output);
-        $expected = $this->sanitizeHtml($expectedHtml);
 
         static::assertHtmlStringEqualsHtmlString($expected, $actual, "URL: {$url} のレスポンスが変化しています");
     }
@@ -181,7 +179,7 @@ final class GoldenMasterTest extends TestCase
 
         $html = preg_replace(
             '/Smartyのバージョン：\d+\.\d+\.\d+/',
-            'Smartyのバージョン：4.5.7',
+            'Smartyのバージョン：X.X.X',
             $html,
         );
 
@@ -195,10 +193,16 @@ final class GoldenMasterTest extends TestCase
         }
 
         if (str_contains($html, 'startDate[Year]')) {
-            // chapter4_7/index.php 年月日時分秒のセレクトボックスの値を置換
-            $html = str_replace(' selected="selected"', '', $html);
+            // chapter4_7/index.php 年月日時分秒のセレクトボックスの selected="selected" 値を削除します
             $html = preg_replace(
-                '/<option value="(\d{4})">(\d{4})<\/option>/',
+                '/(<option\b(?=[^>]*\bvalue="\d+")[^>]*?)\s+selected="selected"/i',
+                '$1',
+                $html,
+            );
+
+            // chapter4_7/index.php 年のセレクトボックスの値を YYYY に置換します
+            $html = preg_replace(
+                '/<option value="(\d{4})".*?>(\d{4})<\/option>/',
                 '<option value="YYYY">YYYY</option>',
                 $html,
             );
