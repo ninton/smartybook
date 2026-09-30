@@ -1,8 +1,10 @@
 <?php
 
+use App\Smarty\AppSmarty as Smarty;
 use Lib\PearStub\AuthStub as Auth;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
+require_once __DIR__ . '/plugins/function.login_form.php';
 
 // PEAR内の PHP Strict Standards: PHP Deprecated: を抑制する
 error_reporting(error_reporting() & ~E_DEPRECATED);
@@ -40,14 +42,20 @@ if (isset($_GET['lo']) && $_GET['lo'] == 'ok') {
  */
 function displayLogin(string $username, int $status): void
 {
+    global $siteName, $admin, $home;
+
     $self = $_SERVER['PHP_SELF'];
-    global $smarty;
 
     $errmsg = '';
     if ($status == -3) {
         $errmsg = 'ユーザー名もしくはパスワードが違います';
     }
 
+    $smarty = new Smarty();
+    $smarty->registerPlugin('function', 'login_form', smarty_function_login_form(...));
+    $smarty->assign('siteName', $siteName);
+    $smarty->assign('admin', $admin);
+    $smarty->assign('home', $home);
     $smarty->assign('self', $self);
     $smarty->assign('username', $username);
     $smarty->assign('errormsg', $errmsg);

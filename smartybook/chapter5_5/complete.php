@@ -15,6 +15,14 @@ require_once __DIR__ . '/ini.php';
  * @var int $lastId
  */
 
+// 認証開始
+$oAuth->start();
+if (!$oAuth->getAuth()) {
+    // 認証失敗
+    // ini.php の displayLogin 関数が呼ばれるので、ここでは何も出力しない
+    return;
+}
+
 $smarty = new Smarty();
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
@@ -48,38 +56,34 @@ function convertNl(string $str): string
 
 //adminページ用
 $smarty->assign('categories', $categories);
-//認証開始
-$oAuth->start();
-//認証が通った際の処理
-if ($oAuth->getAuth()) {
-    if ($_POST['title']) {
-        // 記事の書き込み
-        $fp = fopen(__DIR__ . '/data.csv', 'a+') or die('file_open_error');
-        flock($fp, LOCK_EX);
-        $lastId = lastIdCheck($fp);
-        $id = sprintf('%04d', $lastId + 1);
-        // 本文の改行文字,カンマ,ダブルクォートの処理
-        $title = convertNl($_POST['title']);
-        $contents = convertNl($_POST['contents']);
 
-        $string = $id . ','
-            . $_POST['category'] . ','
-            . $title . ','
-            . $contents . ','
-            . $_POST['date'] . ','
-            . $_POST['image'] . "\n";
+if ($_POST['title']) {
+    // 記事の書き込み
+    $fp = fopen(__DIR__ . '/data.csv', 'a+') or die('file_open_error');
+    flock($fp, LOCK_EX);
+    $lastId = lastIdCheck($fp);
+    $id = sprintf('%04d', $lastId + 1);
+    // 本文の改行文字,カンマ,ダブルクォートの処理
+    $title = convertNl($_POST['title']);
+    $contents = convertNl($_POST['contents']);
 
-        $check = fwrite($fp, $string);
-        if ($check === false) {
-            $smarty->assign('flag', false);
-        } else {
-            $smarty->assign('flag', true);
-        }
-        flock($fp, LOCK_UN);
-        fclose($fp);
-        //出力
-        $smarty->display('pages/chapter5_5/complete.tpl');
+    $string = $id . ','
+        . $_POST['category'] . ','
+        . $title . ','
+        . $contents . ','
+        . $_POST['date'] . ','
+        . $_POST['image'] . "\n";
+
+    $check = fwrite($fp, $string);
+    if ($check === false) {
+        $smarty->assign('flag', false);
     } else {
-        $smarty->display('pages/chapter5_5/admin.tpl');
+        $smarty->assign('flag', true);
     }
+    flock($fp, LOCK_UN);
+    fclose($fp);
+    //出力
+    $smarty->display('pages/chapter5_5/complete.tpl');
+} else {
+    $smarty->display('pages/chapter5_5/admin.tpl');
 }
