@@ -151,11 +151,20 @@ chapter5_4/complete,POST,http://localhost/smartybook/chapter5_4/complete.php,cat
 # chapter5_5
 chapter5_5/index,GET,http://localhost/smartybook/chapter5_5/index.php,
 chapter5_5/contents,GET,http://localhost/smartybook/chapter5_5/contents.php?category=Study,
+# ログアウト: ログイン画面
+chapter5_5/admin,GET,http://localhost/smartybook/chapter5_5/admin.php?lo=ok,
+# ログイン画面
 chapter5_5/login,GET,http://localhost/smartybook/chapter5_5/login.php,
-# 以下はクッキーが必要なので、テスト除外
-#chapter5_5/admin,GET,http://localhost/smartybook/chapter5_5/admin.php,
-#chapter5_5/confirm,POST,http://localhost/smartybook/chapter5_5/confirm.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
-#chapter5_5/complete,POST,http://localhost/smartybook/chapter5_5/complete.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
+# ログアウトしているので、ログイン画面が表示されること
+chapter5_5/admin,GET,http://localhost/smartybook/chapter5_5/admin.php,
+# ログイン: 入力フォームが表示されること
+chapter5_5/admin,POST,http://localhost/smartybook/chapter5_5/admin.php,username=guest&password=guest
+# ログイン済で admin にアクセス: 入力フォームが表示されること
+chapter5_5/admin,GET,http://localhost/smartybook/chapter5_5/admin.php,
+# ログイン済で confirm: 確認画面が表示されること
+chapter5_5/confirm,POST,http://localhost/smartybook/chapter5_5/confirm.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
+# ログイン済で complete: サンクス画面が表示されること
+chapter5_5/complete,POST,http://localhost/smartybook/chapter5_5/complete.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
 
 # chapter5_6
 chapter5_6/admin,GET,http://localhost/smartybook/chapter5_6/admin.php,
