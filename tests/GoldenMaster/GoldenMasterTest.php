@@ -193,10 +193,9 @@ final class GoldenMasterTest extends TestCase
         }
 
         if (str_contains($html, 'startDate[Year]')) {
-            // chapter4_7/index.php 年月日時分秒のセレクトボックスの値を置換
-            $html = str_replace(' selected="selected"', '', $html);
+            // chapter4_7/index.php 年のセレクトボックスの値を置換
             $html = preg_replace(
-                '/<option value="(\d{4})">(\d{4})<\/option>/',
+                '/<option value="(\d{4})".*?>(\d{4})<\/option>/',
                 '<option value="YYYY">YYYY</option>',
                 $html,
             );
