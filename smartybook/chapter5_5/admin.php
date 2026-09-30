@@ -22,7 +22,7 @@ if (!$oAuth->getAuth()) {
     return;
 }
 
-// テンプレートエンジン初期化・変数アサイン・描画
+// ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);

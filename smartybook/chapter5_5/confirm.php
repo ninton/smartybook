@@ -28,7 +28,7 @@ if (!$oAuth->getAuth()) {
  * 他の章ではこの判別をしていないので、削除しても問題ない。
  */
 if ($_POST['title']) {
-    // メイン処理・データ操作
+    // ----- メイン処理・データ操作 -----
     // 画像のアップロード
     if (!is_dir($imageDir)) {
         mkdir($imageDir);
@@ -40,7 +40,7 @@ if ($_POST['title']) {
         $imageFile = '';
     }
 
-    // テンプレートエンジンの初期化とアサイン・描画
+    // ----- テンプレートエンジンの初期化とアサイン・描画 -----
     $smarty = new Smarty();
     $smarty->assign('siteName', $siteName);
     $smarty->assign('home', $home);
@@ -52,7 +52,7 @@ if ($_POST['title']) {
     $smarty->assign('imageFile', $imageFile);
     $smarty->display('pages/chapter5_5/confirm.tpl');
 } else {
-    // テンプレートエンジンの初期化とアサイン・描画
+    // ----- テンプレートエンジンの初期化とアサイン・描画 -----
     $smarty = new Smarty();
     $smarty->assign('siteName', $siteName);
     $smarty->assign('home', $home);
