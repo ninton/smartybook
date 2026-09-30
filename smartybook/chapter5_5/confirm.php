@@ -23,31 +23,40 @@ if (!$oAuth->getAuth()) {
     return;
 }
 
-// テンプレートエンジンの初期化とアサイン・描画
-$smarty = new Smarty();
-$smarty->assign('siteName', $siteName);
-$smarty->assign('home', $home);
-$smarty->assign('admin', $admin);
-//adminページ用
-$smarty->assign('categories', $categories);
-
+/**
+ * @note CD-ROM収録コードの仕様に合わせて `if ($_POST['title']) {` を残しているが、
+ * 他の章ではこの判別をしていないので、削除しても問題ない。
+ */
 if ($_POST['title']) {
+    // メイン処理・データ操作
     // 画像のアップロード
     if (!is_dir($imageDir)) {
         mkdir($imageDir);
     }
     if (isset($_FILES['image']['tmp_name']) && is_uploaded_file($_FILES['image']['tmp_name'])) {
         copy($_FILES['image']['tmp_name'], $imageDir . $_FILES['image']['name']);
-        $smarty->assign('imageFile', $imageDir . $_FILES['image']['name']);
+        $imageFile = $imageDir . $_FILES['image']['name'];
     } else {
-        $smarty->assign('imageFile', '');
+        $imageFile = '';
     }
+
+    // テンプレートエンジンの初期化とアサイン・描画
+    $smarty = new Smarty();
+    $smarty->assign('siteName', $siteName);
+    $smarty->assign('home', $home);
+    $smarty->assign('admin', $admin);
     $smarty->assign('category', $_POST['category']);
     $smarty->assign('title', stripslashes($_POST['title']));
     $smarty->assign('contents', stripslashes($_POST['contents']));
     $smarty->assign('date', $_POST['date']);
-    //出力
+    $smarty->assign('imageFile', $imageFile);
     $smarty->display('pages/chapter5_5/confirm.tpl');
 } else {
+    // テンプレートエンジンの初期化とアサイン・描画
+    $smarty = new Smarty();
+    $smarty->assign('siteName', $siteName);
+    $smarty->assign('home', $home);
+    $smarty->assign('admin', $admin);
+    $smarty->assign('categories', $categories);
     $smarty->display('pages/chapter5_5/admin.tpl');
 }

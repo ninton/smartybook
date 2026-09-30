@@ -5,29 +5,8 @@ use Lib\PearStub\AuthStub as Auth;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/ini.php';
-/**
- * ini.phpで定義されていて、本ファイルで参照している変数
- * @var string $siteName
- * @var string $home
- * @var string $admin
- * @var string[] $categories
- * @var Auth $oAuth
- * @var int $lastId
- */
 
-// 認証開始
-$oAuth->start();
-if (!$oAuth->getAuth()) {
-    // 認証失敗
-    // ini.php の displayLogin 関数が呼ばれるので、ここでは何も出力しない
-    return;
-}
-
-$smarty = new Smarty();
-$smarty->assign('siteName', $siteName);
-$smarty->assign('home', $home);
-$smarty->assign('admin', $admin);
-
+// ----- インライン関数定義 -----
 /**
  * 最新記事ID（CSVファイルの最終行のID）を取得する関数
  * @param resource $file CSVファイルのファイルポインタ
@@ -54,18 +33,40 @@ function convertNl(string $str): string
     return $str;
 }
 
-//adminページ用
-$smarty->assign('categories', $categories);
+/**
+ * ini.phpで定義されていて、本ファイルで参照している変数
+ * @var string $siteName
+ * @var string $home
+ * @var string $admin
+ * @var string[] $categories
+ * @var Auth $oAuth
+ */
 
+// 認証開始
+$oAuth->start();
+if (!$oAuth->getAuth()) {
+    // 認証失敗
+    // ini.php の displayLogin 関数が呼ばれるので、ここでは何も出力しない
+    return;
+}
+
+/**
+ * @note CD-ROM収録コードの仕様に合わせて `if ($_POST['title']) {` を残しているが、
+ * 他の章ではこの判別をしていないので、削除しても問題ない。
+ */
 if ($_POST['title']) {
-    // 記事の書き込み
-    $fp = fopen(__DIR__ . '/data.csv', 'a+') or die('file_open_error');
-    flock($fp, LOCK_EX);
-    $lastId = lastIdCheck($fp);
-    $id = sprintf('%04d', $lastId + 1);
+    // ----- 入力値受取・前処理 -----
     // 本文の改行文字,カンマ,ダブルクォートの処理
     $title = convertNl($_POST['title']);
     $contents = convertNl($_POST['contents']);
+
+    // ----- メイン処理・データ操作 -----
+    // 記事の書き込み
+    $fp = fopen(__DIR__ . '/data.csv', 'a+') or die('file_open_error');
+    flock($fp, LOCK_EX);
+
+    $lastId = lastIdCheck($fp);
+    $id = sprintf('%04d', $lastId + 1);
 
     $string = $id . ','
         . $_POST['category'] . ','
@@ -75,15 +76,22 @@ if ($_POST['title']) {
         . $_POST['image'] . "\n";
 
     $check = fwrite($fp, $string);
-    if ($check === false) {
-        $smarty->assign('flag', false);
-    } else {
-        $smarty->assign('flag', true);
-    }
     flock($fp, LOCK_UN);
     fclose($fp);
-    //出力
+
+    // ----- テンプレートエンジンの初期化とアサイン・描画 -----
+    $smarty = new Smarty();
+    $smarty->assign('siteName', $siteName);
+    $smarty->assign('home', $home);
+    $smarty->assign('admin', $admin);
+    $smarty->assign('flag', $check !== false);
     $smarty->display('pages/chapter5_5/complete.tpl');
 } else {
+    // ----- テンプレートエンジンの初期化とアサイン・描画 -----
+    $smarty = new Smarty();
+    $smarty->assign('siteName', $siteName);
+    $smarty->assign('home', $home);
+    $smarty->assign('admin', $admin);
+    $smarty->assign('categories', $categories);
     $smarty->display('pages/chapter5_5/admin.tpl');
 }

@@ -5,7 +5,6 @@ use Lib\PearStub\AuthStub as Auth;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/ini.php';
-
 /**
  * ini.phpで定義されている変数
  * @var string $siteName
@@ -23,6 +22,7 @@ if (!$oAuth->getAuth()) {
     return;
 }
 
+// テンプレートエンジン初期化・変数アサイン・描画
 $smarty = new Smarty();
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
