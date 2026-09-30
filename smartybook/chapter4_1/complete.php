@@ -37,7 +37,6 @@ function convertNl(string $str): string
  * @var string $siteName
  * @var string $home
  * @var string $admin
- * @var int $lastId
  */
 
 // ----- 入力値受取・前処理 -----
