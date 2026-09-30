@@ -89,21 +89,19 @@ final class GoldenMasterTest extends TestCase
         $masterPath = __DIR__ . "/fixtures/current/{$storageName}.html";
         $actualPath = __DIR__ . "/fixtures/actual/{$storageName}.html";
 
-        file_put_contents($actualPath, $output);
+        $actual = $this->sanitizeHtml($output);
+        file_put_contents($actualPath, $actual);
 
         if (getenv('SHOULD_UPDATE_GOLDEN_MASTER') === '1') {
-            file_put_contents($masterPath, $output);
+            file_put_contents($masterPath, $actual);
         }
 
         GoldenMasterTest::assertFileExists($masterPath, "Golden Master が見つかりません: {$masterPath}");
 
-        $expectedHtml = file_get_contents($masterPath);
-        if ($expectedHtml === false) {
+        $expected = file_get_contents($masterPath);
+        if ($expected === false) {
             GoldenMasterTest::fail("Golden Master の読み込みに失敗しました: {$masterPath}");
         }
-
-        $actual = $this->sanitizeHtml($output);
-        $expected = $this->sanitizeHtml($expectedHtml);
 
         static::assertHtmlStringEqualsHtmlString($expected, $actual, "URL: {$url} のレスポンスが変化しています");
     }
