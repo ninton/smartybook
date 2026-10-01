@@ -10,7 +10,7 @@ require_once __DIR__ . '/insert.php';
  * ini.phpで定義されていて、本ファイルで参照している変数
  * @var string $siteName
  * @var string $home
- * @var array<string> $categories
+ * @var list<string> $categories
  * @var string $csv
  */
 
