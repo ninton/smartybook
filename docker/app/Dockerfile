@@ -42,7 +42,11 @@ COPY *.sed /root/
 
 RUN set -x \
     && cp /usr/local/etc/php/php.ini-development /usr/local/etc/php/php.ini \
-    && sed -ri --file=/root/php_ini.sed /usr/local/etc/php/php.ini
+    && sed -ri --file=/root/php_ini.sed /usr/local/etc/php/php.ini \
+    # Xdebug のインストールと有効化 \
+    && pecl install xdebug \
+    && docker-php-ext-enable xdebug \
+    && echo "xdebug.start_with_request = yes" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 # Composer の最新公式イメージからバイナリだけをコピーする
 COPY --from=composer:2.10.3 /usr/bin/composer /usr/local/bin/composer
