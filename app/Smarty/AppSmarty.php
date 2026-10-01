@@ -14,5 +14,6 @@ class AppSmarty extends Smarty
 
         $this->setTemplateDir(SMARTY_TEMPLATE_DIR);
         $this->setCompileDir(SMARTY_COMPILE_DIR);
+        $this->setCacheDir(SMARTY_CACHE_DIR);
     }
 }
