@@ -8,14 +8,11 @@ require_once __DIR__ . '/ini.php';
  * ini.phpで定義されている変数
  * @var string $siteName
  * @var string $home
- * @var string[] $categories
+ * @var list<string> $categories
  * @var string $csv
  */
 
-$smarty = new Smarty();
-$smarty->assign('siteName', $siteName);
-$smarty->assign('home', $home);
-$smarty->assign('categories', $categories);
+// ----- メイン処理・データ操作 -----
 // CSVデータを配列に格納
 $fp = fopen($csv, 'r');
 $data = [];
@@ -30,7 +27,11 @@ while ($array = fgetcsv($fp, 5000, ',', escape: '')) {
     $i++;
 }
 fclose($fp);
-//データをsmartyの変数として格納
+
+// ----- テンプレートエンジンの初期化とアサイン・描画 -----
+$smarty = new Smarty();
+$smarty->assign('siteName', $siteName);
+$smarty->assign('home', $home);
+$smarty->assign('categories', $categories);
 $smarty->assign('data', $data);
-//出力
 $smarty->display('pages/chapter4_2_1/index.tpl');
