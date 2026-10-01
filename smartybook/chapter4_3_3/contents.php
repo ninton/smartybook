@@ -10,7 +10,7 @@ require_once __DIR__ . '/insert.php';
  * ini.phpで定義されている変数
  * @var string $siteName
  * @var string $home
- * @var array<string> $categories
+ * @var list<string> $categories
  * @var string $csv
  */
 
@@ -20,7 +20,6 @@ $data = [];
 $notice = '';
 $fp = fopen($csv, 'r');
 $i = 0;
-/** @var array<int, array<string, string|int>> $data */
 while ($array = fgetcsv($fp, 5000, ',', escape: '')) {
     if ($array[1] == 'Notice') {
         $notice = $array[3];
