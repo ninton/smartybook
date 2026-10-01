@@ -13,20 +13,22 @@ require_once __DIR__ . '/ini.php';
  * @var list<string> $categories
  * @var string $csv
  */
+
+// ----- 前処理（初期化・共通変数準備） -----
+// キャッシュ判定に Smartyオブジェクトが必要なので、描画セクションではなく、前処理でSmartyオブジェクトを生成します
 $smarty = new Smarty();
 $smarty->caching = \Smarty\Smarty::CACHING_LIFETIME_CURRENT;
 // PHPやテンプレートを変更したら 60秒経過してからリロードしてください
 $smarty->cache_lifetime = 60;
 
-$smarty->assign('siteName', $siteName);
-$smarty->assign('siteDescription', $siteDescription);
-$smarty->assign('home', $home);
-$smarty->assign('categories', $categories);
-
+// ----- メイン処理・データ操作 -----
+// キャッシュが無効・または存在しない場合のみ、重い処理（ファイル読み込み・データ整形）を実行
 $template = 'pages/chapter5_4/index.tpl';
+
 if (!$smarty->isCached($template)) {
     $picture = [];
     $data = [];
+    $notice  = '';
 
     // CSVデータを配列に格納
     $fp = fopen($csv, 'r');
@@ -44,7 +46,6 @@ if (!$smarty->isCached($template)) {
             $p++;
         } elseif ($array[1] == 'Notice') {
             $notice = $array[3];
-            $smarty->assign('notice', $notice);
         } else {
             $data[$i]['id']       = $array[0];
             $data[$i]['category'] = $array[1];
@@ -57,10 +58,6 @@ if (!$smarty->isCached($template)) {
     }
     fclose($fp);
 
-    //データをsmartyの変数として格納
-    $smarty->assign('data', $data);
-    $smarty->assign('picture', $picture);
-
     /**
      * @note Twitter API はサービス停止しました。代わりにダミーデータJSONを読み込みます
      *
@@ -72,8 +69,17 @@ if (!$smarty->isCached($template)) {
     $twitterUrl =  __DIR__ . '/kara_d.json';
     $jTwitter = file_get_contents($twitterUrl);
     $aTwitter = json_decode($jTwitter);
+
+    // ----- テンプレートエンジンへの変数アサイン -----
+    $smarty->assign('data', $data);
+    $smarty->assign('picture', $picture);
+    $smarty->assign('notice', $notice);
     $smarty->assign('aTwitter', $aTwitter);
+    $smarty->assign('siteName', $siteName);
+    $smarty->assign('siteDescription', $siteDescription);
+    $smarty->assign('home', $home);
+    $smarty->assign('categories', $categories);
 }
 
-//出力
+// ----- テンプレートエンジン描画 -----
 $smarty->display($template);
