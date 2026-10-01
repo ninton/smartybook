@@ -5,30 +5,24 @@ use App\Smarty\AppSmarty as Smarty;
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/ini.php';
 require_once __DIR__ . '/insert.php';
+
 /**
  * ini.phpで定義されていて、本ファイルで参照している変数
  * @var string $siteName
  * @var string $home
- * @var string[] $categories
+ * @var list<string> $categories
  * @var string $csv
- * @var list<array{id: string, category: string, title: string, text: string, time: string, image: string}> $data
  */
 
-$smarty = new Smarty();
-$smarty->registerPlugin('function', 'insert_noticeText2', smarty_insert_noticeText2(...));
-
-$smarty->assign('siteName', $siteName);
-$smarty->assign('home', $home);
-$smarty->assign('categories', $categories);
-//$smarty->assign("notice", $notice);
+// ----- メイン処理・データ操作 -----
 // CSVデータを配列に格納
 $data = [];
+$notice = '';
 $fp = fopen($csv, 'r');
 $i = 0;
 while ($array = fgetcsv($fp, 5000, ',', escape: '')) {
     if ($array[1] == 'Notice') {
         $notice = $array[3];
-        $smarty->assign('notice', $notice);
     }
     $data[$i]['id']       = $array[0];
     $data[$i]['category'] = $array[1];
@@ -39,7 +33,13 @@ while ($array = fgetcsv($fp, 5000, ',', escape: '')) {
     $i++;
 }
 fclose($fp);
-//データをsmartyの変数として格納
+
+// ----- テンプレートエンジンの初期化とアサイン・描画 -----
+$smarty = new Smarty();
+$smarty->registerPlugin('function', 'insert_noticeText2', smarty_insert_noticeText2(...));
+$smarty->assign('siteName', $siteName);
+$smarty->assign('home', $home);
+$smarty->assign('categories', $categories);
+$smarty->assign('notice', $notice);
 $smarty->assign('data', $data);
-//出力
 $smarty->display('pages/chapter5_5/index.tpl');
