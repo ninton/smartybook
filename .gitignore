@@ -7,6 +7,8 @@
 
 # 3. 開発環境固有のファイル
 /.make/
+/cache/*
+!/cache/.gitkeep
 /templates_c/*
 !/templates_c/.gitkeep
 /tests/GoldenMaster/fixtures/actual/*
