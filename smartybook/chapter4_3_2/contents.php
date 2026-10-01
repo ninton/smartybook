@@ -4,24 +4,19 @@ use App\Smarty\AppSmarty as Smarty;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/ini.php';
+require_once __DIR__ . '/insert.php';
+
 /**
  * ini.phpで定義されている変数
  * @var string $siteName
  * @var string $home
  * @var array<string> $categories
  * @var string $csv
- * @var array<int, array<string, string>> $data
  */
-$smarty = new Smarty();
 
-require_once __DIR__ . '/insert.php';
-$smarty->registerPlugin('function', 'insert_noticeText2', smarty_insert_noticeText2(...));
-
-$smarty->assign('siteName', $siteName);
-$smarty->assign('home', $home);
-$smarty->assign('categories', $categories);
-//$smarty->assign("notice", $notice);
+// ----- メイン処理・データ操作 -----
 // CSVデータを配列に格納
+$data = [];
 $fp = fopen($csv, 'r');
 $i = 0;
 while ($array = fgetcsv($fp, 5000, ',', escape: '')) {
@@ -36,8 +31,14 @@ while ($array = fgetcsv($fp, 5000, ',', escape: '')) {
     }
 }
 fclose($fp);
-//データをsmartyの変数として格納
+
+// ----- テンプレートエンジンの初期化とアサイン・描画 -----
+$smarty = new Smarty();
+$smarty->registerPlugin('function', 'insert_noticeText2', smarty_insert_noticeText2(...));
+$smarty->assign('siteName', $siteName);
+$smarty->assign('home', $home);
+$smarty->assign('categories', $categories);
+//$smarty->assign("notice", $notice);
 $smarty->assign('data', $data);
 $smarty->assign('category', $_GET['category']);
-//出力
 $smarty->display('pages/chapter4_3_2/contents.tpl');
