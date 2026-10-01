@@ -14,12 +14,17 @@ require_once __DIR__ . '/ini.php';
  * @var string $csv
  */
 $smarty = new Smarty();
+$smarty->caching = \Smarty\Smarty::CACHING_LIFETIME_CURRENT;
+// PHPやテンプレートを変更したら 60秒経過してからリロードしてください
+$smarty->cache_lifetime = 60;
+
 $smarty->assign('siteName', $siteName);
 $smarty->assign('siteDescription', $siteDescription);
 $smarty->assign('home', $home);
 $smarty->assign('categories', $categories);
 
-if (!$smarty->isCached('index.tpl')) {
+$template = 'pages/chapter5_4/index.tpl';
+if (!$smarty->isCached($template)) {
     $picture = [];
     $data = [];
 
@@ -56,7 +61,14 @@ if (!$smarty->isCached('index.tpl')) {
     $smarty->assign('data', $data);
     $smarty->assign('picture', $picture);
 
-    /** @note Twitter API はサービス停止しました。代わりにダミーデータJSONを読み込みます */
+    /**
+     * @note Twitter API はサービス停止しました。代わりにダミーデータJSONを読み込みます
+     *
+     * 執筆当時のキャッシュ利用の意図
+     * API レスポンスに時間がかかることがある。
+     * 頻繁にレスポンス内容が変わらないだろう。
+     * キャッシュを利用しようという意図でした。
+     */
     $twitterUrl =  __DIR__ . '/kara_d.json';
     $jTwitter = file_get_contents($twitterUrl);
     $aTwitter = json_decode($jTwitter);
@@ -64,4 +76,4 @@ if (!$smarty->isCached('index.tpl')) {
 }
 
 //出力
-$smarty->display('pages/chapter5_4/index.tpl');
+$smarty->display($template);
