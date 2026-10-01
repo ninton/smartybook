@@ -4,6 +4,17 @@ use App\Smarty\AppSmarty as Smarty;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/ini.php';
+
+// ----- インライン関数定義 -----
+/**
+ * @return string
+ */
+function insert_noticeText(): string
+{
+    $noticeText = '<img src="./images/banner.gif" />';
+    return $noticeText;
+}
+
 /**
  * ini.phpで定義されている変数
  * @var string $siteName
@@ -12,12 +23,8 @@ require_once __DIR__ . '/ini.php';
  * @var string $csv
  * @var list<array{id: string, category: string, title: string, text: string, time: string, image: string}> $data
  */
-$smarty = new Smarty();
-// Smarty 5 から insertタグは廃止されました。代わりに registerPlugin を使って関数プラグインを登録します。
-$smarty->registerPlugin('function', 'insert_noticeText', 'insert_noticeText');
-$smarty->assign('siteName', $siteName);
-$smarty->assign('home', $home);
-$smarty->assign('categories', $categories);
+
+// ----- メイン処理・データ操作 -----
 // CSVデータを配列に格納
 $fp = fopen($csv, 'r');
 $i = 0;
@@ -31,15 +38,13 @@ while ($array = fgetcsv($fp, 5000, ',', escape: '')) {
     $i++;
 }
 fclose($fp);
-//データをsmartyの変数として格納
+
+// ----- テンプレートエンジンの初期化とアサイン・描画 -----
+$smarty = new Smarty();
+// Smarty 5 から insertタグは廃止されました。代わりに registerPlugin を使って関数プラグインを登録します。
+$smarty->registerPlugin('function', 'insert_noticeText', 'insert_noticeText');
+$smarty->assign('siteName', $siteName);
+$smarty->assign('home', $home);
+$smarty->assign('categories', $categories);
 $smarty->assign('data', $data);
-//出力
 $smarty->display('pages/chapter4_2_2/index.tpl');
-/**
- * @return string
- */
-function insert_noticeText(): string
-{
-    $noticeText = '<img src="./images/banner.gif" />';
-    return $noticeText;
-}
