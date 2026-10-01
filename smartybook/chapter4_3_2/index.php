@@ -12,7 +12,6 @@ require_once __DIR__ . '/insert.php';
  * @var string $home
  * @var array<string> $categories
  * @var string $csv
- * @var array<int, array<string, string>> $data
  */
 
 // ----- メイン処理・データ操作 -----
