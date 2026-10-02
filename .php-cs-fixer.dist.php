@@ -4,7 +4,6 @@ $finder = (new PhpCsFixer\Finder())
     ->in([
         __DIR__ . '/app',
         __DIR__ . '/bootstrap',
-        __DIR__ . '/lib/PearStub',
         __DIR__ . '/smartybook',
         __DIR__ . '/tests',
     ])

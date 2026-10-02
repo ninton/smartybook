@@ -1,7 +1,7 @@
 <?php
 
+use App\PearStub\PagerStub as Pager;
 use App\Smarty\AppSmarty as Smarty;
-use Lib\PearStub\PagerStub as Pager;
 
 require_once __DIR__ . '/ini.php';
 require_once __DIR__ . '/ketai_ini.php';

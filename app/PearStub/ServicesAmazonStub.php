@@ -1,6 +1,6 @@
 <?php
 
-namespace Lib\PearStub;
+namespace App\PearStub;
 
 class ServicesAmazonStub
 {
