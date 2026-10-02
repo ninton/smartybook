@@ -9,6 +9,7 @@ use SmartyBook\chapter5_6\_read\classes\AppAmazon;
 use SmartyBook\chapter5_6\_read\classes\AppSmarty;
 use SmartyBook\chapter5_6\_read\classes\MyListManager;
 
+require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/_read/inc.php';
 
 /**
