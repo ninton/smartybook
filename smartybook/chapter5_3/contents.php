@@ -4,8 +4,8 @@ use App\PearStub\PagerStub as Pager;
 use App\Smarty\AppSmarty as Smarty;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
-require_once __DIR__ . '/ini.php';
-require_once __DIR__ . '/ketai_ini.php';
+require_once __DIR__ . '/config/config.php';
+require_once __DIR__ . '/config/ketai-config.php';
 require_once __DIR__ . '/plib/funcs.php';
 require_once __DIR__ . '/plib/pager_ex.php';
 
