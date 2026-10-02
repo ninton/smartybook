@@ -18,7 +18,7 @@ require_once __DIR__ . '/modifier.mb_truncate.php';
 $menu_arr = get_menu_arr($categories);
 
 // 注目記事
-$featured_arr = get_featured_arr(BAT_SRC_DIR . "/$csv");
+$featured_arr = get_featured_arr($csv);
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
