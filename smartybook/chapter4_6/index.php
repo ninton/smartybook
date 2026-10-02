@@ -10,7 +10,7 @@ require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 /**
  * @var array{dsn: string, db_user: string, db_password: string, perPage: int, sort: string, order: string} $CONFIG
  */
-$CONFIG = require_once __DIR__ . '/config.php';
+$CONFIG = require_once __DIR__ . '/config/config.php';
 
 // ----- インラインクラス定義 -----
 class PagerDto
