@@ -6,7 +6,7 @@ use SmartyBook\chapter5_3\plib\emoji\Emoji;
 
 use function SmartyBook\chapter5_3\plib\emoji\emoji_output_handler;
 
-$agent = new Lib\PearStub\NetUserAgentMobileCommonStub();
+$agent = new App\PearStub\NetUserAgentMobileCommonStub();
 
 $display = $agent->getDisplay();
 // キャリア名称の調整

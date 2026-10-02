@@ -1,7 +1,7 @@
 <?php
 
+use App\PearStub\AuthStub as Auth;
 use App\Smarty\AppSmarty as Smarty;
-use Lib\PearStub\AuthStub as Auth;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/ini.php';

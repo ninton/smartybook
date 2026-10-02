@@ -7,7 +7,7 @@
 
 namespace SmartyBook\chapter5_6\_read\classes;
 
-use Lib\PearStub\ServicesAmazonStub;
+use App\PearStub\ServicesAmazonStub;
 
 class AppAmazon
 {
