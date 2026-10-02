@@ -14,6 +14,7 @@ require_once __DIR__ . '/plib/pager_ex.php';
  * @var array<string, string> $CFG
  * @var string $siteName
  * @var string $home
+ *
  * config/config-ketai.phpで設定
  * @var object $display
  */
