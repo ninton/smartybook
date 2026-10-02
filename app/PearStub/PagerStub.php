@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lib\PearStub;
+namespace App\PearStub;
 
 /**
  * PEAR::Pager 互換用 軽量ページネーションクラス

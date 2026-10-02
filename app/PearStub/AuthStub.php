@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lib\PearStub;
+namespace App\PearStub;
 
 /**
  * 書籍で Pear/Auth を使っていましたが、Pear/Auth はメンテナンスされていません。

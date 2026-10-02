@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Lib\PearStub;
+namespace App\PearStub;
 
 /**
  * 各キャリアのガラケーはサービス停止している
