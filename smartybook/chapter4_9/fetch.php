@@ -5,7 +5,6 @@ use App\Smarty\AppSmarty as Smarty;
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/fetch_ini.php';
 require_once __DIR__ . '/fetch_funcs.php';
-require_once BAT_SRC_DIR . '/ini.php';
 require_once __DIR__ . '/modifier.mb_truncate.php';
 
 /**
