@@ -15,6 +15,7 @@ require_once __DIR__ . '/config/config-ketai.php';
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
+$smarty->setConfigDir(__DIR__ . '/config/smarty');
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
 $smarty->assign('categories', $categories);

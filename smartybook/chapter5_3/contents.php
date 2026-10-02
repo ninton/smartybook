@@ -64,9 +64,8 @@ $page = pager_ex($pager, $from, $to);
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
-
+$smarty->setConfigDir(__DIR__ . '/config/smarty');
 $smarty->registerPlugin('modifier', 'file_exists', file_exists(...));
-
 $smarty->assign('Pager', $pager);
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
