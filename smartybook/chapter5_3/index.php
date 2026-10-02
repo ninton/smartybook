@@ -2,11 +2,12 @@
 
 use App\Smarty\AppSmarty as Smarty;
 
-require_once __DIR__ . '/ini.php';
-require_once __DIR__ . '/ketai_ini.php';
+require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
+require_once __DIR__ . '/config/config.php';
+require_once __DIR__ . '/config/config-ketai.php';
 
 /**
- * ini.phpで定義
+ * config/config.phpで定義
  * @var string $siteName
  * @var string $home
  * @var array<int, array<string, string>> $categories

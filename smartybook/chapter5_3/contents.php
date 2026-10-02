@@ -3,16 +3,20 @@
 use App\PearStub\PagerStub as Pager;
 use App\Smarty\AppSmarty as Smarty;
 
-require_once __DIR__ . '/ini.php';
-require_once __DIR__ . '/ketai_ini.php';
+require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
+require_once __DIR__ . '/config/config.php';
+require_once __DIR__ . '/config/config-ketai.php';
 require_once __DIR__ . '/plib/funcs.php';
 require_once __DIR__ . '/plib/pager_ex.php';
 
 /**
- * @var array<string, string> $CFG ini.phpで設定
- * @var object $display ketai_ini.phpで設定
- * @var string $siteName ini.phpで設定
- * @var string $home ini.phpで設定
+ * config/config.phpで定義
+ * @var array<string, string> $CFG
+ * @var string $siteName
+ * @var string $home
+ *
+ * config/config-ketai.phpで設定
+ * @var object $display
  */
 
 // ----- 入力値受取・前処理 -----
