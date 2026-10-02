@@ -24,12 +24,12 @@ use App\Smarty\AppSmarty as Smarty;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/funcs.php';
-require_once __DIR__ . '/config.php';
+require_once __DIR__ . '/config/config.php';
 
 // 都道府県などのメタデータをファイルから読み込む
-$META['prefecture'] = array_load('prefecture.txt');
-$META['rating'] = assoc_load('rating.txt');
-$META['where'] = array_load('where.txt');
+$META['prefecture'] = array_load(__DIR__ . '/config/prefecture.txt');
+$META['rating'] = assoc_load(__DIR__ . '/config/rating.txt');
+$META['where'] = array_load(__DIR__ . '/config/where.txt');
 
 // ----- インライン関数定義 -----
 /**
