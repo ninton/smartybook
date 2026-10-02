@@ -26,10 +26,10 @@ $smarty->registerPlugin('modifier', 'mb_truncate', smarty_modifier_mb_truncate(.
 $smarty->assign('menu_arr', $menu_arr);
 $smarty->assign('featured_arr', $featured_arr);
 
-$buf = $smarty->fetch('menu.tpl');
+$buf = $smarty->fetch('pages/chapter4_9/menu.tpl');
 file_put_contents('./html/menu.html', $buf);
 print $buf;
 
-$buf = $smarty->fetch('featured.tpl');
+$buf = $smarty->fetch('pages/chapter4_9/featured.tpl');
 file_put_contents('./html/featured.html', $buf);
 print $buf;
