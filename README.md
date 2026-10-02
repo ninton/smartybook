@@ -58,7 +58,6 @@ https://github.com/ninton/smartybook/wiki/%E6%AD%A3%E8%AA%A4%E8%A1%A8
 ```
 .
 ├── app                       共通で使うPHPクラス
-├── bin
 ├── docker
 │   ├── app
 │   │   └── Dockerfile
@@ -68,7 +67,6 @@ https://github.com/ninton/smartybook/wiki/%E6%AD%A3%E8%AA%A4%E8%A1%A8
 ├── cache                       Smarty用キャッシュディレクトリ
 ├── lib                         PEARライブラリのスタブクラス
 ├── scripts
-│   └── local
 ├── smartybook
 │   ├── chapter2
 │   ├── chapter3
