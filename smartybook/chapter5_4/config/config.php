@@ -1,7 +1,5 @@
 <?php
 
-require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
-
 // ウェブサイト名
 $siteName = 'Smarty for Designers';
 // サイトの説明
