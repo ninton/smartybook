@@ -58,6 +58,7 @@ https://github.com/ninton/smartybook/wiki/%E6%AD%A3%E8%AA%A4%E8%A1%A8
 ```
 .
 ├── app                       共通で使うPHPクラス
+│   └── PearStub             PEARライブラリのスタブクラス
 ├── docker
 │   ├── app
 │   │   └── Dockerfile
@@ -65,7 +66,6 @@ https://github.com/ninton/smartybook/wiki/%E6%AD%A3%E8%AA%A4%E8%A1%A8
 │       └── init
 │           └── db_init.sql
 ├── cache                       Smarty用キャッシュディレクトリ
-├── lib                         PEARライブラリのスタブクラス
 ├── scripts
 ├── smartybook
 │   ├── chapter2
