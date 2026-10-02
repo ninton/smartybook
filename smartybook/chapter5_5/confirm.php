@@ -4,9 +4,9 @@ use App\PearStub\AuthStub as Auth;
 use App\Smarty\AppSmarty as Smarty;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
-require_once __DIR__ . '/ini.php';
+require_once __DIR__ . '/config/config.php';
 /**
- * ini.phpで定義されている変数
+ * config/config.phpで定義されている変数
  * @var string $siteName
  * @var string $home
  * @var string $admin
@@ -19,7 +19,7 @@ require_once __DIR__ . '/ini.php';
 $oAuth->start();
 if (!$oAuth->getAuth()) {
     // 認証失敗
-    // ini.php の displayLogin 関数が呼ばれるので、ここでは何も出力しない
+    // config/config.php の displayLogin 関数が呼ばれるので、ここでは何も出力しない
     return;
 }
 

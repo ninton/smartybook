@@ -3,15 +3,14 @@
 use App\PearStub\AuthStub as Auth;
 use App\Smarty\AppSmarty as Smarty;
 
-require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
-require_once __DIR__ . '/plugins/function.login_form.php';
+require_once dirname(__DIR__) . '/plugins/function.login_form.php';
 
 // PEAR内の PHP Strict Standards: PHP Deprecated: を抑制する
 error_reporting(error_reporting() & ~E_DEPRECATED);
 // ウェブサイト名
 $siteName = 'Smarty for Designers';
 // CSVファイル名
-$csv = __DIR__ . '/data.csv';
+$csv = dirname(__DIR__) . '/data.csv';
 // 画像ディレクトリ
 $imageDir = './images/';
 // ホーム

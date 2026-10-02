@@ -3,7 +3,7 @@
 // ウェブサイト名
 $siteName = 'Smarty for Designers';
 // CSVファイル名
-$csv = __DIR__ . '/data.csv';
+$csv = dirname(__DIR__) . '/data.csv';
 // 画像ディレクトリ
 $imageDir = './images/';
 // ホーム
@@ -12,4 +12,3 @@ $home = 'index.php';
 $admin = 'admin.php';
 // カテゴリ一覧
 $categories = ['Study', 'Eating', 'Work'];
-//$notice = "あいさつです。あいさつです。";

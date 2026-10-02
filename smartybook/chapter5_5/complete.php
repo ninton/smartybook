@@ -4,7 +4,7 @@ use App\PearStub\AuthStub as Auth;
 use App\Smarty\AppSmarty as Smarty;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
-require_once __DIR__ . '/ini.php';
+require_once __DIR__ . '/config/config.php';
 
 // ----- インライン関数定義 -----
 /**
@@ -34,7 +34,7 @@ function convertNl(string $str): string
 }
 
 /**
- * ini.phpで定義されていて、本ファイルで参照している変数
+ * config/config.phpで定義されていて、本ファイルで参照している変数
  * @var string $siteName
  * @var string $home
  * @var string $admin
@@ -46,7 +46,7 @@ function convertNl(string $str): string
 $oAuth->start();
 if (!$oAuth->getAuth()) {
     // 認証失敗
-    // ini.php の displayLogin 関数が呼ばれるので、ここでは何も出力しない
+    // config/config.php の displayLogin 関数が呼ばれるので、ここでは何も出力しない
     return;
 }
 

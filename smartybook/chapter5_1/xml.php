@@ -3,7 +3,7 @@
 use App\Smarty\AppSmarty as Smarty;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
-require_once __DIR__ . '/ini.php';
+require_once __DIR__ . '/config/config.php';
 /**
  * 【歴史的経緯・リファクタリングに関する注記】
  * このファイルは出版当時の実装（Smartyテンプレートを用いてXMLを出力する構成）を
@@ -13,7 +13,7 @@ require_once __DIR__ . '/ini.php';
  * - XML を出力する場合：Smarty テンプレートではなく DOMDocument や SimpleXMLElement を使用する
  * - JSON を出力する場合：Smarty テンプレートではなく json_encode() を使用する
  *
- * ini.phpで定義されている変数
+ * config/config.phpで定義されている変数
  * @var string $siteName
  * @var string $home
  * @var list<string> $categories
