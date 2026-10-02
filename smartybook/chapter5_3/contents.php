@@ -10,10 +10,12 @@ require_once __DIR__ . '/plib/funcs.php';
 require_once __DIR__ . '/plib/pager_ex.php';
 
 /**
- * @var array<string, string> $CFG ini.phpで設定
- * @var object $display ketai_ini.phpで設定
- * @var string $siteName ini.phpで設定
- * @var string $home ini.phpで設定
+ * config/config.phpで定義
+ * @var array<string, string> $CFG
+ * @var string $siteName
+ * @var string $home
+ * config/config-ketai.phpで設定
+ * @var object $display
  */
 
 // ----- 入力値受取・前処理 -----
