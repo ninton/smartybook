@@ -2,8 +2,8 @@
 
 use App\PearStub\PagerStub as Pager;
 use App\Smarty\AppSmarty as Smarty;
-use SmartyBook\chapter4_6\CMS;
-use SmartyBook\chapter4_6\SortNavigator;
+use SmartyBook\chapter4_6\src\CMS;
+use SmartyBook\chapter4_6\src\SortNavigator;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 
