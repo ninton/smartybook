@@ -2,8 +2,7 @@
 
 use App\PearStub\AuthStub as Auth;
 use App\Smarty\AppSmarty as Smarty;
-
-require_once dirname(__DIR__) . '/plugins/function.login_form.php';
+use SmartyBook\chapter5_5\src\SmartyPlugin\LoginFormFunction;
 
 // ウェブサイト名
 $siteName = 'Smarty for Designers';
@@ -49,7 +48,7 @@ function displayLogin(string $username, int $status): void
     }
 
     $smarty = new Smarty();
-    $smarty->registerPlugin('function', 'login_form', smarty_function_login_form(...));
+    $smarty->registerPlugin('function', 'login_form', LoginFormFunction::render(...));
     $smarty->assign('siteName', $siteName);
     $smarty->assign('admin', $admin);
     $smarty->assign('home', $home);

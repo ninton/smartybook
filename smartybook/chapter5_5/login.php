@@ -1,10 +1,11 @@
 <?php
 
 use App\Smarty\AppSmarty as Smarty;
+use SmartyBook\chapter5_5\src\SmartyPlugin\LoginFormFunction;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/config/config.php';
-require_once __DIR__ . '/plugins/function.login_form.php';
+
 /**
  * config/config.phpで定義されている変数
  * @var string $siteName
@@ -14,7 +15,7 @@ require_once __DIR__ . '/plugins/function.login_form.php';
 
 $smarty = new Smarty();
 
-$smarty->registerPlugin('function', 'login_form', smarty_function_login_form(...));
+$smarty->registerPlugin('function', 'login_form', LoginFormFunction::render(...));
 
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
