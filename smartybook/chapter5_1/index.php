@@ -1,10 +1,10 @@
 <?php
 
 use App\Smarty\AppSmarty as Smarty;
+use SmartyBook\chapter5_1\src\SmartyPlugin\NoticeTextFunction;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/config/config.php';
-require_once __DIR__ . '/insert.php';
 
 /**
  * config/config.phpで定義されている変数
@@ -36,7 +36,7 @@ fclose($fp);
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
-$smarty->registerPlugin('function', 'insert_noticeText2', 'smarty_insert_noticeText2');
+$smarty->registerPlugin('function', 'insert_noticeText2', NoticeTextFunction::render(...));
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
 $smarty->assign('categories', $categories);
