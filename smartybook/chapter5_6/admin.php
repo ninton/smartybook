@@ -4,13 +4,14 @@
  * @note 2020年3月で、本プログラムで使っているAmazon_ECSのAPIは廃止となりました。
  * スタブに置き換えています
  */
+use App\Smarty\AppSmarty;
 use SmartyBook\chapter5_6\_read\classes\App;
 use SmartyBook\chapter5_6\_read\classes\AppAmazon;
-use SmartyBook\chapter5_6\_read\classes\AppSmarty;
 use SmartyBook\chapter5_6\_read\classes\MyListManager;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/config/config.php';
+require_once __DIR__ . '/modifier.mb_truncate.php';
 
 /**
  * @var array<string, mixed> $CFG
@@ -54,6 +55,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
 
                 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
                 $smarty = new AppSmarty();
+                $smarty->registerPlugin('modifier', 'mb_truncate', smarty_modifier_mb_truncate(...));
                 $smarty->assign('CFG', $CFG);
                 $smarty->assign('message', $message);
                 $smarty->assign('mylist', $mylist);
@@ -71,6 +73,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
 
                 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
                 $smarty = new AppSmarty();
+                $smarty->registerPlugin('modifier', 'mb_truncate', smarty_modifier_mb_truncate(...));
                 $smarty->assign('CFG', $CFG);
                 $smarty->assign('message', $message);
                 $smarty->assign('mylist', $mylist);
@@ -101,6 +104,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                 if ($message != '') {
                     // ----- テンプレートエンジンの初期化とアサイン・描画 -----
                     $smarty = new AppSmarty();
+                    $smarty->registerPlugin('modifier', 'mb_truncate', smarty_modifier_mb_truncate(...));
                     $smarty->assign('CFG', $CFG);
                     $smarty->assign('message', $message);
                     $smarty->assign('mylist', $mylist);
