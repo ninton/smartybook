@@ -21,15 +21,15 @@
  *  - 送信完了画面を表示
  */
 use App\Smarty\AppSmarty as Smarty;
+use SmartyBook\chapter4_7\src\SmartyHelper;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
-require_once __DIR__ . '/funcs.php';
 require_once __DIR__ . '/config/config.php';
 
 // 都道府県などのメタデータをファイルから読み込む
-$META['prefecture'] = array_load(__DIR__ . '/config/prefecture.txt');
-$META['rating'] = assoc_load(__DIR__ . '/config/rating.txt');
-$META['where'] = array_load(__DIR__ . '/config/where.txt');
+$META['prefecture'] = SmartyHelper::array_load(__DIR__ . '/config/prefecture.txt');
+$META['rating'] = SmartyHelper::assoc_load(__DIR__ . '/config/rating.txt');
+$META['where'] = SmartyHelper::array_load(__DIR__ . '/config/where.txt');
 
 // ----- インライン関数定義 -----
 /**
@@ -74,8 +74,8 @@ function confirm(array $meta, array $postVars): void
 {
     // ----- 入力値受取・前処理 -----
     $form = $postVars;
-    makeTimeStamp($form, ['field_array' => 'startDate']);
-    makeTimeStamp($form, ['prefix' => 'endDate_']);
+    SmartyHelper::makeTimeStamp($form, ['field_array' => 'startDate']);
+    SmartyHelper::makeTimeStamp($form, ['prefix' => 'endDate_']);
     $_SESSION[APPID]['form'] = $form;
 
     // ----- テンプレートエンジンの初期化とアサイン・描画 -----
