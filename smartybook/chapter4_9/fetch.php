@@ -1,11 +1,11 @@
 <?php
 
 use App\Smarty\AppSmarty as Smarty;
+use SmartyBook\chapter4_9\src\ChapterHelper;
 use SmartyBook\chapter4_9\src\SmartyPlugin\MbTruncateModifier;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/config/config.php';
-require_once __DIR__ . '/fetch_funcs.php';
 
 /**
  * @var list<string> $categories
@@ -14,10 +14,10 @@ require_once __DIR__ . '/fetch_funcs.php';
 
 // ----- メイン処理・データ操作 -----
 // メニュー
-$menu_arr = get_menu_arr($categories);
+$menu_arr = ChapterHelper::get_menu_arr($categories);
 
 // 注目記事
-$featured_arr = get_featured_arr($csv);
+$featured_arr = ChapterHelper::get_featured_arr($csv);
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
