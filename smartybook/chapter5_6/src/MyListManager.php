@@ -1,6 +1,6 @@
 <?php
 
-namespace SmartyBook\chapter5_6\_read\classes;
+namespace SmartyBook\chapter5_6\src;
 
 class MyListManager
 {
@@ -45,6 +45,10 @@ class MyListManager
             return $mylist;
         }
 
+        /**
+         * @fixme 保存形式をJSONに変更したい
+         * serialize形式は オブジェクトのFQDNを含むので、クラス名やディレクトリ構造を変更すると復元できない。
+         */
         $mylist = unserialize($buf);
         $mylist->item_arr    = array_slice($mylist->item_arr, 0, $this->max_items);
 
@@ -57,6 +61,10 @@ class MyListManager
      */
     public function write(MyList $i_MyList): void
     {
+        /**
+         * @fixme MyListオブジェクトを連想配列やスカラー値に変換し、json_encode()で保存したい
+         * serialize形式は オブジェクトのFQDNを含むので、クラス名やディレクトリ構造を変更すると復元できない。
+         */
         $buf = serialize($i_MyList);
         $path = $this->getPath($i_MyList->ListId);
         if ($path !== '') {

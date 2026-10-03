@@ -4,10 +4,11 @@
  * @note 2020年3月で、本プログラムで使っているAmazon_ECSのAPIは廃止となりました。
  * スタブに置き換えています
  */
+
 use App\Smarty\AppSmarty;
-use SmartyBook\chapter5_6\_read\classes\App;
-use SmartyBook\chapter5_6\_read\classes\AppAmazon;
-use SmartyBook\chapter5_6\_read\classes\MyListManager;
+use SmartyBook\chapter5_6\src\App;
+use SmartyBook\chapter5_6\src\AppAmazon;
+use SmartyBook\chapter5_6\src\MyListManager;
 use SmartyBook\chapter5_6\src\SmartyPlugin\MbTruncateModifier;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';

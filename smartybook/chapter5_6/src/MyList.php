@@ -1,6 +1,6 @@
 <?php
 
-namespace SmartyBook\chapter5_6\_read\classes;
+namespace SmartyBook\chapter5_6\src;
 
 class MyList
 {
