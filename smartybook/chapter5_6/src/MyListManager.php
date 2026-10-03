@@ -2,8 +2,6 @@
 
 namespace SmartyBook\chapter5_6\src;
 
-use SmartyBook\chapter5_6\_read\classes\MyList;
-
 class MyListManager
 {
     /**
