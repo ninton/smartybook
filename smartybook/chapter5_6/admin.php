@@ -11,7 +11,7 @@ use SmartyBook\chapter5_6\_read\classes\MyListManager;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/config/config.php';
-require_once __DIR__ . '/modifier.mb_truncate.php';
+require_once __DIR__ . '/src/SmartyPlugin/modifier.mb_truncate.php';
 
 /**
  * @var array<string, mixed> $CFG
