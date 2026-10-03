@@ -3,7 +3,7 @@
 // 2020年3月で、本プログラムで使っているAmazon_ECSのAPIは廃止となりました。
 // 常に410エラーです
 
-// Deprecated: Creation of dynamic property SmartyBook\chapter5_6\_read\classes\MyList::$item_arr is deprecated in /var/www/html/smartybook/chapter5_6/_read/classes/MyListManager.php on line 48
+// Deprecated: Creation of dynamic property SmartyBook\chapter5_6\_read\classes\MyList::$item_arr is deprecated in smartybook/chapter5_6/_read/classes/MyListManager.php on line 48
 error_reporting(error_reporting() & ~E_DEPRECATED);
 
 // マイリストの商品数

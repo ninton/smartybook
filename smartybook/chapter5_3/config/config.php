@@ -1,6 +1,6 @@
 <?php
 
-// PHP Strict Standards:  Non-static method Net_UserAgent_Mobile::factory() should not be called statically
+// Deprecated: Creation of dynamic property App\PearStub\PagerStub::$ExOffsetFrom is deprecated in smartybook/chapter5_3/plib/pager_ex.php on line 16
 error_reporting(error_reporting() & ~E_DEPRECATED);
 
 // ウェブサイト名
