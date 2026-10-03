@@ -5,8 +5,6 @@ use App\Smarty\AppSmarty as Smarty;
 
 require_once dirname(__DIR__) . '/plugins/function.login_form.php';
 
-// PEAR内の PHP Strict Standards: PHP Deprecated: を抑制する
-error_reporting(error_reporting() & ~E_DEPRECATED);
 // ウェブサイト名
 $siteName = 'Smarty for Designers';
 // CSVファイル名
