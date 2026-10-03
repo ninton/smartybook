@@ -1,7 +1,7 @@
 <?php
 
 use App\Smarty\AppSmarty as Smarty;
-use SmartyBook\chapter4_2_4\src\SmartyPlugin\NoticeTextFunction;
+use SmartyBook\chapter4_3_1\src\SmartyPlugin\NoticeTextFunction;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/config/config.php';
