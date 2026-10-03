@@ -1,6 +1,6 @@
 <?php
 
-namespace SmartyBook\Chapter4_9\src;
+namespace SmartyBook\chapter4_9\src;
 
 class ChapterHelper
 {

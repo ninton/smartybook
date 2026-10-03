@@ -1,7 +1,7 @@
 <?php
 
 use App\Smarty\AppSmarty as Smarty;
-use SmartyBook\Chapter4_9\src\ChapterHelper;
+use SmartyBook\chapter4_9\src\ChapterHelper;
 use SmartyBook\chapter4_9\src\SmartyPlugin\MbTruncateModifier;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
