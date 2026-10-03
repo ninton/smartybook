@@ -5,7 +5,7 @@
  * APIを呼ぶ代わりにダミーデータを返すスタブクラスを使います。
  */
 
-namespace SmartyBook\chapter5_6\_read\classes;
+namespace SmartyBook\chapter5_6\src;
 
 use App\PearStub\ServicesAmazonStub;
 
