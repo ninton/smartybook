@@ -1,10 +1,10 @@
 <?php
 
-namespace SmartyBook\chapter5_3\plib\tests;
+namespace SmartyBook\chapter5_3\src\tests;
 
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use SmartyBook\chapter5_3\plib\ImageResizer;
+use SmartyBook\chapter5_3\src\ImageResizer;
 
 final class ImageResizerTest extends TestCase
 {

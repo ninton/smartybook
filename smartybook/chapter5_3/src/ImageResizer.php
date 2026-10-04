@@ -1,6 +1,6 @@
 <?php
 
-namespace SmartyBook\chapter5_3\plib;
+namespace SmartyBook\chapter5_3\src;
 
 /*
  image_resize( $i_src_path, $i_dst_path, $i_maxW = 640, $i_maxH = 640, $i_quality = 75 )

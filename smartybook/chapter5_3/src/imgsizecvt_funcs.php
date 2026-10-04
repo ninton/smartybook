@@ -1,6 +1,6 @@
 <?php
 
-use SmartyBook\chapter5_3\plib\ImageResizer;
+use SmartyBook\chapter5_3\src\ImageResizer;
 
 /**
  * 現在アクセス中のURL

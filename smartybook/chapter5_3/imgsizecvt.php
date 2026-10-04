@@ -3,7 +3,7 @@
 use App\Smarty\AppSmarty as Smarty;
 
 require_once __DIR__ . '/ini.php';
-require_once __DIR__  . '/plib/imgsizecvt_funcs.php';
+require_once __DIR__  . '/src/imgsizecvt_funcs.php';
 
 switch (strtolower($_SERVER['REQUEST_METHOD'])) {
     case 'post':
