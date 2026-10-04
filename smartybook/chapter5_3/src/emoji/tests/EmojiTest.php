@@ -1,10 +1,10 @@
 <?php
 
-namespace SmartyBook\chapter5_3\plib\emoji\tests;
+namespace SmartyBook\chapter5_3\src\emoji\tests;
 
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
-use SmartyBook\chapter5_3\plib\emoji\Emoji;
+use SmartyBook\chapter5_3\src\emoji\Emoji;
 
 final class EmojiTest extends TestCase
 {

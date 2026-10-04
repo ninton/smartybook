@@ -1,6 +1,6 @@
 <?php
 
-namespace SmartyBook\chapter5_3\plib\emoji;
+namespace SmartyBook\chapter5_3\src\emoji;
 
 /*
 

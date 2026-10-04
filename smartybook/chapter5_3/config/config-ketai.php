@@ -1,10 +1,10 @@
 <?php
 
-require_once dirname(__DIR__, 1) . '/plib/semulator.php';
+require_once dirname(__DIR__, 1) . '/src/semulator.php';
 
-use SmartyBook\chapter5_3\plib\emoji\Emoji;
+use SmartyBook\chapter5_3\src\emoji\Emoji;
 
-use function SmartyBook\chapter5_3\plib\emoji\emoji_output_handler;
+use function SmartyBook\chapter5_3\src\emoji\emoji_output_handler;
 
 $agent = new App\PearStub\NetUserAgentMobileCommonStub();
 
