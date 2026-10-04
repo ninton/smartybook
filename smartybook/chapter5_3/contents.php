@@ -2,6 +2,7 @@
 
 use App\PearStub\PagerStub as Pager;
 use App\Smarty\AppSmarty as Smarty;
+use SmartyBook\chapter5_3\src\CsvEntryReader;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/config/config.php';
@@ -36,7 +37,7 @@ if (isset($_REQUEST['pageID'])) {
 
 // ----- メイン処理・データ操作 -----
 // CMSデータを配列に格納
-$entry_arr = get_entry_arr($CFG['CSV_FILE'], $_GET['category']);
+$entry_arr = CsvEntryReader::fetchByCategory($CFG['CSV_FILE'], $_GET['category']);
 
 // CMS配列中の元画像パスを大中小画像パスに置換する
 array_walk($entry_arr, 'replace_entry_image', $imageSizeGroup);
