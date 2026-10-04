@@ -49,7 +49,7 @@ function proc_image_list(): array
         $rcd['fname'] = $fname;
         $path = $src;
         $img = [];
-        $img['path'] = $path;
+        $img['path'] = "/smartybook/chapter4_1/images/$fname";
         list($img['width'], $img['height']) = getimagesize($path);
         $rcd['src'] = $img;
 

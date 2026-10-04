@@ -2,7 +2,8 @@
 
 use App\Smarty\AppSmarty as Smarty;
 
-require_once __DIR__ . '/ini.php';
+require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
+require_once __DIR__ . '/config/config.php';
 require_once __DIR__  . '/src/imgsizecvt_funcs.php';
 
 switch (strtolower($_SERVER['REQUEST_METHOD'])) {
