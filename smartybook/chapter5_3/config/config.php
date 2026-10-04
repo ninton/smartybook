@@ -15,6 +15,4 @@ $categories = ['Study', 'Eating', 'Work'];
 /**
  * @fixme chapter5_3 配下にdata.csvを配置したい
  */
-$CFG['SRCIMG_DIR'] = dirname(__DIR__, 2) . '/chapter4_1/images/';
-$CFG['DSTIMG_DIR'] = './images/';
 $CFG['CSV_FILE'  ] = $csv;
