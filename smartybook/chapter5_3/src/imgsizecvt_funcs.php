@@ -8,10 +8,10 @@ use SmartyBook\chapter5_3\src\ImageResizer;
  */
 function get_current_url(): string
 {
-    $shceme = empty($_SERVER['HTTPS']) ? 'http' : 'https';
+    $scheme = empty($_SERVER['HTTPS']) ? 'http' : 'https';
     $host = $_SERVER['HTTP_HOST'];
     $path = $_SERVER['REQUEST_URI'];
-    $url = "$shceme://$host$path";
+    $url = "$scheme://$host$path";
 
     return $url;
 }
