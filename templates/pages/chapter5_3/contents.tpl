@@ -29,8 +29,8 @@
 
 <div>
 <br />
-{if $Pager->ExPreviousPageLink}<a href="{$Pager->ExPreviousPageLink}">≪前</a>&nbsp;{/if}
-{if $Pager->ExNextPageLink}<a href="{$Pager->ExNextPageLink}">次≫</a>&nbsp;{/if}
+{if $PagerDto->ExPreviousPageLink}<a href="{$PagerDto->ExPreviousPageLink}">≪前</a>&nbsp;{/if}
+{if $PagerDto->ExNextPageLink}<a href="{$PagerDto->ExNextPageLink}">次≫</a>&nbsp;{/if}
 {$smarty.config.$cate_icon}{$category|escape:html} {$Pager->getCurrentPageID()|escape:html}/{$Pager->numPages()|escape:html}
 <br />
 □<a href="{$home|escape:html}">Home</a>
