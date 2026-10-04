@@ -1,8 +1,5 @@
 <?php
 
-// Deprecated: Creation of dynamic property App\PearStub\PagerStub::$ExOffsetFrom is deprecated in smartybook/chapter5_3/src/pager_ex.php on line 16
-error_reporting(error_reporting() & ~E_DEPRECATED);
-
 // ウェブサイト名
 $siteName = 'Smarty for Designers';
 // CSVファイル名
