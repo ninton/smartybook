@@ -1,7 +1,5 @@
 <?php
 
-require_once dirname(__DIR__, 1) . '/src/semulator.php';
-
 use SmartyBook\chapter5_3\src\emoji\Emoji;
 
 use function SmartyBook\chapter5_3\src\emoji\emoji_output_handler;
