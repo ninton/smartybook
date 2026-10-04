@@ -9,7 +9,6 @@ use SmartyBook\chapter5_3\src\PearPagerMapper;
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/config/config.php';
 require_once __DIR__ . '/config/config-ketai.php';
-require_once __DIR__ . '/src/pager_ex.php';
 
 /**
  * config/config.phpで定義
