@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SmartyBook\chapter4_6\src;
 
 use App\PearStub\PagerStub as Pager;
@@ -19,15 +21,15 @@ final class PearPagerMapper
     {
         $links = $pager->getLinks();
 
-        $pagerDto = new PagerDto();
-        $pagerDto->ExOffsetFrom   = $from;
-        $pagerDto->ExOffsetTo     = $to;
-        $pagerDto->ExLinks = $links['pages'] ?? '';
-        $pagerDto->ExFirstPageLink    = self::extractHref($links['first'] ?? '');
-        $pagerDto->ExLastPageLink     = self::extractHref($links['last'] ?? '');
-        $pagerDto->ExPreviousPageLink = self::extractHref($links['back'] ?? '');
-        $pagerDto->ExNextPageLink     = self::extractHref($links['next'] ?? '');
-        return $pagerDto;
+        return new PagerDto(
+            ExOffsetFrom:       $from,
+            ExOffsetTo:         $to,
+            ExLinks:            $links['pages'] ?? '',
+            ExFirstPageLink:    self::extractHref($links['first'] ?? ''),
+            ExLastPageLink:     self::extractHref($links['last'] ?? ''),
+            ExPreviousPageLink: self::extractHref($links['back'] ?? ''),
+            ExNextPageLink:     self::extractHref($links['next'] ?? ''),
+        );
     }
 
     private static function extractHref(string $html): string
