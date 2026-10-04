@@ -10,7 +10,9 @@ final class EntryImagePathResolver
      * $i_imageSizeGroup = '480' の場合
      * $entry['image'] = './images/005.jpg'
      * ↓
-     * $entry['image'] = './images/480/005.jpg'
+     * $entry['image'] = 'images/480/005.jpg' 実際の動作結果
+     *
+     * @note 元々の意図 './images/480/005.jpg' へ置換することだった可能性がある
      *
      * @param array{id: string, category: string, title: string, text: string, time: string, image: string} $io_rcd
      * @param int $i_key
