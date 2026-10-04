@@ -153,3 +153,8 @@ make php-test-golden-master    # ゴールデンマスターテスト実行
 
 make php-test-golden-master-update # ゴールデンマスターテストの期待値を更新する
 ```
+
+## メンテナンスでの変更点
+
+wiki
+https://github.com/ninton/smartybook/wiki/%E3%83%A1%E3%83%B3%E3%83%86%E3%83%8A%E3%83%B3%E3%82%B9%E3%81%A7%E3%81%AE%E5%A4%89%E6%9B%B4%E7%82%B9
