@@ -3,6 +3,7 @@
 use App\PearStub\PagerStub as Pager;
 use App\Smarty\AppSmarty as Smarty;
 use SmartyBook\chapter4_6\src\CMS;
+use SmartyBook\chapter4_6\src\PearPagerMapper;
 use SmartyBook\chapter4_6\src\SortNavigator;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
@@ -13,16 +14,6 @@ require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 $CONFIG = require_once __DIR__ . '/config/config.php';
 
 // ----- インラインクラス定義 -----
-class PagerDto
-{
-    public int $ExOffsetFrom;
-    public int $ExOffsetTo;
-    public string $ExLinks;
-    public string $ExFirstPageLink;
-    public string $ExLastPageLink;
-    public string $ExPreviousPageLink;
-    public string $ExNextPageLink;
-}
 
 // ----- 入力値受取・前処理 -----
 // リクエスト変数を調べて、なければデフォルト値を設定する
@@ -70,32 +61,7 @@ if ((0 < $from) && (0 < $to)) {
 }
 
 // ----- UIパーツ -----
-/**
- * PagerExクラスにプロパティを追加する
- * @fixme chapter5_3/lib/pager_ex.php の pager_ex 関数を参考にして関数などにしたい
- */
-$pagerDto = new PagerDto();
-$pagerDto->ExOffsetFrom   = $from;
-$pagerDto->ExOffsetTo     = $to;
-$links = $pager->getLinks();
-$pagerDto->ExLinks = $links['pages'];
-$pagerDto->ExFirstPageLink    = '';
-$pagerDto->ExLastPageLink     = '';
-$pagerDto->ExPreviousPageLink = '';
-$pagerDto->ExNextPageLink     = '';
-
-if (preg_match('/href="(.*?)"/', $links['first'], $matches)) {
-    $pagerDto->ExFirstPageLink    = $matches[1];
-}
-if (preg_match('/href="(.*?)"/', $links['last'], $matches)) {
-    $pagerDto->ExLastPageLink    = $matches[1];
-}
-if (preg_match('/href="(.*?)"/', $links['back'], $matches)) {
-    $pagerDto->ExPreviousPageLink    = $matches[1];
-}
-if (preg_match('/href="(.*?)"/', $links['next'], $matches)) {
-    $pagerDto->ExNextPageLink    = $matches[1];
-}
+$pagerDto = PearPagerMapper::toDto($pager, $from, $to);
 
 // 並替えの△▽を表示するクラス
 $sortnavi = new SortNavigator($_REQUEST['sort'], $_REQUEST['order']);
