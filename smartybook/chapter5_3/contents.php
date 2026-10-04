@@ -4,11 +4,11 @@ use App\PearStub\PagerStub as Pager;
 use App\Smarty\AppSmarty as Smarty;
 use SmartyBook\chapter5_3\src\CsvEntryReader;
 use SmartyBook\chapter5_3\src\EntryImagePathResolver;
+use SmartyBook\chapter5_3\src\PearPagerMapper;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/config/config.php';
 require_once __DIR__ . '/config/config-ketai.php';
-require_once __DIR__ . '/src/pager_ex.php';
 
 /**
  * config/config.phpで定義
@@ -61,13 +61,15 @@ if ((0 < $from) && (0 < $to)) {
     list($entry) = array_slice($entry_arr, $from - 1, 1);
 }
 
-$page = pager_ex($pager, $from, $to);
+// ----- UIパーツ -----
+$pagerDto = PearPagerMapper::toDto($pager, $from, $to);
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
 $smarty->setConfigDir(__DIR__ . '/config/smarty');
 $smarty->registerPlugin('modifier', 'file_exists', file_exists(...));
 $smarty->assign('Pager', $pager);
+$smarty->assign('PagerDto', $pagerDto);
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
 $smarty->assign('entry', $entry);
