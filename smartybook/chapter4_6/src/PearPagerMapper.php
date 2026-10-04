@@ -17,28 +17,24 @@ final class PearPagerMapper
 {
     public static function toDto(Pager $pager, int $from, int $to): PagerDto
     {
+        $links = $pager->getLinks();
+
         $pagerDto = new PagerDto();
         $pagerDto->ExOffsetFrom   = $from;
         $pagerDto->ExOffsetTo     = $to;
-        $links = $pager->getLinks();
-        $pagerDto->ExLinks = $links['pages'];
-        $pagerDto->ExFirstPageLink    = '';
-        $pagerDto->ExLastPageLink     = '';
-        $pagerDto->ExPreviousPageLink = '';
-        $pagerDto->ExNextPageLink     = '';
-
-        if (preg_match('/href="(.*?)"/', $links['first'], $matches)) {
-            $pagerDto->ExFirstPageLink    = $matches[1];
-        }
-        if (preg_match('/href="(.*?)"/', $links['last'], $matches)) {
-            $pagerDto->ExLastPageLink    = $matches[1];
-        }
-        if (preg_match('/href="(.*?)"/', $links['back'], $matches)) {
-            $pagerDto->ExPreviousPageLink    = $matches[1];
-        }
-        if (preg_match('/href="(.*?)"/', $links['next'], $matches)) {
-            $pagerDto->ExNextPageLink    = $matches[1];
-        }
+        $pagerDto->ExLinks = $links['pages'] ?? '';
+        $pagerDto->ExFirstPageLink    = self::extractHref($links['first'] ?? '');
+        $pagerDto->ExLastPageLink     = self::extractHref($links['last'] ?? '');
+        $pagerDto->ExPreviousPageLink = self::extractHref($links['back'] ?? '');
+        $pagerDto->ExNextPageLink     = self::extractHref($links['next'] ?? '');
         return $pagerDto;
+    }
+
+    private static function extractHref(string $html): string
+    {
+        if (preg_match('/href="(.*?)"/', $html, $matches)) {
+            return $matches[1];
+        }
+        return '';
     }
 }
