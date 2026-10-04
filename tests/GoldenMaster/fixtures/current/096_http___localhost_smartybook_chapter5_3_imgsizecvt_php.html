@@ -1,0 +1,156 @@
+<html>
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+<title>Smarty for Designers</title>
+
+
+<script>
+var viewer_win = null;
+
+function viewer_open( i_path ) {
+	if ( viewer_win == null || viewer_win.closed ) {
+		viewer_win = window.open( '', '_blank', 'width=240,height=240,status=1,menubar=1,toolbar=1,location=1,resizable=1' );
+	}
+	viewer_win.location = i_path;
+}
+
+function viewer_show( i_path ) {
+	if ( viewer_win != null && !viewer_win.closed ) {
+		viewer_win.location = i_path;
+	}
+}
+</script>
+
+
+</head>
+<body>
+<h1>Smarty for Designers</h1>
+
+<h2>image size converter</h2>
+
+<table border="1" cellspacing="0">
+<tr>
+  <th>&nbsp;</th>
+  <th>Filename</th>
+  <th>Original</th>
+  <th>120/</th>
+  <th>240/</th>
+  <th>480/</th>
+  <th>Convert</th>
+</tr>
+
+<tr class="row-0">
+  <td align="center">1</td>
+
+  <td>001.jpg</td>
+
+  <td align="center" valign="top" class="width-original"><a href="/smartybook/chapter4_1/images/001.jpg"onclick="viewer_open('/smartybook/chapter4_1/images/001.jpg'); return false;"onmouseover="viewer_show('/smartybook/chapter4_1/images/001.jpg')"><img src="/smartybook/chapter4_1/images/001.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>230 x 153</smalL></td>
+
+    <td align="center" valign="top" class="width-120"><a href="./images/120/001.jpg"onclick="viewer_open('./images/120/001.jpg'); return false;"onmouseover="viewer_show('./images/120/001.jpg')"><img src="./images/120/001.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>120 x 80</small></td>
+    <td align="center" valign="top" class="width-240"><a href="./images/240/001.jpg"onclick="viewer_open('./images/240/001.jpg'); return false;"onmouseover="viewer_show('./images/240/001.jpg')"><img src="./images/240/001.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>230 x 153</small></td>
+    <td align="center" valign="top" class="width-480"><a href="./images/480/001.jpg"onclick="viewer_open('./images/480/001.jpg'); return false;"onmouseover="viewer_show('./images/480/001.jpg')"><img src="./images/480/001.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>230 x 153</small></td>
+  
+  <td valign="middle" align="center">
+    <form action="/smartybook/chapter5_3/imgsizecvt.php" method="post">
+    <input type="hidden" name="fname" value="001.jpg" />
+    <input type="submit" value="Convert" />
+    </form>
+  </td>
+</tr>
+<tr class="row-1">
+  <td align="center">2</td>
+
+  <td>002.jpg</td>
+
+  <td align="center" valign="top" class="width-original"><a href="/smartybook/chapter4_1/images/002.jpg"onclick="viewer_open('/smartybook/chapter4_1/images/002.jpg'); return false;"onmouseover="viewer_show('/smartybook/chapter4_1/images/002.jpg')"><img src="/smartybook/chapter4_1/images/002.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>230 x 153</smalL></td>
+
+    <td align="center" valign="top" class="width-120"><a href="./images/120/002.jpg"onclick="viewer_open('./images/120/002.jpg'); return false;"onmouseover="viewer_show('./images/120/002.jpg')"><img src="./images/120/002.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>120 x 80</small></td>
+    <td align="center" valign="top" class="width-240"><a href="./images/240/002.jpg"onclick="viewer_open('./images/240/002.jpg'); return false;"onmouseover="viewer_show('./images/240/002.jpg')"><img src="./images/240/002.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>230 x 153</small></td>
+    <td align="center" valign="top" class="width-480"><a href="./images/480/002.jpg"onclick="viewer_open('./images/480/002.jpg'); return false;"onmouseover="viewer_show('./images/480/002.jpg')"><img src="./images/480/002.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>230 x 153</small></td>
+  
+  <td valign="middle" align="center">
+    <form action="/smartybook/chapter5_3/imgsizecvt.php" method="post">
+    <input type="hidden" name="fname" value="002.jpg" />
+    <input type="submit" value="Convert" />
+    </form>
+  </td>
+</tr>
+<tr class="row-2">
+  <td align="center">3</td>
+
+  <td>003.jpg</td>
+
+  <td align="center" valign="top" class="width-original"><a href="/smartybook/chapter4_1/images/003.jpg"onclick="viewer_open('/smartybook/chapter4_1/images/003.jpg'); return false;"onmouseover="viewer_show('/smartybook/chapter4_1/images/003.jpg')"><img src="/smartybook/chapter4_1/images/003.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>230 x 153</smalL></td>
+
+    <td align="center" valign="top" class="width-120"><a href="./images/120/003.jpg"onclick="viewer_open('./images/120/003.jpg'); return false;"onmouseover="viewer_show('./images/120/003.jpg')"><img src="./images/120/003.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>120 x 80</small></td>
+    <td align="center" valign="top" class="width-240"><a href="./images/240/003.jpg"onclick="viewer_open('./images/240/003.jpg'); return false;"onmouseover="viewer_show('./images/240/003.jpg')"><img src="./images/240/003.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>230 x 153</small></td>
+    <td align="center" valign="top" class="width-480"><a href="./images/480/003.jpg"onclick="viewer_open('./images/480/003.jpg'); return false;"onmouseover="viewer_show('./images/480/003.jpg')"><img src="./images/480/003.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>230 x 153</small></td>
+  
+  <td valign="middle" align="center">
+    <form action="/smartybook/chapter5_3/imgsizecvt.php" method="post">
+    <input type="hidden" name="fname" value="003.jpg" />
+    <input type="submit" value="Convert" />
+    </form>
+  </td>
+</tr>
+<tr class="row-3">
+  <td align="center">4</td>
+
+  <td>004.jpg</td>
+
+  <td align="center" valign="top" class="width-original"><a href="/smartybook/chapter4_1/images/004.jpg"onclick="viewer_open('/smartybook/chapter4_1/images/004.jpg'); return false;"onmouseover="viewer_show('/smartybook/chapter4_1/images/004.jpg')"><img src="/smartybook/chapter4_1/images/004.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>230 x 153</smalL></td>
+
+    <td align="center" valign="top" class="width-120"><a href="./images/120/004.jpg"onclick="viewer_open('./images/120/004.jpg'); return false;"onmouseover="viewer_show('./images/120/004.jpg')"><img src="./images/120/004.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>120 x 80</small></td>
+    <td align="center" valign="top" class="width-240"><a href="./images/240/004.jpg"onclick="viewer_open('./images/240/004.jpg'); return false;"onmouseover="viewer_show('./images/240/004.jpg')"><img src="./images/240/004.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>230 x 153</small></td>
+    <td align="center" valign="top" class="width-480"><a href="./images/480/004.jpg"onclick="viewer_open('./images/480/004.jpg'); return false;"onmouseover="viewer_show('./images/480/004.jpg')"><img src="./images/480/004.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>230 x 153</small></td>
+  
+  <td valign="middle" align="center">
+    <form action="/smartybook/chapter5_3/imgsizecvt.php" method="post">
+    <input type="hidden" name="fname" value="004.jpg" />
+    <input type="submit" value="Convert" />
+    </form>
+  </td>
+</tr>
+<tr class="row-4">
+  <td align="center">5</td>
+
+  <td>005.jpg</td>
+
+  <td align="center" valign="top" class="width-original"><a href="/smartybook/chapter4_1/images/005.jpg"onclick="viewer_open('/smartybook/chapter4_1/images/005.jpg'); return false;"onmouseover="viewer_show('/smartybook/chapter4_1/images/005.jpg')"><img src="/smartybook/chapter4_1/images/005.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>230 x 153</smalL></td>
+
+    <td align="center" valign="top" class="width-120"><a href="./images/120/005.jpg"onclick="viewer_open('./images/120/005.jpg'); return false;"onmouseover="viewer_show('./images/120/005.jpg')"><img src="./images/120/005.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>120 x 80</small></td>
+    <td align="center" valign="top" class="width-240"><a href="./images/240/005.jpg"onclick="viewer_open('./images/240/005.jpg'); return false;"onmouseover="viewer_show('./images/240/005.jpg')"><img src="./images/240/005.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>230 x 153</small></td>
+    <td align="center" valign="top" class="width-480"><a href="./images/480/005.jpg"onclick="viewer_open('./images/480/005.jpg'); return false;"onmouseover="viewer_show('./images/480/005.jpg')"><img src="./images/480/005.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>230 x 153</small></td>
+  
+  <td valign="middle" align="center">
+    <form action="/smartybook/chapter5_3/imgsizecvt.php" method="post">
+    <input type="hidden" name="fname" value="005.jpg" />
+    <input type="submit" value="Convert" />
+    </form>
+  </td>
+</tr>
+<tr class="row-5">
+  <td align="center">6</td>
+
+  <td>006.jpg</td>
+
+  <td align="center" valign="top" class="width-original"><a href="/smartybook/chapter4_1/images/006.jpg"onclick="viewer_open('/smartybook/chapter4_1/images/006.jpg'); return false;"onmouseover="viewer_show('/smartybook/chapter4_1/images/006.jpg')"><img src="/smartybook/chapter4_1/images/006.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>230 x 261</smalL></td>
+
+    <td align="center" valign="top" class="width-120"><a href="./images/120/006.jpg"onclick="viewer_open('./images/120/006.jpg'); return false;"onmouseover="viewer_show('./images/120/006.jpg')"><img src="./images/120/006.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>120 x 136</small></td>
+    <td align="center" valign="top" class="width-240"><a href="./images/240/006.jpg"onclick="viewer_open('./images/240/006.jpg'); return false;"onmouseover="viewer_show('./images/240/006.jpg')"><img src="./images/240/006.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>230 x 261</small></td>
+    <td align="center" valign="top" class="width-480"><a href="./images/480/006.jpg"onclick="viewer_open('./images/480/006.jpg'); return false;"onmouseover="viewer_show('./images/480/006.jpg')"><img src="./images/480/006.jpg" alt="Show full size" width="48" height="48" border="1" /></a><br /><small>230 x 261</small></td>
+  
+  <td valign="middle" align="center">
+    <form action="/smartybook/chapter5_3/imgsizecvt.php" method="post">
+    <input type="hidden" name="fname" value="006.jpg" />
+    <input type="submit" value="Convert" />
+    </form>
+  </td>
+</tr>
+
+</table>
+
+<address>copyright 2007 Smarty for Designers All rights reserved.</address>
+
+</body>
+</html>
