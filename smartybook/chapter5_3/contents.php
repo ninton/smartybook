@@ -3,11 +3,11 @@
 use App\PearStub\PagerStub as Pager;
 use App\Smarty\AppSmarty as Smarty;
 use SmartyBook\chapter5_3\src\CsvEntryReader;
+use SmartyBook\chapter5_3\src\EntryImagePathResolver;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/config/config.php';
 require_once __DIR__ . '/config/config-ketai.php';
-require_once __DIR__ . '/src/funcs.php';
 require_once __DIR__ . '/src/pager_ex.php';
 
 /**
@@ -40,7 +40,7 @@ if (isset($_REQUEST['pageID'])) {
 $entry_arr = CsvEntryReader::fetchByCategory($CFG['CSV_FILE'], $_GET['category']);
 
 // CMS配列中の元画像パスを大中小画像パスに置換する
-array_walk($entry_arr, 'replace_entry_image', $imageSizeGroup);
+array_walk($entry_arr, EntryImagePathResolver::resolve(...), $imageSizeGroup);
 
 // ページ番号の調整
 if (count($entry_arr) < $pageID) {
