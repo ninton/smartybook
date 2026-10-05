@@ -97,7 +97,6 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                 $options['ResponseGroup'] = 'Small';
                 $item_arr = [];
                 $message = $appAmazon->ItemLookup($mylist->getASINs(), $options, $item_arr);
-                $mylist->setItems($item_arr);
                 if ($mylist === null) {
                     die('file read error');
                 }
@@ -111,6 +110,10 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                     $smarty->assign('mylist', $mylist);
                     $smarty->display('pages/chapter5_6/admin_form.tpl');
                 } else {
+                    // リファクタリング中の暫定対応。不要になったら削除する
+                    if (isset($mylist->item_arr)) {
+                        unset($mylist->item_arr);
+                    }
                     $mylistmgr->write($mylist);
                     App::redirect('?show=preview&ListId=' . $_REQUEST['ListId']);
                 }

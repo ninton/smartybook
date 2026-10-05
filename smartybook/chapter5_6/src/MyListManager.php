@@ -50,7 +50,7 @@ class MyListManager
          * serialize形式は オブジェクトのFQDNを含むので、クラス名やディレクトリ構造を変更すると復元できない。
          */
         $mylist = unserialize($buf);
-        $mylist->item_arr    = array_slice($mylist->item_arr, 0, $this->max_items);
+        $mylist->detail_arr = array_slice($mylist->detail_arr, 0, $this->max_items);
 
         return $mylist;
     }
