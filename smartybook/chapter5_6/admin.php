@@ -6,7 +6,6 @@
  */
 
 use App\Smarty\AppSmarty;
-use SmartyBook\chapter5_6\src\App;
 use SmartyBook\chapter5_6\src\AppAmazon;
 use SmartyBook\chapter5_6\src\MyListManager;
 use SmartyBook\chapter5_6\src\SmartyPlugin\MbTruncateModifier;
@@ -18,23 +17,14 @@ require_once __DIR__ . '/config/config.php';
  * @var array<string, mixed> $CFG
  */
 
-// GET show=
-// GET show=form
-// GET show=preview
-// POST cmdPreview=
-// POST cmdSave
-// POST cmdForm=
-// POST cmdLoad=
-
-$show = '';
-if (isset($_GET['show'])) {
-    $show = $_GET['show'];
-}
+// GET action=preview プレビュー表示
+// GET action=form 入力フォーム表示
+// POST action=save 保存処理
+$action = $_REQUEST['action'] ?? 'preview';
 
 switch (strtolower($_SERVER['REQUEST_METHOD'])) {
     case 'get':
-        switch ($show) {
-            case '':
+        switch ($action) {
             case 'preview':
                 // ----- メイン処理・データ操作 -----
                 $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
@@ -82,8 +72,8 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
         break;
 
     case 'post':
-        switch (App::getCmd()) {
-            case 'cmdSave':
+        switch ($action) {
+            case 'save':
                 // ----- メイン処理・データ操作 -----
                 $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
                 $mylist = $mylistmgr->read();
@@ -110,7 +100,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                         unset($mylist->item_arr);
                     }
                     $mylistmgr->write($mylist);
-                    header('Location: ?show=preview');
+                    header('Location: ?action=preview');
                 }
                 break;
 
