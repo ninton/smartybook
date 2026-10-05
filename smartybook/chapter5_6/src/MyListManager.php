@@ -25,12 +25,11 @@ class MyListManager
     }
 
     /**
-     * @param string $i_ListId
      * @return MyList|null
      */
-    public function read(string $i_ListId): ?MyList
+    public function read(): ?MyList
     {
-        $path = $this->getPath($i_ListId);
+        $path = $this->getPath();
         if ($path === '') {
             return null;
         }
@@ -41,7 +40,6 @@ class MyListManager
         $buf = file_get_contents($path);
         if (!$buf) {
             $mylist = new MyList();
-            $mylist->ListId = $i_ListId;
             return $mylist;
         }
 
@@ -66,22 +64,17 @@ class MyListManager
          * serialize形式は オブジェクトのFQDNを含むので、クラス名やディレクトリ構造を変更すると復元できない。
          */
         $buf = serialize($i_MyList);
-        $path = $this->getPath($i_MyList->ListId);
+        $path = $this->getPath();
         if ($path !== '') {
             file_put_contents($path, $buf);
         }
     }
 
     /**
-     * @param string $i_ListId
      * @return string
      */
-    public function getPath(string $i_ListId): string
+    public function getPath(): string
     {
-        if (preg_match('/[^0-9A-Za-z]/', $i_ListId)) {
-            return '';
-        }
-
-        return sprintf('%s%s.txt', $this->dir, $i_ListId);
+        return sprintf('%s1.txt', $this->dir);
     }
 }

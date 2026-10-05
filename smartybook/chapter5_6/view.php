@@ -24,7 +24,7 @@ if (empty($_REQUEST['ListId'])) {
 
 // ----- メイン処理・データ操作 -----
 $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
-$mylist = $mylistmgr->read($_REQUEST['ListId']);
+$mylist = $mylistmgr->read();
 if ($mylist === null) {
     die('read error');
 }
