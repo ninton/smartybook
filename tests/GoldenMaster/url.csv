@@ -169,3 +169,6 @@ chapter5_5/complete,POST,http://localhost/smartybook/chapter5_5/complete.php,cat
 # chapter5_6
 chapter5_6/admin,GET,http://localhost/smartybook/chapter5_6/admin.php,
 chapter5_6/view,GET,http://localhost/smartybook/chapter5_6/view.php?ListId=1,
+chapter5_6/admin preview,GET,http://localhost/smartybook/chapter5_6/admin.php?show=preview,
+chapter5_6/admin form,GET,http://localhost/smartybook/chapter5_6/admin.php?show=form,
+chapter5_6/admin save,POST,http://localhost/smartybook/chapter5_6/admin.php,ListName=my-list&NickName=taro&cmdSave=1&detail_arr[0][ASIN]=4774127833&detail_arr[0][comment]=comment-0

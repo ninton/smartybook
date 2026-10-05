@@ -17,7 +17,7 @@
        "format:check": "php-cs-fixer fix --dry-run --config=.php-cs-fixer.dist.php --using-cache=no --allow-risky=yes",
        "format:fix": "php-cs-fixer fix --config=.php-cs-fixer.dist.php --using-cache=no --allow-risky=yes",
        "db:reset": "bash ./scripts/db_reset.sh",
-       "csv:reset": ["git checkout -- smartybook/*/data.csv", "chmod 0666 smartybook/*/data.csv"],
+       "csv:reset": ["git checkout -- smartybook/*/data.csv smartybook/chapter5_6/_write/mylist/1.txt", "chmod 0666 smartybook/*/data.csv smartybook/chapter5_6/_write/mylist/1.txt"],
        "lint": "phpstan analyse --configuration=phpstan.dist.neon --memory-limit=-1",
        "lint:baseline": "phpstan analyse --configuration=phpstan.dist.neon --memory-limit=-1 --generate-baseline=phpstan-baseline.neon  --allow-empty-baseline",
        "lint:fix": "phpstan analyse --configuration=phpstan.dist.neon --memory-limit=-1 --fix",
