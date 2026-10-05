@@ -53,7 +53,9 @@
     },
     "require-dev": {
         "ext-bcmath": "*",
+        "ext-curl": "*",
         "ext-intl": "*",
+        "ext-libxml": "*",
         "friendsofphp/php-cs-fixer": "^3.95",
         "maglnet/composer-require-checker": "^4.24",
         "phpstan/phpstan": "^2.2",
