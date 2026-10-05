@@ -17,6 +17,7 @@
     {/if}
 
     <form action="{$smarty.server.SCRIPT_NAME|escape:html}" method="post">
+        <input type="hidden" name="action" value="save" />
         <table class="listMeta" cellspacing="2">
             <tr>
                 <th>リスト名</th>
@@ -54,8 +55,8 @@
             {/section}
         </table>
         <div id="btn">
-            <input class="button" type="submit" name="cmdSave"   value="保存" />
-            <input class="button" type="button" value="キャンセル" onclick="location.href='?show=preview'" />
+            <input class="button" type="submit" value="保存" />
+            <input class="button" type="button" value="キャンセル" onclick="location.href='?action=preview'" />
         </div>
     </form>
 </div>

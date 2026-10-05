@@ -51,7 +51,7 @@
     </table>
     <div id="btn">
         <form action="{$smarty.server.SCRIPT_NAME|escape:html}" method="get">
-            <input type="hidden" name="show"   value="form" />
+            <input type="hidden" name="action" value="form" />
             <input class="button" type="submit" value="編集" />
         </form>
     </div>
