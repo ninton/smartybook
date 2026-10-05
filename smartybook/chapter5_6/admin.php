@@ -114,10 +114,6 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                 }
                 break;
 
-            case 'cmdCancel':
-                header('Location: ?show=preview');
-                break;
-
             default:
                 break;
         }
