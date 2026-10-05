@@ -55,7 +55,7 @@
         </table>
         <div id="btn">
             <input class="button" type="submit" name="cmdSave"   value="保存" />
-            <input class="button" type="submit" name="cmdCancel" value="キャンセル" />
+            <input class="button" type="button" value="キャンセル" onclick="location.href='?show=preview'" />
         </div>
     </form>
 </div>
