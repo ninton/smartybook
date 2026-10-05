@@ -74,14 +74,14 @@ function save(array $CFG, array $postVars): void
     // ----- メイン処理・データ操作 -----
     $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
     $mylist = $mylistmgr->read();
+    if ($mylist === null) {
+        die('file read error');
+    }
     $mylist->input($postVars);
     $appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['secret_access_key'], $CFG['associate_tag']);
     $options['ResponseGroup'] = 'Small';
     $item_arr = [];
     $message = $appAmazon->ItemLookup($mylist->getASINs(), $options, $item_arr);
-    if ($mylist === null) {
-        die('file read error');
-    }
 
     if ($message != '') {
         // ----- テンプレートエンジンの初期化とアサイン・描画 -----
