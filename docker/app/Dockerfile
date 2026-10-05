@@ -24,6 +24,8 @@ RUN set -x \
         libicu-dev \
         # intl xml関数で必要 \
         libxml2-dev \
+        # composer installで必要 \
+        unzip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install -j"$(nproc)" \
         # composer-require-checker ^4.18 で必要 \
