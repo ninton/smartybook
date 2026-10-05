@@ -7,7 +7,7 @@
 </div>
 <div id="beta">
     <h1>マイリスト(プレビュー)</h1>
-    <p><a class="button" href="view.php?ListId={$mylist->ListId|escape:html}" target="_blank">公開ページを確認</a></p>
+    <p><a class="button" href="view.php?ListId=1" target="_blank">公開ページを確認</a></p>
 
     {if $message }
     <div class="message">{$message|escape:html}</div>
@@ -52,7 +52,7 @@
     <div id="btn">
         <form action="{$smarty.server.SCRIPT_NAME|escape:html}" method="get">
             <input type="hidden" name="show"   value="form" />
-            <input type="hidden" name="ListId" value="{$mylist->ListId|escape:html}" />
+            <input type="hidden" name="ListId" value="1" />
             <input class="button" type="submit" value="編集" />
         </form>
     </div>

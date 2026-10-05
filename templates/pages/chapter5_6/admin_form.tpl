@@ -17,7 +17,7 @@
     {/if}
 
     <form action="{$smarty.server.SCRIPT_NAME|escape:html}" method="post">
-        <input type="hidden" name="ListId" value="{$mylist->ListId|escape:html}" />
+        <input type="hidden" name="ListId" value="1" />
         
         <table class="listMeta" cellspacing="2">
             <tr>
