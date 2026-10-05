@@ -5,8 +5,6 @@ namespace SmartyBook\chapter5_6\src;
 class MyList
 {
     /** @var string */
-    public string $ListId;
-    /** @var string */
     public string $ListName;
     /** @var string */
     public string $NickName;
@@ -15,7 +13,6 @@ class MyList
 
     public function __construct()
     {
-        $this->ListId     = '';
         $this->ListName   = '';
         $this->NickName   = '';
         $this->detail_arr = [];

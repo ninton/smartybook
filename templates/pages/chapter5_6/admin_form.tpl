@@ -17,8 +17,6 @@
     {/if}
 
     <form action="{$smarty.server.SCRIPT_NAME|escape:html}" method="post">
-        <input type="hidden" name="ListId" value="{$mylist->ListId|escape:html}" />
-        
         <table class="listMeta" cellspacing="2">
             <tr>
                 <th>リスト名</th>

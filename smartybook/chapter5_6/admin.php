@@ -36,14 +36,9 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
         switch ($show) {
             case '':
             case 'preview':
-                // ----- 入力値受取・前処理 -----
-                if (empty($_REQUEST['ListId'])) {
-                    $_REQUEST['ListId'] = 1;
-                }
-
                 // ----- メイン処理・データ操作 -----
                 $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
-                $mylist = $mylistmgr->read($_REQUEST['ListId']);
+                $mylist = $mylistmgr->read();
                 if ($mylist === null) {
                     die('file read error');
                 }
@@ -67,7 +62,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                 // ----- メイン処理・データ操作 -----
                 $message = '';
                 $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
-                $mylist = $mylistmgr->read($_REQUEST['ListId']);
+                $mylist = $mylistmgr->read();
                 if ($mylist === null) {
                     die('file read error');
                 }
@@ -91,7 +86,7 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
             case 'cmdSave':
                 // ----- メイン処理・データ操作 -----
                 $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
-                $mylist = $mylistmgr->read($_REQUEST['ListId']);
+                $mylist = $mylistmgr->read();
                 $mylist->input($_POST);
                 $appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['secret_access_key'], $CFG['associate_tag']);
                 $options['ResponseGroup'] = 'Small';
@@ -115,12 +110,12 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                         unset($mylist->item_arr);
                     }
                     $mylistmgr->write($mylist);
-                    App::redirect('?show=preview&ListId=' . $_REQUEST['ListId']);
+                    App::redirect('?show=preview');
                 }
                 break;
 
             case 'cmdCancel':
-                App::redirect('?show=preview&ListId=' . $_REQUEST['ListId']);
+                App::redirect('?show=preview');
                 break;
 
             default:
