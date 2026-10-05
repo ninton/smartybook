@@ -6,7 +6,6 @@
  */
 
 use App\Smarty\AppSmarty;
-use SmartyBook\chapter5_6\src\App;
 use SmartyBook\chapter5_6\src\AppAmazon;
 use SmartyBook\chapter5_6\src\MyListManager;
 use SmartyBook\chapter5_6\src\SmartyPlugin\MbTruncateModifier;
