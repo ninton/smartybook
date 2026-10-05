@@ -110,12 +110,12 @@ switch (strtolower($_SERVER['REQUEST_METHOD'])) {
                         unset($mylist->item_arr);
                     }
                     $mylistmgr->write($mylist);
-                    App::redirect('?show=preview');
+                    header('Location: ?show=preview');
                 }
                 break;
 
             case 'cmdCancel':
-                App::redirect('?show=preview');
+                header('Location: ?show=preview');
                 break;
 
             default:
