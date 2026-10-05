@@ -17,14 +17,9 @@ require_once __DIR__ . '/config/config.php';
  * @var array<string, mixed> $CFG
  */
 
-// GET show=
-// GET show=form
-// GET show=preview
-// POST cmdPreview=
-// POST cmdSave
-// POST cmdForm=
-// POST cmdLoad=
-
+// GET action=preview プレビュー表示
+// GET action=form 入力フォーム表示
+// POST action=save 保存処理
 $action = $_REQUEST['action'] ?? 'preview';
 
 switch (strtolower($_SERVER['REQUEST_METHOD'])) {
