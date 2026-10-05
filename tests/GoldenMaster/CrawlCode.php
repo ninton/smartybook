@@ -51,7 +51,7 @@ final class CrawlCode
 
         try {
             $csvArr = [];
-            while ($row = fgetcsv($fp, null, ',', '"', '\\')) {
+            while ($row = fgetcsv($fp, escape: '')) {
                 $csvArr[] = $row;
             }
         } finally {
