@@ -19,19 +19,6 @@ class App
     }
 
     /**
-     * @param string $i_qs
-     * @return void
-     */
-    public static function redirect(string $i_qs = ''): void
-    {
-        $scheme = empty($_SERVER['HTTPS']) ? 'http' : 'https';
-        $host = $_SERVER['HTTP_HOST'];
-        $path = $_SERVER['REQUEST_URI'];
-        $url = "$scheme://$host$path$i_qs";
-        header("Location: $url");
-    }
-
-    /**
      * @return string
      */
     public static function getCmd(): string
