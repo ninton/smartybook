@@ -108,7 +108,15 @@ function save(array $CFG, array $postVars): void
 // GET action=preview プレビュー表示
 // GET action=form 入力フォーム表示
 // POST action=save 保存処理
-$action = $_REQUEST['action'] ?? 'preview';
+$rawAction = $_REQUEST['action'] ?? null;
+
+// 未指定(null)の場合は 'preview'、文字列の場合はそのまま、配列等は null扱い
+$action = match (true) {
+    $rawAction === null => 'preview',
+    is_string($rawAction) => $rawAction,
+    default => null,
+};
+
 $method = strtolower($_SERVER['REQUEST_METHOD']);
 
 switch ("$method.$action") {
