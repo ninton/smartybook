@@ -22,7 +22,7 @@ $config = require_once __DIR__ . '/config/config.php';
 function preview(array $config): void
 {
     // ----- メイン処理・データ操作 -----
-    $myListRepository = new MyListRepository($config['max_items'], $config['mylist_dir']);
+    $myListRepository = new MyListRepository($config['max_items'], $config['my_list_dir']);
     $myList = $myListRepository->read();
     if ($myList === null) {
         die('file read error');
@@ -50,7 +50,7 @@ function form(array $config): void
 {
     // ----- メイン処理・データ操作 -----
     $message = '';
-    $myListRepository = new MyListRepository($config['max_items'], $config['mylist_dir']);
+    $myListRepository = new MyListRepository($config['max_items'], $config['my_list_dir']);
     $myList = $myListRepository->read();
     if ($myList === null) {
         die('file read error');
@@ -72,7 +72,7 @@ function form(array $config): void
 function save(array $config, array $postVars): void
 {
     // ----- メイン処理・データ操作 -----
-    $myListRepository = new MyListRepository($config['max_items'], $config['mylist_dir']);
+    $myListRepository = new MyListRepository($config['max_items'], $config['my_list_dir']);
     $myList = $myListRepository->read();
     if ($myList === null) {
         die('file read error');

@@ -19,5 +19,5 @@ return [
     'associate_tag' => '********************',
 
     // ファイル、ディレクトリ
-    'mylist_dir' => dirname(__DIR__, 1) . '/_write/mylist/',
+    'my_list_dir' => dirname(__DIR__, 1) . '/_write/mylist/',
 ];
