@@ -35,7 +35,7 @@
                 <th>コメント</th>
             </tr>
 
-            {section name=i loop=$CFG.max_items}
+            {section name=i loop=$max_items}
             <tr>
                 <td>{$smarty.section.i.iteration|escape:html}</td>
                 <td>

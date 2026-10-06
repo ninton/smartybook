@@ -37,7 +37,6 @@ function preview(array $config): void
     // ----- テンプレートエンジンの初期化とアサイン・描画 -----
     $smarty = new AppSmarty();
     $smarty->registerPlugin('modifier', 'mb_truncate', MbTruncateModifier::truncate(...));
-    $smarty->assign('CFG', $config);
     $smarty->assign('message', $message);
     $smarty->assign('myList', $myList);
     $smarty->display('pages/chapter5_6/admin_preview.tpl');
@@ -59,7 +58,7 @@ function form(array $config): void
     // ----- テンプレートエンジンの初期化とアサイン・描画 -----
     $smarty = new AppSmarty();
     $smarty->registerPlugin('modifier', 'mb_truncate', MbTruncateModifier::truncate(...));
-    $smarty->assign('CFG', $config);
+    $smarty->assign('max_items', $config['max_items']);
     $smarty->assign('message', $message);
     $smarty->assign('myList', $myList);
     $smarty->display('pages/chapter5_6/admin_form.tpl');
@@ -87,7 +86,7 @@ function save(array $config, array $postVars): void
         // ----- テンプレートエンジンの初期化とアサイン・描画 -----
         $smarty = new AppSmarty();
         $smarty->registerPlugin('modifier', 'mb_truncate', MbTruncateModifier::truncate(...));
-        $smarty->assign('CFG', $config);
+        $smarty->assign('max_items', $config['max_items']);
         $smarty->assign('message', $message);
         $smarty->assign('myList', $myList);
         $smarty->display('pages/chapter5_6/admin_form.tpl');
