@@ -47,7 +47,7 @@ class AppAmazon
     {
         $ASIN_arr = explode(',', $i_ASINs);
 
-        // $ASIN_arrから10個づつ問合わせして、$item_arrに蓄積する
+        // $ASIN_arrから10個づつ問合わせして、$itemArrに蓄積する
         $itemArr = [];
         $asin_arr_cnt = count($ASIN_arr);
         for ($i = 0; $i < $asin_arr_cnt; $i += 10) {
