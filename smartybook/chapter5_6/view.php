@@ -18,8 +18,8 @@ require_once __DIR__ . '/config/config.php';
  */
 
 // ----- メイン処理・データ操作 -----
-$mylistmgr = new MyListRepository($CFG['max_items'], $CFG['mylist_dir']);
-$myList = $mylistmgr->read();
+$myListRepository = new MyListRepository($CFG['max_items'], $CFG['mylist_dir']);
+$myList = $myListRepository->read();
 if ($myList === null) {
     die('read error');
 }
