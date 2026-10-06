@@ -29,10 +29,10 @@ function preview(array $config): void
         die('file read error');
     }
 
-    $appAmazon = new AmazonServicesWrapper(new ServicesAmazonStub($config['access_key_id'], $config['secret_access_key'], $config['associate_tag']));
+    $amazonServicesWrapper = new AmazonServicesWrapper(new ServicesAmazonStub($config['access_key_id'], $config['secret_access_key'], $config['associate_tag']));
     $options['ResponseGroup'] = 'Medium';
     $itemArr = [];
-    $message = $appAmazon->ItemLookup($myList->getASINs(), $options, $itemArr);
+    $message = $amazonServicesWrapper->ItemLookup($myList->getASINs(), $options, $itemArr);
     $myList->setItems($itemArr);
 
     // ----- テンプレートエンジンの初期化とアサイン・描画 -----
@@ -78,10 +78,10 @@ function save(array $config, array $postVars): void
         die('file read error');
     }
     $myList->input($postVars);
-    $appAmazon = new AmazonServicesWrapper(new ServicesAmazonStub($config['access_key_id'], $config['secret_access_key'], $config['associate_tag']));
+    $amazonServicesWrapper = new AmazonServicesWrapper(new ServicesAmazonStub($config['access_key_id'], $config['secret_access_key'], $config['associate_tag']));
     $options['ResponseGroup'] = 'Small';
     $itemArr = [];
-    $message = $appAmazon->ItemLookup($myList->getASINs(), $options, $itemArr);
+    $message = $amazonServicesWrapper->ItemLookup($myList->getASINs(), $options, $itemArr);
 
     if ($message != '') {
         // ----- テンプレートエンジンの初期化とアサイン・描画 -----
