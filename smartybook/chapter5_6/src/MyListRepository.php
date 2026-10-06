@@ -15,13 +15,13 @@ class MyListRepository
     private string $dir;
 
     /**
-     * @param int $i_max_items
-     * @param string $i_dir
+     * @param int $max_items
+     * @param string $dir
      */
-    public function __construct(int $i_max_items, string $i_dir)
+    public function __construct(int $max_items, string $dir)
     {
-        $this->max_items = $i_max_items;
-        $this->dir = $i_dir;
+        $this->max_items = $max_items;
+        $this->dir = $dir;
     }
 
     /**
@@ -54,16 +54,16 @@ class MyListRepository
     }
 
     /**
-     * @param MyList $i_MyList
+     * @param MyList $MyList
      * @return void
      */
-    public function write(MyList $i_MyList): void
+    public function write(MyList $MyList): void
     {
         /**
          * @fixme MyListオブジェクトを連想配列やスカラー値に変換し、json_encode()で保存したい
          * serialize形式は オブジェクトのFQDNを含むので、クラス名やディレクトリ構造を変更すると復元できない。
          */
-        $buf = serialize($i_MyList);
+        $buf = serialize($MyList);
         $path = $this->getPath();
         if ($path !== '') {
             file_put_contents($path, $buf);
