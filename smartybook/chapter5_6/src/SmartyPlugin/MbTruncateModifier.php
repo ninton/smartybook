@@ -20,17 +20,15 @@ final class MbTruncateModifier
      */
     public static function truncate(string $i_string, int $i_length = 40, string $i_etc = '...'): string
     {
-        $string = '';
-
         if ($i_length == 0) {
-            $string = '';
+            $result = '';
         } elseif (strlen($i_string) < $i_length) {
-            $string = $i_string;
+            $result = $i_string;
         } else {
             $length = $i_length - min($i_length, strlen($i_etc));
-            $string = mb_substr($i_string, 0, $length) . $i_etc;
+            $result = mb_substr($i_string, 0, $length) . $i_etc;
         }
 
-        return $string;
+        return $result;
     }
 }
