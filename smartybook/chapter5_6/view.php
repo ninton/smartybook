@@ -31,7 +31,7 @@ $myList->setItems($itemArr);
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new AppSmarty();
 $smarty->registerPlugin('modifier', 'mb_truncate', MbTruncateModifier::truncate(...));
-$smarty->assign('CFG', $config);
+$smarty->assign('config', $config);
 $smarty->assign('message', $message);
 $smarty->assign('myList', $myList);
 $smarty->display('pages/chapter5_6/view.tpl');
