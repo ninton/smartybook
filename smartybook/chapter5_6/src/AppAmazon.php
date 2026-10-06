@@ -29,11 +29,11 @@ class AppAmazon
         $ASINs = '12345,23456,34567';
         $options['ResponseGroup'] = 'Medium';
         $errmsg = $amazon->ItemLookup( $ASINs, $options, &$itemArr ) {
-        print_r( $Item_arr );
+        print_r( $itemArr );
 
-        $Item_arr[0]    ASIN「12345」のItem情報
-        $Item_arr[2]    ASIN「23456」のItem情報
-        $Item_arr[3]    ASIN「34567」のItem情報
+        $itemArr[0]    ASIN「12345」のItem情報
+        $itemArr[2]    ASIN「23456」のItem情報
+        $itemArr[3]    ASIN「34567」のItem情報
     */
     // ItemLookupで書籍掲載しているので、itemLookupではなく、ItemLookupのままとすることにした。
     /**
