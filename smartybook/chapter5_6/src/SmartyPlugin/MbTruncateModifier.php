@@ -13,24 +13,22 @@ final class MbTruncateModifier
      * Name:     mb_truncate<br>
      * Purpose:  Truncate a string to a certain length if necessary,
      *           optionally appending the $etc string.
-     * @param string $i_string
-     * @param int $i_length
-     * @param string $i_etc
+     * @param string $string
+     * @param int $length
+     * @param string $etc
      * @return string
      */
-    public static function truncate(string $i_string, int $i_length = 40, string $i_etc = '...'): string
+    public static function truncate(string $string, int $length = 40, string $etc = '...'): string
     {
-        $string = '';
-
-        if ($i_length == 0) {
-            $string = '';
-        } elseif (strlen($i_string) < $i_length) {
-            $string = $i_string;
+        if ($length == 0) {
+            $result = '';
+        } elseif (strlen($string) < $length) {
+            $result = $string;
         } else {
-            $length = $i_length - min($i_length, strlen($i_etc));
-            $string = mb_substr($i_string, 0, $length) . $i_etc;
+            $length = $length - min($length, strlen($etc));
+            $result = mb_substr($string, 0, $length) . $etc;
         }
 
-        return $string;
+        return $result;
     }
 }
