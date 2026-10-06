@@ -19,14 +19,14 @@ class MyList
     }
 
     /**
-     * @param array{ListName: string, NickName: string, detail_arr: list<array{ASIN: string, Item?: mixed}>} $i_vars
+     * @param array{ListName: string, NickName: string, detail_arr: list<array{ASIN: string, Item?: mixed}>} $vars
      * @return void
      */
-    public function input(array $i_vars): void
+    public function input(array $vars): void
     {
-        $this->ListName   = $i_vars['ListName'];
-        $this->NickName   = $i_vars['NickName'];
-        $this->detail_arr = $i_vars['detail_arr'];
+        $this->ListName   = $vars['ListName'];
+        $this->NickName   = $vars['NickName'];
+        $this->detail_arr = $vars['detail_arr'];
     }
 
     /**
