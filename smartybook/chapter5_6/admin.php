@@ -23,23 +23,23 @@ function preview(array $CFG): void
 {
     // ----- メイン処理・データ操作 -----
     $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
-    $mylist = $mylistmgr->read();
-    if ($mylist === null) {
+    $myList = $mylistmgr->read();
+    if ($myList === null) {
         die('file read error');
     }
 
     $appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['secret_access_key'], $CFG['associate_tag']);
     $options['ResponseGroup'] = 'Medium';
     $Item_arr = [];
-    $message = $appAmazon->ItemLookup($mylist->getASINs(), $options, $Item_arr);
-    $mylist->setItems($Item_arr);
+    $message = $appAmazon->ItemLookup($myList->getASINs(), $options, $Item_arr);
+    $myList->setItems($Item_arr);
 
     // ----- テンプレートエンジンの初期化とアサイン・描画 -----
     $smarty = new AppSmarty();
     $smarty->registerPlugin('modifier', 'mb_truncate', MbTruncateModifier::truncate(...));
     $smarty->assign('CFG', $CFG);
     $smarty->assign('message', $message);
-    $smarty->assign('mylist', $mylist);
+    $smarty->assign('mylist', $myList);
     $smarty->display('pages/chapter5_6/admin_preview.tpl');
 }
 
@@ -51,8 +51,8 @@ function form(array $CFG): void
     // ----- メイン処理・データ操作 -----
     $message = '';
     $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
-    $mylist = $mylistmgr->read();
-    if ($mylist === null) {
+    $myList = $mylistmgr->read();
+    if ($myList === null) {
         die('file read error');
     }
 
@@ -61,7 +61,7 @@ function form(array $CFG): void
     $smarty->registerPlugin('modifier', 'mb_truncate', MbTruncateModifier::truncate(...));
     $smarty->assign('CFG', $CFG);
     $smarty->assign('message', $message);
-    $smarty->assign('mylist', $mylist);
+    $smarty->assign('mylist', $myList);
     $smarty->display('pages/chapter5_6/admin_form.tpl');
 }
 
@@ -73,15 +73,15 @@ function save(array $CFG, array $postVars): void
 {
     // ----- メイン処理・データ操作 -----
     $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
-    $mylist = $mylistmgr->read();
-    if ($mylist === null) {
+    $myList = $mylistmgr->read();
+    if ($myList === null) {
         die('file read error');
     }
-    $mylist->input($postVars);
+    $myList->input($postVars);
     $appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['secret_access_key'], $CFG['associate_tag']);
     $options['ResponseGroup'] = 'Small';
     $item_arr = [];
-    $message = $appAmazon->ItemLookup($mylist->getASINs(), $options, $item_arr);
+    $message = $appAmazon->ItemLookup($myList->getASINs(), $options, $item_arr);
 
     if ($message != '') {
         // ----- テンプレートエンジンの初期化とアサイン・描画 -----
@@ -89,14 +89,14 @@ function save(array $CFG, array $postVars): void
         $smarty->registerPlugin('modifier', 'mb_truncate', MbTruncateModifier::truncate(...));
         $smarty->assign('CFG', $CFG);
         $smarty->assign('message', $message);
-        $smarty->assign('mylist', $mylist);
+        $smarty->assign('mylist', $myList);
         $smarty->display('pages/chapter5_6/admin_form.tpl');
     } else {
         // リファクタリング中の暫定対応。不要になったら削除する
-        if (isset($mylist->item_arr)) {
-            unset($mylist->item_arr);
+        if (isset($myList->item_arr)) {
+            unset($myList->item_arr);
         }
-        $mylistmgr->write($mylist);
+        $mylistmgr->write($myList);
         header('Location: ?action=preview');
     }
 }
