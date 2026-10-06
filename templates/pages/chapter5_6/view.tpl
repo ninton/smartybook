@@ -9,11 +9,11 @@
 <div id="beta">
     <h1>
         （2020年3月で本プログラムが使っているAmazon_ECSのAPIは廃止となりました。代わりにダミーデータを表示します）<br>
-        {$mylist->ListName|escape:html} - {$mylist->NickName|escape:html}
+        {$myList->ListName|escape:html} - {$myList->NickName|escape:html}
     </h1>
 
     <table class="list" cellspacing="0">
-        {foreach name=f from=$mylist->detail_arr key=i item=detail}
+        {foreach name=f from=$myList->detail_arr key=i item=detail}
             {if $detail.ASIN != '' || $detail.comment != ''}
                 <tr>
 
