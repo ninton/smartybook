@@ -17,11 +17,6 @@ require_once __DIR__ . '/config/config.php';
  * @var array<string, mixed> $CFG
  */
 
-// ----- 入力値受取・前処理 -----
-if (empty($_REQUEST['ListId'])) {
-    $_REQUEST['ListId'] = 1;
-}
-
 // ----- メイン処理・データ操作 -----
 $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
 $mylist = $mylistmgr->read();
