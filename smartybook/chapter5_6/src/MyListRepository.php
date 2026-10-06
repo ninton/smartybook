@@ -39,8 +39,7 @@ class MyListRepository
 
         $buf = file_get_contents($path);
         if (!$buf) {
-            $mylist = new MyList();
-            return $mylist;
+            return new MyList();
         }
 
         /**
@@ -48,9 +47,12 @@ class MyListRepository
          * serialize形式は オブジェクトのFQDNを含むので、クラス名やディレクトリ構造を変更すると復元できない。
          */
         $mylist = unserialize($buf);
-        $mylist->detail_arr = array_slice($mylist->detail_arr, 0, $this->max_items);
 
-        return $mylist;
+        return new MyList(
+            $mylist->ListName,
+            $mylist->NickName,
+            array_slice($mylist->detail_arr, 0, $this->max_items),
+        );
     }
 
     /**

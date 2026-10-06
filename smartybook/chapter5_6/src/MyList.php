@@ -1,32 +1,19 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SmartyBook\chapter5_6\src;
 
-class MyList
+final readonly class MyList
 {
-    /** @var string */
-    public string $ListName;
-    /** @var string */
-    public string $NickName;
-    /** @var list<array{ASIN: string, comment: string}> */
-    public array $detail_arr;
-
-    public function __construct()
-    {
-        $this->ListName   = '';
-        $this->NickName   = '';
-        $this->detail_arr = [];
-    }
-
     /**
-     * @param array{ListName: string, NickName: string, detail_arr: list<array{ASIN: string, comment: string}>} $vars
-     * @return void
+     * @param list<array{ASIN: string, comment: string}> $detail_arr
      */
-    public function input(array $vars): void
-    {
-        $this->ListName   = $vars['ListName'];
-        $this->NickName   = $vars['NickName'];
-        $this->detail_arr = $vars['detail_arr'];
+    public function __construct(
+        public string $ListName = '',
+        public string $NickName = '',
+        public array $detail_arr = [],
+    ) {
     }
 
     /**
