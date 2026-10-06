@@ -91,10 +91,6 @@ function save(array $config, array $postVars): void
         $smarty->assign('myList', $myList);
         $smarty->display('pages/chapter5_6/admin_form.tpl');
     } else {
-        // リファクタリング中の暫定対応。不要になったら削除する
-        if (isset($myList->item_arr)) {
-            unset($myList->item_arr);
-        }
         $myListRepository->write($myList);
         header('Location: ?action=preview');
     }
