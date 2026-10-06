@@ -22,8 +22,8 @@ require_once __DIR__ . '/config/config.php';
 function preview(array $CFG): void
 {
     // ----- メイン処理・データ操作 -----
-    $mylistmgr = new MyListRepository($CFG['max_items'], $CFG['mylist_dir']);
-    $myList = $mylistmgr->read();
+    $myListRepository = new MyListRepository($CFG['max_items'], $CFG['mylist_dir']);
+    $myList = $myListRepository->read();
     if ($myList === null) {
         die('file read error');
     }
@@ -50,8 +50,8 @@ function form(array $CFG): void
 {
     // ----- メイン処理・データ操作 -----
     $message = '';
-    $mylistmgr = new MyListRepository($CFG['max_items'], $CFG['mylist_dir']);
-    $myList = $mylistmgr->read();
+    $myListRepository = new MyListRepository($CFG['max_items'], $CFG['mylist_dir']);
+    $myList = $myListRepository->read();
     if ($myList === null) {
         die('file read error');
     }
@@ -72,8 +72,8 @@ function form(array $CFG): void
 function save(array $CFG, array $postVars): void
 {
     // ----- メイン処理・データ操作 -----
-    $mylistmgr = new MyListRepository($CFG['max_items'], $CFG['mylist_dir']);
-    $myList = $mylistmgr->read();
+    $myListRepository = new MyListRepository($CFG['max_items'], $CFG['mylist_dir']);
+    $myList = $myListRepository->read();
     if ($myList === null) {
         die('file read error');
     }
@@ -96,7 +96,7 @@ function save(array $CFG, array $postVars): void
         if (isset($myList->item_arr)) {
             unset($myList->item_arr);
         }
-        $mylistmgr->write($myList);
+        $myListRepository->write($myList);
         header('Location: ?action=preview');
     }
 }
