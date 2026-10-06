@@ -20,7 +20,7 @@
  *
  * ### リファクタリング解説ポイント
  * 1. **クラス名（AppAmazon ➔ AmazonServicesWrapper）**
- * - 「App〜」という曖昧な名前を配し、`ServicesAmazon` の制約（10件分割リクエスト等）を
+ * - 「App〜」という曖昧な名前を廃し、`ServicesAmazon` の制約（10件分割リクエスト等）を
  * 吸収するための薄いラッパー（Wrapper）であることを明確にしました。
  *
  * 2. **メソッド名（ItemLookup を維持）**
