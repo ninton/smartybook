@@ -11,16 +11,16 @@ use SmartyBook\chapter5_6\src\MyListRepository;
 use SmartyBook\chapter5_6\src\SmartyPlugin\MbTruncateModifier;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
-$CFG = require_once __DIR__ . '/config/config.php';
+$config = require_once __DIR__ . '/config/config.php';
 
 // ----- メイン処理・データ操作 -----
-$myListRepository = new MyListRepository($CFG['max_items'], $CFG['mylist_dir']);
+$myListRepository = new MyListRepository($config['max_items'], $config['mylist_dir']);
 $myList = $myListRepository->read();
 if ($myList === null) {
     die('read error');
 }
 
-$appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['secret_access_key'], $CFG['associate_tag']);
+$appAmazon = new AppAmazon($config['access_key_id'], $config['secret_access_key'], $config['associate_tag']);
 
 $options['ResponseGroup'] = 'Medium';
 $itemArr = [];
@@ -31,7 +31,7 @@ $myList->setItems($itemArr);
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new AppSmarty();
 $smarty->registerPlugin('modifier', 'mb_truncate', MbTruncateModifier::truncate(...));
-$smarty->assign('CFG', $CFG);
+$smarty->assign('CFG', $config);
 $smarty->assign('message', $message);
 $smarty->assign('mylist', $myList);
 $smarty->display('pages/chapter5_6/view.tpl');
