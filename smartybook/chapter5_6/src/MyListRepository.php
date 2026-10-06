@@ -2,7 +2,7 @@
 
 namespace SmartyBook\chapter5_6\src;
 
-class MyListManager
+class MyListRepository
 {
     /**
      * @var int
