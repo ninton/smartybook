@@ -7,6 +7,7 @@ namespace SmartyBook\chapter5_6;
  * スタブに置き換えています
  */
 
+use App\PearStub\ServicesAmazonStub;
 use App\Smarty\AppSmarty;
 use SmartyBook\chapter5_6\src\AppAmazon;
 use SmartyBook\chapter5_6\src\MyListRepository;
@@ -28,7 +29,7 @@ function preview(array $config): void
         die('file read error');
     }
 
-    $appAmazon = new AppAmazon($config['access_key_id'], $config['secret_access_key'], $config['associate_tag']);
+    $appAmazon = new AppAmazon(new ServicesAmazonStub($config['access_key_id'], $config['secret_access_key'], $config['associate_tag']));
     $options['ResponseGroup'] = 'Medium';
     $itemArr = [];
     $message = $appAmazon->ItemLookup($myList->getASINs(), $options, $itemArr);
@@ -77,7 +78,7 @@ function save(array $config, array $postVars): void
         die('file read error');
     }
     $myList->input($postVars);
-    $appAmazon = new AppAmazon($config['access_key_id'], $config['secret_access_key'], $config['associate_tag']);
+    $appAmazon = new AppAmazon(new ServicesAmazonStub($config['access_key_id'], $config['secret_access_key'], $config['associate_tag']));
     $options['ResponseGroup'] = 'Small';
     $itemArr = [];
     $message = $appAmazon->ItemLookup($myList->getASINs(), $options, $itemArr);

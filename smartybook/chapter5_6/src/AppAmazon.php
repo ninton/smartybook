@@ -9,26 +9,16 @@ namespace SmartyBook\chapter5_6\src;
 
 use App\PearStub\ServicesAmazonStub;
 
-class AppAmazon
+final readonly class AppAmazon
 {
-    private ServicesAmazonStub $amazon;
-
-    /**
-     * @param string $access_key_id
-     * @param string $secret_access_key
-     * @param string $associate_tag
-     * @return void
-     */
-    public function __construct(string $access_key_id, string $secret_access_key, string $associate_tag)
+    public function __construct(private ServicesAmazonStub $servicesAmazonStub)
     {
-        $amazon = new ServicesAmazonStub($access_key_id, $secret_access_key, $associate_tag);
-        $this->amazon = $amazon;
     }
 
     /*
         $ASINs = '12345,23456,34567';
         $options['ResponseGroup'] = 'Medium';
-        $errmsg = $amazon->ItemLookup( $ASINs, $options, &$itemArr ) {
+        $errmsg = $servicesAmazon->ItemLookup( $ASINs, $options, &$itemArr ) {
         print_r( $itemArr );
 
         $itemArr[0]    ASIN「12345」のItem情報
@@ -53,7 +43,7 @@ class AppAmazon
         for ($i = 0; $i < $asin_arr_cnt; $i += 10) {
             $slicedASINs = join(',', array_slice($ASIN_arr, $i, 10));
             if ($slicedASINs != '') {
-                $result = $this->amazon->ItemLookup($slicedASINs, $options);
+                $result = $this->servicesAmazonStub->ItemLookup($slicedASINs, $options);
 
                 $itemArr = array_merge($itemArr, $result['Item']);
             }
