@@ -11,6 +11,7 @@ use App\PearStub\ServicesAmazonStub;
 use App\Smarty\AppSmarty;
 use SmartyBook\chapter5_6\src\AmazonServicesWrapper;
 use SmartyBook\chapter5_6\src\MyListRepository;
+use SmartyBook\chapter5_6\src\MyListViewModel;
 use SmartyBook\chapter5_6\src\SmartyPlugin\MbTruncateModifier;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
@@ -33,13 +34,13 @@ function preview(array $config): void
     $options['ResponseGroup'] = 'Medium';
     $itemArr = [];
     $message = $amazonServicesWrapper->ItemLookup($myList->getASINs(), $options, $itemArr);
-    $myList->setItems($itemArr);
+    $myListViewModel = MyListViewModel::create($myList, $itemArr);
 
     // ----- テンプレートエンジンの初期化とアサイン・描画 -----
     $smarty = new AppSmarty();
     $smarty->registerPlugin('modifier', 'mb_truncate', MbTruncateModifier::truncate(...));
     $smarty->assign('message', $message);
-    $smarty->assign('myList', $myList);
+    $smarty->assign('myList', $myListViewModel);
     $smarty->display('pages/chapter5_6/admin_preview.tpl');
 }
 

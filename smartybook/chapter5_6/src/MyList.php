@@ -8,7 +8,7 @@ class MyList
     public string $ListName;
     /** @var string */
     public string $NickName;
-    /** @var list<array{ASIN: string, Item?: mixed}> */
+    /** @var list<array{ASIN: string, comment: string}> */
     public array $detail_arr;
 
     public function __construct()
@@ -19,7 +19,7 @@ class MyList
     }
 
     /**
-     * @param array{ListName: string, NickName: string, detail_arr: list<array{ASIN: string, Item?: mixed}>} $vars
+     * @param array{ListName: string, NickName: string, detail_arr: list<array{ASIN: string, comment: string}>} $vars
      * @return void
      */
     public function input(array $vars): void
@@ -44,25 +44,5 @@ class MyList
         }
 
         return join(',', array_keys($map));
-    }
-
-    /**
-     * @param list<array{ASIN: string}> $itemArr
-     * @return void
-     */
-    public function setItems(array $itemArr): void
-    {
-        $map = [];
-        foreach ($this->detail_arr as $i => $detail) {
-            if (! empty($detail['ASIN'])) {
-                $map[$detail['ASIN']][] = $i;
-            }
-        }
-
-        foreach ($itemArr as $Item) {
-            foreach ($map[$Item['ASIN']] as $i) {
-                $this->detail_arr[$i]['Item'] = $Item;
-            }
-        }
     }
 }
