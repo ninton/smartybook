@@ -7,7 +7,7 @@
 
 use App\PearStub\ServicesAmazonStub;
 use App\Smarty\AppSmarty;
-use SmartyBook\chapter5_6\src\AppAmazon;
+use SmartyBook\chapter5_6\src\AmazonServicesWrapper;
 use SmartyBook\chapter5_6\src\MyListRepository;
 use SmartyBook\chapter5_6\src\SmartyPlugin\MbTruncateModifier;
 
@@ -21,11 +21,11 @@ if ($myList === null) {
     die('read error');
 }
 
-$appAmazon = new AppAmazon(new ServicesAmazonStub($config['access_key_id'], $config['secret_access_key'], $config['associate_tag']));
+$amazonServicesWrapper = new AmazonServicesWrapper(new ServicesAmazonStub($config['access_key_id'], $config['secret_access_key'], $config['associate_tag']));
 
 $options['ResponseGroup'] = 'Medium';
 $itemArr = [];
-$message = $appAmazon->ItemLookup($myList->getASINs(), $options, $itemArr);
+$message = $amazonServicesWrapper->ItemLookup($myList->getASINs(), $options, $itemArr);
 
 $myList->setItems($itemArr);
 
