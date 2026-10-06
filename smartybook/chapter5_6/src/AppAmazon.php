@@ -37,15 +37,15 @@ class AppAmazon
     */
     // ItemLookupで書籍掲載しているので、itemLookupではなく、ItemLookupのままとすることにした。
     /**
-     * @param string $i_ASINs
-     * @param array<string, mixed> $i_options
+     * @param string $ASINs
+     * @param array<string, mixed> $options
      * @param array<int, mixed> $itemArr
      * @param-out array<mixed> $itemArr
      * @return string error message
      */
-    public function ItemLookup(string $i_ASINs, array $i_options, array &$itemArr): string
+    public function ItemLookup(string $ASINs, array $options, array &$itemArr): string
     {
-        $ASIN_arr = explode(',', $i_ASINs);
+        $ASIN_arr = explode(',', $ASINs);
 
         // $ASIN_arrから10個づつ問合わせして、$itemArrに蓄積する
         $itemArr = [];
@@ -53,7 +53,7 @@ class AppAmazon
         for ($i = 0; $i < $asin_arr_cnt; $i += 10) {
             $slicedASINs = join(',', array_slice($ASIN_arr, $i, 10));
             if ($slicedASINs != '') {
-                $result = $this->amazon->ItemLookup($slicedASINs, $i_options);
+                $result = $this->amazon->ItemLookup($slicedASINs, $options);
 
                 $itemArr = array_merge($itemArr, $result['Item']);
             }
