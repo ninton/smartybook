@@ -19,8 +19,8 @@ require_once __DIR__ . '/config/config.php';
 
 // ----- メイン処理・データ操作 -----
 $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
-$mylist = $mylistmgr->read();
-if ($mylist === null) {
+$myList = $mylistmgr->read();
+if ($myList === null) {
     die('read error');
 }
 
@@ -28,14 +28,14 @@ $appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['secret_access_key'], $CF
 
 $options['ResponseGroup'] = 'Medium';
 $itemArr = [];
-$message = $appAmazon->ItemLookup($mylist->getASINs(), $options, $itemArr);
+$message = $appAmazon->ItemLookup($myList->getASINs(), $options, $itemArr);
 
-$mylist->setItems($itemArr);
+$myList->setItems($itemArr);
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new AppSmarty();
 $smarty->registerPlugin('modifier', 'mb_truncate', MbTruncateModifier::truncate(...));
 $smarty->assign('CFG', $CFG);
 $smarty->assign('message', $message);
-$smarty->assign('mylist', $mylist);
+$smarty->assign('mylist', $myList);
 $smarty->display('pages/chapter5_6/view.tpl');
