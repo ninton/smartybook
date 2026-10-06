@@ -28,7 +28,7 @@ class AppAmazon
     /*
         $ASINs = '12345,23456,34567';
         $options['ResponseGroup'] = 'Medium';
-        $errmsg = $amazon->ItemLookup( $ASINs, $options, &$Item_arr ) {
+        $errmsg = $amazon->ItemLookup( $ASINs, $options, &$itemArr ) {
         print_r( $Item_arr );
 
         $Item_arr[0]    ASIN「12345」のItem情報
@@ -39,23 +39,23 @@ class AppAmazon
     /**
      * @param string $i_ASINs
      * @param array<string, mixed> $i_options
-     * @param array<int, mixed> $o_Item_arr
-     * @param-out array<mixed> $o_Item_arr
+     * @param array<int, mixed> $itemArr
+     * @param-out array<mixed> $itemArr
      * @return string error message
      */
-    public function ItemLookup(string $i_ASINs, array $i_options, array &$o_Item_arr): string
+    public function ItemLookup(string $i_ASINs, array $i_options, array &$itemArr): string
     {
         $ASIN_arr = explode(',', $i_ASINs);
 
         // $ASIN_arrから10個づつ問合わせして、$o_Item_arrに蓄積する
-        $o_Item_arr = [];
+        $itemArr = [];
         $asin_arr_cnt = count($ASIN_arr);
         for ($i = 0; $i < $asin_arr_cnt; $i += 10) {
             $ASINs = join(',', array_slice($ASIN_arr, $i, 10));
             if ($ASINs != '') {
                 $result = $this->amazon->ItemLookup($ASINs, $i_options);
 
-                $o_Item_arr = array_merge($o_Item_arr, $result['Item']);
+                $itemArr = array_merge($itemArr, $result['Item']);
             }
         }
         return '';
