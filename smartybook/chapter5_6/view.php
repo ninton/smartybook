@@ -32,10 +32,10 @@ if ($mylist === null) {
 $appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['secret_access_key'], $CFG['associate_tag']);
 
 $options['ResponseGroup'] = 'Medium';
-$Item_arr = [];
-$message = $appAmazon->ItemLookup($mylist->getASINs(), $options, $Item_arr);
+$itemArr = [];
+$message = $appAmazon->ItemLookup($mylist->getASINs(), $options, $itemArr);
 
-$mylist->setItems($Item_arr);
+$mylist->setItems($itemArr);
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new AppSmarty();

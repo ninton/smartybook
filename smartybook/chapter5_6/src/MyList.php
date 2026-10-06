@@ -47,10 +47,10 @@ class MyList
     }
 
     /**
-     * @param list<array{ASIN: string}> $i_Item_arr
+     * @param list<array{ASIN: string}> $itemArr
      * @return void
      */
-    public function setItems(array $i_Item_arr): void
+    public function setItems(array $itemArr): void
     {
         $map = [];
         foreach ($this->detail_arr as $i => $detail) {
@@ -59,7 +59,7 @@ class MyList
             }
         }
 
-        foreach ($i_Item_arr as $Item) {
+        foreach ($itemArr as $Item) {
             foreach ($map[$Item['ASIN']] as $i) {
                 $this->detail_arr[$i]['Item'] = $Item;
             }
