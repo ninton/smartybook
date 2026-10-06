@@ -21,11 +21,11 @@
         <table class="listMeta" cellspacing="2">
             <tr>
                 <th>リスト名</th>
-                <td><input name="ListName" value="{$mylist->ListName|escape:html}" /></td>
+                <td><input name="ListName" value="{$myList->ListName|escape:html}" /></td>
             </tr>
             <tr>
                 <th>ニックネーム</th>
-                <td><input name="NickName" value="{$mylist->NickName|escape:html}" /></td>
+                <td><input name="NickName" value="{$myList->NickName|escape:html}" /></td>
             </tr>
         </table>
         <table class="list" cellspacing="0">
@@ -41,14 +41,14 @@
                 <td>
                   <input class="inp_isbn"
                     name="detail_arr[{$smarty.section.i.index|escape:html}][ASIN]"    
-                  	value="{$mylist->detail_arr[i].ASIN|escape:html}"
+                  	value="{$myList->detail_arr[i].ASIN|escape:html}"
                   	size="14" maxlength="13"
                   	onchange="this.value=isbn13_to_isbn10(this.value)" />
                 </td>
                 <td>
                   <input class="inp_comment"
                     name="detail_arr[{$smarty.section.i.index|escape:html}][comment]"
-                    value="{$mylist->detail_arr[i].comment|escape:html}"
+                    value="{$myList->detail_arr[i].comment|escape:html}"
                     size="30" maxlength="200" />
                 </td>
             </tr>

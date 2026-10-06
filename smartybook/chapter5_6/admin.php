@@ -39,7 +39,7 @@ function preview(array $config): void
     $smarty->registerPlugin('modifier', 'mb_truncate', MbTruncateModifier::truncate(...));
     $smarty->assign('CFG', $config);
     $smarty->assign('message', $message);
-    $smarty->assign('mylist', $myList);
+    $smarty->assign('myList', $myList);
     $smarty->display('pages/chapter5_6/admin_preview.tpl');
 }
 
@@ -61,7 +61,7 @@ function form(array $config): void
     $smarty->registerPlugin('modifier', 'mb_truncate', MbTruncateModifier::truncate(...));
     $smarty->assign('CFG', $config);
     $smarty->assign('message', $message);
-    $smarty->assign('mylist', $myList);
+    $smarty->assign('myList', $myList);
     $smarty->display('pages/chapter5_6/admin_form.tpl');
 }
 
@@ -89,7 +89,7 @@ function save(array $config, array $postVars): void
         $smarty->registerPlugin('modifier', 'mb_truncate', MbTruncateModifier::truncate(...));
         $smarty->assign('CFG', $config);
         $smarty->assign('message', $message);
-        $smarty->assign('mylist', $myList);
+        $smarty->assign('myList', $myList);
         $smarty->display('pages/chapter5_6/admin_form.tpl');
     } else {
         // リファクタリング中の暫定対応。不要になったら削除する

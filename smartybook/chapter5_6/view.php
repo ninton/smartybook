@@ -33,5 +33,5 @@ $smarty = new AppSmarty();
 $smarty->registerPlugin('modifier', 'mb_truncate', MbTruncateModifier::truncate(...));
 $smarty->assign('CFG', $config);
 $smarty->assign('message', $message);
-$smarty->assign('mylist', $myList);
+$smarty->assign('myList', $myList);
 $smarty->display('pages/chapter5_6/view.tpl');

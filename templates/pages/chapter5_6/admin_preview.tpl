@@ -16,15 +16,15 @@
     <table class="listMeta" cellspacing="2">
         <tr>
             <th>リスト名</th>
-            <td>{$mylist->ListName|escape:html}</td>
+            <td>{$myList->ListName|escape:html}</td>
         </tr>
         <tr>
             <th>ニックネーム</th>
-            <td>{$mylist->NickName|escape:html}</td>
+            <td>{$myList->NickName|escape:html}</td>
         </tr>
     </table>
     <table class="list" cellspacing="0">
-        {foreach name=f from=$mylist->detail_arr key=i item=detail}
+        {foreach name=f from=$myList->detail_arr key=i item=detail}
           
             {if $detail.ASIN != '' || $detail.comment != ''}
                 <tr>
