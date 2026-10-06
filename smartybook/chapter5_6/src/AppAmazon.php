@@ -51,9 +51,9 @@ class AppAmazon
         $itemArr = [];
         $asin_arr_cnt = count($ASIN_arr);
         for ($i = 0; $i < $asin_arr_cnt; $i += 10) {
-            $ASINs = join(',', array_slice($ASIN_arr, $i, 10));
-            if ($ASINs != '') {
-                $result = $this->amazon->ItemLookup($ASINs, $i_options);
+            $slicedASINs = join(',', array_slice($ASIN_arr, $i, 10));
+            if ($slicedASINs != '') {
+                $result = $this->amazon->ItemLookup($slicedASINs, $i_options);
 
                 $itemArr = array_merge($itemArr, $result['Item']);
             }
