@@ -10,6 +10,7 @@ namespace SmartyBook\chapter5_6;
 use App\PearStub\ServicesAmazonStub;
 use App\Smarty\AppSmarty;
 use SmartyBook\chapter5_6\src\AmazonServicesWrapper;
+use SmartyBook\chapter5_6\src\MyList;
 use SmartyBook\chapter5_6\src\MyListRepository;
 use SmartyBook\chapter5_6\src\MyListViewModel;
 use SmartyBook\chapter5_6\src\SmartyPlugin\MbTruncateModifier;
@@ -78,7 +79,12 @@ function save(array $config, array $postVars): void
     if ($myList === null) {
         die('file read error');
     }
-    $myList->input($postVars);
+
+    $myList = new MyList(
+        $postVars['ListName'] ?? '',
+        $postVars['NickName'] ?? '',
+        $postVars['detail_arr'] ?? [],
+    );
     $amazonServicesWrapper = new AmazonServicesWrapper(new ServicesAmazonStub($config['access_key_id'], $config['secret_access_key'], $config['associate_tag']));
     $options['ResponseGroup'] = 'Small';
     $itemArr = [];
