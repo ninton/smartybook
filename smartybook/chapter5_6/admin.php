@@ -30,9 +30,9 @@ function preview(array $CFG): void
 
     $appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['secret_access_key'], $CFG['associate_tag']);
     $options['ResponseGroup'] = 'Medium';
-    $Item_arr = [];
-    $message = $appAmazon->ItemLookup($myList->getASINs(), $options, $Item_arr);
-    $myList->setItems($Item_arr);
+    $itemArr = [];
+    $message = $appAmazon->ItemLookup($myList->getASINs(), $options, $itemArr);
+    $myList->setItems($itemArr);
 
     // ----- テンプレートエンジンの初期化とアサイン・描画 -----
     $smarty = new AppSmarty();
@@ -80,8 +80,8 @@ function save(array $CFG, array $postVars): void
     $myList->input($postVars);
     $appAmazon = new AppAmazon($CFG['access_key_id'], $CFG['secret_access_key'], $CFG['associate_tag']);
     $options['ResponseGroup'] = 'Small';
-    $item_arr = [];
-    $message = $appAmazon->ItemLookup($myList->getASINs(), $options, $item_arr);
+    $itemArr = [];
+    $message = $appAmazon->ItemLookup($myList->getASINs(), $options, $itemArr);
 
     if ($message != '') {
         // ----- テンプレートエンジンの初期化とアサイン・描画 -----
