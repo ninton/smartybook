@@ -9,7 +9,7 @@ namespace SmartyBook\chapter5_6;
 
 use App\Smarty\AppSmarty;
 use SmartyBook\chapter5_6\src\AppAmazon;
-use SmartyBook\chapter5_6\src\MyListManager;
+use SmartyBook\chapter5_6\src\MyListRepository;
 use SmartyBook\chapter5_6\src\SmartyPlugin\MbTruncateModifier;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
@@ -22,7 +22,7 @@ require_once __DIR__ . '/config/config.php';
 function preview(array $CFG): void
 {
     // ----- メイン処理・データ操作 -----
-    $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
+    $mylistmgr = new MyListRepository($CFG['max_items'], $CFG['mylist_dir']);
     $myList = $mylistmgr->read();
     if ($myList === null) {
         die('file read error');
@@ -50,7 +50,7 @@ function form(array $CFG): void
 {
     // ----- メイン処理・データ操作 -----
     $message = '';
-    $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
+    $mylistmgr = new MyListRepository($CFG['max_items'], $CFG['mylist_dir']);
     $myList = $mylistmgr->read();
     if ($myList === null) {
         die('file read error');
@@ -72,7 +72,7 @@ function form(array $CFG): void
 function save(array $CFG, array $postVars): void
 {
     // ----- メイン処理・データ操作 -----
-    $mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
+    $mylistmgr = new MyListRepository($CFG['max_items'], $CFG['mylist_dir']);
     $myList = $mylistmgr->read();
     if ($myList === null) {
         die('file read error');

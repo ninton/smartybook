@@ -7,7 +7,7 @@
 
 use App\Smarty\AppSmarty;
 use SmartyBook\chapter5_6\src\AppAmazon;
-use SmartyBook\chapter5_6\src\MyListManager;
+use SmartyBook\chapter5_6\src\MyListRepository;
 use SmartyBook\chapter5_6\src\SmartyPlugin\MbTruncateModifier;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
@@ -18,7 +18,7 @@ require_once __DIR__ . '/config/config.php';
  */
 
 // ----- メイン処理・データ操作 -----
-$mylistmgr = new MyListManager($CFG['max_items'], $CFG['mylist_dir']);
+$mylistmgr = new MyListRepository($CFG['max_items'], $CFG['mylist_dir']);
 $myList = $mylistmgr->read();
 if ($myList === null) {
     die('read error');
