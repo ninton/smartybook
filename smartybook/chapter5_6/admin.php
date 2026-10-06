@@ -13,7 +13,7 @@ use SmartyBook\chapter5_6\src\MyListRepository;
 use SmartyBook\chapter5_6\src\SmartyPlugin\MbTruncateModifier;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
-require_once __DIR__ . '/config/config.php';
+$CFG = require_once __DIR__ . '/config/config.php';
 
 // ----- インライン関数定義 -----
 /**
@@ -100,10 +100,6 @@ function save(array $CFG, array $postVars): void
         header('Location: ?action=preview');
     }
 }
-
-/**
- * @var array<string, mixed> $CFG
- */
 
 // GET action=preview プレビュー表示
 // GET action=form 入力フォーム表示

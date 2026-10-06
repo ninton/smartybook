@@ -11,11 +11,7 @@ use SmartyBook\chapter5_6\src\MyListRepository;
 use SmartyBook\chapter5_6\src\SmartyPlugin\MbTruncateModifier;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
-require_once __DIR__ . '/config/config.php';
-
-/**
- * @var array<string, mixed> $CFG
- */
+$CFG = require_once __DIR__ . '/config/config.php';
 
 // ----- メイン処理・データ操作 -----
 $myListRepository = new MyListRepository($CFG['max_items'], $CFG['mylist_dir']);
