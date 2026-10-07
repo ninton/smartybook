@@ -6,9 +6,9 @@ services:
       # args:
       #     USER_ID: ${UID:-1000}
       cache_from:
-        - ${DOCKER_CACHE_FROM:-}
+        - type=gha
       cache_to:
-        - ${DOCKER_CACHE_TO:-}
+        - type=gha,mode=max
     # ホスト側ポートは環境変数APP_PORTで指定（未定義の場合は3000）
     ports:
       - target: 80
