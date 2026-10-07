@@ -11,7 +11,10 @@
                 ]
             }
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
     },
     "scripts": {
        "format:check": "php-cs-fixer fix --dry-run --config=.php-cs-fixer.dist.php --using-cache=no --allow-risky=yes",
@@ -22,17 +25,17 @@
        "lint:baseline": "phpstan analyse --configuration=phpstan.dist.neon --memory-limit=-1 --generate-baseline=phpstan-baseline.neon  --allow-empty-baseline",
        "lint:fix": "phpstan analyse --configuration=phpstan.dist.neon --memory-limit=-1 --fix",
        "lint:fresh": "phpstan clear-result-cache && phpstan analyse --configuration phpstan.dist.neon --memory-limit 1G",
-       "test": "vendor/bin/phpunit --colors=always",
+       "test": "vendor/bin/pest --colors=always",
        "test:golden-master": [
            "@db:reset",
            "@csv:reset",
-           "./vendor/bin/phpunit --colors=always tests/GoldenMaster",
+           "./vendor/bin/pest --colors=always tests/GoldenMaster",
            "@csv:reset"
        ],
        "test:golden-master-update": [
           "@db:reset",
             "@csv:reset",
-            "SHOULD_UPDATE_GOLDEN_MASTER=1 ./vendor/bin/phpunit --colors=always tests/GoldenMaster",
+            "SHOULD_UPDATE_GOLDEN_MASTER=1 ./vendor/bin/pest --colors=always tests/GoldenMaster",
             "@csv:reset"
         ],
         "composer-require-checker": "composer-require-checker check composer.json"
@@ -58,10 +61,10 @@
         "ext-libxml": "*",
         "friendsofphp/php-cs-fixer": "^3.95",
         "maglnet/composer-require-checker": "^4.24",
+        "pestphp/pest": "^5.3",
         "phpstan/phpstan": "^2.2",
         "phpstan/phpstan-deprecation-rules": "^2.0",
-        "phpstan/phpstan-phpunit": "^2.0",
-        "phpunit/phpunit": "^13.3"
+        "phpstan/phpstan-phpunit": "^2.0"
     },
     "autoload": {
         "psr-4": {
