@@ -39,7 +39,7 @@ jobs:
       # Makefile: .env ➔ .docker-compose-build ➔ .composer-installed ➔ docker compose up -d
       # CI環境では `docker compose build` の代わりに `docker/bake-action` を使うことで
       # GitHub Actions の GHA レイヤーキャッシュ（type=gha）を有効化しています。
-      - name: make setup - start
+      - name: make setup - part1
         run: |
           make .env
 
@@ -54,11 +54,11 @@ jobs:
             *.cache-from=type=gha
             *.cache-to=type=gha,mode=max
 
-      - name: make setup - end
+      - name: make setup - part2
         run: |
+          docker compose run --rm app composer install
           docker compose up --no-build -d app db
           docker compose run --rm app bash scripts/chmod.sh
-          docker compose run --rm app composer install
 
       - name: Wait for Web Server to be ready
         run: |
