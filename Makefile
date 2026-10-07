@@ -1,6 +1,6 @@
 .PHONY: composer-install
 composer-install:
-	docker compose run --rm -u $$(id -u):$$(id -g) app composer install
+	docker compose run --rm -u $$(id -u) app composer install
 
 .PHONY: composer-require-checker
 composer-require-checker:
@@ -21,7 +21,7 @@ php-lint:
 .PHONY: php-lint-baseline
 php-lint-baseline:
 # @note phpstan-baseline.neon は手作業で編集することがあるので、自分の権限でファイル作成します
-	docker compose run --rm -u $$(id -u):$$(id -g) app composer run-script lint:baseline
+	docker compose run --rm -u $$(id -u) app composer run-script lint:baseline
 
 .PHONY: php-lint-fix
 php-lint-fix:
@@ -33,17 +33,17 @@ php-lint-fresh:
 
 .PHONY: php-test
 php-test:
-	docker compose run --rm -u $$(id -u):$$(id -g) app composer run-script test
+	docker compose run --rm -u $$(id -u) app composer run-script test
 
 .PHONY: php-test-golden-master
 php-test-golden-master:
 	docker compose up -d
-	docker compose exec -u $$(id -u):$$(id -g) app composer run-script test:golden-master
+	docker compose exec -u $$(id -u) app composer run-script test:golden-master
 
 .PHONY: php-test-golden-master-update
 php-test-golden-master-update:
 	docker compose up -d
-	docker compose exec -u $$(id -u):$$(id -g) app composer run-script test:golden-master-update
+	docker compose exec -u $$(id -u) app composer run-script test:golden-master-update
 
 # 📁 setup用の状態管理ファイルの保存先ディレクトリ
 STATE_DIR := .make
@@ -85,7 +85,7 @@ $(STATE_DIR):
 DOCKER_FILES := $(shell find docker -type f)
 $(STATE_DIR)/.docker-compose-build: docker-compose.yml $(DOCKER_FILES) | $(STATE_DIR)
 	@printf '\n=== Docker コンテナのビルド ===\n'
-	env UID=$$(id -u) GID=$$(id -g) docker compose build --pull
+	env UID=$$(id -u) docker compose build --pull
 	@touch $@
 
 # Composer のインストール

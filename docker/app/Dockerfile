@@ -58,15 +58,14 @@ RUN set -eux \
     && chmod +x /usr/local/bin/entrypoint.sh
 
 # 外部から受け取る引数を定義（デフォルト値 1000）
+# macOS のグループIDは 20から始まり、Ubuntu の dialout が使用しているので、GROUP_ID は指定しない
 ARG USER_ID=1000
-ARG GROUP_ID=1000
 
 # エントリポイント権限付与、www-data の ID 調整
 # 1 つの RUN にまとめてレイヤー増加を防ぐ
 RUN set -eux \
     && chmod +x /usr/local/bin/entrypoint.sh \
-    && groupmod -g ${GROUP_ID} www-data \
-    && usermod -u ${USER_ID} -g www-data www-data \
+    && usermod -u ${USER_ID} www-data \
     # make php-lint-baseline 等の実行時に、コンテナ内の /var/www/.gitconfig で Permission denied エラー、その対策 \
     && mkdir -p /var/www/.composer /var/www/.config \
     && chown -R www-data:www-data /var/www
