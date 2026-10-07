@@ -45,9 +45,10 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v4
 
-      # @note Makefile setup と同期してください
-      # make setup と同等なことをバラで実行します
-      # ただし docker/bake-action が docker compose buid の代わりでレイヤーキャッシュが効く
+      # @note Makefile の `make setup` タスクの依存関係と同等の処理を順次実行しています。
+      # Makefile: .env ➔ .docker-compose-build ➔ .composer-installed ➔ docker compose up -d
+      # CI環境では `docker compose build` の代わりに `docker/bake-action` を使うことで
+      # GitHub Actions の GHA レイヤーキャッシュ（type=gha）を有効化しています。
       - name: make setup - start
         run: |
           make .env
