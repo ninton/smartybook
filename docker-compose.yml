@@ -3,8 +3,8 @@ services:
     tty: true
     build:
       context: docker/app
-      args:
-          USER_ID: ${UID:-1000}
+      # args:
+      #     USER_ID: ${UID:-1000}
       cache_from:
         - ${DOCKER_CACHE_FROM:-}
       cache_to:

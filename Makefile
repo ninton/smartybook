@@ -85,7 +85,8 @@ $(STATE_DIR):
 DOCKER_FILES := $(shell find docker -type f)
 $(STATE_DIR)/.docker-compose-build: docker-compose.yml $(DOCKER_FILES) | $(STATE_DIR)
 	@printf '\n=== Docker コンテナのビルド ===\n'
-	env UID=$$(id -u) docker compose build
+	#env UID=$$(id -u) docker compose build
+	docker compose build
 	@touch $@
 
 # Composer のインストール
