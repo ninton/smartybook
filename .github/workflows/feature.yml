@@ -58,6 +58,7 @@ jobs:
         with:
           files: docker-compose.yml
           targets: app
+          load: true # ビルドイメージを Docker デーモンにロード
           set: |
             *.cache-from=type=gha
             *.cache-to=type=gha,mode=max
@@ -66,7 +67,7 @@ jobs:
         run: |
           docker compose up --no-build -d app db
           docker compose run --rm --no-build app bash scripts/chmod.sh
-          docker compose run --rm --no-build app composer install
+          time docker compose run --rm --no-build app composer install
 
       - name: Wait for Web Server to be ready
         run: |
