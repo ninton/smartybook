@@ -65,8 +65,8 @@ jobs:
       - name: make setup - end
         run: |
           docker compose up -d app db
-          docker compose run --rm app bash scripts/chmod.sh
-          make composer-install
+          docker compose exec app bash scripts/chmod.sh
+          docker compose exec app composer install
 
       - name: Wait for Web Server to be ready
         run: |
