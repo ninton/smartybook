@@ -20,7 +20,6 @@ php-lint:
 
 .PHONY: php-lint-baseline
 php-lint-baseline:
-# @note phpstan-baseline.neon は手作業で編集することがあるので、自分の権限でファイル作成します
 	docker compose run --rm app composer run-script lint:baseline
 
 .PHONY: php-lint-fix
