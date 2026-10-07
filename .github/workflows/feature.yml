@@ -52,10 +52,7 @@ jobs:
       - name: Wait for Web Server to be ready
         run: |
           # Web サーバーが応答するまで最大 30 秒待機
-          set -a
-          . .env
-          set +a
-          timeout 30s bash -c 'until curl -s -f http://127.0.0.1:${APP_PORT:-3000}/ > /dev/null 2>&1; do sleep 1; done' || true
+          timeout 30s bash -c 'until curl -s -f http://localhost/ > /dev/null 2>&1; do sleep 1; done' || true
 
       - name: Run Golden Master Tests
         run: |
