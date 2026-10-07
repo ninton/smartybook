@@ -58,7 +58,7 @@ RUN set -eux \
     && chmod +x /usr/local/bin/entrypoint.sh
 
 # 外部から受け取る引数を定義（デフォルト値 1000）
-# macOS のグループIDは 20から始まり、Ubuntu の dialout が使用しているので、GROUP_ID は指定しない
+# macOS で一般的なグループ ID 20 は Debian の dialout が使用しているため、GROUP_ID は指定しない
 ARG USER_ID=1000
 
 # エントリポイント権限付与、www-data の ID 調整
