@@ -1,6 +1,6 @@
 .PHONY: composer-install
 composer-install:
-	docker compose run --rm -u $$(id -u) app composer install
+	docker compose run --rm app composer install
 
 .PHONY: composer-require-checker
 composer-require-checker:
