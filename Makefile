@@ -48,6 +48,7 @@ php-test-golden-master-update:
 STATE_DIR := .make
 
 # git clone 直後や日常の git pull後に実行してください
+# @note workflow/feature.yml の make setup - start / make setup - end と同期してください
 .PHONY: setup
 setup: .env $(STATE_DIR)/.docker-compose-build $(STATE_DIR)/.composer-installed
 	@printf '\n=== Docker コンテナの起動確認 ===\n'

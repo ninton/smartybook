@@ -42,9 +42,30 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v7
 
-      - name: Start Docker Environment
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
+
+      # @note Makefile setup と同期してください
+      # make setup と同等なことをバラで実行します
+      # ただし docker/bake-action が docker compose buid の代わりでレイヤーキャッシュが効く
+      - name: make setup - start
         run: |
-          make setup
+          make .env
+
+      - name: Build with Buildx Bake
+        uses: docker/bake-action@v5
+        with:
+          files: docker-compose.yml
+          targets: app
+          set: |
+            *.cache-from=type=gha
+            *.cache-to=type=gha,mode=max
+
+      - name: make setup - end
+        run: |
+          make composer-install
+          docker compose up -d
+          docker compose run --rm app bash scripts/chmod.sh
 
       - name: Wait for Web Server to be ready
         run: |
