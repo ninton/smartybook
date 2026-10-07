@@ -57,11 +57,6 @@ COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN set -eux \
     && chmod +x /usr/local/bin/entrypoint.sh
 
-# エントリポイント権限付与、www-data の ID 調整
-# 1 つの RUN にまとめてレイヤー増加を防ぐ
-RUN set -eux \
-    && chmod +x /usr/local/bin/entrypoint.sh
-
 # WORKDIR、ENTRYPOINT、CMDの順序がお作法
 WORKDIR /var/www/html
 
