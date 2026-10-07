@@ -148,7 +148,7 @@ make php-lint-baseline         # PHPStan ベースライン更新
 make php-format-check          # php-cs-fixer コードスタイルチェック
 make php-format-fix            # php-cs-fixer コードスタイル更新
 
-make php-test                  # PHPUnit Unit テスト実行
+make php-test                  # Pest Unit テスト実行
 make php-test-golden-master    # ゴールデンマスターテスト実行
 
 make php-test-golden-master-update # ゴールデンマスターテストの期待値を更新する
