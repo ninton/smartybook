@@ -25,17 +25,17 @@
        "lint:baseline": "phpstan analyse --configuration=phpstan.dist.neon --memory-limit=-1 --generate-baseline=phpstan-baseline.neon  --allow-empty-baseline",
        "lint:fix": "phpstan analyse --configuration=phpstan.dist.neon --memory-limit=-1 --fix",
        "lint:fresh": "phpstan clear-result-cache && phpstan analyse --configuration phpstan.dist.neon --memory-limit 1G",
-       "test": "vendor/bin/phpunit --colors=always",
+       "test": "vendor/bin/pest --colors=always",
        "test:golden-master": [
            "@db:reset",
            "@csv:reset",
-           "./vendor/bin/phpunit --colors=always tests/GoldenMaster",
+           "./vendor/bin/pest --colors=always tests/GoldenMaster",
            "@csv:reset"
        ],
        "test:golden-master-update": [
           "@db:reset",
             "@csv:reset",
-            "SHOULD_UPDATE_GOLDEN_MASTER=1 ./vendor/bin/phpunit --colors=always tests/GoldenMaster",
+            "SHOULD_UPDATE_GOLDEN_MASTER=1 ./vendor/bin/pest --colors=always tests/GoldenMaster",
             "@csv:reset"
         ],
         "composer-require-checker": "composer-require-checker check composer.json"
