@@ -1,7 +1,11 @@
 services:
   app:
     tty: true
-    build: docker/app
+    build:
+      context: docker/app
+      args:
+          USER_ID: ${UID:-1000}
+          GROUP_ID: ${GID:-1000}
     # ホスト側ポートは環境変数APP_PORTで指定（未定義の場合は3000）
     ports:
       - target: 80
