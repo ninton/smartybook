@@ -60,6 +60,7 @@ jobs:
           targets: app
           load: true # ビルドイメージを Docker デーモンにロード
           set: |
+            app.tags=smartybook-app:latest
             *.cache-from=type=gha
             *.cache-to=type=gha,mode=max
 
