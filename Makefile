@@ -48,6 +48,8 @@ php-test-golden-master-update:
 STATE_DIR := .make
 
 # git clone 直後や日常の git pull後に実行してください
+# @note GitHub Actions ワークフロー (.github/workflows/feature.yml) のセットアップ手順と同期してください。
+# CI環境では docker compose build の代わりに docker/bake-action を利用してレイヤーキャッシュを適用しています。
 .PHONY: setup
 setup: .env $(STATE_DIR)/.docker-compose-build $(STATE_DIR)/.composer-installed
 	@printf '\n=== Docker コンテナの起動確認 ===\n'
