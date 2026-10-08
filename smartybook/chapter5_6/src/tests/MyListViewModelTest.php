@@ -101,7 +101,8 @@ test('明細のASINに一致するAmazon APIの商品情報を結合する 2件'
     ]);
     $itemArr = [
         [
-            'ASIN' => '1234567890',
+            // $myList->detail_arr のASINの並び順と違うようにしています
+            'ASIN' => '1234567891',
             'SmallImage' => [
                 'URL' => 'https://m.media-amazon.com/images/I/51tY5PtGsuL.jpg',
                 'Height' => [
@@ -123,7 +124,7 @@ test('明細のASINに一致するAmazon APIの商品情報を結合する 2件'
             ],
         ],
         [
-            'ASIN' => '1234567891',
+            'ASIN' => '1234567890',
             'SmallImage' => [
                 'URL' => 'https://m.media-amazon.com/images/I/51tY5PtGsuL.jpg',
                 'Height' => [
