@@ -48,6 +48,7 @@ class MyListRepository
          */
         $mylist = unserialize($buf);
 
+        // FIXME: リポジトリで切り詰めをするよりも、入力層でバリデーションとエラー表示、VO生成時にも件数チェックしたい
         return new MyList(
             $mylist->ListName,
             $mylist->NickName,
@@ -75,7 +76,7 @@ class MyListRepository
     /**
      * @return string
      */
-    public function getPath(): string
+    private function getPath(): string
     {
         return sprintf('%s1.txt', $this->dir);
     }
