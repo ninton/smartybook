@@ -158,6 +158,6 @@ test('getASINs ASINが仕様外の値', function (array $details, string $expect
     '前後空白と大文字小文字は正規化されない' => [[
         ['ASIN' => ' A ', 'comment' => '前後空白'],
         ['ASIN' => 'A1', 'comment' => '大文字を含む'],
-        ['ASIN' => 'b1', 'comment' => '小文字を含む'],
-    ], ' A ,A1,b1'],
+        ['ASIN' => 'a1', 'comment' => '小文字を含む'],
+    ], ' A ,A1,a1'],
 ]);
