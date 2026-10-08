@@ -75,7 +75,7 @@ class MyListRepository
     /**
      * @return string
      */
-    public function getPath(): string
+    private function getPath(): string
     {
         return sprintf('%s1.txt', $this->dir);
     }
