@@ -46,7 +46,8 @@ test('read 保存済みファイル', function () {
             ['ASIN' => '', 'comment' => ''],
             ['ASIN' => '', 'comment' => ''],
             ['ASIN' => '', 'comment' => ''],
-        ]);
+        ],
+    );
 
     // Action
     $actual = $repository->read();
@@ -69,7 +70,8 @@ test('read max_items で2件に切り詰めます', function () {
         [
             ['ASIN' => '4774127833', 'comment' => '★★★　大先生に原稿のチェックをしてもらっている。'],
             ['ASIN' => '4774127205', 'comment' => '★★★　ラッテやお菓子を用意して、大先生のご機嫌をとるのだ。'],
-        ]);
+        ],
+    );
 
     // Action
     $actual = $repository->read();
