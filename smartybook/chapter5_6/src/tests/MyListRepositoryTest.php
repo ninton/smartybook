@@ -56,7 +56,7 @@ test('read 保存済みファイル', function () {
     expect($actual)->toEqual($expected);
 });
 
-// FIXME: リポジトリで切り詰めをするよりも、max_items によって取得件数が制限されることを確認するテスト
+// FIXME: リポジトリで切り詰めをするよりも、入力層でバリデーションとエラー表示、VO生成時にも件数チェックしたい
 test('read max_items で2件に切り詰めます', function () {
     /**
      * @note _write/mylist/1.txt はコミット済みのファイルで、25件のアイテムが必ず存在します
