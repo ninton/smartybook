@@ -22,6 +22,14 @@ declare(strict_types=1);
  */
 use SmartyBook\chapter5_6\src\MyList;
 
+// デフォルト値のテスト、デフォルト値として空文字列を許容するかについて検討すること
+test('引数省略時は空の初期値を使用する', function () {
+    $myList = new MyList();
+    expect($myList->ListName)->toBe('')
+        ->and($myList->NickName)->toBe('')
+        ->and($myList->detail_arr)->toBe([]);
+});
+
 test('ListNameの正常値を保持する', function (string $listName) {
     $myList = new MyList(ListName: $listName);
 
