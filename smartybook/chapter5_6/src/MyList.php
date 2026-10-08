@@ -4,6 +4,19 @@ declare(strict_types=1);
 
 namespace SmartyBook\chapter5_6\src;
 
+/**
+ * リスト情報を表す。
+ *
+ * 想定するデータ形式:
+ * - ListName: 空文字列不可、最大200文字
+ * - NickName: 空文字列不可、最大200文字
+ * - detail_arr: 空配列可、最大25件
+ *   - ASIN: 空文字列不可、1〜13桁の数字（10桁または13桁のISBNを想定するが、誤った値や入力途中の値も許容）
+ *      detail_arr 内で重複可
+ *   - comment: 空文字列可、最大200文字
+ *
+ * 現状はこれらの制約をバリデーションしていないため、仕様外の文字列や件数も受け入れて保持する。
+ */
 final readonly class MyList
 {
     /**
