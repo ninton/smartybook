@@ -7,18 +7,18 @@
 </head>
 <body>
 <div id="entrypage">
-  <!-- ヘッダーはじまり -->
+  {* ヘッダーはじまり *}
   <div id="header">
     <h1 id="siteTitle"><a href="{$home}"><img src="images/page_title.gif" alt="{$siteName}" border="0" /></a></h1>
   </div>
-  <!-- ヘッダーおわり -->
-  <!-- メインはじまり -->
+  {* ヘッダーおわり *}
+  {* メインはじまり *}
   <div id="main">
-    <!-- パンくず -->
+    {* パンくず *}
     <div id="topicPath"><p><a href="{$home}">Home</a> &gt; {$category|escape}</p></div>
-    <!-- コンテンツはじまり -->
+    {* コンテンツはじまり *}
     <div id="contents">
-      <!-- エントリーはじまり -->
+      {* エントリーはじまり *}
 {foreach from=$data item="topic" name="article"}
 <div class="entry">
     <h2 class="entryTitle">{$topic.title|escape}</h2>
@@ -31,21 +31,21 @@
 {foreachelse}
     <p>記事はありません。</p>
 {/foreach}
-      <!-- エントリーおわり -->
-      <!-- ページナビゲーションはじまり -->
+      {* エントリーおわり *}
+      {* ページナビゲーションはじまり *}
       <div class="pageNav"><a href="#entrypage">ページトップに戻る</a></div>
-      <!-- ページナビゲーションおわり -->
+      {* ページナビゲーションおわり *}
     </div>
-    <!-- コンテンツおわり -->
+    {* コンテンツおわり *}
   </div>
-  <!-- メインおわり -->
-  <!-- フッターはじまり -->
+  {* メインおわり *}
+  {* フッターはじまり *}
   <div id="footer">
     <address>
     copyright 2007 {$siteName} All rights reserved.
     </address>
   </div>
-  <!-- フッターおわり -->
+  {* フッターおわり *}
 </div>
 </body>
 </html>

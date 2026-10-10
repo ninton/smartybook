@@ -7,7 +7,7 @@
 </head>
 <body>
 <div id="toppage">
-  <!-- ヘッダーはじまり -->
+  {* ヘッダーはじまり *}
   <div id="header">
     <div id="intro">
       <h1 id="siteTitle"><a href="{$home}"><img src="images/top_title.gif" alt="{$siteName}" border="0" /></a></h1>
@@ -25,14 +25,14 @@
       </div>
     </div>
   </div>
-  <!-- ヘッダーおわり -->
-  <!-- フッターはじまり -->
+  {* ヘッダーおわり *}
+  {* フッターはじまり *}
   <div id="footer">
     <address>
     copyright 2007 {$siteName} All rights reserved.
     </address>
   </div>
-  <!-- フッターおわり -->
+  {* フッターおわり *}
 </div>
 </body>
 </html>
