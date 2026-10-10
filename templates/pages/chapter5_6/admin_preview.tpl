@@ -1,11 +1,6 @@
-{include file="components/chapter5_6/head.tpl"}
-<title>Smarty for Designers</title>
-</head><body>
-<div id="wrapper">
-<div id="alpha">
-    <p id="siteTitle">Smarty for Designers</p>
-</div>
-<div id="beta">
+{extends file='layouts/chapter5_6/base.tpl'}
+
+{block name="content"}
     <h1>マイリスト(プレビュー)</h1>
     <p><a class="button" href="view.php" target="_blank">公開ページを確認</a></p>
 
@@ -55,5 +50,4 @@
             <input class="button" type="submit" value="編集" />
         </form>
     </div>
-</div>
-{include file="components/chapter5_6/footer.tpl"} 
+{/block}
