@@ -30,12 +30,22 @@ trait HtmlStringAssertionTrait
                 libxml_use_internal_errors($previousUseInternalErrors);
             }
 
-            $output = $dom->saveHTML() ?: '';
+            $xpath = new \DOMXPath($dom);
 
-            // タグ間の連続する空白を削除 (例: >  < -> ><)
-            $output = preg_replace('/>\s+</', '><', $output);
+            // すべてのテキストノードを取得
+            foreach ($xpath->query('//text()') as $textNode) {
+                // 改行・連続空白を1つのスペースに置換
+                $cleaned = preg_replace('/\s+/', ' ', $textNode->nodeValue);
 
-            return trim($output);
+                // タグ間の改行など「空白のみのテキストノード」はノード自体を削除
+                if (trim($cleaned) === '') {
+                    $textNode->parentNode->removeChild($textNode);
+                } else {
+                    $textNode->nodeValue = $cleaned;
+                }
+            }
+
+            return trim($dom->saveHTML() ?: '');
         };
 
         static::assertEquals($normalize($expected), $normalize($actual), $message);
