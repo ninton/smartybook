@@ -7,22 +7,22 @@
 </head>
 <body>
 <div id="entrypage">
-  <!-- ヘッダーはじまり -->
+  {* ヘッダーはじまり *}
   <div id="header">
     <h1 id="siteTitle"><a href="{$admin}"><img src="images/system_title.gif" alt="入力内容の確認 | 管理画面" border="0" /></a></h1>
   </div>
-  <!-- ヘッダーおわり -->
-  <!-- メインはじまり -->
+  {* ヘッダーおわり *}
+  {* メインはじまり *}
   <div id="main">
     <div id="navigation"><p><a href="{$home}">サイト閲覧</a> | 管理画面</p></div>
-  <!-- 情報パネルはじまり -->
+  {* 情報パネルはじまり *}
   <div class="panel">
     <div class="header">
       <h2>投稿内容の確認</h2>
     </div>
     <div class="contents">
       <p class="message">下記の内容で送信します。よろしければ「書き込む」ボタンをおしてください / <a href="admin.php?lo=ok">ログアウトする</a></p>
-      <!-- フォームはじまり -->
+      {* フォームはじまり *}
       <form action="complete.php" method="post" name="cmsForm" target="_top" id="cmsForm" class="submitForm">
         <fieldset>
         <table cellspacing="0">
@@ -77,22 +77,22 @@
         </table>
         </fieldset>
       </form>
-      <!-- フォームおわり -->
+      {* フォームおわり *}
     </div>
   </div>
-  <!-- 情報パネルおわり -->
-  <!-- ページナビゲーションはじまり -->
+  {* 情報パネルおわり *}
+  {* ページナビゲーションはじまり *}
   <div class="pageNav"><a href="#entrypage">ページトップに戻る</a></div>
-  <!-- ページナビゲーションおわり -->
+  {* ページナビゲーションおわり *}
   </div>
-  <!-- メインおわり -->
-  <!-- フッターはじまり -->
+  {* メインおわり *}
+  {* フッターはじまり *}
   <div id="footer">
     <address>
     copyright 2007 {$siteName} All rights reserved.
     </address>
   </div>
-  <!-- フッターおわり -->
+  {* フッターおわり *}
 </div>
 </body>
 </html>

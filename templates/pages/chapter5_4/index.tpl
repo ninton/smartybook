@@ -7,15 +7,15 @@
 </head>
 <body>
 <div id="portalPage">
-  <!-- ヘッダーはじまり -->
+  {* ヘッダーはじまり *}
   <div id="header">
     <h1 id="siteTitle"><a href="{$home}">{$siteName} : {$smarty.now}</a></h1>
     <h2 id="siteDescription">{$siteDescription}</h2>
   </div>
-  <!-- ヘッダーおわり -->
-  <!-- メインはじまり -->
+  {* ヘッダーおわり *}
+  {* メインはじまり *}
   <div id="main" class="clearfix">
-    <!-- Twitterはじまり -->
+    {* Twitterはじまり *}
     <div id="twitter">
       <h3 class="cornerTitle">Twitter</h3>
       <div id="twitter1">
@@ -37,8 +37,8 @@
         </div>
       </div>
     </div>
-    <!-- Twitterおわり -->
-    <!-- Photoはじまり -->
+    {* Twitterおわり *}
+    {* Photoはじまり *}
     <div id="photo">
       <h3 class="cornerTitle">Photo</h3>
       
@@ -59,8 +59,8 @@
       </div>
       {/section}
     </div>
-    <!-- Photoおわり -->
-    <!-- Linkはじまり -->
+    {* Photoおわり *}
+    {* Linkはじまり *}
     <div id="link">
       <h3 class="cornerTitle">Link</h3>
       <ul>
@@ -73,16 +73,16 @@
         {/foreach}
       </ul>
     </div>
-    <!-- Linkおわり -->
+    {* Linkおわり *}
   </div>
-  <!-- メインおわり -->
-  <!-- フッターはじまり -->
+  {* メインおわり *}
+  {* フッターはじまり *}
   <div id="footer">
     <address>
     copyright 2008 {$siteName} All rights reserved.
     </address>
   </div>
-  <!-- フッターおわり -->
+  {* フッターおわり *}
 </div>
 </body>
 </html>
