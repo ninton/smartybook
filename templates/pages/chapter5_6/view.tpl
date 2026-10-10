@@ -1,12 +1,6 @@
-{include file="components/chapter5_6/head.tpl"}
-<title>Smarty for Designers</title>
-</head>
-<body>
-<div id="wrapper">
-<div id="alpha">
-    <p id="siteTitle">Smarty for Designers</p>
-</div>
-<div id="beta">
+{extends file='layouts/chapter5_6/base.tpl'}
+
+{block name="content"}
     <h1>
         （2020年3月で本プログラムが使っているAmazon_ECSのAPIは廃止となりました。代わりにダミーデータを表示します）<br>
         {$myList->ListName|escape:html} - {$myList->NickName|escape:html}
@@ -35,5 +29,4 @@
             {/if}
         {/foreach}
     </table>
-</div>
-{include file="components/chapter5_6/footer.tpl"} 
+{/block}
