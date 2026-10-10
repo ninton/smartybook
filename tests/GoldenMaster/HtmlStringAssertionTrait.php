@@ -17,7 +17,7 @@ trait HtmlStringAssertionTrait
 
             // 1. 読み込み前に設定を済ませる
             $dom->preserveWhiteSpace = false;
-            $dom->formatOutput = false;
+            $dom->formatOutput = true;
 
             // グローバル設定を汚さないよう、直前状態を退避して復元する。
             $previousUseInternalErrors = libxml_use_internal_errors(true);
@@ -32,16 +32,10 @@ trait HtmlStringAssertionTrait
 
             $xpath = new \DOMXPath($dom);
 
-            // すべてのテキストノードを取得
-            foreach ($xpath->query('//text()') as $textNode) {
-                // 改行・連続空白を1つのスペースに置換
-                $cleaned = preg_replace('/\s+/', ' ', $textNode->nodeValue);
-
-                // タグ間の改行など「空白のみのテキストノード」はノード自体を削除
-                if (trim($cleaned) === '') {
-                    $textNode->parentNode->removeChild($textNode);
-                } else {
-                    $textNode->nodeValue = $cleaned;
+            // 空白・改行のみのテキストノード（余分な既存改行）を削除
+            foreach ($xpath->query('//text()') as $node) {
+                if (trim($node->nodeValue) === '') {
+                    $node->parentNode->removeChild($node);
                 }
             }
 
