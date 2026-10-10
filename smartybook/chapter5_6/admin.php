@@ -73,6 +73,11 @@ function form(array $config): void
  */
 function save(array $config, array $postVars): void
 {
+    // ----- 入力値受取・前処理 -----
+    if (count($postVars['detail_arr']) > MyList::MAX_ITEMS) {
+        die('detail_arr cannot have more than ' . MyList::MAX_ITEMS . ' items.');
+    }
+
     // ----- メイン処理・データ操作 -----
     $myListRepository = new MyListRepository();
     $myList = $myListRepository->read($config['storage_path']);
