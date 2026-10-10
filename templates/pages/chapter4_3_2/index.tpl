@@ -8,12 +8,12 @@
 <body>
 <div id="toppage">
 
-	<!-- ヘッダーはじまり
-	<div id="header">
-		<div id="intro">
-			<h1 id="siteTitle"><a href="{$home}"><img src="images/top_title.gif" alt="{$siteName}" border="0" /></a></h1>
-			<div id="index">
-				<h2 class="categories"><img alt="カテゴリー" src="images/top_menu_categories.gif" /></h2>
+  <!-- ヘッダーはじまり
+  <div id="header">
+    <div id="intro">
+      <h1 id="siteTitle"><a href="{$home}"><img src="images/top_title.gif" alt="{$siteName}" border="0" /></a></h1>
+      <div id="index">
+        <h2 class="categories"><img alt="カテゴリー" src="images/top_menu_categories.gif" /></h2>
 {section name="menu" loop=$categories}
     {if $smarty.section.menu.first}<p class="indexMenuArea">{/if}
     <a href="contents.php?category={$categories[menu]}">{$categories[menu]}</a>
@@ -23,28 +23,28 @@
         </p>
     {/if}
 {/section}
-			</div>
-		</div>
-	</div>
-	ヘッダーおわり -->
+      </div>
+    </div>
+  </div>
+  ヘッダーおわり -->
 
-	<!-- ヘッダーはじまり -->
-	<div id="header">
-		<h1 id="siteTitle"><a href="{$home}"><img src="images/page_title.gif" alt="{$siteName}" border="0" /></a></h1>
-	</div>
-	<!-- ヘッダーおわり -->
+  <!-- ヘッダーはじまり -->
+  <div id="header">
+    <h1 id="siteTitle"><a href="{$home}"><img src="images/page_title.gif" alt="{$siteName}" border="0" /></a></h1>
+  </div>
+  <!-- ヘッダーおわり -->
 
-	<!-- メインはじまり -->
-	<div id="main" class="clearfix">
-		<!-- パンくず -->
-		<div id="topicPath"><p>Home</p></div>
-		<!-- コンテンツはじまり -->
-		<div id="contents">
-			<div id=notice>
-				<h2>告知</h2>
-				<p>{fetch file="data/notice.txt"}</p>
-			</div>
-			<!-- エントリーはじまり -->
+  <!-- メインはじまり -->
+  <div id="main" class="clearfix">
+    <!-- パンくず -->
+    <div id="topicPath"><p>Home</p></div>
+    <!-- コンテンツはじまり -->
+    <div id="contents">
+      <div id=notice>
+        <h2>告知</h2>
+        <p>{fetch file="data/notice.txt"}</p>
+      </div>
+      <!-- エントリーはじまり -->
 {foreach from=$data item="topic" name="article"}
 <div class="entry">
     <h2 class="entryTitle">{$topic.title|escape}</h2>
@@ -59,35 +59,35 @@
     <div class="contentsBody"><p>記事はありません。</p></div>
 </div>
 {/foreach}
-			<!-- エントリーおわり -->
-			<!-- ページナビゲーションはじまり -->
-			<div class="pageNav"><a href="#toppage">ページトップに戻る</a></div>
-			<!-- ページナビゲーションおわり -->
-		</div>
-		<!-- コンテンツおわり -->
-		<div id="sideArea1">
-			<h2 class="sideArea1Title">メニュー</h2>
-			<ul>
-			{section name="menu" loop=$categories}
-    			<li><a href="contents.php?category={$categories[menu]}">{$categories[menu]}</a></li>
-			{/section}
-			</ul>
-			<h2 class="sideArea1Title">バナー</h2>
-			<p>
-				{insert_noticeText2 siteName=$siteName nocache}
-			</p>
-		</div>
+      <!-- エントリーおわり -->
+      <!-- ページナビゲーションはじまり -->
+      <div class="pageNav"><a href="#toppage">ページトップに戻る</a></div>
+      <!-- ページナビゲーションおわり -->
+    </div>
+    <!-- コンテンツおわり -->
+    <div id="sideArea1">
+      <h2 class="sideArea1Title">メニュー</h2>
+      <ul>
+      {section name="menu" loop=$categories}
+          <li><a href="contents.php?category={$categories[menu]}">{$categories[menu]}</a></li>
+      {/section}
+      </ul>
+      <h2 class="sideArea1Title">バナー</h2>
+      <p>
+        {insert_noticeText2 siteName=$siteName nocache}
+      </p>
+    </div>
 
-	</div>
+  </div>
 
-	<!-- メインおわり -->
-	<!-- フッターはじまり -->
-	<div id="footer">
-		<address>
-		copyright 2007 {$siteName} All rights reserved.
-		</address>
-	</div>
-	<!-- フッターおわり -->
+  <!-- メインおわり -->
+  <!-- フッターはじまり -->
+  <div id="footer">
+    <address>
+    copyright 2007 {$siteName} All rights reserved.
+    </address>
+  </div>
+  <!-- フッターおわり -->
 </div>
 </body>
 </html>

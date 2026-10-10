@@ -1,5 +1,5 @@
 {*
-	item=
+  item=
 *}
 {if $item}
     <a href="{$item.DetailPageURL|escape:html}">

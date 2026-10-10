@@ -1,7 +1,7 @@
 {*
-	image=
-	width=
-	height=
+  image=
+  width=
+  height=
 *}
 {strip}
 {if $image}

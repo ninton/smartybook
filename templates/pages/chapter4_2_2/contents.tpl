@@ -7,18 +7,18 @@
 </head>
 <body>
 <div id="entrypage">
-	<!-- ヘッダーはじまり -->
-	<div id="header">
-		<h1 id="siteTitle"><a href="{$home}"><img src="images/page_title.gif" alt="{$siteName}" border="0" /></a></h1>
-	</div>
-	<!-- ヘッダーおわり -->
-	<!-- メインはじまり -->
-	<div id="main" class="clearfix">
-		<!-- パンくず -->
-		<div id="topicPath"><p><a href="{$home}">Home</a> &gt; {$category|escape}</p></div>
-		<!-- コンテンツはじまり -->
-		<div id="contents">
-			<!-- エントリーはじまり -->
+  <!-- ヘッダーはじまり -->
+  <div id="header">
+    <h1 id="siteTitle"><a href="{$home}"><img src="images/page_title.gif" alt="{$siteName}" border="0" /></a></h1>
+  </div>
+  <!-- ヘッダーおわり -->
+  <!-- メインはじまり -->
+  <div id="main" class="clearfix">
+    <!-- パンくず -->
+    <div id="topicPath"><p><a href="{$home}">Home</a> &gt; {$category|escape}</p></div>
+    <!-- コンテンツはじまり -->
+    <div id="contents">
+      <!-- エントリーはじまり -->
 {foreach from=$data item="topic" name="article"}
 <div class="entry">
     <h2 class="entryTitle">{$topic.title|escape}</h2>
@@ -33,35 +33,35 @@
     <div class="contentsBody"><p>記事はありません。</p></div>
 </div>
 {/foreach}
-			<!-- エントリーおわり -->
-			<!-- ページナビゲーションはじまり -->
-			<div class="pageNav"><a href="#entrypage">ページトップに戻る</a></div>
-			<!-- ページナビゲーションおわり -->
-		</div>
-		<!-- コンテンツおわり -->
-		
-		<div id="sideArea1">
-			<h2 class="sideArea1Title">メニュー</h2>
-			<ul>
-			{section name="menu" loop=$categories}
-    			<li><a href="contents.php?category={$categories[menu]}">{$categories[menu]}</a></li>
-			{/section}
-			</ul>
-			<h2 class="sideArea1Title">バナー</h2>
-			<p>
-				{insert_noticeText nocache}
-			</p>
-		</div>
-		
-	</div>
-	<!-- メインおわり -->
-	<!-- フッターはじまり -->
-	<div id="footer">
-		<address>
-		copyright 2007 {$siteName} All rights reserved.
-		</address>
-	</div>
-	<!-- フッターおわり -->
+      <!-- エントリーおわり -->
+      <!-- ページナビゲーションはじまり -->
+      <div class="pageNav"><a href="#entrypage">ページトップに戻る</a></div>
+      <!-- ページナビゲーションおわり -->
+    </div>
+    <!-- コンテンツおわり -->
+    
+    <div id="sideArea1">
+      <h2 class="sideArea1Title">メニュー</h2>
+      <ul>
+      {section name="menu" loop=$categories}
+          <li><a href="contents.php?category={$categories[menu]}">{$categories[menu]}</a></li>
+      {/section}
+      </ul>
+      <h2 class="sideArea1Title">バナー</h2>
+      <p>
+        {insert_noticeText nocache}
+      </p>
+    </div>
+    
+  </div>
+  <!-- メインおわり -->
+  <!-- フッターはじまり -->
+  <div id="footer">
+    <address>
+    copyright 2007 {$siteName} All rights reserved.
+    </address>
+  </div>
+  <!-- フッターおわり -->
 </div>
 </body>
 </html>

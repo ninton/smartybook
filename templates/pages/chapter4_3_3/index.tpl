@@ -8,23 +8,23 @@
 <body>
 <div id="toppage">
 
-	<!-- ヘッダーはじまり -->
-	<div id="header">
-		<h1 id="siteTitle"><a href="{$home}"><img src="images/page_title.gif" alt="{$siteName}" border="0" /></a></h1>
-	</div>
-	<!-- ヘッダーおわり -->
+  <!-- ヘッダーはじまり -->
+  <div id="header">
+    <h1 id="siteTitle"><a href="{$home}"><img src="images/page_title.gif" alt="{$siteName}" border="0" /></a></h1>
+  </div>
+  <!-- ヘッダーおわり -->
 
-	<!-- メインはじまり -->
-	<div id="main" class="clearfix">
-		<!-- パンくず -->
-		<div id="topicPath"><p>Home</p></div>
-		<!-- コンテンツはじまり -->
-		<div id="contents">
-			<div id=notice>
-				<h2>告知</h2>
-				<p>{$notice}</p>
-			</div>
-			<!-- エントリーはじまり -->
+  <!-- メインはじまり -->
+  <div id="main" class="clearfix">
+    <!-- パンくず -->
+    <div id="topicPath"><p>Home</p></div>
+    <!-- コンテンツはじまり -->
+    <div id="contents">
+      <div id=notice>
+        <h2>告知</h2>
+        <p>{$notice}</p>
+      </div>
+      <!-- エントリーはじまり -->
 {foreach from=$data item="topic" name="article"}
 {if $topic.category neq "Notice"}
 <div class="entry">
@@ -41,37 +41,37 @@
     <div class="contentsBody"><p>記事はありません。</p></div>
 </div>
 {/foreach}
-			<!-- エントリーおわり -->
-			<!-- ページナビゲーションはじまり -->
-			<div class="pageNav"><a href="#toppage">ページトップに戻る</a></div>
-			<!-- ページナビゲーションおわり -->
-		</div>
-		<!-- コンテンツおわり -->
-		<div id="sideArea1">
-			<h2 class="sideArea1Title">メニュー</h2>
-			<ul>
-			{section name="menu" loop=$categories}
-				{if $categories[menu] neq "Notice"}
-    			<li><a href="contents.php?category={$categories[menu]}">{$categories[menu]}</a></li>
-				{/if}
-			{/section}
-			</ul>
-			<h2 class="sideArea1Title">バナー</h2>
-			<p>
-				{insert_noticeText2 siteName=$siteName nocache}
-			</p>
-		</div>
+      <!-- エントリーおわり -->
+      <!-- ページナビゲーションはじまり -->
+      <div class="pageNav"><a href="#toppage">ページトップに戻る</a></div>
+      <!-- ページナビゲーションおわり -->
+    </div>
+    <!-- コンテンツおわり -->
+    <div id="sideArea1">
+      <h2 class="sideArea1Title">メニュー</h2>
+      <ul>
+      {section name="menu" loop=$categories}
+        {if $categories[menu] neq "Notice"}
+          <li><a href="contents.php?category={$categories[menu]}">{$categories[menu]}</a></li>
+        {/if}
+      {/section}
+      </ul>
+      <h2 class="sideArea1Title">バナー</h2>
+      <p>
+        {insert_noticeText2 siteName=$siteName nocache}
+      </p>
+    </div>
 
-	</div>
+  </div>
 
-	<!-- メインおわり -->
-	<!-- フッターはじまり -->
-	<div id="footer">
-		<address>
-		copyright 2007 {$siteName} All rights reserved.
-		</address>
-	</div>
-	<!-- フッターおわり -->
+  <!-- メインおわり -->
+  <!-- フッターはじまり -->
+  <div id="footer">
+    <address>
+    copyright 2007 {$siteName} All rights reserved.
+    </address>
+  </div>
+  <!-- フッターおわり -->
 </div>
 </body>
 </html>

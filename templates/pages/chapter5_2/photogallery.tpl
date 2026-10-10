@@ -84,7 +84,7 @@ SmartyPG.prototype.createThumbImg = function() {
     var thumbArea = document.createElement("div");
     thumbArea.setAttribute("id", thisObj.thumbAreaIdName);
     thumbArea.setAttribute("class", "clearfix");
-	
+  
     thisObj.thumbDiv.appendChild(thumbArea);
     thisObj.thumbArea = thumbArea;
     
@@ -139,7 +139,7 @@ SmartyPG.prototype.createThumbImg = function() {
 }
 // コントロールボタン作成
 SmartyPG.prototype.createController = function() {
-	var thisObj = this;
+  var thisObj = this;
     var controllerBox = document.createElement("div");
     controllerBox.setAttribute("id", thisObj.controllerIdName);
     var controllerObj = document.createElement("a");
