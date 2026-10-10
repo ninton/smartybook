@@ -17,7 +17,7 @@ trait HtmlStringAssertionTrait
 
             // 1. 読み込み前に設定を済ませる
             $dom->preserveWhiteSpace = false;
-            $dom->formatOutput = true;
+            $dom->formatOutput = false;
 
             // グローバル設定を汚さないよう、直前状態を退避して復元する。
             $previousUseInternalErrors = libxml_use_internal_errors(true);
@@ -30,7 +30,12 @@ trait HtmlStringAssertionTrait
                 libxml_use_internal_errors($previousUseInternalErrors);
             }
 
-            return trim($dom->saveHTML() ?: '');
+            $output = $dom->saveHTML() ?: '';
+
+            // タグ間の連続する空白を削除 (例: >  < -> ><)
+            $output = preg_replace('/>\s+</', '><', $output);
+
+            return trim($output);
         };
 
         static::assertEquals($normalize($expected), $normalize($actual), $message);
