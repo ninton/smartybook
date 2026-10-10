@@ -10,26 +10,18 @@ class MyListRepository
     private int $max_items;
 
     /**
-     * @var string
-     */
-    private string $dir;
-
-    /**
      * @param int $max_items
-     * @param string $dir
      */
-    public function __construct(int $max_items, string $dir)
+    public function __construct(int $max_items)
     {
         $this->max_items = $max_items;
-        $this->dir = $dir;
     }
 
     /**
      * @return MyList|null
      */
-    public function read(): ?MyList
+    public function read(string $path): ?MyList
     {
-        $path = $this->getPath();
         if ($path === '') {
             return null;
         }
@@ -60,24 +52,16 @@ class MyListRepository
      * @param MyList $MyList
      * @return void
      */
-    public function write(MyList $MyList): void
+    public function write(string $path, MyList $MyList): void
     {
         /**
          * @fixme MyListオブジェクトを連想配列やスカラー値に変換し、json_encode()で保存したい
          * serialize形式は オブジェクトのFQDNを含むので、クラス名やディレクトリ構造を変更すると復元できない。
          */
         $buf = serialize($MyList);
-        $path = $this->getPath();
+
         if ($path !== '') {
             file_put_contents($path, $buf);
         }
-    }
-
-    /**
-     * @return string
-     */
-    private function getPath(): string
-    {
-        return sprintf('%s1.txt', $this->dir);
     }
 }

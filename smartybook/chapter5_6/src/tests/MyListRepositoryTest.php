@@ -14,8 +14,8 @@ test('read 保存済みファイル', function () {
     /**
      * @note _write/mylist/1.txt はコミット済みのファイルで、25件のアイテムが必ず存在します
      */
-    $directory = dirname(__DIR__, 2) . '/_write/mylist/';
-    $repository = new MyListRepository(25, $directory);
+    $path = dirname(__DIR__, 2) . '/_write/mylist/1.txt';
+    $repository = new MyListRepository(25);
 
     $expected = new MyList(
         '大先生のおすすめ',
@@ -50,7 +50,7 @@ test('read 保存済みファイル', function () {
     );
 
     // Action
-    $actual = $repository->read();
+    $actual = $repository->read($path);
 
     // Assert
     expect($actual)->toEqual($expected);
@@ -61,8 +61,8 @@ test('read max_items で2件に切り詰めます', function () {
     /**
      * @note _write/mylist/1.txt はコミット済みのファイルで、25件のアイテムが必ず存在します
      */
-    $directory = dirname(__DIR__, 2) . '/_write/mylist/';
-    $repository = new MyListRepository(2, $directory);
+    $path = dirname(__DIR__, 2) . '/_write/mylist/1.txt';
+    $repository = new MyListRepository(2);
 
     $expected = new MyList(
         '大先生のおすすめ',
@@ -74,7 +74,7 @@ test('read max_items で2件に切り詰めます', function () {
     );
 
     // Action
-    $actual = $repository->read();
+    $actual = $repository->read($path);
 
     // Assert
     expect($actual)->toEqual($expected);
@@ -89,10 +89,10 @@ test('read 空ファイル → デフォルトの MyList', function () {
     touch($filePath);
 
     try {
-        $repository = new MyListRepository(25, $directory);
+        $repository = new MyListRepository(25);
 
         // Action
-        $actual = $repository->read();
+        $actual = $repository->read($filePath);
 
         // Assert
         expect($actual)->toEqual(new MyList());
@@ -115,13 +115,13 @@ test('write した内容と read した内容が一致する', function () {
     ]);
 
     try {
-        $repository = new MyListRepository(25, $directory);
+        $repository = new MyListRepository(25);
 
         // Action
-        $repository->write($myList);
+        $repository->write($filePath, $myList);
 
         // Assert
-        $actual = $repository->read();
+        $actual = $repository->read($filePath);
         expect($actual)->toEqual($myList);
     } finally {
         if (file_exists($filePath)) {

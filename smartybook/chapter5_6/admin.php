@@ -25,8 +25,8 @@ $config = require_once __DIR__ . '/config/config.php';
 function preview(array $config): void
 {
     // ----- メイン処理・データ操作 -----
-    $myListRepository = new MyListRepository($config['max_items'], $config['my_list_dir']);
-    $myList = $myListRepository->read();
+    $myListRepository = new MyListRepository($config['max_items']);
+    $myList = $myListRepository->read($config['my_list_dir'] . '/1.txt');
     if ($myList === null) {
         die('file read error');
     }
@@ -52,8 +52,8 @@ function form(array $config): void
 {
     // ----- メイン処理・データ操作 -----
     $message = '';
-    $myListRepository = new MyListRepository($config['max_items'], $config['my_list_dir']);
-    $myList = $myListRepository->read();
+    $myListRepository = new MyListRepository($config['max_items']);
+    $myList = $myListRepository->read($config['my_list_dir'] . '/1.txt');
     if ($myList === null) {
         die('file read error');
     }
@@ -74,8 +74,8 @@ function form(array $config): void
 function save(array $config, array $postVars): void
 {
     // ----- メイン処理・データ操作 -----
-    $myListRepository = new MyListRepository($config['max_items'], $config['my_list_dir']);
-    $myList = $myListRepository->read();
+    $myListRepository = new MyListRepository($config['max_items']);
+    $myList = $myListRepository->read($config['my_list_dir'] . '/1.txt');
     if ($myList === null) {
         die('file read error');
     }
@@ -99,7 +99,7 @@ function save(array $config, array $postVars): void
         $smarty->assign('myList', $myList);
         $smarty->display('pages/chapter5_6/admin_form.tpl');
     } else {
-        $myListRepository->write($myList);
+        $myListRepository->write($config['my_list_dir'] . '/1.txt', $myList);
         header('Location: ?action=preview');
     }
 }
