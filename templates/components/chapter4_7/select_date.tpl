@@ -1,9 +1,9 @@
 {*
-	prefix=
-	field_array=
-	time=
-	start_year=
-	end_year=
+  prefix=
+  field_array=
+  time=
+  start_year=
+  end_year=
 *}
 {if $start_year == ""}{assign var=start_year value=$smarty.now|date_format:"%Y"}{/if}
 {if $end_year   == ""}{assign var=end_year   value=$smarty.now|date_format:"%Y"}{/if}

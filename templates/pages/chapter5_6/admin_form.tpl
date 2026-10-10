@@ -40,9 +40,9 @@
                 <td>
                   <input class="inp_isbn"
                     name="detail_arr[{$smarty.section.i.index|escape:html}][ASIN]"    
-                  	value="{$myList->detail_arr[i].ASIN|escape:html}"
-                  	size="14" maxlength="13"
-                  	onchange="this.value=isbn13_to_isbn10(this.value)" />
+                    value="{$myList->detail_arr[i].ASIN|escape:html}"
+                    size="14" maxlength="13"
+                    onchange="this.value=isbn13_to_isbn10(this.value)" />
                 </td>
                 <td>
                   <input class="inp_comment"
