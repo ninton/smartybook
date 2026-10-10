@@ -1,5 +1,3 @@
-<!-- {$smarty.template|basename} -->
-<!-- created time {$smarty.now|date_format:"%Y/%m/%d %H:%M:%S"} -->
 <h2 class="moduleHeader">注目の記事</h2>
 
 {foreach from=$featured_arr key=i item=entry}
