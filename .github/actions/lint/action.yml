@@ -20,11 +20,12 @@ runs:
           php:
             - added|modified: 'smartybook/**/*.php'
             - added|modified: 'tests/**/*.php'
+          tpl:
+            - added|modified: 'templates/**/*.tpl'
           # actionlint 用なので、prettier用とは別途定義
           github_yaml:
             - added|modified: '.github/**/*.{yml,yaml}'
 
-    # ========================================
     # Shell スクリプトLint系
     # ========================================
     - name: Run ShellCheck
@@ -70,6 +71,14 @@ runs:
       if: ${{ steps.paths_filter.outputs.php == 'true' }}
       shell: bash
       run: composer run-script format:check ${{ steps.paths_filter.outputs.php_files }}
+
+    # ========================================
+    # Smarty テンプレート Lint系
+    # ========================================
+    - name: Run smarty-lint
+      if: steps.paths_filter.outputs.tpl == 'true'
+      shell: bash
+      run: composer run-script smarty-lint ${{ steps.paths_filter.outputs.tpl_files }}
 
     # ========================================
     # PHP 解析系

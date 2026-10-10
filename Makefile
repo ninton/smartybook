@@ -44,6 +44,10 @@ php-test-golden-master-update:
 	docker compose up -d
 	docker compose exec app composer run-script test:golden-master-update
 
+.PHONY: smarty-lint
+smarty-lint:
+	docker compose run --rm app composer run-script smarty-lint templates
+
 # 📁 setup用の状態管理ファイルの保存先ディレクトリ
 STATE_DIR := .make
 

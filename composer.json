@@ -25,6 +25,7 @@
        "lint:baseline": "phpstan analyse --configuration=phpstan.dist.neon --memory-limit=-1 --generate-baseline=phpstan-baseline.neon  --allow-empty-baseline",
        "lint:fix": "phpstan analyse --configuration=phpstan.dist.neon --memory-limit=-1 --fix",
        "lint:fresh": "phpstan clear-result-cache && phpstan analyse --configuration phpstan.dist.neon --memory-limit 1G",
+       "smarty-lint": "php vendor/smarty/smarty-lint/smartyl --rules=smarty-lint.rules.xml",
        "test": "vendor/bin/pest --colors=always app smartybook",
        "test:golden-master": [
            "@db:reset",
@@ -64,7 +65,8 @@
         "pestphp/pest": "^5.3",
         "phpstan/phpstan": "^2.2",
         "phpstan/phpstan-deprecation-rules": "^2.0",
-        "phpstan/phpstan-phpunit": "^2.0"
+        "phpstan/phpstan-phpunit": "^2.0",
+        "smarty/smarty-lint": "dev-master"
     },
     "autoload": {
         "psr-4": {
