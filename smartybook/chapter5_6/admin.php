@@ -94,7 +94,7 @@ function save(array $config, array $postVars): void
         // ----- テンプレートエンジンの初期化とアサイン・描画 -----
         $smarty = new AppSmarty();
         $smarty->registerPlugin('modifier', 'mb_truncate', MbTruncateModifier::truncate(...));
-        $smarty->assign('max_items', $config['max_items']);
+        $smarty->assign('max_items', MyList::MAX_ITEMS);
         $smarty->assign('message', $message);
         $smarty->assign('myList', $myList);
         $smarty->display('pages/chapter5_6/admin_form.tpl');
