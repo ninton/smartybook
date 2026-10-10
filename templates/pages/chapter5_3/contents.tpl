@@ -19,7 +19,7 @@
     {html_image file=$entry.image}<br />
   {else}
     <br />
-    --画像準備中--<!-- {$entry.image|escape:html} --><br />
+    --画像準備中--<br />
     <br />
   {/if}
 {/if}

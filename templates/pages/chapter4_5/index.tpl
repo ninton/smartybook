@@ -14,7 +14,7 @@
 {else}
     <h1><img src="./images/title_night.gif" width="650" height="110" alt="Smarty for Designers" /></h1>
 {/if}
-<!-- p>現在{$hour}時です。</p -->
+<p>現在{$hour}時です。</p>
 </div>
 <div id="gMenu">
     <ul>
