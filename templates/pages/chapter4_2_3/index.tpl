@@ -8,7 +8,7 @@
 <body>
 <div id="toppage">
 
-  <!-- ヘッダーはじまり
+  {* ヘッダーはじまり
   <div id="header">
     <div id="intro">
       <h1 id="siteTitle"><a href="{$home}"><img src="images/top_title.gif" alt="{$siteName}" border="0" /></a></h1>
@@ -26,21 +26,21 @@
       </div>
     </div>
   </div>
-  ヘッダーおわり -->
+  ヘッダーおわり *}
 
-  <!-- ヘッダーはじまり -->
+  {* ヘッダーはじまり *}
   <div id="header">
     <h1 id="siteTitle"><a href="{$home}"><img src="images/page_title.gif" alt="{$siteName}" border="0" /></a></h1>
   </div>
-  <!-- ヘッダーおわり -->
+  {* ヘッダーおわり *}
 
-  <!-- メインはじまり -->
+  {* メインはじまり *}
   <div id="main" class="clearfix">
-    <!-- パンくず -->
+    {* パンくず *}
     <div id="topicPath"><p>Home</p></div>
-    <!-- コンテンツはじまり -->
+    {* コンテンツはじまり *}
     <div id="contents">
-      <!-- エントリーはじまり -->
+      {* エントリーはじまり *}
 {foreach from=$data item="topic" name="article"}
 <div class="entry">
     <h2 class="entryTitle">{$topic.title|escape}</h2>
@@ -55,12 +55,12 @@
     <div class="contentsBody"><p>記事はありません。</p></div>
 </div>
 {/foreach}
-      <!-- エントリーおわり -->
-      <!-- ページナビゲーションはじまり -->
+      {* エントリーおわり *}
+      {* ページナビゲーションはじまり *}
       <div class="pageNav"><a href="#toppage">ページトップに戻る</a></div>
-      <!-- ページナビゲーションおわり -->
+      {* ページナビゲーションおわり *}
     </div>
-    <!-- コンテンツおわり -->
+    {* コンテンツおわり *}
     <div id="sideArea1">
       <h2 class="sideArea1Title">メニュー</h2>
       <ul>
@@ -76,14 +76,14 @@
 
   </div>
 
-  <!-- メインおわり -->
-  <!-- フッターはじまり -->
+  {* メインおわり *}
+  {* フッターはじまり *}
   <div id="footer">
     <address>
     copyright 2007 {$siteName} All rights reserved.
     </address>
   </div>
-  <!-- フッターおわり -->
+  {* フッターおわり *}
 </div>
 </body>
 </html>

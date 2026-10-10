@@ -7,15 +7,15 @@
 </head>
 <body>
 <div id="entrypage">
-  <!-- ヘッダーはじまり -->
+  {* ヘッダーはじまり *}
   <div id="header">
     <h1 id="siteTitle"><a href="{$admin}"><img src="images/system_title.gif" alt="投稿完了 | 管理画面" border="0" /></a></h1>
   </div>
-  <!-- ヘッダーおわり -->
-  <!-- メインはじまり -->
+  {* ヘッダーおわり *}
+  {* メインはじまり *}
   <div id="main">
     <div id="navigation"><p><a href="{$home}">サイト閲覧</a> | 管理画面</p></div>
-  <!-- 情報パネルはじまり -->
+  {* 情報パネルはじまり *}
   <div class="panel">
     <div class="header">
       <h2>投稿が完了しました</h2>
@@ -31,19 +31,19 @@
       <p><a href="{$admin}"><img src="./images/form_btn_end.gif" alt="戻る" width="155" height="24" /></a></p>
     </div>
   </div>
-  <!-- 情報パネルおわり -->
-  <!-- ページナビゲーションはじまり -->
+  {* 情報パネルおわり *}
+  {* ページナビゲーションはじまり *}
   <div class="pageNav"><a href="#entrypage">ページトップに戻る</a></div>
-  <!-- ページナビゲーションおわり -->
+  {* ページナビゲーションおわり *}
   </div>
-  <!-- メインおわり -->
-  <!-- フッターはじまり -->
+  {* メインおわり *}
+  {* フッターはじまり *}
   <div id="footer">
     <address>
     copyright {$siteName} All rights reserved.
     </address>
   </div>
-  <!-- フッターおわり -->
+  {* フッターおわり *}
 </div>
 </body>
 </html>

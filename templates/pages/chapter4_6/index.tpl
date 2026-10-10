@@ -82,8 +82,8 @@
 {/if}
 
 {$Pager->getCurrentPageID()}/{$Pager->numPages()}ページ
-</div><!-- id="navi" -->
+</div>{* id="navi" *}
 
-</div><!-- id="wrapper" -->
+</div>{* id="wrapper" *}
 </body>
 </html>
