@@ -5,19 +5,6 @@ namespace SmartyBook\chapter5_6\src;
 class MyListRepository
 {
     /**
-     * @var int
-     */
-    private int $max_items;
-
-    /**
-     * @param int $max_items
-     */
-    public function __construct(int $max_items)
-    {
-        $this->max_items = $max_items;
-    }
-
-    /**
      * @return MyList|null
      */
     public function read(string $path): ?MyList
@@ -40,11 +27,10 @@ class MyListRepository
          */
         $mylist = unserialize($buf);
 
-        // FIXME: リポジトリで切り詰めをするよりも、入力層でバリデーションとエラー表示、VO生成時にも件数チェックしたい
         return new MyList(
             $mylist->ListName,
             $mylist->NickName,
-            array_slice($mylist->detail_arr, 0, $this->max_items),
+            $mylist->detail_arr,
         );
     }
 

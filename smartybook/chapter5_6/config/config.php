@@ -6,9 +6,6 @@ declare(strict_types=1);
 // 常に410エラーです
 
 return [
-    // マイリストの商品数
-    'max_items' => 25,
-
     // amazon.com Web サービス 登録ID
     // 下記の登録IDを書き換えてご使用下さい
     'access_key_id' => '********************',
