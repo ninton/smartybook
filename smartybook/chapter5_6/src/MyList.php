@@ -19,6 +19,8 @@ namespace SmartyBook\chapter5_6\src;
  */
 final readonly class MyList
 {
+    public const int MAX_ITEMS = 25;
+
     /**
      * @param list<array{ASIN: string, comment: string}> $detail_arr
      */
@@ -27,6 +29,9 @@ final readonly class MyList
         public string $NickName = '',
         public array $detail_arr = [],
     ) {
+        if (count($this->detail_arr) > self::MAX_ITEMS) {
+            throw new \InvalidArgumentException('detail_arr cannot have more than ' . self::MAX_ITEMS . ' items.');
+        }
     }
 
     /**

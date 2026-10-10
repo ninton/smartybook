@@ -121,12 +121,12 @@ test('detail_arrの正常値を保持する', function (array $details) {
     '25件（上限）' => [array_fill(0, 25, ['ASIN' => '1234567890', 'comment' => ''])],
 ]);
 
-// 現状の挙動確認:現状はバリデーションがないため通過してしまうことを記録（本来は仕様外）
-test('detail_arrの仕様外の値も保持する', function (array $details) {
+test('detail_arrが26件（上限超過）のとき、例外スロー', function (array $details) {
     $myList = new MyList(detail_arr: $details);
-
-    expect($myList->detail_arr)->toBe($details);
-})->with([
+})->throws(
+    InvalidArgumentException::class,
+    'detail_arr cannot have more than ' . MyList::MAX_ITEMS . ' items.',
+)->with([
     '26件（上限超過）' => [array_fill(0, 26, ['ASIN' => '1234567890', 'comment' => ''])],
 ]);
 

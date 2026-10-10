@@ -15,7 +15,7 @@ test('read 保存済みファイル', function () {
      * @note _write/mylist/1.txt はコミット済みのファイルで、25件のアイテムが必ず存在します
      */
     $path = dirname(__DIR__, 2) . '/_write/mylist/1.txt';
-    $repository = new MyListRepository(25);
+    $repository = new MyListRepository();
 
     $expected = new MyList(
         '大先生のおすすめ',
@@ -56,30 +56,6 @@ test('read 保存済みファイル', function () {
     expect($actual)->toEqual($expected);
 });
 
-// FIXME: リポジトリで切り詰めをするよりも、入力層でバリデーションとエラー表示、VO生成時にも件数チェックしたい
-test('read max_items で2件に切り詰めます', function () {
-    /**
-     * @note _write/mylist/1.txt はコミット済みのファイルで、25件のアイテムが必ず存在します
-     */
-    $path = dirname(__DIR__, 2) . '/_write/mylist/1.txt';
-    $repository = new MyListRepository(2);
-
-    $expected = new MyList(
-        '大先生のおすすめ',
-        'Smartyの達人',
-        [
-            ['ASIN' => '4774127833', 'comment' => '★★★　大先生に原稿のチェックをしてもらっている。'],
-            ['ASIN' => '4774127205', 'comment' => '★★★　ラッテやお菓子を用意して、大先生のご機嫌をとるのだ。'],
-        ],
-    );
-
-    // Action
-    $actual = $repository->read($path);
-
-    // Assert
-    expect($actual)->toEqual($expected);
-});
-
 test('read 空ファイル → デフォルトの MyList', function () {
     // Arrange
     $temporaryDirectory = sys_get_temp_dir() . '/my-list-repository-' . bin2hex(random_bytes(8));
@@ -89,7 +65,7 @@ test('read 空ファイル → デフォルトの MyList', function () {
     touch($filePath);
 
     try {
-        $repository = new MyListRepository(25);
+        $repository = new MyListRepository();
 
         // Action
         $actual = $repository->read($filePath);
@@ -115,7 +91,7 @@ test('write した内容と read した内容が一致する', function () {
     ]);
 
     try {
-        $repository = new MyListRepository(25);
+        $repository = new MyListRepository();
 
         // Action
         $repository->write($filePath, $myList);

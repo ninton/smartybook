@@ -25,7 +25,7 @@ $config = require_once __DIR__ . '/config/config.php';
 function preview(array $config): void
 {
     // ----- メイン処理・データ操作 -----
-    $myListRepository = new MyListRepository($config['max_items']);
+    $myListRepository = new MyListRepository();
     $myList = $myListRepository->read($config['storage_path']);
     if ($myList === null) {
         die('file read error');
@@ -52,7 +52,7 @@ function form(array $config): void
 {
     // ----- メイン処理・データ操作 -----
     $message = '';
-    $myListRepository = new MyListRepository($config['max_items']);
+    $myListRepository = new MyListRepository();
     $myList = $myListRepository->read($config['storage_path']);
     if ($myList === null) {
         die('file read error');
@@ -61,7 +61,7 @@ function form(array $config): void
     // ----- テンプレートエンジンの初期化とアサイン・描画 -----
     $smarty = new AppSmarty();
     $smarty->registerPlugin('modifier', 'mb_truncate', MbTruncateModifier::truncate(...));
-    $smarty->assign('max_items', $config['max_items']);
+    $smarty->assign('max_items', MyList::MAX_ITEMS);
     $smarty->assign('message', $message);
     $smarty->assign('myList', $myList);
     $smarty->display('pages/chapter5_6/admin_form.tpl');
@@ -74,7 +74,7 @@ function form(array $config): void
 function save(array $config, array $postVars): void
 {
     // ----- メイン処理・データ操作 -----
-    $myListRepository = new MyListRepository($config['max_items']);
+    $myListRepository = new MyListRepository();
     $myList = $myListRepository->read($config['storage_path']);
     if ($myList === null) {
         die('file read error');
