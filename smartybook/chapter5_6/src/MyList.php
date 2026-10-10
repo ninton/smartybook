@@ -15,7 +15,8 @@ namespace SmartyBook\chapter5_6\src;
  *      detail_arr 内で重複可
  *   - comment: 空文字列可、最大200文字
  *
- * 現状はこれらの制約をバリデーションしていないため、仕様外の文字列や件数も受け入れて保持する。
+ * 現状はこれらの制約をバリデーションしていないため、仕様外の文字列を受け入れて保持する。
+ * 件数上限はチェックします。
  */
 final readonly class MyList
 {

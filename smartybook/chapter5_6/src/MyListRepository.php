@@ -27,7 +27,6 @@ class MyListRepository
          */
         $mylist = unserialize($buf);
 
-        // FIXME: リポジトリで切り詰めをするよりも、入力層でバリデーションとエラー表示、VO生成時にも件数チェックしたい
         return new MyList(
             $mylist->ListName,
             $mylist->NickName,
