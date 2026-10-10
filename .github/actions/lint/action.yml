@@ -20,8 +20,6 @@ runs:
           php:
             - added|modified: 'smartybook/**/*.php'
             - added|modified: 'tests/**/*.php'
-          tpl:
-            - added|modified: 'templates/**/*.tpl'
           # actionlint 用なので、prettier用とは別途定義
           github_yaml:
             - added|modified: '.github/**/*.{yml,yaml}'
@@ -76,9 +74,8 @@ runs:
     # Smarty テンプレート Lint系
     # ========================================
     - name: Run smarty-lint
-      if: steps.paths_filter.outputs.tpl == 'true'
       shell: bash
-      run: composer run-script smarty-lint ${{ steps.paths_filter.outputs.tpl_files }}
+      run: composer run-script smarty-lint templates
 
     # ========================================
     # PHP 解析系
