@@ -16,8 +16,8 @@ require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 $config = require_once __DIR__ . '/config/config.php';
 
 // ----- メイン処理・データ操作 -----
-$myListRepository = new MyListRepository($config['max_items'], $config['my_list_dir']);
-$myList = $myListRepository->read();
+$myListRepository = new MyListRepository($config['max_items']);
+$myList = $myListRepository->read($config['my_list_dir'] . '/1.txt');
 if ($myList === null) {
     die('read error');
 }
