@@ -1,12 +1,11 @@
-{include file="components/chapter5_6/head.tpl"}
-<title>Smarty for Designers</title>
-<script src="js/isbn.js"></script>
-</head><body>
-<div id="wrapper">
-<div id="alpha">
-    <p id="siteTitle">Smarty for Designers</p>
-</div>
-<div id="beta">
+{extends file='layouts/chapter5_6/base.tpl'}
+
+{* ▼ このページだけで script を差し込む *}
+{block name="head"}
+    <script src="js/isbn.js"></script>
+{/block}
+
+{block name="content"}
     <h1>
         （2020年3月で本プログラムが使っているAmazon_ECSのAPIは廃止となりました。代わりにダミーデータを表示します）<br>
         マイリスト(編集)
@@ -59,5 +58,4 @@
             <input class="button" type="button" value="キャンセル" onclick="location.href='?action=preview'" />
         </div>
     </form>
-</div>
-{include file="components/chapter5_6/footer.tpl"} 
+{/block}
