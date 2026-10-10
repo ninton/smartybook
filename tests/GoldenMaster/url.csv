@@ -167,8 +167,8 @@ chapter5_5/confirm,POST,http://localhost/smartybook/chapter5_5/confirm.php,categ
 chapter5_5/complete,POST,http://localhost/smartybook/chapter5_5/complete.php,category=Study&title=test-title&contents=test-body&date=1789462161&image=
 
 # chapter5_6
-chapter5_6/admin,GET,http://localhost/smartybook/chapter5_6/admin.php,
 chapter5_6/view,GET,http://localhost/smartybook/chapter5_6/view.php,
+chapter5_6/admin,GET,http://localhost/smartybook/chapter5_6/admin.php,
 chapter5_6/admin preview,GET,http://localhost/smartybook/chapter5_6/admin.php?action=preview,
 chapter5_6/admin form,GET,http://localhost/smartybook/chapter5_6/admin.php?action=form,
 chapter5_6/admin save,POST,http://localhost/smartybook/chapter5_6/admin.php,ListName=my-list&NickName=taro&action=save&detail_arr[0][ASIN]=4774127833&detail_arr[0][comment]=comment-0
