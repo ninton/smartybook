@@ -18,6 +18,6 @@ return [
     // 下記のアフィリエイトIDを書き換えてご使用ください
     'associate_tag' => '********************',
 
-    // ファイル、ディレクトリ
-    'my_list_dir' => dirname(__DIR__, 1) . '/_write/mylist/',
+    // 保存ファイル
+    'storage_path' => dirname(__DIR__, 1) . '/_write/mylist/1.txt',
 ];
