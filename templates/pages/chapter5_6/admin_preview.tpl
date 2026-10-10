@@ -4,7 +4,7 @@
     <h1>マイリスト(プレビュー)</h1>
     <p><a class="button" href="view.php" target="_blank">公開ページを確認</a></p>
 
-    {if $message }
+    {if $message}
     <div class="message">{$message|escape:html}</div>
     {/if}
 

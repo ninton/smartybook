@@ -3,12 +3,12 @@
 
 {* ページとメニューIDの対応表、メニューIDは階層構造を反映している *}
 {assign var=u value=$smarty.server.REQUEST_URI}
-{if     preg_match('/\bindex\.php\b/',$u)}{assign var=menu_id value='1'  }
-{elseif preg_match('/\/$/'           ,$u)}{assign var=menu_id value='1'  }
-{elseif preg_match('/\bcate1\.php\b/',$u)}{assign var=menu_id value='1-1'  }
+{if     preg_match('/\bindex\.php\b/',$u)}{assign var=menu_id value='1'}
+{elseif preg_match('/\/$/'           ,$u)}{assign var=menu_id value='1'}
+{elseif preg_match('/\bcate1\.php\b/',$u)}{assign var=menu_id value='1-1'}
 {elseif preg_match('/\bpage1\.php\b/',$u)}{assign var=menu_id value='1-1-1'}
 {elseif preg_match('/\bpage2\.php\b/',$u)}{assign var=menu_id value='1-1-2'}
-{elseif preg_match('/\bcate2\.php\b/',$u)}{assign var=menu_id value='1-2'  }
+{elseif preg_match('/\bcate2\.php\b/',$u)}{assign var=menu_id value='1-2'}
 {elseif preg_match('/\bpage3\.php\b/',$u)}{assign var=menu_id value='1-2-1'}
 {elseif preg_match('/\bpage4\.php\b/',$u)}{assign var=menu_id value='1-2-2'}
 {/if}

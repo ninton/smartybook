@@ -30,11 +30,11 @@
 
 <table border="0" cellspacing="0">
 <tr>
-  <th>ID      <br />{$SortNavi->show('id')      }</th>
+  <th>ID      <br />{$SortNavi->show('id')}</th>
   <th>カテゴリ<br />{$SortNavi->show('category')}</th>
-  <th>タイトル<br />{$SortNavi->show('title')   }</th>
-  <th class="comment">コメント<br />{$SortNavi->show('comment') }</th>
-  <th>日付    <br />{$SortNavi->show('time')    }</th>
+  <th>タイトル<br />{$SortNavi->show('title')}</th>
+  <th class="comment">コメント<br />{$SortNavi->show('comment')}</th>
+  <th>日付    <br />{$SortNavi->show('time')}</th>
 </tr>
 {foreach from=$rcd_arr key=i item=rcd}
 <tr class="{cycle name="cycle2" values='tr2_1,tr2_2'} {cycle name="cycle5" values=',,,,tr5_5'}">
