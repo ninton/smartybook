@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "67f505c6b8bc946a4c5703195596ecfe",
+    "content-hash": "1e4cd1ab4b11a171a67cb45758b5165f",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -5377,7 +5377,7 @@
         },
         {
             "name": "smarty/smarty-lint",
-            "version": "dev-master",
+            "version": "v0.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/umakantp/SmartyLint.git",
@@ -5395,7 +5395,6 @@
             "require-dev": {
                 "php-parallel-lint/php-parallel-lint": "^1.4"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -6967,9 +6966,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "smarty/smarty-lint": 20
-    },
+    "stability-flags": {},
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

@@ -66,7 +66,7 @@
         "phpstan/phpstan": "^2.2",
         "phpstan/phpstan-deprecation-rules": "^2.0",
         "phpstan/phpstan-phpunit": "^2.0",
-        "smarty/smarty-lint": "dev-master"
+        "smarty/smarty-lint": "^0.4.0"
     },
     "autoload": {
         "psr-4": {
