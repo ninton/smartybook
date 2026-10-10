@@ -17,7 +17,7 @@ $config = require_once __DIR__ . '/config/config.php';
 
 // ----- メイン処理・データ操作 -----
 $myListRepository = new MyListRepository($config['max_items']);
-$myList = $myListRepository->read($config['my_list_dir'] . '/1.txt');
+$myList = $myListRepository->read($config['storage_path']);
 if ($myList === null) {
     die('read error');
 }
