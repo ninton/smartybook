@@ -24,7 +24,6 @@ runs:
           github_yaml:
             - added|modified: '.github/**/*.{yml,yaml}'
 
-    # ========================================
     # Shell スクリプトLint系
     # ========================================
     - name: Run ShellCheck
@@ -70,6 +69,13 @@ runs:
       if: ${{ steps.paths_filter.outputs.php == 'true' }}
       shell: bash
       run: composer run-script format:check ${{ steps.paths_filter.outputs.php_files }}
+
+    # ========================================
+    # Smarty テンプレート Lint系
+    # ========================================
+    - name: Run smarty-lint
+      shell: bash
+      run: composer run-script smarty-lint templates
 
     # ========================================
     # PHP 解析系

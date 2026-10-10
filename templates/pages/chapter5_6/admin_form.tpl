@@ -11,7 +11,7 @@
         マイリスト(編集)
     </h1>
 
-    {if $message }
+    {if $message}
     <div class="message">{$message|escape:html}</div>
     {/if}
 

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3ce37a2bbf1933928f2687b65938b0f2",
+    "content-hash": "1e4cd1ab4b11a171a67cb45758b5165f",
     "packages": [
         {
             "name": "graham-campbell/result-type",
@@ -5374,6 +5374,56 @@
                 }
             ],
             "time": "2026-10-04T05:51:14+00:00"
+        },
+        {
+            "name": "smarty/smarty-lint",
+            "version": "v0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/umakantp/SmartyLint.git",
+                "reference": "92b228b925427690937a3847c4cb16dbcf268df9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/umakantp/SmartyLint/zipball/92b228b925427690937a3847c4cb16dbcf268df9",
+                "reference": "92b228b925427690937a3847c4cb16dbcf268df9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=8.1"
+            },
+            "require-dev": {
+                "php-parallel-lint/php-parallel-lint": "^1.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Umakantp\\SmartyLint\\": "SmartLint/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Umakant Patil",
+                    "email": "patil@umakant.com"
+                }
+            ],
+            "description": "SmartyLint is a PHP tool that helps you find issues in your Smarty template files. It's designed to assist you in writing cleaner and more consistent Smarty templates",
+            "homepage": "https://github.com/umakantp/SmartyLint",
+            "keywords": [
+                "lint",
+                "php",
+                "smarty",
+                "template"
+            ],
+            "support": {
+                "issues": "https://github.com/umakantp/SmartyLint/issues",
+                "source": "https://github.com/umakantp/SmartyLint/tree/v0.4.0"
+            },
+            "time": "2026-06-30T18:31:56+00:00"
         },
         {
             "name": "staabm/side-effects-detector",
