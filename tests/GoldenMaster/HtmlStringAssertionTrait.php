@@ -32,11 +32,24 @@ trait HtmlStringAssertionTrait
 
             $xpath = new \DOMXPath($dom);
 
-            // 空白・改行のみのテキストノード（余分な既存改行）を削除
-            foreach ($xpath->query('//text()') as $node) {
-                if (trim($node->nodeValue) === '') {
-                    $node->parentNode->removeChild($node);
-                }
+            // 1. レイアウト用空白の除去対象とする主要なブロックレベル要素・構造要素
+            $blockElements = [
+                'article', 'aside', 'blockquote', 'body', 'dd', 'div', 'dl', 'dt',
+                'fieldset', 'figcaption', 'figure', 'footer', 'form', 'h1', 'h2',
+                'h3', 'h4', 'h5', 'h6', 'header', 'hr', 'html', 'li', 'main',
+                'nav', 'ol', 'option', 'p', 'section', 'select', 'table', 'tbody',
+                'td', 'tfoot', 'th', 'thead', 'tr', 'ul',
+            ];
+
+            // 2. ブロック要素直下の「改行・空白のみのテキストノード」のみを特定して削除
+            $conditions = array_map(
+                static fn (string $tag) => sprintf('name()="%s"', $tag),
+                $blockElements,
+            );
+            $xpathQuery = sprintf('//text()[trim(.) = "" and parent::*[%s]]', implode(' or ', $conditions));
+
+            foreach ($xpath->query($xpathQuery) as $node) {
+                $node->parentNode->removeChild($node);
             }
 
             return trim($dom->saveHTML() ?: '');
