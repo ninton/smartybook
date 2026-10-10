@@ -1,5 +1,10 @@
 {extends file='layouts/chapter5_6/base.tpl'}
 
+{* ▼ このページだけで script を差し込む *}
+{block name="head"}
+    <script src="js/isbn.js"></script>
+{/block}
+
 {block name="content"}
     <h1>
         （2020年3月で本プログラムが使っているAmazon_ECSのAPIは廃止となりました。代わりにダミーデータを表示します）<br>
