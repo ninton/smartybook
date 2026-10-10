@@ -28,19 +28,19 @@
       <tr>
         <th>開始日時</th>
         <td>
-{html_select_date prefix="" field_array="startDate" time=$form.startDate.TimeStamp display_months=0  display_days=0    end_year="+3"     }年
+{html_select_date prefix="" field_array="startDate" time=$form.startDate.TimeStamp display_months=0  display_days=0    end_year="+3"}年
 {html_select_date prefix="" field_array="startDate" time=$form.startDate.TimeStamp display_years=0   display_days=0    month_format="%#m"}月
-{html_select_date prefix="" field_array="startDate" time=$form.startDate.TimeStamp display_years=0   display_months=0  day_format="%d"   }日
-{html_select_time prefix="" field_array="startDate" time=$form.startDate.TimeStamp display_minutes=0 display_seconds=0 use_24_hours=1    }時
-{html_select_time prefix="" field_array="startDate" time=$form.startDate.TimeStamp display_hours=0   display_seconds=0                   }分
-{html_select_time prefix="" field_array="startDate" time=$form.startDate.TimeStamp display_hours=0   display_minutes=0                   }秒<br />
+{html_select_date prefix="" field_array="startDate" time=$form.startDate.TimeStamp display_years=0   display_months=0  day_format="%d"}日
+{html_select_time prefix="" field_array="startDate" time=$form.startDate.TimeStamp display_minutes=0 display_seconds=0 use_24_hours=1}時
+{html_select_time prefix="" field_array="startDate" time=$form.startDate.TimeStamp display_hours=0   display_seconds=0}分
+{html_select_time prefix="" field_array="startDate" time=$form.startDate.TimeStamp display_hours=0   display_minutes=0}秒<br />
         </td>
       </tr>
       <tr>
         <th>終了日時</th>
         <td>
 {include file="components/chapter4_7/select_date.tpl" prefix="endDate_" field_array="" time=$form.endDate_TimeStamp start_year="" end_year="+3"}
-{include file="components/chapter4_7/select_time.tpl" prefix="endDate_" field_array="" time=$form.endDate_TimeStamp start_year="" end_year="" }<br />
+{include file="components/chapter4_7/select_time.tpl" prefix="endDate_" field_array="" time=$form.endDate_TimeStamp start_year="" end_year=""}<br />
         </td>
       </tr>
     </table>

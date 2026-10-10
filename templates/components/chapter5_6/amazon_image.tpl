@@ -5,10 +5,10 @@
 *}
 {strip}
 {if $image}
-  {if $width  eq ''}{assign var=width  value=$image.Width._content }{/if}
+  {if $width  eq ''}{assign var=width  value=$image.Width._content}{/if}
   {if $height eq ''}{assign var=height value=$image.Height._content}{/if}
 
-  {if $image.Width._content < $image.Height._content }
+  {if $image.Width._content < $image.Height._content}
     {assign  var=h  value=$height}
     {math assign=w  equation="floor(`$h` * `$image.Width._content` / `$image.Height._content`)"}
     {assign  var=pT value=0}
