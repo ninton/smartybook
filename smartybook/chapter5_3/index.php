@@ -7,7 +7,6 @@ use SmartyBook\chapter5_3\src\NetUserAgentMobileMapper;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/config/config.php';
-require_once __DIR__ . '/config/config-ketai.php';
 
 /**
  * config/config.phpで定義
@@ -15,8 +14,6 @@ require_once __DIR__ . '/config/config-ketai.php';
  * @var string $home
  * @var list<string> $categories
  * @var array<string, string> $iconMap
- *
- * config/config-ketai.phpで設定
  * @var array<string, string> $layoutMap
  */
 
