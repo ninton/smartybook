@@ -1,6 +1,5 @@
 {config_load file="style.conf"}
 {config_load file="emoji.conf"}
-{assign var=category value=$smarty.get.category}
 {assign var=cate_icon value="icon_$category"}
 {assign var=title value="$category | $siteName"}
 
