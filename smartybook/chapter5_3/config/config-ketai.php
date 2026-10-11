@@ -10,6 +10,7 @@ $display = $agent->getDisplay();
 // キャリア名称の調整
 switch (strtolower($agent->getCarrierLongName())) {
     case 'docomo':
+        header('Content-Type: application/xhtml+xml; charset=UTF-8');
         $carrierName = 'imode';
         break;
 
