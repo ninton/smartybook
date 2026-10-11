@@ -11,9 +11,8 @@
 
 <div>
   <br />
-  {foreach from=$categories key=i item=category}
-    {assign var=cate_icon value="icon_$category"}
-  {$smarty.config.$cate_icon}<a href="contents.php?category={$category|escape:html}">{$category|escape:html}</a><br />
+  {foreach from=$categoryDataArr item=categoryData}
+  {$categoryData.icon}<a href="{$categoryData.url}">{$categoryData.name|escape:'html'}</a><br />
   {/foreach}
   <br />
 </div>
