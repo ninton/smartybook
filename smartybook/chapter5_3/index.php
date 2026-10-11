@@ -12,6 +12,10 @@ require_once __DIR__ . '/config/config-ketai.php';
  * @var string $home
  * @var list<string> $categories
  * @var array<string, string> $iconMap
+ *
+ * config/config-ketai.phpで設定
+ * @var string $carrierName
+ * @var array<string, string> $layoutMap
  */
 
 $categoryDataArr = [];
@@ -25,10 +29,20 @@ foreach ($categories as $category) {
     ];
 }
 
+// ----- UIパーツ -----
+$layoutName = $layoutMap[$carrierName];
+
+// キャリアごとのレスポンスヘッダ調整が必要ならここで行う
+if ($carrierName === 'imode') {
+    header('Content-Type: application/xhtml+xml; charset=UTF-8');
+}
+
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
 $smarty->setConfigDir(__DIR__ . '/config/smarty');
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
+$smarty->assign('carrierName', $carrierName);
+$smarty->assign('layoutName', $layoutName);
 $smarty->assign('categoryDataArr', $categoryDataArr);
 $smarty->display('pages/chapter5_3/index.tpl');

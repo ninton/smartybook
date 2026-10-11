@@ -11,25 +11,25 @@ $display = $agent->getDisplay();
 switch (strtolower($agent->getCarrierLongName())) {
     case 'docomo':
         header('Content-Type: application/xhtml+xml; charset=UTF-8');
-        $_SERVER['carrier_ua'] = 'imode';
+        $carrierName = 'imode';
         break;
 
     case 'ezweb':
-        $_SERVER['carrier_ua'] = 'ezweb';
+        $carrierName = 'ezweb';
         break;
 
     case 'vodafone':
     case 'softbank':
-        $_SERVER['carrier_ua'] = 'softbank';
+        $carrierName = 'softbank';
         break;
 
     default:
-        $_SERVER['carrier_ua'] = 'imode';
+        $carrierName = 'imode';
         break;
 }
 
 // 絵文字変換処理
-switch ($_SERVER['carrier_ua']) {
+switch ($carrierName) {
     case 'imode':
         break;
 
@@ -43,3 +43,9 @@ switch ($_SERVER['carrier_ua']) {
         ob_start(emoji_output_handler(...));
         break;
 }
+
+$layoutMap = [
+    'imode' => 'base_imode.tpl',
+    'ezweb' => 'base_ezweb.tpl',
+    'softbank' => 'base_softbank.tpl',
+];

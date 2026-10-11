@@ -20,6 +20,8 @@ require_once __DIR__ . '/config/config-ketai.php';
  *
  * config/config-ketai.phpで設定
  * @var object $display
+ * @var string $carrierName
+ * @var array<string, string> $layoutMap
  */
 
 // ----- 入力値受取・前処理 -----
@@ -74,6 +76,13 @@ if ((0 < $from) && (0 < $to)) {
 }
 
 // ----- UIパーツ -----
+$layoutName = $layoutMap[$carrierName];
+
+// キャリアごとのレスポンスヘッダ調整が必要ならここで行う
+if ($carrierName === 'imode') {
+    header('Content-Type: application/xhtml+xml; charset=UTF-8');
+}
+
 $pagerDto = PearPagerMapper::toDto($pager, $from, $to);
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
@@ -87,4 +96,6 @@ $smarty->assign('home', $home);
 $smarty->assign('category', $category);
 $smarty->assign('cate_icon', $cateIcon);
 $smarty->assign('entry', $entry);
+$smarty->assign('carrierName', $carrierName);
+$smarty->assign('layoutName', $layoutName);
 $smarty->display('pages/chapter5_3/contents.tpl');
