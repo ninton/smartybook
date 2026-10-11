@@ -28,6 +28,7 @@
 
 <div>
   <br />
+{* NOTE: 各項目間に空白が入ってしまうので、あえてインデントしていません *}
 {if $PagerDto->ExPreviousPageLink}<a href="{$PagerDto->ExPreviousPageLink}">≪前</a>&nbsp;{/if}
 {if $PagerDto->ExNextPageLink}<a href="{$PagerDto->ExNextPageLink}">次≫</a>&nbsp;{/if}
 {$smarty.config.$cate_icon}{$category|escape:html} {$Pager->getCurrentPageID()|escape:html}/{$Pager->numPages()|escape:html}
