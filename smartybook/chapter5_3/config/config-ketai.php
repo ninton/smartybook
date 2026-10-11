@@ -10,6 +10,7 @@ $display = $agent->getDisplay();
 // キャリア名称の調整
 switch (strtolower($agent->getCarrierLongName())) {
     case 'docomo':
+        // iモードの場合はXHTMLを返す
         header('Content-Type: application/xhtml+xml; charset=UTF-8');
         $carrierName = 'imode';
         break;
@@ -24,6 +25,7 @@ switch (strtolower($agent->getCarrierLongName())) {
         break;
 
     default:
+        // デフォルトはiモードとして扱う。ただし Content-Typeヘッダは設定しない
         $carrierName = 'imode';
         break;
 }

@@ -32,11 +32,6 @@ foreach ($categories as $category) {
 // ----- UIパーツ -----
 $layoutName = $layoutMap[$carrierName];
 
-// キャリアごとのレスポンスヘッダ調整が必要ならここで行う
-if ($carrierName === 'imode') {
-    header('Content-Type: application/xhtml+xml; charset=UTF-8');
-}
-
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
 $smarty->setConfigDir(__DIR__ . '/config/smarty');

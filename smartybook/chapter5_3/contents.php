@@ -78,11 +78,6 @@ if ((0 < $from) && (0 < $to)) {
 // ----- UIパーツ -----
 $layoutName = $layoutMap[$carrierName];
 
-// キャリアごとのレスポンスヘッダ調整が必要ならここで行う
-if ($carrierName === 'imode') {
-    header('Content-Type: application/xhtml+xml; charset=UTF-8');
-}
-
 $pagerDto = PearPagerMapper::toDto($pager, $from, $to);
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
