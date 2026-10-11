@@ -1,9 +1,12 @@
 <?php
 
+use App\PearStub\NetUserAgentMobileCommonStub;
 use App\PearStub\PagerStub as Pager;
 use App\Smarty\AppSmarty as Smarty;
 use SmartyBook\chapter5_3\src\CsvEntryReader;
 use SmartyBook\chapter5_3\src\EntryImagePathResolver;
+use SmartyBook\chapter5_3\src\KetaiSetUp;
+use SmartyBook\chapter5_3\src\NetUserAgentMobileMapper;
 use SmartyBook\chapter5_3\src\PearPagerMapper;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
@@ -19,20 +22,15 @@ require_once __DIR__ . '/config/config-ketai.php';
  * @var array<string, string> $iconMap
  *
  * config/config-ketai.phpで設定
- * @var object $display
- * @var string $carrierName
  * @var array<string, string> $layoutMap
  */
 
 // ----- 入力値受取・前処理 -----
-// 画面幅から画像サイズを判断する
-if ($display->getWidth() < 180) {
-    $imageSizeGroup = '120';
-} elseif ($display->getWidth() < 360) {
-    $imageSizeGroup = '240';
-} else {
-    $imageSizeGroup = '480';
-}
+$agentDto = NetUserAgentMobileMapper::toDto(new NetUserAgentMobileCommonStub());
+KetaiSetUp::contentType($agentDto['carrierLongName']);
+KetaiSetUp::outputHandler($agentDto['carrierName']);
+
+$imageSizeGroup = $agentDto['imageSizeGroup'];
 
 $pageID = 1;
 if (isset($_REQUEST['pageID'])) {
@@ -76,7 +74,7 @@ if ((0 < $from) && (0 < $to)) {
 }
 
 // ----- UIパーツ -----
-$layoutName = $layoutMap[$carrierName];
+$layoutName = $layoutMap[$agentDto['carrierName']];
 
 $pagerDto = PearPagerMapper::toDto($pager, $from, $to);
 
@@ -91,6 +89,6 @@ $smarty->assign('home', $home);
 $smarty->assign('category', $category);
 $smarty->assign('cate_icon', $cateIcon);
 $smarty->assign('entry', $entry);
-$smarty->assign('carrierName', $carrierName);
+$smarty->assign('carrierName', $agentDto['carrierName']);
 $smarty->assign('layoutName', $layoutName);
 $smarty->display('pages/chapter5_3/contents.tpl');
