@@ -19,3 +19,9 @@ $iconMap = [
  * @fixme chapter5_3 配下にdata.csvを配置したい
  */
 $CFG['CSV_FILE'  ] = $csv;
+
+$layoutMap = [
+    'imode' => 'base_imode.tpl',
+    'ezweb' => 'base_ezweb.tpl',
+    'softbank' => 'base_softbank.tpl',
+];
