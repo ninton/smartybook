@@ -29,35 +29,35 @@
     </tr>
   </table>
 
-    <table class="list" cellspacing="0">
-      <tr>
-        <th>&nbsp;</th>
-        <th>ISBN</th>
-        <th>コメント</th>
-      </tr>
-{section name=i loop=$max_items}
-      <tr>
-        <td>{$smarty.section.i.iteration|escape:html}</td>
-        <td>
-          <input class="inp_isbn"
-              name="detail_arr[{$smarty.section.i.index|escape:html}][ASIN]"
-              value="{$myList->detail_arr[i].ASIN|escape:html}"
-              size="14"
-              maxlength="13"
-              onchange="this.value=isbn13_to_isbn10(this.value)"
-              />
-        </td>
-        <td>
-          <input class="inp_comment"
-              name="detail_arr[{$smarty.section.i.index|escape:html}][comment]"
-              value="{$myList->detail_arr[i].comment|escape:html}"
-              size="30"
-              maxlength="200"
-              />
-        </td>
-      </tr>
-{/section}
-    </table>
+  <table class="list" cellspacing="0">
+    <tr>
+      <th>&nbsp;</th>
+      <th>ISBN</th>
+      <th>コメント</th>
+    </tr>
+  {section name=i loop=$max_items}
+    <tr>
+      <td>{$smarty.section.i.iteration|escape:html}</td>
+      <td>
+        <input class="inp_isbn"
+            name="detail_arr[{$smarty.section.i.index|escape:html}][ASIN]"
+            value="{$myList->detail_arr[i].ASIN|escape:html}"
+            size="14"
+            maxlength="13"
+            onchange="this.value=isbn13_to_isbn10(this.value)"
+            />
+      </td>
+      <td>
+        <input class="inp_comment"
+            name="detail_arr[{$smarty.section.i.index|escape:html}][comment]"
+            value="{$myList->detail_arr[i].comment|escape:html}"
+            size="30"
+            maxlength="200"
+            />
+      </td>
+    </tr>
+  {/section}
+  </table>
 
   <div id="btn">
     <input class="button" type="submit" value="保存" />

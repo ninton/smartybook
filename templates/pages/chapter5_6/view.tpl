@@ -12,13 +12,13 @@
   <tr>
     <td>
       {if isset($detail.Item.SmallImage)}
-        {include file="components/chapter5_6/amazon_image.tpl" image=$detail.Item.SmallImage width=75 height=75}
+{include file="components/chapter5_6/amazon_image.tpl" image=$detail.Item.SmallImage width=75 height=75}
       {/if}
     </td>
 
       {strip}
     <td>
-        {include file="components/chapter5_6/amazon_item.tpl" item=$detail.Item}
+{include file="components/chapter5_6/amazon_item.tpl" item=$detail.Item}
       <div class="comment">
         <strong>コメント: </strong> {$detail.comment|escape:html}
       </div>

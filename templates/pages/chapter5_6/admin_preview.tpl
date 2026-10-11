@@ -23,22 +23,22 @@
   {foreach name=f from=$myList->detail_arr key=i item=detail}
     {if $detail.ASIN != '' || $detail.comment != ''}
   <tr>
-      <td>{$smarty.foreach.f.iteration|escape:html}</td>
-      <td>
+    <td>{$smarty.foreach.f.iteration|escape:html}</td>
+    <td>
       {if isset($detail.Item.SmallImage)}
-        {include file="components/chapter5_6/amazon_image.tpl" image=$detail.Item.SmallImage  width=75 height=75}
+{include file="components/chapter5_6/amazon_image.tpl" image=$detail.Item.SmallImage  width=75 height=75}
       {else}
         SmallImage empty
       {/if}
-      </td>
+    </td>
 
       {strip}
-      <td>
-        {include file="components/chapter5_6/amazon_item.tpl" item=$detail.Item}
-        <div class="comment">
-          <strong>コメント: </strong> {$detail.comment|escape:html}
-        </div>
-      </td>
+    <td>
+{include file="components/chapter5_6/amazon_item.tpl" item=$detail.Item}
+      <div class="comment">
+        <strong>コメント: </strong> {$detail.comment|escape:html}
+      </div>
+    </td>
       {/strip}
   </tr>
     {/if}
