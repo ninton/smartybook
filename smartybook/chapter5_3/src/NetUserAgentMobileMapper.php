@@ -36,9 +36,9 @@ final readonly class NetUserAgentMobileMapper
     // 画面幅から画像サイズを判断する
     private static function determineImageSizeGroup(int $width): string
     {
-        if ($width <= 180) {
+        if ($width < 180) {
             return '120';
-        } elseif ($width <= 360) {
+        } elseif ($width < 360) {
             return '240';
         } else {
             return '480';
