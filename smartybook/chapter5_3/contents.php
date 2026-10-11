@@ -39,13 +39,13 @@ if (isset($_REQUEST['pageID'])) {
 
 $category = $_GET['category'] ?? '';
 
-$cateIcon = $iconMap[$category];
-
 // 文字列であることを確認しつつ、ホワイトリストに含まれているかチェック
 if (!is_string($category) || !in_array($category, $categories, true)) {
     http_response_code(404);
     exit;
 }
+
+$cateIcon = $iconMap[$category];
 
 // ----- メイン処理・データ操作 -----
 // CMSデータを配列に格納
