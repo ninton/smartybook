@@ -2,11 +2,11 @@
 {config_load file="emoji.conf"}
 {assign var=title value="$category | $siteName"}
 
-{extends file="layouts/chapter5_3/base_`$smarty.server.carrier_ua`.tpl"}
+{extends file="layouts/chapter5_3/$layoutName"}
 
 {block name="content"}
 <div style="{#H1_STYLE#}">
-  <h1>Smarty+{$smarty.server.carrier_ua|escape:html}</h1>
+  <h1>Smarty+{$carrierName|escape:html}</h1>
 </div>
 
 <div>
