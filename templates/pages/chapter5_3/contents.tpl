@@ -1,16 +1,15 @@
-{include file="pages/chapter5_3/head_`$smarty.server.carrier_ua`.tpl"}
 {config_load file="style.conf"}
 {config_load file="emoji.conf"}
 {assign var=category value=$smarty.get.category}
 {assign var=cate_icon value="icon_$category"}
-<title>{$category|escape:html} | {$siteName|escape:html}</title>
-</head>
-<body style="{#BODY_STYLE#}">
+{assign var=title value="$category | $siteName"}
 
+{extends file="layouts/chapter5_3/base_`$smarty.server.carrier_ua`.tpl"}
+
+{block name="content"}
 <div style="{#H1_STYLE#}">
 <h1>Smarty+{$smarty.server.carrier_ua|escape:html}</h1>
 </div>
-
 
 <div>
 {$smarty.config.$cate_icon} {$entry.title|escape:html}<br />
@@ -35,13 +34,4 @@
 <br />
 □<a href="{$home|escape:html}">Home</a>
 </div>
-
-<hr style="{#HR_STYLE#}" />
-<div>
-copyright 2007<br />
-{$siteName|escape:html}<br />
-All rights reserved.
-</div>
-
-</body>
-</html>
+{/block}
