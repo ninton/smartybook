@@ -16,6 +16,7 @@ require_once __DIR__ . '/config/config-ketai.php';
  * @var string $siteName
  * @var string $home
  * @var list<string> $categories
+ * @var array<string, string> $iconMap
  *
  * config/config-ketai.phpで設定
  * @var object $display
@@ -37,6 +38,8 @@ if (isset($_REQUEST['pageID'])) {
 }
 
 $category = $_GET['category'] ?? '';
+
+$cateIcon = $iconMap[$category];
 
 // 文字列であることを確認しつつ、ホワイトリストに含まれているかチェック
 if (!is_string($category) || !in_array($category, $categories, true)) {
@@ -82,5 +85,6 @@ $smarty->assign('PagerDto', $pagerDto);
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
 $smarty->assign('category', $category);
+$smarty->assign('cate_icon', $cateIcon);
 $smarty->assign('entry', $entry);
 $smarty->display('pages/chapter5_3/contents.tpl');

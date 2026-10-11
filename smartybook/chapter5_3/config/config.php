@@ -9,6 +9,12 @@ $home = 'index.php';
 // カテゴリ一覧
 $categories = ['Study', 'Eating', 'Work'];
 
+$iconMap = [
+    'Study'  => '&#xE683;',
+    'Eating' => '&#xE66F;',
+    'Work'   => '&#xE733;',
+];
+
 /**
  * @fixme chapter5_3 配下にdata.csvを配置したい
  */

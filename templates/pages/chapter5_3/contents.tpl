@@ -1,6 +1,5 @@
 {config_load file="style.conf"}
 {config_load file="emoji.conf"}
-{assign var=cate_icon value="icon_$category"}
 {assign var=title value="$category | $siteName"}
 
 {extends file="layouts/chapter5_3/base_`$smarty.server.carrier_ua`.tpl"}
@@ -11,7 +10,7 @@
 </div>
 
 <div>
-  {$smarty.config.$cate_icon} {$entry.title|escape:html}<br />
+  {$cate_icon} {$entry.title|escape:html}<br />
   {if $entry.image}
     {if file_exists($entry.image)}
     {html_image file=$entry.image}<br />
@@ -30,7 +29,7 @@
 {* NOTE: 各項目間に空白が入ってしまうので、あえてインデントしていません *}
 {if $PagerDto->ExPreviousPageLink}<a href="{$PagerDto->ExPreviousPageLink}">≪前</a>&nbsp;{/if}
 {if $PagerDto->ExNextPageLink}<a href="{$PagerDto->ExNextPageLink}">次≫</a>&nbsp;{/if}
-{$smarty.config.$cate_icon}{$category|escape:html} {$Pager->getCurrentPageID()|escape:html}/{$Pager->numPages()|escape:html}
+{$cate_icon}{$category|escape:html} {$Pager->getCurrentPageID()|escape:html}/{$Pager->numPages()|escape:html}
   <br />
   □<a href="{$home|escape:html}">Home</a>
 </div>
