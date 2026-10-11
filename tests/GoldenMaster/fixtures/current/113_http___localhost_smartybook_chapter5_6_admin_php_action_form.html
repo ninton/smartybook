@@ -1,460 +1,562 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ja" lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="Content-Style-Type" content="text/css; charset=utf-8" />
-<meta http-equiv="Content-Script-Type" content="text/javascript; charset=utf-8" />
-<link rel="stylesheet" href="./css/styles.css" type="text/css" />
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css; charset=utf-8" />
+  <meta http-equiv="Content-Script-Type" content="text/javascript; charset=utf-8" />
+  <link rel="stylesheet" href="./css/styles.css" type="text/css" />
 
-    <script src="js/isbn.js"></script>
+<script src="js/isbn.js"></script>
 
-<title>Smarty for Designers</title>
+  <title>Smarty for Designers</title>
 </head>
 <body>
-<div id="wrapper">
-<div id="alpha">
+  <div id="wrapper">
+  <div id="alpha">
     <p id="siteTitle">Smarty for Designers</p>
-</div>
-<div id="beta">
+  </div>
+  <div id="beta">
 
-    <h1>
-        （2020年3月で本プログラムが使っているAmazon_ECSのAPIは廃止となりました。代わりにダミーデータを表示します）<br>
-        マイリスト(編集)
-    </h1>
+<h1>
+  （2020年3月で本プログラムが使っているAmazon_ECSのAPIは廃止となりました。代わりにダミーデータを表示します）<br>
+  マイリスト(編集)
+</h1>
 
-    
-    <form action="/smartybook/chapter5_6/admin.php" method="post">
-        <input type="hidden" name="action" value="save" />
-        <table class="listMeta" cellspacing="2">
-            <tr>
-                <th>リスト名</th>
-                <td><input name="ListName" value="大先生のおすすめ" /></td>
-            </tr>
-            <tr>
-                <th>ニックネーム</th>
-                <td><input name="NickName" value="Smartyの達人" /></td>
-            </tr>
-        </table>
-        <table class="list" cellspacing="0">
-            <tr>
-                <th>&nbsp;</th>
-                <th>ISBN</th>
-                <th>コメント</th>
-            </tr>
+  
+<form action="/smartybook/chapter5_6/admin.php" method="post">
+  <input type="hidden" name="action" value="save" />
 
-                        <tr>
-                <td>1</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[0][ASIN]"    
-                    value="4774127833"
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[0][comment]"
-                    value="★★★　大先生に原稿のチェックをしてもらっている。"
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>2</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[1][ASIN]"    
-                    value="4774127205"
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[1][comment]"
-                    value="★★★　ラッテやお菓子を用意して、大先生のご機嫌をとるのだ。"
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>3</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[2][ASIN]"    
-                    value="4774122653"
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[2][comment]"
-                    value="★★★　何回も原稿を読んでいるので、もしかしたらSmartyの達人になっているかも？"
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>4</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[3][ASIN]"    
-                    value=""
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[3][comment]"
-                    value=""
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>5</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[4][ASIN]"    
-                    value=""
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[4][comment]"
-                    value=""
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>6</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[5][ASIN]"    
-                    value=""
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[5][comment]"
-                    value=""
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>7</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[6][ASIN]"    
-                    value=""
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[6][comment]"
-                    value=""
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>8</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[7][ASIN]"    
-                    value=""
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[7][comment]"
-                    value=""
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>9</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[8][ASIN]"    
-                    value=""
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[8][comment]"
-                    value=""
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>10</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[9][ASIN]"    
-                    value=""
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[9][comment]"
-                    value=""
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>11</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[10][ASIN]"    
-                    value=""
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[10][comment]"
-                    value=""
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>12</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[11][ASIN]"    
-                    value=""
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[11][comment]"
-                    value=""
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>13</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[12][ASIN]"    
-                    value=""
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[12][comment]"
-                    value=""
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>14</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[13][ASIN]"    
-                    value=""
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[13][comment]"
-                    value=""
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>15</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[14][ASIN]"    
-                    value=""
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[14][comment]"
-                    value=""
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>16</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[15][ASIN]"    
-                    value=""
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[15][comment]"
-                    value=""
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>17</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[16][ASIN]"    
-                    value=""
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[16][comment]"
-                    value=""
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>18</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[17][ASIN]"    
-                    value=""
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[17][comment]"
-                    value=""
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>19</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[18][ASIN]"    
-                    value=""
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[18][comment]"
-                    value=""
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>20</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[19][ASIN]"    
-                    value=""
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[19][comment]"
-                    value=""
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>21</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[20][ASIN]"    
-                    value=""
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[20][comment]"
-                    value=""
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>22</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[21][ASIN]"    
-                    value=""
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[21][comment]"
-                    value=""
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>23</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[22][ASIN]"    
-                    value=""
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[22][comment]"
-                    value=""
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>24</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[23][ASIN]"    
-                    value=""
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[23][comment]"
-                    value=""
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                        <tr>
-                <td>25</td>
-                <td>
-                  <input class="inp_isbn"
-                    name="detail_arr[24][ASIN]"    
-                    value=""
-                    size="14" maxlength="13"
-                    onchange="this.value=isbn13_to_isbn10(this.value)" />
-                </td>
-                <td>
-                  <input class="inp_comment"
-                    name="detail_arr[24][comment]"
-                    value=""
-                    size="30" maxlength="200" />
-                </td>
-            </tr>
-                    </table>
-        <div id="btn">
-            <input class="button" type="submit" value="保存" />
-            <input class="button" type="button" value="キャンセル" onclick="location.href='?action=preview'" />
-        </div>
-    </form>
+  <table class="listMeta" cellspacing="2">
+    <tr>
+      <th>リスト名</th>
+      <td><input name="ListName" value="大先生のおすすめ" /></td>
+    </tr>
+    <tr>
+      <th>ニックネーム</th>
+      <td><input name="NickName" value="Smartyの達人" /></td>
+    </tr>
+  </table>
 
-</div>
+    <table class="list" cellspacing="0">
+      <tr>
+        <th>&nbsp;</th>
+        <th>ISBN</th>
+        <th>コメント</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[0][ASIN]"
+              value="4774127833"
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[0][comment]"
+              value="★★★　大先生に原稿のチェックをしてもらっている。"
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[1][ASIN]"
+              value="4774127205"
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[1][comment]"
+              value="★★★　ラッテやお菓子を用意して、大先生のご機嫌をとるのだ。"
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[2][ASIN]"
+              value="4774122653"
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[2][comment]"
+              value="★★★　何回も原稿を読んでいるので、もしかしたらSmartyの達人になっているかも？"
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[3][ASIN]"
+              value=""
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[3][comment]"
+              value=""
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[4][ASIN]"
+              value=""
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[4][comment]"
+              value=""
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[5][ASIN]"
+              value=""
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[5][comment]"
+              value=""
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>7</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[6][ASIN]"
+              value=""
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[6][comment]"
+              value=""
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[7][ASIN]"
+              value=""
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[7][comment]"
+              value=""
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[8][ASIN]"
+              value=""
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[8][comment]"
+              value=""
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[9][ASIN]"
+              value=""
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[9][comment]"
+              value=""
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[10][ASIN]"
+              value=""
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[10][comment]"
+              value=""
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[11][ASIN]"
+              value=""
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[11][comment]"
+              value=""
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>13</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[12][ASIN]"
+              value=""
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[12][comment]"
+              value=""
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[13][ASIN]"
+              value=""
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[13][comment]"
+              value=""
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[14][ASIN]"
+              value=""
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[14][comment]"
+              value=""
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[15][ASIN]"
+              value=""
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[15][comment]"
+              value=""
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[16][ASIN]"
+              value=""
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[16][comment]"
+              value=""
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[17][ASIN]"
+              value=""
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[17][comment]"
+              value=""
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[18][ASIN]"
+              value=""
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[18][comment]"
+              value=""
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>20</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[19][ASIN]"
+              value=""
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[19][comment]"
+              value=""
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>21</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[20][ASIN]"
+              value=""
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[20][comment]"
+              value=""
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>22</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[21][ASIN]"
+              value=""
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[21][comment]"
+              value=""
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>23</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[22][ASIN]"
+              value=""
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[22][comment]"
+              value=""
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>24</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[23][ASIN]"
+              value=""
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[23][comment]"
+              value=""
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td>
+          <input class="inp_isbn"
+              name="detail_arr[24][ASIN]"
+              value=""
+              size="14"
+              maxlength="13"
+              onchange="this.value=isbn13_to_isbn10(this.value)"
+              />
+        </td>
+        <td>
+          <input class="inp_comment"
+              name="detail_arr[24][comment]"
+              value=""
+              size="30"
+              maxlength="200"
+              />
+        </td>
+      </tr>
+    </table>
+
+  <div id="btn">
+    <input class="button" type="submit" value="保存" />
+    <input class="button" type="button" value="キャンセル" onclick="location.href='?action=preview'" />
+  </div>
+</form>
+
+  </div>
 <div id="footer">
-<address>
-Copyright 2008 Smarty for Designers All rights reserved.
-</address>
+  <address>
+    Copyright 2008 Smarty for Designers All rights reserved.
+  </address>
 </div>
-</div>
+  </div>
 </body>
 </html>
