@@ -15,6 +15,7 @@ require_once __DIR__ . '/config/config-ketai.php';
  * @var array<string, string> $CFG
  * @var string $siteName
  * @var string $home
+ * @var list<string> $categories
  *
  * config/config-ketai.phpで設定
  * @var object $display
@@ -35,9 +36,17 @@ if (isset($_REQUEST['pageID'])) {
     $pageID = $_REQUEST['pageID'];
 }
 
+$category = $_GET['category'] ?? '';
+
+// 文字列であることを確認しつつ、ホワイトリストに含まれているかチェック
+if (!is_string($category) || !in_array($category, $categories, true)) {
+    http_response_code(404);
+    exit;
+}
+
 // ----- メイン処理・データ操作 -----
 // CMSデータを配列に格納
-$entry_arr = CsvEntryReader::fetchByCategory($CFG['CSV_FILE'], $_GET['category']);
+$entry_arr = CsvEntryReader::fetchByCategory($CFG['CSV_FILE'], $category);
 
 // CMS配列中の元画像パスを大中小画像パスに置換する
 array_walk($entry_arr, EntryImagePathResolver::resolve(...), $imageSizeGroup);
@@ -72,5 +81,6 @@ $smarty->assign('Pager', $pager);
 $smarty->assign('PagerDto', $pagerDto);
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
+$smarty->assign('category', $category);
 $smarty->assign('entry', $entry);
 $smarty->display('pages/chapter5_3/contents.tpl');
