@@ -29,10 +29,12 @@ KetaiSetUp::outputHandler($agentDto['platformType']);
 
 $imageSizeGroup = $agentDto['imageSizeGroup'];
 
-$pageID = 1;
-if (isset($_REQUEST['pageID'])) {
-    $pageID = $_REQUEST['pageID'];
+$pageID = $_GET['pageID'] ?? '1';
+if (!is_string($pageID) || !ctype_digit($pageID) || (1 > (int)$pageID)) {
+    http_response_code(404);
+    exit;
 }
+$pageID = (int)$pageID;
 
 $category = $_GET['category'] ?? '';
 
