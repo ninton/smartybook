@@ -14,7 +14,7 @@ require_once __DIR__ . '/config/config.php';
  * @var string $home
  * @var list<string> $categories
  * @var array<string, string> $iconMap
- * @var array<string, string> $layoutMap
+ * @var array<string, string> $platformTypeToLayoutMap
  */
 
 // ----- 入力値受取・前処理 -----
@@ -34,7 +34,7 @@ foreach ($categories as $category) {
 }
 
 // ----- UIパーツ -----
-$layoutName = $layoutMap[$agentDto['platformType']];
+$layoutName = $platformTypeToLayoutMap[$agentDto['platformType']];
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
