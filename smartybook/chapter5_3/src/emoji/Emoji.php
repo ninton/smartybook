@@ -32,12 +32,12 @@ function emoji_convert_variables(array &$vars, string $from_encode, string $to_e
  */
 function emoji_output_handler(string $buf): string|null
 {
-    $buf = $buf;
+    $result = $buf;
     foreach (Emoji::$output_setting_arr as $setting) {
-        $buf = emoji_convert($buf, $setting['from'], $setting['to']);
+        $result = emoji_convert($result, $setting['from'], $setting['to']);
     }
 
-    return $buf;
+    return $result;
 }
 
 /**
@@ -49,8 +49,8 @@ function emoji_output_handler(string $buf): string|null
 function emoji_convert(string $buf, string $from_encode, string $to_encode): string|null
 {
     $emoji = Emoji::singleton($from_encode, $to_encode);
-    $buf = $emoji->convert($buf);
-    return $buf;
+    $result = $emoji->convert($buf);
+    return $result;
 }
 
 /**
@@ -245,40 +245,40 @@ class Emoji
         $method = $this->encodeMethod($encode);
         switch ($method) {
             case 1:
-                $buf = sprintf('&#x%s;', $buf);
+                $result = sprintf('&#x%s;', $buf);
                 break;
 
             case 2:
-                $buf = sprintf('&#%s;', $buf);
+                $result = sprintf('&#%s;', $buf);
                 break;
 
             case 3:
-                $buf = $this->pack16bin($buf);
+                $result = $this->pack16bin($buf);
                 break;
 
             case 4:
-                $buf = $this->pack16bin($buf);
-                $buf = mb_convert_encoding($buf, 'UTF-8', 'UCS2');
+                $result = $this->pack16bin($buf);
+                $result = mb_convert_encoding($result, 'UTF-8', 'UCS2');
                 break;
 
             case 5:
-                $buf = sprintf("\x1B\$%s\x0F", $buf);
+                $result = sprintf("\x1B\$%s\x0F", $buf);
                 break;
 
             case 6:
-                $buf = sprintf('<img icon="%s">', $buf);
+                $result = sprintf('<img icon="%s">', $buf);
                 break;
 
             case 7:
-                $buf = sprintf('<img localsrc="%s" />', $buf);
+                $result = sprintf('<img localsrc="%s" />', $buf);
                 break;
 
             default:
-                $buf = $buf;
+                $result = $buf;
                 break;
         }
 
-        return $buf;
+        return $result;
     }
 
     /**
@@ -330,11 +330,11 @@ class Emoji
      */
     public function convert(string $buf): string|null
     {
-        $buf = preg_replace_callback($this->regex, function (array $mathes): string {
+        $result = preg_replace_callback($this->regex, function (array $mathes): string {
             return $this->mapping($mathes[1]);
         }, $buf);
 
-        return $buf;
+        return $result;
     }
 
     /**
@@ -348,19 +348,19 @@ class Emoji
             case 'e_img_name':
             case 'e_icon_num':
             case 'e_icon_name':
-                $buf = $this->modifier($buf, $this->from_encode);
+                $result = $this->modifier($buf, $this->from_encode);
                 break;
 
             default:
-                $buf = $buf;
+                $result = $buf;
                 break;
         }
 
         if (isset($this->map[ $buf ])) {
-            $buf = $this->map[ $buf ];
+            $result = $this->map[ $buf ];
         }
 
-        return "$buf";
+        return "$result";
     }
 
     /**
@@ -369,28 +369,28 @@ class Emoji
      */
     public function pack16bin(string $buf): string
     {
-        $buf = '';
+        $result = '';
         if (preg_match('/^[0-9A-F]{4}$/i', $buf)) {
-            $buf = pack('H4', $buf);
+            $result = pack('H4', $buf);
         }
 
-        return $buf;
+        return $result;
     }
 
     /**
-     * @param array<mixed> $io_vars
+     * @param array<mixed> $vars
      * @return void
      */
-    public function convertVariables(array &$io_vars): void
+    public function convertVariables(array &$vars): void
     {
-        foreach ($io_vars as $key => $val) {
+        foreach ($vars as $key => $val) {
             if (is_array($val)) {
                 $this->convertVariables($val);
             } else {
                 $val = $this->convert($val);
             }
 
-            $io_vars[$key] = $val;
+            $vars[$key] = $val;
         }
     }
 }
