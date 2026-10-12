@@ -6,7 +6,7 @@
 
 {block name="content"}
 <div style="{#H1_STYLE#}">
-  <h1>Smarty+{$carrierName|escape:html}</h1>
+  <h1>Smarty+{$platformType|escape:html}</h1>
 </div>
 
 <div>

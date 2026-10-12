@@ -9,23 +9,23 @@ use App\PearStub\NetUserAgentMobileCommonStub;
 final readonly class NetUserAgentMobileMapper
 {
     /**
-     * @return array{carrierLongName: string, carrierName: string, imageSizeGroup: string}
+     * @return array{rawCarrier: string, platformType: string, imageSizeGroup: string}
      */
     public static function toDto(NetUserAgentMobileCommonStub $agent): array
     {
-        $carrierLongName = strtolower($agent->getCarrierLongName());
+        $rawCarrier = strtolower($agent->getCarrierLongName());
 
 
         return [
-            'carrierLongName' => $carrierLongName,
-            'carrierName' => self::toCarrierName($carrierLongName),
+            'rawCarrier' => $rawCarrier,
+            'platformType' => self::toPlatformType($rawCarrier),
             'imageSizeGroup' => self::determineImageSizeGroup($agent->getDisplay()->getWidth()),
         ];
     }
 
-    private static function toCarrierName(string $carrierLongName): string
+    private static function toPlatformType(string $rawCarrier): string
     {
-        return match ($carrierLongName) {
+        return match ($rawCarrier) {
             'docomo' => 'imode',
             'ezweb' => 'ezweb',
             'softbank', 'vodafone' => 'softbank',

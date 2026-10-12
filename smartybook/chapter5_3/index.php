@@ -19,8 +19,8 @@ require_once __DIR__ . '/config/config.php';
 
 // ----- 入力値受取・前処理 -----
 $agentDto = NetUserAgentMobileMapper::toDto(new NetUserAgentMobileCommonStub());
-KetaiSetUp::contentType($agentDto['carrierLongName']);
-KetaiSetUp::outputHandler($agentDto['carrierName']);
+KetaiSetUp::contentType($agentDto['rawCarrier']);
+KetaiSetUp::outputHandler($agentDto['platformType']);
 
 $categoryDataArr = [];
 foreach ($categories as $category) {
@@ -34,14 +34,14 @@ foreach ($categories as $category) {
 }
 
 // ----- UIパーツ -----
-$layoutName = $layoutMap[$agentDto['carrierName']];
+$layoutName = $layoutMap[$agentDto['platformType']];
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
 $smarty->setConfigDir(__DIR__ . '/config/smarty');
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
-$smarty->assign('carrierName', $agentDto['carrierName']);
+$smarty->assign('platformType', $agentDto['platformType']);
 $smarty->assign('layoutName', $layoutName);
 $smarty->assign('categoryDataArr', $categoryDataArr);
 $smarty->display('pages/chapter5_3/index.tpl');
