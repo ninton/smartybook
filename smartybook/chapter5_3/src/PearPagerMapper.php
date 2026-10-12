@@ -17,15 +17,16 @@ use App\PearStub\PagerStub as Pager;
  */
 final class PearPagerMapper
 {
-    public static function toDto(Pager $pager, int $from, int $to): PagerDto
+    public static function toDto(Pager $pager): PagerDto
     {
+        list($offsetFrom, $offsetTo) = $pager->getOffsetByPageId();
         $links = $pager->getLinks();
 
         return new PagerDto(
             currentPageID: $pager->getCurrentPageID(),
             numPages: $pager->numPages(),
-            offsetFrom:       $from,
-            offsetTo:         $to,
+            offsetFrom:       $offsetFrom,
+            offsetTo:         $offsetTo,
             links:            $links['pages'] ?? '',
             firstPageHref:    self::extractHref($links['first'] ?? ''),
             lastPageHref:     self::extractHref($links['last'] ?? ''),
