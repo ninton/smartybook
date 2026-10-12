@@ -27,9 +27,9 @@
 <div>
   <br />
 {* NOTE: 各項目間に空白が入ってしまうので、あえてインデントしていません *}
-{if $PagerDto->ExPreviousPageLink}<a href="{$PagerDto->ExPreviousPageLink}">≪前</a>&nbsp;{/if}
-{if $PagerDto->ExNextPageLink}<a href="{$PagerDto->ExNextPageLink}">次≫</a>&nbsp;{/if}
-{$categoryIcon}{$category|escape:html} {$Pager->getCurrentPageID()|escape:html}/{$Pager->numPages()|escape:html}
+{if $pagerDto->ExPreviousPageLink}<a href="{$pagerDto->ExPreviousPageLink}">≪前</a>&nbsp;{/if}
+{if $pagerDto->ExNextPageLink}<a href="{$pagerDto->ExNextPageLink}">次≫</a>&nbsp;{/if}
+{$categoryIcon}{$category|escape:html} {$pager->getCurrentPageID()|escape:html}/{$pager->numPages()|escape:html}
   <br />
   □<a href="{$home|escape:html}">Home</a>
 </div>
