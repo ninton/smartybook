@@ -14,9 +14,9 @@ require_once __DIR__ . '/config/config.php';
 
 /**
  * config/config.phpで定義
- * @var array<string, string> $CFG
  * @var string $siteName
  * @var string $home
+ * @var string $csvFilePath
  * @var list<string> $categories
  * @var array<string, string> $categoryToIconMap
  * @var array<string, string> $platformTypeToLayoutMap
@@ -46,7 +46,7 @@ $categoryIcon = $categoryToIconMap[$category];
 
 // ----- メイン処理・データ操作 -----
 // CMSデータを配列に格納
-$entry_arr = CsvEntryReader::fetchByCategory($CFG['CSV_FILE'], $category);
+$entry_arr = CsvEntryReader::fetchByCategory($csvFilePath, $category);
 
 // CMS配列中の元画像パスを大中小画像パスに置換する
 array_walk($entry_arr, EntryImagePathResolver::resolve(...), $imageSizeGroup);
