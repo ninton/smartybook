@@ -25,7 +25,7 @@ require_once __DIR__ . '/config/config.php';
 // ----- 入力値受取・前処理 -----
 $agentDto = NetUserAgentMobileMapper::toDto(new NetUserAgentMobileCommonStub());
 KetaiSetUp::contentType($agentDto['rawCarrier']);
-KetaiSetUp::outputHandler($agentDto['carrierName']);
+KetaiSetUp::outputHandler($agentDto['platformType']);
 
 $imageSizeGroup = $agentDto['imageSizeGroup'];
 
@@ -71,7 +71,7 @@ if ((0 < $from) && (0 < $to)) {
 }
 
 // ----- UIパーツ -----
-$layoutName = $layoutMap[$agentDto['carrierName']];
+$layoutName = $layoutMap[$agentDto['platformType']];
 
 $pagerDto = PearPagerMapper::toDto($pager, $from, $to);
 
@@ -86,6 +86,6 @@ $smarty->assign('home', $home);
 $smarty->assign('category', $category);
 $smarty->assign('cate_icon', $cateIcon);
 $smarty->assign('entry', $entry);
-$smarty->assign('carrierName', $agentDto['carrierName']);
+$smarty->assign('carrierName', $agentDto['platformType']);
 $smarty->assign('layoutName', $layoutName);
 $smarty->display('pages/chapter5_3/contents.tpl');

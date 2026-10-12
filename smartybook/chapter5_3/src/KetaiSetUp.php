@@ -19,11 +19,11 @@ final readonly class KetaiSetUp
         }
     }
 
-    public static function outputHandler(string $carrierName): void
+    public static function outputHandler(string $platformType): void
     {
         // 絵文字変換処理
-        switch ($carrierName) {
-            case 'docomo':
+        switch ($platformType) {
+            case 'imode':
                 break;
 
             case 'ezweb':
@@ -31,7 +31,6 @@ final readonly class KetaiSetUp
                 ob_start(emoji_output_handler(...));
                 break;
 
-            case 'vodafone':
             case 'softbank':
                 Emoji::singleton('i_uni16', 's_uni16')->output_setting('i_uni16', 's_uni16');
                 ob_start(emoji_output_handler(...));
