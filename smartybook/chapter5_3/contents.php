@@ -58,10 +58,11 @@ if (count($entryArr) < $pageID) {
     $pageID = count($entryArr);
 }
 
-$params = [];
-$params['perPage'] = 1;
-$params['totalItems'] = count($entryArr);
-$params['currentPage'] = $pageID;
+$params = [
+    'perPage' => 1,
+    'totalItems' => count($entryArr),
+    'currentPage' => $pageID,
+];
 $pager = Pager::factory($params);
 
 $pagerDto = PearPagerMapper::toDto($pager);
