@@ -15,42 +15,42 @@ namespace SmartyBook\chapter5_3\src\emoji;
 
 */
 /**
- * @param array<mixed> $io_vars
- * @param string $i_from_encode
- * @param string $i_to_encode
+ * @param array<mixed> $vars
+ * @param string $from_encode
+ * @param string $to_encode
  * @return void
  */
-function emoji_convert_variables(array &$io_vars, string $i_from_encode, string $i_to_encode): void
+function emoji_convert_variables(array &$vars, string $from_encode, string $to_encode): void
 {
-    $emoji = Emoji::singleton($i_from_encode, $i_to_encode);
-    $emoji->convertVariables($io_vars);
+    $emoji = Emoji::singleton($from_encode, $to_encode);
+    $emoji->convertVariables($vars);
 }
 
 /**
- * @param string $i_buf
+ * @param string $buf
  * @return string|null
  */
-function emoji_output_handler(string $i_buf): string|null
+function emoji_output_handler(string $buf): string|null
 {
-    $buf = $i_buf;
+    $result = $buf;
     foreach (Emoji::$output_setting_arr as $setting) {
-        $buf = emoji_convert($buf, $setting['from'], $setting['to']);
+        $result = emoji_convert($result, $setting['from'], $setting['to']);
     }
 
-    return $buf;
+    return $result;
 }
 
 /**
- * @param string $i_buf
- * @param string $i_from_encode
- * @param string $i_to_encode
+ * @param string $buf
+ * @param string $from_encode
+ * @param string $to_encode
  * @return string|null
  */
-function emoji_convert(string $i_buf, string $i_from_encode, string $i_to_encode): string|null
+function emoji_convert(string $buf, string $from_encode, string $to_encode): string|null
 {
-    $emoji = Emoji::singleton($i_from_encode, $i_to_encode);
-    $buf = $emoji->convert($i_buf);
-    return $buf;
+    $emoji = Emoji::singleton($from_encode, $to_encode);
+    $result = $emoji->convert($buf);
+    return $result;
 }
 
 /**
@@ -69,48 +69,48 @@ class Emoji
     private array $map;
 
     /**
-     * @param string $i_from_encode
-     * @param string $i_to_encode
+     * @param string $from_encode
+     * @param string $to_encode
      * @return void
      */
-    private function __construct(string $i_from_encode, string $i_to_encode)
+    private function __construct(string $from_encode, string $to_encode)
     {
-        $this->from_encode = $i_from_encode;
-        $this->to_encode   = $i_to_encode;
+        $this->from_encode = $from_encode;
+        $this->to_encode   = $to_encode;
         $regex_arr = $this->getRegexArr();
-        $this->regex = $regex_arr[$i_from_encode];
+        $this->regex = $regex_arr[$from_encode];
 
         $this->load();
     }
 
     /**
-     * @param string $i_from_encode
-     * @param string $i_to_encode
+     * @param string $from_encode
+     * @param string $to_encode
      * @return Emoji
      */
-    public static function singleton(string $i_from_encode, string $i_to_encode): Emoji
+    public static function singleton(string $from_encode, string $to_encode): Emoji
     {
         static $instance = [];
-        if (! isset($instance[$i_from_encode][$i_to_encode])) {
-            $instance[$i_from_encode][$i_to_encode] = new Emoji($i_from_encode, $i_to_encode);
+        if (! isset($instance[$from_encode][$to_encode])) {
+            $instance[$from_encode][$to_encode] = new Emoji($from_encode, $to_encode);
         }
-        return $instance[$i_from_encode][$i_to_encode];
+        return $instance[$from_encode][$to_encode];
     }
 
 
     /**
-     * @param string $i_from_encode
-     * @param string $i_to_encode
+     * @param string $from_encode
+     * @param string $to_encode
      * @return void
      */
-    public function output_setting(string $i_from_encode = '', string $i_to_encode = ''): void
+    public function output_setting(string $from_encode = '', string $to_encode = ''): void
     {
-        if ('' == $i_from_encode) {
+        if ('' == $from_encode) {
             self::$output_setting_arr = [];
         } else {
             $setting = [
-                'from' => $i_from_encode,
-                'to'   => $i_to_encode,
+                'from' => $from_encode,
+                'to'   => $to_encode,
             ];
             self::$output_setting_arr[] = $setting;
         }
@@ -203,31 +203,31 @@ class Emoji
     }
 
     /**
-     * @param string $i_from
-     * @param string $i_to
-     * @param string $i_text
+     * @param string $from
+     * @param string $to
+     * @param string $text
      * @return void
      */
-    public function add(string $i_from, string $i_to, string $i_text = ''): void
+    public function add(string $from, string $to, string $text = ''): void
     {
-        switch ($i_from) {
+        switch ($from) {
             case '':
             case 'x':
             case '-':
                 return;
         }
 
-        $from = $this->modifier($i_from, $this->from_encode);
+        $from = $this->modifier($from, $this->from_encode);
 
-        switch ($i_to) {
+        switch ($to) {
             case '':
             case 'x':
             case '-':
-                $to = $i_text;
+                $to = $text;
                 break;
 
             default:
-                $to = $this->modifier($i_to, $this->to_encode);
+                $to = $this->modifier($to, $this->to_encode);
                 break;
         }
 
@@ -236,49 +236,49 @@ class Emoji
     }
 
     /**
-     * @param string $i_buf
-     * @param string $i_encode
+     * @param string $buf
+     * @param string $encode
      * @return string
      */
-    public function modifier(string $i_buf, string $i_encode): string
+    public function modifier(string $buf, string $encode): string
     {
-        $method = $this->encodeMethod($i_encode);
+        $method = $this->encodeMethod($encode);
         switch ($method) {
             case 1:
-                $buf = sprintf('&#x%s;', $i_buf);
+                $result = sprintf('&#x%s;', $buf);
                 break;
 
             case 2:
-                $buf = sprintf('&#%s;', $i_buf);
+                $result = sprintf('&#%s;', $buf);
                 break;
 
             case 3:
-                $buf = $this->pack16bin($i_buf);
+                $result = $this->pack16bin($buf);
                 break;
 
             case 4:
-                $buf = $this->pack16bin($i_buf);
-                $buf = mb_convert_encoding($buf, 'UTF-8', 'UCS2');
+                $result = $this->pack16bin($buf);
+                $result = mb_convert_encoding($result, 'UTF-8', 'UCS2');
                 break;
 
             case 5:
-                $buf = sprintf("\x1B\$%s\x0F", $i_buf);
+                $result = sprintf("\x1B\$%s\x0F", $buf);
                 break;
 
             case 6:
-                $buf = sprintf('<img icon="%s">', $i_buf);
+                $result = sprintf('<img icon="%s">', $buf);
                 break;
 
             case 7:
-                $buf = sprintf('<img localsrc="%s" />', $i_buf);
+                $result = sprintf('<img localsrc="%s" />', $buf);
                 break;
 
             default:
-                $buf = $i_buf;
+                $result = $buf;
                 break;
         }
 
-        return $buf;
+        return $result;
     }
 
     /**
@@ -325,72 +325,72 @@ class Emoji
     }
 
     /**
-     * @param string $i_buf
+     * @param string $buf
      * @return string|null
      */
-    public function convert(string $i_buf): string|null
+    public function convert(string $buf): string|null
     {
-        $buf = preg_replace_callback($this->regex, function (array $mathes): string {
+        $result = preg_replace_callback($this->regex, function (array $mathes): string {
             return $this->mapping($mathes[1]);
-        }, $i_buf);
+        }, $buf);
 
-        return $buf;
+        return $result;
     }
 
     /**
-     * @param string $i_buf
+     * @param string $buf
      * @return string
      */
-    public function mapping(string $i_buf): string
+    public function mapping(string $buf): string
     {
         switch ($this->from_encode) {
             case 'e_img_num':
             case 'e_img_name':
             case 'e_icon_num':
             case 'e_icon_name':
-                $buf = $this->modifier($i_buf, $this->from_encode);
+                $result = $this->modifier($buf, $this->from_encode);
                 break;
 
             default:
-                $buf = $i_buf;
+                $result = $buf;
                 break;
         }
 
-        if (isset($this->map[ $buf ])) {
-            $buf = $this->map[ $buf ];
+        if (isset($this->map[ $result ])) {
+            $result = $this->map[ $result ];
         }
 
-        return "$buf";
+        return "$result";
     }
 
     /**
-     * @param string $i_buf
+     * @param string $buf
      * @return string
      */
-    public function pack16bin(string $i_buf): string
+    public function pack16bin(string $buf): string
     {
-        $buf = '';
-        if (preg_match('/^[0-9A-F]{4}$/i', $i_buf)) {
-            $buf = pack('H4', $i_buf);
+        $result = '';
+        if (preg_match('/^[0-9A-F]{4}$/i', $buf)) {
+            $result = pack('H4', $buf);
         }
 
-        return $buf;
+        return $result;
     }
 
     /**
-     * @param array<mixed> $io_vars
+     * @param array<mixed> $vars
      * @return void
      */
-    public function convertVariables(array &$io_vars): void
+    public function convertVariables(array &$vars): void
     {
-        foreach ($io_vars as $key => $val) {
+        foreach ($vars as $key => $val) {
             if (is_array($val)) {
                 $this->convertVariables($val);
             } else {
                 $val = $this->convert($val);
             }
 
-            $io_vars[$key] = $val;
+            $vars[$key] = $val;
         }
     }
 }
