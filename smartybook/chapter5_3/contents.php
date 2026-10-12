@@ -62,18 +62,15 @@ $params['totalItems'] = count($entryArr);
 $params['currentPage'] = $pageID;
 $pager = Pager::factory($params);
 
-// 表示開始位置と終了位置
-list($from, $to) = $pager->getOffsetByPageId();
+$pagerDto = PearPagerMapper::toDto($pager);
 
 $entry = [];
-if ((0 < $from) && (0 < $to)) {
-    list($entry) = array_slice($entryArr, $from - 1, 1);
+if ((0 < $pagerDto->offsetFrom) && (0 < $pagerDto->offsetTo)) {
+    list($entry) = array_slice($entryArr, $pagerDto->offsetFrom - 1, 1);
 }
 
 // ----- UIパーツ -----
 $layoutName = $platformTypeToLayoutMap[$agentDto['platformType']];
-
-$pagerDto = PearPagerMapper::toDto($pager, $from, $to);
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
