@@ -29,7 +29,7 @@
 {* NOTE: 各項目間に空白が入ってしまうので、あえてインデントしていません *}
 {if $pagerDto->ExPreviousPageLink}<a href="{$pagerDto->ExPreviousPageLink}">≪前</a>&nbsp;{/if}
 {if $pagerDto->ExNextPageLink}<a href="{$pagerDto->ExNextPageLink}">次≫</a>&nbsp;{/if}
-{$categoryIcon}{$category|escape:html} {$pager->getCurrentPageID()|escape:html}/{$pager->numPages()|escape:html}
+{$categoryIcon}{$category|escape:html} {$pagerDto->currentPageID|escape:html}/{$pagerDto->numPages|escape:html}
   <br />
   □<a href="{$home|escape:html}">Home</a>
 </div>

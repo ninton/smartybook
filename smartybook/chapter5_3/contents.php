@@ -79,7 +79,6 @@ $pagerDto = PearPagerMapper::toDto($pager, $from, $to);
 $smarty = new Smarty();
 $smarty->setConfigDir(__DIR__ . '/config/smarty');
 $smarty->registerPlugin('modifier', 'file_exists', file_exists(...));
-$smarty->assign('pager', $pager);
 $smarty->assign('pagerDto', $pagerDto);
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);

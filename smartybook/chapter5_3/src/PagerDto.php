@@ -7,6 +7,8 @@ namespace SmartyBook\chapter5_3\src;
 final readonly class PagerDto
 {
     public function __construct(
+        public int $currentPageID = 0,
+        public int $numPages = 0,
         public int $ExOffsetFrom = 0,
         public int $ExOffsetTo = 0,
         public string $ExLinks = '',
