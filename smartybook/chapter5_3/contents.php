@@ -42,7 +42,7 @@ if (!is_string($category) || !in_array($category, $categories, true)) {
     exit;
 }
 
-$cateIcon = $categoryToIconMap[$category];
+$categoryIcon = $categoryToIconMap[$category];
 
 // ----- メイン処理・データ操作 -----
 // CMSデータを配列に格納
@@ -84,7 +84,7 @@ $smarty->assign('PagerDto', $pagerDto);
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
 $smarty->assign('category', $category);
-$smarty->assign('cate_icon', $cateIcon);
+$smarty->assign('cate_icon', $categoryIcon);
 $smarty->assign('entry', $entry);
 $smarty->assign('platformType', $agentDto['platformType']);
 $smarty->assign('layoutName', $layoutName);
