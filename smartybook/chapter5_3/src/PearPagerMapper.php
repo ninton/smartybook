@@ -24,13 +24,13 @@ final class PearPagerMapper
         return new PagerDto(
             currentPageID: $pager->getCurrentPageID(),
             numPages: $pager->numPages(),
-            ExOffsetFrom:       $from,
-            ExOffsetTo:         $to,
-            ExLinks:            $links['pages'] ?? '',
-            ExFirstPageLink:    self::extractHref($links['first'] ?? ''),
-            ExLastPageLink:     self::extractHref($links['last'] ?? ''),
-            ExPreviousPageLink: self::extractHref($links['back'] ?? ''),
-            ExNextPageLink:     self::extractHref($links['next'] ?? ''),
+            offsetFrom:       $from,
+            offsetTo:         $to,
+            links:            $links['pages'] ?? '',
+            firstPageHref:    self::extractHref($links['first'] ?? ''),
+            lastPageHref:     self::extractHref($links['last'] ?? ''),
+            previousPageHref: self::extractHref($links['back'] ?? ''),
+            nextPageHref:     self::extractHref($links['next'] ?? ''),
         );
     }
 
