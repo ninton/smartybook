@@ -84,7 +84,7 @@ $smarty->assign('PagerDto', $pagerDto);
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
 $smarty->assign('category', $category);
-$smarty->assign('cate_icon', $categoryIcon);
+$smarty->assign('categoryIcon', $categoryIcon);
 $smarty->assign('entry', $entry);
 $smarty->assign('platformType', $agentDto['platformType']);
 $smarty->assign('layoutName', $layoutName);
