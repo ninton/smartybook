@@ -6,16 +6,16 @@ final class CsvEntryReader
 {
     /**
      * CSVデータを配列に格納
-     * @param string $i_path
-     * @param string $i_category
+     * @param string $path
+     * @param string $category
      * @return list<array{id: string, category: string, title: string, text: string, time: string, image: string}>
      */
-    public static function fetchByCategory(string $i_path, string $i_category): array
+    public static function fetchByCategory(string $path, string $category): array
     {
         $entry_arr = [];
-        $handle = fopen($i_path, 'r');
+        $handle = fopen($path, 'r');
         while ($arr = fgetcsv($handle, 5000, ',', escape: '')) {
-            if ($i_category == $arr[1]) {
+            if ($category == $arr[1]) {
                 $rcd = [];
                 $rcd['id'      ] = $arr[0];
                 $rcd['category'] = $arr[1];
