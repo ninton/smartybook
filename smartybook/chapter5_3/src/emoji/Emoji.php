@@ -15,15 +15,15 @@ namespace SmartyBook\chapter5_3\src\emoji;
 
 */
 /**
- * @param array<mixed> $io_vars
+ * @param array<mixed> $vars
  * @param string $from_encode
  * @param string $to_encode
  * @return void
  */
-function emoji_convert_variables(array &$io_vars, string $from_encode, string $to_encode): void
+function emoji_convert_variables(array &$vars, string $from_encode, string $to_encode): void
 {
     $emoji = Emoji::singleton($from_encode, $to_encode);
-    $emoji->convertVariables($io_vars);
+    $emoji->convertVariables($vars);
 }
 
 /**
