@@ -86,6 +86,6 @@ $smarty->assign('home', $home);
 $smarty->assign('category', $category);
 $smarty->assign('cate_icon', $cateIcon);
 $smarty->assign('entry', $entry);
-$smarty->assign('carrierName', $agentDto['platformType']);
+$smarty->assign('platformType', $agentDto['platformType']);
 $smarty->assign('layoutName', $layoutName);
 $smarty->display('pages/chapter5_3/contents.tpl');

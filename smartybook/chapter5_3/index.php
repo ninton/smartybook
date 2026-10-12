@@ -41,7 +41,7 @@ $smarty = new Smarty();
 $smarty->setConfigDir(__DIR__ . '/config/smarty');
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
-$smarty->assign('carrierName', $agentDto['platformType']);
+$smarty->assign('platformType', $agentDto['platformType']);
 $smarty->assign('layoutName', $layoutName);
 $smarty->assign('categoryDataArr', $categoryDataArr);
 $smarty->display('pages/chapter5_3/index.tpl');
