@@ -18,7 +18,7 @@ require_once __DIR__ . '/config/config.php';
  * @var string $siteName
  * @var string $home
  * @var list<string> $categories
- * @var array<string, string> $iconMap
+ * @var array<string, string> $categoryToIconMap
  * @var array<string, string> $platformTypeToLayoutMap
  */
 
@@ -42,7 +42,7 @@ if (!is_string($category) || !in_array($category, $categories, true)) {
     exit;
 }
 
-$cateIcon = $iconMap[$category];
+$cateIcon = $categoryToIconMap[$category];
 
 // ----- メイン処理・データ操作 -----
 // CMSデータを配列に格納

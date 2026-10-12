@@ -9,7 +9,7 @@ $home = 'index.php';
 // カテゴリ一覧
 $categories = ['Study', 'Eating', 'Work'];
 
-$iconMap = [
+$categoryToIconMap = [
     'Study'  => '&#xE683;',
     'Eating' => '&#xE66F;',
     'Work'   => '&#xE733;',
