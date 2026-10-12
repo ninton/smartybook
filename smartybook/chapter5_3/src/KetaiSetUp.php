@@ -10,9 +10,9 @@ use function SmartyBook\chapter5_3\src\emoji\emoji_output_handler;
 
 final readonly class KetaiSetUp
 {
-    public static function contentType(string $carrierLongName): void
+    public static function contentType(string $rawCarrier): void
     {
-        switch ($carrierLongName) {
+        switch ($rawCarrier) {
             case 'docomo':
                 header('Content-Type: application/xhtml+xml; charset=UTF-8');
                 break;

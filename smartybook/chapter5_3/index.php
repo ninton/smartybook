@@ -19,7 +19,7 @@ require_once __DIR__ . '/config/config.php';
 
 // ----- 入力値受取・前処理 -----
 $agentDto = NetUserAgentMobileMapper::toDto(new NetUserAgentMobileCommonStub());
-KetaiSetUp::contentType($agentDto['carrierLongName']);
+KetaiSetUp::contentType($agentDto['rawCarrier']);
 KetaiSetUp::outputHandler($agentDto['carrierName']);
 
 $categoryDataArr = [];
