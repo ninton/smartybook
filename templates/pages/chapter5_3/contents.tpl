@@ -10,7 +10,7 @@
 </div>
 
 <div>
-  {$cate_icon} {$entry.title|escape:html}<br />
+  {$categoryIcon} {$entry.title|escape:html}<br />
   {if $entry.image}
     {if file_exists($entry.image)}
     {html_image file=$entry.image}<br />
@@ -29,7 +29,7 @@
 {* NOTE: 各項目間に空白が入ってしまうので、あえてインデントしていません *}
 {if $PagerDto->ExPreviousPageLink}<a href="{$PagerDto->ExPreviousPageLink}">≪前</a>&nbsp;{/if}
 {if $PagerDto->ExNextPageLink}<a href="{$PagerDto->ExNextPageLink}">次≫</a>&nbsp;{/if}
-{$cate_icon}{$category|escape:html} {$Pager->getCurrentPageID()|escape:html}/{$Pager->numPages()|escape:html}
+{$categoryIcon}{$category|escape:html} {$Pager->getCurrentPageID()|escape:html}/{$Pager->numPages()|escape:html}
   <br />
   □<a href="{$home|escape:html}">Home</a>
 </div>
