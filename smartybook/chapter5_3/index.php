@@ -13,7 +13,7 @@ require_once __DIR__ . '/config/config.php';
  * @var string $siteName
  * @var string $home
  * @var list<string> $categories
- * @var array<string, string> $iconMap
+ * @var array<string, string> $categoryToIconMap
  * @var array<string, string> $platformTypeToLayoutMap
  */
 
@@ -27,7 +27,7 @@ foreach ($categories as $category) {
     // 存在チェックやバリデーションを通過した安全なデータのみを詰める
     $categoryDataArr[] = [
         'name' => $category,
-        'icon' => $iconMap[$category] ?? '',
+        'icon' => $categoryToIconMap[$category] ?? '',
         // URLもPHP側で適切にエンコードして用意する
         'url'  => 'contents.php?category=' . urlencode($category),
     ];
