@@ -20,7 +20,7 @@ $iconMap = [
  */
 $CFG['CSV_FILE'  ] = $csv;
 
-$layoutMap = [
+$platformTypeToLayoutMap = [
     'imode' => 'base_imode.tpl',
     'ezweb' => 'base_ezweb.tpl',
     'softbank' => 'base_softbank.tpl',
