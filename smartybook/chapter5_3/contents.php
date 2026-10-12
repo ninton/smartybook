@@ -46,19 +46,19 @@ $categoryIcon = $categoryToIconMap[$category];
 
 // ----- メイン処理・データ操作 -----
 // CMSデータを配列に格納
-$entry_arr = CsvEntryReader::fetchByCategory($csvFilePath, $category);
+$entryArr = CsvEntryReader::fetchByCategory($csvFilePath, $category);
 
 // CMS配列中の元画像パスを大中小画像パスに置換する
-array_walk($entry_arr, EntryImagePathResolver::resolve(...), $imageSizeGroup);
+array_walk($entryArr, EntryImagePathResolver::resolve(...), $imageSizeGroup);
 
 // ページ番号の調整
-if (count($entry_arr) < $pageID) {
-    $pageID = count($entry_arr);
+if (count($entryArr) < $pageID) {
+    $pageID = count($entryArr);
 }
 
 $params = [];
 $params['perPage'] = 1;
-$params['totalItems'] = count($entry_arr);
+$params['totalItems'] = count($entryArr);
 $params['currentPage'] = $pageID;
 $pager = Pager::factory($params);
 
@@ -67,7 +67,7 @@ list($from, $to) = $pager->getOffsetByPageId();
 
 $entry = [];
 if ((0 < $from) && (0 < $to)) {
-    list($entry) = array_slice($entry_arr, $from - 1, 1);
+    list($entry) = array_slice($entryArr, $from - 1, 1);
 }
 
 // ----- UIパーツ -----
