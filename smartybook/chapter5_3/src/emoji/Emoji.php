@@ -356,8 +356,8 @@ class Emoji
                 break;
         }
 
-        if (isset($this->map[ $buf ])) {
-            $result = $this->map[ $buf ];
+        if (isset($this->map[ $result ])) {
+            $result = $this->map[ $result ];
         }
 
         return "$result";
