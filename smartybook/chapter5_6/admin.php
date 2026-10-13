@@ -112,27 +112,12 @@ function save(array $config, array $postVars): void
 // GET action=preview プレビュー表示
 // GET action=form 入力フォーム表示
 // POST action=save 保存処理
-$rawAction = $_REQUEST['action'] ?? null;
+$method = strtolower($_SERVER['REQUEST_METHOD'] ?? '');
+$action = $_REQUEST['action'] ?? 'preview';
 
-// 未指定(null)の場合は 'preview'、文字列の場合はそのまま、配列等は null扱い
-$action = match (true) {
-    $rawAction === null => 'preview',
-    is_string($rawAction) => $rawAction,
+match ([$method, $action]) {
+    ['get', 'preview'] => preview($config),
+    ['get', 'form'] => form($config),
+    ['post', 'save'] => save($config, $_POST),
     default => null,
 };
-
-$method = strtolower($_SERVER['REQUEST_METHOD']);
-
-switch ("$method.$action") {
-    case 'get.preview':
-        preview($config);
-        break;
-
-    case 'get.form':
-        form($config);
-        break;
-
-    case 'post.save':
-        save($config, $_POST);
-        break;
-}
