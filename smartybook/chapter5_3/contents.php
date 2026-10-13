@@ -62,19 +62,42 @@ if ((0 < $pagerDto->offsetFrom) && (0 < $pagerDto->offsetTo)) {
     list($entry) = array_slice($entryArr, $pagerDto->offsetFrom - 1, 1);
 }
 
+if (empty($entry)) {
+    http_response_code(404);
+    exit;
+}
+
+$imageStatus = 'none'; // デフォルト：画像指定なし
+
+if ($entry['image'] !== '') {
+    if (file_exists(__DIR__ . '/'. $entry['image'])) {
+        $imageStatus = 'exists';
+    } else {
+        $imageStatus = 'missing'; // パスはあるがファイルがない
+    }
+}
+
+// テンプレートに渡すデータ構造を整理
+$entryViewModel = [
+    'title' => $entry['title'],
+    'text' => $entry['text'],
+    'time' => $entry['time'],
+    'image' => $entry['image'],
+    'image_status' => $imageStatus, // 判定済みのステータス ('none', 'exists', 'missing')
+];
+
 // ----- UIパーツ -----
 $layoutName = $config['platformTypeToLayoutMap'][$agentDto['platformType']];
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
 $smarty->setConfigDir(__DIR__ . '/config/smarty');
-$smarty->registerPlugin('modifier', 'file_exists', file_exists(...));
 $smarty->assign('pagerDto', $pagerDto);
 $smarty->assign('siteName', $config['siteName']);
 $smarty->assign('home', $config['home']);
 $smarty->assign('category', $category);
 $smarty->assign('categoryIcon', $categoryIcon);
-$smarty->assign('entry', $entry);
+$smarty->assign('entry', $entryViewModel);
 $smarty->assign('platformType', $agentDto['platformType']);
 $smarty->assign('layoutName', $layoutName);
 $smarty->display('pages/chapter5_3/contents.tpl');

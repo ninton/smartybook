@@ -11,16 +11,14 @@
 
 <div>
   {$categoryIcon} {$entry.title|escape:html}<br />
-  {if $entry.image}
-    {if file_exists($entry.image)}
-    {html_image file=$entry.image}<br />
-    {else}
-    <br />
-    --画像準備中--<br />
-    <br />
-    {/if}
+  {if $entry.image_status === 'exists'}
+  {html_image file=$entry.image}<br />
+  {elseif $entry.image_status === 'missing'}
+  <br />
+  --画像準備中--<br />
+  <br />
   {/if}
-  {#icon_note#}{$entry.text|escape:html|nl2br}
+{* image_status === 'none' の場合は何も出力しない *}  {#icon_note#}{$entry.text|escape:html|nl2br}
 </div>
 <div>{#icon_clock#}{$entry.time|date_format:"%Y-%m-%d %H:%M:%S"}</div>
 
