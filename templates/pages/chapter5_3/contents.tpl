@@ -10,17 +10,17 @@
 </div>
 
 <div>
-  {$categoryIcon} {$entry.title|escape:html}<br />
-  {if $entry.image_status === 'exists'}
-  {html_image file=$entry.image}<br />
-  {elseif $entry.image_status === 'missing'}
+  {$categoryIcon} {$entryViewModel.title|escape:html}<br />
+  {if $entryViewModel.image_status === 'exists'}
+  {html_image file=$entryViewModel.image}<br />
+  {elseif $entryViewModel.image_status === 'missing'}
   <br />
   --画像準備中--<br />
   <br />
   {/if}
-{* image_status === 'none' の場合は何も出力しない *}  {#icon_note#}{$entry.text|escape:html|nl2br}
+{* image_status === 'none' の場合は何も出力しない *}  {#icon_note#}{$entryViewModel.text|escape:html|nl2br}
 </div>
-<div>{#icon_clock#}{$entry.time|date_format:"%Y-%m-%d %H:%M:%S"}</div>
+<div>{#icon_clock#}{$entryViewModel.time|date_format:"%Y-%m-%d %H:%M:%S"}</div>
 
 <div>
   <br />

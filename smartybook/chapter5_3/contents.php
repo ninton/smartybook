@@ -97,7 +97,7 @@ $smarty->assign('siteName', $config['siteName']);
 $smarty->assign('home', $config['home']);
 $smarty->assign('category', $category);
 $smarty->assign('categoryIcon', $categoryIcon);
-$smarty->assign('entry', $entryViewModel);
+$smarty->assign('entryViewModel', $entryViewModel);
 $smarty->assign('platformType', $agentDto['platformType']);
 $smarty->assign('layoutName', $layoutName);
 $smarty->display('pages/chapter5_3/contents.tpl');
