@@ -73,5 +73,5 @@ test('fetchByCategory 指定カテゴリのレコードだけを返す', functio
             'image' => './images/002.jpg',
         ],
     ]],
-    'Unkown' => ['Unkown', []],
+    'Unknown' => ['Unknown', []],
 ]);
