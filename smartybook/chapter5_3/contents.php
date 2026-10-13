@@ -10,17 +10,7 @@ use SmartyBook\chapter5_3\src\NetUserAgentMobileMapper;
 use SmartyBook\chapter5_3\src\PearPagerMapper;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
-require_once __DIR__ . '/config/config.php';
-
-/**
- * config/config.phpで定義
- * @var string $siteName
- * @var string $home
- * @var string $csvFilePath
- * @var list<string> $categories
- * @var array<string, string> $categoryToIconMap
- * @var array<string, string> $platformTypeToLayoutMap
- */
+$config = require_once __DIR__ . '/config/config.php';
 
 // ----- 入力値受取・前処理 -----
 $agentDto = NetUserAgentMobileMapper::toDto(new NetUserAgentMobileCommonStub());
@@ -39,16 +29,16 @@ $pageID = (int)$pageID;
 $category = $_GET['category'] ?? '';
 
 // 文字列であることを確認しつつ、ホワイトリストに含まれているかチェック
-if (!is_string($category) || !in_array($category, $categories, true)) {
+if (!is_string($category) || !in_array($category, $config['categories'], true)) {
     http_response_code(404);
     exit;
 }
 
-$categoryIcon = $categoryToIconMap[$category];
+$categoryIcon = $config['categoryToIconMap'][$category];
 
 // ----- メイン処理・データ操作 -----
 // CMSデータを配列に格納
-$entryArr = CsvEntryReader::fetchByCategory($csvFilePath, $category);
+$entryArr = CsvEntryReader::fetchByCategory($config['csvFilePath'], $category);
 
 // CMS配列中の元画像パスを大中小画像パスに置換する
 array_walk($entryArr, EntryImagePathResolver::resolve(...), $imageSizeGroup);
@@ -73,15 +63,15 @@ if ((0 < $pagerDto->offsetFrom) && (0 < $pagerDto->offsetTo)) {
 }
 
 // ----- UIパーツ -----
-$layoutName = $platformTypeToLayoutMap[$agentDto['platformType']];
+$layoutName = $config['platformTypeToLayoutMap'][$agentDto['platformType']];
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
 $smarty->setConfigDir(__DIR__ . '/config/smarty');
 $smarty->registerPlugin('modifier', 'file_exists', file_exists(...));
 $smarty->assign('pagerDto', $pagerDto);
-$smarty->assign('siteName', $siteName);
-$smarty->assign('home', $home);
+$smarty->assign('siteName', $config['siteName']);
+$smarty->assign('home', $config['home']);
 $smarty->assign('category', $category);
 $smarty->assign('categoryIcon', $categoryIcon);
 $smarty->assign('entry', $entry);
