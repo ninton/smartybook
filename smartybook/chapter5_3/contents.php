@@ -5,6 +5,7 @@ use App\PearStub\PagerStub as Pager;
 use App\Smarty\AppSmarty as Smarty;
 use SmartyBook\chapter5_3\src\CsvEntryReader;
 use SmartyBook\chapter5_3\src\EntryImagePathResolver;
+use SmartyBook\chapter5_3\src\EntryMapper;
 use SmartyBook\chapter5_3\src\KetaiSetUp;
 use SmartyBook\chapter5_3\src\NetUserAgentMobileMapper;
 use SmartyBook\chapter5_3\src\PearPagerMapper;
@@ -67,24 +68,7 @@ if (empty($entry)) {
     exit;
 }
 
-$imageStatus = 'none'; // デフォルト：画像指定なし
-
-if ($entry['image'] !== '') {
-    if (file_exists(__DIR__ . '/'. $entry['image'])) {
-        $imageStatus = 'exists';
-    } else {
-        $imageStatus = 'missing'; // パスはあるがファイルがない
-    }
-}
-
-// テンプレートに渡すデータ構造を整理
-$entryViewModel = [
-    'title' => $entry['title'],
-    'text' => $entry['text'],
-    'time' => $entry['time'],
-    'image' => $entry['image'],
-    'image_status' => $imageStatus, // 判定済みのステータス ('none', 'exists', 'missing')
-];
+$entryViewModel = EntryMapper::toViewModel($entry, __DIR__);
 
 // ----- UIパーツ -----
 $layoutName = $config['platformTypeToLayoutMap'][$agentDto['platformType']];
