@@ -5,6 +5,7 @@ use App\PearStub\PagerStub as Pager;
 use App\Smarty\AppSmarty as Smarty;
 use SmartyBook\chapter5_3\src\CsvEntryReader;
 use SmartyBook\chapter5_3\src\EntryImagePathResolver;
+use SmartyBook\chapter5_3\src\EntryMapper;
 use SmartyBook\chapter5_3\src\KetaiSetUp;
 use SmartyBook\chapter5_3\src\NetUserAgentMobileMapper;
 use SmartyBook\chapter5_3\src\PearPagerMapper;
@@ -62,19 +63,25 @@ if ((0 < $pagerDto->offsetFrom) && (0 < $pagerDto->offsetTo)) {
     list($entry) = array_slice($entryArr, $pagerDto->offsetFrom - 1, 1);
 }
 
+if (empty($entry)) {
+    http_response_code(404);
+    exit;
+}
+
+$entryViewModel = EntryMapper::toViewModel($entry, __DIR__);
+
 // ----- UIパーツ -----
 $layoutName = $config['platformTypeToLayoutMap'][$agentDto['platformType']];
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
 $smarty->setConfigDir(__DIR__ . '/config/smarty');
-$smarty->registerPlugin('modifier', 'file_exists', file_exists(...));
 $smarty->assign('pagerDto', $pagerDto);
 $smarty->assign('siteName', $config['siteName']);
 $smarty->assign('home', $config['home']);
 $smarty->assign('category', $category);
 $smarty->assign('categoryIcon', $categoryIcon);
-$smarty->assign('entry', $entry);
+$smarty->assign('entryViewModel', $entryViewModel);
 $smarty->assign('platformType', $agentDto['platformType']);
 $smarty->assign('layoutName', $layoutName);
 $smarty->display('pages/chapter5_3/contents.tpl');
