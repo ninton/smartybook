@@ -109,6 +109,7 @@ function save(array $config, array $postVars): void
     }
 }
 
+// GET action未設定 プレビュー表示
 // GET action=preview プレビュー表示
 // GET action=form 入力フォーム表示
 // POST action=save 保存処理
