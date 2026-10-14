@@ -83,6 +83,8 @@ final class CrawlCode
         // リダイレクト追跡が必要な場合（curl -L に相当）
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 
+        $method = strtoupper($method);
+
         switch ($method) {
             case 'GET':
                 // GET の場合はデータを含めない、または URL クエリパラメータとして付与
