@@ -6,11 +6,11 @@
   <table border="0" cellspacing="0">
     <tr>
       <th>都道府県</th>
-      <td>{$form.prefecture|escape:html|default:"(未選択)"}</td>
+      <td>{$form.prefecture|default:"(未選択)"|escape:html}</td>
     </tr>
     <tr>
       <th>評価</th>
-      <td>{$META.rating[$form.rating]|default:"(未選択)"}</td>
+      <td>{$META.rating[$form.rating]|default:"(未選択)"|escape:html}</td>
     </tr>
     <tr>
       <th>どこで知りましたか</th>
