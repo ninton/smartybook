@@ -83,9 +83,31 @@ final class CrawlCode
         // リダイレクト追跡が必要な場合（curl -L に相当）
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 
-        if (strtoupper($method) === 'POST') {
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+        $method = strtoupper($method);
+
+        switch ($method) {
+            case 'GET':
+                // GET の場合はデータを含めない、または URL クエリパラメータとして付与
+                break;
+
+            case 'POST':
+                // POST専用に最適化する場合
+                curl_setopt($ch, CURLOPT_POST, true);
+                if ($data !== '') {
+                    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+                }
+                break;
+
+            case 'PUT':
+            case 'PATCH':
+            case 'DELETE':
+            default:
+                // PUT/PATCH/DELETE では CURLOPT_CUSTOMREQUEST を使用
+                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
+                if ($data !== '') {
+                    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+                }
+                break;
         }
 
         $response = curl_exec($ch);
