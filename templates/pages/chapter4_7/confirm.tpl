@@ -10,7 +10,7 @@
     </tr>
     <tr>
       <th>評価</th>
-      <td>{$META.rating[$form.rating]|default:"(未選択)"|escape:html}</td>
+      <td>{$META.rating[$form.rating|default:""]|default:"(未選択)"|escape:html}</td>
     </tr>
     <tr>
       <th>どこで知りましたか</th>
