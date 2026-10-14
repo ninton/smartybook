@@ -183,3 +183,5 @@ chapter4_7/index action=submit,POST,http://localhost/smartybook/chapter4_7/index
 # action=index, action= 追加
 chapter4_7/index action=index,GET,http://localhost/smartybook/chapter4_7/index.php?action=index,
 chapter4_7/index action=,GET,http://localhost/smartybook/chapter4_7/index.php?action=,
+# GET,POST以外は 405。bodyは空
+chapter4_7/index HEAD,HEAD,http://localhost/smartybook/chapter4_7/index.php,
