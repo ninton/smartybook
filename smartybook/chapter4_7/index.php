@@ -116,6 +116,13 @@ if (!isset($_SESSION[APPID]['token']) || $_SESSION[APPID]['token'] != $token) {
     $_SESSION[APPID]['token'] = $token;
 }
 
+
+/**
+ * GET,action未設定|action="" 新規フォーム
+ * GET,action=form セッションから入力データを復元して、入力フォーム
+ * POST,action=confirm 確認画面
+ * POST,action=submit 送信完了画面
+ */
 $requestMethod = strtoupper($_SERVER['REQUEST_METHOD']) === 'POST' ? 'POST' : 'GET';
 $action = $_REQUEST['action'] ?? '';
 
