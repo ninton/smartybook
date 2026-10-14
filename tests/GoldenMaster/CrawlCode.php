@@ -93,7 +93,7 @@ final class CrawlCode
             case 'POST':
                 // POST専用に最適化する場合
                 curl_setopt($ch, CURLOPT_POST, true);
-                if (!empty($data)) {
+                if ($data !== '') {
                     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
                 }
                 break;
@@ -104,7 +104,7 @@ final class CrawlCode
             default:
                 // PUT/PATCH/DELETE では CURLOPT_CUSTOMREQUEST を使用
                 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
-                if (!empty($data)) {
+                if ($data !== '') {
                     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
                 }
                 break;
