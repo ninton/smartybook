@@ -31,7 +31,7 @@ if (empty($_GET['pageID'])) {
 
 $sort = empty($_GET['sort']) ? $config['sort'] : $_GET['sort'];
 $order = empty($_GET['order']) ? $config['order'] : $_GET['order'];
-$setPerPage = empty($_GET['setPerPage']) ? $config['perPage'] : $_GET['setPerPage'];
+$perPage = empty($_GET['setPerPage']) ? $config['perPage'] : $_GET['setPerPage'];
 
 // ----- メイン処理・データ操作 -----
 $cms = new CMS($config['dsn'], $config['db_user'], $config['db_password']);
@@ -47,6 +47,7 @@ if ($cms->getCount() < $pageID) {
 $params = [];
 $params['totalItems'] = $cms->getCount();
 $params['currentPage'] = $pageID;
+$params['perPage'] = $perPage;
 $pager = Pager::factory($params);
 
 // ページに表示する範囲のデータを読みだす
