@@ -123,7 +123,15 @@ if (!isset($_SESSION[APPID]['token']) || $_SESSION[APPID]['token'] != $token) {
  * POST,action=confirm 確認画面
  * POST,action=submit 送信完了画面
  */
-$requestMethod = strtoupper($_SERVER['REQUEST_METHOD']) === 'POST' ? 'POST' : 'GET';
+$requestMethod = $_SERVER['REQUEST_METHOD'] ?? 'GET';
+
+// GET と POST 以外は HTTP 405 を返して安全に終了する
+if (!in_array($requestMethod, ['GET', 'POST'], true)) {
+    header('HTTP/1.1 405 Method Not Allowed');
+    header('Allow: GET, POST');
+    die();
+}
+
 $action = $_REQUEST['action'] ?? 'index';
 if ($action === '') {
     $action = 'index';
@@ -134,5 +142,5 @@ match ([$requestMethod, $action]) {
     ['GET', 'form'] => form($META, $_SESSION[APPID]['form'] ?? []),
     ['POST', 'confirm'] => confirm($META, $_POST),
     ['POST', 'submit'] => submit($META, $_SESSION[APPID]['form'] ?? []),
-    default => die(),
+    default => die(), // 不正な action はここでしっかりと弾く
 };
