@@ -118,16 +118,19 @@ if (!isset($_SESSION[APPID]['token']) || $_SESSION[APPID]['token'] != $token) {
 
 
 /**
- * GET,action未設定|action="" 新規フォーム
+ * GET,action未設定|action=|action=index  新規フォーム
  * GET,action=form セッションから入力データを復元して、入力フォーム
  * POST,action=confirm 確認画面
  * POST,action=submit 送信完了画面
  */
 $requestMethod = strtoupper($_SERVER['REQUEST_METHOD']) === 'POST' ? 'POST' : 'GET';
-$action = $_REQUEST['action'] ?? '';
+$action = $_REQUEST['action'] ?? 'index';
+if ($action === '') {
+    $action = 'index';
+}
 
 match ([$requestMethod, $action]) {
-    ['GET', ''] => form($META),
+    ['GET', 'index'] => form($META),
     ['GET', 'form'] => form($META, $_SESSION[APPID]['form'] ?? []),
     ['POST', 'confirm'] => confirm($META, $_POST),
     ['POST', 'submit'] => submit($META, $_SESSION[APPID]['form'] ?? []),
