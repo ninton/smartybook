@@ -29,9 +29,9 @@ if (empty($_GET['pageID'])) {
     $pageID = (int)$_GET['pageID'];
 }
 
-$sort = $_GET['sort'] ?? $config['sort'];
-$order = $_GET['order'] ?? $config['order'];
-$setPerPage = $_GET['setPerPage'] ?? $config['perPage'];
+$sort = empty($_GET['sort']) ? $config['sort'] : $_GET['sort'];
+$order = empty($_GET['order']) ? $config['order'] : $_GET['order'];
+$setPerPage = empty($_GET['setPerPage']) ? $config['perPage'] : $_GET['setPerPage'];
 
 // ----- メイン処理・データ操作 -----
 $cms = new CMS($config['dsn'], $config['db_user'], $config['db_password']);
