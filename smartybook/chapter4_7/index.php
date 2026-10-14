@@ -118,23 +118,11 @@ if (!isset($_SESSION[APPID]['token']) || $_SESSION[APPID]['token'] != $token) {
 
 $requestMethod = strtoupper($_SERVER['REQUEST_METHOD']) === 'POST' ? 'POST' : 'GET';
 $action = $_REQUEST['action'] ?? '';
-if (!is_string($action)) {
-    die();
-}
 
-switch ("$requestMethod.$action") {
-    case 'GET.':
-        form($META);
-        break;
-    case 'GET.form':
-        form($META, $_SESSION[APPID]['form'] ?? []);
-        break;
-    case 'POST.confirm':
-        confirm($META, $_POST);
-        break;
-    case 'POST.submit':
-        submit($META, $_SESSION[APPID]['form'] ?? []);
-        break;
-    default:
-        die();
-}
+match ([$requestMethod, $action]) {
+    ['GET', ''] => form($META),
+    ['GET', 'form'] => form($META, $_SESSION[APPID]['form'] ?? []),
+    ['POST', 'confirm'] => confirm($META, $_POST),
+    ['POST', 'submit'] => submit($META, $_SESSION[APPID]['form'] ?? []),
+    default => die(),
+};
