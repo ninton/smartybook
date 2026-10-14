@@ -53,17 +53,17 @@ $pager = Pager::factory($params);
 
 // ページに表示する範囲のデータを読みだす
 list($from, $to) = $pager->getOffsetByPageId();
-$rcd_arr = [];
+$entryArr = [];
 if ((0 < $from) && (0 < $to)) {
-    $rcd_arr = $cms->getAll($from - 1, $to - $from + 1, $sort, $order);
+    $entryArr = $cms->getAll($from - 1, $to - $from + 1, $sort, $order);
 }
 
 // ----- UIパーツ -----
 $pagerDto = PearPagerMapper::toDto($pager, $from, $to);
 
 // 並替えの△▽を表示するクラス
-$sortnavi = new SortNavigator($sort, $order);
-$perpage_params = [
+$sortNavigator = new SortNavigator($sort, $order);
+$perPageParams = [
     'optionText' => '%d件/ページ',
     'attributes' => "onchange='document.forms[\"perPage\"].submit()'",
 ];
@@ -72,10 +72,10 @@ $perpage_params = [
 $smarty = new Smarty();
 $smarty->assign('sort', $sort);
 $smarty->assign('order', $order);
-$smarty->assign('SortNavi', $sortnavi);
+$smarty->assign('SortNavi', $sortNavigator);
 $smarty->assign('Pager', $pager);
 $smarty->assign('PagerDto', $pagerDto);
 $smarty->assign('popup_params', ['autoSubmit' => true]);
-$smarty->assign('perpage_params', $perpage_params);
-$smarty->assign('rcd_arr', $rcd_arr);
+$smarty->assign('perpage_params', $perPageParams);
+$smarty->assign('rcd_arr', $entryArr);
 $smarty->display('pages/chapter4_6/index.tpl');
