@@ -9,9 +9,9 @@ use SmartyBook\chapter4_6\src\SortNavigator;
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 
 /**
- * @var array{dsn: string, db_user: string, db_password: string, perPage: int, sort: string, order: string} $CONFIG
+ * @var array{dsn: string, db_user: string, db_password: string, perPage: int, sort: string, order: string} $config
  */
-$CONFIG = require_once __DIR__ . '/config/config.php';
+$config = require_once __DIR__ . '/config/config.php';
 
 // ----- インラインクラス定義 -----
 
@@ -28,17 +28,17 @@ if (empty($_REQUEST['pageID'])) {
 }
 
 if (empty($_REQUEST['sort'])) {
-    $_REQUEST['sort'] = $CONFIG['sort'];
+    $_REQUEST['sort'] = $config['sort'];
 }
 if (empty($_REQUEST['order'])) {
-    $_REQUEST['order'] = $CONFIG['order'];
+    $_REQUEST['order'] = $config['order'];
 }
 if (empty($_REQUEST['setPerPage'])) {
-    $_REQUEST['setPerPage'] = $CONFIG['perPage'];
+    $_REQUEST['setPerPage'] = $config['perPage'];
 }
 
 // ----- メイン処理・データ操作 -----
-$cms = new CMS($CONFIG['dsn'], $CONFIG['db_user'], $CONFIG['db_password']);
+$cms = new CMS($config['dsn'], $config['db_user'], $config['db_password']);
 
 if ($cms->getCount() < $_REQUEST['pageID']) {
     $_REQUEST['pageID'] = 1;
