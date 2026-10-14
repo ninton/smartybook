@@ -113,12 +113,12 @@ function save(array $config, array $postVars): void
 // GET action=preview プレビュー表示
 // GET action=form 入力フォーム表示
 // POST action=save 保存処理
-$requestMethod = strtolower($_SERVER['REQUEST_METHOD'] ?? '');
+$requestMethod = strtoupper($_SERVER['REQUEST_METHOD'] ?? '');
 $action = $_REQUEST['action'] ?? 'preview';
 
 match ([$requestMethod, $action]) {
-    ['get', 'preview'] => preview($config),
-    ['get', 'form'] => form($config),
-    ['post', 'save'] => save($config, $_POST),
+    ['GET', 'preview'] => preview($config),
+    ['GET', 'form'] => form($config),
+    ['POST', 'save'] => save($config, $_POST),
     default => null,
 };
