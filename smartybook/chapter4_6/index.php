@@ -44,10 +44,11 @@ if ($cms->getCount() < $pageID) {
  * @fixme Pagerクラス関連を UIパーツブロックへ移動したい
  * そのために $from と $to を 独自に計算するようにして、Pager クラスに依存しないようにする
  **/
-$params = [];
-$params['totalItems'] = $cms->getCount();
-$params['currentPage'] = $pageID;
-$params['perPage'] = $perPage;
+$params = [
+    'totalItems' => $cms->getCount(),
+    'currentPage' => $pageID,
+    'perPage' => $perPage,
+];
 $pager = Pager::factory($params);
 
 // ページに表示する範囲のデータを読みだす
