@@ -21,27 +21,23 @@ $config = require_once __DIR__ . '/config/config.php';
 //  sort        並び替える項目
 //  order       並び替える順序
 //  setPerPage  1ページあたりの表示件数
-if (empty($_REQUEST['pageID'])) {
-    $_REQUEST['pageID'] = 1;
-} elseif ((int)$_REQUEST['pageID'] < 1) {
-    $_REQUEST['pageID'] = 1;
+if (empty($_GET['pageID'])) {
+    $pageID = 1;
+} elseif ((int)$_GET['pageID'] < 1) {
+    $pageID = 1;
+} else {
+    $pageID = (int)$_GET['pageID'];
 }
 
-if (empty($_REQUEST['sort'])) {
-    $_REQUEST['sort'] = $config['sort'];
-}
-if (empty($_REQUEST['order'])) {
-    $_REQUEST['order'] = $config['order'];
-}
-if (empty($_REQUEST['setPerPage'])) {
-    $_REQUEST['setPerPage'] = $config['perPage'];
-}
+$sort = $_GET['sort'] ?? $config['sort'];
+$order = $_GET['order'] ?? $config['order'];
+$setPerPage = $_GET['setPerPage'] ?? $config['perPage'];
 
 // ----- メイン処理・データ操作 -----
 $cms = new CMS($config['dsn'], $config['db_user'], $config['db_password']);
 
-if ($cms->getCount() < $_REQUEST['pageID']) {
-    $_REQUEST['pageID'] = 1;
+if ($cms->getCount() < $pageID) {
+    $pageID = 1;
 }
 
 /**
@@ -50,21 +46,21 @@ if ($cms->getCount() < $_REQUEST['pageID']) {
  **/
 $params = [];
 $params['totalItems'] = $cms->getCount();
-$params['currentPage'] = (int)$_REQUEST['pageID'];
+$params['currentPage'] = $pageID;
 $pager = Pager::factory($params);
 
 // ページに表示する範囲のデータを読みだす
 list($from, $to) = $pager->getOffsetByPageId();
 $rcd_arr = [];
 if ((0 < $from) && (0 < $to)) {
-    $rcd_arr = $cms->getAll($from - 1, $to - $from + 1, $_REQUEST['sort'], $_REQUEST['order']);
+    $rcd_arr = $cms->getAll($from - 1, $to - $from + 1, $sort, $order);
 }
 
 // ----- UIパーツ -----
 $pagerDto = PearPagerMapper::toDto($pager, $from, $to);
 
 // 並替えの△▽を表示するクラス
-$sortnavi = new SortNavigator($_REQUEST['sort'], $_REQUEST['order']);
+$sortnavi = new SortNavigator($sort, $order);
 $perpage_params = [
     'optionText' => '%d件/ページ',
     'attributes' => "onchange='document.forms[\"perPage\"].submit()'",
@@ -72,6 +68,8 @@ $perpage_params = [
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
+$smarty->assign('sort', $sort);
+$smarty->assign('order', $order);
 $smarty->assign('SortNavi', $sortnavi);
 $smarty->assign('Pager', $pager);
 $smarty->assign('PagerDto', $pagerDto);

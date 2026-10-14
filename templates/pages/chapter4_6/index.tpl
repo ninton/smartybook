@@ -19,8 +19,8 @@
 
 <div id="info">
 <form action="{$smarty.server.SCRIPT_NAME}" name="perPage">
-<input type="hidden" name="sort"  value="{$smarty.request.sort}" />
-<input type="hidden" name="order" value="{$smarty.request.order}" />
+<input type="hidden" name="sort"  value="{$sort}" />
+<input type="hidden" name="order" value="{$order}" />
 全{$Pager->numItems()}件中 {$PagerDto->ExOffsetFrom}件目～{$PagerDto->ExOffsetTo}件目 | 
 全{$Pager->numPages()}ページ中 {$Pager->getCurrentPageID()}ページ目 | 
 表示件数{$Pager->getPerPageSelectBox(1, 20, 1, true, $perpage_params)}
