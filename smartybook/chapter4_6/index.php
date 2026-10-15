@@ -1,9 +1,9 @@
 <?php
 
 use App\PearStub\PagerStub as Pager;
+use App\PearStub\PearPagerMapper;
 use App\Smarty\AppSmarty as Smarty;
 use SmartyBook\chapter4_6\src\CMS;
-use SmartyBook\chapter4_6\src\PearPagerMapper;
 use SmartyBook\chapter4_6\src\SortNavigator;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
@@ -51,15 +51,15 @@ $params = [
 ];
 $pager = Pager::factory($params);
 
+$pagerDto = PearPagerMapper::toDto($pager);
+
 // ページに表示する範囲のデータを読みだす
-list($from, $to) = $pager->getOffsetByPageId();
 $entryArr = [];
-if ((0 < $from) && (0 < $to)) {
-    $entryArr = $cms->getAll($from - 1, $to - $from + 1, $sort, $order);
+if ((0 < $pagerDto->offsetFrom) && (0 < $pagerDto->offsetTo)) {
+    $entryArr = $cms->getAll($pagerDto->offsetFrom - 1, $pagerDto->offsetTo - $pagerDto->offsetFrom + 1, $sort, $order);
 }
 
 // ----- UIパーツ -----
-$pagerDto = PearPagerMapper::toDto($pager, $from, $to);
 
 // 並替えの△▽を表示するクラス
 $sortNavigator = new SortNavigator($sort, $order);
