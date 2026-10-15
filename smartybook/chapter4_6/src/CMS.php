@@ -19,7 +19,6 @@ class CMS
     public function __construct(string $dsn, string $dbuser, string $dbPassword)
     {
         $this->pdo = new PDO($dsn, $dbuser, $dbPassword);
-        $this->pdo->query('SET NAMES UTF8');
     }
 
     /**
