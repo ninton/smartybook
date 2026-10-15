@@ -63,10 +63,12 @@ if ((0 < $pagerDto->offsetFrom) && (0 < $pagerDto->offsetTo)) {
 
 // 並替えの△▽を表示するクラス
 $sortNavigator = new SortNavigator($sort, $order);
-$perPageParams = [
-    'optionText' => '%d件/ページ',
-    'attributes' => "onchange='document.forms[\"perPage\"].submit()'",
-];
+
+// 表示件数の選択肢（例: 1〜20件、ステップ1、あるいは任意の配列）
+$perPageOptions = [];
+for ($i = 1; $i <= 20; $i += 1) {
+    $perPageOptions[$i] = "{$i}件/ページ";
+}
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
@@ -76,6 +78,7 @@ $smarty->assign('sortNavigator', $sortNavigator);
 $smarty->assign('pager', $pager);
 $smarty->assign('pagerDto', $pagerDto);
 $smarty->assign('popupParams', ['autoSubmit' => true]);
-$smarty->assign('perPageParams', $perPageParams);
+$smarty->assign('perPageOptions', $perPageOptions);
+$smarty->assign('currentPerPage', $perPage);
 $smarty->assign('entryArr', $entryArr);
 $smarty->display('pages/chapter4_6/index.tpl');
