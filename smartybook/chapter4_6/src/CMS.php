@@ -12,14 +12,13 @@ class CMS
     private PDO $dbh;
 
     /**
-     * @param string $i_dsn
-     * @param string $i_dbuser
+     * @param string $dsn
+     * @param string $dbuser
      * @param string $dbPassword
-     * @return void
      */
-    public function __construct(string $i_dsn, string $i_dbuser, string $dbPassword)
+    public function __construct(string $dsn, string $dbuser, string $dbPassword)
     {
-        $this->dbh = new PDO($i_dsn, $i_dbuser, $dbPassword);
+        $this->dbh = new PDO($dsn, $dbuser, $dbPassword);
         $this->dbh->query('SET NAMES UTF8');
     }
 
@@ -34,16 +33,16 @@ class CMS
     }
 
     /**
-     * @param int $i_offset
-     * @param int $i_limit
-     * @param string $i_sort
-     * @param string $i_order
+     * @param int $offset
+     * @param int $limit
+     * @param string $sort
+     * @param string $order
      * @return list<array<string, mixed>>
      */
-    public function getAll(int $i_offset, int $i_limit, string $i_sort, string $i_order): array
+    public function getAll(int $offset, int $limit, string $sort, string $order): array
     {
         // 安全な値かどうかをチェックする
-        switch ($i_sort) {
+        switch ($sort) {
             case 'id':
             case 'category':
             case 'title':
@@ -54,7 +53,7 @@ class CMS
                 return [];
         }
 
-        switch ($i_order) {
+        switch ($order) {
             case 'asc':
             case 'desc':
                 break;
@@ -62,10 +61,10 @@ class CMS
                 return [];
         }
 
-        $sort  = addslashes($i_sort);
-        $order = addslashes($i_order);
-        $offset = 0 + (int)$i_offset;
-        $limit = 0 + (int)$i_limit;
+        $sort  = addslashes($sort);
+        $order = addslashes($order);
+        $offset = 0 + (int)$offset;
+        $limit = 0 + (int)$limit;
         $query = "SELECT * FROM cms ORDER BY $sort $order LIMIT $offset, $limit";
         $stmt = $this->dbh->query($query);
         $rcd_arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
