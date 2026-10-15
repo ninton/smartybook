@@ -13,7 +13,7 @@ final readonly class CMS
     {
     }
 
-    public function getCount(): int
+    public function count(): int
     {
         return (int) $this->pdo->query('SELECT COUNT(id) FROM cms')->fetchColumn();
     }

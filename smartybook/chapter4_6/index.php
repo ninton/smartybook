@@ -40,7 +40,7 @@ $pdo = new PDO($config['dsn'], $config['db_user'], $config['db_password'], [
 ]);
 $cms = new CMS($pdo);
 
-if ($cms->getCount() < $pageID) {
+if ($cms->count() < $pageID) {
     $pageID = 1;
 }
 
@@ -49,7 +49,7 @@ if ($cms->getCount() < $pageID) {
  * そのために $from と $to を 独自に計算するようにして、Pager クラスに依存しないようにする
  **/
 $params = [
-    'totalItems' => $cms->getCount(),
+    'totalItems' => $cms->count(),
     'currentPage' => $pageID,
     'perPage' => $perPage,
 ];
