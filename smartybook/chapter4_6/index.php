@@ -72,10 +72,10 @@ $perPageParams = [
 $smarty = new Smarty();
 $smarty->assign('sort', $sort);
 $smarty->assign('order', $order);
-$smarty->assign('SortNavi', $sortNavigator);
-$smarty->assign('Pager', $pager);
-$smarty->assign('PagerDto', $pagerDto);
-$smarty->assign('popup_params', ['autoSubmit' => true]);
-$smarty->assign('perpage_params', $perPageParams);
-$smarty->assign('rcd_arr', $entryArr);
+$smarty->assign('sortNavigator', $sortNavigator);
+$smarty->assign('pager', $pager);
+$smarty->assign('pagerDto', $pagerDto);
+$smarty->assign('popupParams', ['autoSubmit' => true]);
+$smarty->assign('perPageParams', $perPageParams);
+$smarty->assign('entryArr', $entryArr);
 $smarty->display('pages/chapter4_6/index.tpl');
