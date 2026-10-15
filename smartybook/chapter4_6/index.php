@@ -34,7 +34,11 @@ $order = empty($_GET['order']) ? $config['order'] : $_GET['order'];
 $perPage = empty($_GET['setPerPage']) ? $config['perPage'] : $_GET['setPerPage'];
 
 // ----- メイン処理・データ操作 -----
-$cms = new CMS($config['dsn'], $config['db_user'], $config['db_password']);
+$pdo = new PDO($config['dsn'], $config['db_user'], $config['db_password'], [
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+]);
+$cms = new CMS($pdo);
 
 if ($cms->getCount() < $pageID) {
     $pageID = 1;
