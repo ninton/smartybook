@@ -7,18 +7,10 @@ use PDO;
 /**
  *  テーブルCMSの読み出し操作
  */
-class CMS
+final readonly class CMS
 {
-    private PDO $pdo;
-
-    /**
-     * @param string $dsn
-     * @param string $dbuser
-     * @param string $dbPassword
-     */
-    public function __construct(string $dsn, string $dbuser, string $dbPassword)
+    public function __construct(private PDO $pdo)
     {
-        $this->pdo = new PDO($dsn, $dbuser, $dbPassword);
     }
 
     /**
