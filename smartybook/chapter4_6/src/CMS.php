@@ -9,7 +9,7 @@ use PDO;
  */
 class CMS
 {
-    private PDO $dbh;
+    private PDO $pdo;
 
     /**
      * @param string $dsn
@@ -18,8 +18,8 @@ class CMS
      */
     public function __construct(string $dsn, string $dbuser, string $dbPassword)
     {
-        $this->dbh = new PDO($dsn, $dbuser, $dbPassword);
-        $this->dbh->query('SET NAMES UTF8');
+        $this->pdo = new PDO($dsn, $dbuser, $dbPassword);
+        $this->pdo->query('SET NAMES UTF8');
     }
 
     /**
@@ -27,7 +27,7 @@ class CMS
      */
     public function getCount(): int
     {
-        $stmt = $this->dbh->query('SELECT COUNT(id) FROM cms');
+        $stmt = $this->pdo->query('SELECT COUNT(id) FROM cms');
         $row = $stmt->fetch(PDO::FETCH_NUM);
         return $row[0];
     }
@@ -66,7 +66,7 @@ class CMS
         $offset = 0 + (int)$offset;
         $limit = 0 + (int)$limit;
         $query = "SELECT * FROM cms ORDER BY $sort $order LIMIT $offset, $limit";
-        $stmt = $this->dbh->query($query);
+        $stmt = $this->pdo->query($query);
         $rcd_arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $rcd_arr;
     }
