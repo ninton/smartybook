@@ -8,11 +8,11 @@ namespace SmartyBook\chapter4_6\src;
 class SortNavigator
 {
     private string $sortKey;
-    private string $order;
+    private string $sortDirection;
     /** @var array<string, string> */
     private array $vars;
 
-    public function __construct(string $sortKey, string $order)
+    public function __construct(string $sortKey, string $sortDirection)
     {
         $this->vars['asc_current' ] = '△';
         $this->vars['asc_link'    ] = '▲';
@@ -23,10 +23,10 @@ class SortNavigator
         $this->vars['separator'   ] = '';
 
         $this->vars['sortKeyUrlVar' ] = 'sort_key';
-        $this->vars['orderUrlVar'] = 'sort_direction';
+        $this->vars['sortDirectionUrlVar'] = 'sort_direction';
 
         $this->sortKey  = $sortKey;
-        $this->order = $order;
+        $this->sortDirection = $sortDirection;
     }
 
     public function setOption(string $key, string $value): void
@@ -45,17 +45,17 @@ class SortNavigator
         print $buf;
     }
 
-    public function showLink(string $sortKey, string $order): string
+    public function showLink(string $sortKey, string $sortDirection): string
     {
-        if (($sortKey == $this->sortKey) && ($order == $this->order)) {
-            if ($order == 'asc') {
+        if (($sortKey == $this->sortKey) && ($sortDirection == $this->sortDirection)) {
+            if ($sortDirection == 'asc') {
                 $text  = $this->vars['asc_current'];
             } else {
                 $text  = $this->vars['desc_current'];
             }
             $buf = $text;
         } else {
-            if ($order == 'asc') {
+            if ($sortDirection == 'asc') {
                 $text  = $this->vars['asc_link' ];
                 $title = $this->vars['asc_title'];
             } else {
@@ -65,7 +65,7 @@ class SortNavigator
 
             $vars = [
                 $this->vars['sortKeyUrlVar' ] => $sortKey,
-                $this->vars['orderUrlVar'] => $order,
+                $this->vars['sortDirectionUrlVar'] => $sortDirection,
                 'pageID'                   => 1,
             ];
             $html = [];
