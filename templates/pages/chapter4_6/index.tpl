@@ -74,7 +74,7 @@
     name="pageID"
     options=$pageOptions
     selected=$pagerDto->currentPageID
-    onchange="document.location.href='/smartybook/chapter4_6/index.php?pageID=' + this.options[this.selectedIndex].value + ''"
+    onchange="let url = new window.URL(document.location.href); url.searchParams.set('pageID', this.value); document.location.href = url.href;"
 }
 {$pagerDto->links}
 

@@ -80,7 +80,7 @@
 
 <a href="?sort=id&amp;order=asc&amp;pageID=1&amp;setPerPage=2">&lt;前へ</a>
 
-<select name="pageID" onchange="document.location.href='/smartybook/chapter4_6/index.php?pageID=' + this.options[this.selectedIndex].value + ''">
+<select name="pageID" onchange="let url = new window.URL(document.location.href); url.searchParams.set('pageID', this.value); document.location.href = url.href;">
 <option value="1">1</option>
 <option value="2" selected="selected">2</option>
 <option value="3">3</option>

@@ -102,7 +102,7 @@
 
 &lt;前へ
 
-<select name="pageID" onchange="document.location.href='/smartybook/chapter4_6/index.php?pageID=' + this.options[this.selectedIndex].value + ''">
+<select name="pageID" onchange="let url = new window.URL(document.location.href); url.searchParams.set('pageID', this.value); document.location.href = url.href;">
 <option value="1" selected="selected">1</option>
 <option value="2">2</option>
 </select>
