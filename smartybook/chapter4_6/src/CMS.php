@@ -27,29 +27,20 @@ final readonly class CMS
      */
     public function findList(int $offset, int $limit, string $sort, string $order): array
     {
-        // 安全な値かどうかをチェックする
-        switch ($sort) {
-            case 'id':
-            case 'category':
-            case 'title':
-            case 'comment':
-            case 'time':
-                break;
-            default:
-                return [];
+        // SQLインジェクションを防ぐためのホワイトリスト検証
+        $allowedSorts = ['id', 'category', 'title', 'comment', 'time'];
+        $allowedOrders = ['asc', 'desc'];
+
+        if (!in_array($sort, $allowedSorts, true)) {
+            return [];
         }
 
-        switch ($order) {
-            case 'asc':
-            case 'desc':
-                break;
-            default:
-                return [];
+        if (!in_array($order, $allowedOrders, true)) {
+            return [];
         }
 
         $query = "SELECT * FROM cms ORDER BY $sort $order LIMIT $offset, $limit";
-        $stmt = $this->pdo->query($query);
-        $rcd_arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $rcd_arr;
+
+        return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
 }
