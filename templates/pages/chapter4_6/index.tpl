@@ -9,10 +9,10 @@
 <body>
 <div id="wrapper">
 
-{$SortNavi->setOption('asc_current' , '<img src="images/btn_asc_current.gif"  alt="" border="0" />')}
-{$SortNavi->setOption('asc_link'    , '<img src="images/btn_asc.gif"          alt="" border="0" />')}
-{$SortNavi->setOption('desc_current', '<img src="images/btn_desc_current.gif" alt="" border="0" />')}
-{$SortNavi->setOption('desc_link'   , '<img src="images/btn_desc.gif"         alt="" border="0" />')}
+{$sortNavigator->setOption('asc_current' , '<img src="images/btn_asc_current.gif"  alt="" border="0" />')}
+{$sortNavigator->setOption('asc_link'    , '<img src="images/btn_asc.gif"          alt="" border="0" />')}
+{$sortNavigator->setOption('desc_current', '<img src="images/btn_desc_current.gif" alt="" border="0" />')}
+{$sortNavigator->setOption('desc_link'   , '<img src="images/btn_desc.gif"         alt="" border="0" />')}
 
 
 <h1>Smarty for Designers</h1>
@@ -21,28 +21,28 @@
 <form action="{$smarty.server.SCRIPT_NAME}" name="perPage">
 <input type="hidden" name="sort"  value="{$sort}" />
 <input type="hidden" name="order" value="{$order}" />
-全{$Pager->numItems()}件中 {$PagerDto->ExOffsetFrom}件目～{$PagerDto->ExOffsetTo}件目 | 
-全{$Pager->numPages()}ページ中 {$Pager->getCurrentPageID()}ページ目 | 
-表示件数{$Pager->getPerPageSelectBox(1, 20, 1, true, $perpage_params)}
+全{$pager->numItems()}件中 {$pagerDto->ExOffsetFrom}件目～{$pagerDto->ExOffsetTo}件目 | 
+全{$pager->numPages()}ページ中 {$pager->getCurrentPageID()}ページ目 | 
+表示件数{$pager->getPerPageSelectBox(1, 20, 1, true, $perPageParams)}
 </form>
 </div>
 
 
 <table border="0" cellspacing="0">
 <tr>
-  <th>ID      <br />{$SortNavi->show('id')}</th>
-  <th>カテゴリ<br />{$SortNavi->show('category')}</th>
-  <th>タイトル<br />{$SortNavi->show('title')}</th>
-  <th class="comment">コメント<br />{$SortNavi->show('comment')}</th>
-  <th>日付    <br />{$SortNavi->show('time')}</th>
+  <th>ID      <br />{$sortNavigator->show('id')}</th>
+  <th>カテゴリ<br />{$sortNavigator->show('category')}</th>
+  <th>タイトル<br />{$sortNavigator->show('title')}</th>
+  <th class="comment">コメント<br />{$sortNavigator->show('comment')}</th>
+  <th>日付    <br />{$sortNavigator->show('time')}</th>
 </tr>
-{foreach from=$rcd_arr key=i item=rcd}
+{foreach from=$entryArr key=i item=entry}
 <tr class="{cycle name="cycle2" values='tr2_1,tr2_2'} {cycle name="cycle5" values=',,,,tr5_5'}">
-  <td>{$rcd.id|escape:html}</td>
-  <td>{$rcd.category|escape:html}</td>
-  <td>{$rcd.title|escape:html}</td>
-  <td>{$rcd.comment|escape:html}</td>
-  <td>{$rcd.time|date_format:"%Y-%m-%d"}</td>
+  <td>{$entry.id|escape:html}</td>
+  <td>{$entry.category|escape:html}</td>
+  <td>{$entry.title|escape:html}</td>
+  <td>{$entry.comment|escape:html}</td>
+  <td>{$entry.time|date_format:"%Y-%m-%d"}</td>
 </tr>
 {foreachelse}
 <tr>
@@ -53,35 +53,35 @@
 
 
 <div id="navi">
-{if not $Pager->isFirstPage()}
-<a href="{$PagerDto->ExFirstPageLink}">&lt;&lt;先頭へ</a>
+{if not $pager->isFirstPage()}
+<a href="{$pagerDto->ExFirstPageLink}">&lt;&lt;先頭へ</a>
 {else}
 &lt;&lt;先頭へ
 {/if}
 
-{if $Pager->getPreviousPageID()}
-<a href="{$PagerDto->ExPreviousPageLink}">&lt;前へ</a>
+{if $pager->getPreviousPageID()}
+<a href="{$pagerDto->ExPreviousPageLink}">&lt;前へ</a>
 {else}
 &lt;前へ
 {/if}
 
-{$Pager->getPageSelectBox($popup_params)}
-{$PagerDto->ExLinks}
+{$pager->getPageSelectBox($popupParams)}
+{$pagerDto->ExLinks}
 
-{if $Pager->getNextPageID()}
-<a href="{$PagerDto->ExNextPageLink}">次へ&gt;</a>
+{if $pager->getNextPageID()}
+<a href="{$pagerDto->ExNextPageLink}">次へ&gt;</a>
 {else}
 次へ&gt;
 {/if}
 
 
-{if not $Pager->isLastPage()}
-<a href="{$PagerDto->ExLastPageLink}">最後へ&gt;&gt;</a>
+{if not $pager->isLastPage()}
+<a href="{$pagerDto->ExLastPageLink}">最後へ&gt;&gt;</a>
 {else}
 最後へ&gt;&gt;
 {/if}
 
-{$Pager->getCurrentPageID()}/{$Pager->numPages()}ページ
+{$pager->getCurrentPageID()}/{$pager->numPages()}ページ
 </div>{* id="navi" *}
 
 </div>{* id="wrapper" *}
