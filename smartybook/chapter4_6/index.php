@@ -70,15 +70,20 @@ for ($i = 1; $i <= 20; $i += 1) {
     $perPageOptions[$i] = "{$i}件/ページ";
 }
 
+// 表示ページ番号の選択肢を作成
+$pageOptions = [];
+for ($i = 1; $i <= $pagerDto->numPages; $i += 1) {
+    $pageOptions[$i] = "{$i}";
+}
+
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
 $smarty->assign('sort', $sort);
 $smarty->assign('order', $order);
 $smarty->assign('sortNavigator', $sortNavigator);
-$smarty->assign('pager', $pager);
 $smarty->assign('pagerDto', $pagerDto);
-$smarty->assign('popupParams', ['autoSubmit' => true]);
 $smarty->assign('perPageOptions', $perPageOptions);
 $smarty->assign('currentPerPage', $perPage);
+$smarty->assign('pageOptions', $pageOptions);
 $smarty->assign('entryArr', $entryArr);
 $smarty->display('pages/chapter4_6/index.tpl');

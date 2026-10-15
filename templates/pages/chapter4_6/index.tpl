@@ -70,7 +70,12 @@
 &lt;前へ
 {/if}
 
-{$pager->getPageSelectBox($popupParams)}
+{html_options
+    name="pageID"
+    options=$pageOptions
+    selected=$pagerDto->currentPageID
+    onchange="let url = new window.URL(document.location.href); url.searchParams.set('pageID', this.value); document.location.href = url.href;"
+}
 {$pagerDto->links}
 
 {if $pagerDto->nextPageHref}
