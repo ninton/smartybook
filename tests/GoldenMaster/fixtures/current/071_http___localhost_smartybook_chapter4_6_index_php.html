@@ -19,8 +19,8 @@
 
   <div id="info">
   <form action="/smartybook/chapter4_6/index.php" name="perPage">
-  <input type="hidden" name="sort"  value="id" />
-  <input type="hidden" name="order" value="asc" />
+  <input type="hidden" name="sort_key"  value="id" />
+  <input type="hidden" name="sort_direction" value="asc" />
   全7件中 1件目～5件目 | 
   全2ページ中 1ページ目 | 
   表示件数<select name="setPerPage" onchange="document.forms[&quot;perPage&quot;].submit()">
@@ -52,11 +52,11 @@
 
   <table border="0" cellspacing="0">
   <tr>
-    <th>ID      <br /><img src="images/btn_asc_current.gif"  alt="" border="0" /><a href="/smartybook/chapter4_6/index.php?sort=id&order=desc&pageID=1" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
-    <th>カテゴリ<br /><a href="/smartybook/chapter4_6/index.php?sort=category&order=asc&pageID=1" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort=category&order=desc&pageID=1" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
-    <th>タイトル<br /><a href="/smartybook/chapter4_6/index.php?sort=title&order=asc&pageID=1" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort=title&order=desc&pageID=1" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
-    <th class="comment">コメント<br /><a href="/smartybook/chapter4_6/index.php?sort=comment&order=asc&pageID=1" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort=comment&order=desc&pageID=1" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
-    <th>日付    <br /><a href="/smartybook/chapter4_6/index.php?sort=time&order=asc&pageID=1" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort=time&order=desc&pageID=1" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
+    <th>ID      <br /><img src="images/btn_asc_current.gif"  alt="" border="0" /><a href="/smartybook/chapter4_6/index.php?sort_key=id&sort_direction=desc&pageID=1" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
+    <th>カテゴリ<br /><a href="/smartybook/chapter4_6/index.php?sort_key=category&sort_direction=asc&pageID=1" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort_key=category&sort_direction=desc&pageID=1" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
+    <th>タイトル<br /><a href="/smartybook/chapter4_6/index.php?sort_key=title&sort_direction=asc&pageID=1" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort_key=title&sort_direction=desc&pageID=1" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
+    <th class="comment">コメント<br /><a href="/smartybook/chapter4_6/index.php?sort_key=comment&sort_direction=asc&pageID=1" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort_key=comment&sort_direction=desc&pageID=1" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
+    <th>日付    <br /><a href="/smartybook/chapter4_6/index.php?sort_key=time&sort_direction=asc&pageID=1" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort_key=time&sort_direction=desc&pageID=1" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
   </tr>
     <tr class="tr2_1 ">
     <td>1</td>

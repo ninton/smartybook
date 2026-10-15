@@ -29,8 +29,8 @@ if (empty($_GET['pageID'])) {
     $pageID = (int)$_GET['pageID'];
 }
 
-$sortKey = empty($_GET['sort']) ? $config['sort'] : $_GET['sort'];
-$sortDirection = empty($_GET['order']) ? $config['order'] : $_GET['order'];
+$sortKey = empty($_GET['sort_key']) ? $config['sort'] : $_GET['sort_key'];
+$sortDirection = empty($_GET['sort_direction']) ? $config['order'] : $_GET['sort_direction'];
 $perPage = empty($_GET['setPerPage']) ? $config['perPage'] : $_GET['setPerPage'];
 
 // ----- メイン処理・データ操作 -----
