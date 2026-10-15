@@ -7,18 +7,11 @@ namespace SmartyBook\chapter4_6\src;
  */
 class SortNavigator
 {
-    /** @var string */
     private string $sort;
-    /** @var string */
     private string $order;
     /** @var array<string, string> */
     private array $vars;
 
-    /**
-     * @param string $sort
-     * @param string $order
-     * @return void
-     */
     public function __construct(string $sort, string $order)
     {
         $this->vars['asc_current' ] = '△';
@@ -36,11 +29,6 @@ class SortNavigator
         $this->order = $order;
     }
 
-    /**
-     * @param string $key
-     * @param string $value
-     * @return void
-     */
     public function setOption(string $key, string $value): void
     {
         if (isset($this->vars[$key])) {
@@ -48,10 +36,6 @@ class SortNavigator
         }
     }
 
-    /**
-     * @param string $sort
-     * @return void
-     */
     public function show(string $sort): void
     {
         $asc_navi  = $this->showLink($sort, 'asc');
@@ -61,11 +45,6 @@ class SortNavigator
         print $buf;
     }
 
-    /**
-     * @param string $sort
-     * @param string $order
-     * @return string
-     */
     public function showLink(string $sort, string $order): string
     {
         if (($sort == $this->sort) && ($order == $this->order)) {
@@ -104,9 +83,7 @@ EOT;
     }
 
     /**
-     * @param string $query
      * @param array<string, string> $vars
-     * @return string
      */
     public function replaceQuery(string $query, array $vars): string
     {
