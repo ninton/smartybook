@@ -81,7 +81,6 @@ $smarty = new Smarty();
 $smarty->assign('sort', $sort);
 $smarty->assign('order', $order);
 $smarty->assign('sortNavigator', $sortNavigator);
-$smarty->assign('pager', $pager);
 $smarty->assign('pagerDto', $pagerDto);
 $smarty->assign('perPageOptions', $perPageOptions);
 $smarty->assign('currentPerPage', $perPage);
