@@ -29,8 +29,8 @@ if (empty($_GET['pageID'])) {
     $pageID = (int)$_GET['pageID'];
 }
 
-$sort = empty($_GET['sort']) ? $config['sort'] : $_GET['sort'];
-$order = empty($_GET['order']) ? $config['order'] : $_GET['order'];
+$sortKey = empty($_GET['sort']) ? $config['sort'] : $_GET['sort'];
+$sortDirection = empty($_GET['order']) ? $config['order'] : $_GET['order'];
 $perPage = empty($_GET['setPerPage']) ? $config['perPage'] : $_GET['setPerPage'];
 
 // ----- メイン処理・データ操作 -----
@@ -60,13 +60,13 @@ $pagerDto = PearPagerMapper::toDto($pager);
 // ページに表示する範囲のデータを読みだす
 $entryArr = [];
 if ((0 < $pagerDto->offsetFrom) && (0 < $pagerDto->offsetTo)) {
-    $entryArr = $cms->findList($pagerDto->offsetFrom - 1, $pagerDto->offsetTo - $pagerDto->offsetFrom + 1, $sort, $order);
+    $entryArr = $cms->findList($pagerDto->offsetFrom - 1, $pagerDto->offsetTo - $pagerDto->offsetFrom + 1, $sortKey, $sortDirection);
 }
 
 // ----- UIパーツ -----
 
 // 並替えの△▽を表示するクラス
-$sortNavigator = new SortNavigator($sort, $order);
+$sortNavigator = new SortNavigator($sortKey, $sortDirection);
 
 // 表示件数の選択肢（例: 1〜20件、ステップ1、あるいは任意の配列）
 $perPageOptions = [];
@@ -82,8 +82,8 @@ for ($i = 1; $i <= $pagerDto->numPages; $i += 1) {
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
-$smarty->assign('sort', $sort);
-$smarty->assign('order', $order);
+$smarty->assign('sort', $sortKey);
+$smarty->assign('order', $sortDirection);
 $smarty->assign('sortNavigator', $sortNavigator);
 $smarty->assign('pagerDto', $pagerDto);
 $smarty->assign('perPageOptions', $perPageOptions);
