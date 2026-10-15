@@ -70,7 +70,12 @@
 &lt;前へ
 {/if}
 
-{$pager->getPageSelectBox($popupParams)}
+{html_options
+    name="pageID"
+    options=$pageOptions
+    selected=$pagerDto->currentPageID
+    onchange="document.location.href='/smartybook/chapter4_6/index.php?pageID=' + this.options[this.selectedIndex].value + ''"
+}
 {$pagerDto->links}
 
 {if $pagerDto->nextPageHref}
