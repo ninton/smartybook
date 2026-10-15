@@ -15,11 +15,11 @@ class SortNavigator
     private array $vars;
 
     /**
-     * @param string $i_sort
-     * @param string $i_order
+     * @param string $sort
+     * @param string $order
      * @return void
      */
-    public function __construct(string $i_sort, string $i_order)
+    public function __construct(string $sort, string $order)
     {
         $this->vars['asc_current' ] = '△';
         $this->vars['asc_link'    ] = '▲';
@@ -32,51 +32,51 @@ class SortNavigator
         $this->vars['sortUrlVar' ] = 'sort_key';
         $this->vars['orderUrlVar'] = 'sort_direction';
 
-        $this->sort  = $i_sort;
-        $this->order = $i_order;
+        $this->sort  = $sort;
+        $this->order = $order;
     }
 
     /**
-     * @param string $i_key
-     * @param string $i_value
+     * @param string $key
+     * @param string $value
      * @return void
      */
-    public function setOption(string $i_key, string $i_value): void
+    public function setOption(string $key, string $value): void
     {
-        if (isset($this->vars[$i_key])) {
-            $this->vars[$i_key] = $i_value;
+        if (isset($this->vars[$key])) {
+            $this->vars[$key] = $value;
         }
     }
 
     /**
-     * @param string $i_sort
+     * @param string $sort
      * @return void
      */
-    public function show(string $i_sort): void
+    public function show(string $sort): void
     {
-        $asc_navi  = $this->showLink($i_sort, 'asc');
-        $desc_navi = $this->showLink($i_sort, 'desc');
+        $asc_navi  = $this->showLink($sort, 'asc');
+        $desc_navi = $this->showLink($sort, 'desc');
 
         $buf = $asc_navi . $this->vars['separator'] . $desc_navi;
         print $buf;
     }
 
     /**
-     * @param string $i_sort
-     * @param string $i_order
+     * @param string $sort
+     * @param string $order
      * @return string
      */
-    public function showLink(string $i_sort, string $i_order): string
+    public function showLink(string $sort, string $order): string
     {
-        if (($i_sort == $this->sort) && ($i_order == $this->order)) {
-            if ($i_order == 'asc') {
+        if (($sort == $this->sort) && ($order == $this->order)) {
+            if ($order == 'asc') {
                 $text  = $this->vars['asc_current'];
             } else {
                 $text  = $this->vars['desc_current'];
             }
             $buf = $text;
         } else {
-            if ($i_order == 'asc') {
+            if ($order == 'asc') {
                 $text  = $this->vars['asc_link' ];
                 $title = $this->vars['asc_title'];
             } else {
@@ -85,8 +85,8 @@ class SortNavigator
             }
 
             $vars = [
-                $this->vars['sortUrlVar' ] => $i_sort,
-                $this->vars['orderUrlVar'] => $i_order,
+                $this->vars['sortUrlVar' ] => $sort,
+                $this->vars['orderUrlVar'] => $order,
                 'pageID'                   => 1,
             ];
             $html = [];
@@ -104,20 +104,20 @@ EOT;
     }
 
     /**
-     * @param string $i_query
-     * @param array<string, string> $i_vars
+     * @param string $query
+     * @param array<string, string> $vars
      * @return string
      */
-    public function replaceQuery(string $i_query, array $i_vars): string
+    public function replaceQuery(string $query, array $vars): string
     {
-        $vars = [];
-        parse_str($i_query, $vars);
+        $tmpVars = [];
+        parse_str($query, $tmpVars);
 
-        foreach ($i_vars as $key => $val) {
-            $vars[$key] = $val;
+        foreach ($vars as $key => $val) {
+            $tmpVars[$key] = $val;
         }
 
-        $buf = http_build_query($vars);
+        $buf = http_build_query($tmpVars);
         return $buf;
     }
 }
