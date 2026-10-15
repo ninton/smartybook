@@ -21,8 +21,8 @@
 <form action="{$smarty.server.SCRIPT_NAME}" name="perPage">
 <input type="hidden" name="sort"  value="{$sort}" />
 <input type="hidden" name="order" value="{$order}" />
-全{$pager->numItems()}件中 {$pagerDto->ExOffsetFrom}件目～{$pagerDto->ExOffsetTo}件目 | 
-全{$pager->numPages()}ページ中 {$pager->getCurrentPageID()}ページ目 | 
+全{$pager->numItems()}件中 {$pagerDto->offsetFrom}件目～{$pagerDto->offsetTo}件目 | 
+全{$pagerDto->numPages}ページ中 {$pagerDto->currentPageID}ページ目 | 
 表示件数{$pager->getPerPageSelectBox(1, 20, 1, true, $perPageParams)}
 </form>
 </div>
@@ -53,35 +53,35 @@
 
 
 <div id="navi">
-{if not $pager->isFirstPage()}
-<a href="{$pagerDto->ExFirstPageLink}">&lt;&lt;先頭へ</a>
+{if $pagerDto->firstPageHref}
+<a href="{$pagerDto->firstPageHref}">&lt;&lt;先頭へ</a>
 {else}
 &lt;&lt;先頭へ
 {/if}
 
-{if $pager->getPreviousPageID()}
-<a href="{$pagerDto->ExPreviousPageLink}">&lt;前へ</a>
+{if $pagerDto->previousPageHref}
+<a href="{$pagerDto->previousPageHref}">&lt;前へ</a>
 {else}
 &lt;前へ
 {/if}
 
 {$pager->getPageSelectBox($popupParams)}
-{$pagerDto->ExLinks}
+{$pagerDto->links}
 
-{if $pager->getNextPageID()}
-<a href="{$pagerDto->ExNextPageLink}">次へ&gt;</a>
+{if $pagerDto->nextPageHref}
+<a href="{$pagerDto->nextPageHref}">次へ&gt;</a>
 {else}
 次へ&gt;
 {/if}
 
 
-{if not $pager->isLastPage()}
-<a href="{$pagerDto->ExLastPageLink}">最後へ&gt;&gt;</a>
+{if $pagerDto->lastPageHref}
+<a href="{$pagerDto->lastPageHref}">最後へ&gt;&gt;</a>
 {else}
 最後へ&gt;&gt;
 {/if}
 
-{$pager->getCurrentPageID()}/{$pager->numPages()}ページ
+{$pagerDto->currentPageID}/{$pagerDto->numPages}ページ
 </div>{* id="navi" *}
 
 </div>{* id="wrapper" *}
