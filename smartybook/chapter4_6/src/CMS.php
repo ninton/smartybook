@@ -21,11 +21,11 @@ final readonly class CMS
     /**
      * @param int $offset
      * @param int $limit
-     * @param string $sort
-     * @param string $order
+     * @param string $sort 並び替える項目
+     * @param string $order 並び替えの順序（asc または desc）
      * @return list<array<string, mixed>>
      */
-    public function getAll(int $offset, int $limit, string $sort, string $order): array
+    public function findList(int $offset, int $limit, string $sort, string $order): array
     {
         // 安全な値かどうかをチェックする
         switch ($sort) {

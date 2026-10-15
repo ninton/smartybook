@@ -60,7 +60,7 @@ $pagerDto = PearPagerMapper::toDto($pager);
 // ページに表示する範囲のデータを読みだす
 $entryArr = [];
 if ((0 < $pagerDto->offsetFrom) && (0 < $pagerDto->offsetTo)) {
-    $entryArr = $cms->getAll($pagerDto->offsetFrom - 1, $pagerDto->offsetTo - $pagerDto->offsetFrom + 1, $sort, $order);
+    $entryArr = $cms->findList($pagerDto->offsetFrom - 1, $pagerDto->offsetTo - $pagerDto->offsetFrom + 1, $sort, $order);
 }
 
 // ----- UIパーツ -----
