@@ -23,7 +23,12 @@
 <input type="hidden" name="order" value="{$order}" />
 全{$pagerDto->numItems}件中 {$pagerDto->offsetFrom}件目～{$pagerDto->offsetTo}件目 | 
 全{$pagerDto->numPages}ページ中 {$pagerDto->currentPageID}ページ目 | 
-表示件数{$pager->getPerPageSelectBox(1, 20, 1, true, $perPageParams)}
+表示件数表示件数{html_options
+    name="setPerPage"
+    options=$perPageOptions
+    selected=$currentPerPage
+    onchange='document.forms["perPage"].submit()'
+}
 </form>
 </div>
 
