@@ -2,13 +2,13 @@
 
 use App\PearStub\NetUserAgentMobileCommonStub;
 use App\PearStub\PagerStub as Pager;
+use App\PearStub\PearPagerMapper;
 use App\Smarty\AppSmarty as Smarty;
 use SmartyBook\chapter5_3\src\CsvEntryReader;
 use SmartyBook\chapter5_3\src\EntryImagePathResolver;
 use SmartyBook\chapter5_3\src\EntryMapper;
 use SmartyBook\chapter5_3\src\KetaiSetUp;
 use SmartyBook\chapter5_3\src\NetUserAgentMobileMapper;
-use SmartyBook\chapter5_3\src\PearPagerMapper;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 $config = require_once __DIR__ . '/config/config.php';

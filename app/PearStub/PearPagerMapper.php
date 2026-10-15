@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace SmartyBook\chapter5_3\src;
+namespace App\PearStub;
 
+use App\Pager\PagerDto;
 use App\PearStub\PagerStub as Pager;
 
 /**
