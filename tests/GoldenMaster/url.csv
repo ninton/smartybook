@@ -100,8 +100,8 @@ chapter4_5/index,GET,http://localhost/smartybook/chapter4_5/index.php,
 
 # chapter4_6
 chapter4_6/index,GET,http://localhost/smartybook/chapter4_6/index.php,
-chapter4_6/index page 2,GET,http://localhost/smartybook/chapter4_6/index.php?sort=id&order=asc&pageID=2&setPerPage=2,
-chapter4_6/index ID desc,GET,http://localhost/smartybook/chapter4_6/index.php?sort=id&order=desc&pageID=1,
+chapter4_6/index page 2,GET,http://localhost/smartybook/chapter4_6/index.php?sort_key=id&sort_direction=asc&pageID=2&setPerPage=2,
+chapter4_6/index ID desc,GET,http://localhost/smartybook/chapter4_6/index.php?sort_key=id&sort_direction=desc&pageID=1,
 
 # chapter4_7
 # @note action=confirm,action=form,action=submit の実行順序に依存します。行順序に注意してください。

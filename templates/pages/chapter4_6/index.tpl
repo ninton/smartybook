@@ -10,8 +10,8 @@
 
   <div id="info">
   <form action="{$smarty.server.SCRIPT_NAME}" name="perPage">
-  <input type="hidden" name="sort"  value="{$sortKey}" />
-  <input type="hidden" name="order" value="{$sortDirection}" />
+  <input type="hidden" name="sort_key"  value="{$sortKey}" />
+  <input type="hidden" name="sort_direction" value="{$sortDirection}" />
   全{$pagerDto->numItems}件中 {$pagerDto->offsetFrom}件目～{$pagerDto->offsetTo}件目 | 
   全{$pagerDto->numPages}ページ中 {$pagerDto->currentPageID}ページ目 | 
   表示件数{html_options

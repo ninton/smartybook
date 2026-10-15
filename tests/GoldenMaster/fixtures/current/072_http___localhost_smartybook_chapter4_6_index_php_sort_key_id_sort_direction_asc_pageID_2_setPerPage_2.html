@@ -19,8 +19,8 @@
 
   <div id="info">
   <form action="/smartybook/chapter4_6/index.php" name="perPage">
-  <input type="hidden" name="sort"  value="id" />
-  <input type="hidden" name="order" value="asc" />
+  <input type="hidden" name="sort_key"  value="id" />
+  <input type="hidden" name="sort_direction" value="asc" />
   全7件中 3件目～4件目 | 
   全4ページ中 2ページ目 | 
   表示件数<select name="setPerPage" onchange="document.forms[&quot;perPage&quot;].submit()">
@@ -52,11 +52,11 @@
 
   <table border="0" cellspacing="0">
   <tr>
-    <th>ID      <br /><img src="images/btn_asc_current.gif"  alt="" border="0" /><a href="/smartybook/chapter4_6/index.php?sort=id&order=desc&pageID=1&setPerPage=2" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
-    <th>カテゴリ<br /><a href="/smartybook/chapter4_6/index.php?sort=category&order=asc&pageID=1&setPerPage=2" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort=category&order=desc&pageID=1&setPerPage=2" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
-    <th>タイトル<br /><a href="/smartybook/chapter4_6/index.php?sort=title&order=asc&pageID=1&setPerPage=2" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort=title&order=desc&pageID=1&setPerPage=2" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
-    <th class="comment">コメント<br /><a href="/smartybook/chapter4_6/index.php?sort=comment&order=asc&pageID=1&setPerPage=2" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort=comment&order=desc&pageID=1&setPerPage=2" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
-    <th>日付    <br /><a href="/smartybook/chapter4_6/index.php?sort=time&order=asc&pageID=1&setPerPage=2" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort=time&order=desc&pageID=1&setPerPage=2" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
+    <th>ID      <br /><img src="images/btn_asc_current.gif"  alt="" border="0" /><a href="/smartybook/chapter4_6/index.php?sort_key=id&sort_direction=desc&pageID=1&setPerPage=2" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
+    <th>カテゴリ<br /><a href="/smartybook/chapter4_6/index.php?sort_key=category&sort_direction=asc&pageID=1&setPerPage=2" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort_key=category&sort_direction=desc&pageID=1&setPerPage=2" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
+    <th>タイトル<br /><a href="/smartybook/chapter4_6/index.php?sort_key=title&sort_direction=asc&pageID=1&setPerPage=2" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort_key=title&sort_direction=desc&pageID=1&setPerPage=2" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
+    <th class="comment">コメント<br /><a href="/smartybook/chapter4_6/index.php?sort_key=comment&sort_direction=asc&pageID=1&setPerPage=2" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort_key=comment&sort_direction=desc&pageID=1&setPerPage=2" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
+    <th>日付    <br /><a href="/smartybook/chapter4_6/index.php?sort_key=time&sort_direction=asc&pageID=1&setPerPage=2" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort_key=time&sort_direction=desc&pageID=1&setPerPage=2" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
   </tr>
     <tr class="tr2_1 ">
     <td>3</td>
@@ -76,9 +76,9 @@
 
 
   <div id="navi">
-    <a href="?sort=id&amp;order=asc&amp;pageID=1&amp;setPerPage=2">&lt;&lt;先頭へ</a>
+    <a href="?sort_key=id&amp;sort_direction=asc&amp;pageID=1&amp;setPerPage=2">&lt;&lt;先頭へ</a>
   
-    <a href="?sort=id&amp;order=asc&amp;pageID=1&amp;setPerPage=2">&lt;前へ</a>
+    <a href="?sort_key=id&amp;sort_direction=asc&amp;pageID=1&amp;setPerPage=2">&lt;前へ</a>
   
   <select name="pageID" onchange="let url = new window.URL(document.location.href); url.searchParams.set('pageID', this.value); document.location.href = url.href;">
 <option value="1">1</option>
@@ -87,12 +87,12 @@
 <option value="4">4</option>
 </select>
 
-  <a href="?sort=id&amp;order=asc&amp;pageID=1&amp;setPerPage=2">1</a> 2 <a href="?sort=id&amp;order=asc&amp;pageID=3&amp;setPerPage=2">3</a> <a href="?sort=id&amp;order=asc&amp;pageID=4&amp;setPerPage=2">4</a>
+  <a href="?sort_key=id&amp;sort_direction=asc&amp;pageID=1&amp;setPerPage=2">1</a> 2 <a href="?sort_key=id&amp;sort_direction=asc&amp;pageID=3&amp;setPerPage=2">3</a> <a href="?sort_key=id&amp;sort_direction=asc&amp;pageID=4&amp;setPerPage=2">4</a>
 
-    <a href="?sort=id&amp;order=asc&amp;pageID=3&amp;setPerPage=2">次へ&gt;</a>
+    <a href="?sort_key=id&amp;sort_direction=asc&amp;pageID=3&amp;setPerPage=2">次へ&gt;</a>
   
 
-    <a href="?sort=id&amp;order=asc&amp;pageID=4&amp;setPerPage=2">最後へ&gt;&gt;</a>
+    <a href="?sort_key=id&amp;sort_direction=asc&amp;pageID=4&amp;setPerPage=2">最後へ&gt;&gt;</a>
   
   2/4ページ
   </div>

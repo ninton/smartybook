@@ -29,8 +29,8 @@ class SortNavigator
         $this->vars['desc_title'  ] = '降順';
         $this->vars['separator'   ] = '';
 
-        $this->vars['sortUrlVar' ] = 'sort';
-        $this->vars['orderUrlVar'] = 'order';
+        $this->vars['sortUrlVar' ] = 'sort_key';
+        $this->vars['orderUrlVar'] = 'sort_direction';
 
         $this->sort  = $i_sort;
         $this->order = $i_order;
