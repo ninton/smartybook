@@ -21,25 +21,24 @@ final readonly class CMS
     /**
      * @param int $offset
      * @param int $limit
-     * @param string $sort 並び替える項目
-     * @param string $order 並び替えの順序（asc または desc）
+     * @param string $sortKey 並び替えの基準となるカラム名
+     * @param string $sortDirection 並び替えの方向（asc または desc）
      * @return list<array<string, mixed>>
      */
-    public function findList(int $offset, int $limit, string $sort, string $order): array
+    public function findList(int $offset, int $limit, string $sortKey, string $sortDirection): array
     {
-        // SQLインジェクションを防ぐためのホワイトリスト検証
-        $allowedSorts = ['id', 'category', 'title', 'comment', 'time'];
-        $allowedOrders = ['asc', 'desc'];
+        $allowedSortKeys = ['id', 'category', 'title', 'comment', 'time'];
+        $allowedDirections = ['asc', 'desc'];
 
-        if (!in_array($sort, $allowedSorts, true)) {
+        if (!in_array($sortKey, $allowedSortKeys, true)) {
             return [];
         }
 
-        if (!in_array($order, $allowedOrders, true)) {
+        if (!in_array($sortDirection, $allowedDirections, true)) {
             return [];
         }
 
-        $query = "SELECT * FROM cms ORDER BY $sort $order LIMIT $offset, $limit";
+        $query = "SELECT * FROM cms ORDER BY $sortKey $sortDirection LIMIT $offset, $limit";
 
         return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
