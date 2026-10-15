@@ -82,8 +82,8 @@ for ($i = 1; $i <= $pagerDto->numPages; $i += 1) {
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
-$smarty->assign('sort', $sortKey);
-$smarty->assign('order', $sortDirection);
+$smarty->assign('sortKey', $sortKey);
+$smarty->assign('sortDirection', $sortDirection);
 $smarty->assign('sortNavigator', $sortNavigator);
 $smarty->assign('pagerDto', $pagerDto);
 $smarty->assign('perPageOptions', $perPageOptions);
