@@ -60,10 +60,6 @@ class CMS
                 return [];
         }
 
-        $sort  = addslashes($sort);
-        $order = addslashes($order);
-        $offset = 0 + (int)$offset;
-        $limit = 0 + (int)$limit;
         $query = "SELECT * FROM cms ORDER BY $sort $order LIMIT $offset, $limit";
         $stmt = $this->pdo->query($query);
         $rcd_arr = $stmt->fetchAll(PDO::FETCH_ASSOC);
