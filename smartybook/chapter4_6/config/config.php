@@ -15,19 +15,11 @@ function envString(string $key, string $defaultValue = ''): string
 }
 
 // $_ENV または getenv から安全に取得（型を string に確定させる）
-$dbHost     = envString('DB_HOST');
-$dbDatabase = envString('DB_DATABASE');
-$dbUser     = envString('DB_USER');
-$dbPassword = envString('DB_PASSWORD');
-
-// PDO設定
-$dsn = sprintf('mysql:dbname=%s;host=%s;charset=utf8mb4', $dbDatabase, $dbHost);
-
 return [
-    'dsn' => $dsn,
-    'db_user' => $dbUser,
-    'db_password' => $dbPassword,
-    'perPage' => 5,
-    'sort' => 'id',
-    'order' => 'asc',
+    'dsn'         => sprintf('mysql:dbname=%s;host=%s;charset=utf8mb4', envString('DB_DATABASE'), envString('DB_HOST')),
+    'db_user'     => envString('DB_USER'),
+    'db_password' => envString('DB_PASSWORD'),
+    'perPage'     => 5,
+    'sort'        => 'id',
+    'order'       => 'asc',
 ];
