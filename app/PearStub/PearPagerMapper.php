@@ -26,6 +26,7 @@ final class PearPagerMapper
         return new PagerDto(
             currentPageID: $pager->getCurrentPageID(),
             numPages: $pager->numPages(),
+            numItems: $pager->numItems(),
             offsetFrom:       $offsetFrom,
             offsetTo:         $offsetTo,
             links:            $links['pages'] ?? '',
