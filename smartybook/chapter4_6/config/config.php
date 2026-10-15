@@ -20,6 +20,6 @@ return [
     'db_user'     => envString('DB_USER'),
     'db_password' => envString('DB_PASSWORD'),
     'perPage'     => 5,
-    'sort'        => 'id',
-    'order'       => 'asc',
+    'sort_key'    => 'id',
+    'sort_direction' => 'asc',
 ];

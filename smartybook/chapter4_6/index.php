@@ -9,7 +9,7 @@ use SmartyBook\chapter4_6\src\SortNavigator;
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 
 /**
- * @var array{dsn: string, db_user: string, db_password: string, perPage: int, sort: string, order: string} $config
+ * @var array{dsn: string, db_user: string, db_password: string, perPage: int, sort_key: string, sort_direction: string} $config
  */
 $config = require_once __DIR__ . '/config/config.php';
 
@@ -29,8 +29,8 @@ if (empty($_GET['pageID'])) {
     $pageID = (int)$_GET['pageID'];
 }
 
-$sortKey = empty($_GET['sort_key']) ? $config['sort'] : $_GET['sort_key'];
-$sortDirection = empty($_GET['sort_direction']) ? $config['order'] : $_GET['sort_direction'];
+$sortKey = empty($_GET['sort_key']) ? $config['sort_key'] : $_GET['sort_key'];
+$sortDirection = empty($_GET['sort_direction']) ? $config['sort_direction'] : $_GET['sort_direction'];
 $perPage = empty($_GET['setPerPage']) ? $config['perPage'] : $_GET['setPerPage'];
 
 // ----- メイン処理・データ操作 -----
