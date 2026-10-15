@@ -13,14 +13,9 @@ final readonly class CMS
     {
     }
 
-    /**
-     * @return int
-     */
     public function getCount(): int
     {
-        $stmt = $this->pdo->query('SELECT COUNT(id) FROM cms');
-        $row = $stmt->fetch(PDO::FETCH_NUM);
-        return $row[0];
+        return (int) $this->pdo->query('SELECT COUNT(id) FROM cms')->fetchColumn();
     }
 
     /**
