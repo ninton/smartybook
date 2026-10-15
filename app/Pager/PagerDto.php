@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SmartyBook\chapter5_3\src;
+namespace App\Pager;
 
 final readonly class PagerDto
 {
