@@ -7,12 +7,12 @@ namespace SmartyBook\chapter4_6\src;
  */
 class SortNavigator
 {
-    private string $sort;
+    private string $sortKey;
     private string $order;
     /** @var array<string, string> */
     private array $vars;
 
-    public function __construct(string $sort, string $order)
+    public function __construct(string $sortKey, string $order)
     {
         $this->vars['asc_current' ] = '△';
         $this->vars['asc_link'    ] = '▲';
@@ -22,10 +22,10 @@ class SortNavigator
         $this->vars['desc_title'  ] = '降順';
         $this->vars['separator'   ] = '';
 
-        $this->vars['sortUrlVar' ] = 'sort_key';
+        $this->vars['sortKeyUrlVar' ] = 'sort_key';
         $this->vars['orderUrlVar'] = 'sort_direction';
 
-        $this->sort  = $sort;
+        $this->sortKey  = $sortKey;
         $this->order = $order;
     }
 
@@ -36,18 +36,18 @@ class SortNavigator
         }
     }
 
-    public function show(string $sort): void
+    public function show(string $sortKey): void
     {
-        $asc_navi  = $this->showLink($sort, 'asc');
-        $desc_navi = $this->showLink($sort, 'desc');
+        $asc_navi  = $this->showLink($sortKey, 'asc');
+        $desc_navi = $this->showLink($sortKey, 'desc');
 
         $buf = $asc_navi . $this->vars['separator'] . $desc_navi;
         print $buf;
     }
 
-    public function showLink(string $sort, string $order): string
+    public function showLink(string $sortKey, string $order): string
     {
-        if (($sort == $this->sort) && ($order == $this->order)) {
+        if (($sortKey == $this->sortKey) && ($order == $this->order)) {
             if ($order == 'asc') {
                 $text  = $this->vars['asc_current'];
             } else {
@@ -64,7 +64,7 @@ class SortNavigator
             }
 
             $vars = [
-                $this->vars['sortUrlVar' ] => $sort,
+                $this->vars['sortKeyUrlVar' ] => $sortKey,
                 $this->vars['orderUrlVar'] => $order,
                 'pageID'                   => 1,
             ];
