@@ -15,7 +15,7 @@ final readonly class CMS
 
     public function count(): int
     {
-        return (int) $this->pdo->query('SELECT COUNT(id) FROM cms')->fetchColumn();
+        return (int) $this->pdo->query('SELECT COUNT(id) FROM entries')->fetchColumn();
     }
 
     /**
@@ -38,7 +38,7 @@ final readonly class CMS
             return [];
         }
 
-        $query = "SELECT * FROM cms ORDER BY $sortKey $sortDirection LIMIT $offset, $limit";
+        $query = "SELECT * FROM entries ORDER BY $sortKey $sortDirection LIMIT $offset, $limit";
 
         return $this->pdo->query($query)->fetchAll(PDO::FETCH_ASSOC);
     }
