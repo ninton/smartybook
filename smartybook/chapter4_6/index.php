@@ -3,7 +3,7 @@
 use App\PearStub\PagerStub as Pager;
 use App\PearStub\PearPagerMapper;
 use App\Smarty\AppSmarty as Smarty;
-use SmartyBook\chapter4_6\src\CMS;
+use SmartyBook\chapter4_6\src\EntryQueryService;
 use SmartyBook\chapter4_6\src\SortNavigator;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
@@ -38,7 +38,7 @@ $pdo = new PDO($config['dsn'], $config['db_user'], $config['db_password'], [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 ]);
-$cms = new CMS($pdo);
+$cms = new EntryQueryService($pdo);
 
 if ($cms->count() < $pageID) {
     $pageID = 1;

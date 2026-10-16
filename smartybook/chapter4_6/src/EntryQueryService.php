@@ -7,7 +7,7 @@ use PDO;
 /**
  *  テーブルCMSの読み出し操作
  */
-final readonly class CMS
+final readonly class EntryQueryService
 {
     public function __construct(private PDO $pdo)
     {
