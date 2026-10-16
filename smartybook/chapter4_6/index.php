@@ -75,6 +75,11 @@ for ($i = 1; $i <= $pagerDto->numPages; $i += 1) {
     $pageOptions[$i] = "{$i}";
 }
 
+// JS用キャッシュバスター
+$jsPath = __DIR__ . '/js/sortNavigator.js';
+// ファイルが存在すればSHA-1ハッシュを取得（短く最初の8文字に削る）
+$jsVersion = file_exists($jsPath) ? substr(sha1_file($jsPath), 0, 8) : '1.0.0';
+
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
 $smarty->assign('sortKey', $sortKey);
@@ -84,4 +89,5 @@ $smarty->assign('perPageOptions', $perPageOptions);
 $smarty->assign('currentPerPage', $perPage);
 $smarty->assign('pageOptions', $pageOptions);
 $smarty->assign('entryArr', $entryArr);
+$smarty->assign('jsVersion', $jsVersion);
 $smarty->display('pages/chapter4_6/index.tpl');
