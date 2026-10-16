@@ -12,6 +12,6 @@
 {block name="content"}{/block}
 
   </div>{* id="wrapper" *}
-  <script type="module" src="./js/sortNavigator.js"></script>
+  <script type="module" src="./js/sortNavigator.js?v={$jsVersion}"></script>
 </body>
 </html>
