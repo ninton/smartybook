@@ -5,6 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css; charset=utf-8" />
   <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+  <script type="text/javascript" src="./js/sortNavigator.js"></script>
 </head>
 <body>
   <div id="wrapper">
