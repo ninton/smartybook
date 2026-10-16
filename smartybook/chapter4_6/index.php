@@ -38,9 +38,9 @@ $pdo = new PDO($config['dsn'], $config['db_user'], $config['db_password'], [
     PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
     PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 ]);
-$cms = new EntryQueryService($pdo);
+$entryQueryService = new EntryQueryService($pdo);
 
-if ($cms->count() < $pageID) {
+if ($entryQueryService->count() < $pageID) {
     $pageID = 1;
 }
 
@@ -49,7 +49,7 @@ if ($cms->count() < $pageID) {
  * そのために $from と $to を 独自に計算するようにして、Pager クラスに依存しないようにする
  **/
 $params = [
-    'totalItems' => $cms->count(),
+    'totalItems' => $entryQueryService->count(),
     'currentPage' => $pageID,
     'perPage' => $perPage,
 ];
@@ -60,7 +60,7 @@ $pagerDto = PearPagerMapper::toDto($pager);
 // ページに表示する範囲のデータを読みだす
 $entryArr = [];
 if ((0 < $pagerDto->offsetFrom) && (0 < $pagerDto->offsetTo)) {
-    $entryArr = $cms->findList($pagerDto->offsetFrom - 1, $pagerDto->offsetTo - $pagerDto->offsetFrom + 1, $sortKey, $sortDirection);
+    $entryArr = $entryQueryService->findList($pagerDto->offsetFrom - 1, $pagerDto->offsetTo - $pagerDto->offsetFrom + 1, $sortKey, $sortDirection);
 }
 
 // ----- UIパーツ -----
