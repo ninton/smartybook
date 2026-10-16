@@ -4,7 +4,6 @@ use App\PearStub\PagerStub as Pager;
 use App\PearStub\PearPagerMapper;
 use App\Smarty\AppSmarty as Smarty;
 use SmartyBook\chapter4_6\src\EntryQueryService;
-use SmartyBook\chapter4_6\src\SortNavigator;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 
@@ -64,10 +63,6 @@ if ((0 < $pagerDto->offsetFrom) && (0 < $pagerDto->offsetTo)) {
 }
 
 // ----- UIパーツ -----
-
-// 並替えの△▽を表示するクラス
-$sortNavigator = new SortNavigator($sortKey, $sortDirection);
-
 // 表示件数の選択肢（例: 1〜20件、ステップ1、あるいは任意の配列）
 $perPageOptions = [];
 for ($i = 1; $i <= 20; $i += 1) {
@@ -84,7 +79,6 @@ for ($i = 1; $i <= $pagerDto->numPages; $i += 1) {
 $smarty = new Smarty();
 $smarty->assign('sortKey', $sortKey);
 $smarty->assign('sortDirection', $sortDirection);
-$smarty->assign('sortNavigator', $sortNavigator);
 $smarty->assign('pagerDto', $pagerDto);
 $smarty->assign('perPageOptions', $perPageOptions);
 $smarty->assign('currentPerPage', $perPage);

@@ -10,11 +10,6 @@
   <div id="wrapper">
 
 
-  
-  
-  
-  
-
   <h1>Smarty for Designers</h1>
 
   <div id="info">
@@ -51,12 +46,42 @@
 
 
   <table border="0" cellspacing="0">
-  <tr>
-    <th>ID      <br /><a href="/smartybook/chapter4_6/index.php?sort_key=id&sort_direction=asc&pageID=1" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><img src="images/btn_desc_current.gif" alt="" border="0" /></th>
-    <th>カテゴリ<br /><a href="/smartybook/chapter4_6/index.php?sort_key=category&sort_direction=asc&pageID=1" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort_key=category&sort_direction=desc&pageID=1" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
-    <th>タイトル<br /><a href="/smartybook/chapter4_6/index.php?sort_key=title&sort_direction=asc&pageID=1" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort_key=title&sort_direction=desc&pageID=1" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
-    <th class="comment">コメント<br /><a href="/smartybook/chapter4_6/index.php?sort_key=comment&sort_direction=asc&pageID=1" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort_key=comment&sort_direction=desc&pageID=1" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
-    <th>日付    <br /><a href="/smartybook/chapter4_6/index.php?sort_key=time&sort_direction=asc&pageID=1" title="昇順"><img src="images/btn_asc.gif"          alt="" border="0" /></a><a href="/smartybook/chapter4_6/index.php?sort_key=time&sort_direction=desc&pageID=1" title="降順"><img src="images/btn_desc.gif"         alt="" border="0" /></a></th>
+    <tr id="sortable-header" data-script-name="/smartybook/chapter4_6/index.php" data-current-sort="id" data-current-dir="desc">
+    <th data-sort-key="id">
+      ID<br />
+      <span class="sort-buttons">
+        <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" border="0" /></a>
+        <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" border="0" /></a>
+      </span>
+    </th>
+    <th data-sort-key="category">
+      カテゴリ<br />
+      <span class="sort-buttons">
+        <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" border="0" /></a>
+        <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" border="0" /></a>
+      </span>
+    </th>
+    <th data-sort-key="title">
+      タイトル<br />
+      <span class="sort-buttons">
+        <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" border="0" /></a>
+        <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" border="0" /></a>
+      </span>
+    </th>
+    <th class="comment" data-sort-key="comment">
+      コメント<br />
+      <span class="sort-buttons">
+        <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" border="0" /></a>
+        <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" border="0" /></a>
+      </span>
+    </th>
+    <th data-sort-key="time">
+      日付<br />
+      <span class="sort-buttons">
+        <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" border="0" /></a>
+        <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" border="0" /></a>
+      </span>
+    </th>
   </tr>
     <tr class="tr2_1 ">
     <td>7</td>

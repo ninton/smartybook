@@ -1,11 +1,6 @@
 {extends file="layouts/chapter4_6/base.tpl"}
 
 {block name="content"}
-  {$sortNavigator->setOption('asc_current' , '<img src="images/btn_asc_current.gif"  alt="" border="0" />')}
-  {$sortNavigator->setOption('asc_link'    , '<img src="images/btn_asc.gif"          alt="" border="0" />')}
-  {$sortNavigator->setOption('desc_current', '<img src="images/btn_desc_current.gif" alt="" border="0" />')}
-  {$sortNavigator->setOption('desc_link'   , '<img src="images/btn_desc.gif"         alt="" border="0" />')}
-
   <h1>Smarty for Designers</h1>
 
   <div id="info">
@@ -25,12 +20,43 @@
 
 
   <table border="0" cellspacing="0">
-  <tr>
-    <th>ID      <br />{$sortNavigator->show('id')}</th>
-    <th>カテゴリ<br />{$sortNavigator->show('category')}</th>
-    <th>タイトル<br />{$sortNavigator->show('title')}</th>
-    <th class="comment">コメント<br />{$sortNavigator->show('comment')}</th>
-    <th>日付    <br />{$sortNavigator->show('time')}</th>
+  {* サーバー側からは静的な構造と初期データ属性のみを出力 *}
+  <tr id="sortable-header" data-script-name="{$smarty.server.SCRIPT_NAME}" data-current-sort="{$sortKey|escape}" data-current-dir="{$sortDirection|escape}">
+    <th data-sort-key="id">
+      ID<br />
+      <span class="sort-buttons">
+        <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" border="0" /></a>
+        <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" border="0" /></a>
+      </span>
+    </th>
+    <th data-sort-key="category">
+      カテゴリ<br />
+      <span class="sort-buttons">
+        <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" border="0" /></a>
+        <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" border="0" /></a>
+      </span>
+    </th>
+    <th data-sort-key="title">
+      タイトル<br />
+      <span class="sort-buttons">
+        <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" border="0" /></a>
+        <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" border="0" /></a>
+      </span>
+    </th>
+    <th class="comment" data-sort-key="comment">
+      コメント<br />
+      <span class="sort-buttons">
+        <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" border="0" /></a>
+        <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" border="0" /></a>
+      </span>
+    </th>
+    <th data-sort-key="time">
+      日付<br />
+      <span class="sort-buttons">
+        <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" border="0" /></a>
+        <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" border="0" /></a>
+      </span>
+    </th>
   </tr>
   {foreach from=$entryArr key=i item=entry}
   <tr class="{cycle name="cycle2" values='tr2_1,tr2_2'} {cycle name="cycle5" values=',,,,tr5_5'}">
