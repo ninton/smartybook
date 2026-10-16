@@ -89,5 +89,5 @@ $smarty->assign('perPageOptions', $perPageOptions);
 $smarty->assign('currentPerPage', $perPage);
 $smarty->assign('pageOptions', $pageOptions);
 $smarty->assign('entryArr', $entryArr);
-$smarty->assign('jsVersion',$jsVersion);
+$smarty->assign('jsVersion', $jsVersion);
 $smarty->display('pages/chapter4_6/index.tpl');
