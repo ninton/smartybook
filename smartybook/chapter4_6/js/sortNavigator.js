@@ -12,7 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
   thElements.forEach(th => {
     const sortKey = th.dataset.sortKey;
     if (sortKey === currentSort) {
-      const targetLink = th.querySelector(`a[data-direction="${currentDir}"] img`);
+      const targetLink = Array.from(th.querySelectorAll('a[data-direction]'))
+         .find(link => link.dataset.direction === currentDir)?.querySelector('img');
       if (targetLink) {
         targetLink.src = targetLink.src.replace('.gif', '_current.gif');
       }
