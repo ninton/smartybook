@@ -8,9 +8,9 @@ DROP DATABASE IF EXISTS smartybook;
 CREATE DATABASE smartybook CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE smartybook;
 
-DROP TABLE IF EXISTS `cms`;
+DROP TABLE IF EXISTS `entries`;
 
-CREATE TABLE `cms` (
+CREATE TABLE `entries` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `category` varchar(200) NOT NULL,
   `title` varchar(200) NOT NULL,
@@ -21,10 +21,10 @@ CREATE TABLE `cms` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `cms`
+-- Dumping data for table `entries`
 --
 
-INSERT INTO `cms` (`id`, `category`, `title`, `comment`, `time`, `image`) VALUES
+INSERT INTO `entries` (`id`, `category`, `title`, `comment`, `time`, `image`) VALUES
 (1, 'Study', '勉強初日', '先日買ってきたSmarty入門の本を開いて勉強し始めました。これから頑張るぞ。', 1199463806, './images/001.jpg'),
 (2, 'Study', '勉強二日目', 'Smartyを勉強してます。ただいま一服中。', 1199465130, './images/004.jpg'),
 (3, 'Eating', '今日の昼食', '東京タワーの見える公園でランチをとりました。青空の下のごはんはおいしい。', 1199469257, './images/002.jpg'),
