@@ -2,18 +2,26 @@ document.addEventListener('DOMContentLoaded', () => {
   const headerRow = document.getElementById('sortable-header');
   if (!headerRow) return;
 
-  // 1. URLのクエリパラメータ、またはHTMLのデータ属性から現在の状態を取得
+  // 1. URLSearchParams を取得
   const urlParams = new URLSearchParams(window.location.search);
-  const currentSort = urlParams.get('sort_key') || headerRow.dataset.currentSort || 'id';
-  const currentDir = urlParams.get('sort_direction') || headerRow.dataset.currentDir || 'asc';
+
+  // PHPの parse_str() の挙動（後勝ち）に合わせ、重複時は最後の値を採用する
+  const sortKeys = urlParams.getAll('sort_key');
+  const currentSort = sortKeys.length > 0 
+    ? sortKeys[sortKeys.length - 1] 
+    : (headerRow.dataset.currentSort || 'time');
+
+  const sortDirs = urlParams.getAll('sort_direction');
+  const currentDir = sortDirs.length > 0 
+    ? sortDirs[sortDirs.length - 1] 
+    : (headerRow.dataset.currentDir || 'desc');
 
   // 2. 現在アクティブなソート項目のアイコンを _current.gif に差し替え
   const thElements = headerRow.querySelectorAll('th[data-sort-key]');
   thElements.forEach(th => {
     const sortKey = th.dataset.sortKey;
     if (sortKey === currentSort) {
-      const targetLink = Array.from(th.querySelectorAll('a[data-direction]'))
-         .find(link => link.dataset.direction === currentDir)?.querySelector('img');
+      const targetLink = th.querySelector(`a[data-direction="${currentDir}"] img`);
       if (targetLink) {
         targetLink.src = targetLink.src.replace('.gif', '_current.gif');
       }
