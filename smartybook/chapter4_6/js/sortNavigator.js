@@ -2,14 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const headerRow = document.getElementById('sortable-header');
   if (!headerRow) return;
 
-  // 1. URLSearchParams を取得
-  const urlParams = new URLSearchParams(window.location.search);
-
-  // PHPの parse_str() の挙動（後勝ち）に合わせ、重複時は最後の値を採用する
-  const sortKeys = urlParams.getAll('sort_key');
-  const currentSort = (sortKeys[sortKeys.length - 1] === '0' ? '' : sortKeys[sortKeys.length - 1]) || headerRow.dataset.currentSort || 'id';
-  const sortDirs = urlParams.getAll('sort_direction');
-  const currentDir = (sortDirs[sortDirs.length - 1] === '0' ? '' : sortDirs[sortDirs.length - 1]) || headerRow.dataset.currentDir || 'asc';
+  // PHP側で確定したソート状態を利用する
+  const currentSort = headerRow.dataset.currentSort || 'id';
+  const currentDir = headerRow.dataset.currentDir || 'asc';
 
   // 2. 現在アクティブなソート項目のアイコンを _current.gif に差し替え
   const thElements = headerRow.querySelectorAll('th[data-sort-key]');
