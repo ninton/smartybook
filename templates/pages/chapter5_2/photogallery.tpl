@@ -1,12 +1,8 @@
 import SmartyPG from './js/smarty-pg.js';
 
-// 画像ファイルの配列をSmartyを使って生成
-var imgs = new Array(
-    {{foreach from=$images item="item" name="images"}}
-        "{{$item}}"
-        {{if !$smarty.foreach.images.last}},{{/if}}
-    {{/foreach}}
-    );
-var slideFlag = "{{$slideFlag}}";
-var slideTerm = {{$slideTerm}};
-new SmartyPG(imgs, slideFlag, slideTerm);
+// 画像ファイルの配列をSmartyでJSON文字列化して安全かつシンプルに渡す
+const images = {{$images|json_encode}};
+const slideFlag = "{{$slideFlag}}";
+const slideTerm = {{$slideTerm}};
+
+new SmartyPG(images, slideFlag, slideTerm);
