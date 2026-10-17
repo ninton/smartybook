@@ -11,7 +11,7 @@ function createSmartyPG() {
         );
     var slideFlag = "{{$slideFlag}}";
     var slideTerm = {{$slideTerm}};
-    mySmartyPG = new SmartyPG(imgs, slideFlag, slideTerm);
+    new SmartyPG(imgs, slideFlag, slideTerm);
 }
 
 //------------------------------------------------------
