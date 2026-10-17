@@ -1,5 +1,6 @@
 ﻿<html lang="ja">
 <head>
+<title>literalタグ</title>
 <script type="text/javascript">
 {literal}
 function showAlert() {
