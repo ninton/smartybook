@@ -1,9 +1,9 @@
 <?php
 
+use App\Database\EntryQueryService;
 use App\PearStub\PagerStub as Pager;
 use App\PearStub\PearPagerMapper;
 use App\Smarty\AppSmarty as Smarty;
-use SmartyBook\chapter4_6\src\EntryQueryService;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 

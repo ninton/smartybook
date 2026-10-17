@@ -1,6 +1,6 @@
 <?php
 
-namespace SmartyBook\chapter4_6\src;
+namespace App\Database;
 
 use PDO;
 
