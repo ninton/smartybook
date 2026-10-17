@@ -5,7 +5,7 @@ declare(strict_types=1);
 use App\Csv\CsvEntryReader;
 
 test('fetchByCategory 指定カテゴリのレコードだけを返す', function (string $category, array $expected) {
-    $path = PROJECT_ROOT . '/smartybook/chapter4_1/data.csv';
+    $path = __DIR__ . '/fixtures/entries.csv';
 
     $actual = CsvEntryReader::fetchByCategory($path, $category);
 
