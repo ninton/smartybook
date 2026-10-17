@@ -24,6 +24,7 @@ RUN set -x \
         libicu-dev \
         # intl xml関数で必要 \
         libxml2-dev \
+        libsqlite3-dev \
         # composer installで必要 \
         unzip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
@@ -35,6 +36,7 @@ RUN set -x \
         intl \
         mysqli \
         pdo_mysql \
+        pdo_sqlite \
         # smarty/smarty のinstallで必要
         zip \
     && apt-get clean \
