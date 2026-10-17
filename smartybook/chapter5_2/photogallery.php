@@ -14,6 +14,8 @@ $slideTerm = '5000';
 $images = glob("$imgDir*.{jpg,png,gif}", GLOB_BRACE);
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
+header('Content-Type: text/javascript; charset=utf-8');
+
 // Smartyオブジェクトの作成
 $smarty = new Smarty();
 // デリミタタグの変更: Smarty 5 からメソッドで設定するようになった
