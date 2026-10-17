@@ -2,7 +2,7 @@ import SmartyPG from './js/smarty-pg.js';
 
 // 画像ファイルの配列をSmartyでJSON文字列化して安全かつシンプルに渡す
 const images = [".\/images\/0001.jpg",".\/images\/0002.jpg",".\/images\/0003.jpg",".\/images\/0004.jpg",".\/images\/0005.jpg",".\/images\/0006.jpg",".\/images\/0007.jpg",".\/images\/0008.jpg",".\/images\/0009.jpg",".\/images\/0010.jpg",".\/images\/0011.jpg",".\/images\/0012.jpg"];
-const slideFlag = "on";
-const slideTerm = 5000;
+const isAutoPlay = true;
+const slideIntervalMilliseconds = 5000;
 
-new SmartyPG(images, slideFlag, slideTerm);
+new SmartyPG(images, isAutoPlay ? 'on' : 'off', slideIntervalMilliseconds);
