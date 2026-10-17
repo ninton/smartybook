@@ -1,4 +1,4 @@
-﻿<html>
+﻿<html lang="ja">
 <head>
 <script type="text/javascript">
 {literal}
