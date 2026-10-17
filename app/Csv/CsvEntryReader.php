@@ -1,6 +1,6 @@
 <?php
 
-namespace SmartyBook\chapter5_3\src;
+namespace App\Csv;
 
 final class CsvEntryReader
 {

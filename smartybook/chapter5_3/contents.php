@@ -1,10 +1,10 @@
 <?php
 
+use App\Csv\CsvEntryReader;
 use App\PearStub\NetUserAgentMobileCommonStub;
 use App\PearStub\PagerStub as Pager;
 use App\PearStub\PearPagerMapper;
 use App\Smarty\AppSmarty as Smarty;
-use SmartyBook\chapter5_3\src\CsvEntryReader;
 use SmartyBook\chapter5_3\src\EntryImagePathResolver;
 use SmartyBook\chapter5_3\src\EntryMapper;
 use SmartyBook\chapter5_3\src\KetaiSetUp;
