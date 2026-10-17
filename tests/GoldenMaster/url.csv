@@ -145,7 +145,7 @@ chapter5_1/xml,GET,http://localhost/smartybook/chapter5_1/xml.php,
 
 # chapter5_2
 # JSを返します
-chapter5_2/photogallary,GET,http://localhost/smartybook/chapter5_2/photogallery.php,
+chapter5_2/photo_gallary,GET,http://localhost/smartybook/chapter5_2/photo_gallery.php,
 
 # chapter5_3
 chapter5_3/index,GET,http://localhost/smartybook/chapter5_3/index.php,
