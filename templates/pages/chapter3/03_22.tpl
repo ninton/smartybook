@@ -12,7 +12,7 @@ body {ldelim} color : {$bgColor}; {rdelim}
 </style>
 </head>
 <body>
-<input type="button" value="アラート表示" onclick="javascript:showAlert();" />
+<input type="button" value="アラート表示" onclick="showAlert();" />
 <p>CSSで文字色をコントロールしています。</p>
 </body>
 </html>
