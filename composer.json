@@ -60,6 +60,7 @@
         "ext-curl": "*",
         "ext-intl": "*",
         "ext-libxml": "*",
+        "ext-pdo_sqlite": "*",
         "friendsofphp/php-cs-fixer": "^3.95",
         "maglnet/composer-require-checker": "^4.24",
         "pestphp/pest": "^5.3",
