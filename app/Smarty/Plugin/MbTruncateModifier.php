@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SmartyBook\chapter5_6\src\SmartyPlugin;
+namespace App\Smarty\Plugin;
 
 final class MbTruncateModifier
 {
