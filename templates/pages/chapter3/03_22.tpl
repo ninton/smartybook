@@ -1,5 +1,6 @@
-﻿<html>
+﻿<html lang="ja">
 <head>
+<title>literalタグ</title>
 <script type="text/javascript">
 {literal}
 function showAlert() {
@@ -7,12 +8,12 @@ function showAlert() {
 }
 {/literal}
 </script>
-<style type="text/css">
+<style>
 body {ldelim} color : {$bgColor}; {rdelim}
 </style>
 </head>
 <body>
-<input type="button" value="アラート表示" onclick="javascript:showAlert();" />
+<input type="button" value="アラート表示" onclick="showAlert();" />
 <p>CSSで文字色をコントロールしています。</p>
 </body>
 </html>
