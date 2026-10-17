@@ -1,31 +1,20 @@
 import SmartyPG from './js/smarty-pg.js';
 
-// SmartyPGオブジェクトの作成
-function createSmartyPG() {
-    // 画像ファイルの配列をSmartyを使って生成
-    var imgs = new Array(
-                    "./images/0001.jpg"
-            ,                    "./images/0002.jpg"
-            ,                    "./images/0003.jpg"
-            ,                    "./images/0004.jpg"
-            ,                    "./images/0005.jpg"
-            ,                    "./images/0006.jpg"
-            ,                    "./images/0007.jpg"
-            ,                    "./images/0008.jpg"
-            ,                    "./images/0009.jpg"
-            ,                    "./images/0010.jpg"
-            ,                    "./images/0011.jpg"
-            ,                    "./images/0012.jpg"
-                            );
-    var slideFlag = "on";
-    var slideTerm = 5000;
-    new SmartyPG(imgs, slideFlag, slideTerm);
-}
-
-//------------------------------------------------------
-// 画像表示の処理の開始
-try {
-    window.addEventListener("load", createSmartyPG, false);
-} catch(e) {
-    window.attachEvent("onload", createSmartyPG);
-}
+// 画像ファイルの配列をSmartyを使って生成
+var imgs = new Array(
+            "./images/0001.jpg"
+        ,            "./images/0002.jpg"
+        ,            "./images/0003.jpg"
+        ,            "./images/0004.jpg"
+        ,            "./images/0005.jpg"
+        ,            "./images/0006.jpg"
+        ,            "./images/0007.jpg"
+        ,            "./images/0008.jpg"
+        ,            "./images/0009.jpg"
+        ,            "./images/0010.jpg"
+        ,            "./images/0011.jpg"
+        ,            "./images/0012.jpg"
+                );
+var slideFlag = "on";
+var slideTerm = 5000;
+new SmartyPG(imgs, slideFlag, slideTerm);
