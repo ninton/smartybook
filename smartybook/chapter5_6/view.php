@@ -7,10 +7,10 @@
 
 use App\PearStub\ServicesAmazonStub;
 use App\Smarty\AppSmarty;
+use App\Smarty\Plugin\MbTruncateModifier;
 use SmartyBook\chapter5_6\src\AmazonServicesWrapper;
 use SmartyBook\chapter5_6\src\MyListRepository;
 use SmartyBook\chapter5_6\src\MyListViewModel;
-use SmartyBook\chapter5_6\src\SmartyPlugin\MbTruncateModifier;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 $config = require_once __DIR__ . '/config/config.php';
