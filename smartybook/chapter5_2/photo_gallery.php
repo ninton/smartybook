@@ -25,4 +25,4 @@ $smarty->setRightDelimiter('}}');
 $smarty->assign('images', $images);
 $smarty->assign('isAutoPlay', $isAutoPlay);
 $smarty->assign('slideIntervalMilliseconds', $slideIntervalMilliseconds);
-$smarty->display('pages/chapter5_2/photogallery.tpl');
+$smarty->display('pages/chapter5_2/photo_gallery.tpl');
