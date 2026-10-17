@@ -142,8 +142,50 @@ final class GoldenMasterTest extends TestCase
         return $data;
     }
 
+    public function testSanitizeScriptVersions(): void
+    {
+        self::assertSame(
+            '<script src="path/to/xxx.js?v=VERSION"></script>',
+            $this->sanitizeHtml('<script src="path/to/xxx.js?v=1234abcd"></script>'),
+        );
+        self::assertSame(
+            "<script defer src='path/to/xxx.js?v=VERSION&amp;lang=ja'></script>",
+            $this->sanitizeHtml("<script defer src='path/to/xxx.js?v=5678efgh&amp;lang=ja'></script>"),
+        );
+        $html = '<script src="path/to/xxx.js"></script><a href="path/to/xxx.js?v=1234abcd">JS</a>';
+        self::assertSame($html, $this->sanitizeHtml($html));
+    }
+
+    public function testSanitizeStylesheetVersions(): void
+    {
+        self::assertSame(
+            '<link rel="stylesheet" type="text/css" href="./css/styles.css?v=VERSION" />',
+            $this->sanitizeHtml('<link rel="stylesheet" type="text/css" href="./css/styles.css?v=1234abcd" />'),
+        );
+        self::assertSame(
+            "<link href='./css/styles.css?v=VERSION&amp;lang=ja' rel='stylesheet' />",
+            $this->sanitizeHtml("<link href='./css/styles.css?v=5678efgh&amp;lang=ja' rel='stylesheet' />"),
+        );
+        $html = '<link rel="stylesheet" href="./css/styles.css" /><a href="./css/styles.css?v=1234abcd">CSS</a>';
+        self::assertSame($html, $this->sanitizeHtml($html));
+    }
+
     private function sanitizeHtml(string $html): string
     {
+        // script の src に含まれるバージョン値を置換
+        $html = preg_replace(
+            '/(<script\b[^>]*\ssrc=["\'][^"\']*\.js\?v=)[^"\'&\s>]+/i',
+            '${1}VERSION',
+            $html,
+        );
+
+        // link の href に含まれる CSS のバージョン値を置換
+        $html = preg_replace(
+            '/(<link\b[^>]*\shref=["\'][^"\']*\.css\?v=)[^"\'&\s>]+/i',
+            '${1}VERSION',
+            $html,
+        );
+
         // 日付と時刻を置換
         $html = preg_replace(
             '/\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}/',
