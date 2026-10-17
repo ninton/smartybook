@@ -7,7 +7,7 @@ function showAlert() {
 }
 {/literal}
 </script>
-<style type="text/css">
+<style>
 body {ldelim} color : {$bgColor}; {rdelim}
 </style>
 </head>
