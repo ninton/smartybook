@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-use SmartyBook\chapter5_3\src\CsvEntryReader;
+use App\Csv\CsvEntryReader;
 
 test('fetchByCategory 指定カテゴリのレコードだけを返す', function (string $category, array $expected) {
-    $path = dirname(__DIR__, 3) . '/chapter4_1/data.csv';
+    $path = PROJECT_ROOT . '/smartybook/chapter4_1/data.csv';
 
     $actual = CsvEntryReader::fetchByCategory($path, $category);
 
