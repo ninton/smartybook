@@ -1,7 +1,7 @@
 /**
  * フォトギャラリークラス
  */
-var SmartyPG = function(imgs, slideFlag, slideTerm) {
+var SmartyPG = function(images, slideFlag, slideTerm) {
     this.mainDiv = document.getElementById("pg_main");
     this.thumbDiv = document.getElementById("pg_thumb");
     this.controllerDiv = document.getElementById("pg_controller");
@@ -12,14 +12,14 @@ var SmartyPG = function(imgs, slideFlag, slideTerm) {
     this.thumbArea;
     this.imgArray = new Array();
     this.nowNum = 0;
-    this.imgs = imgs;
-    this.imgsLength = imgs.length;
+    this.imgs = images;
+    this.imgsLength = images.length;
     this.nLoaded = 0;
     this.slideFlag = slideFlag;
     this.slideTerm = slideTerm;
     this.timer;
     this.nowOpa;
-    if(imgs.length > 0) {
+    if(images.length > 0) {
         this.mainDiv.innerHTML = "Now Loading...";
         this.preloadImg();
     } else {
