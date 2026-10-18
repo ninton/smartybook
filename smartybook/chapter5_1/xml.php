@@ -47,21 +47,3 @@ fclose($fp);
 //データをsmartyの変数として格納
 $smarty->assign('data', $data);
 $smarty->display('pages/chapter5_1/xml.tpl');
-
-/**
- * @return string
- */
-function insert_noticeText(): string
-{
-    $noticeText = '<img src="./images/banner.gif" />';
-    return $noticeText;
-}
-
-/**
- * @param array<string, mixed> $siteName
- * @return string
- */
-function smarty_insert_noticeText2(array $siteName): string
-{
-    return '<img src="./images/banner.gif" /><br />' . $siteName['siteName'];
-}
