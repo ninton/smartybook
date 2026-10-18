@@ -103,7 +103,7 @@ final class GoldenMasterTest extends TestCase
             GoldenMasterTest::fail("Golden Master の読み込みに失敗しました: {$masterPath}");
         }
 
-        static::assertHtmlStringEqualsHtmlString($expected, $actual, "URL: {$url} のレスポンスが変化しています");
+        self::assertHtmlStringEqualsHtmlString($expected, $actual, "URL: {$url} のレスポンスが変化しています");
     }
 
     /**
