@@ -12,10 +12,8 @@ final readonly class KetaiSetUp
 {
     public static function contentType(string $rawCarrier): void
     {
-        switch ($rawCarrier) {
-            case 'docomo':
-                header('Content-Type: application/xhtml+xml; charset=UTF-8');
-                break;
+        if ($rawCarrier === 'docomo') {
+            header('Content-Type: application/xhtml+xml; charset=UTF-8');
         }
     }
 
