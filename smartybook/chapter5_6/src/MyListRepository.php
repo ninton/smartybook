@@ -4,9 +4,6 @@ namespace SmartyBook\chapter5_6\src;
 
 class MyListRepository
 {
-    /**
-     * @return MyList|null
-     */
     public function read(string $path): ?MyList
     {
         if ($path === '') {
@@ -34,10 +31,6 @@ class MyListRepository
         );
     }
 
-    /**
-     * @param MyList $MyList
-     * @return void
-     */
     public function write(string $path, MyList $MyList): void
     {
         /**
