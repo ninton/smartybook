@@ -10,6 +10,7 @@ namespace SmartyBook\chapter5_6;
 use App\PearStub\ServicesAmazonStub;
 use App\Smarty\AppSmarty;
 use App\Smarty\Plugin\MbTruncateModifier;
+use Smarty\Exception as SmartyException;
 use SmartyBook\chapter5_6\src\AmazonServicesWrapper;
 use SmartyBook\chapter5_6\src\MyList;
 use SmartyBook\chapter5_6\src\MyListRepository;
@@ -21,6 +22,7 @@ $config = require_once __DIR__ . '/config/config.php';
 // ----- インライン関数定義 -----
 /**
  * @param array<string, mixed> $config
+ * @throws SmartyException
  */
 function preview(array $config): void
 {
@@ -47,6 +49,7 @@ function preview(array $config): void
 
 /**
  * @param array<string, mixed> $config
+ * @throws SmartyException
  */
 function form(array $config): void
 {
@@ -70,6 +73,7 @@ function form(array $config): void
 /**
  * @param array<string, mixed> $config
  * @param array<string, mixed> $postVars
+ * @throws SmartyException
  */
 function save(array $config, array $postVars): void
 {

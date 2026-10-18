@@ -32,9 +32,7 @@ if (isset($_GET['lo']) && $_GET['lo'] == 'ok') {
 }
 //認証時に実行する関数
 /**
- * @param string $username
- * @param int $status
- * @return void
+ * @throws \Smarty\Exception
  */
 function displayLogin(string $username, int $status): void
 {
