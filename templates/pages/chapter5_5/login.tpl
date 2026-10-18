@@ -21,8 +21,8 @@
       <h2>管理画面ログイン</h2>
     </div>
     <div class="contents">
-      {if $errormsg neq ""}
-      <p class="message">{$errormsg}</p>
+      {if $errorMessage neq ""}
+      <p class="message">{$errorMessage}</p>
       {/if}
       {login_form self="$self" username=$username}
     </div>

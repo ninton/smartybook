@@ -40,9 +40,9 @@ function displayLogin(string $username, int $status): void
 
     $self = $_SERVER['PHP_SELF'];
 
-    $errmsg = '';
+    $errorMessage = '';
     if ($status == -3) {
-        $errmsg = 'ユーザー名もしくはパスワードが違います';
+        $errorMessage = 'ユーザー名もしくはパスワードが違います';
     }
 
     $smarty = new Smarty();
@@ -52,7 +52,7 @@ function displayLogin(string $username, int $status): void
     $smarty->assign('home', $home);
     $smarty->assign('self', $self);
     $smarty->assign('username', $username);
-    $smarty->assign('errormsg', $errmsg);
+    $smarty->assign('errorMessage', $errorMessage);
 
     // 出力
     $smarty->display('pages/chapter5_5/login.tpl');
