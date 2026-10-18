@@ -25,6 +25,7 @@ class BookMark
     /**
      * 現在日時からどのくらい日数が経過しているかを取得します。
      * @return int 経過日数
+     * @noinspection PhpUnused Smartyテンプレートで参照しています。PhpStormでは未使用と判定されるため、抑制コメントを追加しています。
      */
     public function getAgo(): int
     {
