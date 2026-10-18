@@ -27,12 +27,6 @@
 
 
 #toppage #header {
-	/*削除 04_02
-	padding: 0px 0px 0px 0px;
-	margin: 0px 0px 0px 0px;
-	background-image: url(../images/top_norepeat_bk.gif);
-	*/
-	
 	/* 追加 04_02 */
 	margin: 0 0 0 0;
 	padding: 7px 0 15px 11px;
