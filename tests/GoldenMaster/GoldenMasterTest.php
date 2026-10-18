@@ -170,8 +170,24 @@ final class GoldenMasterTest extends TestCase
         self::assertSame($html, $this->sanitizeHtml($html));
     }
 
+    public function testSanitizeCsrfToken(): void
+    {
+        self::assertSame(
+            '<input type="hidden" name="csrf_token" value="CSRF_TOKEN">',
+            $this->sanitizeHtml(
+                '<input type="hidden" name="csrf_token" value="0123456789abcdef">',
+            ),
+        );
+    }
+
     private function sanitizeHtml(string $html): string
     {
+        $html = preg_replace(
+            '/(<input type="hidden" name="csrf_token" value=")[0-9a-f]+(")/',
+            '${1}CSRF_TOKEN${2}',
+            $html,
+        );
+
         // script の src に含まれるバージョン値を置換
         $html = preg_replace(
             '/(<script\b[^>]*\ssrc=["\'][^"\']*\.js\?v=)[^"\'&\s>]+/i',
