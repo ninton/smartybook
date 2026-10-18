@@ -57,6 +57,7 @@ final readonly class AmazonServicesWrapper
      * @param array<int, mixed> $itemArr
      * @param-out array<mixed> $itemArr
      * @return string error message
+     * @noinspection PhpPluralMixedCanBeReplacedWithArrayInspection array<mixed>を許容します
      */
     public function ItemLookup(string $ASINs, array $options, array &$itemArr): string
     {
