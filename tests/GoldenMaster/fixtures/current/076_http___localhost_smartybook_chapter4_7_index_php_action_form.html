@@ -11,6 +11,7 @@
   <h1>入力</h1>
   <form action="/smartybook/chapter4_7/index.php" method="post">
     <input type="hidden" name="action" value="confirm" />
+    <input type="hidden" name="csrf_token" value="CSRF_TOKEN">
     <table border="0" cellspacing="0">
       <tr>
         <th>都道府県</th>
@@ -29,7 +30,7 @@
 <option value="栃木県">栃木県</option>
 <option value="茨城県">茨城県</option>
 <option value="埼玉県">埼玉県</option>
-<option value="東京都" selected="selected">東京都</option>
+<option value="東京都">東京都</option>
 <option value="千葉県">千葉県</option>
 <option value="神奈川県">神奈川県</option>
 <option value="山梨県">山梨県</option>
@@ -70,7 +71,7 @@
       </tr>
       <tr>
         <th>評価</th>
-        <td><label><input type="radio" name="rating" value="5" checked="checked" />5 非常に良い</label><br />
+        <td><label><input type="radio" name="rating" value="5" />5 非常に良い</label><br />
 <label><input type="radio" name="rating" value="4" />4 良い</label><br />
 <label><input type="radio" name="rating" value="3" />3 普通</label><br />
 <label><input type="radio" name="rating" value="2" />2 悪い</label><br />
@@ -78,7 +79,7 @@
       </tr>
       <tr>
         <th>どこで知りましたか</th>
-        <td><label><input type="checkbox" name="where_arr[]" value="インターネット" checked="checked" />インターネット</label><br />
+        <td><label><input type="checkbox" name="where_arr[]" value="インターネット" />インターネット</label><br />
 <label><input type="checkbox" name="where_arr[]" value="新聞" />新聞</label><br />
 <label><input type="checkbox" name="where_arr[]" value="雑誌" />雑誌</label><br />
 <label><input type="checkbox" name="where_arr[]" value="テレビ" />テレビ</label><br />
