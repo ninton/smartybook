@@ -122,7 +122,7 @@ test('detail_arrの正常値を保持する', function (array $details) {
 ]);
 
 test('detail_arrが26件（上限超過）のとき、例外スロー', function (array $details) {
-    $myList = new MyList(detail_arr: $details);
+    new MyList(detail_arr: $details);
 })->throws(
     InvalidArgumentException::class,
     'detail_arr cannot have more than ' . MyList::MAX_ITEMS . ' items.',
