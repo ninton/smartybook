@@ -212,6 +212,8 @@ class PagerStub
      * @param bool $showAllData 全データを表示するオプション
      * @param array<string, int|string> $extraParams 追加のパラメータ
      * @return string HTML文字列
+     * @noinspection PhpMissingParamTypeInspection 本来のPEAR::Pager::getPerPageSelectBox()は型宣言がないため、互換性のために型宣言を省略しています。
+     * @noinspection PhpUnusedParameterInspection スタブのため、引数は使用されません。
      */
     public function getPerPageSelectBox($start = 5, $end = 30, $step = 5, $showAllData = false, $extraParams = []): string
     {
@@ -226,6 +228,8 @@ HTML;
      * @param array<string, int|string> $params ページ番号の選択肢を生成するためのパラメータ
      * @param string $extraAttributes セレクトボックスに追加する属性
      * @return string HTML文字列
+     * @noinspection PhpMissingParamTypeInspection 本来のPEAR::Pager::getPageSelectBox()は型宣言がないため、互換性のために型宣言を省略しています。
+     * @noinspection PhpUnusedParameterInspection スタブのため、引数は使用されません。
      */
     public function getPageSelectBox($params = [], $extraAttributes = ''): string
     {
