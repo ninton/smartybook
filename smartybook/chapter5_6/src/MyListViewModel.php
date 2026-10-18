@@ -19,7 +19,6 @@ final readonly class MyListViewModel
     /**
      * MyList と Amazon API 応答から表示用 ViewModel を構築するファクトリ
      *
-     * @param MyList $myList
      * @param list<array<string, mixed>> $itemArr
      */
     public static function create(MyList $myList, array $itemArr): self
