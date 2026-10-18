@@ -43,7 +43,7 @@ final readonly class AmazonServicesWrapper
     /*
         $ASINs = '12345,23456,34567';
         $options['ResponseGroup'] = 'Medium';
-        $errmsg = $servicesAmazon->ItemLookup( $ASINs, $options, &$itemArr ) {
+        $errorMessage = $servicesAmazon->ItemLookup( $ASINs, $options, &$itemArr ) {
         print_r( $itemArr );
 
         $itemArr[0]    ASIN「12345」のItem情報
