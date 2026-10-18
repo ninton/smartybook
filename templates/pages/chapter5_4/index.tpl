@@ -20,20 +20,20 @@
       <h3 class="cornerTitle">Twitter</h3>
       <div id="twitter1">
         <div id="prof">
-          <p><img alt="プロフィール画像" src="{$aTwitter[0]->user->profile_image_url}" /><br /><a href="https://twitter.com/{$aTwitter[0]->user->screen_name}">{$aTwitter[0]->user->screen_name}</a></p>
+          <p><img alt="プロフィール画像" src="{$tweetList[0]->user->profile_image_url}" /><br /><a href="https://twitter.com/{$tweetList[0]->user->screen_name}">{$tweetList[0]->user->screen_name}</a></p>
         </div>
       </div>
       <div id="twitter2">
         <div class="status">
-        {section loop=$aTwitter name="twitter" max="10"}
+        {foreach from=$tweetList item=tweet}
           <div class="statusBody">
-            <p>{$aTwitter[twitter]->text|escape|nl2br}</p>
+            <p>{$tweet->text|escape|nl2br}</p>
           </div>
-        {sectionelse}
+        {foreachelse}
           <div class="statusBody">
             <p>発言はありません。</p>
           </div>
-        {/section}
+        {/foreach}
         </div>
       </div>
     </div>
