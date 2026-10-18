@@ -1,6 +1,7 @@
 <?php
 
 /** @noinspection PhpUnused このクラスは歴史的資料として保持されています。呼ばれない関数やメソッドを含みます。 */
+/** @noinspection SpellCheckingInspection webcode や ezweb の Typo警告を抑制します */
 
 namespace SmartyBook\chapter5_3\src\emoji;
 
