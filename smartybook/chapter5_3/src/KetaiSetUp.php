@@ -1,5 +1,7 @@
 <?php
 
+/** @noinspection SpellCheckingInspection Ketai や docomo の Typo警告を抑制します */
+
 declare(strict_types=1);
 
 namespace SmartyBook\chapter5_3\src;
