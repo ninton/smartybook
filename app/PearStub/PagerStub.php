@@ -91,35 +91,6 @@ class PagerStub
     }
 
     /**
-     * 前のページの番号を取得（なければ false）
-     */
-    public function getPreviousPageID(): int|false
-    {
-        return $this->isFirstPage() ? false : $this->currentPage - 1;
-    }
-
-    /**
-     * 次のページの番号を取得（なければ false）
-     */
-    public function getNextPageID(): int|false
-    {
-        return $this->isLastPage() ? false : $this->currentPage + 1;
-    }
-
-    /**
-     * 現在のページに対応するデータ（itemDataを指定した場合）を取得
-     * @return list<mixed> 現在のページに対応するデータの配列
-     */
-    public function getPageData(): array
-    {
-        if (empty($this->itemData)) {
-            return [];
-        }
-        $offset = ($this->currentPage - 1) * $this->perPage;
-        return array_slice($this->itemData, $offset, $this->perPage);
-    }
-
-    /**
      * 現在のページで表示しているアイテムの開始・終了インデックス等を取得
      * @return array{0: int, 1: int} 現在のページで表示しているアイテムの開始・終了インデックス
      */
@@ -201,40 +172,5 @@ class PagerStub
         $links['pages'] = implode(' ', $pageHtmlArr);
 
         return $links;
-    }
-
-    /**
-     * @note スタブです。引数を無視して、固定のHTMLを返します。
-     * 1ページあたりの表示件数を選択するセレクトボックスを生成する
-     * @param int $start セレクトボックスの開始値
-     * @param int $end セレクトボックスの終了値
-     * @param int $step セレクトボックスのステップ値
-     * @param bool $showAllData 全データを表示するオプション
-     * @param array<string, int|string> $extraParams 追加のパラメータ
-     * @return string HTML文字列
-     * @noinspection PhpMissingParamTypeInspection 本来のPEAR::Pager::getPerPageSelectBox()は型宣言がないため、互換性のために型宣言を省略しています。
-     * @noinspection PhpUnusedParameterInspection スタブのため、引数は使用されません。
-     */
-    public function getPerPageSelectBox($start = 5, $end = 30, $step = 5, $showAllData = false, $extraParams = []): string
-    {
-        return <<<HTML
-<select name="setPerPage" onchange='document.forms["perPage"].submit()'><option value="1">1件/ページ</option><option value="2">2件/ページ</option><option value="3">3件/ページ</option><option value="4">4件/ページ</option><option value="5" selected="selected">5件/ページ</option><option value="6">6件/ページ</option><option value="7">7件/ページ</option><option value="8">8件/ページ</option><option value="9">9件/ページ</option><option value="10">10件/ページ</option><option value="11">11件/ページ</option><option value="12">12件/ページ</option><option value="13">13件/ページ</option><option value="14">14件/ページ</option><option value="15">15件/ページ</option><option value="16">16件/ページ</option><option value="17">17件/ページ</option><option value="18">18件/ページ</option><option value="19">19件/ページ</option><option value="20">20件/ページ</option><option value="7">7件/ページ</option></select>
-HTML;
-    }
-
-    /**
-     * @note スタブです。引数を無視して、固定のHTMLを返します。
-     * ページ番号のセレクトボックスを生成する
-     * @param array<string, int|string> $params ページ番号の選択肢を生成するためのパラメータ
-     * @param string $extraAttributes セレクトボックスに追加する属性
-     * @return string HTML文字列
-     * @noinspection PhpMissingParamTypeInspection 本来のPEAR::Pager::getPageSelectBox()は型宣言がないため、互換性のために型宣言を省略しています。
-     * @noinspection PhpUnusedParameterInspection スタブのため、引数は使用されません。
-     */
-    public function getPageSelectBox($params = [], $extraAttributes = ''): string
-    {
-        return <<<HTML
-<select name="pageID" onchange="document.location.href='/smartybook/chapter4_6/index.php?pageID=' + this.options[this.selectedIndex].value + ''"><option value="1" selected="selected">1</option><option value="2">2</option></select>
-HTML;
     }
 }
