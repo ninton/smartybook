@@ -11,7 +11,7 @@ final class EmojiTest extends TestCase
     #[DataProvider('emojiProvider')]
     public function test(Emoji $emoji, string $input, string $expected): void
     {
-        static::assertEquals($expected, $emoji->convert($input));
+        self::assertEquals($expected, $emoji->convert($input));
     }
 
     /**
