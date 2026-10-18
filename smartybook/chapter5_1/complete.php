@@ -28,8 +28,7 @@ function convertNl(string $str): string
 {
     $str = stripslashes($str);
     $str = str_replace('"', '""', $str);
-    $str = '"' . $str . '"';
-    return $str;
+    return '"' . $str . '"';
 }
 
 /**
