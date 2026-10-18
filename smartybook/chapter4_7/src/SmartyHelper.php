@@ -13,8 +13,7 @@ class SmartyHelper
     public static function array_load(string $i_path): array
     {
         $buf = file_get_contents($i_path);
-        $arr = preg_split("/[\r\n]+/", $buf, -1, PREG_SPLIT_NO_EMPTY);
-        return $arr;
+        return preg_split("/[\r\n]+/", $buf, -1, PREG_SPLIT_NO_EMPTY);
     }
 
     /**
