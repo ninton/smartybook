@@ -35,13 +35,13 @@ SmartyPG.prototype.preloadImg = function() {
                                       },
                                       5000
                         );
-    var imgs = thisObj.imgs;
+    var images = thisObj.imgs;
     var imgsLength = thisObj.imgsLength;
     var imgArray = thisObj.imgArray;
     for(var i = 0; i < imgsLength; i++) {
         imgArray[i] = new Image();
         imgArray[i].onload = function(){ thisObj.checkImgLoading(); };
-        imgArray[i].src = imgs[i];
+        imgArray[i].src = images[i];
     }
 }
 // 画像ロードのチェック
