@@ -61,7 +61,7 @@ SmartyPG.prototype.checkImgLoading = function() {
 SmartyPG.prototype.createThumbImg = function() {
     var thisObj = this;
     var imagesLength = thisObj.imgsLength;
-    var imgs = thisObj.imgs;
+    var images = thisObj.imgs;
     var imgArray = thisObj.imgArray;
     
     var thumbArea = document.createElement("div");
