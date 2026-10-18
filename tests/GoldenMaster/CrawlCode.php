@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\GoldenMaster;
 
+use Exception;
 use InvalidArgumentException;
 
 final class CrawlCode
@@ -13,6 +14,7 @@ final class CrawlCode
     /**
      * @param string $urlCsv
      * @return list<CrawlCommand>
+     * @throws Exception
      */
     public static function readCrawlCommandArrFromCsv(string $urlCsv): array
     {
@@ -41,12 +43,13 @@ final class CrawlCode
     /**
      * @param string $urlCsv
      * @return list<list<string>>
+     * @throws Exception
      */
     private static function readCsvArr(string $urlCsv): array
     {
         $fp = fopen($urlCsv, 'r');
         if (!$fp) {
-            throw new \Exception("Failed to open CSV file: {$urlCsv}");
+            throw new Exception("Failed to open CSV file: {$urlCsv}");
         }
 
         try {
@@ -61,6 +64,9 @@ final class CrawlCode
         return $csvArr;
     }
 
+    /**
+     * @throws Exception
+     */
     public static function crawl(string $url, string $method, string $data, string $cookieFile, string $userAgent = self::DEFAULT_USER_AGENT): string
     {
         if ($url === '') {
@@ -69,7 +75,7 @@ final class CrawlCode
 
         $ch = curl_init();
         if (!$ch) {
-            throw new \Exception('Failed to initialize cURL');
+            throw new Exception('Failed to initialize cURL');
         }
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

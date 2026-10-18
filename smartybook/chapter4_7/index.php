@@ -23,6 +23,7 @@
  *  - 送信完了画面を表示
  */
 use App\Smarty\AppSmarty as Smarty;
+use Smarty\Exception as SmartyException;
 use SmartyBook\chapter4_7\src\SmartyHelper;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
@@ -66,6 +67,7 @@ function validateCsrfToken(string $appId, mixed $tokenFromPost): bool
  * @param array{app_id: string} $config 設定情報
  * @param array<string, mixed> $meta メタデータ
  * @param array<string, mixed> $formFromSession セッションから復元したフォームデータ（未入力の場合は空配列）
+ * @throws SmartyException
  */
 function form(array $config, array $meta, array $formFromSession = []): void
 {
@@ -106,6 +108,7 @@ function form(array $config, array $meta, array $formFromSession = []): void
  * @param array{app_id: string} $config 設定情報
  * @param array<string, mixed> $meta メタデータ
  * @param array<string, mixed> $postVars POSTされたフォームデータ
+ * @throws SmartyException
  */
 function confirm(array $config, array $meta, array $postVars): void
 {
@@ -136,6 +139,7 @@ function confirm(array $config, array $meta, array $postVars): void
  * @param array<string, mixed> $meta メタデータ
  * @param array<string, mixed> $formFromSession セッションから復元したフォームデータ
  * @param array<string, mixed> $postVars POSTされたフォームデータ
+ * @throws SmartyException
  */
 function submit(array $config, array $meta, array $formFromSession, array $postVars): void
 {

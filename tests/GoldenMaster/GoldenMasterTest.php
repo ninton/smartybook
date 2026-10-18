@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\GoldenMaster;
 
+use Exception;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
@@ -62,6 +63,7 @@ final class GoldenMasterTest extends TestCase
     /**
      * @param array<string, mixed> $getVars
      * @param array<string, mixed> $postVars
+     * @throws Exception
      */
     #[DataProvider('dataProvider')]
     public function test(string $url, string $method, array $getVars, array $postVars, string $storageName): void
@@ -108,6 +110,7 @@ final class GoldenMasterTest extends TestCase
 
     /**
      * @return array<string, array{string, string, array<string, mixed>, array<string, mixed>, string}>
+     * @throws Exception
      */
     public static function dataProvider(): array
     {
