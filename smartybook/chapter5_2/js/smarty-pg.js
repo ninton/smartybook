@@ -36,9 +36,9 @@ SmartyPG.prototype.preloadImg = function() {
                                       5000
                         );
     var images = thisObj.imgs;
-    var imgsLength = thisObj.imgsLength;
+    var imagesLength = thisObj.imgsLength;
     var imgArray = thisObj.imgArray;
-    for(var i = 0; i < imgsLength; i++) {
+    for(var i = 0; i < imagesLength; i++) {
         imgArray[i] = new Image();
         imgArray[i].onload = function(){ thisObj.checkImgLoading(); };
         imgArray[i].src = images[i];
