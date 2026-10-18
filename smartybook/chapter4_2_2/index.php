@@ -11,8 +11,7 @@ require_once __DIR__ . '/config/config.php';
  */
 function insert_noticeText(): string
 {
-    $noticeText = '<img src="./images/banner.gif" />';
-    return $noticeText;
+    return '<img src="./images/banner.gif" />';
 }
 
 /**

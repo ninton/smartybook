@@ -270,12 +270,10 @@ final class GoldenMasterTest extends TestCase
         }
 
         // chapter5_4/index.php
-        $html = preg_replace(
+        return preg_replace(
             '/Smarty for Designers : \d+/',
             'Smarty for Designers : TIMESTAMP',
             $html,
         );
-
-        return $html;
     }
 }
