@@ -20,7 +20,7 @@ final class LoginFormFunction
     {
         $self = $params['self'];
         $username = htmlspecialchars($params['username']);
-        $result = <<<LOGIN
+        return <<<END_OF_HTML
 	<form method="post" action="$self" class="message" id="cmsForm" name="cmsForm">
 		<fieldset>
 			<table cellspacing="0">
@@ -39,7 +39,6 @@ final class LoginFormFunction
 			</table>
 		</fieldset>
 	</form>
-	LOGIN;
-        return $result;
+	END_OF_HTML;
     }
 }
