@@ -16,10 +16,11 @@ final class EntryImagePathResolver
      *
      * @param array{id: string, category: string, title: string, text: string, time: string, image: string} $rcd
      * @param int $key
-     * @param '120'|'240'|'480' $imageSizeGroup
+     * @param string $imageSizeGroup '120'|'240'|'480'
      * @return void
      *
      * array_walkのコールバック関数、2つめの引数に配列キーが渡される（が、この関数では使わない）
+     * @noinspection PhpUnusedParameterInspection 2つめの引数に配列キーが渡されるが、この関数では使わない
      */
     public static function resolve(array &$rcd, int $key, string $imageSizeGroup): void
     {
