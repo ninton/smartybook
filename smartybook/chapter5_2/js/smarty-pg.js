@@ -163,9 +163,9 @@ SmartyPG.prototype.changeImg = function(num) {
 }
 // アクティブサムネイル変更
 SmartyPG.prototype.changeActiveThumb = function(oldNum, newNum) {
-    var thumbBoxs = this.thumbArea.childNodes;
-    thumbBoxs[oldNum].className = "thumb thumbOff";
-    thumbBoxs[newNum].className = "thumb thumbOn";
+    var thumbBoxes = this.thumbArea.childNodes;
+    thumbBoxes[oldNum].className = "thumb thumbOff";
+    thumbBoxes[newNum].className = "thumb thumbOn";
 }
 // フェードイン
 SmartyPG.prototype.fadein = function(opa) {
