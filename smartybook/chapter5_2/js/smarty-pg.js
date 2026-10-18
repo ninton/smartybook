@@ -1,7 +1,7 @@
 /**
  * フォトギャラリークラス
  */
-var SmartyPG = function(imgs, slideFlag, slideTerm) {
+var SmartyPG = function(images, slideFlag, slideTerm) {
     this.mainDiv = document.getElementById("pg_main");
     this.thumbDiv = document.getElementById("pg_thumb");
     this.controllerDiv = document.getElementById("pg_controller");
@@ -12,14 +12,14 @@ var SmartyPG = function(imgs, slideFlag, slideTerm) {
     this.thumbArea;
     this.imgArray = new Array();
     this.nowNum = 0;
-    this.imgs = imgs;
-    this.imgsLength = imgs.length;
+    this.imgs = images;
+    this.imgsLength = images.length;
     this.nLoaded = 0;
     this.slideFlag = slideFlag;
     this.slideTerm = slideTerm;
     this.timer;
     this.nowOpa;
-    if(imgs.length > 0) {
+    if(images.length > 0) {
         this.mainDiv.innerHTML = "Now Loading...";
         this.preloadImg();
     } else {
@@ -35,13 +35,13 @@ SmartyPG.prototype.preloadImg = function() {
                                       },
                                       5000
                         );
-    var imgs = thisObj.imgs;
-    var imgsLength = thisObj.imgsLength;
+    var images = thisObj.imgs;
+    var imagesLength = thisObj.imgsLength;
     var imgArray = thisObj.imgArray;
-    for(var i = 0; i < imgsLength; i++) {
+    for(var i = 0; i < imagesLength; i++) {
         imgArray[i] = new Image();
         imgArray[i].onload = function(){ thisObj.checkImgLoading(); };
-        imgArray[i].src = imgs[i];
+        imgArray[i].src = images[i];
     }
 }
 // 画像ロードのチェック
@@ -60,8 +60,8 @@ SmartyPG.prototype.checkImgLoading = function() {
 // サムネイル作成
 SmartyPG.prototype.createThumbImg = function() {
     var thisObj = this;
-    var imgsLength = thisObj.imgsLength;
-    var imgs = thisObj.imgs;
+    var imagesLength = thisObj.imgsLength;
+    var images = thisObj.imgs;
     var imgArray = thisObj.imgArray;
     
     var thumbArea = document.createElement("div");
@@ -72,7 +72,7 @@ SmartyPG.prototype.createThumbImg = function() {
     thisObj.thumbArea = thumbArea;
     
     // 画像数分サムネイルを作成
-    for(var i = 0; i < imgsLength; i++) {
+    for(var i = 0; i < imagesLength; i++) {
         var thumbBox = document.createElement("div");
         thumbBox.className = "thumb thumbOff";
         thumbBox.onmouseover = function(){this.className = this.className + " thumbOver";};
@@ -163,9 +163,9 @@ SmartyPG.prototype.changeImg = function(num) {
 }
 // アクティブサムネイル変更
 SmartyPG.prototype.changeActiveThumb = function(oldNum, newNum) {
-    var thumbBoxs = this.thumbArea.childNodes;
-    thumbBoxs[oldNum].className = "thumb thumbOff";
-    thumbBoxs[newNum].className = "thumb thumbOn";
+    var thumbBoxes = this.thumbArea.childNodes;
+    thumbBoxes[oldNum].className = "thumb thumbOff";
+    thumbBoxes[newNum].className = "thumb thumbOn";
 }
 // フェードイン
 SmartyPG.prototype.fadein = function(opa) {
