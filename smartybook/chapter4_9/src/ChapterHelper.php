@@ -41,7 +41,7 @@ class ChapterHelper
             $rcd['url'     ] = self::get_contents_url($rcd['category']);
 
             if ($rcd['image'] != '') {
-                if (substr($rcd['image'], 0, 2) == './') {
+                if (str_starts_with($rcd['image'], './')) {
                     $rcd['image'] = substr($rcd['image'], 2);
                 }
                 $rcd['image'] = self::get_image_url($rcd['image']);
