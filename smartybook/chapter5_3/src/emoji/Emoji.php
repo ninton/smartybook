@@ -215,6 +215,7 @@ class Emoji
      */
     public function add(string $from, string $to, string $text = ''): void
     {
+        /** @noinspection PhpSwitchCanBeReplacedWithMatchExpressionInspection switch文のままとします */
         switch ($from) {
             case '':
             case 'x':
@@ -224,6 +225,7 @@ class Emoji
 
         $from = $this->modifier($from, $this->from_encode);
 
+        /** @noinspection PhpSwitchCanBeReplacedWithMatchExpressionInspection switch文のままとします */
         switch ($to) {
             case '':
             case 'x':
@@ -350,6 +352,7 @@ class Emoji
      */
     public function mapping(string $buf): string
     {
+        /** @noinspection PhpSwitchCanBeReplacedWithMatchExpressionInspection switch文のままとします */
         switch ($this->from_encode) {
             case 'e_img_num':
             case 'e_img_name':
