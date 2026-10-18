@@ -23,7 +23,7 @@ $smarty->assign('admin', $admin);
 
 $smarty->assign('self', 'admin.php');
 $smarty->assign('username', '');
-$smarty->assign('errormsg', '');
+$smarty->assign('errorMessage', '');
 
 //出力
 $smarty->display('pages/chapter5_5/login.tpl');
