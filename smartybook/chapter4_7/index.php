@@ -49,11 +49,12 @@ function getCsrfToken(string $appId): string
 
 /**
  * CSRFトークンを検証
+ * csrf_token[]=x の形式も考慮して mixed とします
  */
-function validateCsrfToken(string $appId, string $tokenFromPost): bool
+function validateCsrfToken(string $appId, mixed $tokenFromPost): bool
 {
     $storedToken = $_SESSION[$appId]['csrf_token'] ?? '';
-    if (empty($storedToken) || empty($tokenFromPost)) {
+    if (!is_string($tokenFromPost) || empty($storedToken) || empty($tokenFromPost)) {
         return false;
     }
     return hash_equals($storedToken, $tokenFromPost);
