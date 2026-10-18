@@ -23,8 +23,8 @@
  *  - 送信完了画面を表示
  */
 use App\Smarty\AppSmarty as Smarty;
-use SmartyBook\chapter4_7\src\SmartyHelper;
 use Smarty\Exception as SmartyException;
+use SmartyBook\chapter4_7\src\SmartyHelper;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 /** @var array{app_id: string} $config */
