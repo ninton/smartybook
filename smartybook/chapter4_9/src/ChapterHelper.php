@@ -50,9 +50,8 @@ class ChapterHelper
         }
         fclose($handle);
         //ランダムに1件選ぶ
-        $offset = array_rand($cms_arr, 1);
-        $featured_arr = array_slice($cms_arr, $offset, 1);
-        return $featured_arr;
+        $offset = array_rand($cms_arr);
+        return array_slice($cms_arr, $offset, 1);
     }
 
     /**
