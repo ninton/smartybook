@@ -33,6 +33,7 @@
   </table>
   <div id="button">
     <form action="{$smarty.server.SCRIPT_NAME|escape:html}" method="post">
+      <input type="hidden" name="csrf_token" value="{$csrf_token}">
       <input type="hidden" name="action" value="submit" />
       <input type="button" value="再入力" onclick="window.location='{$smarty.server.SCRIPT_NAME|escape:html}?action=form'" />
       <input type="submit" value="送信" />
