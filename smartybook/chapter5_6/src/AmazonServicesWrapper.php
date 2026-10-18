@@ -43,7 +43,7 @@ final readonly class AmazonServicesWrapper
     /*
         $ASINs = '12345,23456,34567';
         $options['ResponseGroup'] = 'Medium';
-        $errmsg = $servicesAmazon->ItemLookup( $ASINs, $options, &$itemArr ) {
+        $errorMessage = $servicesAmazon->ItemLookup( $ASINs, $options, &$itemArr ) {
         print_r( $itemArr );
 
         $itemArr[0]    ASIN「12345」のItem情報
@@ -57,6 +57,7 @@ final readonly class AmazonServicesWrapper
      * @param array<int, mixed> $itemArr
      * @param-out array<mixed> $itemArr
      * @return string error message
+     * @noinspection PhpPluralMixedCanBeReplacedWithArrayInspection array<mixed>を許容します
      */
     public function ItemLookup(string $ASINs, array $options, array &$itemArr): string
     {
