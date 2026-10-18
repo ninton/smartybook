@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpUnused このクラスは歴史的資料として保持されています。呼ばれない関数やメソッドを含みます。 */
 
 namespace SmartyBook\chapter5_3\src\emoji;
 
@@ -19,6 +19,7 @@ namespace SmartyBook\chapter5_3\src\emoji;
  * @param string $from_encode
  * @param string $to_encode
  * @return void
+ * @noinspection PhpPluralMixedCanBeReplacedWithArrayInspection array<mixed>を許容します
  */
 function emoji_convert_variables(array &$vars, string $from_encode, string $to_encode): void
 {
@@ -118,6 +119,8 @@ class Emoji
 
     /**
      * @return array<string, string>
+     * @noinspection HtmlRequiredAltAttribute ezweb用 altなしを許容します
+     * @noinspection HtmlUnknownAttribute ezweb用 localsrc,icon を許容します
      */
     public function getRegexArr(): array
     {
@@ -239,6 +242,8 @@ class Emoji
      * @param string $buf
      * @param string $encode
      * @return string
+     * @noinspection HtmlRequiredAltAttribute ezweb用 altなしを許容します
+     * @noinspection HtmlUnknownAttribute ezweb用 localsrc,icon を許容します
      */
     public function modifier(string $buf, string $encode): string
     {
@@ -380,6 +385,7 @@ class Emoji
     /**
      * @param array<mixed> $vars
      * @return void
+     * @noinspection PhpPluralMixedCanBeReplacedWithArrayInspection array<mixed>を許容します
      */
     public function convertVariables(array &$vars): void
     {
