@@ -16,7 +16,6 @@ class ServicesAmazonStub
      * @return array{Item: list<array<string, mixed>>}
      * @noinspection PhpMissingParamTypeInspection 本来の Pear::ServicesAmazon::ItemLookup は型宣言がないため、互換性のために型宣言を省略しています。
      * @noinspection PhpUnusedParameterInspection スタブのため、$options 引数は使用されません。
-
      */
     public function ItemLookup($item_id, $options = []): array
     {

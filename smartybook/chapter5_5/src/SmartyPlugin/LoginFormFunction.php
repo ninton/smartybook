@@ -15,10 +15,8 @@ final class LoginFormFunction
 {
     /**
      * @param array<string, mixed> $params
-     * @param mixed $smarty
-     * @return string
      */
-    public static function render(array $params, mixed $smarty): string
+    public static function render(array $params): string
     {
         $self = $params['self'];
         $username = htmlspecialchars($params['username']);
