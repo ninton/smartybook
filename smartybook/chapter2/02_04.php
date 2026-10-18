@@ -33,7 +33,7 @@ require_once __DIR__ . '/02_01_b.php';
 </tr>
 <tr>
     <td>本文</td>
-    <td><textarea name="contents"></textarea></td>
+    <td><textarea name="contents" cols="50" rows="3"></textarea></td>
 </tr>
 <tr>
     <td>日時</td>
