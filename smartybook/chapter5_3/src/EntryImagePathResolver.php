@@ -25,8 +25,8 @@ final class EntryImagePathResolver
     public static function resolve(array &$rcd, int $key, string $imageSizeGroup): void
     {
         if ($rcd['image']) {
-            $fname = basename($rcd['image']);
-            $rcd['image'] = sprintf('images/%s/%s', $imageSizeGroup, $fname);
+            $fileName = basename($rcd['image']);
+            $rcd['image'] = sprintf('images/%s/%s', $imageSizeGroup, $fileName);
         }
     }
 }
