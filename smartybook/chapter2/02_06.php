@@ -41,8 +41,7 @@ function convertNl(string $str): string
 {
     $str = stripslashes($str);
     $str = str_replace('"', '""', $str);
-    $str = '"' . $str . '"';
-    return $str;
+    return '"' . $str . '"';
 }
 
 // CSVファイルを読み込み、追記両用で開く
