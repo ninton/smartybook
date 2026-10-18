@@ -14,7 +14,7 @@ final class CsvEntryReader
     {
         $entry_arr = [];
         $handle = fopen($path, 'r');
-        while ($arr = fgetcsv($handle, 5000, ',', escape: '')) {
+        while ($arr = fgetcsv($handle, 5000, escape: '')) {
             if ($category == $arr[1]) {
                 $rcd = [];
                 $rcd['id'      ] = $arr[0];

@@ -20,7 +20,7 @@ $data = [];
 $notice = '';
 $fp = fopen($csv, 'r');
 $i = 0;
-while ($array = fgetcsv($fp, 5000, ',', escape: '')) {
+while ($array = fgetcsv($fp, 5000, escape: '')) {
     if ($array[1] == 'Notice') {
         $notice = $array[3];
     }

@@ -14,7 +14,7 @@ require_once __DIR__ . '/config/config.php';
  */
 function lastIdCheck($file): int
 {
-    while ($arr = fgetcsv($file, 5000, ',', escape: '')) {
+    while ($arr = fgetcsv($file, 5000, escape: '')) {
         $lastId = (int)$arr[0];
     }
     return $lastId ?? 0;

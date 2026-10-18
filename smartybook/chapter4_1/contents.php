@@ -17,7 +17,7 @@ require_once __DIR__ . '/config/config.php';
 $fp = fopen($csv, 'r');
 $i = 0;
 $data = [];
-while ($array = fgetcsv($fp, 5000, ',', escape: '')) {
+while ($array = fgetcsv($fp, 5000, escape: '')) {
     if ($_GET['category'] == $array[1]) {
         $data[$i]['id']       = $array[0];
         $data[$i]['category'] = $array[1];
