@@ -52,8 +52,7 @@ function emoji_output_handler(string $buf): string|null
 function emoji_convert(string $buf, string $from_encode, string $to_encode): string|null
 {
     $emoji = Emoji::singleton($from_encode, $to_encode);
-    $result = $emoji->convert($buf);
-    return $result;
+    return $emoji->convert($buf);
 }
 
 /**
@@ -202,9 +201,8 @@ class Emoji
      */
     public function mapPath(): string
     {
-        $fname = "{$this->from_encode}.{$this->to_encode}.dat";
-        $path = __DIR__ . "/map/$fname";
-        return $path;
+        $fileName = "{$this->from_encode}.{$this->to_encode}.dat";
+        return __DIR__ . "/map/$fileName";
     }
 
     /**
@@ -339,11 +337,9 @@ class Emoji
      */
     public function convert(string $buf): string|null
     {
-        $result = preg_replace_callback($this->regex, function (array $mathes): string {
-            return $this->mapping($mathes[1]);
+        return preg_replace_callback($this->regex, function (array $matches): string {
+            return $this->mapping($matches[1]);
         }, $buf);
-
-        return $result;
     }
 
     /**
