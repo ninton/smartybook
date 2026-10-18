@@ -67,7 +67,10 @@ if (!$smarty->isCached($template)) {
      * キャッシュを利用しようという意図でした。
      */
     $twitterUrl =  __DIR__ . '/kara_d.json';
-    $tweetList = array_slice(json_decode(file_get_contents($twitterUrl)), 0, 10);
+    $tweetList = $twitterUrl
+            |> file_get_contents(...)
+            |> json_decode(...)
+            |> (fn ($x) => array_slice($x, 0, 10));
 
     // ----- テンプレートエンジンへの変数アサイン -----
     $smarty->assign('data', $data);
