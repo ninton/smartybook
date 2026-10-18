@@ -1,5 +1,7 @@
 <?php
 
+/** @noinspection All  このクラスは歴史的資料として保持されており、現代のコードベースでは使用されません。 */
+
 declare(strict_types=1);
 
 namespace SmartyBook\chapter5_3\src;

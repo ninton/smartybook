@@ -1,5 +1,7 @@
 <?php
 
+/** @noinspection PhpUnused このクラスは歴史的資料として保持されています。呼ばれない関数やメソッドを含みます。 */
+
 namespace SmartyBook\chapter5_3\src\emoji;
 
 /*
@@ -19,6 +21,7 @@ namespace SmartyBook\chapter5_3\src\emoji;
  * @param string $from_encode
  * @param string $to_encode
  * @return void
+ * @noinspection PhpPluralMixedCanBeReplacedWithArrayInspection array<mixed>を許容します
  */
 function emoji_convert_variables(array &$vars, string $from_encode, string $to_encode): void
 {
@@ -118,6 +121,8 @@ class Emoji
 
     /**
      * @return array<string, string>
+     * @noinspection HtmlRequiredAltAttribute ezweb用 altなしを許容します
+     * @noinspection HtmlUnknownAttribute ezweb用 localsrc,icon を許容します
      */
     public function getRegexArr(): array
     {
@@ -210,6 +215,7 @@ class Emoji
      */
     public function add(string $from, string $to, string $text = ''): void
     {
+        /** @noinspection PhpSwitchCanBeReplacedWithMatchExpressionInspection switch文のままとします */
         switch ($from) {
             case '':
             case 'x':
@@ -219,6 +225,7 @@ class Emoji
 
         $from = $this->modifier($from, $this->from_encode);
 
+        /** @noinspection PhpSwitchCanBeReplacedWithMatchExpressionInspection switch文のままとします */
         switch ($to) {
             case '':
             case 'x':
@@ -239,6 +246,8 @@ class Emoji
      * @param string $buf
      * @param string $encode
      * @return string
+     * @noinspection HtmlRequiredAltAttribute ezweb用 altなしを許容します
+     * @noinspection HtmlUnknownAttribute ezweb用 localsrc,icon を許容します
      */
     public function modifier(string $buf, string $encode): string
     {
@@ -343,6 +352,7 @@ class Emoji
      */
     public function mapping(string $buf): string
     {
+        /** @noinspection PhpSwitchCanBeReplacedWithMatchExpressionInspection switch文のままとします */
         switch ($this->from_encode) {
             case 'e_img_num':
             case 'e_img_name':
@@ -380,6 +390,7 @@ class Emoji
     /**
      * @param array<mixed> $vars
      * @return void
+     * @noinspection PhpPluralMixedCanBeReplacedWithArrayInspection array<mixed>を許容します
      */
     public function convertVariables(array &$vars): void
     {
