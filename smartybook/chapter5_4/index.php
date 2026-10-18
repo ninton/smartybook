@@ -67,14 +67,13 @@ if (!$smarty->isCached($template)) {
      * キャッシュを利用しようという意図でした。
      */
     $twitterUrl =  __DIR__ . '/kara_d.json';
-    $jTwitter = file_get_contents($twitterUrl);
-    $aTwitter = json_decode($jTwitter);
+    $tweetList = json_decode(file_get_contents($twitterUrl));
 
     // ----- テンプレートエンジンへの変数アサイン -----
     $smarty->assign('data', $data);
     $smarty->assign('picture', $picture);
     $smarty->assign('notice', $notice);
-    $smarty->assign('aTwitter', $aTwitter);
+    $smarty->assign('tweetList', $tweetList);
     $smarty->assign('siteName', $siteName);
     $smarty->assign('siteDescription', $siteDescription);
     $smarty->assign('home', $home);
