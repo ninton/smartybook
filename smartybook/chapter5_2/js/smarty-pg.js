@@ -60,7 +60,7 @@ SmartyPG.prototype.checkImgLoading = function() {
 // サムネイル作成
 SmartyPG.prototype.createThumbImg = function() {
     var thisObj = this;
-    var imgsLength = thisObj.imgsLength;
+    var imagesLength = thisObj.imgsLength;
     var imgs = thisObj.imgs;
     var imgArray = thisObj.imgArray;
     
@@ -72,7 +72,7 @@ SmartyPG.prototype.createThumbImg = function() {
     thisObj.thumbArea = thumbArea;
     
     // 画像数分サムネイルを作成
-    for(var i = 0; i < imgsLength; i++) {
+    for(var i = 0; i < imagesLength; i++) {
         var thumbBox = document.createElement("div");
         thumbBox.className = "thumb thumbOff";
         thumbBox.onmouseover = function(){this.className = this.className + " thumbOver";};
