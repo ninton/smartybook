@@ -24,7 +24,8 @@ use App\Smarty\AppSmarty as Smarty;
 use SmartyBook\chapter4_7\src\SmartyHelper;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
-require_once __DIR__ . '/config/config.php';
+/** @var array{token_salt: string, app_id: string} $config */
+$config = require_once __DIR__ . '/config/config.php';
 
 // 都道府県などのメタデータをファイルから読み込む
 $META['prefecture'] = SmartyHelper::array_load(__DIR__ . '/config/prefecture.txt');
@@ -33,10 +34,11 @@ $META['where'] = SmartyHelper::array_load(__DIR__ . '/config/where.txt');
 
 // ----- インライン関数定義 -----
 /**
+ * @param array{token_salt: string, app_id: string} $config 設定情報
  * @param array<string, mixed> $meta メタデータ
  * @param array<string, mixed> $formFromSession セッションから復元したフォームデータ（未入力の場合は空配列）
  */
-function form(array $meta, array $formFromSession = []): void
+function form(array $config, array $meta, array $formFromSession = []): void
 {
     // ----- データ準備 -----
     $now = time();
@@ -52,7 +54,7 @@ function form(array $meta, array $formFromSession = []): void
     if (empty($formFromSession)) {
         $form = $defaultForm;
         // 新規フォームの場合はセッションをクリア
-        $_SESSION[APPID]['form'] = [];
+        $_SESSION[$config['app_id']]['form'] = [];
     } else {
         $form = array_merge($defaultForm, $formFromSession);
         // 確認ページからの戻りの場合は、セッションをクリアしない
@@ -67,16 +69,17 @@ function form(array $meta, array $formFromSession = []): void
     $smarty->display('pages/chapter4_7/form.tpl');
 }
 /**
+ * @param array{token_salt: string, app_id: string} $config 設定情報
  * @param array<string, mixed> $meta メタデータ
  * @param array<string, mixed> $postVars POSTされたフォームデータ
  */
-function confirm(array $meta, array $postVars): void
+function confirm(array $config, array $meta, array $postVars): void
 {
     // ----- 入力値受取・前処理 -----
     $form = $postVars;
     SmartyHelper::makeTimeStamp($form, ['field_array' => 'startDate']);
     SmartyHelper::makeTimeStamp($form, ['prefix' => 'endDate_']);
-    $_SESSION[APPID]['form'] = $form;
+    $_SESSION[$config['app_id']]['form'] = $form;
 
     // ----- テンプレートエンジンの初期化とアサイン・描画 -----
     $smarty = new Smarty();
@@ -86,10 +89,11 @@ function confirm(array $meta, array $postVars): void
 }
 
 /**
+ * @param array{token_salt: string, app_id: string} $config 設定情報
  * @param array<string, mixed> $meta メタデータ
  * @param array<string, mixed> $formFromSession セッションから復元したフォームデータ
  */
-function submit(array $meta, array $formFromSession): void
+function submit(array $config, array $meta, array $formFromSession): void
 {
     // ----- 入力値受取・前処理 -----
     // 未実装
@@ -98,7 +102,7 @@ function submit(array $meta, array $formFromSession): void
     // 未実装
 
     // 最後にセッション変数をクリア
-    $_SESSION[APPID]['form'] = [];
+    $_SESSION[$config['app_id']]['form'] = [];
 
     // ----- テンプレートエンジンの初期化とアサイン・描画 -----
     $smarty = new Smarty();
@@ -109,11 +113,12 @@ function submit(array $meta, array $formFromSession): void
 
 // セッションを開始、セッショントークンをチェックする
 session_start();
-$token = md5(TOKEN_SALT . $_SERVER['HTTP_USER_AGENT'] . $_SERVER['REMOTE_ADDR']);
-if (!isset($_SESSION[APPID]['token']) || $_SESSION[APPID]['token'] != $token) {
+$appId = $config['app_id'];
+$token = md5($config['token_salt'] . $_SERVER['HTTP_USER_AGENT'] . $_SERVER['REMOTE_ADDR']);
+if (!isset($_SESSION[$appId]['token']) || $_SESSION[$appId]['token'] != $token) {
     session_regenerate_id();
-    $_SESSION[APPID] = [];
-    $_SESSION[APPID]['token'] = $token;
+    $_SESSION[$appId] = [];
+    $_SESSION[$appId]['token'] = $token;
 }
 
 
@@ -138,9 +143,9 @@ if ($action === '') {
 }
 
 match ([$requestMethod, $action]) {
-    ['GET', 'index'] => form($META),
-    ['GET', 'form'] => form($META, $_SESSION[APPID]['form'] ?? []),
-    ['POST', 'confirm'] => confirm($META, $_POST),
-    ['POST', 'submit'] => submit($META, $_SESSION[APPID]['form'] ?? []),
+    ['GET', 'index'] => form($config, $META),
+    ['GET', 'form'] => form($config, $META, $_SESSION[$appId]['form'] ?? []),
+    ['POST', 'confirm'] => confirm($config, $META, $_POST),
+    ['POST', 'submit'] => submit($config, $META, $_SESSION[$appId]['form'] ?? []),
     default => die(), // 不正な action はここでしっかりと弾く
 };
