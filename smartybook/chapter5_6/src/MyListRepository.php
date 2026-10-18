@@ -22,12 +22,12 @@ class MyListRepository
          * @fixme 保存形式をJSONに変更したい
          * serialize形式は オブジェクトのFQDNを含むので、クラス名やディレクトリ構造を変更すると復元できない。
          */
-        $mylist = unserialize($buf);
+        $myList = unserialize($buf);
 
         return new MyList(
-            $mylist->ListName,
-            $mylist->NickName,
-            $mylist->detail_arr,
+            $myList->ListName,
+            $myList->NickName,
+            $myList->detail_arr,
         );
     }
 
