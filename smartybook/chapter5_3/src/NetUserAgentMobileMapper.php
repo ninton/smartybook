@@ -26,7 +26,6 @@ final readonly class NetUserAgentMobileMapper
     private static function toPlatformType(string $rawCarrier): string
     {
         return match ($rawCarrier) {
-            'docomo' => 'imode',
             'ezweb' => 'ezweb',
             'softbank', 'vodafone' => 'softbank',
             default => 'imode',
