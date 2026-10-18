@@ -337,8 +337,8 @@ class Emoji
      */
     public function convert(string $buf): string|null
     {
-        return preg_replace_callback($this->regex, function (array $mathes): string {
-            return $this->mapping($mathes[1]);
+        return preg_replace_callback($this->regex, function (array $matches): string {
+            return $this->mapping($matches[1]);
         }, $buf);
     }
 
