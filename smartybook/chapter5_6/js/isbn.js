@@ -1,7 +1,3 @@
-/**
- *	@author	MW web studio, Aoki Makoto GZL03577@nifty.com
- *	2008-02-18
- */
 function isbn13_to_isbn10( i_src ) {
 	var dst;
 	
