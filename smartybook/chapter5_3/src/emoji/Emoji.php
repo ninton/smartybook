@@ -1,4 +1,6 @@
-<?php /** @noinspection PhpUnused このクラスは歴史的資料として保持されています。呼ばれない関数やメソッドを含みます。 */
+<?php
+
+/** @noinspection PhpUnused このクラスは歴史的資料として保持されています。呼ばれない関数やメソッドを含みます。 */
 
 namespace SmartyBook\chapter5_3\src\emoji;
 
