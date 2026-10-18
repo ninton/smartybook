@@ -16,5 +16,5 @@ return [
     'associate_tag' => '********************',
 
     // 保存ファイル
-    'storage_path' => dirname(__DIR__, 1) . '/_write/mylist/1.txt',
+    'storage_path' => dirname(__DIR__) . '/_write/mylist/1.txt',
 ];
