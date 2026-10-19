@@ -2,7 +2,6 @@
 <html lang="ja" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta http-equiv="Content-Style-Type" content="text/css; charset=utf-8" />
 <link rel="stylesheet" type="text/css" href="./css/styles.css" />
 <title>時間毎にヘッダーを変える</title>
 </head>

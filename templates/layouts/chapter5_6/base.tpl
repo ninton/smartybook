@@ -2,8 +2,6 @@
 <html lang="ja">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css; charset=utf-8" />
-  <meta http-equiv="Content-Script-Type" content="text/javascript; charset=utf-8" />
   <link rel="stylesheet" href="./css/styles.css" type="text/css" />
 {* ▼ ページごとにhead内へ追記できる拡張ポイントを作る *}
 {block name="head"}{/block}
