@@ -10,7 +10,7 @@
 
   {* ヘッダーはじまり *}
   <div id="header">
-    <h1 id="siteTitle"><a href="{$home}"><img src="images/page_title.gif" alt="{$siteName}" border="0" /></a></h1>
+    <h1 id="siteTitle"><a href="{$home}"><img src="images/page_title.gif" alt="{$siteName}" /></a></h1>
   </div>
   {* ヘッダーおわり *}
 

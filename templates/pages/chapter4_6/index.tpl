@@ -25,36 +25,36 @@
     <th data-sort-key="id">
       ID<br />
       <span class="sort-buttons">
-        <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" border="0" /></a>
-        <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" border="0" /></a>
+        <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" /></a>
+        <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" /></a>
       </span>
     </th>
     <th data-sort-key="category">
       カテゴリ<br />
       <span class="sort-buttons">
-        <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" border="0" /></a>
-        <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" border="0" /></a>
+        <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" /></a>
+        <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" /></a>
       </span>
     </th>
     <th data-sort-key="title">
       タイトル<br />
       <span class="sort-buttons">
-        <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" border="0" /></a>
-        <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" border="0" /></a>
+        <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" /></a>
+        <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" /></a>
       </span>
     </th>
     <th class="comment" data-sort-key="comment">
       コメント<br />
       <span class="sort-buttons">
-        <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" border="0" /></a>
-        <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" border="0" /></a>
+        <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" /></a>
+        <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" /></a>
       </span>
     </th>
     <th data-sort-key="time">
       日付<br />
       <span class="sort-buttons">
-        <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" border="0" /></a>
-        <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" border="0" /></a>
+        <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" /></a>
+        <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" /></a>
       </span>
     </th>
   </tr>
