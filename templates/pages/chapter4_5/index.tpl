@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8">
 <link rel="stylesheet" type="text/css" href="./css/styles.css" />
 <title>時間毎にヘッダーを変える</title>
 </head>
