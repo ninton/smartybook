@@ -12,4 +12,5 @@ $tpl = preg_replace('/\.php$/', '.tpl', $php);
 $smarty = new Smarty();
 // Smarty5準備: preg_match修飾子を登録
 $smarty->registerPlugin('modifier', 'preg_match', preg_match(...));
+$smarty->assign('currentPage', "page3");
 $smarty->display('pages/chapter4_8/' . $tpl);

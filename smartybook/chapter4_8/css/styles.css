@@ -109,3 +109,13 @@ ul li ul li ul li {
 ul li ul li ul li a {
 	background-position: 2em 0.8em;
 }
+
+/* デフォルトではサブメニュー（2階層目以降）を非表示 */
+#menuBox li > ul {
+  display: none;
+}
+
+/* is-expanded クラスが付与された親 li 内の ul を表示 */
+#menuBox li.is-expanded > ul {
+  display: block;
+}
