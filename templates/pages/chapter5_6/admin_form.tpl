@@ -18,7 +18,7 @@
 <form action="{$smarty.server.SCRIPT_NAME|escape:html}" method="post">
   <input type="hidden" name="action" value="save" />
 
-  <table class="listMeta" cellspacing="2">
+  <table class="listMeta">
     <tr>
       <th>リスト名</th>
       <td><input name="ListName" value="{$myList->ListName|escape:html}" /></td>
@@ -29,7 +29,7 @@
     </tr>
   </table>
 
-  <table class="list" cellspacing="0">
+  <table class="list">
     <tr>
       <th>&nbsp;</th>
       <th>ISBN</th>

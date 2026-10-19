@@ -25,7 +25,7 @@
       {* フォームはじまり *}
       <form action="complete.php" method="post" name="cmsForm" target="_top" id="cmsForm" class="submitForm">
         <fieldset>
-        <table cellspacing="0">
+        <table>
           <tr>
             <th> 記事のカテゴリー
             </th>

@@ -8,7 +8,7 @@
   <form action="{$smarty.server.SCRIPT_NAME|escape:html}" method="post">
     <input type="hidden" name="action" value="confirm" />
     <input type="hidden" name="csrf_token" value="{$csrf_token}">
-    <table border="0" cellspacing="0">
+    <table>
       <tr>
         <th>都道府県</th>
         <td>

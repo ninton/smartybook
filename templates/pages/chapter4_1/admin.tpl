@@ -25,7 +25,7 @@
       {* フォームはじまり *}
       <form action="confirm.php" method="post" enctype="multipart/form-data" name="cmsForm" target="_top" id="cmsForm" class="submitForm">
         <fieldset>
-        <table cellspacing="0">
+        <table>
           <tr>
             <th> <label for="category">記事のカテゴリーを選択</label>
             </th>
