@@ -1,7 +1,6 @@
-{include file="components/chapter4_7/head.tpl"}
-<link rel="stylesheet" type="text/css" href="css/styles.css" />
-</head><body>
-<div id="wrapper">
+{extends file="layouts/chapter4_7/base.tpl"}
+
+{block name="content"}
   <h1>送信ありがとう！</h1>
   <table>
     <tr>
@@ -36,6 +35,4 @@
       <input type="submit" value="もう一度" />
     </form>
   </div>
-</div>
-</body>
-</html>
+{/block}
