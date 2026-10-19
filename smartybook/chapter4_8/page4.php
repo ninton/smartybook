@@ -10,5 +10,5 @@ $tpl = preg_replace('/\.php$/', '.tpl', $php);
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
-$smarty->assign('currentPage', "page4");
+$smarty->assign('currentPage', 'page4');
 $smarty->display('pages/chapter4_8/' . $tpl);
