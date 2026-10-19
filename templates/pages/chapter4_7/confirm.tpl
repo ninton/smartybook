@@ -1,7 +1,6 @@
-{include file="components/chapter4_7/head.tpl"}
-<link rel="stylesheet" type="text/css" href="css/styles.css" />
-</head><body>
-<div id="wrapper">
+{extends file="layouts/chapter4_7/base.tpl"}
+
+{block name="content"}
   <h1>確認</h1>
   <table>
     <tr>
@@ -39,6 +38,4 @@
       <input type="submit" value="送信" />
     </form>
   </div>
-</div>
-</body>
-</html>
+{/block}

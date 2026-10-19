@@ -1,9 +1,6 @@
-{include file="components/chapter4_7/head.tpl"}
+{extends file="layouts/chapter4_7/base.tpl"}
 
-<link rel="stylesheet" type="text/css" href="css/styles.css" />
-</head>
-<body>
-<div id="wrapper">
+{block name="content"}
   <h1>入力</h1>
   <form action="{$smarty.server.SCRIPT_NAME|escape:html}" method="post">
     <input type="hidden" name="action" value="confirm" />
@@ -47,6 +44,4 @@
     </table>
     <div id="button"><input type="submit" value="確認" /></div>'
   </form>
-</div>
-</body>
-</html>
+{/block}
