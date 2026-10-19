@@ -1,16 +1,14 @@
-{include file="components/chapter4_8/header.tpl"}
+{extends file="layouts/chapter4_8/base.tpl"}
 
+{block name="heading"}
 <h3>TAIL PRESS</h3>
+{/block}
 
-{include file="components/chapter4_8/menubox.tpl"}
-
-<div id="contents">
+{block name="content"}
 <h4>簡単に言えばウイリー</h4>
 <p>テールプレスは、後ろ足（テール）側に荷重して前足（ノーズ）側を浮かせます。レギュラースタンスの人なら右足、グーフィースタンスの人なら左足側をプレスします。ちょうどウイリーをした形と一緒です。</p>
 <h4>ノーズプレスよりとっつきやすい</h4>
 <p>テールプレスは、ノーズプレスより比較的簡単です。とにかくエッジを掛けないようにボードをフラットにしさえすればメイクできるはずです。</p>
 <h4>ノーリーできっかけをつくる</h4>
 <p>プレスする前に一旦ノーリー（ノーズのしなりを利用してポップ）すると、トリックのきっかけを掴みやすいです。バランスをとるコツはノーズプレスと同様です。テールプレスの場合は後ろ手を広げるのがポイントです。</p>
-</div>
-
-{include file="components/chapter4_8/footer.tpl"}
+{/block}
