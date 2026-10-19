@@ -10,9 +10,9 @@
 <form method="post" action="02_05.php" enctype="multipart/form-data">
 <table width="100%" border="1">
 <tr>
-<td>カテゴリ</td>
+<td><label for="category">カテゴリ</label></td>
 <td>
-    <select name="category">
+    <select name="category" id="category">
     <option value="Study">Study</option>
         <option value="Eating">Eating</option>
         <option value="Work">Work</option>
@@ -20,12 +20,12 @@
 </td>
 </tr>
 <tr>
-    <td>タイトル</td>
-    <td><input type="text" name="title" /></td>
+    <td><label for="title">タイトル</label></td>
+    <td><input type="text" name="title" id="title" /></td>
 </tr>
 <tr>
-    <td>本文</td>
-    <td><textarea name="contents" cols="50" rows="3"></textarea></td>
+    <td><label for="contents">本文</label></td>
+    <td><textarea name="contents" id="contents" cols="50" rows="3"></textarea></td>
 </tr>
 <tr>
     <td>日時</td>

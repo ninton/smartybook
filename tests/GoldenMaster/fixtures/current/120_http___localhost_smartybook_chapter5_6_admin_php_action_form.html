@@ -26,12 +26,12 @@
 
   <table class="listMeta">
     <tr>
-      <th>リスト名</th>
-      <td><input name="ListName" value="大先生のおすすめ" /></td>
+      <th><label for="ListName">リスト名</label></th>
+      <td><input name="ListName" id="ListName" value="大先生のおすすめ" /></td>
     </tr>
     <tr>
-      <th>ニックネーム</th>
-      <td><input name="NickName" value="Smartyの達人" /></td>
+      <th><label for="NickName">ニックネーム</label></th>
+      <td><input name="NickName" id="NickName" value="Smartyの達人" /></td>
     </tr>
   </table>
 
@@ -50,6 +50,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="1行目のISBN"
             />
       </td>
       <td>
@@ -58,6 +59,7 @@
             value="★★★　大先生に原稿のチェックをしてもらっている。"
             size="30"
             maxlength="200"
+            aria-label="1行目のコメント"
             />
       </td>
     </tr>
@@ -70,6 +72,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="2行目のISBN"
             />
       </td>
       <td>
@@ -78,6 +81,7 @@
             value="★★★　ラッテやお菓子を用意して、大先生のご機嫌をとるのだ。"
             size="30"
             maxlength="200"
+            aria-label="2行目のコメント"
             />
       </td>
     </tr>
@@ -90,6 +94,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="3行目のISBN"
             />
       </td>
       <td>
@@ -98,6 +103,7 @@
             value="★★★　何回も原稿を読んでいるので、もしかしたらSmartyの達人になっているかも？"
             size="30"
             maxlength="200"
+            aria-label="3行目のコメント"
             />
       </td>
     </tr>
@@ -110,6 +116,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="4行目のISBN"
             />
       </td>
       <td>
@@ -118,6 +125,7 @@
             value=""
             size="30"
             maxlength="200"
+            aria-label="4行目のコメント"
             />
       </td>
     </tr>
@@ -130,6 +138,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="5行目のISBN"
             />
       </td>
       <td>
@@ -138,6 +147,7 @@
             value=""
             size="30"
             maxlength="200"
+            aria-label="5行目のコメント"
             />
       </td>
     </tr>
@@ -150,6 +160,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="6行目のISBN"
             />
       </td>
       <td>
@@ -158,6 +169,7 @@
             value=""
             size="30"
             maxlength="200"
+            aria-label="6行目のコメント"
             />
       </td>
     </tr>
@@ -170,6 +182,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="7行目のISBN"
             />
       </td>
       <td>
@@ -178,6 +191,7 @@
             value=""
             size="30"
             maxlength="200"
+            aria-label="7行目のコメント"
             />
       </td>
     </tr>
@@ -190,6 +204,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="8行目のISBN"
             />
       </td>
       <td>
@@ -198,6 +213,7 @@
             value=""
             size="30"
             maxlength="200"
+            aria-label="8行目のコメント"
             />
       </td>
     </tr>
@@ -210,6 +226,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="9行目のISBN"
             />
       </td>
       <td>
@@ -218,6 +235,7 @@
             value=""
             size="30"
             maxlength="200"
+            aria-label="9行目のコメント"
             />
       </td>
     </tr>
@@ -230,6 +248,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="10行目のISBN"
             />
       </td>
       <td>
@@ -238,6 +257,7 @@
             value=""
             size="30"
             maxlength="200"
+            aria-label="10行目のコメント"
             />
       </td>
     </tr>
@@ -250,6 +270,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="11行目のISBN"
             />
       </td>
       <td>
@@ -258,6 +279,7 @@
             value=""
             size="30"
             maxlength="200"
+            aria-label="11行目のコメント"
             />
       </td>
     </tr>
@@ -270,6 +292,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="12行目のISBN"
             />
       </td>
       <td>
@@ -278,6 +301,7 @@
             value=""
             size="30"
             maxlength="200"
+            aria-label="12行目のコメント"
             />
       </td>
     </tr>
@@ -290,6 +314,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="13行目のISBN"
             />
       </td>
       <td>
@@ -298,6 +323,7 @@
             value=""
             size="30"
             maxlength="200"
+            aria-label="13行目のコメント"
             />
       </td>
     </tr>
@@ -310,6 +336,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="14行目のISBN"
             />
       </td>
       <td>
@@ -318,6 +345,7 @@
             value=""
             size="30"
             maxlength="200"
+            aria-label="14行目のコメント"
             />
       </td>
     </tr>
@@ -330,6 +358,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="15行目のISBN"
             />
       </td>
       <td>
@@ -338,6 +367,7 @@
             value=""
             size="30"
             maxlength="200"
+            aria-label="15行目のコメント"
             />
       </td>
     </tr>
@@ -350,6 +380,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="16行目のISBN"
             />
       </td>
       <td>
@@ -358,6 +389,7 @@
             value=""
             size="30"
             maxlength="200"
+            aria-label="16行目のコメント"
             />
       </td>
     </tr>
@@ -370,6 +402,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="17行目のISBN"
             />
       </td>
       <td>
@@ -378,6 +411,7 @@
             value=""
             size="30"
             maxlength="200"
+            aria-label="17行目のコメント"
             />
       </td>
     </tr>
@@ -390,6 +424,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="18行目のISBN"
             />
       </td>
       <td>
@@ -398,6 +433,7 @@
             value=""
             size="30"
             maxlength="200"
+            aria-label="18行目のコメント"
             />
       </td>
     </tr>
@@ -410,6 +446,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="19行目のISBN"
             />
       </td>
       <td>
@@ -418,6 +455,7 @@
             value=""
             size="30"
             maxlength="200"
+            aria-label="19行目のコメント"
             />
       </td>
     </tr>
@@ -430,6 +468,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="20行目のISBN"
             />
       </td>
       <td>
@@ -438,6 +477,7 @@
             value=""
             size="30"
             maxlength="200"
+            aria-label="20行目のコメント"
             />
       </td>
     </tr>
@@ -450,6 +490,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="21行目のISBN"
             />
       </td>
       <td>
@@ -458,6 +499,7 @@
             value=""
             size="30"
             maxlength="200"
+            aria-label="21行目のコメント"
             />
       </td>
     </tr>
@@ -470,6 +512,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="22行目のISBN"
             />
       </td>
       <td>
@@ -478,6 +521,7 @@
             value=""
             size="30"
             maxlength="200"
+            aria-label="22行目のコメント"
             />
       </td>
     </tr>
@@ -490,6 +534,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="23行目のISBN"
             />
       </td>
       <td>
@@ -498,6 +543,7 @@
             value=""
             size="30"
             maxlength="200"
+            aria-label="23行目のコメント"
             />
       </td>
     </tr>
@@ -510,6 +556,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="24行目のISBN"
             />
       </td>
       <td>
@@ -518,6 +565,7 @@
             value=""
             size="30"
             maxlength="200"
+            aria-label="24行目のコメント"
             />
       </td>
     </tr>
@@ -530,6 +578,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="25行目のISBN"
             />
       </td>
       <td>
@@ -538,6 +587,7 @@
             value=""
             size="30"
             maxlength="200"
+            aria-label="25行目のコメント"
             />
       </td>
     </tr>

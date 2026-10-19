@@ -20,12 +20,12 @@
 
   <table class="listMeta">
     <tr>
-      <th>リスト名</th>
-      <td><input name="ListName" value="{$myList->ListName|escape:html}" /></td>
+      <th><label for="ListName">リスト名</label></th>
+      <td><input name="ListName" id="ListName" value="{$myList->ListName|escape:html}" /></td>
     </tr>
     <tr>
-      <th>ニックネーム</th>
-      <td><input name="NickName" value="{$myList->NickName|escape:html}" /></td>
+      <th><label for="NickName">ニックネーム</label></th>
+      <td><input name="NickName" id="NickName" value="{$myList->NickName|escape:html}" /></td>
     </tr>
   </table>
 
@@ -45,6 +45,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
+            aria-label="{$smarty.section.i.iteration|escape:html}行目のISBN"
             />
       </td>
       <td>
@@ -53,6 +54,7 @@
             value="{$myList->detail_arr[i].comment|escape:html}"
             size="30"
             maxlength="200"
+            aria-label="{$smarty.section.i.iteration|escape:html}行目のコメント"
             />
       </td>
     </tr>
