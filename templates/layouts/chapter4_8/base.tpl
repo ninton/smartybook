@@ -7,3 +7,15 @@
 </head>
 <body>
 <div id="wrapper">
+
+{block name="heading"}{/block}
+
+{include file="partials/chapter4_8/menubox.tpl"}
+
+<div id="contents">
+{block name="content"}{/block}
+</div>
+
+</div>
+</body>
+</html>
