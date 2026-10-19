@@ -10,9 +10,9 @@
     <input type="hidden" name="csrf_token" value="{$csrf_token}">
     <table>
       <tr>
-        <th>都道府県</th>
+        <th><label for="prefecture">都道府県</label></th>
         <td>
-          <select name="prefecture">
+          <select name="prefecture" id="prefecture">
             <option value="">選択してください</option>
             {html_options values=$META.prefecture output=$META.prefecture selected=$form.prefecture}
           </select>

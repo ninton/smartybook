@@ -20,12 +20,12 @@
 
   <table class="listMeta">
     <tr>
-      <th>リスト名</th>
-      <td><input name="ListName" value="{$myList->ListName|escape:html}" /></td>
+      <th><label for="ListName">リスト名</label></th>
+      <td><input name="ListName" id="ListName" value="{$myList->ListName|escape:html}" /></td>
     </tr>
     <tr>
-      <th>ニックネーム</th>
-      <td><input name="NickName" value="{$myList->NickName|escape:html}" /></td>
+      <th><label for="NickName">ニックネーム</label></th>
+      <td><input name="NickName" id="NickName" value="{$myList->NickName|escape:html}" /></td>
     </tr>
   </table>
 
