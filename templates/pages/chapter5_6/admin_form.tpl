@@ -45,7 +45,7 @@
             size="14"
             maxlength="13"
             onchange="this.value=isbn13_to_isbn10(this.value)"
-            aria-label="{$smarty.section.i.iteration|escape:html}行目のASIN"
+            aria-label="{$smarty.section.i.iteration|escape:html}行目のISBN"
             />
       </td>
       <td>
