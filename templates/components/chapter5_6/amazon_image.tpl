@@ -28,6 +28,6 @@
     width="{$w|escape:html}"
     height="{$h|escape:html}"
     style="padding:{$pT|escape:html}px {$pR|escape:html}px {$pB|escape:html}px {$pL|escape:html}px"
-    />
+    alt=""/>
 {/if}
 {/strip}
