@@ -6,7 +6,7 @@
   {$myList->ListName|escape:html} - {$myList->NickName|escape:html}
 </h1>
 
-<table class="list" cellspacing="0">
+<table class="list">
   {foreach name=f from=$myList->detail_arr key=i item=detail}
     {if $detail.ASIN != '' || $detail.comment != ''}
   <tr>

@@ -8,7 +8,7 @@
 <div class="message">{$message|escape:html}</div>
   {/if}
 
-<table class="listMeta" cellspacing="2">
+<table class="listMeta">
   <tr>
     <th>リスト名</th>
     <td>{$myList->ListName|escape:html}</td>
@@ -19,7 +19,7 @@
   </tr>
 </table>
 
-<table class="list" cellspacing="0">
+<table class="list">
   {foreach name=f from=$myList->detail_arr key=i item=detail}
     {if $detail.ASIN != '' || $detail.comment != ''}
   <tr>

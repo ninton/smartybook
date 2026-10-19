@@ -3,7 +3,7 @@
 </head><body>
 <div id="wrapper">
   <h1>確認</h1>
-  <table border="0" cellspacing="0">
+  <table>
     <tr>
       <th>都道府県</th>
       <td>{$form.prefecture|default:"(未選択)"|escape:html}</td>

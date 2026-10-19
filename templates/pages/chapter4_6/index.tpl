@@ -19,7 +19,7 @@
   </div>
 
 
-  <table border="0" cellspacing="0">
+  <table style="border: none;">
   {* サーバー側からは静的な構造と初期データ属性のみを出力 *}
   <tr id="sortable-header" data-script-name="{$smarty.server.SCRIPT_NAME}" data-current-sort="{$sortKey|escape}" data-current-dir="{$sortDirection|escape}">
     <th data-sort-key="id">
