@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta charset="utf-8">
 <title>入力内容の確認 | 管理画面</title>
 <link href="css/check.css" rel="stylesheet" type="text/css" />
 </head>
