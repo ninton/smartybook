@@ -3,7 +3,6 @@
 <head>
   <title>複数ある項目を並び替える</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta http-equiv="Content-Style-Type" content="text/css; charset=utf-8" />
   <link rel="stylesheet" type="text/css" href="./css/styles.css" />
 </head>
 <body>
