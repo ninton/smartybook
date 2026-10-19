@@ -111,7 +111,7 @@ ul li ul li ul li a {
 }
 
 /* デフォルトではサブメニュー（2階層目以降）を非表示 */
-#menuBox li > ul {
+#menuBox li.has-children > ul {
   display: none;
 }
 
