@@ -1,3 +1,31 @@
+<?php
+
+// ----- データ準備 -----
+// ウェブサイト名
+$siteName = 'Smarty for Designers';
+
+// バージョン番号
+$revision = 1;
+
+// CSVファイル名
+$csvFilePath = 'data.csv';
+
+// 画像ディレクトリ
+$imageDir = './images/';
+
+// トップページ
+$homeURL = '02_02.php';
+
+// 管理ページ
+$adminURL = '02_04.php';
+
+// カテゴリ一覧
+$categories[0] = 'Study';
+$categories[1] = 'Eating';
+$categories[2] = 'Work';
+
+// ----- HTML表示 -----
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -6,38 +34,15 @@
 </head>
 <body>
 <?php
-// ウェブサイト名
-$siteName = 'Smarty for Designers';
-
-// バージョン番号
-$revision = 1;
-
-// CSVファイル名
-$csv = 'data.csv';
-
-// 画像ディレクトリ
-$imageDir = './images/';
-
-//トップページ
-$home = '02_02.php';
-
-//管理ページ
-$admin = '02_04.php';
-
-// カテゴリ一覧
-$categories[0] = 'Study';
-$categories[1] = 'Eating';
-$categories[2] = 'Work';
-
-echo $siteName . '<br />';
-echo $revision . '<br />';
-echo $csv . '<br />';
-echo $imageDir . '<br />';
-echo $home . '<br />';
-echo $admin . '<br />';
-echo $categories[0] . '<br />';
-echo $categories[1] . '<br />';
-echo $categories[2] . '<br />';
+echo htmlspecialchars($siteName, ENT_QUOTES, 'UTF-8') . '<br>';
+echo $revision . '<br>';
+echo htmlspecialchars($csvFilePath, ENT_QUOTES, 'UTF-8') . '<br>';
+echo htmlspecialchars($imageDir, ENT_QUOTES, 'UTF-8') . '<br>';
+echo htmlspecialchars($homeURL, ENT_QUOTES, 'UTF-8') . '<br>';
+echo htmlspecialchars($adminURL, ENT_QUOTES, 'UTF-8') . '<br>';
+echo htmlspecialchars($categories[0], ENT_QUOTES, 'UTF-8') . '<br>';
+echo htmlspecialchars($categories[1], ENT_QUOTES, 'UTF-8') . '<br>';
+echo htmlspecialchars($categories[2], ENT_QUOTES, 'UTF-8') . '<br>';
 ?>
 </body>
 </html>
