@@ -11,7 +11,9 @@ $revision = 1;
 $csvFilePath = __DIR__ . '/data.csv';
 
 // 画像ディレクトリ
-$imageDir = './images/';
+// ※結合時に二重スラッシュ（//）になるのを防ぐため末尾の '/' は除外
+// （使用時は $imageDir . '/' . $filename と指定）
+$imageDir = './images';
 
 // トップページ
 $homeURL = '02_02.php';

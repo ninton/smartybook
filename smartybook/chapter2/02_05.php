@@ -55,16 +55,20 @@ if (!is_string($_POST['date'] ?? null) || filter_var($_POST['date'], FILTER_VALI
     exit;
 }
 
-// 画像ディレクトリの存在確認・作成
+// 保存先ディレクトリの存在確認（存在しない場合は環境・設定エラーとして終了）
 if (!is_dir($imageDir)) {
-    mkdir($imageDir);
+    http_response_code(500);
+    echo '画像保存ディレクトリが存在しません。環境設定を確認してください。';
+    exit;
 }
 
 // 画像ファイルのアップロード処理
 $imageFile = '';
-if (isset($_FILES['image']['tmp_name']) && is_uploaded_file($_FILES['image']['tmp_name'])) {
-    $imageFile = $imageDir . $_FILES['image']['name'];
-    copy($_FILES['image']['tmp_name'], $imageFile);
+if (isset($_FILES['image']['tmp_name']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
+    $targetPath = $imageDir . '/' . basename($_FILES['image']['name']);
+    if (move_uploaded_file($_FILES['image']['tmp_name'], $targetPath)) {
+        $imageFile = $targetPath;
+    }
 }
 
 // ----- HTML表示 -----
