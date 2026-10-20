@@ -8,7 +8,7 @@ require_once __DIR__ . '/config/config.php';
  * config/config.phpで定義されている変数
  * @var string $siteName
  * @var string $home
- * @var string $admin
+ * @var string $adminURL
  * @var list<string> $categories
  */
 
@@ -16,6 +16,6 @@ require_once __DIR__ . '/config/config.php';
 $smarty = new Smarty();
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
-$smarty->assign('admin', $admin);
+$smarty->assign('adminURL', $adminURL);
 $smarty->assign('categories', $categories);
 $smarty->display('pages/chapter4_3_3/admin.tpl');

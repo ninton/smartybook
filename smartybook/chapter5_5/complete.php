@@ -36,7 +36,7 @@ function convertNl(string $str): string
  * config/config.phpで定義されていて、本ファイルで参照している変数
  * @var string $siteName
  * @var string $home
- * @var string $admin
+ * @var string $adminURL
  * @var string[] $categories
  * @var Auth $oAuth
  */
@@ -84,7 +84,7 @@ if ($_POST['title']) {
     $smarty = new Smarty();
     $smarty->assign('siteName', $siteName);
     $smarty->assign('home', $home);
-    $smarty->assign('admin', $admin);
+    $smarty->assign('adminURL', $adminURL);
     $smarty->assign('flag', $check !== false);
     $smarty->display('pages/chapter5_5/complete.tpl');
 } else {
@@ -92,7 +92,7 @@ if ($_POST['title']) {
     $smarty = new Smarty();
     $smarty->assign('siteName', $siteName);
     $smarty->assign('home', $home);
-    $smarty->assign('admin', $admin);
+    $smarty->assign('adminURL', $adminURL);
     $smarty->assign('categories', $categories);
     $smarty->display('pages/chapter5_5/admin.tpl');
 }
