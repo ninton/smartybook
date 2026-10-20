@@ -5,7 +5,7 @@ set -e
 chmod o+w ./cache
 chmod o+w ./templates_c
 
-chmod o+w ./smartybook/chapter2/data.csv
+chmod o+w ./smartybook/chapter2/data/entries.csv
 chmod o+w ./smartybook/chapter2/images
 
 chmod o+w ./smartybook/chapter4_1/data.csv

@@ -8,7 +8,7 @@ $siteName = 'Smarty for Designers';
 $revision = 1;
 
 // CSVファイル名
-$csvFilePath = __DIR__ . '/data.csv';
+$csvFilePath = __DIR__ . '/data/entries.csv';
 
 // 画像ディレクトリ
 // ※結合時に二重スラッシュ（//）になるのを防ぐため末尾の '/' は除外
