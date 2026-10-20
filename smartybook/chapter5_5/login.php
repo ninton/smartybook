@@ -18,7 +18,7 @@ $smarty = new Smarty();
 $smarty->registerPlugin('function', 'login_form', LoginFormFunction::render(...));
 
 $smarty->assign('siteName', $siteName);
-$smarty->assign('home', $home);
+$smarty->assign('homeURL', $homeURL);
 $smarty->assign('adminURL', $adminURL);
 
 $smarty->assign('self', 'admin.php');

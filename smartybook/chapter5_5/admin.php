@@ -25,7 +25,7 @@ if (!$oAuth->getAuth()) {
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
 $smarty->assign('siteName', $siteName);
-$smarty->assign('home', $home);
+$smarty->assign('homeURL', $homeURL);
 $smarty->assign('adminURL', $adminURL);
 $smarty->assign('categories', $categories);
 $smarty->display('pages/chapter5_5/admin.tpl');

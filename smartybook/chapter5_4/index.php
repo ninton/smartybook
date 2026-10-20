@@ -79,7 +79,7 @@ if (!$smarty->isCached($template)) {
     $smarty->assign('tweetList', $tweetList);
     $smarty->assign('siteName', $siteName);
     $smarty->assign('siteDescription', $siteDescription);
-    $smarty->assign('home', $home);
+    $smarty->assign('homeURL', $homeURL);
     $smarty->assign('categories', $categories);
 }
 

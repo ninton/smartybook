@@ -9,7 +9,7 @@
 <div id="portalPage">
   {* ヘッダーはじまり *}
   <div id="header">
-    <h1 id="siteTitle"><a href="{$home}">{$siteName} : {$smarty.now}</a></h1>
+    <h1 id="siteTitle"><a href="{$homeURL}">{$siteName} : {$smarty.now}</a></h1>
     <h2 id="siteDescription">{$siteDescription}</h2>
   </div>
   {* ヘッダーおわり *}

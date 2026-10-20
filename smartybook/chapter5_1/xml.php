@@ -23,7 +23,7 @@ require_once __DIR__ . '/config/config.php';
 header('Content-Type: application/xml; charset=UTF-8');
 $smarty = new Smarty();
 $smarty->assign('siteName', $siteName);
-$smarty->assign('home', $home);
+$smarty->assign('homeURL', $homeURL);
 $smarty->assign('categories', $categories);
 //$smarty->assign("notice", $notice);
 // CSVデータを配列に格納

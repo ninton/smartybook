@@ -9,7 +9,7 @@ $csv = dirname(__DIR__) . '/data.csv';
 // 画像ディレクトリ
 $imageDir = './images/';
 // ホーム
-$home = 'index.php';
+$homeURL = 'index.php';
 // 管理者ページ
 $adminURL = 'admin.php';
 // カテゴリ一覧

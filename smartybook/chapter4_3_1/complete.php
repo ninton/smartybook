@@ -65,7 +65,7 @@ fclose($fp);
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
 $smarty->assign('siteName', $siteName);
-$smarty->assign('home', $home);
+$smarty->assign('homeURL', $homeURL);
 $smarty->assign('adminURL', $adminURL);
 $smarty->assign('flag', $check !== false);
 $smarty->display('pages/chapter4_3_1/complete.tpl');

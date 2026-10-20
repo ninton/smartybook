@@ -11,7 +11,7 @@ $csv = dirname(__DIR__) . '/data.csv';
 // 画像ディレクトリ
 $imageDir = './images/';
 // ホーム
-$home = 'index.php';
+$homeURL = 'index.php';
 // 管理者ページ
 $adminURL = 'admin.php';
 // カテゴリ一覧
@@ -36,7 +36,7 @@ if (isset($_GET['lo']) && $_GET['lo'] == 'ok') {
  */
 function displayLogin(string $username, int $status): void
 {
-    global $siteName, $adminURL, $home;
+    global $siteName, $adminURL, $homeURL;
 
     $self = $_SERVER['PHP_SELF'];
 
@@ -49,7 +49,7 @@ function displayLogin(string $username, int $status): void
     $smarty->registerPlugin('function', 'login_form', LoginFormFunction::render(...));
     $smarty->assign('siteName', $siteName);
     $smarty->assign('adminURL', $adminURL);
-    $smarty->assign('home', $home);
+    $smarty->assign('homeURL', $homeURL);
     $smarty->assign('self', $self);
     $smarty->assign('username', $username);
     $smarty->assign('errorMessage', $errorMessage);

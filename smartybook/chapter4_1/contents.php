@@ -33,7 +33,7 @@ fclose($fp);
 // テンプレートエンジン初期化・変数アサイン・描画
 $smarty = new Smarty();
 $smarty->assign('siteName', $siteName);
-$smarty->assign('home', $home);
+$smarty->assign('homeURL', $homeURL);
 $smarty->assign('data', $data);
 $smarty->assign('category', $_GET['category']);
 $smarty->display('pages/chapter4_1/contents.tpl');

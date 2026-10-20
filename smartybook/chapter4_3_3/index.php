@@ -38,7 +38,7 @@ fclose($fp);
 $smarty = new Smarty();
 $smarty->registerPlugin('function', 'insert_noticeText2', NoticeTextFunction::render(...));
 $smarty->assign('siteName', $siteName);
-$smarty->assign('home', $home);
+$smarty->assign('homeURL', $homeURL);
 $smarty->assign('categories', $categories);
 $smarty->assign('notice', $notice);
 $smarty->assign('data', $data);

@@ -35,7 +35,7 @@ $smarty = new Smarty();
 // Smarty5 で {insert}タグ廃止予定なので、registerPluginで置き換えました
 $smarty->registerPlugin('function', 'insert_noticeText2', NoticeTextFunction::render(...));
 $smarty->assign('siteName', $siteName);
-$smarty->assign('home', $home);
+$smarty->assign('homeURL', $homeURL);
 $smarty->assign('categories', $categories);
 $smarty->assign('data', $data);
 $smarty->display('pages/chapter4_2_4/index.tpl');

@@ -33,7 +33,7 @@ fclose($fp);
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();
 $smarty->assign('siteName', $siteName);
-$smarty->assign('home', $home);
+$smarty->assign('homeURL', $homeURL);
 $smarty->assign('categories', $categories);
 $smarty->assign('data', $data);
 $smarty->assign('category', $_GET['category']);
