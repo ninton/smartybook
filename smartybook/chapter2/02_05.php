@@ -5,13 +5,48 @@ require_once __DIR__ . '/02_01_b.php';
 /**
  * @var string $siteName
  * @var string $imageDir
+ * @var list<string> $categories
  */
 
-// ----- データ準備・ファイル処理 -----
+// ----- データ準備 & バリデーション (400 Bad Request) -----
 $category = $_POST['category'] ?? '';
-$title    = $_POST['title'] ?? '';
-$contents = $_POST['contents'] ?? '';
+$title    = trim($_POST['title'] ?? '');
+$contents = trim($_POST['contents'] ?? '');
 $date     = (int)($_POST['date'] ?? 0);
+
+// 1. カテゴリの存在チェック
+if (!in_array($category, $categories, true)) {
+    http_response_code(400);
+    echo '不正なカテゴリが選択されました。';
+    exit;
+}
+
+// 2. 必須入力チェック（タイトル・本文）
+if ($title === '' || $contents === '') {
+    http_response_code(400);
+    echo 'タイトルと本文は必須項目です。';
+    exit;
+}
+
+// 3. 文字数制限チェック（タイトル: 100文字、本文: 1000文字）
+if (mb_strlen($title, 'UTF-8') > 100) {
+    http_response_code(400);
+    echo 'タイトルは100文字以内で入力してください。';
+    exit;
+}
+
+if (mb_strlen($contents, 'UTF-8') > 1000) {
+    http_response_code(400);
+    echo '本文は1000文字以内で入力してください。';
+    exit;
+}
+
+// 4. 日時データの正当性チェック
+if ($date <= 0) {
+    http_response_code(400);
+    echo '不正な日時データです。';
+    exit;
+}
 
 // 画像ディレクトリの存在確認・作成
 if (!is_dir($imageDir)) {
