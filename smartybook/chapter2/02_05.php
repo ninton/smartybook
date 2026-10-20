@@ -65,7 +65,13 @@ if (!is_dir($imageDir)) {
 // 画像ファイルのアップロード処理
 $imageFile = '';
 if (isset($_FILES['image']['tmp_name']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
-    $targetPath = $imageDir . '/' . basename($_FILES['image']['name']);
+    // 拡張子の取得（小文字化）
+    $extension = strtolower(pathinfo($_FILES['image']['name'], PATHINFO_EXTENSION));
+
+    // 一意なファイル名の生成（例: 20261020_65f1a2b3c4d5.jpg）
+    $fileName = date('Ymd_') . bin2hex(random_bytes(8)) . ($extension !== '' ? '.' . $extension : '');
+
+    $targetPath = $imageDir . '/' . $fileName;
     if (move_uploaded_file($_FILES['image']['tmp_name'], $targetPath)) {
         $imageFile = $targetPath;
     }
