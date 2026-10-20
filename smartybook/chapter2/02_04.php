@@ -21,7 +21,7 @@ $now = time();
 <tr>
     <td><label for="category">カテゴリ</label></td>
     <td>
-        <select name="category" id="category">
+        <select name="category" id="category" required>
             <?php foreach ($categories as $category): ?>
                 <option value="<?php echo htmlspecialchars($category, ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($category, ENT_QUOTES, 'UTF-8'); ?></option>
             <?php endforeach; ?>
@@ -30,11 +30,11 @@ $now = time();
 </tr>
 <tr>
     <td><label for="title">タイトル</label></td>
-    <td><input type="text" name="title" id="title"></td>
+    <td><input type="text" name="title" id="title" required maxlength="100"></td>
 </tr>
 <tr>
     <td><label for="contents">本文</label></td>
-    <td><textarea name="contents" id="contents" cols="50" rows="3"></textarea></td>
+    <td><textarea name="contents" id="contents" cols="50" rows="3" required maxlength="1000"></textarea></td>
 </tr>
 <tr>
     <td>日時</td>
