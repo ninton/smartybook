@@ -4,8 +4,8 @@ require_once __DIR__ . '/02_01_b.php';
 
 /**
  * @var string $siteName
- * @var string $csv
- * @var string $home
+ * @var string $csvFilePath
+ * @var string $homeURL
  */
 ?>
 
@@ -18,7 +18,7 @@ require_once __DIR__ . '/02_01_b.php';
 <body>
 <?php
 // ファイルを読み込み専用で開く
-$fp = fopen($csv, 'r');
+$fp = fopen($csvFilePath, 'r');
 print '<h1>カテゴリ：' . $_GET['category'] . '</h1>';
 print '<hr />';
 
@@ -35,7 +35,7 @@ while ($arr = fgetcsv($fp, 5000, escape: '')) {
 }
 // CSVファイルを閉じる
 fclose($fp);
-print '<a href="' . $home . '">カテゴリ一覧に戻る</a>';
+print '<a href="' . $homeURL . '">カテゴリ一覧に戻る</a>';
 ?>
 </body>
 </html>
