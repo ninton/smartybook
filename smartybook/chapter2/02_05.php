@@ -10,6 +10,11 @@ require_once __DIR__ . '/02_01_b.php';
 
 // ----- データ準備 & バリデーション (400 Bad Request) -----
 $category = $_POST['category'] ?? '';
+if (!is_string($_POST['title'] ?? '') || !is_string($_POST['contents'] ?? '')) {
+    http_response_code(400);
+    echo 'タイトルと本文は文字列で入力してください。';
+    exit;
+}
 $title    = trim($_POST['title'] ?? '');
 $contents = trim($_POST['contents'] ?? '');
 $date     = (int)($_POST['date'] ?? 0);
