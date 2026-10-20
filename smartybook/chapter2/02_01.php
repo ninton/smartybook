@@ -1,3 +1,26 @@
+<?php
+
+// ----- データ準備 -----
+// ウェブサイト名
+$siteName = 'Smarty for Designers';
+
+// バージョン番号
+$revision = 1;
+
+// CSVファイル名
+$csvFilePath = 'data.csv';
+
+// 画像ディレクトリ
+$imageDir = './images/';
+
+// トップページ
+$homeURL = '02_02.php';
+
+// 管理ページ
+$adminURL = '02_04.php';
+
+// ----- HTML表示 -----
+?>
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -6,30 +29,12 @@
 </head>
 <body>
 <?php
-// ウェブサイト名
-$siteName = 'Smarty for Designers';
-
-// バージョン番号
-$revision = 1;
-
-// CSVファイル名
-$csv = 'data.csv';
-
-// 画像ディレクトリ
-$imageDir = './images/';
-
-//トップページ
-$home = '02_02.php';
-
-//管理ページ
-$admin = '02_04.php';
-
 echo $siteName;
 echo $revision;
-echo $csv;
+echo $csvFilePath;
 echo $imageDir;
-echo $home;
-echo $admin;
+echo $homeURL;
+echo $adminURL;
 ?>
 </body>
 </html>
