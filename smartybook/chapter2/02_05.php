@@ -6,67 +6,73 @@ require_once __DIR__ . '/02_01_b.php';
  * @var string $siteName
  * @var string $imageDir
  */
-?>
 
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="utf-8">
-<title>登録確認 - <?php print $siteName;?></title>
-</head>
-<body>
-<form method="post" action="02_06.php">
-<table border="1">
-<?php
-$contents = nl2br($_POST['contents']);
-// 入力データを確認
-print '<tr>';
-print '<td>カテゴリ</td>';
-print '<td>' . $_POST['category'] . '</td>';
-print '</tr>';
-print '<tr>';
-print '<td>タイトル</td>';
-print '<td>' . $_POST['title'] . '</td>';
-print '</tr>';
-print '<tr>';
-print '<td>本文</td>';
-print '<td>' . $contents . '</td>';
-print '</tr>';
-print '<tr>';
-print '<td>日時</td>';
-print '<td>' . date('Y-m-d H:i:s', $_POST['date']) . '</td>';
-print '</tr>';
-print '<tr>';
-print '<td>画像</td>';
+// ----- データ準備・ファイル処理 -----
+$category = $_POST['category'] ?? '';
+$title    = $_POST['title'] ?? '';
+$contents = $_POST['contents'] ?? '';
+$date     = (int)($_POST['date'] ?? 0);
 
-//画像ディレクトリがあるか調べ、無ければ作成する
+// 画像ディレクトリの存在確認・作成
 if (!is_dir($imageDir)) {
     mkdir($imageDir);
 }
 
-// ファイルをアップロードする
+// 画像ファイルのアップロード処理
+$imageFile = '';
 if (isset($_FILES['image']['tmp_name']) && is_uploaded_file($_FILES['image']['tmp_name'])) {
-    copy($_FILES['image']['tmp_name'], $imageDir . $_FILES['image']['name']);
     $imageFile = $imageDir . $_FILES['image']['name'];
-    print '<td><img src="' . $imageFile . '" /></td>';
-} else {
-    $imageFile = '';
-    print '<td>ファイルは指定されていません。</td>';
+    copy($_FILES['image']['tmp_name'], $imageFile);
 }
-print '</tr>';
+
+// ----- HTML表示 -----
 ?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <title>登録確認 - <?php echo htmlspecialchars($siteName, ENT_QUOTES, 'UTF-8'); ?></title>
+</head>
+<body>
+<form method="post" action="02_06.php">
+<table>
 <tr>
-<td>&nbsp;</td>
-<td><input type="submit" name="submit" value="登録">　<input type="button" value="戻る" onClick="history.back()"></td>
+    <td>カテゴリ</td>
+    <td><?php echo htmlspecialchars($category, ENT_QUOTES, 'UTF-8'); ?></td>
+</tr>
+<tr>
+    <td>タイトル</td>
+    <td><?php echo htmlspecialchars($title, ENT_QUOTES, 'UTF-8'); ?></td>
+</tr>
+<tr>
+    <td>本文</td>
+    <td><?php echo nl2br(htmlspecialchars($contents, ENT_QUOTES, 'UTF-8'), false); ?></td>
+</tr>
+<tr>
+    <td>日時</td>
+    <td><?php echo date('Y-m-d H:i:s', $date); ?></td>
+</tr>
+<tr>
+    <td>画像</td>
+    <td>
+        <?php if ($imageFile !== ''): ?>
+            <img src="<?php echo htmlspecialchars($imageFile, ENT_QUOTES, 'UTF-8'); ?>" alt="">
+        <?php else: ?>
+            ファイルは指定されていません。
+        <?php endif; ?>
+    </td>
+</tr>
+<tr>
+    <td>&nbsp;</td>
+    <td><input type="submit" name="submit" value="登録"> <input type="button" value="戻る" onClick="history.back()"></td>
 </tr>
 </table>
-<?php
-print '<input type="hidden" name="category" value="' . $_POST['category'] . '" />';
-print '<input type="hidden" name="title" value="' . $_POST['title'] . '" />';
-print '<input type="hidden" name="contents" value="' . $_POST['contents'] . '" />';
-print '<input type="hidden" name="date" value="' . $_POST['date'] . '" />';
-print '<input type="hidden" name="image" value="' . $imageFile . '" />';
-?>
+
+<input type="hidden" name="category" value="<?php echo htmlspecialchars($category, ENT_QUOTES, 'UTF-8'); ?>">
+<input type="hidden" name="title" value="<?php echo htmlspecialchars($title, ENT_QUOTES, 'UTF-8'); ?>">
+<input type="hidden" name="contents" value="<?php echo htmlspecialchars($contents, ENT_QUOTES, 'UTF-8'); ?>">
+<input type="hidden" name="date" value="<?php echo htmlspecialchars((string)$date, ENT_QUOTES, 'UTF-8'); ?>">
+<input type="hidden" name="image" value="<?php echo htmlspecialchars($imageFile, ENT_QUOTES, 'UTF-8'); ?>">
 </form>
 </body>
 </html>
