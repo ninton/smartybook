@@ -8,16 +8,16 @@ $siteName = 'Smarty for Designers';
 $revision = 1;
 
 // CSVファイル名
-$csv = 'data.csv';
+$csvFilePath = 'data.csv';
 
 // 画像ディレクトリ
 $imageDir = './images/';
 
-//トップページ
-$home = '02_02.php';
+// トップページ
+$homeURL = '02_02.php';
 
-//管理ページ
-$admin = '02_04.php';
+// 管理ページ
+$adminURL = '02_04.php';
 
 // ----- HTML表示 -----
 ?>
@@ -31,10 +31,10 @@ $admin = '02_04.php';
 <?php
 echo $siteName;
 echo $revision;
-echo $csv;
+echo $csvFilePath;
 echo $imageDir;
-echo $home;
-echo $admin;
+echo $homeURL;
+echo $adminURL;
 ?>
 </body>
 </html>
