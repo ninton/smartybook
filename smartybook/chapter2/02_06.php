@@ -20,36 +20,62 @@ function lastIdCheck($file): int
     return $lastId;
 }
 
-/**
- * 改行文字,カンマ,クォートを処理する関数
- *
- * @param string $str 入力文字列
- * @return string 処理後の文字列
- */
-function convertNl(string $str): string
-{
-    $str = stripslashes($str);
-    $str = str_replace('"', '""', $str);
-    return '"' . $str . '"';
-}
-
-// ----- ビジネスロジック（CSV保存処理） -----
+// ----- データ準備 & バリデーション (400 Bad Request) -----
 /**
  * @var string $siteName
  * @var string $adminURL
+ * @var list<string> $categories
  */
 
-// POSTデータの取得
 $category = $_POST['category'] ?? '';
-$rawTitle    = $_POST['title'] ?? '';
-$rawContents = $_POST['contents'] ?? '';
-$date     = $_POST['date'] ?? '';
-$image    = $_POST['image'] ?? '';
+if (!is_string($_POST['title'] ?? '') || !is_string($_POST['contents'] ?? '')) {
+    http_response_code(400);
+    echo 'タイトルと本文は文字列で入力してください。';
+    exit;
+}
 
+// 改行コードを \n (LF) に統一してから trim
+$rawContents = $_POST['contents'] ?? '';
+$title       = trim($_POST['title'] ?? '');
+$contents    = trim(str_replace("\r\n", "\n", $rawContents));
+$date        = (int)($_POST['date'] ?? 0);
+$image       = $_POST['image'] ?? '';
+
+// 1. カテゴリの存在チェック
+if (!in_array($category, $categories, true)) {
+    http_response_code(400);
+    echo '不正なカテゴリが選択されました。';
+    exit;
+}
+
+// 2. 必須入力チェック
+if ($title === '' || $contents === '') {
+    http_response_code(400);
+    echo 'タイトルと本文は必須項目です。';
+    exit;
+}
+
+// 3. 文字数制限チェック
+if (mb_strlen($title, 'UTF-8') > 100 || mb_strlen($contents, 'UTF-8') > 1000) {
+    http_response_code(400);
+    echo '入力文字数の制限を超えています。';
+    exit;
+}
+
+// 4. 日時データの正当性チェック
+if (!is_string($_POST['date'] ?? null) || filter_var($_POST['date'], FILTER_VALIDATE_INT) === false || $date <= 0) {
+    http_response_code(400);
+    echo '不正な日時データです。';
+    exit;
+}
+
+// ----- ビジネスロジック（CSV保存処理） -----
 // CSVファイルを読み込み、追記両用で開く
 $fp = fopen(__DIR__ . '/data.csv', 'a+');
 if ($fp === false) {
-    die('file_open_error');
+    http_response_code(500);
+    echo 'データファイルのオープンに失敗しました。';
+    exit;
 }
 
 // CSVファイルをロック
@@ -61,13 +87,11 @@ $lastId = lastIdCheck($fp);
 // IDが4桁に満たない番号の場合、0で埋めて4桁表示にする
 $id = sprintf('%04d', $lastId + 1);
 
-// 書き込むデータを生成
-$title    = convertNl($rawTitle);
-$contents = convertNl($rawContents);
-$string   = "$id,$category,$title,$contents,$date,$image\n";
+// 書き込む配列データを準備（fputcsv が適切にエスケープとクォートを処理）
+$row = [$id, $category, $title, $contents, (string)$date, $image];
 
-// CSVファイルに書き込み
-$isSuccess = (fwrite($fp, $string) !== false);
+// CSVファイルに書き込み (PHP 8.4+ escape: '' 明示)
+$isSuccess = (fputcsv($fp, $row, escape: '') !== false);
 
 // CSVファイルのロックを解除・クローズ
 flock($fp, LOCK_UN);
