@@ -25,6 +25,7 @@ function lastIdCheck($file): int
  * @var string $siteName
  * @var string $adminURL
  * @var list<string> $categories
+ * @var string $csvFilePath
  */
 
 $category = $_POST['category'] ?? '';
@@ -71,7 +72,7 @@ if (!is_string($_POST['date'] ?? null) || filter_var($_POST['date'], FILTER_VALI
 
 // ----- ビジネスロジック（CSV保存処理） -----
 // CSVファイルを読み込み、追記両用で開く
-$fp = fopen(__DIR__ . '/data.csv', 'a+');
+$fp = fopen($csvFilePath, 'a+');
 if ($fp === false) {
     http_response_code(500);
     echo 'データファイルのオープンに失敗しました。';
