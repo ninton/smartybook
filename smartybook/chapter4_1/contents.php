@@ -8,13 +8,13 @@ require_once __DIR__ . '/config/config.php';
  * config/config.phpで定義されている変数
  * @var string $siteName
  * @var string $homeURL
- * @var string $csv
+ * @var string $csvFilePath
  */
 
 
 // メイン処理・データ操作
 // CSVデータを配列に格納
-$fp = fopen($csv, 'r');
+$fp = fopen($csvFilePath, 'r');
 $i = 0;
 $data = [];
 while ($array = fgetcsv($fp, 5000, escape: '')) {

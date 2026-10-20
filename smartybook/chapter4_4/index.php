@@ -5,13 +5,13 @@ use App\Smarty\AppSmarty as Smarty;
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 
 // CSVファイルパス
-$csv = __DIR__ . '/data.csv';
+$csvFilePath = __DIR__ . '/data.csv';
 
 // ----- メイン処理・データ操作 -----
 // CSVデータを配列に格納
 /** @var array<int, array<string, string>> $data */
 $data = [];
-$fp = fopen($csv, 'r');
+$fp = fopen($csvFilePath, 'r');
 $i = 0;
 while ($array = fgetcsv($fp, 5000, escape: '')) {
     $data[$i]['id']       = $array[0];

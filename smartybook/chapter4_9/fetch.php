@@ -9,7 +9,7 @@ require_once __DIR__ . '/config/config.php';
 
 /**
  * @var list<string> $categories
- * @var string $csv
+ * @var string $csvFilePath
  */
 
 // ----- メイン処理・データ操作 -----
@@ -17,7 +17,7 @@ require_once __DIR__ . '/config/config.php';
 $menu_arr = ChapterHelper::get_menu_arr($categories);
 
 // 注目記事
-$featured_arr = ChapterHelper::get_featured_arr($csv);
+$featured_arr = ChapterHelper::get_featured_arr($csvFilePath);
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
 $smarty = new Smarty();

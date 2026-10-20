@@ -5,7 +5,7 @@ $siteName = 'Smarty for Designers';
 // サイトの説明
 $siteDescription = '日々の悪戦苦闘を語ります';
 // CSVファイル名
-$csv = dirname(__DIR__) . '/data.csv';
+$csvFilePath = dirname(__DIR__) . '/data.csv';
 // 画像ディレクトリ
 $imageDir = './images/';
 // ホーム

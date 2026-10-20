@@ -11,7 +11,7 @@ require_once __DIR__ . '/config/config.php';
  * @var string $siteDescription
  * @var string $homeURL
  * @var list<string> $categories
- * @var string $csv
+ * @var string $csvFilePath
  */
 
 // ----- 前処理（初期化・共通変数準備） -----
@@ -31,7 +31,7 @@ if (!$smarty->isCached($template)) {
     $notice  = '';
 
     // CSVデータを配列に格納
-    $fp = fopen($csv, 'r');
+    $fp = fopen($csvFilePath, 'r');
     $i = 0;
     $p = 0;
 

@@ -3,7 +3,7 @@
 // ウェブサイト名
 $siteName = 'Smarty for Designers';
 // CSVファイル名
-$csv = dirname(__DIR__) . '/data.csv';
+$csvFilePath = dirname(__DIR__) . '/data.csv';
 // 画像ディレクトリ
 $imageDir = './images/';
 // ホーム
