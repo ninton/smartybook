@@ -17,7 +17,7 @@ require_once __DIR__ . '/config/config.php';
  * @var string $siteName
  * @var string $homeURL
  * @var list<string> $categories
- * @var string $csv
+ * @var string $csvFilePath
  */
 
 header('Content-Type: application/xml; charset=UTF-8');
@@ -27,7 +27,7 @@ $smarty->assign('homeURL', $homeURL);
 $smarty->assign('categories', $categories);
 //$smarty->assign("notice", $notice);
 // CSVデータを配列に格納
-$fp = fopen($csv, 'r');
+$fp = fopen($csvFilePath, 'r');
 $i = 0;
 /** @var array<int, array<string, mixed>> $data */
 while ($array = fgetcsv($fp, 5000, escape: '')) {

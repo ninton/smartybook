@@ -19,13 +19,13 @@ function insert_noticeText(): string
  * @var string $siteName
  * @var string $homeURL
  * @var list<string> $categories
- * @var string $csv
+ * @var string $csvFilePath
  * @var list<array{id: string, category: string, title: string, text: string, time: string, image: string}> $data
  */
 
 // ----- メイン処理・データ操作 -----
 // CSVデータを配列に格納
-$fp = fopen($csv, 'r');
+$fp = fopen($csvFilePath, 'r');
 $i = 0;
 while ($array = fgetcsv($fp, 5000, escape: '')) {
     $data[$i]['id']       = $array[0];

@@ -19,13 +19,13 @@ function insert_noticeText(): string
  * @var string $siteName
  * @var string $homeURL
  * @var string[] $categories
- * @var string $csv
+ * @var string $csvFilePath
  * @var list<array<string, string|int>> $data
  */
 
 // ----- メイン処理・データ操作 -----
 // CSVデータを配列に格納
-$fp = fopen($csv, 'r');
+$fp = fopen($csvFilePath, 'r');
 $i = 0;
 while ($array = fgetcsv($fp, 5000, escape: '')) {
     if ($_GET['category'] == $array[1]) {

@@ -9,12 +9,12 @@ require_once __DIR__ . '/config/config.php';
  * @var string $siteName
  * @var string $homeURL
  * @var list<string> $categories
- * @var string $csv
+ * @var string $csvFilePath
  */
 
 // ----- メイン処理・データ操作 -----
 // CSVデータを配列に格納
-$fp = fopen($csv, 'r');
+$fp = fopen($csvFilePath, 'r');
 $data = [];
 $i = 0;
 while ($array = fgetcsv($fp, 5000, escape: '')) {

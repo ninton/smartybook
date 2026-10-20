@@ -19,14 +19,14 @@ function insert_noticeText2(array $siteName): string
  * config/config.phpで定義されている変数
  * @var string $siteName
  * @var string $homeURL
- * @var string $csv
+ * @var string $csvFilePath
  * @var list<string> $categories
  * @var list<array{id: string, category: string, title: string, text: string, time: string, image: string}> $data
  */
 
 // ----- メイン処理・データ操作 -----
 // CSVデータを配列に格納
-$fp = fopen($csv, 'r');
+$fp = fopen($csvFilePath, 'r');
 $i = 0;
 while ($array = fgetcsv($fp, 5000, escape: '')) {
     if ($_GET['category'] == $array[1]) {
