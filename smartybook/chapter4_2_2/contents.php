@@ -17,7 +17,7 @@ function insert_noticeText(): string
 /**
  * config/config.phpで定義されている変数
  * @var string $siteName
- * @var string $home
+ * @var string $homeURL
  * @var string[] $categories
  * @var string $csv
  * @var list<array<string, string|int>> $data

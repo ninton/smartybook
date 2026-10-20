@@ -35,7 +35,7 @@ function convertNl(string $str): string
 /**
  * config/config.phpで定義されていて、本ファイルで参照している変数
  * @var string $siteName
- * @var string $home
+ * @var string $homeURL
  * @var string $adminURL
  * @var string[] $categories
  * @var Auth $oAuth
