@@ -16,7 +16,9 @@ if (!is_string($_POST['title'] ?? '') || !is_string($_POST['contents'] ?? '')) {
     exit;
 }
 $title    = trim($_POST['title'] ?? '');
-$contents = trim($_POST['contents'] ?? '');
+// 改行コードを \n (LF) に統一してから trim
+$rawContents = $_POST['contents'] ?? '';
+$contents    = trim(str_replace("\r\n", "\n", $rawContents));
 $date     = (int)($_POST['date'] ?? 0);
 
 // 1. カテゴリの存在チェック
