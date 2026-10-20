@@ -47,7 +47,7 @@ if (mb_strlen($contents, 'UTF-8') > 1000) {
 }
 
 // 4. 日時データの正当性チェック
-if ($date <= 0) {
+if (!is_string($_POST['date'] ?? null) || filter_var($_POST['date'], FILTER_VALIDATE_INT) === false || $date <= 0) {
     http_response_code(400);
     echo '不正な日時データです。';
     exit;
