@@ -9,7 +9,7 @@
 <div id="entrypage">
   {* ヘッダーはじまり *}
   <div id="header">
-    <h1 id="siteTitle"><a href="{$admin}"><img src="images/system_title.gif" alt="入力内容の確認 | 管理画面" /></a></h1>
+    <h1 id="siteTitle"><a href="{$adminURL}"><img src="images/system_title.gif" alt="入力内容の確認 | 管理画面" /></a></h1>
   </div>
   {* ヘッダーおわり *}
   {* メインはじまり *}

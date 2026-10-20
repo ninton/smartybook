@@ -35,7 +35,7 @@ function convertNl(string $str): string
  * config/config.phpで定義されている変数
  * @var string $siteName
  * @var string $home
- * @var string $admin
+ * @var string $adminURL
  */
 
 // ----- 入力値受取・前処理 -----
@@ -66,6 +66,6 @@ fclose($fp);
 $smarty = new Smarty();
 $smarty->assign('siteName', $siteName);
 $smarty->assign('home', $home);
-$smarty->assign('admin', $admin);
+$smarty->assign('adminURL', $adminURL);
 $smarty->assign('flag', $check !== false);
 $smarty->display('pages/chapter4_3_3/complete.tpl');

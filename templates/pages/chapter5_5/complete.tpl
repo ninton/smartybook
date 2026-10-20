@@ -9,7 +9,7 @@
 <div id="entrypage">
   {* ヘッダーはじまり *}
   <div id="header">
-    <h1 id="siteTitle"><a href="{$admin}"><img src="images/system_title.gif" alt="投稿完了 | 管理画面" /></a></h1>
+    <h1 id="siteTitle"><a href="{$adminURL}"><img src="images/system_title.gif" alt="投稿完了 | 管理画面" /></a></h1>
   </div>
   {* ヘッダーおわり *}
   {* メインはじまり *}
@@ -28,7 +28,7 @@
         <span class="attention">書き込みに失敗しました。 / <a href="admin.php?lo=ok">ログアウトする</a></span>
       {/if}
             </p>
-      <p><a href="{$admin}"><img src="./images/form_btn_end.gif" alt="戻る" width="155" height="24" /></a></p>
+      <p><a href="{$adminURL}"><img src="./images/form_btn_end.gif" alt="戻る" width="155" height="24" /></a></p>
     </div>
   </div>
   {* 情報パネルおわり *}

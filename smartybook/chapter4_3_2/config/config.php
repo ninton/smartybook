@@ -9,7 +9,7 @@ $imageDir = './images/';
 // ホーム
 $home = 'index.php';
 // 管理者ページ
-$admin = 'admin.php';
+$adminURL = 'admin.php';
 // カテゴリ一覧
 $categories = ['Study', 'Eating', 'Work'];
 //$notice = "あいさつです。あいさつです。";
