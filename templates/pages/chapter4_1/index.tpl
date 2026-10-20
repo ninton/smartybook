@@ -10,7 +10,7 @@
   {* ヘッダーはじまり *}
   <div id="header">
     <div id="intro">
-      <h1 id="siteTitle"><a href="{$home}"><img src="images/top_title.gif" alt="{$siteName}" /></a></h1>
+      <h1 id="siteTitle"><a href="{$homeURL}"><img src="images/top_title.gif" alt="{$siteName}" /></a></h1>
       <div id="index">
         <h2 class="categories"><img alt="カテゴリー" src="images/top_menu_categories.gif" /></h2>
 {section name="menu" loop=$categories}

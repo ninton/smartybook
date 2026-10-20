@@ -17,7 +17,7 @@ function insert_noticeText(): string
 /**
  * config/config.phpで定義されている変数
  * @var string $siteName
- * @var string $home
+ * @var string $homeURL
  * @var string[] $categories
  * @var string $csv
  * @var list<array<string, string|int>> $data
@@ -45,7 +45,7 @@ $smarty = new Smarty();
 // Smarty 5 から insertタグは廃止されました。代わりに registerPlugin を使って関数プラグインを登録します。
 $smarty->registerPlugin('function', 'insert_noticeText', 'insert_noticeText');
 $smarty->assign('siteName', $siteName);
-$smarty->assign('home', $home);
+$smarty->assign('homeURL', $homeURL);
 $smarty->assign('categories', $categories);
 $smarty->assign('data', $data);
 $smarty->assign('category', $_GET['category']);

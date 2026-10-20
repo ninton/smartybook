@@ -9,7 +9,7 @@ require_once __DIR__ . '/config/config.php';
  * config/config.phpで定義されている変数
  * @var string $siteName
  * @var string $siteDescription
- * @var string $home
+ * @var string $homeURL
  * @var list<string> $categories
  * @var string $csv
  */
@@ -79,7 +79,7 @@ if (!$smarty->isCached($template)) {
     $smarty->assign('tweetList', $tweetList);
     $smarty->assign('siteName', $siteName);
     $smarty->assign('siteDescription', $siteDescription);
-    $smarty->assign('home', $home);
+    $smarty->assign('homeURL', $homeURL);
     $smarty->assign('categories', $categories);
 }
 

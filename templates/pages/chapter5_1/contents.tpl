@@ -9,13 +9,13 @@
 <div id="entrypage">
   {* ヘッダーはじまり *}
   <div id="header">
-    <h1 id="siteTitle"><a href="{$home}"><img src="images/page_title.gif" alt="{$siteName}" /></a></h1>
+    <h1 id="siteTitle"><a href="{$homeURL}"><img src="images/page_title.gif" alt="{$siteName}" /></a></h1>
   </div>
   {* ヘッダーおわり *}
   {* メインはじまり *}
   <div id="main" class="clearfix">
     {* パンくず *}
-    <div id="topicPath"><p><a href="{$home}">Home</a> &gt; {$category|escape}</p></div>
+    <div id="topicPath"><p><a href="{$homeURL}">Home</a> &gt; {$category|escape}</p></div>
     {* コンテンツはじまり *}
     <div id="contents">
       <div id=notice>

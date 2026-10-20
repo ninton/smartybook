@@ -8,7 +8,7 @@ require_once __DIR__ . '/config/config.php';
 /**
  * config/config.phpで定義されている変数
  * @var string $siteName
- * @var string $home
+ * @var string $homeURL
  * @var string $adminURL
  * @var string[] $categories
  * @var Auth $oAuth
@@ -45,7 +45,7 @@ if ($_POST['title']) {
     // ----- テンプレートエンジンの初期化とアサイン・描画 -----
     $smarty = new Smarty();
     $smarty->assign('siteName', $siteName);
-    $smarty->assign('home', $home);
+    $smarty->assign('homeURL', $homeURL);
     $smarty->assign('adminURL', $adminURL);
     $smarty->assign('category', $_POST['category']);
     $smarty->assign('title', stripslashes($_POST['title']));
@@ -57,7 +57,7 @@ if ($_POST['title']) {
     // ----- テンプレートエンジンの初期化とアサイン・描画 -----
     $smarty = new Smarty();
     $smarty->assign('siteName', $siteName);
-    $smarty->assign('home', $home);
+    $smarty->assign('homeURL', $homeURL);
     $smarty->assign('adminURL', $adminURL);
     $smarty->assign('categories', $categories);
     $smarty->display('pages/chapter5_5/admin.tpl');

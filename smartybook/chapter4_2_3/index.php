@@ -19,7 +19,7 @@ function insert_noticeText2(array $siteName): string
  * config/config.phpで定義されている変数
  * @var string $siteName
  * @var string $csv
- * @var string $home
+ * @var string $homeURL
  * @var list<string> $categories
  * @var list<array{id: string, category: string, title: string, text: string, time: string, image: string}> $data
  */
@@ -43,7 +43,7 @@ fclose($fp);
 $smarty = new Smarty();
 $smarty->registerPlugin('function', 'insert_noticeText2', insert_noticeText2(...));
 $smarty->assign('siteName', $siteName);
-$smarty->assign('home', $home);
+$smarty->assign('homeURL', $homeURL);
 $smarty->assign('categories', $categories);
 $smarty->assign('data', $data);
 $smarty->display('pages/chapter4_2_3/index.tpl');

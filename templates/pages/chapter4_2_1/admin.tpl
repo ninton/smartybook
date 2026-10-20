@@ -14,7 +14,7 @@
   {* ヘッダーおわり *}
   {* メインはじまり *}
   <div id="main">
-    <div id="navigation"><p><a href="{$home}">サイト閲覧</a> | 管理画面</p></div>
+    <div id="navigation"><p><a href="{$homeURL}">サイト閲覧</a> | 管理画面</p></div>
   {* 情報パネルはじまり *}
   <div class="panel">
     <div class="header">
