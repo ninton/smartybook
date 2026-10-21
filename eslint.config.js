@@ -1,4 +1,5 @@
 import js from '@eslint/js';
+import globals from 'globals';
 import tseslint from 'typescript-eslint';
 import prettierConfig from 'eslint-config-prettier';
 
@@ -10,7 +11,13 @@ export default tseslint.config(
   // JS & TS 共通推奨ルール
   js.configs.recommended,
   ...tseslint.configs.recommended,
-  // Prettier と競合するルールを無効化
+  {
+    languageOptions: {
+      globals: {
+        ...globals.browser, // document, window などのブラウザ標準オブジェクトを許可
+      },
+    },
+  }, // Prettier と競合するルールを無効化
   prettierConfig,
   {
     files: ['**/*.{js,mjs,cjs,ts,tsx}'],
