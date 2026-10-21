@@ -1,3 +1,4 @@
+// noinspection JSUnusedGlobalSymbols tplでimportしています
 /**
  * スライドショーギャラリー管理クラス
  */
@@ -219,10 +220,12 @@ export class SmartyPG {
     if (!this.thumbArea) return;
     const thumbBoxes = this.thumbArea.childNodes;
     if (thumbBoxes[oldNum]) {
-      (/** @type {HTMLElement} */ (thumbBoxes[oldNum])).className = 'thumb thumbOff';
+      // noinspection JSUndefinedPropertyAssignment,JSValidateTypes
+      /** @type {HTMLElement} */ (thumbBoxes[oldNum]).className = 'thumb thumbOff';
     }
     if (thumbBoxes[newNum]) {
-      (/** @type {HTMLElement} */ (thumbBoxes[newNum])).className = 'thumb thumbOn';
+      // noinspection JSUndefinedPropertyAssignment,JSValidateTypes
+      /** @type {HTMLElement} */ (thumbBoxes[newNum]).className = 'thumb thumbOn';
     }
   }
 
