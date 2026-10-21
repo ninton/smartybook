@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const thElements = headerRow.querySelectorAll('th[data-sort-key]');
   thElements.forEach((th) => {
     const sortKey = /** @type {HTMLElement} */ (th).dataset.sortKey;
+    // noinspection JSIncompatibleTypesComparison PhpStormの誤検知
     if (sortKey === currentSort) {
       const targetLink = Array.from(th.querySelectorAll('a[data-direction]'))
         .find((link) => /** @type {HTMLElement} */ (link).dataset.direction === currentDir)
