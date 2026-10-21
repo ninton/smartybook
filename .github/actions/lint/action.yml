@@ -22,6 +22,8 @@ runs:
           css:
             - added|modified: '**/*.css'
           php:
+            - added|modified: 'app/**/*.php'
+            - added|modified: 'bootstrap/**/*.php'
             - added|modified: 'smartybook/**/*.php'
             - added|modified: 'tests/**/*.php'
           # actionlint 用なので、prettier用とは別途定義
