@@ -1,10 +1,7 @@
 /**
  * スライドショーギャラリー管理クラス
  */
-/**
- * スライドショーギャラリー管理クラス
- */
-class SmartyPG {
+export class SmartyPG {
   /**
    * @param {string[]} images 画像パスの配列
    * @param {string} slideFlag スライドショー初期状態 ('on' | 'off')
@@ -222,10 +219,10 @@ class SmartyPG {
     if (!this.thumbArea) return;
     const thumbBoxes = this.thumbArea.childNodes;
     if (thumbBoxes[oldNum]) {
-      /** @type {HTMLElement} */ (thumbBoxes[oldNum]).className = 'thumb thumbOff';
+      (/** @type {HTMLElement} */ (thumbBoxes[oldNum])).className = 'thumb thumbOff';
     }
     if (thumbBoxes[newNum]) {
-      /** @type {HTMLElement} */ (thumbBoxes[newNum]).className = 'thumb thumbOn';
+      (/** @type {HTMLElement} */ (thumbBoxes[newNum])).className = 'thumb thumbOn';
     }
   }
 
@@ -298,5 +295,3 @@ class SmartyPG {
     }
   }
 }
-
-export default SmartyPG;
