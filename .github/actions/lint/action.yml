@@ -50,7 +50,7 @@ runs:
         dockerfile: ${{ steps.paths_filter.outputs.docker_files }}
 
     # ========================================
-    # YAML, MD, XML, JSON, JSONC フォーマット系
+    # CSS, YAML, MD, XML, JSON, JSONC フォーマット系
     # ========================================
     - name: Check format (Prettier)
       if: steps.paths_filter.outputs.prettier == 'true'
