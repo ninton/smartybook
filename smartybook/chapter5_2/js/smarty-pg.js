@@ -2,7 +2,7 @@
 /**
  * スライドショーギャラリー管理クラス
  */
-export class SmartyPG {
+export default class SmartyPG {
   /**
    * @param {string[]} images 画像パスの配列
    * @param {string} slideFlag スライドショー初期状態 ('on' | 'off')
