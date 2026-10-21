@@ -17,7 +17,7 @@ export default tseslint.config(
         ...globals.browser, // document, window などのブラウザ標準オブジェクトを許可
       },
     },
-  },  // Prettier と競合するルールを無効化
+  }, // Prettier と競合するルールを無効化
   prettierConfig,
   {
     files: ['**/*.{js,mjs,cjs,ts,tsx}'],
