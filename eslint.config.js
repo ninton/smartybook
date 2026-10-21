@@ -5,14 +5,7 @@ import prettierConfig from 'eslint-config-prettier';
 export default tseslint.config(
   // 除外対象（.gitignore 相当）
   {
-    ignores: [
-      'node_modules/',
-      'vendor/',
-      'templates_c/',
-      'cache/',
-      '*.min.js',
-      'smartybook/chapter5_1/flash/',
-    ],
+    ignores: ['node_modules/', 'vendor/', 'templates_c/', 'cache/', '*.min.js', 'smartybook/chapter5_1/flash/'],
   },
   // JS & TS 共通推奨ルール
   js.configs.recommended,
