@@ -1,25 +1,23 @@
-<div id="menuBox">
-<h4>MENU</h4>
-
-{* メニューhtml。現在アクセスしているメニューIDによって、アクティブ表示やサブメニュー展開する *}
-<ul>
-<li><a href="index.php" {if $currentPage == 'index.php'}aria-current="page" class="active"{/if}>INDEX</a>
+{* 再帰レンダリング用の Smarty 関数定義 *}
+{function name=render_menu items=[]}
   <ul>
-  <li><a href="cate1.php" {if $currentPage == 'cate1.php'}aria-current="page" class="active"{/if}>PRESS TRICK</a>
-      <ul>
-      <li><a href="page1.php" {if $currentPage == 'page1.php'}aria-current="page" class="active"{/if}>NOSE PRESS</a></li>
-      <li><a href="page2.php" {if $currentPage == 'page2.php'}aria-current="page" class="active"{/if}>TAIL PRESS</a></li>
-      </ul>
-  </li>
-  
-  <li><a href="cate2.php" {if $currentPage == 'cate2.php'}aria-current="page" class="active"{/if}>SPIN TRICK</a>
-      <ul>
-      <li><a href="page3.php" {if $currentPage == 'page3.php'}aria-current="page" class="active"{/if}>FRONTSIDE 180</a></li>
-      <li><a href="page4.php" {if $currentPage == 'page4.php'}aria-current="page" class="active"{/if}>BACKSIDE 180</a></li>
-      </ul>
-  </li>
-  </ul>
-</li>
-</ul>
+  {foreach $items as $item}
+    {assign var="is_current" value=($item.url == $currentPage)}
+    <li>
+      <a href="{$item.url|escape}" {if $is_current}aria-current="page" class="active"{/if}>{$item.title|escape}</a>
 
+    {* 子要素が存在する場合は再帰呼び出し *}
+    {if !empty($item.children)}
+      {render_menu items=$item.children}
+    {/if}
+    </li>
+  {/foreach}
+  </ul>
+{/function}
+
+<div id="menuBox">
+  <h4>MENU</h4>
+
+{* ルートの呼び出し *}
+{render_menu items=$menuTree}
 </div>
