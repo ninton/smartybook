@@ -10,7 +10,7 @@
 
 {block name="heading"}{/block}
 
-{include file="partials/chapter4_8/menubox.tpl"}
+{include file="partials/chapter4_8/menu_box.tpl"}
 
 <div id="contents">
 {block name="content"}{/block}
