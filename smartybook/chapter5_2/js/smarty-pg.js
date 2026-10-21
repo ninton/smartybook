@@ -1,224 +1,302 @@
 /**
- * フォトギャラリークラス
+ * スライドショーギャラリー管理クラス
  */
-var SmartyPG = function (images, slideFlag, slideTerm) {
-  this.mainDiv = document.getElementById('pg_main');
-  this.thumbDiv = document.getElementById('pg_thumb');
-  this.controllerDiv = document.getElementById('pg_controller');
-  this.mainImgIdName = 'mainImgBox';
-  this.controllerIdName = 'controllerBox';
-  this.thumbAreaIdName = 'thumbArea';
-  this.mainImg;
-  this.thumbArea;
-  this.imgArray = new Array();
-  this.nowNum = 0;
-  this.imgs = images;
-  this.imgsLength = images.length;
-  this.nLoaded = 0;
-  this.slideFlag = slideFlag;
-  this.slideTerm = slideTerm;
-  this.timer;
-  this.nowOpa;
-  if (images.length > 0) {
-    this.mainDiv.innerHTML = 'Now Loading...';
-    this.preloadImg();
-  } else {
-    this.mainDiv.innerHTML = 'There is no image.';
-  }
-};
-// 画像のプリロード
-SmartyPG.prototype.preloadImg = function () {
-  var thisObj = this;
-  this.timer = setTimeout(function () {
-    thisObj.mainDiv.innerHTML = 'Timeout.';
-  }, 5000);
-  var images = thisObj.imgs;
-  var imagesLength = thisObj.imgsLength;
-  var imgArray = thisObj.imgArray;
-  for (var i = 0; i < imagesLength; i++) {
-    imgArray[i] = new Image();
-    imgArray[i].onload = function () {
-      thisObj.checkImgLoading();
-    };
-    imgArray[i].src = images[i];
-  }
-};
-// 画像ロードのチェック
-SmartyPG.prototype.checkImgLoading = function () {
-  var thisObj = this;
-  // 全ての画像の読み込みを完了したらスタート
-  if (++thisObj.nLoaded >= thisObj.imgsLength) {
-    clearTimeout(thisObj.timer);
-    thisObj.createThumbImg();
-    thisObj.createController();
-    thisObj.mainDiv.innerHTML = '';
-    thisObj.createMainImg();
-    thisObj.fadein(1);
-  }
-};
-// サムネイル作成
-SmartyPG.prototype.createThumbImg = function () {
-  var thisObj = this;
-  var imagesLength = thisObj.imgsLength;
-  var images = thisObj.imgs;
-  var imgArray = thisObj.imgArray;
+/**
+ * スライドショーギャラリー管理クラス
+ */
+class SmartyPG {
+  /**
+   * @param {string[]} images 画像パスの配列
+   * @param {string} slideFlag スライドショー初期状態 ('on' | 'off')
+   * @param {number} slideTerm 切り替え間隔（ミリ秒）
+   */
+  constructor(images, slideFlag, slideTerm) {
+    /** @type {HTMLElement | null} */
+    this.mainDiv = document.getElementById('pg_main');
+    /** @type {HTMLElement | null} */
+    this.thumbDiv = document.getElementById('pg_thumb');
+    /** @type {HTMLElement | null} */
+    this.controllerDiv = document.getElementById('pg_controller');
 
-  var thumbArea = document.createElement('div');
-  thumbArea.setAttribute('id', thisObj.thumbAreaIdName);
-  thumbArea.setAttribute('class', 'clearfix');
+    this.mainImgIdName = 'mainImgBox';
+    this.controllerIdName = 'controllerBox';
+    this.thumbAreaIdName = 'thumbArea';
 
-  thisObj.thumbDiv.appendChild(thumbArea);
-  thisObj.thumbArea = thumbArea;
+    /** @type {HTMLElement | null} */
+    this.mainImg = null;
+    /** @type {HTMLElement | null} */
+    this.thumbArea = null;
 
-  // 画像数分サムネイルを作成
-  for (var i = 0; i < imagesLength; i++) {
-    var thumbBox = document.createElement('div');
-    thumbBox.className = 'thumb thumbOff';
-    thumbBox.onmouseover = function () {
-      this.className = this.className + ' thumbOver';
-    };
-    thumbBox.onmouseout = function () {
-      this.className = this.className.split('thumbOver')[0];
-    };
-    thumbArea.appendChild(thumbBox);
+    /** @type {HTMLImageElement[]} */
+    this.imgArray = [];
+    this.nowNum = 0;
+    this.imgs = images;
+    this.imgsLength = images.length;
+    this.nLoaded = 0;
+    this.slideFlag = slideFlag;
+    this.slideTerm = slideTerm;
 
-    var thumbAnchor = document.createElement('a');
-    thumbAnchor.setAttribute('href', 'javascript:void(0);');
-    thumbAnchor.num = i;
-    thumbAnchor.onclick = function () {
-      // サムネイルをクリックしたときの処理
-      SmartyPG.changeOpacity(this, 100);
-      clearTimeout(thisObj.timer);
-      thisObj.changeActiveThumb(thisObj.nowNum, this.num);
-      thisObj.changeImg(this.num);
-      thisObj.nowNum = this.num;
-      if (thisObj.slideFlag == 'on') thisObj.fadein(1);
-    };
-    thumbBox.appendChild(thumbAnchor);
+    /** @type {ReturnType<typeof setTimeout> | null} */
+    this.timer = null;
+    this.nowOpa = 0;
 
-    // サムネイルのサイズをCSSから取得
-    var thumbAStyle = thumbAnchor.currentStyle || document.defaultView.getComputedStyle(thumbAnchor, '');
-    var thumbAW = thumbAStyle.width.split('px')[0];
-    var thumbAH = thumbAStyle.height.split('px')[0];
-    // サムネイルの画像のサイズを少し大きめにとる（cssのoverflow:hiddenではみ出した部分は後でカットする）
-    var thumbObjW = thumbAW * 3;
-    var thumbObjH = thumbAH * 3;
+    if (!this.mainDiv) return;
 
-    var thumbObj = imgArray[i];
-    var aspect = thumbObj.height / thumbObj.width;
-    // 縦横比を維持したサムネイル画像のサイズを指定
-    if (aspect <= 0) {
-      thumbObj.width = thumbObjW;
-      thumbObj.height = thumbObjW * aspect;
+    if (images.length > 0) {
+      this.mainDiv.innerHTML = 'Now Loading...';
+      this.preloadImg();
     } else {
-      thumbObj.height = thumbObjH;
-      thumbObj.width = thumbObjH / aspect;
+      this.mainDiv.innerHTML = 'There is no image.';
     }
-    // サムネイル画像の位置を指定
-    thumbObj.style.top = Math.floor((thumbAH - thumbObj.height) / 2) + 'px';
-    thumbObj.style.left = Math.floor((thumbAW - thumbObj.width) / 2) + 'px';
+  }
 
-    // サムネイルを表示
-    thumbAnchor.appendChild(thumbObj);
-  }
-  thisObj.changeActiveThumb(thisObj.nowNum, 0);
-};
-// コントロールボタン作成
-SmartyPG.prototype.createController = function () {
-  var thisObj = this;
-  var controllerBox = document.createElement('div');
-  controllerBox.setAttribute('id', thisObj.controllerIdName);
-  var controllerObj = document.createElement('a');
-  controllerObj.setAttribute('href', 'javascript:void(0);');
-  controllerObj.setAttribute('id', thisObj.slideFlag);
-  var textObj = document.createTextNode('SLIDE SHOW : ' + thisObj.slideFlag);
-  controllerObj.appendChild(textObj);
-  controllerBox.appendChild(controllerObj);
-  controllerObj.onclick = function () {
-    // スライドショーon/offスイッチをクリックしたときの処理
-    clearTimeout(thisObj.timer);
-    if (thisObj.slideFlag == 'on') {
-      thisObj.slideFlag = 'off';
-      textObj.nodeValue = 'SLIDE SHOW : off';
-      this.id = 'off';
-    } else {
-      thisObj.slideFlag = 'on';
-      textObj.nodeValue = 'SLIDE SHOW : on';
-      this.id = 'on';
-      thisObj.fadeout(thisObj.nowOpa);
+  /** 画像のプリロード */
+  preloadImg() {
+    if (this.timer) clearTimeout(this.timer);
+    this.timer = setTimeout(() => {
+      if (this.mainDiv) this.mainDiv.innerHTML = 'Timeout.';
+    }, 5000);
+
+    const images = this.imgs;
+    const imagesLength = this.imgsLength;
+    const imgArray = this.imgArray;
+
+    for (let i = 0; i < imagesLength; i++) {
+      imgArray[i] = new Image();
+      imgArray[i].onload = () => {
+        this.checkImgLoading();
+      };
+      imgArray[i].src = images[i];
     }
-  };
-  thisObj.controllerDiv.appendChild(controllerBox);
-};
-// メインイメージ作成
-SmartyPG.prototype.createMainImg = function () {
-  var thisObj = this;
-  var mainImg = document.createElement('div');
-  mainImg.setAttribute('id', thisObj.mainImgIdName);
-  thisObj.mainDiv.appendChild(mainImg);
-  thisObj.mainImg = mainImg;
-  SmartyPG.changeOpacity(mainImg, 0);
-  thisObj.changeImg(0);
-};
-// メインイメージ変更
-SmartyPG.prototype.changeImg = function (num) {
-  this.mainImg.style.backgroundImage = 'url(' + this.imgs[num] + ')';
-};
-// アクティブサムネイル変更
-SmartyPG.prototype.changeActiveThumb = function (oldNum, newNum) {
-  var thumbBoxes = this.thumbArea.childNodes;
-  thumbBoxes[oldNum].className = 'thumb thumbOff';
-  thumbBoxes[newNum].className = 'thumb thumbOn';
-};
-// フェードイン
-SmartyPG.prototype.fadein = function (opa) {
-  var thisObj = this;
-  clearTimeout(thisObj.timer);
-  if (opa < 95) {
-    opa = Math.ceil(opa * 1.1);
-    SmartyPG.changeOpacity(thisObj.mainImg, opa);
-    thisObj.nowOpa = opa;
-    thisObj.timer = setTimeout(function () {
-      thisObj.fadein(opa);
-    }, 1);
-  } else {
-    thisObj.nowOpa = 100;
-    SmartyPG.changeOpacity(thisObj.mainImg, 100);
-    thisObj.timer = setTimeout(function () {
-      thisObj.fadeout(100);
-    }, thisObj.slideTerm);
   }
-};
-// フェードアウト
-SmartyPG.prototype.fadeout = function (opa) {
-  var thisObj = this;
-  clearTimeout(thisObj.timer);
-  if (opa > 5) {
-    opa = Math.floor((opa / 10) * 9);
-    SmartyPG.changeOpacity(thisObj.mainImg, opa);
-    thisObj.nowOpa = opa;
-    thisObj.timer = setTimeout(function () {
-      thisObj.fadeout(opa);
-    }, 1);
-  } else {
-    var newNum;
-    if (thisObj.nowNum < thisObj.imgsLength - 1) newNum = thisObj.nowNum + 1;
-    else newNum = 0;
-    thisObj.nowOpa = 0;
-    thisObj.changeActiveThumb(thisObj.nowNum, newNum);
-    thisObj.changeImg(newNum);
-    thisObj.fadein(1);
-    thisObj.nowNum = newNum;
+
+  /** 画像ロードのチェック */
+  checkImgLoading() {
+    if (++this.nLoaded >= this.imgsLength) {
+      if (this.timer) clearTimeout(this.timer);
+      this.createThumbImg();
+      this.createController();
+      if (this.mainDiv) {
+        this.mainDiv.innerHTML = '';
+        this.createMainImg();
+      }
+      this.fadein(1);
+    }
   }
-};
-// 透明度変更
-SmartyPG.changeOpacity = function (e, opacity) {
-  if (typeof e == 'string') var obj = document.getElementById(e).style;
-  else if (typeof e == 'object') var obj = e.style;
-  obj.opacity = opacity / 100; // Safari1.2
-  obj.MozOpacity = opacity / 100; // Mozilla
-  obj.KhtmlOpacity = opacity / 100; // Safari1.1
-  obj.filter = 'alpha(opacity=' + opacity + ')'; // IE
-};
+
+  /** サムネイル作成 */
+  createThumbImg() {
+    if (!this.thumbDiv) return;
+
+    const imagesLength = this.imgsLength;
+    const imgArray = this.imgArray;
+
+    const thumbArea = document.createElement('div');
+    thumbArea.setAttribute('id', this.thumbAreaIdName);
+    thumbArea.setAttribute('class', 'clearfix');
+
+    this.thumbDiv.appendChild(thumbArea);
+    this.thumbArea = thumbArea;
+
+    for (let i = 0; i < imagesLength; i++) {
+      const thumbBox = document.createElement('div');
+      thumbBox.className = 'thumb thumbOff';
+      thumbBox.onmouseover = function () {
+        thumbBox.className = thumbBox.className + ' thumbOver';
+      };
+      thumbBox.onmouseout = function () {
+        thumbBox.className = thumbBox.className.split('thumbOver')[0];
+      };
+      thumbArea.appendChild(thumbBox);
+
+      const thumbAnchor = document.createElement('a');
+      thumbAnchor.setAttribute('href', 'javascript:void(0);');
+
+      // カスタムプロパティへの代入を JSDoc で型付け
+      const anchorElement = /** @type {HTMLAnchorElement & { num: number }} */ (thumbAnchor);
+      anchorElement.num = i;
+
+      anchorElement.onclick = (e) => {
+        const target = /** @type {HTMLAnchorElement & { num: number }} */ (e.currentTarget);
+        SmartyPG.changeOpacity(target, 100);
+        if (this.timer) clearTimeout(this.timer);
+        this.changeActiveThumb(this.nowNum, target.num);
+        this.changeImg(target.num);
+        this.nowNum = target.num;
+        if (this.slideFlag === 'on') this.fadein(1);
+      };
+      thumbBox.appendChild(anchorElement);
+
+      const defaultView = document.defaultView;
+      if (!defaultView) continue;
+
+      const thumbAStyle = defaultView.getComputedStyle(anchorElement, '');
+      const thumbAW = parseFloat(thumbAStyle.width) || 0;
+      const thumbAH = parseFloat(thumbAStyle.height) || 0;
+
+      const thumbObjW = thumbAW * 3;
+      const thumbObjH = thumbAH * 3;
+
+      const thumbObj = imgArray[i];
+      const aspect = thumbObj.height / thumbObj.width;
+
+      if (aspect <= 0) {
+        thumbObj.width = thumbObjW;
+        thumbObj.height = thumbObjW * aspect;
+      } else {
+        thumbObj.height = thumbObjH;
+        thumbObj.width = thumbObjH / aspect;
+      }
+
+      thumbObj.style.top = `${Math.floor((thumbAH - thumbObj.height) / 2)}px`;
+      thumbObj.style.left = `${Math.floor((thumbAW - thumbObj.width) / 2)}px`;
+
+      anchorElement.appendChild(thumbObj);
+    }
+    this.changeActiveThumb(this.nowNum, 0);
+  }
+
+  /** コントロールボタン作成 */
+  createController() {
+    if (!this.controllerDiv) return;
+
+    const controllerBox = document.createElement('div');
+    controllerBox.setAttribute('id', this.controllerIdName);
+
+    const controllerObj = document.createElement('a');
+    controllerObj.setAttribute('href', 'javascript:void(0);');
+    controllerObj.setAttribute('id', this.slideFlag);
+
+    const textObj = document.createTextNode(`SLIDE SHOW : ${this.slideFlag}`);
+    controllerObj.appendChild(textObj);
+    controllerBox.appendChild(controllerObj);
+
+    controllerObj.onclick = (e) => {
+      const target = /** @type {HTMLAnchorElement} */ (e.currentTarget);
+      if (this.timer) clearTimeout(this.timer);
+
+      if (this.slideFlag === 'on') {
+        this.slideFlag = 'off';
+        textObj.nodeValue = 'SLIDE SHOW : off';
+        target.id = 'off';
+      } else {
+        this.slideFlag = 'on';
+        textObj.nodeValue = 'SLIDE SHOW : on';
+        target.id = 'on';
+        this.fadeout(this.nowOpa);
+      }
+    };
+
+    this.controllerDiv.appendChild(controllerBox);
+  }
+
+  /** メインイメージ作成 */
+  createMainImg() {
+    if (!this.mainDiv) return;
+
+    const mainImg = document.createElement('div');
+    mainImg.setAttribute('id', this.mainImgIdName);
+    this.mainDiv.appendChild(mainImg);
+    this.mainImg = mainImg;
+
+    SmartyPG.changeOpacity(mainImg, 0);
+    this.changeImg(0);
+  }
+
+  /**
+   * メインイメージ変更
+   * @param {number} num
+   */
+  changeImg(num) {
+    if (this.mainImg) {
+      this.mainImg.style.backgroundImage = `url(${this.imgs[num]})`;
+    }
+  }
+
+  /**
+   * アクティブサムネイル変更
+   * @param {number} oldNum
+   * @param {number} newNum
+   */
+  changeActiveThumb(oldNum, newNum) {
+    if (!this.thumbArea) return;
+    const thumbBoxes = this.thumbArea.childNodes;
+    if (thumbBoxes[oldNum]) {
+      /** @type {HTMLElement} */ (thumbBoxes[oldNum]).className = 'thumb thumbOff';
+    }
+    if (thumbBoxes[newNum]) {
+      /** @type {HTMLElement} */ (thumbBoxes[newNum]).className = 'thumb thumbOn';
+    }
+  }
+
+  /**
+   * フェードイン
+   * @param {number} opa
+   */
+  fadein(opa) {
+    if (this.timer) clearTimeout(this.timer);
+
+    if (opa < 95) {
+      opa = Math.ceil(opa * 1.1);
+      SmartyPG.changeOpacity(this.mainImg, opa);
+      this.nowOpa = opa;
+      this.timer = setTimeout(() => {
+        this.fadein(opa);
+      }, 1);
+    } else {
+      this.nowOpa = 100;
+      SmartyPG.changeOpacity(this.mainImg, 100);
+      this.timer = setTimeout(() => {
+        this.fadeout(100);
+      }, this.slideTerm);
+    }
+  }
+
+  /**
+   * フェードアウト
+   * @param {number} opa
+   */
+  fadeout(opa) {
+    if (this.timer) clearTimeout(this.timer);
+
+    if (opa > 5) {
+      opa = Math.floor((opa / 10) * 9);
+      SmartyPG.changeOpacity(this.mainImg, opa);
+      this.nowOpa = opa;
+      this.timer = setTimeout(() => {
+        this.fadeout(opa);
+      }, 1);
+    } else {
+      const newNum = this.nowNum < this.imgsLength - 1 ? this.nowNum + 1 : 0;
+      this.nowOpa = 0;
+      this.changeActiveThumb(this.nowNum, newNum);
+      this.changeImg(newNum);
+      this.fadein(1);
+      this.nowNum = newNum;
+    }
+  }
+
+  /**
+   * 透明度変更（スタティックメソッド）
+   * @param {HTMLElement | string | null} e
+   * @param {number} opacity
+   */
+  static changeOpacity(e, opacity) {
+    if (!e) return;
+    /** @type {CSSStyleDeclaration | null} */
+    let style = null;
+
+    if (typeof e === 'string') {
+      const elem = document.getElementById(e);
+      if (elem) style = elem.style;
+    } else if (typeof e === 'object' && 'style' in e) {
+      style = e.style;
+    }
+
+    if (style) {
+      style.opacity = String(opacity / 100);
+    }
+  }
+}
 
 export default SmartyPG;
