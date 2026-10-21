@@ -1,0 +1,42 @@
+{
+  "printWidth": 120,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "endOfLine": "lf",
+  "overrides": [
+    {
+      "files": "**/*.{yml,yaml}",
+      "options": {
+        "parser": "yaml",
+        "singleQuote": false,
+        "bracketSpacing": true,
+        "proseWrap": "preserve"
+      }
+    },
+    {
+      "files": ["**/*.json"],
+      "options": {
+        "parser": "json",
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": ["**/*.jsonc"],
+      "options": {
+        "parser": "jsonc",
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": ["tsconfig.json", ".vscode/*.json"],
+      "options": {
+        "parser": "jsonc"
+      }
+    }
+  ]
+}

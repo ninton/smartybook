@@ -17,6 +17,8 @@ runs:
             - added|modified: '**/*.{sh,sh.tmpl}'
           docker:
             - added|modified: 'docker/**/Dockerfile'
+          js:
+            - added|modified: 'smartybook/**/*.{js,mjs,ts,tsx}'
           php:
             - added|modified: 'app/**/*.php'
             - added|modified: 'bootstrap/**/*.php'
@@ -25,7 +27,12 @@ runs:
           # actionlint 用なので、prettier用とは別途定義
           github_yaml:
             - added|modified: '.github/**/*.{yml,yaml}'
+          # Prettier で管理したいファイル群をひとまとめにする
+          # ただし pnpm-lock.yaml は生成物であり、Prettier と整形規則が衝突しやすいため .prettierignore で除外する
+          prettier:
+            - added|modified: '**/*.{css,yml,yaml,md,json,jsonc}'
 
+    # ========================================
     # Shell スクリプトLint系
     # ========================================
     - name: Run ShellCheck
@@ -43,6 +50,14 @@ runs:
         dockerfile: ${{ steps.paths_filter.outputs.docker_files }}
 
     # ========================================
+    # CSS, YAML, MD, XML, JSON, JSONC フォーマット系
+    # ========================================
+    - name: Check format (Prettier)
+      if: steps.paths_filter.outputs.prettier == 'true'
+      shell: bash
+      run: pnpm run format:check ${{ steps.paths_filter.outputs.prettier_files }}
+
+    # ========================================
     # GitHub Actions 定義 リント系
     # ========================================
     - name: Run actionlint
@@ -55,6 +70,14 @@ runs:
         # checks: write が必要な github-check は使わない。
         # 呼び出し元ワークフローの権限設定に依存しにくい annotations を使う。
         reporter: github-pr-annotations
+
+    # ========================================
+    # JS/TS フォーマット・リント系
+    # ========================================
+    - name: JS Check formatting
+      if: ${{ steps.paths_filter.outputs.js == 'true' }}
+      shell: bash
+      run: pnpm run format:check ${{ steps.paths_filter.outputs.js_files }}
 
     # ========================================
     # PHP 構文チェック系
