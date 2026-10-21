@@ -1,89 +1,87 @@
 @charset "utf-8";
 
 #portalPage {
-	padding: 0 0 0 0;
-	margin: 0 auto;
-	text-align: left;
-	width: 760px;
+  padding: 0 0 0 0;
+  margin: 0 auto;
+  text-align: left;
+  width: 760px;
 }
 
-
 #portalPage #header {
-	position: relative;
-	margin: 0 0 0 0;
-	padding: 20px 0 0 16px;
-	background-image: url(../images/header.jpg);
-	background-repeat: no-repeat;
-	background-position: 0 0;
-	height: 80px;
-	color:#333333;
-	border-left: solid 2px #996633;
-	border-right: solid 2px #996633;
+  position: relative;
+  margin: 0 0 0 0;
+  padding: 20px 0 0 16px;
+  background-image: url(../images/header.jpg);
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  height: 80px;
+  color: #333333;
+  border-left: solid 2px #996633;
+  border-right: solid 2px #996633;
 }
 
 #portalPage #main {
-	position: relative;
-	background-color: #ffffff;
-	margin: 0 0 0 0;
-	padding: 8px 0 0 16px;
-	border-bottom: 2px solid #996633;
-	border-left: solid 2px #996633;
-	border-right: solid 2px #996633;
+  position: relative;
+  background-color: #ffffff;
+  margin: 0 0 0 0;
+  padding: 8px 0 0 16px;
+  border-bottom: 2px solid #996633;
+  border-left: solid 2px #996633;
+  border-right: solid 2px #996633;
 }
 
 #portalPage #main #twitter {
-	float:left;
-	width:336px;
+  float: left;
+  width: 336px;
 }
 
 #portalPage #main #twitter1 {
-	float:left;
-	width:104px;
-	background-image: url(../images/twitter_background.gif);
-	background-repeat: no-repeat;
-	background-position: top right;
+  float: left;
+  width: 104px;
+  background-image: url(../images/twitter_background.gif);
+  background-repeat: no-repeat;
+  background-position: top right;
 }
 
 #portalPage #main #twitter2 {
-	float:left;
-	width:232px;
-
+  float: left;
+  width: 232px;
 }
 
 #portalPage #main #photo {
-	float:left;
-	width:264px;
+  float: left;
+  width: 264px;
 }
 
 #portalPage #main #link {
-	float:left;
-	width:128px;
+  float: left;
+  width: 128px;
 }
 
-
 #portalPage #footer {
-	
 }
 
 /* 追加 04_02 */
 /*  clearfix  */
 .clearfix:after {
-     content: "."; 
-     display: block; 
-     height: 0; 
-     clear: both; 
-     visibility: hidden;
+  content: '.';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
 }
 
 .clearfix {
-    display: inline-table;
-    min-height: 1%;
+  display: inline-table;
+  min-height: 1%;
 }
 
 /* Hides from IE-mac \*/
-* html .clearfix {height: 1%;}
-.clearfix {display: block;}
+* html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}
 /* End hide from IE-mac */
 /* 追加 04_02 */
-
-
