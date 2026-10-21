@@ -1,10 +1,8 @@
+// noinspection JSUnusedGlobalSymbols tplでimportしています
 /**
  * スライドショーギャラリー管理クラス
  */
-/**
- * スライドショーギャラリー管理クラス
- */
-class SmartyPG {
+export default class SmartyPG {
   /**
    * @param {string[]} images 画像パスの配列
    * @param {string} slideFlag スライドショー初期状態 ('on' | 'off')
@@ -222,9 +220,11 @@ class SmartyPG {
     if (!this.thumbArea) return;
     const thumbBoxes = this.thumbArea.childNodes;
     if (thumbBoxes[oldNum]) {
+      // noinspection JSUndefinedPropertyAssignment,JSValidateTypes
       /** @type {HTMLElement} */ (thumbBoxes[oldNum]).className = 'thumb thumbOff';
     }
     if (thumbBoxes[newNum]) {
+      // noinspection JSUndefinedPropertyAssignment,JSValidateTypes
       /** @type {HTMLElement} */ (thumbBoxes[newNum]).className = 'thumb thumbOn';
     }
   }
@@ -298,5 +298,3 @@ class SmartyPG {
     }
   }
 }
-
-export default SmartyPG;
