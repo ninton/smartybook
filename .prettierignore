@@ -1,0 +1,18 @@
+# ----- 依存関係 -----
+node_modules/
+vendor/
+*.min.js
+*.min.css
+
+# ----- 開発環境固有のファイル -----
+# 歴史的遺産として残している。メンテナンス不要
+smartybook/chapter5_1/flash/
+# 自動生成されるファイル・キャッシュ
+cache/
+templates_c/
+tests/GoldenMaster/fixtures/
+smartybook/chapter4_9/html/
+smartybook/chapter5_6/_write/
+
+# ----- 各種ツールのキャッシュ・設定 -----
+pnpm-lock.yaml

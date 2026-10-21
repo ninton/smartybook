@@ -17,6 +17,10 @@ runs:
             - added|modified: '**/*.{sh,sh.tmpl}'
           docker:
             - added|modified: 'docker/**/Dockerfile'
+          js:
+            - added|modified: 'src/**/*.{js,mjs,ts,tsx}'
+          css:
+            - added|modified: '**/*.css'
           php:
             - added|modified: 'smartybook/**/*.php'
             - added|modified: 'tests/**/*.php'

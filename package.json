@@ -1,0 +1,24 @@
+{
+  "name": "smartybook",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "format:check": "prettier --check",
+    "format:fix": "prettier --write"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.14.0",
+      "onFail": "download"
+    }
+  },
+  "packageManager": "pnpm@12.14.0",
+  "type": "module",
+  "devDependencies": {
+    "prettier": "^3.9.10"
+  }
+}
