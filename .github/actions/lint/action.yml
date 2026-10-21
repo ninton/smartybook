@@ -79,6 +79,16 @@ runs:
       shell: bash
       run: pnpm run format:check ${{ steps.paths_filter.outputs.js_files }}
 
+    - name: ESLint
+      if: ${{ steps.paths_filter.outputs.js == 'true' }}
+      shell: bash
+      run: pnpm run lint ${{ steps.paths_filter.outputs.js_files }}
+
+    - name: ts-check
+      if: ${{ steps.paths_filter.outputs.js == 'true' }}
+      shell: bash
+      run: pnpm run ts-check
+
     # ========================================
     # PHP 構文チェック系
     # ========================================
