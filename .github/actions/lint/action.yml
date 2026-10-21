@@ -18,7 +18,7 @@ runs:
           docker:
             - added|modified: 'docker/**/Dockerfile'
           js:
-            - added|modified: 'src/**/*.{js,mjs,ts,tsx}'
+            - added|modified: 'smartybook/**/*.{js,mjs,ts,tsx}'
           php:
             - added|modified: 'app/**/*.php'
             - added|modified: 'bootstrap/**/*.php'
