@@ -11,4 +11,5 @@
     "isolatedModules": true,
   },
   "include": ["src/**/*", "smartybook/**/*", "tests/**/*"],
+  "exclude": ["smartybook/chapter5_1/flash/"],
 }
