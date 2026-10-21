@@ -30,7 +30,7 @@ runs:
           # Prettier で管理したいファイル群をひとまとめにする
           # ただし pnpm-lock.yaml は生成物であり、Prettier と整形規則が衝突しやすいため .prettierignore で除外する
           prettier:
-            - added|modified: '**/*.{css,yml,yaml,md,xml,json,jsonc}'
+            - added|modified: '**/*.{css,yml,yaml,md,json,jsonc}'
 
     # ========================================
     # Shell スクリプトLint系
