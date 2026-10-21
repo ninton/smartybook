@@ -2,7 +2,7 @@
  * @param {string} i_src
  * @returns {string}
  */
-function isbn13_to_isbn10(i_src) {
+export function isbn13_to_isbn10(i_src) {
   var dst;
 
   if (is_isbn13(i_src)) {
@@ -20,7 +20,7 @@ function isbn13_to_isbn10(i_src) {
  * @param {string} i_src
  * @returns {string}
  */
-function isbn10_to_isbn13(i_src) {
+export function isbn10_to_isbn13(i_src) {
   var dst;
 
   if (is_isbn10(i_src)) {

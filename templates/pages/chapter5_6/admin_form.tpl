@@ -2,7 +2,7 @@
 
 {* ▼ このページだけで script を差し込む *}
 {block name="head"}
-<script src="js/isbn.js"></script>
+<script type="module" src="./js/admin_form.js"></script>
 {/block}
 
 {block name="content"}
@@ -39,12 +39,11 @@
     <tr>
       <td>{$smarty.section.i.iteration|escape:html}</td>
       <td>
-        <input class="inp_isbn"
+        <input class="inp_isbn js-input-isbn"
             name="detail_arr[{$smarty.section.i.index|escape:html}][ASIN]"
             value="{$myList->detail_arr[i].ASIN|escape:html}"
-            size="14"
+            size="15"
             maxlength="13"
-            onchange="this.value=isbn13_to_isbn10(this.value)"
             aria-label="{$smarty.section.i.iteration|escape:html}行目のISBN"
             />
       </td>
