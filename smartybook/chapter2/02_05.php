@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 // 設定ファイルの読み込み
 require_once __DIR__ . '/02_01_b.php';
 
@@ -19,7 +22,6 @@ $title    = trim($_POST['title'] ?? '');
 // 改行コードを \n (LF) に統一してから trim
 $rawContents = $_POST['contents'] ?? '';
 $contents    = trim(str_replace("\r\n", "\n", $rawContents));
-$date     = (int)($_POST['date'] ?? 0);
 
 // 1. カテゴリの存在チェック
 if (!in_array($category, $categories, true)) {
@@ -45,13 +47,6 @@ if (mb_strlen($title, 'UTF-8') > 100) {
 if (mb_strlen($contents, 'UTF-8') > 1000) {
     http_response_code(400);
     echo '本文は1000文字以内で入力してください。';
-    exit;
-}
-
-// 4. 日時データの正当性チェック
-if (!is_string($_POST['date'] ?? null) || filter_var($_POST['date'], FILTER_VALIDATE_INT) === false || $date <= 0) {
-    http_response_code(400);
-    echo '不正な日時データです。';
     exit;
 }
 
@@ -101,10 +96,6 @@ if (isset($_FILES['image']['tmp_name']) && $_FILES['image']['error'] === UPLOAD_
     <td><?php echo nl2br(htmlspecialchars($contents, ENT_QUOTES, 'UTF-8'), false); ?></td>
 </tr>
 <tr>
-    <td>日時</td>
-    <td><?php echo date('Y-m-d H:i:s', $date); ?></td>
-</tr>
-<tr>
     <td>画像</td>
     <td>
         <?php if ($imageFile !== ''): ?>
@@ -123,7 +114,6 @@ if (isset($_FILES['image']['tmp_name']) && $_FILES['image']['error'] === UPLOAD_
 <input type="hidden" name="category" value="<?php echo htmlspecialchars($category, ENT_QUOTES, 'UTF-8'); ?>">
 <input type="hidden" name="title" value="<?php echo htmlspecialchars($title, ENT_QUOTES, 'UTF-8'); ?>">
 <input type="hidden" name="contents" value="<?php echo htmlspecialchars($contents, ENT_QUOTES, 'UTF-8'); ?>">
-<input type="hidden" name="date" value="<?php echo htmlspecialchars((string)$date, ENT_QUOTES, 'UTF-8'); ?>">
 <input type="hidden" name="image" value="<?php echo htmlspecialchars($imageFile, ENT_QUOTES, 'UTF-8'); ?>">
 </form>
 </body>
