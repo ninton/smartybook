@@ -6,13 +6,13 @@ require_once __DIR__ . '/02_01_b.php';
 /**
  * 最新記事ID（CSVファイルの最終行のID）を取得する関数
  *
- * @param resource $file CSVファイルのファイルポインタ
+ * @param resource $fileHandle CSVファイルのファイルポインタ
  * @return int 最新記事ID
  */
-function lastIdCheck($file): int
+function lastIdCheck($fileHandle): int
 {
     $lastId = 0;
-    while ($arr = fgetcsv($file, 5000, escape: '')) {
+    while ($arr = fgetcsv($fileHandle, 5000, escape: '')) {
         if (isset($arr[0])) {
             $lastId = (int)$arr[0];
         }
@@ -72,18 +72,18 @@ if (!is_string($_POST['date'] ?? null) || filter_var($_POST['date'], FILTER_VALI
 
 // ----- ビジネスロジック（CSV保存処理） -----
 // CSVファイルを読み込み、追記両用で開く
-$fp = fopen($csvFilePath, 'a+');
-if ($fp === false) {
+$fileHandle = fopen($csvFilePath, 'a+');
+if ($fileHandle === false) {
     http_response_code(500);
     echo 'データファイルのオープンに失敗しました。';
     exit;
 }
 
 // CSVファイルをロック
-flock($fp, LOCK_EX);
+flock($fileHandle, LOCK_EX);
 
 // 最終行のIDをチェック
-$lastId = lastIdCheck($fp);
+$lastId = lastIdCheck($fileHandle);
 
 // IDが4桁に満たない番号の場合、0で埋めて4桁表示にする
 $id = sprintf('%04d', $lastId + 1);
@@ -92,11 +92,11 @@ $id = sprintf('%04d', $lastId + 1);
 $row = [$id, $category, $title, $contents, (string)$date, $image];
 
 // CSVファイルに書き込み (PHP 8.4+ escape: '' 明示)
-$isSuccess = (fputcsv($fp, $row, escape: '') !== false);
+$isSuccess = (fputcsv($fileHandle, $row, escape: '') !== false);
 
 // CSVファイルのロックを解除・クローズ
-flock($fp, LOCK_UN);
-fclose($fp);
+flock($fileHandle, LOCK_UN);
+fclose($fileHandle);
 
 // ----- HTML表示部 -----
 ?>
