@@ -25,19 +25,19 @@ $timezone = new DateTimeZone('Asia/Tokyo');
 // 対象カテゴリの記事データを抽出
 $items = [];
 if (($fileHandle = fopen($csvFilePath, 'r')) !== false) {
-    while (($arr = fgetcsv($fileHandle, 5000, escape: '')) !== false) {
+    while (($row = fgetcsv($fileHandle, 5000, escape: '')) !== false) {
         // UNIXタイムスタンプから DateTimeImmutable を生成し、JSTで整形
         $createdAt = (new DateTimeImmutable())
             ->setTimezone($timezone)
-            ->setTimestamp((int)$arr[4]);
+            ->setTimestamp((int)$row[4]);
 
-        if ($selectedCategory === $arr[1]) {
+        if ($selectedCategory === $row[1]) {
             $items[] = [
-                'id'        => $arr[0],
-                'title'     => $arr[2],
-                'body'      => $arr[3],
+                'id'        => $row[0],
+                'title'     => $row[2],
+                'body'      => $row[3],
                 'createdAtFormatted' => $createdAt->format('Y-m-d H:i:s'),
-                'imagePath' => $arr[5],
+                'imagePath' => $row[5],
             ];
         }
     }

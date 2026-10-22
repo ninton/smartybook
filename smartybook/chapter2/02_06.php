@@ -16,9 +16,9 @@ function getNextId($fileHandle): int
 {
     $lastId = null;
 
-    while ($arr = fgetcsv($fileHandle, 5000, escape: '')) {
-        if (isset($arr[0]) && is_numeric($arr[0])) {
-            $lastId = (int)$arr[0];
+    while ($row = fgetcsv($fileHandle, 5000, escape: '')) {
+        if (isset($row[0]) && is_numeric($row[0])) {
+            $lastId = (int)$row[0];
         }
     }
 
