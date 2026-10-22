@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 // 設定ファイルの読み込み
 require_once __DIR__ . '/02_01_b.php';
 
@@ -46,7 +49,6 @@ if (!is_string($_POST['title'] ?? '') || !is_string($_POST['contents'] ?? '')) {
 $rawContents = $_POST['contents'] ?? '';
 $title       = trim($_POST['title'] ?? '');
 $contents    = trim(str_replace("\r\n", "\n", $rawContents));
-$date        = (int)($_POST['date'] ?? 0);
 $image       = $_POST['image'] ?? '';
 
 // 1. カテゴリの存在チェック
@@ -70,13 +72,6 @@ if (mb_strlen($title, 'UTF-8') > 100 || mb_strlen($contents, 'UTF-8') > 1000) {
     exit;
 }
 
-// 4. 日時データの正当性チェック
-if (!is_string($_POST['date'] ?? null) || filter_var($_POST['date'], FILTER_VALIDATE_INT) === false || $date <= 0) {
-    http_response_code(400);
-    echo '不正な日時データです。';
-    exit;
-}
-
 // ----- ビジネスロジック（CSV保存処理） -----
 // CSVファイルを読み込み、追記両用で開く
 $fileHandle = fopen($csvFilePath, 'a+');
@@ -92,8 +87,11 @@ flock($fileHandle, LOCK_EX);
 // 新規IDを取得（内部でポインタが末尾に移動するため、そのまま追記可能）
 $nextId = getNextId($fileHandle);
 
+// 保存実行時の現在日時（UNIXタイムスタンプ）をサーバー側で自動取得
+$nowTimestamp = (new DateTimeImmutable())->getTimestamp();
+
 // 書き込む配列データを準備（fputcsv が適切にエスケープとクォートを処理）
-$row = [$nextId, $category, $title, $contents, (string)$date, $image];
+$row = [$nextId, $category, $title, $contents, (string)$nowTimestamp, $image];
 
 // CSVファイルに書き込み (PHP 8.4+ escape: '' 明示)
 $isSuccess = (fputcsv($fileHandle, $row, escape: '') !== false);
