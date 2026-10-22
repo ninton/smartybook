@@ -4,20 +4,23 @@ require_once __DIR__ . '/02_01_b.php';
 
 // ----- インライン関数定義 -----
 /**
- * 最新記事ID（CSVファイルの最終行のID）を取得する関数
+ * 次の発行対象となるID（最終行のID + 1）を取得する
  *
- * @param resource $fileHandle CSVファイルのファイルポインタ
- * @return int 最新記事ID
+ * @param resource $fileHandle CSVファイルのファイルポインタ（末尾まで読み進められます）
+ * @return int 次のID
  */
-function lastIdCheck($fileHandle): int
+function getNextId($fileHandle): int
 {
     $lastId = 0;
+
+    // ポインタを先頭に戻してから読み込む場合は rewind($fileHandle); を入れるとより安全です
     while ($arr = fgetcsv($fileHandle, 5000, escape: '')) {
-        if (isset($arr[0])) {
+        if (isset($arr[0]) && is_numeric($arr[0])) {
             $lastId = (int)$arr[0];
         }
     }
-    return $lastId;
+
+    return $lastId + 1;
 }
 
 // ----- データ準備 & バリデーション (400 Bad Request) -----
@@ -82,14 +85,11 @@ if ($fileHandle === false) {
 // CSVファイルをロック
 flock($fileHandle, LOCK_EX);
 
-// 最終行のIDをチェック
-$lastId = lastIdCheck($fileHandle);
-
-// IDが4桁に満たない番号の場合、0で埋めて4桁表示にする
-$id = sprintf('%04d', $lastId + 1);
+// 新規IDを取得（内部でポインタが末尾に移動するため、そのまま追記可能）
+$nextId = getNextId($fileHandle);
 
 // 書き込む配列データを準備（fputcsv が適切にエスケープとクォートを処理）
-$row = [$id, $category, $title, $contents, (string)$date, $image];
+$row = [$nextId, $category, $title, $contents, (string)$date, $image];
 
 // CSVファイルに書き込み (PHP 8.4+ escape: '' 明示)
 $isSuccess = (fputcsv($fileHandle, $row, escape: '') !== false);
