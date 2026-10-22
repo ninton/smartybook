@@ -11,13 +11,17 @@ require_once __DIR__ . '/02_01_b.php';
  */
 function getNextId($fileHandle): int
 {
-    $lastId = 0;
+    $lastId = null;
 
-    // ポインタを先頭に戻してから読み込む場合は rewind($fileHandle); を入れるとより安全です
     while ($arr = fgetcsv($fileHandle, 5000, escape: '')) {
         if (isset($arr[0]) && is_numeric($arr[0])) {
             $lastId = (int)$arr[0];
         }
+    }
+
+    // データが存在しなければ 1、存在すれば 最終ID + 1
+    if ($lastId === null) {
+        return 1;
     }
 
     return $lastId + 1;
