@@ -19,16 +19,24 @@ if (!in_array($selectedCategory, $categories, true)) {
     exit;
 }
 
+// タイムゾーンの明示設定
+$timezone = new DateTimeZone('Asia/Tokyo');
+
 // 対象カテゴリの記事データを抽出
 $items = [];
 if (($fileHandle = fopen($csvFilePath, 'r')) !== false) {
     while (($arr = fgetcsv($fileHandle, 5000, escape: '')) !== false) {
+        // UNIXタイムスタンプから DateTimeImmutable を生成し、JSTで整形
+        $createdAt = (new DateTimeImmutable())
+            ->setTimezone($timezone)
+            ->setTimestamp((int)$arr[4]);
+
         if ($selectedCategory === $arr[1]) {
             $items[] = [
                 'id'        => $arr[0],
                 'title'     => $arr[2],
                 'body'      => $arr[3],
-                'createdAt' => (int)$arr[4],
+                'createdAtFormatted' => $createdAt->format('Y-m-d H:i:s'),
                 'imagePath' => $arr[5],
             ];
         }
@@ -52,7 +60,7 @@ if (($fileHandle = fopen($csvFilePath, 'r')) !== false) {
     記事ID：<?php echo htmlspecialchars($item['id'], ENT_QUOTES, 'UTF-8'); ?><br>
     <h2><?php echo htmlspecialchars($item['title'], ENT_QUOTES, 'UTF-8'); ?></h2>
     <?php echo htmlspecialchars($item['body'], ENT_QUOTES, 'UTF-8'); ?><br>
-    <?php echo date('Y-m-d H:i:s', $item['createdAt']); ?><br>
+    <?php echo htmlspecialchars($item['createdAtFormatted'], ENT_QUOTES, 'UTF-8'); ?><br>
     <img src="<?php echo htmlspecialchars($item['imagePath'], ENT_QUOTES, 'UTF-8'); ?>" alt=""><br>
     <hr>
 <?php endforeach; ?>
