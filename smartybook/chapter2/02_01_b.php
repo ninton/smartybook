@@ -22,6 +22,6 @@ $homeURL = '02_02.php';
 $adminURL = '02_04.php';
 
 // カテゴリ一覧
-$categories[0] = 'Study';
-$categories[1] = 'Eating';
-$categories[2] = 'Work';
+$categoryList[0] = 'Study';
+$categoryList[1] = 'Eating';
+$categoryList[2] = 'Work';

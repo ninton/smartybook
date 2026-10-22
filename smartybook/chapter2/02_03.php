@@ -6,14 +6,14 @@ require_once __DIR__ . '/02_01_b.php';
  * @var string $siteName
  * @var string $csvFilePath
  * @var string $homeURL
- * @var list<string> $categories
+ * @var list<string> $categoryList
  */
 
 // ----- データ準備 & バリデーション -----
 $selectedCategory = $_GET['category'] ?? '';
 
-// $categories に含まれていない場合は 404 レスポンスを返して終了
-if (!in_array($selectedCategory, $categories, true)) {
+// $categoryList に含まれていない場合は 404 レスポンスを返して終了
+if (!in_array($selectedCategory, $categoryList, true)) {
     http_response_code(404);
     echo '指定されたカテゴリは見つかりませんでした。';
     exit;
