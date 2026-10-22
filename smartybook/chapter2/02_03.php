@@ -21,8 +21,8 @@ if (!in_array($selectedCategory, $categories, true)) {
 
 // 対象カテゴリの記事データを抽出
 $items = [];
-if (($fp = fopen($csvFilePath, 'r')) !== false) {
-    while (($arr = fgetcsv($fp, 5000, escape: '')) !== false) {
+if (($fileHandle = fopen($csvFilePath, 'r')) !== false) {
+    while (($arr = fgetcsv($fileHandle, 5000, escape: '')) !== false) {
         if ($selectedCategory === $arr[1]) {
             $items[] = [
                 'id'        => $arr[0],
@@ -33,7 +33,7 @@ if (($fp = fopen($csvFilePath, 'r')) !== false) {
             ];
         }
     }
-    fclose($fp);
+    fclose($fileHandle);
 }
 
 // ----- HTML表示 -----
