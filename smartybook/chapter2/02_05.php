@@ -8,7 +8,7 @@ require_once __DIR__ . '/02_01_b.php';
 /**
  * @var string $siteName
  * @var string $imageDir
- * @var list<string> $categories
+ * @var list<string> $categoryList
  */
 
 // ----- データ準備 & バリデーション (400 Bad Request) -----
@@ -24,7 +24,7 @@ $rawContents = $_POST['contents'] ?? '';
 $contents    = trim(str_replace("\r\n", "\n", $rawContents));
 
 // 1. カテゴリの存在チェック
-if (!in_array($category, $categories, true)) {
+if (!in_array($category, $categoryList, true)) {
     http_response_code(400);
     echo '不正なカテゴリが選択されました。';
     exit;
