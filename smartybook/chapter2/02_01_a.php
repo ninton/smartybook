@@ -20,9 +20,9 @@ $homeURL = '02_02.php';
 $adminURL = '02_04.php';
 
 // カテゴリ一覧
-$categories[0] = 'Study';
-$categories[1] = 'Eating';
-$categories[2] = 'Work';
+$categoryList[0] = 'Study';
+$categoryList[1] = 'Eating';
+$categoryList[2] = 'Work';
 
 // ----- HTML表示 -----
 ?>
@@ -40,9 +40,9 @@ echo htmlspecialchars($csvFilePath, ENT_QUOTES, 'UTF-8') . '<br>';
 echo htmlspecialchars($imageDir, ENT_QUOTES, 'UTF-8') . '<br>';
 echo htmlspecialchars($homeURL, ENT_QUOTES, 'UTF-8') . '<br>';
 echo htmlspecialchars($adminURL, ENT_QUOTES, 'UTF-8') . '<br>';
-echo htmlspecialchars($categories[0], ENT_QUOTES, 'UTF-8') . '<br>';
-echo htmlspecialchars($categories[1], ENT_QUOTES, 'UTF-8') . '<br>';
-echo htmlspecialchars($categories[2], ENT_QUOTES, 'UTF-8') . '<br>';
+echo htmlspecialchars($categoryList[0], ENT_QUOTES, 'UTF-8') . '<br>';
+echo htmlspecialchars($categoryList[1], ENT_QUOTES, 'UTF-8') . '<br>';
+echo htmlspecialchars($categoryList[2], ENT_QUOTES, 'UTF-8') . '<br>';
 ?>
 </body>
 </html>

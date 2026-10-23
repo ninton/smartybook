@@ -34,7 +34,7 @@ function getNextId($fileHandle): int
 /**
  * @var string $siteName
  * @var string $adminURL
- * @var list<string> $categories
+ * @var list<string> $categoryList
  * @var string $csvFilePath
  */
 
@@ -52,7 +52,7 @@ $contents    = trim(str_replace("\r\n", "\n", $rawContents));
 $image       = $_POST['image'] ?? '';
 
 // 1. カテゴリの存在チェック
-if (!in_array($category, $categories, true)) {
+if (!in_array($category, $categoryList, true)) {
     http_response_code(400);
     echo '不正なカテゴリが選択されました。';
     exit;
