@@ -139,9 +139,10 @@ if (!in_array($action, $allowedActions, true)) {
     die();
 }
 
+// 3. 組み合わせによるルーティング（すでに個別にバリデーション済み）
 match ([$httpMethod, $action]) {
     ['GET', 'preview'] => preview($config),
     ['GET', 'form'] => form($config),
     ['POST', 'save'] => save($config, $_POST),
-    default => die(), // 不正な action はここでしっかりと弾く
+    default => die('Unexpected routing error'),
 };
