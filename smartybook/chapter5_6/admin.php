@@ -120,21 +120,29 @@ function save(array $config, array $postVars): void
  */
 $httpMethod = strtoupper($_SERVER['REQUEST_METHOD'] ?? 'GET');
 
-// GET と POST 以外は HTTP 405 を返して安全に終了する
+// 1. HTTPメソッドの取得とバリデーション（未設定時はGET、不正なメソッドは405）
 if (!in_array($httpMethod, ['GET', 'POST'], true)) {
     header('HTTP/1.1 405 Method Not Allowed');
     header('Allow: GET, POST');
     die();
 }
 
+// 2. アクションの取得と正規化・単体バリデーション（不正なアクションは400）
 $action = $_REQUEST['action'] ?? 'preview';
 if ($action === '') {
     $action = 'preview';
 }
 
+$allowedActions = ['preview', 'form', 'save'];
+if (!in_array($action, $allowedActions, true)) {
+    header('HTTP/1.1 400 Bad Request');
+    die();
+}
+
+// 3. 組み合わせによるルーティング（すでに個別にバリデーション済み）
 match ([$httpMethod, $action]) {
     ['GET', 'preview'] => preview($config),
     ['GET', 'form'] => form($config),
     ['POST', 'save'] => save($config, $_POST),
-    default => die(), // 不正な action はここでしっかりと弾く
+    default => die('Unexpected routing error'),
 };
