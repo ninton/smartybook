@@ -176,7 +176,7 @@ $appId = $config['app_id'];
  * POST,action=confirm 確認画面
  * POST,action=submit 送信完了画面
  */
-$httpMethod = $_SERVER['REQUEST_METHOD'] ?? 'GET';
+$httpMethod = strtoupper($_SERVER['REQUEST_METHOD'] ?? 'GET');
 
 // GET と POST 以外は HTTP 405 を返して安全に終了する
 if (!in_array($httpMethod, ['GET', 'POST'], true)) {
