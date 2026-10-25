@@ -176,10 +176,10 @@ $appId = $config['app_id'];
  * POST,action=confirm 確認画面
  * POST,action=submit 送信完了画面
  */
-$requestMethod = $_SERVER['REQUEST_METHOD'] ?? 'GET';
+$httpMethod = $_SERVER['REQUEST_METHOD'] ?? 'GET';
 
 // GET と POST 以外は HTTP 405 を返して安全に終了する
-if (!in_array($requestMethod, ['GET', 'POST'], true)) {
+if (!in_array($httpMethod, ['GET', 'POST'], true)) {
     header('HTTP/1.1 405 Method Not Allowed');
     header('Allow: GET, POST');
     die();
@@ -190,7 +190,7 @@ if ($action === '') {
     $action = 'index';
 }
 
-match ([$requestMethod, $action]) {
+match ([$httpMethod, $action]) {
     ['GET', 'index'] => form($config, $META),
     ['GET', 'form'] => form($config, $META, $_SESSION[$appId]['form'] ?? []),
     ['POST', 'confirm'] => confirm($config, $META, $_POST),
