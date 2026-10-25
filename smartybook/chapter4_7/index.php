@@ -178,22 +178,30 @@ $appId = $config['app_id'];
  */
 $httpMethod = strtoupper($_SERVER['REQUEST_METHOD'] ?? 'GET');
 
-// GET と POST 以外は HTTP 405 を返して安全に終了する
+// 1. HTTPメソッドの取得とバリデーション（未設定時はGET、不正なメソッドは405）
 if (!in_array($httpMethod, ['GET', 'POST'], true)) {
     header('HTTP/1.1 405 Method Not Allowed');
     header('Allow: GET, POST');
     die();
 }
 
+// 2. アクションの取得と正規化・単体バリデーション（不正なアクションは400）
 $action = $_REQUEST['action'] ?? 'index';
 if ($action === '') {
     $action = 'index';
 }
 
+$allowedActions = ['index', 'form', 'confirm', 'submit'];
+if (!in_array($action, $allowedActions, true)) {
+    header('HTTP/1.1 400 Bad Request');
+    die();
+}
+
+// 3. 組み合わせによるルーティング（すでに個別にバリデーション済み）
 match ([$httpMethod, $action]) {
     ['GET', 'index'] => form($config, $META),
     ['GET', 'form'] => form($config, $META, $_SESSION[$appId]['form'] ?? []),
     ['POST', 'confirm'] => confirm($config, $META, $_POST),
     ['POST', 'submit'] => submit($config, $META, $_SESSION[$appId]['form'] ?? [], $_POST),
-    default => die(), // 不正な action はここでしっかりと弾く
+    default => die('Unexpected routing error')
 };
