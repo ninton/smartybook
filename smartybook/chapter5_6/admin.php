@@ -113,16 +113,28 @@ function save(array $config, array $postVars): void
     }
 }
 
-// GET action未設定 プレビュー表示
-// GET action=preview プレビュー表示
-// GET action=form 入力フォーム表示
-// POST action=save 保存処理
-$requestMethod = strtoupper($_SERVER['REQUEST_METHOD'] ?? '');
-$action = $_REQUEST['action'] ?? 'preview';
+/**
+ * GET,action未設定|action=|action=preview プレビュー表示
+ * GET,action=form 入力フォーム表示
+ * POST,action=save 保存処理
+ */
+$httpMethod = strtoupper($_SERVER['REQUEST_METHOD'] ?? 'GET');
 
-match ([$requestMethod, $action]) {
+// GET と POST 以外は HTTP 405 を返して安全に終了する
+if (!in_array($httpMethod, ['GET', 'POST'], true)) {
+    header('HTTP/1.1 405 Method Not Allowed');
+    header('Allow: GET, POST');
+    die();
+}
+
+$action = $_REQUEST['action'] ?? 'preview';
+if ($action === '') {
+    $action = 'preview';
+}
+
+match ([$httpMethod, $action]) {
     ['GET', 'preview'] => preview($config),
     ['GET', 'form'] => form($config),
     ['POST', 'save'] => save($config, $_POST),
-    default => null,
+    default => die(), // 不正な action はここでしっかりと弾く
 };
