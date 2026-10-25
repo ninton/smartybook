@@ -1,7 +1,12 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const headerRow = document.getElementById('sortable-header');
-  if (!headerRow) return;
+const headerRow = document.getElementById('sortable-header');
+if (headerRow) {
+  initTableSort(headerRow);
+}
 
+/**
+ * @param {HTMLElement} headerRow - ソート対象のテーブルヘッダー行
+ */
+function initTableSort(headerRow) {
   // PHP側で確定したソート状態を利用する
   const currentSort = headerRow.dataset.currentSort || 'id';
   const currentDir = headerRow.dataset.currentDir || 'asc';
@@ -39,4 +44,4 @@ document.addEventListener('DOMContentLoaded', () => {
     const scriptName = headerRow.dataset.scriptName || window.location.pathname;
     link.href = `${scriptName}?${params.toString()}`;
   });
-});
+}

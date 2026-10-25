@@ -76,7 +76,7 @@ for ($i = 1; $i <= $pagerDto->numPages; $i += 1) {
 }
 
 // JS用キャッシュバスター
-$jsPath = __DIR__ . '/js/sortNavigator.js';
+$jsPath = __DIR__ . '/js/index.js';
 // ファイルが存在すればSHA-1ハッシュを取得（短く最初の8文字に削る）
 $jsVersion = file_exists($jsPath) ? substr(sha1_file($jsPath), 0, 8) : '1.0.0';
 
