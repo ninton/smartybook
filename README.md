@@ -14,7 +14,6 @@
 - https://gihyo.jp/book/2008/978-4-7741-3630-1
 - https://www.amazon.co.jp/dp/4774136301
 
-
 ## Smarty
 
 - GitHub https://github.com/smarty-php/smarty
