@@ -47,18 +47,18 @@ jobs:
         uses: docker/bake-action@v7
         with:
           files: docker-compose.yml
-          targets: app
+          targets: php-web
           load: true # ビルドイメージを Docker デーモンにロード
           set: |
-            app.tags=smartybook-app:latest
+            php-web.tags=smartybook-php-web:latest
             *.cache-from=type=gha
             *.cache-to=type=gha,mode=max
 
       - name: make setup - part2
         run: |
-          docker compose run --rm app composer install
-          docker compose up --no-build -d app db
-          docker compose run --rm app bash scripts/chmod.sh
+          docker compose run --rm php-web composer install
+          docker compose up --no-build -d php-web db
+          docker compose run --rm php-web bash scripts/chmod.sh
 
       - name: Wait for Web Server to be ready
         run: |

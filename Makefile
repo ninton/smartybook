@@ -1,52 +1,52 @@
 .PHONY: composer-install
 composer-install:
-	docker compose run --rm app composer install
+	docker compose run --rm php-web composer install
 
 .PHONY: composer-require-checker
 composer-require-checker:
-	docker compose run --rm app composer run-script composer-require-checker
+	docker compose run --rm php-web composer run-script composer-require-checker
 
 .PHONY: php-format-check
 php-format-check:
-	docker compose run --rm app composer run-script format:check
+	docker compose run --rm php-web composer run-script format:check
 
 .PHONY: php-format-fix
 php-format-fix:
-	docker compose run --rm app composer run-script format:fix
+	docker compose run --rm php-web composer run-script format:fix
 
 .PHONY: php-lint
 php-lint:
-	docker compose run --rm app composer run-script lint
+	docker compose run --rm php-web composer run-script lint
 
 .PHONY: php-lint-baseline
 php-lint-baseline:
-	docker compose run --rm app composer run-script lint:baseline
+	docker compose run --rm php-web composer run-script lint:baseline
 
 .PHONY: php-lint-fix
 php-lint-fix:
-	docker compose run --rm app composer run-script lint:fix
+	docker compose run --rm php-web composer run-script lint:fix
 
 .PHONY: php-lint-fresh
 php-lint-fresh:
-	docker compose run --rm app composer run-script lint:fresh
+	docker compose run --rm php-web composer run-script lint:fresh
 
 .PHONY: php-test
 php-test:
-	docker compose run --rm app composer run-script test
+	docker compose run --rm php-web composer run-script test
 
 .PHONY: php-test-golden-master
 php-test-golden-master:
 	docker compose up -d
-	docker compose exec app composer run-script test:golden-master
+	docker compose exec php-web composer run-script test:golden-master
 
 .PHONY: php-test-golden-master-update
 php-test-golden-master-update:
 	docker compose up -d
-	docker compose exec app composer run-script test:golden-master-update
+	docker compose exec php-web composer run-script test:golden-master-update
 
 .PHONY: smarty-lint
 smarty-lint:
-	docker compose run --rm app composer run-script smarty-lint templates
+	docker compose run --rm php-web composer run-script smarty-lint templates
 
 # 📁 setup用の状態管理ファイルの保存先ディレクトリ
 STATE_DIR := .make
@@ -58,7 +58,7 @@ STATE_DIR := .make
 setup: .env $(STATE_DIR)/.docker-compose-build $(STATE_DIR)/.composer-installed
 	@printf '\n=== Docker コンテナの起動確認 ===\n'
 	docker compose up -d
-	docker compose run --rm app bash scripts/chmod.sh
+	docker compose run --rm php-web bash scripts/chmod.sh
 
 	@printf '\n🎉 セットアップが完了しました！\n'
 
