@@ -2,7 +2,7 @@ services:
   php-web:
     tty: true
     build:
-      context: docker/app
+      context: docker/php-web
     # ホスト側ポートは環境変数APP_PORTで指定（未定義の場合は3000）
     ports:
       - target: 80
