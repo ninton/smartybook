@@ -57,7 +57,7 @@ jobs:
       - name: make setup - part2
         run: |
           docker compose run --rm php-web composer install
-          docker compose up --no-build -d php-web db
+          docker compose up --no-build -d php-web mariadb-db
           docker compose run --rm php-web bash scripts/chmod.sh
 
       - name: Wait for Web Server to be ready

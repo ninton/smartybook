@@ -18,9 +18,9 @@ services:
       # Xdebug の接続先（xdebug.client_host=host.docker.internal）として使用
       - "host.docker.internal:host-gateway"
     depends_on:
-      - db
+      - mariadb-db
 
-  db:
+  mariadb-db:
     image: mariadb:13.0
     # ホストへは公開しない（ports 未設定）。DB操作は Docker ネットワーク経由で実施する。
     environment:
@@ -40,10 +40,10 @@ services:
   pma:
     image: phpmyadmin:5.2-apache
     environment:
-      PMA_HOST: db
+      PMA_HOST: mariadb-db
       PMA_ARBITRARY: 0
     depends_on:
-      - db
+      - mariadb-db
     # ホスト側ポートは環境変数 PMA_PORT（未指定時は 3001）を使用。
     ports:
       - target: 80
