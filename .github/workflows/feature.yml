@@ -50,7 +50,7 @@ jobs:
           targets: php-web
           load: true # ビルドイメージを Docker デーモンにロード
           set: |
-            php-web.tags=smartybook-app:latest
+            php-web.tags=smartybook-php-web:latest
             *.cache-from=type=gha
             *.cache-to=type=gha,mode=max
 
