@@ -28,7 +28,7 @@ echo "🔄 データベースの初期化を開始します..."
 
 sql_file="${INIT_SQL_DIR}/db_init.sql"
 
-# app コンテナ内から mysql クライアントで db コンテナへ接続し、SQL を流し込む
+# app コンテナ内から mysql クライアントで mariadb-db コンテナへ接続し、SQL を流し込む
 # MySQL 8.0〜 --ssl-mode=DISABLED
 # 〜MySQL 5.7 --skip-ssl
 MYSQL_PWD="${MYSQL_ROOT_PASSWORD}" mysql --skip-ssl \
