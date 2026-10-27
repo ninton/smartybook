@@ -22,7 +22,7 @@ fi
 # --- 設定 ---
 MYSQL_ROOT_PASSWORD="${DB_ROOT_PASSWORD:?DB_ROOT_PASSWORD is required}"
 # プロジェクトルートからの相対パスなので、この指定で固定できます
-INIT_SQL_DIR="./docker/db/init"
+INIT_SQL_DIR="./docker/mariadb-db/init"
 
 echo "🔄 データベースの初期化を開始します..."
 
