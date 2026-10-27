@@ -33,9 +33,9 @@ services:
       # 永続化 ホストのパスではなく、ボリューム名（db-data）を指定
       - db_data:/var/lib/mysql
       # 初期化スクリプト（読み取り専用：安全）
-      - ./docker/db/init:/docker-entrypoint-initdb.d
+      - ./docker/mariadb-db/init:/docker-entrypoint-initdb.d
       # 設定ファイル（読み取り専用：確実）
-      - ./docker/db/my.cnf:/etc/mysql/conf.d/my.cnf:ro
+      - ./docker/mariadb-db/my.cnf:/etc/mysql/conf.d/my.cnf:ro
 
   pma:
     image: phpmyadmin:5.2-apache
