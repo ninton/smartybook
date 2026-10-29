@@ -168,7 +168,7 @@ make php-test-golden-master    # ゴールデンマスターテスト実行
 
 make php-test-golden-master-update # ゴールデンマスターテストの期待値を更新する
 
-pnpm run format:fix            # JS,CSS,MD,YML のフォーマット
+pnpm run format:fix .          # JS,CSS,MD,YML のフォーマット
 pnpm run lint                  # ESLint
 pnpm run ts-check              # TypeScript による型チェック（JSDocを通した緩やかな型安全性）
 ```
