@@ -51,11 +51,14 @@ smarty-lint:
 # 📁 setup用の状態管理ファイルの保存先ディレクトリ
 STATE_DIR := .make
 
+# MariaDB の初期投入SQL
+DB_INIT_FILE := docker/mariadb-db/init/db_init.sql
+
 # git clone 直後や日常の git pull後に実行してください
 # @note GitHub Actions ワークフロー (.github/workflows/feature.yml) のセットアップ手順と同期してください。
 # CI環境では docker compose build の代わりに docker/bake-action を利用してレイヤーキャッシュを適用しています。
 .PHONY: setup
-setup: .env $(STATE_DIR)/.docker-compose-build $(STATE_DIR)/.composer-installed $(STATE_DIR)/.pnpm-installed
+setup: .env $(STATE_DIR)/.docker-compose-build $(STATE_DIR)/.composer-installed $(STATE_DIR)/.pnpm-installed $(STATE_DIR)/.db-init-hash
 	@printf '\n=== Docker コンテナの起動確認 ===\n'
 	docker compose up -d --remove-orphans
 	docker compose run --rm php-web bash scripts/chmod.sh
@@ -104,3 +107,12 @@ $(STATE_DIR)/.pnpm-installed: package.json pnpm-lock.yaml | $(STATE_DIR)
 	@printf '\n=== pnpm パッケージの同期 ===\n'
 	pnpm install --frozen-lockfile
 	@touch $@
+
+# db_init.sql の変更検知と注意喚起（Make本来のタイムスタンプ/依存関係を活用）
+$(STATE_DIR)/.db-init-hash: $(DB_INIT_FILE) | $(STATE_DIR)
+	@if [ -f $@ ]; then \
+		printf '\n\033[33m⚠️  [注意] db_init.sql が更新されています。\033[0m\n'; \
+		printf 'データベース構造や初期データを再反映するには、一度以下を実行してください:\n'; \
+		printf '  \033[1mdocker compose down -v && make setup\033[0m\n\n'; \
+	fi
+	@sha256sum $(DB_INIT_FILE) | cut -d' ' -f1 > $@
