@@ -115,6 +115,10 @@ https://github.com/ninton/smartybook/wiki/%E6%AD%A3%E8%AA%A4%E8%A1%A8
 
 - Docker / Docker Compose
 - GNU Make
+- **Volta**（ホストの Node.js バージョン管理に使用）
+  - ※ホスト環境の Node.js バージョンは `package.json` の `volta.node` に従います（CI環境では `.node-version` を使用）。
+- **Corepack**（pnpm の有効化・管理に使用。Node.js に標準付属）
+  - ※プロジェクトの `package.json` に定義された `packageManager` のバージョンに合わせた pnpm を利用するため、事前に有効化が必要です。
 
 ### 手順
 
@@ -125,14 +129,17 @@ https://github.com/ninton/smartybook/wiki/%E6%AD%A3%E8%AA%A4%E8%A1%A8
 git clone git@github.com:ninton/smartybook.git
 cd smartybook
 
-# 2. 環境セットアップ
+# 2. Corepack の有効化（初回のみ / pnpm を利用可能にするため）
+corepack enable
+
+# 3. 環境セットアップ
 make setup
 ```
 
 #### 更新（git pull 後に実行）
 
 ```bash
-# タイムスタンプを見て必要な処理（docker compose build / composer install）だけ実行します。
+# タイムスタンプを見て必要な処理（docker compose build / composer install / pnpm install --frozen-lockfile）だけ実行します。
 git pull
 make setup
 ```
@@ -160,6 +167,10 @@ make php-test                  # Pest Unit テスト実行
 make php-test-golden-master    # ゴールデンマスターテスト実行
 
 make php-test-golden-master-update # ゴールデンマスターテストの期待値を更新する
+
+pnpm run format:fix .          # JS,CSS,MD,YML のフォーマット
+pnpm run lint                  # ESLint
+pnpm run ts-check              # TypeScript による型チェック（JSDocを通した緩やかな型安全性）
 ```
 
 ## Wiki
