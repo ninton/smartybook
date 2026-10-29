@@ -132,7 +132,7 @@ make setup
 #### 更新（git pull 後に実行）
 
 ```bash
-# タイムスタンプを見て必要な処理（docker compose build / composer install）だけ実行します。
+# タイムスタンプを見て必要な処理（docker compose build / composer install / pnpm install --frozen-lockfile）だけ実行します。
 git pull
 make setup
 ```

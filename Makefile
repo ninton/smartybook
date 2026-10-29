@@ -55,7 +55,7 @@ STATE_DIR := .make
 # @note GitHub Actions ワークフロー (.github/workflows/feature.yml) のセットアップ手順と同期してください。
 # CI環境では docker compose build の代わりに docker/bake-action を利用してレイヤーキャッシュを適用しています。
 .PHONY: setup
-setup: .env $(STATE_DIR)/.docker-compose-build $(STATE_DIR)/.composer-installed
+setup: .env $(STATE_DIR)/.docker-compose-build $(STATE_DIR)/.composer-installed $(STATE_DIR)/.pnpm-installed
 	@printf '\n=== Docker コンテナの起動確認 ===\n'
 	docker compose up -d
 	docker compose run --rm php-web bash scripts/chmod.sh
@@ -97,4 +97,10 @@ $(STATE_DIR)/.docker-compose-build: docker-compose.yml $(DOCKER_FILES) | $(STATE
 $(STATE_DIR)/.composer-installed: composer.json composer.lock $(STATE_DIR)/.docker-compose-build | $(STATE_DIR)
 	@printf '\n=== Composer パッケージの同期 ===\n'
 	$(MAKE) composer-install
+	@touch $@
+
+# pnpm のインストール
+$(STATE_DIR)/.pnpm-installed: package.json pnpm-lock.yaml | $(STATE_DIR)
+	@printf '\n=== pnpm パッケージの同期 ===\n'
+	pnpm install --frozen-lockfile
 	@touch $@
