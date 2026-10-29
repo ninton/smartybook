@@ -57,7 +57,7 @@ STATE_DIR := .make
 .PHONY: setup
 setup: .env $(STATE_DIR)/.docker-compose-build $(STATE_DIR)/.composer-installed $(STATE_DIR)/.pnpm-installed
 	@printf '\n=== Docker コンテナの起動確認 ===\n'
-	docker compose up -d
+	docker compose up -d --remove-orphans
 	docker compose run --rm php-web bash scripts/chmod.sh
 
 	@printf '\n🎉 セットアップが完了しました！\n'
@@ -93,13 +93,13 @@ $(STATE_DIR)/.docker-compose-build: docker-compose.yml $(DOCKER_FILES) | $(STATE
 	docker compose build --pull
 	@touch $@
 
-# Composer のインストール
+# Composer のインストール（Composer はDocker経由で実行します）
 $(STATE_DIR)/.composer-installed: composer.json composer.lock $(STATE_DIR)/.docker-compose-build | $(STATE_DIR)
 	@printf '\n=== Composer パッケージの同期 ===\n'
 	$(MAKE) composer-install
 	@touch $@
 
-# pnpm のインストール
+# pnpm のインストール（pnpm はホストOSで実行します）
 $(STATE_DIR)/.pnpm-installed: package.json pnpm-lock.yaml | $(STATE_DIR)
 	@printf '\n=== pnpm パッケージの同期 ===\n'
 	pnpm install --frozen-lockfile
