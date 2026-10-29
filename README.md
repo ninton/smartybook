@@ -115,6 +115,9 @@ https://github.com/ninton/smartybook/wiki/%E6%AD%A3%E8%AA%A4%E8%A1%A8
 
 - Docker / Docker Compose
 - GNU Make
+- **Volta**（Node.js / pnpm のバージョン管理に使用）
+  - ※プロジェクト内の `package.json`（`volta` 項目）および `.node-version` に従って自動でバージョンが管理されます。
+- **Corepack**（pnpm の有効化に使用。Node.js に標準付属しています）
 
 ### 手順
 
