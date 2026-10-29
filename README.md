@@ -115,9 +115,10 @@ https://github.com/ninton/smartybook/wiki/%E6%AD%A3%E8%AA%A4%E8%A1%A8
 
 - Docker / Docker Compose
 - GNU Make
-- **Volta**（Node.js / pnpm のバージョン管理に使用）
-  - ※プロジェクト内の `package.json`（`volta` 項目）および `.node-version` に従って自動でバージョンが管理されます。
-- **Corepack**（pnpm の有効化に使用。Node.js に標準付属しています）
+- **Volta**（ホストの Node.js バージョン管理に使用）
+  - ※ホスト環境の Node.js バージョンは `package.json` の `volta.node` に従います（CI環境では `.node-version` を使用）。
+- **Corepack**（pnpm の有効化・管理に使用。Node.js に標準付属）
+  - ※プロジェクトの `package.json` に定義された `packageManager` のバージョンに合わせた pnpm を利用するため、事前に有効化が必要です。
 
 ### 手順
 
@@ -128,7 +129,10 @@ https://github.com/ninton/smartybook/wiki/%E6%AD%A3%E8%AA%A4%E8%A1%A8
 git clone git@github.com:ninton/smartybook.git
 cd smartybook
 
-# 2. 環境セットアップ
+# 2. Corepack の有効化（初回のみ / pnpm を利用可能にするため）
+corepack enable
+
+# 3. 環境セットアップ
 make setup
 ```
 
