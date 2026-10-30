@@ -1,25 +1,25 @@
 version: 2
 updates:
-  # PHP (Composer): 月曜 4:10 JST (すべての更新を1つのPRにまとめる)
+  # PHP (Composer): 月曜 2:10 JST (すべての更新を1つのPRにまとめる)
   - package-ecosystem: "composer"
     directory: "/"
     schedule:
       interval: "weekly"
       day: "monday"
-      time: "04:10"
+      time: "02:10"
       timezone: "Asia/Tokyo"
     groups:
       all-dependencies:
         patterns:
           - "*"
 
-  # JavaScript (npm): 月曜 04:10 JST (すべての更新を1つのPRにまとめる)
+  # JavaScript (pnpm): 月曜 03:10 JST (すべての更新を1つのPRにまとめる)
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
       interval: "weekly"
       day: "monday"
-      time: "04:10"
+      time: "03:10"
       timezone: "Asia/Tokyo"
     groups:
       all-dependencies:
