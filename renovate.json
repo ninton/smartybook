@@ -3,7 +3,14 @@
   "extends": ["config:recommended"],
   "timezone": "Asia/Tokyo",
   "minimumReleaseAge": "3 days",
-  "postUpdateOptions": ["composerWithAll"],
+  "prConcurrentLimit": 1,
+  "postUpdateOptions": ["composerWithAll", "pnpmDedupe"],
+  "vulnerabilityAlerts": {
+    "enabled": true,
+    "schedule": ["at any time"],
+    "automerge": true,
+    "platformAutomerge": true
+  },
   "customManagers": [
     {
       "customType": "regex",
@@ -14,22 +21,19 @@
   ],
   "packageRules": [
     {
-      "description": "Dockerfileとカスタムアクション内のcomposerを火曜日に集約",
+      "description": "Dockerfileとカスタムアクション内のcomposerをグループ化して自動マージ",
       "matchPackageNames": ["composer"],
       "matchManagers": ["dockerfile", "custom.regex"],
       "groupName": "composer-deps",
       "groupSlug": "composer-update",
-      "schedule": ["at 4am on tuesday"]
+      "schedule": ["every day at 5:10am"],
+      "automerge": true,
+      "automergeType": "pr",
+      "platformAutomerge": true
     },
     {
-      "description": "火曜 4:00：メジャーアップデート（手動レビュー用）",
-      "matchUpdateTypes": ["major"],
-      "schedule": ["at 4am on tuesday"]
-    },
-    {
-      "description": "水曜 4:00：マイナー・パッチアップデート（自動マージ対象）",
-      "matchUpdateTypes": ["minor", "patch", "pin", "digest"],
-      "schedule": ["at 4am on wednesday"],
+      "description": "毎日 5:10：その他のすべてのアップデート（メジャー含む）を自動マージ対象",
+      "schedule": ["every day at 5:10am"],
       "automerge": true,
       "automergeType": "pr",
       "platformAutomerge": true
