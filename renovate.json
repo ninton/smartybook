@@ -26,15 +26,15 @@
       "matchManagers": ["dockerfile", "custom.regex"],
       "groupName": "composer-deps",
       "groupSlug": "composer-update",
-      "schedule": ["10 5 * * *"],
+      "schedule": ["* 5 * * *"],
       "automerge": true,
       "automergeType": "pr",
       "platformAutomerge": true
     },
     {
-      "description": "毎日 5:10：その他のすべてのアップデート（メジャー含む）を自動マージ対象",
+      "description": "毎日 5時台：その他のすべてのアップデート（メジャー含む）を自動マージ対象",
       "matchUpdateTypes": ["major", "minor", "patch", "pin", "digest"],
-      "schedule": ["10 5 * * *"],
+      "schedule": ["* 5 * * *"],
       "automerge": true,
       "automergeType": "pr",
       "platformAutomerge": true
