@@ -31,6 +31,22 @@ runs:
           # ただし pnpm-lock.yaml は生成物であり、Prettier と整形規則が衝突しやすいため .prettierignore で除外する
           prettier:
             - added|modified: '**/*.{css,yml,yaml,md,json,jsonc}'
+          renovate_json:
+            - added|modified: 'renovate.json'
+            - added|modified: 'renovate.json5'
+            - added|modified: '.github/renovate.json'
+            - added|modified: '.github/workflows/renovate-validator.yml'
+
+    # ========================================
+    # Renovate Config
+    # ========================================
+    - name: Run renovate-config-validator
+      if: steps.paths_filter.outputs.renovate_json == 'true'
+      uses: renovatebot/github-action@v41
+      with:
+        arguments: --config-validation-only
+      env:
+        LOG_LEVEL: debug
 
     # ========================================
     # Shell スクリプトLint系
