@@ -34,3 +34,7 @@ updates:
       day: "monday"
       time: "04:10"
       timezone: "Asia/Tokyo"
+    groups:
+      all-dependencies:
+        patterns:
+          - "*"
