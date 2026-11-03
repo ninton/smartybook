@@ -53,7 +53,7 @@ RUN set -x \
     && echo "xdebug.start_with_request = yes" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini
 
 # Composer の最新公式イメージからバイナリだけをコピーする
-COPY --from=composer:2.11.0 /usr/bin/composer /usr/local/bin/composer
+COPY --from=composer:2.11.1 /usr/bin/composer /usr/local/bin/composer
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 RUN set -eux \
