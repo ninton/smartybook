@@ -146,7 +146,7 @@ make setup
 
 起動後、以下の URL でアクセスできます。
 
-- アプリ: `http://127.0.0.1:<APP_PORT>`（例: `http://127.0.0.1:3000`）にアクセスしてください。ポート番号は .env の APP_PORT で変更可能です。
+- アプリ: `http://127.0.0.1:<PHP_WEB_PORT>`（例: `http://127.0.0.1:3000`）にアクセスしてください。ポート番号は .env の PHP_WEB_PORT で変更可能です。
   - phpinfo: 例: `http://127.0.0.1:3000/smartybook/chapter2/phpinfo.php`
   - chapter3/03_01.php: 例: `http://127.0.0.1:3000/smartybook/chapter3/03_01.php`
 - phpMyAdmin: `http://127.0.0.1:<PMA_PORT>`（例: `http://127.0.0.1:3001`）にアクセスしてください。ポート番号は .env の PMA_PORT で変更可能です。
