@@ -1,6 +1,6 @@
 <?php
 
-use App\Smarty\AppSmarty as Smarty;
+use App\Smarty\SmartyFactory;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 
@@ -10,7 +10,7 @@ $bookList = ['ボードの選び方', 'ゲレンデマップ', 'ウエア・カ�
 $newBook = 'スノーボード・テクニック';
 
 // テンプレートエンジン初期化・変数アサイン・描画
-$smarty = new Smarty();
+$smarty = SmartyFactory::configure();
 $smarty->assign('siteName', $siteName);
 $smarty->assign('bookList', $bookList);
 $smarty->assign('newBook', $newBook);

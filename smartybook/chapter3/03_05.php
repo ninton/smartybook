@@ -1,6 +1,6 @@
 <?php
 
-use App\Smarty\AppSmarty as Smarty;
+use App\Smarty\SmartyFactory;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 
@@ -9,6 +9,6 @@ require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 $sites = ['name' => 'Google', 'url' => 'https://www.google.com/'];
 
 // テンプレートエンジン初期化・変数アサイン・描画
-$smarty = new Smarty();
+$smarty = SmartyFactory::configure();
 $smarty->assign('sites', $sites);
 $smarty->display('pages/chapter3/03_05.tpl');

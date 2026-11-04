@@ -1,6 +1,6 @@
 <?php
 
-use App\Smarty\AppSmarty as Smarty;
+use App\Smarty\SmartyFactory;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/config/config.php';
@@ -25,7 +25,7 @@ if (isset($_FILES['image']['tmp_name']) && is_uploaded_file($_FILES['image']['tm
 }
 
 // テンプレートエンジンの初期化とアサイン・描画
-$smarty = new Smarty();
+$smarty = SmartyFactory::configure();
 $smarty->assign('siteName', $siteName);
 $smarty->assign('homeURL', $homeURL);
 $smarty->assign('adminURL', $adminURL);

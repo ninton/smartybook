@@ -1,6 +1,6 @@
 <?php
 
-use App\Smarty\AppSmarty as Smarty;
+use App\Smarty\SmartyFactory;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/config/config.php';
@@ -42,7 +42,7 @@ while ($array = fgetcsv($fp, 5000, escape: '')) {
 fclose($fp);
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-$smarty = new Smarty();
+$smarty = SmartyFactory::configure();
 $smarty->registerPlugin('function', 'insert_noticeText2', 'insert_noticeText2');
 $smarty->assign('siteName', $siteName);
 $smarty->assign('homeURL', $homeURL);

@@ -3,7 +3,7 @@
 use App\Database\EntryQueryService;
 use App\PearStub\PagerStub as Pager;
 use App\PearStub\PearPagerMapper;
-use App\Smarty\AppSmarty as Smarty;
+use App\Smarty\SmartyFactory;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 
@@ -81,7 +81,7 @@ $jsPath = __DIR__ . '/js/index.js';
 $jsVersion = file_exists($jsPath) ? substr(sha1_file($jsPath), 0, 8) : '1.0.0';
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-$smarty = new Smarty();
+$smarty = SmartyFactory::configure();
 $smarty->assign('sortKey', $sortKey);
 $smarty->assign('sortDirection', $sortDirection);
 $smarty->assign('pagerDto', $pagerDto);

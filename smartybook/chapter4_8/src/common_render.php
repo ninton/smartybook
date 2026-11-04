@@ -1,6 +1,6 @@
 <?php
 
-use App\Smarty\AppSmarty as Smarty;
+use App\Smarty\SmartyFactory;
 
 require_once dirname(__DIR__, 3) . '/bootstrap/app.php';
 
@@ -40,7 +40,7 @@ $menuTree = [
 ];
 
 // ----- Smarty 初期化 & レンダリング -----
-$smarty = new Smarty();
+$smarty = SmartyFactory::configure();
 $smarty->assign('menuTree', $menuTree);
 $smarty->assign('currentPage', $scriptName);
 

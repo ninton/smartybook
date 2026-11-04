@@ -1,6 +1,6 @@
 <?php
 
-use App\Smarty\AppSmarty as Smarty;
+use App\Smarty\SmartyFactory;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 
@@ -10,7 +10,7 @@ $location = ['北海道', '青森', '岩手'];
 $address = ['001' => '北海道', '002' => '青森', '003' => '岩手'];
 
 // テンプレートエンジン初期化・変数アサイン・描画
-$smarty = new Smarty();
+$smarty = SmartyFactory::configure();
 $smarty->assign('id', $id);
 $smarty->assign('location', $location);
 $smarty->assign('address', $address);

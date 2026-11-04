@@ -1,6 +1,6 @@
 <?php
 
-use App\Smarty\AppSmarty as Smarty;
+use App\Smarty\SmartyFactory;
 use SmartyBook\chapter5_5\src\SmartyPlugin\LoginFormFunction;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
@@ -13,7 +13,7 @@ require_once __DIR__ . '/config/config.php';
  * @var string $adminURL
  */
 
-$smarty = new Smarty();
+$smarty = SmartyFactory::configure();
 
 $smarty->registerPlugin('function', 'login_form', LoginFormFunction::render(...));
 

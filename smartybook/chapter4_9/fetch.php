@@ -1,7 +1,7 @@
 <?php
 
-use App\Smarty\AppSmarty as Smarty;
 use App\Smarty\Plugin\MbTruncateModifier;
+use App\Smarty\SmartyFactory;
 use SmartyBook\chapter4_9\src\ChapterHelper;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
@@ -20,7 +20,7 @@ $menu_arr = ChapterHelper::get_menu_arr($categories);
 $featured_arr = ChapterHelper::get_featured_arr($csvFilePath);
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-$smarty = new Smarty();
+$smarty = SmartyFactory::configure();
 $smarty->registerPlugin('modifier', 'mb_truncate', MbTruncateModifier::truncate(...));
 // Smarty 5から、PHPの組み込み関数を暗黙的に修飾子として使えなくなりました。
 // 明示的にプラグインとして登録する

@@ -1,6 +1,6 @@
 <?php
 
-use App\Smarty\AppSmarty as Smarty;
+use App\Smarty\SmartyFactory;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 
@@ -17,7 +17,7 @@ $images = glob("$imageDir*.{jpg,png,gif}", GLOB_BRACE);
 header('Content-Type: text/javascript; charset=utf-8');
 
 // Smartyオブジェクトの作成
-$smarty = new Smarty();
+$smarty = SmartyFactory::configure();
 // デリミタタグの変更: Smarty 5 からメソッドで設定するようになった
 $smarty->setLeftDelimiter('{{');
 $smarty->setRightDelimiter('}}');
