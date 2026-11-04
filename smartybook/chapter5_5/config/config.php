@@ -1,7 +1,7 @@
 <?php
 
 use App\PearStub\AuthStub as Auth;
-use App\Smarty\AppSmarty as Smarty;
+use App\Smarty\SmartyFactory;
 use SmartyBook\chapter5_5\src\SmartyPlugin\LoginFormFunction;
 
 // ウェブサイト名
@@ -32,7 +32,7 @@ if (isset($_GET['lo']) && $_GET['lo'] == 'ok') {
 }
 //認証時に実行する関数
 /**
- * @throws \Smarty\Exception
+ * @throws Smarty\Exception
  */
 function displayLogin(string $username, int $status): void
 {
@@ -45,7 +45,7 @@ function displayLogin(string $username, int $status): void
         $errorMessage = 'ユーザー名もしくはパスワードが違います';
     }
 
-    $smarty = new Smarty();
+    $smarty = SmartyFactory::configure();
     $smarty->registerPlugin('function', 'login_form', LoginFormFunction::render(...));
     $smarty->assign('siteName', $siteName);
     $smarty->assign('adminURL', $adminURL);

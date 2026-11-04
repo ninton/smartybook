@@ -1,6 +1,6 @@
 <?php
 
-use App\Smarty\AppSmarty as Smarty;
+use App\Smarty\SmartyFactory;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 
@@ -11,6 +11,6 @@ nl2br修飾子は、改行文字を&lt;br /&gt;タグに置換します。
 ABC;
 
 // テンプレートエンジン初期化・変数アサイン・描画
-$smarty = new Smarty();
+$smarty = SmartyFactory::configure();
 $smarty->assign('body', $body);
 $smarty->display('pages/chapter3/03_11.tpl');

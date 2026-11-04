@@ -1,6 +1,6 @@
 <?php
 
-use App\Smarty\AppSmarty as Smarty;
+use App\Smarty\SmartyFactory;
 use SmartyBook\chapter3\src\BookMark;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
@@ -10,6 +10,6 @@ require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 $bookmark = new BookMark('Google', 'https://www.google.com/', '2006/11/01');
 
 // テンプレートエンジン初期化・変数アサイン・描画
-$smarty = new Smarty();
+$smarty = SmartyFactory::configure();
 $smarty->assign('bookmark', $bookmark);
 $smarty->display('pages/chapter3/03_06.tpl');

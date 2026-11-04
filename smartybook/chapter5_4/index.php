@@ -1,6 +1,6 @@
 <?php
 
-use App\Smarty\AppSmarty as Smarty;
+use App\Smarty\SmartyFactory;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/config/config.php';
@@ -16,8 +16,8 @@ require_once __DIR__ . '/config/config.php';
 
 // ----- 前処理（初期化・共通変数準備） -----
 // キャッシュ判定に Smartyオブジェクトが必要なので、描画セクションではなく、前処理でSmartyオブジェクトを生成します
-$smarty = new Smarty();
-$smarty->caching = \Smarty\Smarty::CACHING_LIFETIME_CURRENT;
+$smarty = SmartyFactory::configure();
+$smarty->caching = Smarty\Smarty::CACHING_LIFETIME_CURRENT;
 // PHPやテンプレートを変更したら 60秒経過してからリロードしてください
 $smarty->cache_lifetime = 60;
 

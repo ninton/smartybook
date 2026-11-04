@@ -1,6 +1,6 @@
 <?php
 
-use App\Smarty\AppSmarty as Smarty;
+use App\Smarty\SmartyFactory;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 
@@ -8,6 +8,6 @@ require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 $person = ['name' => '相田', 'position' => 'ゴールキーパー', 'height' => '175cm'];
 
 // テンプレートエンジン初期化・変数アサイン・描画
-$smarty = new Smarty();
+$smarty = SmartyFactory::configure();
 $smarty->assign('person', $person);
 $smarty->display('pages/chapter3/03_18.tpl');

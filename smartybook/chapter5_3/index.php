@@ -1,7 +1,7 @@
 <?php
 
 use App\PearStub\NetUserAgentMobileCommonStub;
-use App\Smarty\AppSmarty as Smarty;
+use App\Smarty\SmartyFactory;
 use SmartyBook\chapter5_3\src\KetaiSetUp;
 use SmartyBook\chapter5_3\src\NetUserAgentMobileMapper;
 
@@ -28,7 +28,7 @@ foreach ($config['categories'] as $category) {
 $layoutName = $config['platformTypeToLayoutMap'][$agentDto['platformType']];
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-$smarty = new Smarty();
+$smarty = SmartyFactory::configure();
 $smarty->setConfigDir(__DIR__ . '/config/smarty');
 $smarty->assign('siteName', $config['siteName']);
 $smarty->assign('home', $config['home']);

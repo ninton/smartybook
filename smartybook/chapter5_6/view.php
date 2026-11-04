@@ -6,8 +6,8 @@
  */
 
 use App\PearStub\ServicesAmazonStub;
-use App\Smarty\AppSmarty;
 use App\Smarty\Plugin\MbTruncateModifier;
+use App\Smarty\SmartyFactory;
 use SmartyBook\chapter5_6\src\AmazonServicesWrapper;
 use SmartyBook\chapter5_6\src\MyListRepository;
 use SmartyBook\chapter5_6\src\MyListViewModel;
@@ -31,7 +31,7 @@ $message = $amazonServicesWrapper->ItemLookup($myList->getASINs(), $options, $it
 $myListViewModel = MyListViewModel::create($myList, $itemArr);
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-$smarty = new AppSmarty();
+$smarty = SmartyFactory::configure();
 $smarty->registerPlugin('modifier', 'mb_truncate', MbTruncateModifier::truncate(...));
 $smarty->assign('message', $message);
 $smarty->assign('myList', $myListViewModel);

@@ -1,6 +1,6 @@
 <?php
 
-use App\Smarty\AppSmarty as Smarty;
+use App\Smarty\SmartyFactory;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 require_once __DIR__ . '/config/config.php';
@@ -39,7 +39,7 @@ while ($array = fgetcsv($fp, 5000, escape: '')) {
 fclose($fp);
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-$smarty = new Smarty();
+$smarty = SmartyFactory::configure();
 // Smarty 5 から insertタグは廃止されました。代わりに registerPlugin を使って関数プラグインを登録します。
 $smarty->registerPlugin('function', 'insert_noticeText', 'insert_noticeText');
 $smarty->assign('siteName', $siteName);

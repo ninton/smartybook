@@ -4,7 +4,7 @@ use App\Csv\CsvEntryReader;
 use App\PearStub\NetUserAgentMobileCommonStub;
 use App\PearStub\PagerStub as Pager;
 use App\PearStub\PearPagerMapper;
-use App\Smarty\AppSmarty as Smarty;
+use App\Smarty\SmartyFactory;
 use SmartyBook\chapter5_3\src\EntryImagePathResolver;
 use SmartyBook\chapter5_3\src\EntryMapper;
 use SmartyBook\chapter5_3\src\KetaiSetUp;
@@ -74,7 +74,7 @@ $entryViewModel = EntryMapper::toViewModel($entry, __DIR__);
 $layoutName = $config['platformTypeToLayoutMap'][$agentDto['platformType']];
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-$smarty = new Smarty();
+$smarty = SmartyFactory::configure();
 $smarty->setConfigDir(__DIR__ . '/config/smarty');
 $smarty->assign('pagerDto', $pagerDto);
 $smarty->assign('siteName', $config['siteName']);
