@@ -36,12 +36,12 @@ php-test:
 
 .PHONY: php-test-golden-master
 php-test-golden-master:
-	docker compose up -d --remove-orphans
+	docker compose up -d --remove-orphans php-web
 	docker compose exec php-web composer run-script test:golden-master
 
 .PHONY: php-test-golden-master-update
 php-test-golden-master-update:
-	docker compose up -d --remove-orphans
+	docker compose up -d --remove-orphans php-web
 	docker compose exec php-web composer run-script test:golden-master-update
 
 .PHONY: smarty-lint

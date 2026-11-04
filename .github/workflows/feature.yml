@@ -32,9 +32,6 @@ jobs:
         shell: bash
         run: composer run-script test
 
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v4
-
       # @note Makefile の `make setup` タスクの依存関係と同等の処理を順次実行しています。
       # Makefile: .env ➔ .docker-compose-build ➔ .composer-installed ➔ docker compose up -d
       # CI環境では `docker compose build` の代わりに `docker/bake-action` を使うことで
@@ -42,6 +39,9 @@ jobs:
       - name: make setup - part1
         run: |
           make .env
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v4
 
       - name: Build with Buildx Bake
         uses: docker/bake-action@v7
