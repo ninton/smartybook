@@ -24,6 +24,23 @@ MYSQL_ROOT_PASSWORD="${DB_ROOT_PASSWORD:?DB_ROOT_PASSWORD is required}"
 # プロジェクトルートからの相対パスなので、この指定で固定できます
 INIT_SQL_DIR="./docker/mariadb-db/init"
 
+# CI 環境では MySQL サーバーが起動するまで待機する必要がある場合がある
+echo "🔄 MySQLサーバーの起動を待っています..."
+
+# MySQLへの接続を最大60回試行する
+for attempt in {1..60}; do
+  if MYSQL_PWD="${MYSQL_ROOT_PASSWORD}" mysql --skip-ssl \
+    -h "${DB_HOST:?DB_HOST is required}" -uroot \
+    -e 'SELECT 1' > /dev/null 2>&1; then
+    break
+  fi
+  if [ "${attempt}" -eq 60 ]; then
+    echo "MySQLへの接続待機がタイムアウトしました。" >&2
+    exit 1
+  fi
+  sleep 1
+done
+
 echo "🔄 データベースの初期化を開始します..."
 
 sql_file="${INIT_SQL_DIR}/db_init.sql"
