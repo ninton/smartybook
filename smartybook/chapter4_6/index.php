@@ -81,7 +81,7 @@ $jsPath = __DIR__ . '/js/index.js';
 $jsVersion = file_exists($jsPath) ? substr(sha1_file($jsPath), 0, 8) : '1.0.0';
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 $smarty->assign('sortKey', $sortKey);
 $smarty->assign('sortDirection', $sortDirection);
 $smarty->assign('pagerDto', $pagerDto);

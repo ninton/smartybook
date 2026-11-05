@@ -10,7 +10,7 @@ $location = ['北海道', '青森', '岩手'];
 $address = ['001' => '北海道', '002' => '青森', '003' => '岩手'];
 
 // テンプレートエンジン初期化・変数アサイン・描画
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 $smarty->assign('id', $id);
 $smarty->assign('location', $location);
 $smarty->assign('address', $address);

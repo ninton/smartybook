@@ -8,6 +8,6 @@ require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 $result = mt_rand(1, 3);
 
 // テンプレートエンジン初期化・変数アサイン・描画
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 $smarty->assign('result', $result);
 $smarty->display('pages/chapter3/03_14.tpl');

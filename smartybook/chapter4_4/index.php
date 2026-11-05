@@ -24,6 +24,6 @@ while ($array = fgetcsv($fp, 5000, escape: '')) {
 fclose($fp);
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 $smarty->assign('data', $data);
 $smarty->display('pages/chapter4_4/index.tpl');

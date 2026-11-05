@@ -12,6 +12,6 @@ $group = [
 ];
 
 // テンプレートエンジン初期化・変数アサイン・描画
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 $smarty->assign('group', $group);
 $smarty->display('pages/chapter3/03_16.tpl');

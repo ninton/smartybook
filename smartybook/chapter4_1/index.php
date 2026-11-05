@@ -12,7 +12,7 @@ require_once __DIR__ . '/config/config.php';
  */
 
 // テンプレートエンジン初期化・変数アサイン・描画
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 $smarty->assign('siteName', $siteName);
 $smarty->assign('homeURL', $homeURL);
 $smarty->assign('categories', $categories);

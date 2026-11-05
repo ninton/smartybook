@@ -17,7 +17,7 @@ $images = glob("$imageDir*.{jpg,png,gif}", GLOB_BRACE);
 header('Content-Type: text/javascript; charset=utf-8');
 
 // Smartyオブジェクトの作成
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 // デリミタタグの変更: Smarty 5 からメソッドで設定するようになった
 $smarty->setLeftDelimiter('{{');
 $smarty->setRightDelimiter('}}');

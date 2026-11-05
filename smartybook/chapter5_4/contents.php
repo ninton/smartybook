@@ -37,7 +37,7 @@ while ($array = fgetcsv($fp, 5000, escape: '')) {
 fclose($fp);
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 $smarty->registerPlugin('function', 'insert_noticeText2', NoticeTextFunction::render(...));
 $smarty->assign('siteName', $siteName);
 $smarty->assign('homeURL', $homeURL);

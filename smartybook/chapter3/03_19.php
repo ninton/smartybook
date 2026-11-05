@@ -12,6 +12,6 @@ $person = [
 ];
 
 // テンプレートエンジン初期化・変数アサイン・描画
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 $smarty->assign('person', $person);
 $smarty->display('pages/chapter3/03_19.tpl');

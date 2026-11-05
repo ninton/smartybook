@@ -10,7 +10,7 @@ $bookList = ['ボードの選び方', 'ゲレンデマップ', 'ウエア・カ�
 $newBook = 'スノーボード・テクニック';
 
 // テンプレートエンジン初期化・変数アサイン・描画
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 $smarty->assign('siteName', $siteName);
 $smarty->assign('bookList', $bookList);
 $smarty->assign('newBook', $newBook);

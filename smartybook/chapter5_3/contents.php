@@ -74,7 +74,7 @@ $entryViewModel = EntryMapper::toViewModel($entry, __DIR__);
 $layoutName = $config['platformTypeToLayoutMap'][$agentDto['platformType']];
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 $smarty->setConfigDir(__DIR__ . '/config/smarty');
 $smarty->assign('pagerDto', $pagerDto);
 $smarty->assign('siteName', $config['siteName']);

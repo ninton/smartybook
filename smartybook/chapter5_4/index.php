@@ -16,7 +16,7 @@ require_once __DIR__ . '/config/config.php';
 
 // ----- 前処理（初期化・共通変数準備） -----
 // キャッシュ判定に Smartyオブジェクトが必要なので、描画セクションではなく、前処理でSmartyオブジェクトを生成します
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 $smarty->caching = Smarty\Smarty::CACHING_LIFETIME_CURRENT;
 // PHPやテンプレートを変更したら 60秒経過してからリロードしてください
 $smarty->cache_lifetime = 60;

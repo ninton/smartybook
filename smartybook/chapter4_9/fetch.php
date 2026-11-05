@@ -20,7 +20,7 @@ $menu_arr = ChapterHelper::get_menu_arr($categories);
 $featured_arr = ChapterHelper::get_featured_arr($csvFilePath);
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 $smarty->registerPlugin('modifier', 'mb_truncate', MbTruncateModifier::truncate(...));
 // Smarty 5から、PHPの組み込み関数を暗黙的に修飾子として使えなくなりました。
 // 明示的にプラグインとして登録する
