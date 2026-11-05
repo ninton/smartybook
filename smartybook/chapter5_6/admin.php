@@ -40,7 +40,7 @@ function preview(array $config): void
     $myListViewModel = MyListViewModel::create($myList, $itemArr);
 
     // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-    $smarty = SmartyFactory::configure();
+    $smarty = SmartyFactory::create();
     $smarty->registerPlugin('modifier', 'mb_truncate', MbTruncateModifier::truncate(...));
     $smarty->assign('message', $message);
     $smarty->assign('myList', $myListViewModel);
@@ -62,7 +62,7 @@ function form(array $config): void
     }
 
     // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-    $smarty = SmartyFactory::configure();
+    $smarty = SmartyFactory::create();
     $smarty->registerPlugin('modifier', 'mb_truncate', MbTruncateModifier::truncate(...));
     $smarty->assign('max_items', MyList::MAX_ITEMS);
     $smarty->assign('message', $message);
@@ -101,7 +101,7 @@ function save(array $config, array $postVars): void
 
     if ($message != '') {
         // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-        $smarty = SmartyFactory::configure();
+        $smarty = SmartyFactory::create();
         $smarty->registerPlugin('modifier', 'mb_truncate', MbTruncateModifier::truncate(...));
         $smarty->assign('max_items', MyList::MAX_ITEMS);
         $smarty->assign('message', $message);

@@ -11,6 +11,6 @@ nl2br修飾子は、改行文字を&lt;br /&gt;タグに置換します。
 ABC;
 
 // テンプレートエンジン初期化・変数アサイン・描画
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 $smarty->assign('body', $body);
 $smarty->display('pages/chapter3/03_11.tpl');

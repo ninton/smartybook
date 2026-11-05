@@ -40,7 +40,7 @@ $menuTree = [
 ];
 
 // ----- Smarty 初期化 & レンダリング -----
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 $smarty->assign('menuTree', $menuTree);
 $smarty->assign('currentPage', $scriptName);
 

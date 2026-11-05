@@ -31,7 +31,7 @@ while ($array = fgetcsv($fp, 5000, escape: '')) {
 fclose($fp);
 
 // テンプレートエンジン初期化・変数アサイン・描画
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 $smarty->assign('siteName', $siteName);
 $smarty->assign('homeURL', $homeURL);
 $smarty->assign('data', $data);

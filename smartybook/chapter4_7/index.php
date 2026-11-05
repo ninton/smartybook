@@ -97,7 +97,7 @@ function form(array $config, array $meta, array $formFromSession = []): void
     $csrfToken = getCsrfToken($config['app_id']);
 
     // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-    $smarty = SmartyFactory::configure();
+    $smarty = SmartyFactory::create();
     $smarty->assign('META', $meta);
     $smarty->assign('form', $form);
     $smarty->assign('csrf_token', $csrfToken);
@@ -127,7 +127,7 @@ function confirm(array $config, array $meta, array $postVars): void
     $_SESSION[$appId]['form'] = $form;
 
     // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-    $smarty = SmartyFactory::configure();
+    $smarty = SmartyFactory::create();
     $smarty->assign('META', $meta);
     $smarty->assign('form', $form);
     $smarty->assign('csrf_token', getCsrfToken($appId));
@@ -160,7 +160,7 @@ function submit(array $config, array $meta, array $formFromSession, array $postV
     unset($_SESSION[$appId]['csrf_token']);
 
     // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-    $smarty = SmartyFactory::configure();
+    $smarty = SmartyFactory::create();
     $smarty->assign('META', $meta);
     $smarty->assign('form', $formFromSession);
     $smarty->display('pages/chapter4_7/thanks.tpl');

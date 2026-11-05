@@ -21,7 +21,7 @@ require_once __DIR__ . '/config/config.php';
  */
 
 header('Content-Type: application/xml; charset=UTF-8');
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 $smarty->assign('siteName', $siteName);
 $smarty->assign('homeURL', $homeURL);
 $smarty->assign('categories', $categories);

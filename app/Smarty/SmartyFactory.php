@@ -8,7 +8,7 @@ use Smarty\Smarty;
 
 final readonly class SmartyFactory
 {
-    public static function configure(): Smarty
+    public static function create(): Smarty
     {
         $smarty = new Smarty();
 

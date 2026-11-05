@@ -45,7 +45,7 @@ function displayLogin(string $username, int $status): void
         $errorMessage = 'ユーザー名もしくはパスワードが違います';
     }
 
-    $smarty = SmartyFactory::configure();
+    $smarty = SmartyFactory::create();
     $smarty->registerPlugin('function', 'login_form', LoginFormFunction::render(...));
     $smarty->assign('siteName', $siteName);
     $smarty->assign('adminURL', $adminURL);

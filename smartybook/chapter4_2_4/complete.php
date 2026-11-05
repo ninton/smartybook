@@ -63,7 +63,7 @@ flock($fp, LOCK_UN);
 fclose($fp);
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 $smarty->assign('siteName', $siteName);
 $smarty->assign('homeURL', $homeURL);
 $smarty->assign('adminURL', $adminURL);

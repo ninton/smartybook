@@ -31,7 +31,7 @@ while ($array = fgetcsv($fp, 5000, escape: '')) {
 fclose($fp);
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 // Smarty5 で {insert}タグ廃止予定なので、registerPluginで置き換えました
 $smarty->registerPlugin('function', 'insert_noticeText2', NoticeTextFunction::render(...));
 $smarty->assign('siteName', $siteName);

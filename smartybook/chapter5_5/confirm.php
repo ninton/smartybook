@@ -43,7 +43,7 @@ if ($_POST['title']) {
     }
 
     // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-    $smarty = SmartyFactory::configure();
+    $smarty = SmartyFactory::create();
     $smarty->assign('siteName', $siteName);
     $smarty->assign('homeURL', $homeURL);
     $smarty->assign('adminURL', $adminURL);
@@ -55,7 +55,7 @@ if ($_POST['title']) {
     $smarty->display('pages/chapter5_5/confirm.tpl');
 } else {
     // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-    $smarty = SmartyFactory::configure();
+    $smarty = SmartyFactory::create();
     $smarty->assign('siteName', $siteName);
     $smarty->assign('homeURL', $homeURL);
     $smarty->assign('adminURL', $adminURL);

@@ -13,7 +13,7 @@ require_once __DIR__ . '/config/config.php';
  * @var string $adminURL
  */
 
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 
 $smarty->registerPlugin('function', 'login_form', LoginFormFunction::render(...));
 

@@ -8,6 +8,6 @@ require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 $sites = ['Google', 'MSN', ['Yahoo!', 'Yahoo!Japan']];
 
 // テンプレートエンジン初期化・変数アサイン・描画
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 $smarty->assign('sites', $sites);
 $smarty->display('pages/chapter3/03_04.tpl');

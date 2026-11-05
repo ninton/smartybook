@@ -10,6 +10,6 @@ require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 $bookmark = new BookMark('Google', 'https://www.google.com/', '2006/11/01');
 
 // テンプレートエンジン初期化・変数アサイン・描画
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 $smarty->assign('bookmark', $bookmark);
 $smarty->display('pages/chapter3/03_06.tpl');

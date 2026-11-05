@@ -28,7 +28,7 @@ foreach ($config['categories'] as $category) {
 $layoutName = $config['platformTypeToLayoutMap'][$agentDto['platformType']];
 
 // ----- テンプレートエンジンの初期化とアサイン・描画 -----
-$smarty = SmartyFactory::configure();
+$smarty = SmartyFactory::create();
 $smarty->setConfigDir(__DIR__ . '/config/smarty');
 $smarty->assign('siteName', $config['siteName']);
 $smarty->assign('home', $config['home']);
