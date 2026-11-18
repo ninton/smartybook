@@ -1,2 +1,2 @@
-﻿サイト名：{$sites.name}<br />
-URL：<a href="{$sites.url}">{$sites.url}</a>
+﻿サイト名：{$siteInfo.name}<br />
+URL：<a href="{$siteInfo.url}">{$siteInfo.url}</a>
