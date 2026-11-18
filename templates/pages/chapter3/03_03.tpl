@@ -1,3 +1,3 @@
-﻿グーグル：{$sites[0]}<br />
-エムエスエヌ：{$sites[1]}<br />
-ヤフー：{$sites[2]}
+﻿グーグル：{$siteNameList[0]}<br />
+エムエスエヌ：{$siteNameList[1]}<br />
+ヤフー：{$siteNameList[2]}
