@@ -5,9 +5,9 @@ use App\Smarty\SmartyFactory;
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 
 // データ準備
-$sites = ['Google', 'MSN', 'Yahoo!'];
+$siteNameList = ['Google', 'MSN', 'Yahoo!'];
 
 // テンプレートエンジン初期化・変数アサイン・描画
 $smarty = SmartyFactory::create();
-$smarty->assign('sites', $sites);
+$smarty->assign('siteNameList', $siteNameList);
 $smarty->display('pages/chapter3/03_03.tpl');
