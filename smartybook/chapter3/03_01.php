@@ -6,5 +6,5 @@ require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 
 // テンプレートエンジン初期化・変数アサイン・描画
 $smarty = SmartyFactory::create();
-$smarty->assign('name', 'Smartyさん');
+$smarty->assign('name', 'Smarty');
 $smarty->display('pages/chapter3/03_01.tpl');
