@@ -1,1 +1,1 @@
-﻿Smartyさんは、テンプレート・エンジンです。
+﻿{$name}は、 {$description}です。
