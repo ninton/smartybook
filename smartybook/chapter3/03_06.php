@@ -1,13 +1,13 @@
 <?php
 
 use App\Smarty\SmartyFactory;
-use SmartyBook\chapter3\src\BookMark;
+use SmartyBook\chapter3\src\Bookmark;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 
 // データ準備
-// BookMarkオブジェクトの作成
-$bookmark = new BookMark('Google', 'https://www.google.com/', '2006/11/01');
+// Bookmarkオブジェクトの作成
+$bookmark = new Bookmark('Google', 'https://www.google.com/', '2006/11/01');
 
 // テンプレートエンジン初期化・変数アサイン・描画
 $smarty = SmartyFactory::create();
