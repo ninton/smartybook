@@ -26,7 +26,7 @@ final readonly class Bookmark
      * @return int 経過日数
      * @noinspection PhpUnused Smartyテンプレートで参照しています。PhpStormでは未使用と判定されるため、抑制コメントを追加しています。
      */
-    public function getAgo(): int
+    public function getDaysAgo(): int
     {
         $targetDate = new DateTimeImmutable($this->date);
         $now = new DateTimeImmutable('now', $targetDate->getTimezone());
