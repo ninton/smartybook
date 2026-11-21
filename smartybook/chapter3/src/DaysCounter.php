@@ -21,8 +21,11 @@ final class DaysCounter
         string $timezone = 'Asia/Tokyo',
         ?DateTimeImmutable $baseDateTime = null,
     ): int {
-        $tz = new DateTimeZone($timezone);
+        if (preg_match('/^\d{4}\/\d{2}\/\d{2}$/D', $date) !== 1) {
+            throw new InvalidArgumentException("日付の形式が不正です（Y/m/d形式で指定してください）: {$date}");
+        }
 
+        $tz = new DateTimeZone($timezone);
         $parsedDate = DateTimeImmutable::createFromFormat('!Y/m/d', $date, $tz);
         $errors = DateTimeImmutable::getLastErrors();
 
