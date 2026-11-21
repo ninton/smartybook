@@ -19,13 +19,16 @@ final readonly class Bookmark
     }
 
     /**
-     * 現在日時からどのくらい日数が経過しているかを取得します。
-     *
-     * @return int 経過日数
-     * @noinspection PhpUnused Smartyテンプレートで参照しています。PhpStormでは未使用と判定されるため、抑制コメントを追加しています。
+     * URL からホスト名（ドメイン）を取り出します。
      */
-    public function getDaysAgo(): int
+    public function getDomain(): string
     {
-        return DaysCounter::diffFrom($this->date);
+        $host = parse_url($this->url, PHP_URL_HOST);
+
+        if (!is_string($host) || $host === '') {
+            return '';
+        }
+
+        return $host;
     }
 }
