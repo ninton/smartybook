@@ -6,7 +6,7 @@ namespace SmartyBook\chapter3\src;
 
 use DateTimeImmutable;
 
-final readonly class BookMark
+final readonly class Bookmark
 {
     /**
      * @param string $title サイト名
