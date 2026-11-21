@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace SmartyBook\chapter3\src\tests;
 
-use InvalidArgumentException;
 use SmartyBook\chapter3\src\Bookmark;
 
 it('コンストラクタプロモーションで各プロパティが初期化される', function (): void {
@@ -19,23 +18,19 @@ it('コンストラクタプロモーションで各プロパティが初期化�
         ->and($bookmark->date)->toBe('2026/11/01');
 });
 
-it('getDaysAgo() が経過日数を整数（int）で返す', function (): void {
+it('returns expected domain or empty string for a given URL', function (string $url, string $expectedDomain): void {
     $bookmark = new Bookmark(
-        title: 'Google',
-        url: 'https://www.google.com/',
-        date: '2026/11/01',
+        title: 'サンプルサイト',
+        url: $url,
+        date: '2026/01/02',
     );
 
-    expect($bookmark->getDaysAgo())->toBeInt();
-});
-
-it('日付フォーマットが不正な場合は InvalidArgumentException をスローする', function (): void {
-    $bookmark = new Bookmark(
-        title: 'Invalid',
-        url: 'https://example.com/',
-        date: 'invalid-date',
-    );
-
-    expect(fn () => $bookmark->getDaysAgo())
-        ->toThrow(InvalidArgumentException::class);
-});
+    expect($bookmark->getDomain())->toBe($expectedDomain);
+})->with([
+    '通常のHTTPS URL' => ['https://example.com/articles/1', 'example.com'],
+    'サブドメインあり' => ['https://www.example.co.jp/', 'www.example.co.jp'],
+    'クエリとフラグメント付き' => ['https://example.com/search?q=php#top', 'example.com'],
+    'ポート番号付き' => ['http://localhost:8080/index.php', 'localhost'],
+    'スキームなし文字列は空文字' => ['example.com/path', ''],
+    '空文字URLは空文字' => ['', ''],
+]);

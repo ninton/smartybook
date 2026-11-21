@@ -1,4 +1,4 @@
-﻿サイトタイトル：{$bookmark->title|escape:'html'}<br />
-URL：<a href="{$bookmark->url|escape:'html'}">{$bookmark->url|escape:'html'}</a><br />
-ブックマークした日付：{$bookmark->date|escape:'html'}<br />
-{$bookmark->getDaysAgo()|escape:'html'}日前にブックマーク
+﻿サイトタイトル：{$bookmark->title|escape:'html'}<br>
+URL：<a href="{$bookmark->url|escape:'html'}">{$bookmark->url|escape:'html'}</a><br>
+ブックマークした日付：{$bookmark->date|escape:'html'}<br>
+ドメイン：{$bookmark->getDomain()|escape:'html'}<br>
