@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace SmartyBook\chapter3\src;
 
+use DateTimeImmutable;
+
 final readonly class Bookmark
 {
     /**
@@ -26,6 +28,10 @@ final readonly class Bookmark
      */
     public function getDaysAgo(): int
     {
-        return DaysCounter::diffFrom($this->date);
+        $targetDate = new DateTimeImmutable($this->date);
+        $now = new DateTimeImmutable('now', $targetDate->getTimezone());
+        $diffSeconds = $now->getTimestamp() - $targetDate->getTimestamp();
+
+        return (int)floor($diffSeconds / (60 * 60 * 24));
     }
 }
