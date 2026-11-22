@@ -5,6 +5,7 @@ use App\Smarty\SmartyFactory;
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 
 // テンプレートエンジン初期化・変数アサイン・描画
+// default修飾子のサンプルコード
 $smarty = SmartyFactory::create();
 $smarty->assign('name1', 'Smartyさん');
 $smarty->assign('name2', '');
