@@ -10,19 +10,16 @@ it('コンストラクタプロモーションで各プロパティが初期化�
     $bookmark = new Bookmark(
         title: 'Google',
         url: 'https://www.google.com/',
-        date: '2026/11/01',
     );
 
     expect($bookmark->title)->toBe('Google')
-        ->and($bookmark->url)->toBe('https://www.google.com/')
-        ->and($bookmark->date)->toBe('2026/11/01');
+        ->and($bookmark->url)->toBe('https://www.google.com/');
 });
 
 it('returns expected domain or empty string for a given URL', function (string $url, string $expectedDomain): void {
     $bookmark = new Bookmark(
         title: 'サンプルサイト',
         url: $url,
-        date: '2026/01/02',
     );
 
     expect($bookmark->getDomain())->toBe($expectedDomain);
