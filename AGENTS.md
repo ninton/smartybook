@@ -40,7 +40,7 @@
 ## 4. Smarty テンプレート（.tpl）と PHP の責務分離ルール
 
 1. **スーパーグローバル系のテンプレート直接参照は原則禁止**
-   - `.tpl` 内で `$smarty.get`、`$smarty.post`、`$smarty.cookie`、`$smarty.request`、`$smarty.session`、`$smarty.server`、`$smarty.env` を直接参照しないでください。
+   - `.tpl` 内で `$smarty.get`、`$smarty.post`、`$smarty.cookies`、`$smarty.request`、`$smarty.session`、`$smarty.server`、`$smarty.env` を直接参照しないでください。
    - 入力値・セッション・リクエスト情報・環境依存の値は PHP 側で取得・検証・整形し、`assign()` で必要な値だけを渡してください。
 
 2. **PHP 定数（`$smarty.const`）の扱い**
