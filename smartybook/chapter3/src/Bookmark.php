@@ -9,12 +9,10 @@ final readonly class Bookmark
     /**
      * @param string $title サイト名
      * @param string $url サイトURL
-     * @param string $date ブックマークした日付
      */
     public function __construct(
         public string $title,
         public string $url,
-        public string $date,
     ) {
     }
 
