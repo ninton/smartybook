@@ -20,3 +20,4 @@ if (file_exists(PROJECT_ROOT . '/.env')) {
 define('SMARTY_CACHE_DIR', PROJECT_ROOT . '/cache');
 define('SMARTY_COMPILE_DIR', PROJECT_ROOT . '/templates_c');
 define('SMARTY_TEMPLATE_DIR', PROJECT_ROOT . '/templates');
+define('SMARTY_CONFIG_DIR', SMARTY_TEMPLATE_DIR);
