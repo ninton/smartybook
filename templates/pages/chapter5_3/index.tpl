@@ -10,10 +10,10 @@
 </div>
 
 <div>
-  <br>
+  <br />
   {foreach from=$categoryDataArr item=categoryData}
-  {$categoryData.icon}<a href="{$categoryData.url}">{$categoryData.name|escape:'html'}</a><br>
+  {$categoryData.icon}<a href="{$categoryData.url}">{$categoryData.name|escape:'html'}</a><br />
   {/foreach}
-  <br>
+  <br />
 </div>
 {/block}
