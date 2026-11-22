@@ -15,6 +15,7 @@ final readonly class SmartyFactory
         $smarty->setTemplateDir(SMARTY_TEMPLATE_DIR);
         $smarty->setCompileDir(SMARTY_COMPILE_DIR);
         $smarty->setCacheDir(SMARTY_CACHE_DIR);
+        $smarty->setConfigDir(SMARTY_CONFIG_DIR);
 
         return $smarty;
     }
