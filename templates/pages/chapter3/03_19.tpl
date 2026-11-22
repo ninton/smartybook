@@ -7,6 +7,6 @@
     {/foreach}
 {if $smarty.foreach.person.last}</ul>{/if}
 {/foreach}
-<br />
-**ループ総回数(person)：{$smarty.foreach.person.total}回です。<br />
+<br>
+**ループ総回数(person)：{$smarty.foreach.person.total}回です。<br>
 **ループ総回数(data)：{$smarty.foreach.data.total}回です。

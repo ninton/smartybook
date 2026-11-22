@@ -17,11 +17,11 @@
       </tr>
       <tr>
         <th>評価</th>
-        <td>{html_radios name=rating options=$META.rating selected=$form.rating separator="<br />"}</td>
+        <td>{html_radios name=rating options=$META.rating selected=$form.rating separator="<br>"}</td>
       </tr>
       <tr>
         <th>どこで知りましたか</th>
-        <td>{html_checkboxes name=where_arr values=$META.where output=$META.where selected=$form.where_arr separator="<br />"}</td>
+        <td>{html_checkboxes name=where_arr values=$META.where output=$META.where selected=$form.where_arr separator="<br>"}</td>
       </tr>
       <tr>
         <th>開始日時</th>
@@ -31,14 +31,14 @@
 {html_select_date prefix="" field_array="startDate" time=$form.startDate.TimeStamp display_years=0   display_months=0  day_format="%d"}日
 {html_select_time prefix="" field_array="startDate" time=$form.startDate.TimeStamp display_minutes=0 display_seconds=0 use_24_hours=1}時
 {html_select_time prefix="" field_array="startDate" time=$form.startDate.TimeStamp display_hours=0   display_seconds=0}分
-{html_select_time prefix="" field_array="startDate" time=$form.startDate.TimeStamp display_hours=0   display_minutes=0}秒<br />
+{html_select_time prefix="" field_array="startDate" time=$form.startDate.TimeStamp display_hours=0   display_minutes=0}秒<br>
         </td>
       </tr>
       <tr>
         <th>終了日時</th>
         <td>
 {include file="components/chapter4_7/select_date.tpl" prefix="endDate_" field_array="" time=$form.endDate_TimeStamp start_year="" end_year="+3"}
-{include file="components/chapter4_7/select_time.tpl" prefix="endDate_" field_array="" time=$form.endDate_TimeStamp start_year="" end_year=""}<br />
+{include file="components/chapter4_7/select_time.tpl" prefix="endDate_" field_array="" time=$form.endDate_TimeStamp start_year="" end_year=""}<br>
         </td>
       </tr>
     </table>

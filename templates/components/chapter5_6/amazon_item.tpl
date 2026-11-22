@@ -4,7 +4,7 @@
 {if $item}
     <a href="{$item.DetailPageURL|escape:html}">
       <span class="Title">{$item.ItemAttributes.Title|mb_truncate:28|escape:html}</span>
-    </a><br />
+    </a><br>
 
     <span class="Author">
         {if isset($item.ItemAttributes.Author) && is_array($item.ItemAttributes.Author)}
@@ -12,7 +12,7 @@
         {else}
             Author empty
         {/if}
-    </span><br />
+    </span><br>
 
     <span class="Publisher">
         {if isset($item.ItemAttributes.Publisher)}
@@ -28,7 +28,7 @@
         {else}
             PublicationDate empty
         {/if}
-    </span><br />
+    </span><br>
 
     <span class="Price">
         {if isset($item.ItemAttributes.ListPrice.FormattedPrice)}
@@ -36,5 +36,5 @@
         {else}
             ListPrice empty
         {/if}
-    </span><br />
+    </span><br>
 {/if}

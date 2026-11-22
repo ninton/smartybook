@@ -3,5 +3,5 @@
 <li>{$key} : {$value}</li>
 {if $smarty.foreach.person.last}</ul>{/if}
 {/foreach}
-<br />
+<br>
 **ループ総回数：{$smarty.foreach.person.total}回です。

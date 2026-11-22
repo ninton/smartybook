@@ -23,7 +23,7 @@
     <div class="contents">
             <p class="message">
       {if $flag}
-        記事が保存されました。<br />続いて入力を行う場合は、「入力フォームへ戻る」ボタンを押してください。 / <a href="admin.php?lo=ok">ログアウトする</a>
+        記事が保存されました。<br>続いて入力を行う場合は、「入力フォームへ戻る」ボタンを押してください。 / <a href="admin.php?lo=ok">ログアウトする</a>
       {else}
         <span class="attention">書き込みに失敗しました。 / <a href="admin.php?lo=ok">ログアウトする</a></span>
       {/if}

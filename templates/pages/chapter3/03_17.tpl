@@ -5,5 +5,5 @@
 <li>{$person[person].name} - {$person[person].height}cm</li>
 {if $smarty.section.person.last}</ul>{/if}
 {/section}
-<br />
+<br>
 **ループ総回数：{$smarty.section.person.total}回です。

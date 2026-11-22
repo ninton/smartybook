@@ -11,8 +11,8 @@
 
   <hr style="{#HR_STYLE#}" />
   <div>
-    copyright 2007<br />
-    {$siteName|escape:html}<br />
+    copyright 2007<br>
+    {$siteName|escape:html}<br>
     All rights reserved.
   </div>
 
