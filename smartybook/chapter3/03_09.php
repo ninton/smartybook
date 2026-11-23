@@ -4,6 +4,10 @@ use App\Smarty\SmartyFactory;
 
 require_once dirname(__DIR__, 2) . '/bootstrap/app.php';
 
+/**
+ * @see https://smarty-php.github.io/smarty/stable/designers/language-modifiers/language-modifier-escape/
+ */
+
 // escape:html, escape:htmlall 用
 $text = 'A & B <tag> "quote" \'single\' café © 日本語';
 // escape:url 用
