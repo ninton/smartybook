@@ -17,7 +17,7 @@
     {fetch file="./html/featured.html"}
 </div>
 <div id="footer">
-    <address>copyright 2007 <br />Smarty for Designers All rights reserved.</address>
+    <address>copyright 2007 <br>Smarty for Designers All rights reserved.</address>
 </div>
 </div>
 </body>

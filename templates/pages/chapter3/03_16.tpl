@@ -6,8 +6,8 @@
     {$group[group][name]}
     {if !$smarty.section.name.last} and {/if}
     {/section}
-<br />
+<br>
 {/section}
-<br />
-**ループ総回数（group）：{$smarty.section.group.total}回です。<br />
+<br>
+**ループ総回数（group）：{$smarty.section.group.total}回です。<br>
 **ループ総回数（name）：{$smarty.section.name.total}回です。

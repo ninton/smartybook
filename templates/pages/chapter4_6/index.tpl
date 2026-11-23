@@ -23,35 +23,35 @@
   {* サーバー側からは静的な構造と初期データ属性のみを出力 *}
   <tr id="sortable-header" data-script-name="{$smarty.server.SCRIPT_NAME}" data-current-sort="{$sortKey|escape}" data-current-dir="{$sortDirection|escape}">
     <th data-sort-key="id">
-      ID<br />
+      ID<br>
       <span class="sort-buttons">
         <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" /></a>
         <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" /></a>
       </span>
     </th>
     <th data-sort-key="category">
-      カテゴリ<br />
+      カテゴリ<br>
       <span class="sort-buttons">
         <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" /></a>
         <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" /></a>
       </span>
     </th>
     <th data-sort-key="title">
-      タイトル<br />
+      タイトル<br>
       <span class="sort-buttons">
         <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" /></a>
         <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" /></a>
       </span>
     </th>
     <th class="comment" data-sort-key="comment">
-      コメント<br />
+      コメント<br>
       <span class="sort-buttons">
         <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" /></a>
         <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" /></a>
       </span>
     </th>
     <th data-sort-key="time">
-      日付<br />
+      日付<br>
       <span class="sort-buttons">
         <a href="#" data-direction="asc" title="昇順"><img src="images/btn_asc.gif" alt="" /></a>
         <a href="#" data-direction="desc" title="降順"><img src="images/btn_desc.gif" alt="" /></a>

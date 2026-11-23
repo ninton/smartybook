@@ -15,9 +15,9 @@
       <th>どこで知りましたか</th>
       <td>
         {foreach from=$form.where_arr|default:[] item=where}
-          {$where|escape:html}<br />
+          {$where|escape:html}<br>
         {foreachelse}
-          (未選択)<br />
+          (未選択)<br>
         {/foreach}
       </td>
     </tr>

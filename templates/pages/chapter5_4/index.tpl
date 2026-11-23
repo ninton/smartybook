@@ -20,7 +20,7 @@
       <h3 class="cornerTitle">Twitter</h3>
       <div id="twitter1">
         <div id="prof">
-          <p><img alt="プロフィール画像" src="{$tweetList[0]->user->profile_image_url}" /><br /><a href="https://twitter.com/{$tweetList[0]->user->screen_name}">{$tweetList[0]->user->screen_name}</a></p>
+          <p><img alt="プロフィール画像" src="{$tweetList[0]->user->profile_image_url}" /><br><a href="https://twitter.com/{$tweetList[0]->user->screen_name}">{$tweetList[0]->user->screen_name}</a></p>
         </div>
       </div>
       <div id="twitter2">
