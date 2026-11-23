@@ -1,13 +1,21 @@
 ﻿オリジナル：{$text}<br>
-{* html: <&>"'はエンティティ化、café・©・日本語はそのまま *}
+{* html: <&>"'はエンティティ化、café・©・日本語はそのまま
+ * 出力イメージのポイント: htmlspecialchars
+ * @see https://github.com/smarty-php/smarty/blob/37cf86ab808ece0551c2bec285e7162c9a236f31/src/Compile/Modifier/EscapeModifierCompiler.php#L26-L33 *}
 パラメータなし：{$text|escape}<br>
 html：{$text|escape:"html"}<br>
-{* htmlall: <&>"'に加えて café(é) や © などもHTMLエンティティ化 *}
+{* htmlall: <&>"'に加えて café(é) や © などもHTMLエンティティ化
+ * 出力イメージのポイント: htmlentities
+ * @see https://github.com/smarty-php/smarty/blob/37cf86ab808ece0551c2bec285e7162c9a236f31/src/Compile/Modifier/EscapeModifierCompiler.php#L35-L39 *}
 htmlall：{$text|escape:"htmlall"}<br>
 <hr>
-{* url: 半角スペースは %20 に変換（クエリパラメータ向け） *}
+{* url: 半角スペースは %20 に変換（クエリパラメータ向け）
+ * 出力イメージのポイント: rawurlencode
+ * @see https://github.com/smarty-php/smarty/blob/37cf86ab808ece0551c2bec285e7162c9a236f31/src/Compile/Modifier/EscapeModifierCompiler.php#L41-L43 *}
 url：<a href="/search?q={$keyword|escape:"url"}">{$keyword|escape:"html"}</a><br>
-{* urlpathinfo: 半角スペースは %20 に変換（URLパスセグメント向け） *}
+{* urlpathinfo: 半角スペースは %20 に変換（URLパスセグメント向け）
+ * 出力イメージのポイント: rawurlencode後に `%2F` を `/` に戻す
+ * @see https://github.com/smarty-php/smarty/blob/37cf86ab808ece0551c2bec285e7162c9a236f31/src/Compile/Modifier/EscapeModifierCompiler.php#L44-L46 *}
 urlpathinfo：<a href="/files/{$fileName|escape:"urlpathinfo"}">{$fileName|escape:"html"}</a><br>
 <hr>
 {* 以下の用途は限定的 *}
