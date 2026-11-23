@@ -26,7 +26,7 @@ quotes：{$quoteText|escape:"quotes"}<br>
 javascript：<script>const jsText = '{$jsText|escape:"javascript"}';</script><br>
 
 {* hex: 文字を16進数文字列に変換
- * 出力イメージのポイント: 4142 のような16進文字列の並びになる（そのまま表示すると16進数が見える）
+ * 出力イメージのポイント: `%41%42` のような16進文字列の並びになる（そのまま表示すると16進数が見える）
  * JSまたは受け取った側で 16進数をデコード／パースすることを想定している（実際の利用場面はかなり限定的） *}
 hex：{$hexText|escape:"hex"}<br>
 
