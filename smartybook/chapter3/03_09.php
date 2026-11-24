@@ -21,7 +21,6 @@ $email = 'user@example.com';
 $quoteText = "It's a \"test\"";
 $jsText = "Line1\nLine2 'quote' </script>";
 $hexText = 'AB';
-$hexEntityText = 'A&B';
 
 // テンプレートエンジン初期化・変数アサイン・描画
 $smarty = SmartyFactory::create();
@@ -32,5 +31,4 @@ $smarty->assign('email', $email);
 $smarty->assign('quoteText', $quoteText);
 $smarty->assign('jsText', $jsText);
 $smarty->assign('hexText', $hexText);
-$smarty->assign('hexEntityText', $hexEntityText);
 $smarty->display('pages/chapter3/03_09.tpl');
