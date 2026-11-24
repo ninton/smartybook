@@ -113,7 +113,11 @@ runs:
     - name: Run smarty-lint
       if: ${{ steps.paths_filter.outputs.tpl == 'true' }}
       shell: bash
-      run: composer run-script smarty-lint ${{ steps.paths_filter.outputs.tpl_files }}
+      env:
+        TPL_FILES: ${{ steps.paths_filter.outputs.tpl_files }}
+      run: |
+        set -euo pipefail
+        printf '%s\n' "$TPL_FILES" | xargs -r composer run-script smarty-lint --
 
     # ========================================
     # PHP 解析系
