@@ -31,6 +31,8 @@ runs:
           # ただし pnpm-lock.yaml は生成物であり、Prettier と整形規則が衝突しやすいため .prettierignore で除外する
           prettier:
             - added|modified: '**/*.{css,yml,yaml,md,json,jsonc}'
+          tpl:
+            - added|modified: 'templates/**/*.tpl'
 
     # ========================================
     # Shell スクリプトLint系
@@ -109,13 +111,15 @@ runs:
     # Smarty テンプレート Lint系
     # ========================================
     - name: Run smarty-lint
+      if: ${{ steps.paths_filter.outputs.tpl == 'true' }}
       shell: bash
-      run: composer run-script smarty-lint templates
+      run: composer run-script smarty-lint ${{ steps.paths_filter.outputs.tpl_files }}
 
     # ========================================
     # PHP 解析系
     # ========================================
     - name: phpstan
+      if: ${{ steps.paths_filter.outputs.php == 'true' }}
       shell: bash
       run: |
         composer run-script lint
