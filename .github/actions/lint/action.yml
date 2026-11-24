@@ -104,9 +104,9 @@ runs:
       run: |
         set -euo pipefail
         eval "files=($PHP_FILES)"
-        if [ "${#files[@]}" -gt 0 ]; then
-          printf '%s\n' "${files[@]}" | xargs -n 1 php -l
-        fi
+        for file in "${files[@]}"; do
+          php -l "$file"
+        done
 
     # ========================================
     # PHP コードフォーマット系
