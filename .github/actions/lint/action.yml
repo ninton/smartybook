@@ -31,6 +31,8 @@ runs:
           # ただし pnpm-lock.yaml は生成物であり、Prettier と整形規則が衝突しやすいため .prettierignore で除外する
           prettier:
             - added|modified: '**/*.{css,yml,yaml,md,json,jsonc}'
+          tpl:
+            - added|modified: 'templates/**/*.tpl'
 
     # ========================================
     # Shell スクリプトLint系
@@ -109,11 +111,17 @@ runs:
     # Smarty テンプレート Lint系
     # ========================================
     - name: Run smarty-lint
+      if: ${{ steps.paths_filter.outputs.tpl == 'true' }}
       shell: bash
-      run: composer run-script smarty-lint templates
+      env:
+        TPL_FILES: ${{ steps.paths_filter.outputs.tpl_files }}
+      run: |
+        set -euo pipefail
+        printf '%s\n' "$TPL_FILES" | xargs -r composer run-script smarty-lint --
 
     # ========================================
     # PHP 解析系
+    # ファイル削除されたときも実行したいので、あえて steps.paths_filter.outputs.php == 'true' をつけていない
     # ========================================
     - name: phpstan
       shell: bash
