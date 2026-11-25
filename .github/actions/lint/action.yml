@@ -40,7 +40,14 @@ runs:
     - name: Run ShellCheck
       if: steps.paths_filter.outputs.sh == 'true'
       shell: bash
-      run: shellcheck ${{ steps.paths_filter.outputs.sh_files }}
+      env:
+        SH_FILES: ${{ steps.paths_filter.outputs.sh_files }}
+      run: |
+        set -euo pipefail
+        eval "files=($SH_FILES)"
+        if [ "${#files[@]}" -gt 0 ]; then
+          shellcheck "${files[@]}"
+        fi
 
     # ========================================
     # Hadolint (Dockerfileに変更があった時だけ実行)
@@ -49,15 +56,15 @@ runs:
       if: steps.paths_filter.outputs.docker == 'true'
       uses: hadolint/hadolint-action@v3.5.0
       with:
-        dockerfile: ${{ steps.paths_filter.outputs.docker_files }}
+        dockerfile: "docker/php-web/Dockerfile"
 
     # ========================================
-    # CSS, YAML, MD, XML, JSON, JSONC フォーマット系
+    # CSS, YAML, MD, XML, JSON, JSONC, JS/TS フォーマット系
     # ========================================
     - name: Check format (Prettier)
-      if: steps.paths_filter.outputs.prettier == 'true'
+      if: steps.paths_filter.outputs.prettier == 'true' || steps.paths_filter.outputs.js == 'true'
       shell: bash
-      run: pnpm run format:check ${{ steps.paths_filter.outputs.prettier_files }}
+      run: pnpm run format:check .
 
     # ========================================
     # GitHub Actions 定義 リント系
@@ -74,20 +81,15 @@ runs:
         reporter: github-pr-annotations
 
     # ========================================
-    # JS/TS フォーマット・リント系
+    # JS/TS リント系
     # ========================================
-    - name: JS Check formatting
-      if: ${{ steps.paths_filter.outputs.js == 'true' }}
-      shell: bash
-      run: pnpm run format:check ${{ steps.paths_filter.outputs.js_files }}
-
     - name: ESLint
-      if: ${{ steps.paths_filter.outputs.js == 'true' }}
+      if: steps.paths_filter.outputs.js == 'true'
       shell: bash
-      run: pnpm run lint ${{ steps.paths_filter.outputs.js_files }}
+      run: pnpm run lint smartybook
 
     - name: ts-check
-      if: ${{ steps.paths_filter.outputs.js == 'true' }}
+      if: steps.paths_filter.outputs.js == 'true'
       shell: bash
       run: pnpm run ts-check
 
@@ -96,28 +98,31 @@ runs:
     # ========================================
     - name: PHP syntax check
       shell: bash
-      if: ${{ steps.paths_filter.outputs.php == 'true' }}
-      run: php -l ${{ steps.paths_filter.outputs.php_files }}
+      if: steps.paths_filter.outputs.php == 'true'
+      env:
+        PHP_FILES: ${{ steps.paths_filter.outputs.php_files }}
+      run: |
+        set -euo pipefail
+        eval "files=($PHP_FILES)"
+        for file in "${files[@]}"; do
+          php -l "$file"
+        done
 
     # ========================================
     # PHP コードフォーマット系
     # ========================================
     - name: Run php-cs-fixer
-      if: ${{ steps.paths_filter.outputs.php == 'true' }}
+      if: steps.paths_filter.outputs.php == 'true'
       shell: bash
-      run: composer run-script format:check ${{ steps.paths_filter.outputs.php_files }}
+      run: composer run-script format:check
 
     # ========================================
     # Smarty テンプレート Lint系
     # ========================================
     - name: Run smarty-lint
-      if: ${{ steps.paths_filter.outputs.tpl == 'true' }}
+      if: steps.paths_filter.outputs.tpl == 'true'
       shell: bash
-      env:
-        TPL_FILES: ${{ steps.paths_filter.outputs.tpl_files }}
-      run: |
-        set -euo pipefail
-        printf '%s\n' "$TPL_FILES" | xargs -r composer run-script smarty-lint --
+      run: composer run-script smarty-lint templates
 
     # ========================================
     # PHP 解析系
