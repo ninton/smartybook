@@ -57,10 +57,7 @@ runs:
       shell: bash
       run: |
         set -euo pipefail
-        find app -name "*.php" | xargs -r -L1 php -l
-        find bootstrap -name "*.php" | xargs -r -L1 php -l
-        find smartybook -name "*.php" | xargs -r -L1 php -l
-        find tests -name "*.php" | xargs -r -L1 php -l
+        find app bootstrap smartybook tests -type f -name "*.php" -print0 | xargs -r -0 php -l
 
     # ========================================
     # PHP コードフォーマット系
