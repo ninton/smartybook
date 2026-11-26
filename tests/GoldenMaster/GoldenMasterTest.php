@@ -66,7 +66,7 @@ final class GoldenMasterTest extends TestCase
      * @throws Exception
      */
     #[DataProvider('dataProvider')]
-    public function test(string $url, string $method, array $getVars, array $postVars, string $storageName): void
+    public function test(string $url, string $httpMethod, array $getVars, array $postVars, string $storageName): void
     {
         // 準備
         $_GET = $getVars;
@@ -74,7 +74,7 @@ final class GoldenMasterTest extends TestCase
         $_SESSION = [];
         $_REQUEST = array_merge($_GET, $_POST);
 
-        $_SERVER['REQUEST_METHOD'] = $method;
+        $_SERVER['REQUEST_METHOD'] = $httpMethod;
         $_SERVER['REQUEST_URI'] = '';
 
         putenv('PHPUNIT_RUNNING=1');
@@ -82,7 +82,7 @@ final class GoldenMasterTest extends TestCase
         // 実行
         $output = CrawlCode::crawl(
             $url,
-            $method,
+            $httpMethod,
             http_build_query($postVars),
             self::$cookieFile,
         );
