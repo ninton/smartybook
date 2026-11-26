@@ -10,7 +10,7 @@ runs:
       shell: bash
       run: |
         set -euo pipefail
-        find scripts -name "*.sh" -or -name "*.sh.tmpl" | xargs -r -L1 shellcheck
+        find scripts docker -type f \( -name "*.sh" -o -name "*.sh.tmpl" \) -print0 | xargs -0 -r -L1 shellcheck
 
     # ========================================
     # Hadolint
