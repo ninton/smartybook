@@ -135,7 +135,7 @@ final class GoldenMasterTest extends TestCase
 
             $data[$title] = [
                 $cmd->url,
-                $cmd->method,
+                $cmd->httpMethod,
                 $getVars,
                 $postVars,
                 $storageName,
