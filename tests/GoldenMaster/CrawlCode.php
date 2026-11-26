@@ -67,7 +67,7 @@ final class CrawlCode
     /**
      * @throws Exception
      */
-    public static function crawl(string $url, string $method, string $data, string $cookieFile, string $userAgent = self::DEFAULT_USER_AGENT): string
+    public static function crawl(string $url, string $httpMethod, string $data, string $cookieFile, string $userAgent = self::DEFAULT_USER_AGENT): string
     {
         if ($url === '') {
             throw new InvalidArgumentException('URL must be a non-empty string.');
@@ -89,9 +89,9 @@ final class CrawlCode
         // リダイレクト追跡が必要な場合（curl -L に相当）
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
 
-        $method = strtoupper($method);
+        $httpMethod = strtoupper($httpMethod);
 
-        switch ($method) {
+        switch ($httpMethod) {
             case 'GET':
                 // GET の場合はデータを含めない、または URL クエリパラメータとして付与
                 break;
@@ -109,7 +109,7 @@ final class CrawlCode
             case 'DELETE':
             default:
                 // PUT/PATCH/DELETE では CURLOPT_CUSTOMREQUEST を使用
-                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
+                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $httpMethod);
                 if ($data !== '') {
                     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
                 }
