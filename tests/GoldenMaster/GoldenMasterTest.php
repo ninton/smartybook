@@ -44,40 +44,14 @@ final class GoldenMasterTest extends TestCase
         parent::tearDownAfterClass();
     }
 
-    public function tearDown(): void
-    {
-        $_GET = [];
-        $_POST = [];
-        $_REQUEST = [];
-        $_SESSION = [];
-        unset(
-            $_SERVER['REQUEST_METHOD'],
-            $_SERVER['REQUEST_URI'],
-        );
-
-        putenv('PHPUNIT_RUNNING');
-
-        parent::tearDown();
-    }
-
     /**
-     * @param array<string, mixed> $getVars
      * @param array<string, mixed> $postVars
      * @throws Exception
      */
     #[DataProvider('dataProvider')]
-    public function test(string $url, string $httpMethod, array $getVars, array $postVars, string $storageName): void
+    public function test(string $url, string $httpMethod, array $postVars, string $storageName): void
     {
         // 準備
-        $_GET = $getVars;
-        $_POST = $postVars;
-        $_SESSION = [];
-        $_REQUEST = array_merge($_GET, $_POST);
-
-        $_SERVER['REQUEST_METHOD'] = $httpMethod;
-        $_SERVER['REQUEST_URI'] = '';
-
-        putenv('PHPUNIT_RUNNING=1');
 
         // 実行
         $output = CrawlCode::crawl(
@@ -109,7 +83,7 @@ final class GoldenMasterTest extends TestCase
     }
 
     /**
-     * @return array<string, array{string, string, array<string, mixed>, array<string, mixed>, string}>
+     * @return array<string, array{string, string, array<string, mixed>, string}>
      * @throws Exception
      */
     public static function dataProvider(): array
@@ -120,10 +94,8 @@ final class GoldenMasterTest extends TestCase
         $data = [];
 
         foreach ($crawlCommandArr as $i => $cmd) {
-            $getVars = [];
             $postVars = [];
 
-            parse_str(parse_url($cmd->url, PHP_URL_QUERY) ?? '', $getVars);
             parse_str($cmd->data, $postVars);
 
             $title = sprintf('%d/%d %s', $i + 1, $len, $cmd->title);
@@ -136,7 +108,6 @@ final class GoldenMasterTest extends TestCase
             $data[$title] = [
                 $cmd->url,
                 $cmd->httpMethod,
-                $getVars,
                 $postVars,
                 $storageName,
             ];
